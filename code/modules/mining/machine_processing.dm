@@ -234,12 +234,12 @@
 	var/datum/material/mat = selected_material
 	if(!mat)
 		return
-	var/sheets_to_remove = (materials.materials[mat] >= (MINERAL_MATERIAL_AMOUNT * SMELT_AMOUNT * delta_time) ) ? SMELT_AMOUNT * delta_time : round(materials.materials[mat] /  MINERAL_MATERIAL_AMOUNT)
-	if(!sheets_to_remove)
-		on = FALSE
-	else
-		var/out = get_step(src, output_dir)
-		materials.retrieve_sheets(sheets_to_remove, mat, out)
+		var/sheets_to_remove = (materials.materials[mat] >= (MINERAL_MATERIAL_AMOUNT * SMELT_AMOUNT * delta_time) ) ? SMELT_AMOUNT : round(materials.materials[mat] /  MINERAL_MATERIAL_AMOUNT)
+		if(!sheets_to_remove)
+			on = FALSE
+		else
+			var/out = get_step(src, output_dir)
+			materials.retrieve_sheets(sheets_to_remove, mat, out, SSeconomy.get_dep_account(ACCOUNT_CAR))
 
 /obj/machinery/mineral/processing_unit/proc/smelt_alloy(delta_time = 2)
 	var/datum/design/alloy = stored_research.isDesignResearchedID(selected_alloy) //check if it's a valid design

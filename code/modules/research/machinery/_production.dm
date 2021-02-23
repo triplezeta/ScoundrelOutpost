@@ -319,8 +319,14 @@
 
 		borg.cell.use(SILICON_LATHE_TAX)
 
-	materials.mat_container.use_materials(efficient_mats, print_quantity)
-	materials.silo_log(src, "built", -print_quantity, "[design.name]", efficient_mats)
+	var/datum/bank_account/user_account = usr.get_bank_account()
+	if(materials.mat_container.linked_account && !(obj_flags & EMAGGED))
+		var/cost = materials.mat_container.get_material_list_cost(efficient_mats)
+		if(!user_account.has_money(cost))
+			say("Insufficient funds to complete prototype[amount > 1? "s" : ""].")
+			return FALSE
+	materials.mat_container.use_materials(efficient_mats, print_quantity, user_account)
+	materials.silo_log(src, "built", -print_quantity, "[design.name]", efficient_mats, !(obj_flags & EMAGGED))
 
 	for(var/reagent in design.reagents_list)
 		reagents.remove_reagent(reagent, design.reagents_list[reagent] * print_quantity * coefficient)
@@ -347,9 +353,8 @@
 	if(materials.on_hold())
 		say("Mineral access is on hold, please contact the quartermaster.")
 		return 0
-
-	var/count = mat_container.retrieve_sheets(text2num(eject_amt), eject_sheet, drop_location())
-
+	var/obj/item/card/id/user_id = usr.get_idcard(TRUE)
+	var/count = mat_container.retrieve_sheets(text2num(eject_amt), eject_sheet, drop_location(), user_id.registered_account)
 	var/list/matlist = list()
 	matlist[eject_sheet] = MINERAL_MATERIAL_AMOUNT
 
