@@ -82,7 +82,7 @@
 	icon_state = "tonguelizard"
 	say_mod = "hisses"
 	taste_sensitivity = 10 // combined nose + tongue, extra sensitive
-	modifies_speech = TRUE
+	modifies_speech = FALSE
 	languages_native = list(/datum/language/draconic)
 
 /obj/item/organ/tongue/lizard/modify_speech(datum/source, list/speech_args)

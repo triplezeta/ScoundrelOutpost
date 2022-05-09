@@ -207,6 +207,7 @@
 	external_bodytypes = BODYTYPE_SNOUTED
 
 	dna_block = DNA_SNOUT_BLOCK
+	overrides_color = TRUE
 
 /obj/item/organ/external/snout/can_draw_on_bodypart(mob/living/carbon/human/human)
 	if(!(human.wear_mask?.flags_inv & HIDESNOUT) && !(human.head?.flags_inv & HIDESNOUT))
@@ -215,6 +216,15 @@
 
 /obj/item/organ/external/snout/get_global_feature_list()
 	return GLOB.snouts_list
+
+/obj/item/organ/external/snout/override_color(rgb_value)
+	if(!sprite_datum)
+		return rgb_value
+	if(sprite_datum.color_src == FACEHAIR)
+		if(ishuman(owner))
+			var/mob/living/carbon/human/H = owner
+			return H.facial_hair_color
+	return rgb_value
 
 ///A moth's antennae
 /obj/item/organ/external/antennae

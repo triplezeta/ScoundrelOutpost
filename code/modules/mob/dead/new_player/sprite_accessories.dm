@@ -1694,6 +1694,24 @@
 	icon_state = "lbelly"
 	gender_specific = 1
 
+/datum/sprite_accessory/body_markings/ltigercolor
+	name = "Light Tiger Body (Colored)"
+	icon_state = "ltiger"
+	gender_specific = 1
+	color_src = FACEHAIR
+
+/datum/sprite_accessory/body_markings/dtigercolor
+	name = "Dark Tiger Body (Colored)"
+	icon_state = "dtiger"
+	gender_specific = 1
+	color_src = FACEHAIR
+
+/datum/sprite_accessory/body_markings/lbellycolor
+	name = "Light Belly (Colored)"
+	icon_state = "lbelly"
+	gender_specific = 1
+	color_src = FACEHAIR
+
 /datum/sprite_accessory/tails
 	icon = 'icons/mob/mutant_bodyparts.dmi'
 	em_block = TRUE
@@ -1820,6 +1838,16 @@
 /datum/sprite_accessory/snouts/roundlight
 	name = "Round + Light"
 	icon_state = "roundlight"
+
+/datum/sprite_accessory/snouts/sharpcolor
+	name = "Sharp + Colored"
+	icon_state = "sharplight"
+	color_src = FACEHAIR
+
+/datum/sprite_accessory/snouts/roundcolor
+	name = "Round + Colored"
+	icon_state = "roundlight"
+	color_src = FACEHAIR
 
 /datum/sprite_accessory/horns
 	icon = 'icons/mob/mutant_bodyparts.dmi'
