@@ -89,17 +89,71 @@
 		return
 
 	var/gender = (physique == FEMALE) ? "f" : "m"
-	var/finished_icon_state = (sprite_datum.gender_specific ? gender : "m") + "_" + feature_key + "_" + sprite_datum.icon_state + mutant_bodyparts_layertext(image_layer)
+	var/layertext = mutant_bodyparts_layertext(image_layer)
+	var/finished_icon_state = (sprite_datum.gender_specific ? gender : "m") + "_" + feature_key + "_" + sprite_datum.icon_state + layertext
 	var/mutable_appearance/appearance = mutable_appearance(sprite_datum.icon, finished_icon_state, layer = -image_layer)
 	appearance.dir = image_dir
 
+/*
 	if(sprite_datum.color_src) //There are multiple flags, but only one is ever used so meh :/
+		appearance.color = image_color
+*/
+
+	if(ishuman(owner) && !overrides_color)
+		var/mob/living/carbon/human/H = owner
+		switch(sprite_datum.color_src)
+			if(MUTCOLORS)
+				if(H.dna.species.fixed_mut_color)
+					appearance.color = H.dna.species.fixed_mut_color
+				else
+					appearance.color = H.dna.features["mcolor"]
+			if(HAIR)
+				if(H.dna.species.hair_color == "mutcolor")
+					appearance.color = H.dna.features["mcolor"]
+				else if(H.dna.species.hair_color == "fixedmutcolor")
+					appearance.color = H.dna.species.fixed_mut_color
+				else
+					appearance.color = H.hair_color
+			if(FACEHAIR)
+				appearance.color = H.facial_hair_color
+			if(EYECOLOR)
+				appearance.color = H.eye_color_left
+	else if(sprite_datum.color_src)
 		appearance.color = image_color
 
 	if(sprite_datum.center)
 		center_image(appearance, sprite_datum.dimension_x, sprite_datum.dimension_y)
 
 	overlay_list += appearance
+
+	if(sprite_datum.hasinner)
+		var/inner_icon_state = (sprite_datum.gender_specific ? gender : "m") + "_" + feature_key + "inner" + "_" + sprite_datum.icon_state + layertext
+		var/mutable_appearance/inner_appearance = mutable_appearance(sprite_datum.icon, inner_icon_state, layer = -image_layer)
+
+		if(ishuman(owner))
+			var/mob/living/carbon/human/H = owner
+			switch(sprite_datum.inner_color_src)
+				if(MUTCOLORS)
+					if(H.dna.species.fixed_mut_color)
+						inner_appearance.color = H.dna.species.fixed_mut_color
+					else
+						inner_appearance.color = H.dna.features["mcolor"]
+				if(HAIR)
+					if(H.dna.species.hair_color == "mutcolor")
+						inner_appearance.color = H.dna.features["mcolor"]
+					else if(H.dna.species.hair_color == "fixedmutcolor")
+						inner_appearance.color = H.dna.species.fixed_mut_color
+					else
+						inner_appearance.color = H.hair_color
+				if(FACEHAIR)
+					inner_appearance.color = H.facial_hair_color
+				if(EYECOLOR)
+					inner_appearance.color = H.eye_color_left
+
+		if(sprite_datum.center)
+			inner_appearance = center_image(inner_appearance, sprite_datum.dimension_x, sprite_datum.dimension_y)
+
+		overlay_list += inner_appearance
 
 /obj/item/organ/external/proc/set_sprite(sprite_name)
 	sprite_datum = get_sprite_datum(sprite_name)
@@ -207,7 +261,6 @@
 	external_bodytypes = BODYTYPE_SNOUTED
 
 	dna_block = DNA_SNOUT_BLOCK
-	overrides_color = TRUE
 
 /obj/item/organ/external/snout/can_draw_on_bodypart(mob/living/carbon/human/human)
 	if(!(human.wear_mask?.flags_inv & HIDESNOUT) && !(human.head?.flags_inv & HIDESNOUT))
@@ -216,15 +269,6 @@
 
 /obj/item/organ/external/snout/get_global_feature_list()
 	return GLOB.snouts_list
-
-/obj/item/organ/external/snout/override_color(rgb_value)
-	if(!sprite_datum)
-		return rgb_value
-	if(sprite_datum.color_src == FACEHAIR)
-		if(ishuman(owner))
-			var/mob/living/carbon/human/H = owner
-			return H.facial_hair_color
-	return rgb_value
 
 ///A moth's antennae
 /obj/item/organ/external/antennae
