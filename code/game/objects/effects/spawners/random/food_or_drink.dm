@@ -149,7 +149,6 @@
 		/obj/item/reagent_containers/food/drinks/bottle/goldschlager = 2,
 		/obj/item/reagent_containers/food/drinks/bottle/patron = 1,
 		/obj/item/reagent_containers/food/drinks/bottle/kong = 1,
-		/obj/item/reagent_containers/food/drinks/bottle/lizardwine = 1,
 		/obj/item/reagent_containers/food/drinks/bottle/vodka/badminka = 1,
 		/obj/item/reagent_containers/food/drinks/bottle/trappist = 1,
 	)
