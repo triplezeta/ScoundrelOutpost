@@ -592,4 +592,4 @@
 	thermic_constant= -1
 	H_ion_release = -0.02
 	reaction_tags = REACTION_TAG_EASY | REACTION_TAG_UNIQUE
-	
+
