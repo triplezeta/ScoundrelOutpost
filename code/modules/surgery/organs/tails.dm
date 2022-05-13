@@ -44,7 +44,7 @@
 
 /obj/item/organ/tail/lizard
 	name = "lizard tail"
-	desc = "A severed lizard tail. Somewhere, no doubt, a lizard hater is very pleased with themselves."
+	desc = "A severed lizard tail. Maybe it'll grow back."
 	color = "#116611"
 	tail_type = "Smooth"
 	/// The sprite accessory this tail gives to the human it's attached to. If null, it will inherit its value from the human's DNA once attached.
@@ -96,7 +96,7 @@
 
 /obj/item/organ/tail/lizard/fake
 	name = "fabricated lizard tail"
-	desc = "A fabricated severed lizard tail. This one's made of synthflesh. Probably not usable for lizard wine."
+	desc = "A fabricated severed lizard tail. This one's made of synthflesh."
 	tail_type = null
 	spines = null
 
