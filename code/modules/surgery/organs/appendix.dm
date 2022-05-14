@@ -12,7 +12,8 @@
 	food_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/toxin/bad_food = 5)
 	grind_results = list(/datum/reagent/toxin/bad_food = 5)
 	healing_factor = STANDARD_ORGAN_HEALING
-	decay_factor = STANDARD_ORGAN_DECAY
+	//decay_factor =  STANDARD_ORGAN_DECAY * 0.25
+	decay_factor = STANDARD_ORGAN_DECAY * 0.5 //30 minutes
 
 	now_failing = "<span class='warning'>An explosion of pain erupts in your lower right abdomen!</span>"
 	now_fixed = "<span class='info'>The pain in your abdomen has subsided.</span>"
