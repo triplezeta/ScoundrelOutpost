@@ -14,7 +14,7 @@
 
 	healing_factor = STANDARD_ORGAN_HEALING
 	//decay_factor = STANDARD_ORGAN_DECAY * 1.15 // ~13 minutes, the stomach is one of the first organs to die
-	decay_factor = STANDARD_ORGAN_DECAY * 0.5 //30 minutes
+	decay_factor = STANDARD_ORGAN_DECAY * 0.6 //25 minutes
 	
 	low_threshold_passed = "<span class='info'>Your stomach flashes with pain before subsiding. Food doesn't seem like a good idea right now.</span>"
 	high_threshold_passed = "<span class='warning'>Your stomach flares up with constant pain- you can hardly stomach the idea of food right now!</span>"
