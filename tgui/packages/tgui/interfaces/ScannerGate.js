@@ -13,60 +13,6 @@ const DISEASE_THEASHOLD_LIST = [
   'BIOHAZARD',
 ];
 
-const TARGET_SPECIES_LIST = [
-  {
-    name: 'Human',
-    value: 'human',
-  },
-  {
-    name: 'Lizardperson',
-    value: 'lizard',
-  },
-  {
-    name: 'Flyperson',
-    value: 'fly',
-  },
-  {
-    name: 'Felinid',
-    value: 'felinid',
-  },
-  {
-    name: 'Plasmaman',
-    value: 'plasma',
-  },
-  {
-    name: 'Mothperson',
-    value: 'moth',
-  },
-  {
-    name: 'Jellyperson',
-    value: 'jelly',
-  },
-  {
-    name: 'Podperson',
-    value: 'pod',
-  },
-  {
-    name: 'Golem',
-    value: 'golem',
-  },
-  {
-    name: 'Zombie',
-    value: 'zombie',
-  },
-];
-
-const TARGET_NUTRITION_LIST = [
-  {
-    name: 'Starving',
-    value: 150,
-  },
-  {
-    name: 'Obese',
-    value: 600,
-  },
-];
-
 export const ScannerGate = (props, context) => {
   const { act, data } = useBackend(context);
   return (
@@ -106,13 +52,9 @@ const SCANNER_GATE_ROUTES = {
     component: () => ScannerGateDisease,
   },
   Species: {
-    title: 'Scanner Mode: Species',
-    component: () => ScannerGateSpecies,
-  },
-  Nutrition: {
-    title: 'Scanner Mode: Nutrition',
-    component: () => ScannerGateNutrition,
-  },
+    title: 'Scanner Mode: Zombie',
+    component: () => ScannerGateZombie,
+  }
 };
 
 const ScannerGateControl = (props, context) => {
@@ -156,11 +98,8 @@ const ScannerGateOff = (props, context) => {
           content="Disease"
           onClick={() => act('set_mode', { new_mode: 'Disease' })} />
         <Button
-          content="Species"
-          onClick={() => act('set_mode', { new_mode: 'Species' })} />
-        <Button
-          content="Nutrition"
-          onClick={() => act('set_mode', { new_mode: 'Nutrition' })} />
+          content="Zombie"
+          onClick={() => act('set_mode', { new_mode: 'Zombie' })} />
       </Box>
     </>
   );
@@ -233,59 +172,14 @@ const ScannerGateDisease = (props, context) => {
   );
 };
 
-const ScannerGateSpecies = (props, context) => {
-  const { act, data } = useBackend(context);
-  const { reverse, target_species } = data;
-  const species = TARGET_SPECIES_LIST.find(species => {
-    return species.value === target_species;
-  });
+const ScannerGateZombie = (props, context) => {
+  const { data } = useBackend(context);
+  const { reverse } = data;
   return (
     <>
       <Box mb={2}>
         Trigger if the person scanned is {reverse ? 'not' : ''}
-        {' '}of the {species.name} species.
-        {target_species === 'zombie' && (
-          ' All zombie types will be detected, including dormant zombies.'
-        )}
-      </Box>
-      <Box mb={2}>
-        {TARGET_SPECIES_LIST.map(species => (
-          <Button.Checkbox
-            key={species.value}
-            checked={species.value === target_species}
-            content={species.name}
-            onClick={() => act('set_target_species', {
-              new_species: species.value,
-            })} />
-        ))}
-      </Box>
-      <ScannerGateMode />
-    </>
-  );
-};
-
-const ScannerGateNutrition = (props, context) => {
-  const { act, data } = useBackend(context);
-  const { reverse, target_nutrition } = data;
-  const nutrition = TARGET_NUTRITION_LIST.find(nutrition => {
-    return nutrition.value === target_nutrition;
-  });
-  return (
-    <>
-      <Box mb={2}>
-        Trigger if the person scanned {reverse ? 'does not have' : 'has'}
-        {' '}the {nutrition.name} nutrition level.
-      </Box>
-      <Box mb={2}>
-        {TARGET_NUTRITION_LIST.map(nutrition => (
-          <Button.Checkbox
-            key={nutrition.name}
-            checked={nutrition.value === target_nutrition}
-            content={nutrition.name}
-            onClick={() => act('set_target_nutrition', {
-              new_nutrition: nutrition.name,
-            })} />
-        ))}
+        {' '}a zombie. All zombie types will be detected, including dormant zombies.
       </Box>
       <ScannerGateMode />
     </>

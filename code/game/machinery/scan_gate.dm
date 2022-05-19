@@ -3,19 +3,8 @@
 #define SCANGATE_DISEASE "Disease"
 #define SCANGATE_GUNS "Guns"
 #define SCANGATE_WANTED "Wanted"
-#define SCANGATE_SPECIES "Species"
-#define SCANGATE_NUTRITION "Nutrition"
+#define SCANGATE_ZOMBIE "Zombie"
 
-#define SCANGATE_HUMAN "human"
-#define SCANGATE_LIZARD "lizard"
-#define SCANGATE_FELINID "felinid"
-#define SCANGATE_FLY "fly"
-#define SCANGATE_PLASMAMAN "plasma"
-#define SCANGATE_MOTH "moth"
-#define SCANGATE_JELLY "jelly"
-#define SCANGATE_POD "pod"
-#define SCANGATE_GOLEM "golem"
-#define SCANGATE_ZOMBIE "zombie"
 
 /obj/machinery/scanner_gate
 	name = "scanner gate"
@@ -33,12 +22,8 @@
 	var/scangate_mode = SCANGATE_NONE
 	///Is searching for a disease, what severity is enough to trigger the gate?
 	var/disease_threshold = DISEASE_SEVERITY_MINOR
-	///If scanning for a specific species, what species is it looking for?
-	var/detect_species = SCANGATE_HUMAN
 	///Flips all scan results for inverse scanning. Signals if scan returns false.
 	var/reverse = FALSE
-	///If scanning for nutrition, what level of nutrition will trigger the scanner?
-	var/detect_nutrition = NUTRITION_LEVEL_FAT
 	///Will the assembly on the pass wire activate if the scanner resolves green (Pass) on crossing?
 	var/light_pass = FALSE
 	///Will the assembly on the pass wire activate if the scanner resolves red (fail) on crossing?
@@ -134,46 +119,16 @@
 				var/mob/living/carbon/C = M
 				if(get_disease_severity_value(C.check_virus()) >= get_disease_severity_value(disease_threshold))
 					beep = TRUE
-		if(SCANGATE_SPECIES)
+		if(SCANGATE_ZOMBIE)
 			if(ishuman(M))
 				var/mob/living/carbon/human/H = M
-				var/datum/species/scan_species = /datum/species/human
-				switch(detect_species)
-					if(SCANGATE_LIZARD)
-						scan_species = /datum/species/lizard
-					if(SCANGATE_FLY)
-						scan_species = /datum/species/fly
-					if(SCANGATE_FELINID)
-						scan_species = /datum/species/human/felinid
-					if(SCANGATE_PLASMAMAN)
-						scan_species = /datum/species/plasmaman
-					if(SCANGATE_MOTH)
-						scan_species = /datum/species/moth
-					if(SCANGATE_JELLY)
-						scan_species = /datum/species/jelly
-					if(SCANGATE_POD)
-						scan_species = /datum/species/pod
-					if(SCANGATE_GOLEM)
-						scan_species = /datum/species/golem
-					if(SCANGATE_ZOMBIE)
-						scan_species = /datum/species/zombie
-				if(is_species(H, scan_species))
+				if(is_species(H, /datum/species/zombie) || H.getorganslot(ORGAN_SLOT_ZOMBIE)) //Can detect dormant zombies
 					beep = TRUE
-				if(detect_species == SCANGATE_ZOMBIE) //Can detect dormant zombies
-					if(H.getorganslot(ORGAN_SLOT_ZOMBIE))
-						beep = TRUE
 		if(SCANGATE_GUNS)
 			for(var/I in M.get_contents())
 				if(istype(I, /obj/item/gun))
 					beep = TRUE
 					break
-		if(SCANGATE_NUTRITION)
-			if(ishuman(M))
-				var/mob/living/carbon/human/H = M
-				if(H.nutrition <= detect_nutrition && detect_nutrition == NUTRITION_LEVEL_STARVING)
-					beep = TRUE
-				if(H.nutrition >= detect_nutrition && detect_nutrition == NUTRITION_LEVEL_FAT)
-					beep = TRUE
 
 	if(reverse)
 		beep = !beep
@@ -219,8 +174,6 @@
 	data["scan_mode"] = scangate_mode
 	data["reverse"] = reverse
 	data["disease_threshold"] = disease_threshold
-	data["target_species"] = detect_species
-	data["target_nutrition"] = detect_nutrition
 	return data
 
 /obj/machinery/scanner_gate/ui_act(action, params)
@@ -244,40 +197,10 @@
 			var/new_threshold = params["new_threshold"]
 			disease_threshold = new_threshold
 			. = TRUE
-		//Some species are not scannable, like abductors (too unknown), androids (too artificial) or skeletons (too magic)
-		if("set_target_species")
-			var/new_species = params["new_species"]
-			detect_species = new_species
-			. = TRUE
-		if("set_target_nutrition")
-			var/new_nutrition = params["new_nutrition"]
-			var/nutrition_list = list(
-				"Starving",
-				"Obese"
-			)
-			if(new_nutrition && (new_nutrition in nutrition_list))
-				switch(new_nutrition)
-					if("Starving")
-						detect_nutrition = NUTRITION_LEVEL_STARVING
-					if("Obese")
-						detect_nutrition = NUTRITION_LEVEL_FAT
-			. = TRUE
 
 #undef SCANGATE_NONE
 #undef SCANGATE_MINDSHIELD
 #undef SCANGATE_DISEASE
 #undef SCANGATE_GUNS
 #undef SCANGATE_WANTED
-#undef SCANGATE_SPECIES
-#undef SCANGATE_NUTRITION
-
-#undef SCANGATE_HUMAN
-#undef SCANGATE_LIZARD
-#undef SCANGATE_FELINID
-#undef SCANGATE_FLY
-#undef SCANGATE_PLASMAMAN
-#undef SCANGATE_MOTH
-#undef SCANGATE_JELLY
-#undef SCANGATE_POD
-#undef SCANGATE_GOLEM
 #undef SCANGATE_ZOMBIE
