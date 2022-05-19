@@ -201,10 +201,6 @@
 /obj/item/storage/fancy/cigarettes/cigpack_midori{
 	pixel_x = 10
 	},
-/obj/item/storage/fancy/cigarettes/cigpack_shadyjims{
-	pixel_x = 2;
-	pixel_y = -6
-	},
 /obj/item/storage/fancy/cigarettes/cigpack_uplift{
 	pixel_x = 10;
 	pixel_y = -6

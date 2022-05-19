@@ -2139,17 +2139,6 @@ GLOBAL_LIST_EMPTY(fire_appearances)
 	nutrition = NUTRITION_LEVEL_FED
 	clear_alert(ALERT_NUTRITION)
 	satiety = 0
-
-	// Trait removal if obese
-	if(HAS_TRAIT_FROM(src, TRAIT_FAT, OBESITY))
-		if(overeatduration >= (200 SECONDS))
-			to_chat(src, span_notice("Your transformation restores your body's natural fitness!"))
-
-		REMOVE_TRAIT(src, TRAIT_FAT, OBESITY)
-		remove_movespeed_modifier(/datum/movespeed_modifier/obesity)
-		update_inv_w_uniform()
-		update_inv_wear_suit()
-
 	// Reset overeat duration.
 	overeatduration = 0
 

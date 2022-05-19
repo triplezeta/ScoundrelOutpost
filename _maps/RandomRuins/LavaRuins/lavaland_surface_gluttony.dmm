@@ -136,7 +136,6 @@
 /turf/closed/indestructible/necropolis,
 /area/ruin/powered/gluttony)
 "kr" = (
-/obj/effect/gluttony,
 /turf/open/indestructible/necropolis,
 /area/ruin/powered/gluttony)
 "kB" = (
@@ -305,7 +304,6 @@
 /turf/open/indestructible/necropolis,
 /area/ruin/powered/gluttony)
 "CU" = (
-/obj/effect/gluttony,
 /obj/structure/stone_tile/slab/cracked,
 /turf/open/indestructible/necropolis,
 /area/ruin/powered/gluttony)
@@ -376,7 +374,6 @@
 /obj/structure/stone_tile/block/cracked{
 	dir = 1
 	},
-/obj/effect/gluttony,
 /turf/open/indestructible/necropolis,
 /area/ruin/powered/gluttony)
 "LT" = (
@@ -441,7 +438,6 @@
 /area/ruin/powered/gluttony)
 "Rj" = (
 /obj/structure/stone_tile/block,
-/obj/effect/gluttony,
 /turf/open/indestructible/necropolis,
 /area/ruin/powered/gluttony)
 "Sr" = (
