@@ -54,7 +54,7 @@ const SCANNER_GATE_ROUTES = {
   Species: {
     title: 'Scanner Mode: Zombie',
     component: () => ScannerGateZombie,
-  }
+  },
 };
 
 const ScannerGateControl = (props, context) => {
