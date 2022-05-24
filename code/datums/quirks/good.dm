@@ -215,12 +215,11 @@
 /datum/quirk/item_quirk/tagger/add_unique()
 	give_item_to_holder(/obj/item/toy/crayon/spraycan, list(LOCATION_BACKPACK = ITEM_SLOT_BACKPACK, LOCATION_HANDS = ITEM_SLOT_HANDS))
 
-// TODO: See if this should be removed or changed.
 /datum/quirk/voracious
 	name = "Voracious"
-	desc = "Nothing gets between you and your food. You eat faster and can binge on junk food! Being fat suits you just fine."
+	desc = "Nothing gets between you and your food. You eat faster and can always manage to eat junk food."
 	icon = "drumstick-bite"
-	value = 4
+	value = 2
 	mob_trait = TRAIT_VORACIOUS
 	gain_text = "<span class='notice'>You feel HONGRY.</span>"
 	lose_text = "<span class='danger'>You no longer feel HONGRY.</span>"
