@@ -838,7 +838,6 @@
 	M.adjustToxLoss(delayed_toxin_damage)
 	. = ..()
 
-// TODO: Determine if this should be removed. Used in dank-pockets and cannabis to make you hungry.
 /datum/reagent/toxin/lipolicide
 	name = "Lipolicide"
 	description = "A powerful toxin that will destroy fat cells, massively reducing body weight in a short time. Deadly to those without nutriment in their body."
