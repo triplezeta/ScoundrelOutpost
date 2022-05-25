@@ -2,23 +2,23 @@
 	"Dynamic": {},
 	"Roundstart": {
 		"Traitors": {
-			"weight": 1
+			"weight": 4
 		},
 
 		"Blood Brothers": {
-			"weight": 1
+			"weight": 4
 		},
 
 		"Changelings": {
-			"weight": 1
+			"weight": 4
 		},
 
 		"Heretics": {
-			"weight": 0.5
+			"weight": 1
 		},
 
 		"Wizard": {
-			"weight": 0.5
+			"weight": 1
 		},
 
 		"Blood Cult": {
@@ -47,7 +47,7 @@
 
 	"Midround": {
 		"Syndicate Sleeper Agent": {
-			"weight": 0
+			"weight": 2
 		},
 
 		"Family Head Aspirants": {
@@ -55,11 +55,11 @@
 		},
 
 		"Malfunctioning AI": {
-			"weight": 0
+			"weight": 1
 		},
 
 		"Wizard": {
-			"weight": 0
+			"weight": 1
 		},
 
 		"Nuclear Assault": {
@@ -67,7 +67,7 @@
 		},
 
 		"Blob": {
-			"weight": 0
+			"weight": 1
 		},
 
 		"Blob Infection": {
@@ -75,7 +75,7 @@
 		},
 
 		"Alien Infestation": {
-			"weight": 0
+			"weight": 1
 		},
 
 		"Nightmare": {
