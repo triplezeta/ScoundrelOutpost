@@ -154,16 +154,6 @@
 	desc = "Apply this for Security Clown."
 	remove_mutations = list(/datum/mutation/human/clumsy)
 
-/obj/item/dnainjector/antitour
-	name = "\improper DNA injector (Anti-Tour.)"
-	desc = "Will cure Tourette's."
-	remove_mutations = list(/datum/mutation/human/tourettes)
-
-/obj/item/dnainjector/tourmut
-	name = "\improper DNA injector (Tour.)"
-	desc = "Gives you a nasty case of Tourette's."
-	add_mutations = list(/datum/mutation/human/tourettes)
-
 /obj/item/dnainjector/stuttmut
 	name = "\improper DNA injector (Stutt.)"
 	desc = "Makes you s-s-stuttterrr."

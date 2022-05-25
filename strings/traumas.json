@@ -3,33 +3,14 @@
     ],
 
     "mutations": [
-        "telikesis",
-        "halk",
-        "eppilapse",
-        "kamelien",
-        "eksrey",
-        "glowey skin",
-        "fungal tb",
-        "stun gloves"
     ],
 
     "george": [
-        "joerge",
-        "george",
-        "gorge",
-        "gdoruge"
     ],
 
     "mellens": [
-        "mellens",
-        "melons",
-        "mwrlins"
     ],
     "random_gibberish": [
-        "g",
-        "squid",
-        "r",
-        "carbon dioxide"
     ],
 
     "y_replacements": [
@@ -39,43 +20,15 @@
     ],
 
     "servers": [
-        "bager",
-        "sybl",
-        "mrs sybil",
-        "mr basil",
-        "mr terry",
-        "berry",
-        "vent hell",
-        "colonel hall"
     ],
 
     "create_verbs": [
-        "spawn",
-        "MAke me",
-        "creat",
-        "tc trade me",
-        "gib"
     ],
 
     "create_nouns": [
-        "zenomorfs",
-        "ayleins",
-        "treaitors",
-        "sheadow lings",
-        "abdoocters",
-        "revinent",
-        "deval",
-        "deth squads",
-        "bleb",
-        "cock cult",
-        "anteg"
     ],
 
     "bug": [
-        "",
-        "IS TIS A BUG??",
-        "SI IST A BUGG/",
-        "BUG!!!"
     ],
 
     "semicolon": [
