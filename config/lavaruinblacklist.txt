@@ -17,7 +17,7 @@
 
 ##SIN
 #_maps/RandomRuins/LavaRuins/lavaland_surface_envy.dmm
-#_maps/RandomRuins/LavaRuins/lavaland_surface_gluttony.dmm
+_maps/RandomRuins/LavaRuins/lavaland_surface_gluttony.dmm # removed pending rework of gluttony's wall
 #_maps/RandomRuins/LavaRuins/lavaland_surface_greed.dmm
 #_maps/RandomRuins/LavaRuins/lavaland_surface_pride.dmm
 #_maps/RandomRuins/LavaRuins/lavaland_surface_sloth.dmm
