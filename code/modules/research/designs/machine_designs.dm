@@ -595,7 +595,7 @@
 	build_path = /obj/item/circuitboard/machine/ore_silo
 	category = list ("Research Machinery")
 	departmental_flags = DEPARTMENT_BITFLAG_CARGO
-  
+
 /datum/design/board/stasis
 	name = "Machine Design (Lifeform Stasis Unit)"
 	desc = "The circuit board for a stasis unit."
