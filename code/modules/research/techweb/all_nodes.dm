@@ -490,7 +490,6 @@
 		"atmosalerts",
 		"autolathe",
 		"cell_charger",
-		"cell_charger",
 		"crystallizer",
 		"electrolyzer",
 		"emergency_oxygen",
@@ -507,7 +506,7 @@
 		"plasma_tank",
 		"plasmaman_tank_belt",
 		"pneumatic_seal",
-		"power control",
+		"power_control",
 		"powermonitor",
 		"recharger",
 		"recycler",
@@ -1013,8 +1012,6 @@
 		"bat_normal",
 		"bat_super",
 		"cardslot",
-		"cpu_normal",
-		"cpu_small",
 		"hdd_advanced",
 		"hdd_basic",
 		"hdd_cluster",
@@ -1023,12 +1020,9 @@
 		"netcard_advanced",
 		"netcard_basic",
 		"netcard_wired",
-		"pcpu_normal",
-		"pcpu_small",
 		"portadrive_advanced",
 		"portadrive_basic",
 		"portadrive_super",
-		"sensorpackage",
 		"ssd_micro",
 		"ssd_small",
 	)
@@ -1072,21 +1066,21 @@
 		"comm_monitor",
 		"comm_server",
 		"ntnet_relay",
-		"s-amplifier",
-		"s-analyzer",
-		"s-ansible",
-		"s-broadcaster",
-		"s-bus",
-		"s-crystal",
-		"s-filter",
-		"s-hub",
-		"s-messaging",
-		"s-processor",
-		"s-receiver",
-		"s-relay",
-		"s-server",
-		"s-transmitter",
-		"s-treatment",
+		"s_amplifier",
+		"s_analyzer",
+		"s_ansible",
+		"s_broadcaster",
+		"s_bus",
+		"s_crystal",
+		"s_filter",
+		"s_hub",
+		"s_messaging",
+		"s_processor",
+		"s_receiver",
+		"s_relay",
+		"s_server",
+		"s_transmitter",
+		"s_treatment",
 	)
 
 /datum/techweb_node/integrated_hud
@@ -1136,7 +1130,7 @@
 	description = "Smart freezing of objects to preserve them!"
 	prereq_ids = list("adv_engi", "biotech")
 	design_ids = list(
-		"cryo_Grenade",
+		"cryo_grenade",
 		"cryotube",
 		"splitbeaker",
 		"stasis",
@@ -1351,7 +1345,9 @@
 	id = "adv_rcd_upgrade"
 	display_name = "Advanced RCD Designs Upgrade"
 	description = "Unlocks new RCD designs."
-	design_ids = list("rcd_upgrade_silo_link")
+	design_ids = list(
+		"rcd_upgrade_silo_link",
+	)
 	prereq_ids = list(
 		"bluespace_travel",
 		"rcd_upgrade",
@@ -1430,9 +1426,9 @@
 	description = "If the light stuff just won't do it."
 	prereq_ids = list("adv_weaponry")
 	design_ids = list(
-		"adv_Grenade",
-		"large_Grenade",
-		"pyro_Grenade",
+		"adv_grenade",
+		"large_grenade",
+		"pyro_grenade",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 
@@ -1533,6 +1529,7 @@
 		"mod_stealth",
 		"mod_mag_harness",
 		"mod_pathfinder",
+		"mod_holster",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 
