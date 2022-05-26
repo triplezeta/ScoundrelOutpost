@@ -702,7 +702,6 @@
 			to_chat(M, span_warning("Your eyes sting!"))
 			M.blind_eyes(2)
 
-
 /datum/reagent/consumable/nutriment/stabilized
 	name = "Stabilized Nutriment"
 	description = "A bioengineered protien-nutrient structure designed to decompose in high saturation. In layman's terms, it won't get you fat."

@@ -511,19 +511,9 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/stool/bar, 0)
 /obj/structure/chair/plastic/post_buckle_mob(mob/living/Mob)
 	Mob.pixel_y += 2
 	.=..()
-	if(iscarbon(Mob))
-		INVOKE_ASYNC(src, .proc/snap_check, Mob)
 
 /obj/structure/chair/plastic/post_unbuckle_mob(mob/living/Mob)
 	Mob.pixel_y -= 2
-
-/obj/structure/chair/plastic/proc/snap_check(mob/living/carbon/Mob)
-	if (Mob.nutrition >= NUTRITION_LEVEL_FAT)
-		to_chat(Mob, span_warning("The chair begins to pop and crack, you're too heavy!"))
-		if(do_after(Mob, 6 SECONDS, progress = FALSE))
-			Mob.visible_message(span_notice("The plastic chair snaps under [Mob]'s weight!"))
-			new /obj/effect/decal/cleanable/plastic(loc)
-			qdel(src)
 
 /obj/item/chair/plastic
 	name = "folding plastic chair"

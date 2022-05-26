@@ -1,8 +1,4 @@
 //nutrition
-/datum/mood_event/fat
-	description = "<B>I'm so fat...</B>" //muh fatshaming
-	mood_change = -6
-
 /datum/mood_event/wellfed
 	description = "I'm stuffed!"
 	mood_change = 8

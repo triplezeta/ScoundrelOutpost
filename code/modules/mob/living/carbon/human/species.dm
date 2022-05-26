@@ -808,6 +808,24 @@ GLOBAL_LIST_EMPTY(features_by_species)
 				else
 					inner_accessory_overlay.icon_state = "m_[bodypart]inner_[accessory.icon_state]_[layertext]"
 
+				switch(accessory.inner_color_src)
+					if(MUTCOLORS)
+						if(fixed_mut_color)
+							inner_accessory_overlay.color = fixed_mut_color
+						else
+							inner_accessory_overlay.color = source.dna.features["mcolor"]
+					if(HAIR)
+						if(hair_color == "mutcolor")
+							inner_accessory_overlay.color = source.dna.features["mcolor"]
+						else if(hair_color == "fixedmutcolor")
+							inner_accessory_overlay.color = fixed_mut_color
+						else
+							inner_accessory_overlay.color = source.hair_color
+					if(FACEHAIR)
+						inner_accessory_overlay.color = source.facial_hair_color
+					if(EYECOLOR)
+						inner_accessory_overlay.color = source.eye_color_left
+
 				if(accessory.center)
 					inner_accessory_overlay = center_image(inner_accessory_overlay, accessory.dimension_x, accessory.dimension_y)
 

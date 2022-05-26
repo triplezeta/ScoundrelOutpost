@@ -94,10 +94,6 @@
 /obj/structure/chair/comfy/shuttle,
 /turf/open/floor/plating/abductor,
 /area/shuttle/escape/brig)
-"ue" = (
-/obj/machinery/fat_sucker,
-/turf/open/floor/plating/abductor,
-/area/shuttle/escape)
 "ui" = (
 /turf/open/floor/plating/abductor,
 /area/shuttle/escape/brig)
@@ -594,7 +590,7 @@ jj
 Um
 Um
 Um
-ue
+Um
 jj
 "}
 (13,1,1) = {"

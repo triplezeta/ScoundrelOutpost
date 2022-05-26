@@ -37,14 +37,14 @@
 	var/obj/item/organ/eyes/eyes_organ = target.getorgan(/obj/item/organ/eyes)
 	if (!eyes_organ || !istype(eyes_organ))
 		return
-	
+
 	if (!initial(eyes_organ.eye_color_left))
 		eyes_organ.eye_color_left = value
 	eyes_organ.old_eye_color_left = value
 
 	if(hetero) // Don't override the snowflakes please
 		return
-	
+
 	if (!initial(eyes_organ.eye_color_right))
 		eyes_organ.eye_color_right = value
 	eyes_organ.old_eye_color_right = value
@@ -78,7 +78,7 @@
 	savefile_key = "facial_hair_color"
 	savefile_identifier = PREFERENCE_CHARACTER
 	category = PREFERENCE_CATEGORY_SUPPLEMENTAL_FEATURES
-	relevant_species_trait = FACEHAIR
+	//relevant_species_trait = FACEHAIR
 
 /datum/preference/color/facial_hair_color/apply_to_human(mob/living/carbon/human/target, value)
 	target.facial_hair_color = value
