@@ -36962,9 +36962,6 @@
 /area/station/command/gateway)
 "mxU" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/poster/contraband/the_big_gas_giant_truth{
-	pixel_x = 32
-	},
 /turf/open/floor/iron/smooth,
 /area/station/maintenance/starboard/central)
 "mxV" = (

@@ -4043,7 +4043,7 @@
 /obj/item/shovel{
 	desc = "A large tool for digging and moving snow.";
 	force = 10;
-	name = "eskimo shovel"
+	name = "snow shovel"
 	},
 /obj/effect/decal/remains/human{
 	color = "#72e4fa"
