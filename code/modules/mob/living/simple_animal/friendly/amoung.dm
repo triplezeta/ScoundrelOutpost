@@ -103,3 +103,4 @@
 	icon_state = "amoung_lime"
 	icon_living = "amoung_lime"
 	icon_dead = "amoung_lime_dead"
+
