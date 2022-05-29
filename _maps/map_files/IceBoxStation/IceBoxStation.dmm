@@ -5943,6 +5943,7 @@
 /turf/open/floor/grass,
 /area/station/maintenance/starboard/aft)
 "bVZ" = (
+/obj/structure/sign/poster/official/do_not_question,
 /turf/closed/wall,
 /area/station/maintenance/department/medical/central)
 "bWe" = (
