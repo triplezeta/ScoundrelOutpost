@@ -5943,7 +5943,6 @@
 /turf/open/floor/grass,
 /area/station/maintenance/starboard/aft)
 "bVZ" = (
-/obj/structure/sign/poster/contraband/the_big_gas_giant_truth,
 /turf/closed/wall,
 /area/station/maintenance/department/medical/central)
 "bWe" = (
