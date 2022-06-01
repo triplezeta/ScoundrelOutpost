@@ -1815,6 +1815,16 @@
 	name = "Round + Light"
 	icon_state = "roundlight"
 
+/datum/sprite_accessory/snouts/sharpcolored
+	name = "Sharp + Colored"
+	icon_state = "sharplight"
+	color_src = FACEHAIR
+
+/datum/sprite_accessory/snouts/roundcolored
+	name = "Round + Colored"
+	icon_state = "roundlight"
+	color_src = FACEHAIR
+
 /datum/sprite_accessory/horns
 	icon = 'icons/mob/mutant_bodyparts.dmi'
 	em_block = TRUE

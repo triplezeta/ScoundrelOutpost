@@ -259,11 +259,6 @@
 				return
 			var/mob/living/carbon/human/human_owner = ownerlimb.owner
 			draw_color = human_owner.hair_color
-		if(ORGAN_COLOR_FACIALHAIR)
-			if(!ishuman(ownerlimb.owner))
-				return
-			var/mob/living/carbon/human/human_owner = ownerlimb.owner
-			draw_color = human_owner.facial_hair_color
 	color = draw_color
 	return TRUE
 
@@ -321,7 +316,7 @@
 	preference = "feature_lizard_snout"
 	external_bodytypes = BODYTYPE_SNOUTED
 
-	color_source = ORGAN_COLOR_FACIALHAIR
+	color_source = ORGAN_COLOR_OVERRIDE
 
 	dna_block = DNA_SNOUT_BLOCK
 
@@ -332,6 +327,16 @@
 
 /obj/item/organ/external/snout/get_global_feature_list()
 	return GLOB.snouts_list
+
+/obj/item/organ/external/snout/override_color(rgb_value)
+	if(sprite_datum.color_src == FACEHAIR && ishuman(owner))
+		var/mob/living/carbon/human/H = owner
+		return H.facial_hair_color
+
+	return rgb_value
+
+	var/list/rgb_list = rgb2num(rgb_value)
+	return rgb(255 - rgb_list[1], 255 - rgb_list[2], 255 - rgb_list[3])
 
 ///A moth's antennae
 /obj/item/organ/external/antennae
