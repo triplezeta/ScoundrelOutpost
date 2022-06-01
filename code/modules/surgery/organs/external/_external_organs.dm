@@ -329,7 +329,7 @@
 	return GLOB.snouts_list
 
 /obj/item/organ/external/snout/override_color(rgb_value)
-	if(sprite_datum.color_src == FACEHAIR && ishuman(owner))
+	if(sprite_datum && sprite_datum.color_src == FACEHAIR && ishuman(owner))
 		var/mob/living/carbon/human/H = owner
 		return H.facial_hair_color
 
