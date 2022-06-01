@@ -153,8 +153,15 @@
 	overlay_list += appearance
 
 	if(sprite_datum.hasinner)
-		var/inner_icon_state = (sprite_datum.gender_specific ? gender : "m") + "_" + feature_key + "inner" + "_" + sprite_datum.icon_state + layertext
-		var/mutable_appearance/inner_appearance = mutable_appearance(sprite_datum.icon, inner_icon_state, layer = -image_layer)
+		var/list/inner_icon_state_builder = list()
+		inner_icon_state_builder += sprite_datum.gender_specific ? gender : "m"
+		inner_icon_state_builder += feature_key + "inner"
+		icon_state_builder += sprite_datum.icon_state
+		icon_state_builder += mutant_bodyparts_layertext(image_layer)
+
+		var/finished_inner_icon_state = icon_state_builder.Join("_")
+
+		var/mutable_appearance/inner_appearance = mutable_appearance(sprite_datum.icon, finished_inner_icon_state, layer = -image_layer)
 
 		if(ishuman(owner))
 			var/mob/living/carbon/human/H = owner
