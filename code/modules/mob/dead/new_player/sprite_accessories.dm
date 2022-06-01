@@ -69,6 +69,8 @@
 	var/color_src = MUTCOLORS
 	/// Decides if this sprite has an "inner" part, such as the fleshy parts on ears.
 	var/hasinner
+	/// Like color_src, but for the aforementioned "inner" overlay. Defaults to none.
+	var/inner_color_src = FALSE
 	/// Is this part locked from roundstart selection? Used for parts that apply effects.
 	var/locked = FALSE
 	/// Should we center the sprite?
@@ -1700,6 +1702,24 @@
 	name = "Light Belly"
 	icon_state = "lbelly"
 	gender_specific = 1
+
+/datum/sprite_accessory/body_markings/ltigercolor
+	name = "Light Tiger Body (Colored)"
+	icon_state = "ltiger"
+	gender_specific = 1
+	color_src = FACEHAIR
+
+/datum/sprite_accessory/body_markings/dtigercolor
+	name = "Dark Tiger Body (Colored)"
+	icon_state = "dtiger"
+	gender_specific = 1
+	color_src = FACEHAIR
+
+/datum/sprite_accessory/body_markings/lbellycolor
+	name = "Light Belly (Colored)"
+	icon_state = "lbelly"
+	gender_specific = 1
+	color_src = FACEHAIR
 
 /datum/sprite_accessory/tails
 	icon = 'icons/mob/mutant_bodyparts.dmi'

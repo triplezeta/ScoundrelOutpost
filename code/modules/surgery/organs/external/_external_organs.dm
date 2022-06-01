@@ -152,6 +152,35 @@
 
 	overlay_list += appearance
 
+	if(sprite_datum.hasinner)
+		var/inner_icon_state = (sprite_datum.gender_specific ? gender : "m") + "_" + feature_key + "inner" + "_" + sprite_datum.icon_state + layertext
+		var/mutable_appearance/inner_appearance = mutable_appearance(sprite_datum.icon, inner_icon_state, layer = -image_layer)
+
+		if(ishuman(owner))
+			var/mob/living/carbon/human/H = owner
+			switch(sprite_datum.inner_color_src)
+				if(MUTCOLORS)
+					if(H.dna.species.fixed_mut_color)
+						inner_appearance.color = H.dna.species.fixed_mut_color
+					else
+						inner_appearance.color = H.dna.features["mcolor"]
+				if(HAIR)
+					if(H.dna.species.hair_color == "mutcolor")
+						inner_appearance.color = H.dna.features["mcolor"]
+					else if(H.dna.species.hair_color == "fixedmutcolor")
+						inner_appearance.color = H.dna.species.fixed_mut_color
+					else
+						inner_appearance.color = H.hair_color
+				if(FACEHAIR)
+					inner_appearance.color = H.facial_hair_color
+				if(EYECOLOR)
+					inner_appearance.color = H.eye_color_left
+
+		if(sprite_datum.center)
+			inner_appearance = center_image(inner_appearance, sprite_datum.dimension_x, sprite_datum.dimension_y)
+
+		overlay_list += inner_appearance
+
 /obj/item/organ/external/proc/set_sprite(sprite_name)
 	stored_feature_id = sprite_name
 	sprite_datum = get_sprite_datum(sprite_name)
@@ -223,6 +252,11 @@
 				return
 			var/mob/living/carbon/human/human_owner = ownerlimb.owner
 			draw_color = human_owner.hair_color
+		if(ORGAN_COLOR_FACIALHAIR)
+			if(!ishuman(ownerlimb.owner))
+				return
+			var/mob/living/carbon/human/human_owner = ownerlimb.owner
+			draw_color = human_owner.facial_hair_color
 	color = draw_color
 	return TRUE
 
@@ -279,6 +313,8 @@
 	feature_key = "snout"
 	preference = "feature_lizard_snout"
 	external_bodytypes = BODYTYPE_SNOUTED
+
+	color_source = ORGAN_COLOR_FACIALHAIR
 
 	dna_block = DNA_SNOUT_BLOCK
 

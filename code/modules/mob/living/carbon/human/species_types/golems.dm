@@ -22,7 +22,7 @@
 	mutant_organs = list(/obj/item/organ/internal/adamantine_resonator)
 	mutanttongue = /obj/item/organ/internal/vocal_cords/adamantine
 	speedmod = 2
-	payday_modifier = 0.75
+	payday_modifier = 1.0
 	armor = 55
 	siemens_coeff = 0
 	punchdamagelow = 5

@@ -8,8 +8,9 @@
 	slot = ORGAN_SLOT_HEART
 
 	healing_factor = STANDARD_ORGAN_HEALING
-	decay_factor = 2.5 * STANDARD_ORGAN_DECAY //designed to fail around 6 minutes after death
-
+	//decay_factor = 2.5 * STANDARD_ORGAN_DECAY //designed to fail around 6 minutes after death
+	decay_factor = STANDARD_ORGAN_DECAY * 0.75 //20 minutes
+	
 	low_threshold_passed = "<span class='info'>Prickles of pain appear then die out from within your chest...</span>"
 	high_threshold_passed = "<span class='warning'>Something inside your chest hurts, and the pain isn't subsiding. You notice yourself breathing far faster than before.</span>"
 	now_fixed = "<span class='info'>Your heart begins to beat again.</span>"

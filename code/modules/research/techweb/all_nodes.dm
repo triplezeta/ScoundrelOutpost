@@ -385,8 +385,6 @@
 	design_ids = list(
 		"deepfryer",
 		"dish_drive",
-		"fat_sucker",
-		"gibber",
 		"gibber",
 		"griddle",
 		"microwave",

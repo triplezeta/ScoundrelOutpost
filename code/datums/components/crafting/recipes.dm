@@ -140,35 +140,6 @@
 	category= CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
-/datum/crafting_recipe/tailclub
-	name = "Tail Club"
-	result = /obj/item/tailclub
-	reqs = list(/obj/item/organ/external/tail/lizard = 1,
-				/obj/item/stack/sheet/iron = 1)
-	blacklist = list(/obj/item/organ/external/tail/lizard/fake)
-	time = 40
-	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
-
-/datum/crafting_recipe/tailwhip
-	name = "Liz O' Nine Tails"
-	result = /obj/item/melee/chainofcommand/tailwhip
-	reqs = list(/obj/item/organ/external/tail/lizard = 1,
-				/obj/item/stack/cable_coil = 1)
-	blacklist = list(/obj/item/organ/external/tail/lizard/fake)
-	time = 40
-	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
-
-/datum/crafting_recipe/catwhip
-	name = "Cat O' Nine Tails"
-	result = /obj/item/melee/chainofcommand/tailwhip/kitty
-	reqs = list(/obj/item/organ/external/tail/cat = 1,
-				/obj/item/stack/cable_coil = 1)
-	time = 40
-	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
-
 /datum/crafting_recipe/reciever
 	name = "Modular Rifle Reciever"
 	tool_behaviors = list(TOOL_WRENCH, TOOL_WELDER, TOOL_SAW)
@@ -631,20 +602,6 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
-/datum/crafting_recipe/lizardhat
-	name = "Lizard Cloche Hat"
-	result = /obj/item/clothing/head/lizard
-	time = 10
-	reqs = list(/obj/item/organ/external/tail/lizard = 1)
-	category = CAT_CLOTHING
-
-/datum/crafting_recipe/lizardhat_alternate
-	name = "Lizard Cloche Hat"
-	result = /obj/item/clothing/head/lizard
-	time = 10
-	reqs = list(/obj/item/stack/sheet/animalhide/lizard = 1)
-	category = CAT_CLOTHING
-
 /datum/crafting_recipe/kittyears
 	name = "Kitty Ears"
 	result = /obj/item/clothing/head/kitty/genuine
@@ -652,7 +609,6 @@
 	reqs = list(/obj/item/organ/external/tail/cat = 1,
 				/obj/item/organ/internal/ears/cat = 1)
 	category = CAT_CLOTHING
-
 
 /datum/crafting_recipe/radiogloves
 	name = "Radio Gloves"

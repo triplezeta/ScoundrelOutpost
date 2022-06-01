@@ -1149,7 +1149,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 			target.throw_alert(alert_type, /atom/movable/screen/alert/too_much_plas, override = TRUE)
 		if(ALERT_NUTRITION)
 			if(prob(50))
-				target.throw_alert(alert_type, /atom/movable/screen/alert/fat, override = TRUE)
+				target.throw_alert(alert_type, /atom/movable/screen/alert/hungry, override = TRUE)
 			else
 				target.throw_alert(alert_type, /atom/movable/screen/alert/starving, override = TRUE)
 		if(ALERT_GRAVITY)

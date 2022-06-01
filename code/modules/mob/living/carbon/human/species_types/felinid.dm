@@ -15,7 +15,7 @@
 	disliked_food = GROSS | CLOTH | RAW
 	liked_food = SEAFOOD | ORANGES | BUGS
 	var/original_felinid = TRUE //set to false for felinids created by mass-purrbation
-	payday_modifier = 0.75
+	payday_modifier = 1.0
 	ass_image = 'icons/ass/asscat.png'
 	family_heirlooms = list(/obj/item/toy/cattoy)
 	examine_limb_id = SPECIES_HUMAN

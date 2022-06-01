@@ -1,3 +1,7 @@
+#define LOWPOP_ACCESS_THIEF_COUNT 15
+#define MIDPOP_ACCESS_THIEF_COUNT 25
+
+#define LOWPOP_CORPSE_THIEF_COUNT 20
 
 GLOBAL_LIST_INIT(hoarder_targets, list(
 	/obj/item/clothing/gloves/color/yellow,
@@ -55,7 +59,11 @@ GLOBAL_LIST_INIT(hoarder_targets, list(
 	amount = 5 //little less, bodies are hard when you can't kill like antags
 
 /datum/objective/hoarder/bodies/find_target(dupe_search_range, blacklist)
-	amount = rand(amount - 2, amount + 2)
+	switch(GLOB.joined_player_list.len)
+		if(0 to LOWPOP_CORPSE_THIEF_COUNT)
+			amount = 3
+		else
+			amount = rand(amount - 2, amount + 2)
 	target_type = /mob/living/carbon/human
 	add_action()
 
@@ -119,7 +127,14 @@ GLOBAL_LIST_INIT(hoarder_targets, list(
 	var/amount = 8
 
 /datum/objective/all_access/find_target(dupe_search_range, blacklist)
-	amount = rand(amount - 2, amount + 2)
+	switch(GLOB.joined_player_list.len)
+		if(0 to LOWPOP_ACCESS_THIEF_COUNT)
+			amount = 4
+		if((LOWPOP_ACCESS_THIEF_COUNT + 1) to MIDPOP_ACCESS_THIEF_COUNT)
+			amount = 5
+			amount = rand(amount - 1, amount + 1)
+		else
+			amount = rand(amount - 2, amount + 2)
 
 /datum/objective/all_access/check_completion()
 	. = ..()
@@ -140,3 +155,7 @@ GLOBAL_LIST_INIT(hoarder_targets, list(
 
 /datum/objective/all_access/update_explanation_text()
 	explanation_text = "Steal at least [amount] unique ID cards from other registered crewmembers. It's not enough to swipe replacement ID cards that were created and assigned while on the station, you need to swipe IDs that other crewmembers were initially issued!"
+
+#undef LOWPOP_ACCESS_THIEF_COUNT
+#undef MIDPOP_ACCESS_THIEF_COUNT
+#undef LOWPOP_CORPSE_THIEF_COUNT

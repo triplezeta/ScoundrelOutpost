@@ -25,7 +25,7 @@
 	burnmod = 1.5
 	heatmod = 1.5
 	brutemod = 1.5
-	payday_modifier = 0.75
+	payday_modifier = 1.0
 	breathid = "plas"
 	damage_overlay_type = ""//let's not show bloody wounds or burns over bones.
 	disliked_food = FRUIT | CLOTH

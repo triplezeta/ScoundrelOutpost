@@ -713,13 +713,6 @@
 		/obj/item/stack/cable_coil = 1,
 		/obj/item/stack/sheet/glass = 4)
 
-/obj/item/circuitboard/machine/fat_sucker
-	name = "Lipid Extractor (Machine Board)"
-	greyscale_colors = CIRCUIT_COLOR_MEDICAL
-	build_path = /obj/machinery/fat_sucker
-	req_components = list(/obj/item/stock_parts/micro_laser = 1,
-		/obj/item/kitchen/fork = 1)
-
 /obj/item/circuitboard/machine/harvester
 	name = "Harvester (Machine Board)"
 	greyscale_colors = CIRCUIT_COLOR_MEDICAL
