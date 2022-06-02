@@ -186,24 +186,6 @@
 "aI" = (
 /turf/open/floor/mineral/plastitanium/red/brig,
 /area/shuttle/escape/brig)
-"aJ" = (
-/obj/machinery/door/airlock/public/glass{
-	name = "Emergency Shuttle Brig"
-	},
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
-	dir = 1
-	},
-/obj/effect/mapping_helpers/airlock/access/all/security/brig,
-/turf/open/floor/iron,
-/area/shuttle/escape/brig)
-"aK" = (
-/obj/machinery/door/airlock/titanium{
-	name = "Emergency Shuttle Airlock"
-	},
-/obj/effect/mapping_helpers/airlock/access/all/security/brig,
-/turf/open/floor/mineral/plastitanium/red/brig,
-/area/shuttle/escape/brig)
 "aL" = (
 /obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/mineral/plastitanium/red/brig,
@@ -244,16 +226,6 @@
 /obj/structure/table/wood/shuttle_bar{
 	boot_dir = 8
 	},
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
-	dir = 1
-	},
-/turf/open/floor/iron,
-/area/shuttle/escape)
-"aS" = (
-/obj/structure/extinguisher_cabinet/directional/east,
-/obj/structure/table,
-/obj/item/storage/box/drinkingglasses,
 /obj/effect/turf_decal/tile/bar,
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
@@ -613,6 +585,17 @@
 /obj/machinery/stasis,
 /turf/open/floor/mineral/titanium,
 /area/shuttle/escape)
+"da" = (
+/obj/machinery/door/airlock/public/glass{
+	name = "Emergency Shuttle Brig"
+	},
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/airlock/access/all/security/general,
+/turf/open/floor/iron,
+/area/shuttle/escape/brig)
 "en" = (
 /obj/structure/chair/stool/bar/directional/west{
 	can_buckle = 1;
@@ -624,6 +607,23 @@
 	},
 /turf/open/floor/iron,
 /area/shuttle/escape)
+"ib" = (
+/obj/structure/extinguisher_cabinet/directional/east,
+/obj/structure/table,
+/obj/item/storage/box/drinkingglasses,
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/turf/open/floor/iron,
+/area/shuttle/escape)
+"zT" = (
+/obj/machinery/door/airlock/titanium{
+	name = "Emergency Shuttle Airlock"
+	},
+/obj/effect/mapping_helpers/airlock/access/all/security/general,
+/turf/open/floor/mineral/plastitanium/red/brig,
+/area/shuttle/escape/brig)
 "EL" = (
 /obj/effect/turf_decal/tile/bar,
 /obj/effect/turf_decal/tile/bar{
@@ -641,7 +641,7 @@ aa
 ab
 ab
 ab
-aK
+zT
 ab
 aT
 ab
@@ -736,7 +736,7 @@ an
 as
 ab
 ac
-aJ
+da
 ac
 ae
 aE
@@ -858,7 +858,7 @@ ab
 aG
 bW
 bI
-aS
+ib
 ad
 aY
 aj
