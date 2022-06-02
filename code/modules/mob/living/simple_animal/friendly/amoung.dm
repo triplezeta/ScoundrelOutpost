@@ -104,3 +104,68 @@
 	icon_living = "amoung_lime"
 	icon_dead = "amoung_lime_dead"
 
+	//amoung pequeño amoung pequeño amoung pequeño amoung pequeño amoung pequeño
+	//amoung pequeño amoung pequeño amoung pequeño amoung pequeño amoung pequeño
+
+/mob/living/simple_animal/amoung/p
+	name = "amoung pequeño"
+	desc = "What a sooooo small creature. Probably harmless?"
+	icon_state = "ap_red"
+	icon_living = "ap_red"
+	icon_dead = "ap_red_dead"
+
+/mob/living/simple_animal/amoung/p/blue
+	icon_state = "ap_blue"
+	icon_living = "ap_blue"
+	icon_dead = "ap_blue_dead"
+
+/mob/living/simple_animal/amoung/p/green
+	icon_state = "ap_green"
+	icon_living = "ap_green"
+	icon_dead = "ap_green_dead"
+
+/mob/living/simple_animal/amoung/p/pink
+	icon_state = "ap_pink"
+	icon_living = "ap_pink"
+	icon_dead = "ap_pink_dead"
+
+/mob/living/simple_animal/amoung/p/orange
+	icon_state = "ap_orange"
+	icon_living = "ap_orange"
+	icon_dead = "ap_orange_dead"
+
+/mob/living/simple_animal/amoung/p/yellow
+	icon_state = "ap_yellow"
+	icon_living = "ap_yellow"
+	icon_dead = "ap_yellow_dead"
+
+/mob/living/simple_animal/amoung/p/black
+	icon_state = "ap_black"
+	icon_living = "ap_black"
+	icon_dead = "ap_black_dead"
+
+/mob/living/simple_animal/amoung/p/white
+	icon_state = "ap_white"
+	icon_living = "ap_white"
+	icon_dead = "ap_white_dead"
+
+/mob/living/simple_animal/amoung/p/purple
+	icon_state = "ap_purple"
+	icon_living = "ap_purple"
+	icon_dead = "ap_purple_dead"
+
+/mob/living/simple_animal/amoung/p/brown
+	icon_state = "ap_brown"
+	icon_living = "ap_brown"
+	icon_dead = "ap_brown_dead"
+
+/mob/living/simple_animal/amoung/p/cyan
+	icon_state = "ap_cyan"
+	icon_living = "ap_cyan"
+	icon_dead = "ap_cyan_dead"
+
+/mob/living/simple_animal/amoung/p/lime
+	icon_state = "ap_lime"
+	icon_living = "ap_lime"
+	icon_dead = "ap_lime_dead"
+
