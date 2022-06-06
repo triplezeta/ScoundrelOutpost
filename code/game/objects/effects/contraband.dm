@@ -700,7 +700,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/official/random, 32)
 
 /obj/structure/sign/poster/official/no_erp
 	name = "No ERP"
-	desc = "This poster reminds the crew that Eroticism, Rape and Pornography are banned on Nanotrasen stations."
+	desc = "This poster reminds the crew that Eroticism, Raunchiness and Pornography are banned on Nanotrasen stations."
 	icon_state = "no_erp"
 
 /obj/structure/sign/poster/official/wtf_is_co2

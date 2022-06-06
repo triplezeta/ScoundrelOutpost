@@ -189,7 +189,7 @@
 	.=..()
 	clownmask_designs = list(
 		"True Form" = image(icon = src.icon, icon_state = "clown"),
-		"The Feminist" = image(icon = src.icon, icon_state = "sexyclown"),
+		"Sexy Clown" = image(icon = src.icon, icon_state = "sexyclown"),
 		"The Jester" = image(icon = src.icon, icon_state = "chaos"),
 		"The Madman" = image(icon = src.icon, icon_state = "joker"),
 		"The Rainbow Color" = image(icon = src.icon, icon_state = "rainbow")
@@ -202,7 +202,7 @@
 
 	var/list/options = list()
 	options["True Form"] = "clown"
-	options["The Feminist"] = "sexyclown"
+	options["Sexy Clown"] = "sexyclown"
 	options["The Madman"] = "joker"
 	options["The Rainbow Color"] ="rainbow"
 	options["The Jester"] ="chaos" //Nepeta33Leijon is holding me captive and forced me to help with this please send help
