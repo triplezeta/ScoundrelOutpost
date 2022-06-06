@@ -59,7 +59,24 @@ GLOBAL_LIST_INIT(hoarder_targets, list(
 	amount = 5 //little less, bodies are hard when you can't kill like antags
 
 /datum/objective/hoarder/bodies/find_target(dupe_search_range, blacklist)
-	switch(get_crewmember_minds().len)
+	var/list/possible_targets = list()
+	for(var/datum/mind/possible_target as anything in get_crewmember_minds())
+		var/target_area = get_area(possible_target.current)
+		if(possible_target == owner)
+			continue
+		if(!ishuman(possible_target.current))
+			continue
+		if(possible_target.current.stat == DEAD)
+			continue
+		if(!is_unique_objective(possible_target,dupe_search_range))
+			continue
+		if(!HAS_TRAIT(SSstation, STATION_TRAIT_LATE_ARRIVALS) && istype(target_area, /area/shuttle/arrival))
+			continue
+		if(possible_target in blacklist)
+			continue
+		possible_targets += possible_target
+
+	switch(possible_targets.len)
 		if(0 to LOWPOP_CORPSE_THIEF_COUNT)
 			amount = 3
 		else
