@@ -3935,6 +3935,26 @@
 /obj/effect/decal/cleanable/plasma,
 /turf/open/misc/asteroid/snow/snow_cabin,
 /area/awaymission/cabin/caves)
+"wt" = (
+/obj/effect/decal/cleanable/glitter/blue{
+	desc = "It looks like fancy glitter to me.";
+	name = "icy wind"
+	},
+/mob/living/simple_animal/hostile/netherworld/statue{
+	desc = "Just a snowman. Just a snowman. Oh god, it's just a snowman.";
+	faction = list("statue","mining");
+	health = 5000;
+	icon_dead = "snowman";
+	icon_living = "snowman";
+	icon_state = "snowman";
+	loot = list(/obj/item/dnainjector/geladikinesis);
+	maxHealth = 5000;
+	melee_damage_lower = 65;
+	melee_damage_upper = 65;
+	name = "Frosty"
+	},
+/turf/open/misc/asteroid/snow/snow_cabin,
+/area/awaymission/cabin/caves)
 "wI" = (
 /obj/item/toy/figure/borg{
 	desc = "The robot that was manufactured just for this exploration team.";
@@ -4039,17 +4059,6 @@
 /obj/structure/table,
 /turf/open/floor/iron/dark,
 /area/awaymission/cabin/caves/mountain)
-"yy" = (
-/obj/item/shovel{
-	desc = "A large tool for digging and moving snow.";
-	force = 10;
-	name = "snow shovel"
-	},
-/obj/effect/decal/remains/human{
-	color = "#72e4fa"
-	},
-/turf/open/misc/asteroid/snow/snow_cabin,
-/area/awaymission/cabin/caves)
 "yJ" = (
 /obj/structure/sign/poster/contraband/free_drone{
 	desc = "This poster seems to be meant for a bunch of machines that used to be deployed on space stations."
@@ -4291,6 +4300,17 @@
 /area/awaymission/cabin/caves)
 "GO" = (
 /obj/structure/barricade/wooden/snowed,
+/turf/open/misc/asteroid/snow/snow_cabin,
+/area/awaymission/cabin/caves)
+"Ha" = (
+/obj/item/shovel{
+	desc = "A large tool for digging and moving snow.";
+	force = 10;
+	name = "snow shovel"
+	},
+/obj/effect/decal/remains/human{
+	color = "#72e4fa"
+	},
 /turf/open/misc/asteroid/snow/snow_cabin,
 /area/awaymission/cabin/caves)
 "Hn" = (
@@ -4645,26 +4665,6 @@
 "RC" = (
 /turf/open/misc/asteroid/snow/snow_cabin,
 /area/awaymission/cabin/snowforest)
-"RD" = (
-/obj/effect/decal/cleanable/glitter/blue{
-	desc = "It looks like fancy glitter to me.";
-	name = "icy wind"
-	},
-/mob/living/simple_animal/hostile/statue{
-	desc = "Just a snowman. Just a snowman. Oh god, it's just a snowman.";
-	faction = list("statue","mining");
-	health = 5000;
-	icon_dead = "snowman";
-	icon_living = "snowman";
-	icon_state = "snowman";
-	loot = list(/obj/item/dnainjector/geladikinesis);
-	maxHealth = 5000;
-	melee_damage_lower = 65;
-	melee_damage_upper = 65;
-	name = "Frosty"
-	},
-/turf/open/misc/asteroid/snow/snow_cabin,
-/area/awaymission/cabin/caves)
 "RL" = (
 /obj/item/toy/figure/dsquad{
 	desc = "The muscle behind the exploration team. May or may not be a secret soldier depending on the mood of Nanotrasen following their own lore.";
@@ -45133,7 +45133,7 @@ gx
 PV
 Oe
 Oe
-yy
+Ha
 Oe
 Oe
 Oe
@@ -51408,7 +51408,7 @@ gx
 gx
 Dw
 TU
-RD
+wt
 Po
 SS
 gx

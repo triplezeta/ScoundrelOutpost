@@ -90,7 +90,8 @@
 		"hawk" = FALSE,
 		"lizard" = FALSE,
 		"duffel" = TRUE,
-		"amoung" = FALSE
+		"amoung" = FALSE,
+		"crow" = TRUE
 	)
 
 	var/emitterhealth = 20
