@@ -20,10 +20,6 @@
 	high_threshold_cleared = "<span class='info'>Your vision functions passably once more.</span>"
 	low_threshold_cleared = "<span class='info'>Your vision is cleared of any ailment.</span>"
 
-	// tags to allow wearing eyes as glasses
-	slot_flags = ITEM_SLOT_EYES
-	flags_cover = GLASSESCOVERSEYES
-
 	var/sight_flags = 0
 	/// changes how the eyes overlay is applied, makes it apply over the lighting layer
 	var/overlay_ignore_lighting = FALSE
@@ -40,6 +36,22 @@
 	var/no_glasses
 	/// indication that the eyes are undergoing some negative effect
 	var/damaged = FALSE
+
+	// tags to allow wearing eyes as glasses
+	slot_flags = ITEM_SLOT_EYES
+	flags_cover = GLASSESCOVERSEYES
+	worn_icon_state = "eyeglasses"
+	var/vision_flags = 0
+	var/darkness_view = 2 // Base human is 2
+	var/invis_view = SEE_INVISIBLE_LIVING // Admin only for now
+	/// Override to allow glasses to set higher than normal see_invis
+	var/invis_override = 0
+	/// Does wearing these glasses correct some of our vision defects?
+	var/vision_correction = TRUE
+	/// Colors your vision when worn
+	var/glass_colour_type
+	/// Whether or not vision coloring is forcing
+	var/forced_glass_color = FALSE
 
 /obj/item/organ/internal/eyes/Insert(mob/living/carbon/eye_owner, special = FALSE, drop_if_replaced = FALSE, initialising)
 	. = ..()
