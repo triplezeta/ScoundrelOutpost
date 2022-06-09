@@ -290,7 +290,7 @@
 
 /obj/item/reagent_containers/hypospray/medipen/pumpup
 	name = "maintenance pump-up"
-	desc = "A ghetto looking autoinjector filled with a cheap adrenaline shot... Great for shrugging off the effects of stunbatons."
+	desc = "An improvised autoinjector filled with a cheap adrenaline shot... Great for shrugging off the effects of stunbatons."
 	volume = 15
 	amount_per_transfer_from_this = 15
 	list_reagents = list(/datum/reagent/drug/pumpup = 15)
