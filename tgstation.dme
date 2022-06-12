@@ -4509,4 +4509,5 @@
 #include "interface\stylesheet.dm"
 #include "interface\skin.dmf"
 #include "orbstation\antagonists\traitor\objectives\double_cross.dm"
+#include "orbstation\Chaplain\ratlain.dm"
 // END_INCLUDE
