@@ -9,12 +9,8 @@
 	name = "Assassinate another traitor, and plant a calling card"
 	description = "The Syndicate is looking to get rid of its weakest links. Use your codewords to gain another traitor's trust, asssinate them, and plant a calling card in their pockets."
 
-	progression_minimum = 30 MINUTES
-
-	progression_reward = list(12 MINUTES, 14 MINUTES) // big reward as an incentive
+	progression_reward = 20 MINUTES // big reward as an incentive
 	telecrystal_reward = list(1, 2) // you can also steal the other traitor's equipment if you want
-
-	// maximum_objectives_in_period = 3
 
 	card_type = /obj/item/paper/calling_card/double_cross
 
