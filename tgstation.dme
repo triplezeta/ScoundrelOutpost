@@ -4528,4 +4528,6 @@
 #include "interface\skin.dmf"
 #include "orbstation\antagonists\traitor\objectives\double_cross.dm"
 #include "orbstation\Chaplain\ratlain.dm"
+#include "orbstation\clothing\misc.dm"
+#include "orbstation\datums\components\crafting\recipes.dm"
 // END_INCLUDE
