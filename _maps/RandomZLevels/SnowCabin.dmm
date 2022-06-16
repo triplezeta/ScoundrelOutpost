@@ -181,14 +181,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/awaymission/cabin)
-"aE" = (
-/obj/effect/decal/cleanable/cobweb/cobweb2,
-/obj/effect/baseturf_helper/asteroid/snow,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating{
-	icon_state = "panelscorched"
-	},
-/area/awaymission/cabin)
 "aF" = (
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable,
@@ -231,16 +223,6 @@
 "aL" = (
 /turf/open/floor/plating,
 /area/awaymission/cabin)
-"aM" = (
-/obj/machinery/power/terminal{
-	dir = 1
-	},
-/obj/structure/cable,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating{
-	icon_state = "panelscorched"
-	},
-/area/awaymission/cabin)
 "aN" = (
 /obj/structure/chair/wood{
 	dir = 4
@@ -260,21 +242,6 @@
 	name = "free refill dispenser"
 	},
 /turf/open/floor/carpet,
-/area/awaymission/cabin)
-"aQ" = (
-/obj/structure{
-	anchored = 1;
-	density = 1;
-	desc = "Generates power from lava!";
-	dir = 1;
-	icon = 'icons/obj/atmospherics/pipes/simple.dmi';
-	icon_state = "compressor";
-	name = "geothermal generator"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating{
-	icon_state = "panelscorched"
-	},
 /area/awaymission/cabin)
 "aR" = (
 /obj/machinery/door/window/right/directional/west{
@@ -857,12 +824,6 @@
 	},
 /turf/open/floor/plating,
 /area/awaymission/cabin)
-"cT" = (
-/obj/vehicle/ridden/atv,
-/turf/open/floor/plating{
-	icon_state = "platingdmg3"
-	},
-/area/awaymission/cabin)
 "cU" = (
 /obj/machinery/light/directional/north,
 /turf/open/floor/plating,
@@ -870,18 +831,6 @@
 "cV" = (
 /obj/vehicle/ridden/atv,
 /turf/open/floor/plating,
-/area/awaymission/cabin)
-"cW" = (
-/obj/item/shovel,
-/turf/open/floor/plating{
-	icon_state = "platingdmg3"
-	},
-/area/awaymission/cabin)
-"cX" = (
-/obj/structure/reagent_dispensers/fueltank,
-/turf/open/floor/plating{
-	icon_state = "platingdmg1"
-	},
 /area/awaymission/cabin)
 "cZ" = (
 /turf/open/floor/plating/snowed/snow_cabin,
@@ -992,28 +941,6 @@
 /obj/structure/closet/secure_closet/freezer/fridge/open,
 /obj/item/reagent_containers/food/condiment/mayonnaise,
 /turf/open/floor/iron/freezer,
-/area/awaymission/cabin)
-"du" = (
-/obj/structure/cable,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating{
-	icon_state = "panelscorched"
-	},
-/area/awaymission/cabin)
-"dv" = (
-/obj/structure{
-	anchored = 1;
-	density = 1;
-	desc = "Generates power from lava!";
-	icon = 'icons/obj/atmospherics/pipes/simple.dmi';
-	icon_state = "turbine";
-	name = "geothermal generator"
-	},
-/obj/structure/cable,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating{
-	icon_state = "panelscorched"
-	},
 /area/awaymission/cabin)
 "dw" = (
 /mob/living/simple_animal/hostile/bear/snow{
@@ -1159,12 +1086,6 @@
 /obj/item/clothing/suit/hooded/wintercoat,
 /obj/item/clothing/suit/hooded/wintercoat,
 /turf/open/floor/plating,
-/area/awaymission/cabin)
-"ec" = (
-/obj/machinery/light/directional/south,
-/turf/open/floor/plating{
-	icon_state = "panelscorched"
-	},
 /area/awaymission/cabin)
 "ed" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2220,15 +2141,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/awaymission/cabin)
-"hw" = (
-/obj/structure/closet/toolcloset,
-/obj/item/lightreplacer,
-/obj/item/storage/toolbox/mechanical,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating{
-	icon_state = "panelscorched"
-	},
-/area/awaymission/cabin)
 "hx" = (
 /obj/structure/cable,
 /obj/machinery/door/airlock/wood{
@@ -3037,36 +2949,6 @@
 /obj/item/bedsheet/dorms,
 /turf/open/floor/wood,
 /area/awaymission/cabin/caves)
-"ko" = (
-/turf/open/floor/wood/freezing{
-	icon_state = "wood-broken"
-	},
-/area/awaymission/cabin/caves)
-"kp" = (
-/turf/open/floor/wood/freezing{
-	icon_state = "wood-broken4"
-	},
-/area/awaymission/cabin/caves)
-"kq" = (
-/turf/open/floor/wood/freezing{
-	icon_state = "wood-broken5"
-	},
-/area/awaymission/cabin/caves)
-"kr" = (
-/turf/open/floor/wood/freezing{
-	icon_state = "wood-broken3"
-	},
-/area/awaymission/cabin/caves)
-"ks" = (
-/turf/open/floor/wood/freezing{
-	icon_state = "wood-broken2"
-	},
-/area/awaymission/cabin/caves)
-"ku" = (
-/turf/open/floor/wood/freezing{
-	icon_state = "wood-broken7"
-	},
-/area/awaymission/cabin/caves)
 "kE" = (
 /obj/structure/closet,
 /obj/item/clothing/suit/hooded/wintercoat,
@@ -3481,6 +3363,11 @@
 /obj/effect/baseturf_helper/asteroid/snow,
 /turf/closed/wall/ice,
 /area/awaymission/cabin/caves)
+"ng" = (
+/obj/item/shovel,
+/obj/effect/mapping_helpers/broken_floor,
+/turf/open/floor/plating,
+/area/awaymission/cabin)
 "nh" = (
 /obj/effect/turf_decal/weather/snow/corner,
 /turf/open/floor/plating/snowed/snow_cabin,
@@ -3570,6 +3457,11 @@
 	},
 /turf/open/misc/asteroid/snow/snow_cabin,
 /area/awaymission/cabin/snowforest)
+"nI" = (
+/obj/vehicle/ridden/atv,
+/obj/effect/mapping_helpers/broken_floor,
+/turf/open/floor/plating,
+/area/awaymission/cabin)
 "nJ" = (
 /obj/effect/turf_decal/stripes/red/line,
 /obj/structure/barricade/wooden/snowed,
@@ -3654,6 +3546,17 @@
 	},
 /turf/closed/wall/mineral/wood,
 /area/awaymission/cabin/lumbermill)
+"pt" = (
+/obj/item/shovel{
+	desc = "A large tool for digging and moving snow.";
+	force = 10;
+	name = "snow shovel"
+	},
+/obj/effect/decal/remains/human{
+	color = "#72e4fa"
+	},
+/turf/open/misc/asteroid/snow/snow_cabin,
+/area/awaymission/cabin/caves)
 "pu" = (
 /obj/item/grenade/barrier{
 	pixel_x = -14;
@@ -3935,26 +3838,11 @@
 /obj/effect/decal/cleanable/plasma,
 /turf/open/misc/asteroid/snow/snow_cabin,
 /area/awaymission/cabin/caves)
-"wt" = (
-/obj/effect/decal/cleanable/glitter/blue{
-	desc = "It looks like fancy glitter to me.";
-	name = "icy wind"
-	},
-/mob/living/simple_animal/hostile/netherworld/statue{
-	desc = "Just a snowman. Just a snowman. Oh god, it's just a snowman.";
-	faction = list("statue","mining");
-	health = 5000;
-	icon_dead = "snowman";
-	icon_living = "snowman";
-	icon_state = "snowman";
-	loot = list(/obj/item/dnainjector/geladikinesis);
-	maxHealth = 5000;
-	melee_damage_lower = 65;
-	melee_damage_upper = 65;
-	name = "Frosty"
-	},
-/turf/open/misc/asteroid/snow/snow_cabin,
-/area/awaymission/cabin/caves)
+"vO" = (
+/obj/machinery/light/directional/south,
+/obj/effect/mapping_helpers/burnt_floor,
+/turf/open/floor/plating,
+/area/awaymission/cabin)
 "wI" = (
 /obj/item/toy/figure/borg{
 	desc = "The robot that was manufactured just for this exploration team.";
@@ -4066,6 +3954,10 @@
 /obj/effect/turf_decal/tile/blue/fourcorners,
 /turf/open/indestructible,
 /area/awaymission/cabin/caves/mountain)
+"yP" = (
+/obj/effect/mapping_helpers/broken_floor,
+/turf/open/floor/wood/freezing,
+/area/awaymission/cabin/caves)
 "yR" = (
 /obj/structure/table/reinforced,
 /obj/item/modular_computer/tablet/pda/syndicate{
@@ -4190,6 +4082,13 @@
 	},
 /turf/open/misc/asteroid/snow/snow_cabin,
 /area/awaymission/cabin/caves)
+"AR" = (
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/effect/baseturf_helper/asteroid/snow,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/mapping_helpers/burnt_floor,
+/turf/open/floor/plating,
+/area/awaymission/cabin)
 "BR" = (
 /mob/living/simple_animal/hostile/skeleton/ice{
 	desc = "A reanimated skeleton covered in thick sheet of natural ice. It is obvious to tell that they look really slow.";
@@ -4251,6 +4150,34 @@
 	slowdown = 0
 	},
 /area/awaymission/cabin/caves)
+"DP" = (
+/obj/structure{
+	anchored = 1;
+	density = 1;
+	desc = "Generates power from lava!";
+	icon = 'icons/obj/atmospherics/pipes/simple.dmi';
+	icon_state = "turbine";
+	name = "geothermal generator"
+	},
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/mapping_helpers/burnt_floor,
+/turf/open/floor/plating,
+/area/awaymission/cabin)
+"DT" = (
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/mapping_helpers/burnt_floor,
+/turf/open/floor/plating,
+/area/awaymission/cabin)
+"DW" = (
+/obj/structure/reagent_dispensers/fueltank,
+/obj/effect/mapping_helpers/broken_floor,
+/turf/open/floor/plating,
+/area/awaymission/cabin)
 "Fq" = (
 /obj/effect/turf_decal/tile/blue/fourcorners,
 /obj/structure/sign/poster/official/space_cops{
@@ -4300,17 +4227,6 @@
 /area/awaymission/cabin/caves)
 "GO" = (
 /obj/structure/barricade/wooden/snowed,
-/turf/open/misc/asteroid/snow/snow_cabin,
-/area/awaymission/cabin/caves)
-"Ha" = (
-/obj/item/shovel{
-	desc = "A large tool for digging and moving snow.";
-	force = 10;
-	name = "snow shovel"
-	},
-/obj/effect/decal/remains/human{
-	color = "#72e4fa"
-	},
 /turf/open/misc/asteroid/snow/snow_cabin,
 /area/awaymission/cabin/caves)
 "Hn" = (
@@ -4526,6 +4442,14 @@
 	},
 /turf/open/floor/wood,
 /area/awaymission/cabin)
+"NY" = (
+/obj/structure/closet/toolcloset,
+/obj/item/lightreplacer,
+/obj/item/storage/toolbox/mechanical,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/mapping_helpers/burnt_floor,
+/turf/open/floor/plating,
+/area/awaymission/cabin)
 "Oe" = (
 /turf/open/misc/asteroid/snow/snow_cabin,
 /area/awaymission/cabin/caves)
@@ -4665,6 +4589,26 @@
 "RC" = (
 /turf/open/misc/asteroid/snow/snow_cabin,
 /area/awaymission/cabin/snowforest)
+"RD" = (
+/obj/effect/decal/cleanable/glitter/blue{
+	desc = "It looks like fancy glitter to me.";
+	name = "icy wind"
+	},
+/mob/living/simple_animal/hostile/netherworld/statue{
+	desc = "Just a snowman. Just a snowman. Oh god, it's just a snowman.";
+	faction = list("statue","mining");
+	health = 5000;
+	icon_dead = "snowman";
+	icon_living = "snowman";
+	icon_state = "snowman";
+	loot = list(/obj/item/dnainjector/geladikinesis);
+	maxHealth = 5000;
+	melee_damage_lower = 65;
+	melee_damage_upper = 65;
+	name = "Frosty"
+	},
+/turf/open/misc/asteroid/snow/snow_cabin,
+/area/awaymission/cabin/caves)
 "RL" = (
 /obj/item/toy/figure/dsquad{
 	desc = "The muscle behind the exploration team. May or may not be a secret soldier depending on the mood of Nanotrasen following their own lore.";
@@ -4704,6 +4648,12 @@
 	name = "shutter button"
 	},
 /turf/open/floor/wood,
+/area/awaymission/cabin)
+"Ss" = (
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/mapping_helpers/burnt_floor,
+/turf/open/floor/plating,
 /area/awaymission/cabin)
 "SQ" = (
 /obj/structure/table/wood,
@@ -4949,6 +4899,20 @@
 	},
 /turf/open/floor/iron/dark,
 /area/awaymission/cabin/caves/mountain)
+"XA" = (
+/obj/structure{
+	anchored = 1;
+	density = 1;
+	desc = "Generates power from lava!";
+	dir = 1;
+	icon = 'icons/obj/atmospherics/pipes/simple.dmi';
+	icon_state = "compressor";
+	name = "geothermal generator"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/mapping_helpers/burnt_floor,
+/turf/open/floor/plating,
+/area/awaymission/cabin)
 "XO" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/item/shovel,
@@ -20995,8 +20959,8 @@ Oe
 Oe
 ki
 ki
-kq
-ks
+yP
+yP
 ki
 ki
 ki
@@ -21250,12 +21214,12 @@ ab
 Oe
 Oe
 Oe
-ko
+yP
 ki
 ki
 ki
 ki
-ku
+yP
 ki
 Oe
 Oe
@@ -24850,7 +24814,7 @@ ki
 ki
 ki
 ki
-kr
+yP
 Oe
 Oe
 gx
@@ -25105,7 +25069,7 @@ Oe
 ki
 ki
 ki
-kp
+yP
 ki
 ki
 Oe
@@ -25191,7 +25155,7 @@ hB
 eg
 eg
 an
-cT
+nI
 cV
 gL
 cV
@@ -25451,7 +25415,7 @@ an
 cU
 aL
 aL
-ec
+vO
 an
 th
 RC
@@ -26220,7 +26184,7 @@ aq
 eg
 an
 cU
-cW
+ng
 aL
 gN
 an
@@ -26991,7 +26955,7 @@ aq
 eg
 an
 eb
-cX
+DW
 an
 an
 th
@@ -35966,9 +35930,9 @@ RC
 th
 ax
 aD
-aM
-du
-hw
+DT
+Ss
+NY
 an
 aZ
 be
@@ -36222,9 +36186,9 @@ RC
 pL
 th
 ax
-aE
-aQ
-dv
+AR
+XA
+DP
 an
 an
 ao
@@ -45133,7 +45097,7 @@ gx
 PV
 Oe
 Oe
-Ha
+pt
 Oe
 Oe
 Oe
@@ -51408,7 +51372,7 @@ gx
 gx
 Dw
 TU
-wt
+RD
 Po
 SS
 gx
