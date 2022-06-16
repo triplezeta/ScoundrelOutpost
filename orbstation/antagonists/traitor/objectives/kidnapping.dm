@@ -277,7 +277,7 @@
 	sent_mob.adjust_timed_status_effect(10 SECONDS, /datum/status_effect/dizziness)
 	sent_mob.blur_eyes(5 SECONDS)
 
-	to_chat(sent_mob, span_hypnophrase("Your mind is a blur... you have no memory of your kidnapper or your time spent in captivity."))
+	to_chat(sent_mob, span_hypnophrase("Your mind is a blur... you have no memory of the moments before your kidnapping or the identity of your assailant."))
 
 	new /obj/effect/pod_landingzone(pick(possible_turfs), return_pod)
 
