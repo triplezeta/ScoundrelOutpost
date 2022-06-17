@@ -1,14 +1,12 @@
 /datum/traitor_objective_category/assassinate
 	name = "Assassination"
 	objectives = list(
-		//starter assassinations, basically just require you to kill someone
 		list(
-			/datum/traitor_objective/assassinate/calling_card = 1,
-			/datum/traitor_objective/assassinate/behead = 1,
-		) = 1,
-		//above but for heads
-		list(
+			/datum/traitor_objective/assassinate/calling_card = 3,
 			/datum/traitor_objective/assassinate/calling_card/heads_of_staff = 1,
+		) = 5,
+		list(
+			/datum/traitor_objective/assassinate/behead = 3,
 			/datum/traitor_objective/assassinate/behead/heads_of_staff = 1,
 		) = 1,
 	)
@@ -19,9 +17,9 @@
 
 	abstract_type = /datum/traitor_objective/assassinate
 
-	progression_minimum = 30 MINUTES
+	progression_minimum = 20 MINUTES
 
-	progression_reward = 2 MINUTES
+	progression_reward = 12 MINUTES
 	telecrystal_reward = list(1, 2)
 
 	// The code below is for limiting how often you can get this objective. You will get this objective at a maximum of maximum_objectives_in_period every objective_period
@@ -52,7 +50,7 @@
 	var/card_type = /obj/item/paper/calling_card // the object that will be spawned by the calling card button
 
 /datum/traitor_objective/assassinate/calling_card/heads_of_staff
-	progression_reward = 4 MINUTES
+	progression_reward = 16 MINUTES
 	telecrystal_reward = list(3, 4)
 
 	heads_of_staff = TRUE
@@ -61,13 +59,15 @@
 	name = "Behead %TARGET%, the %JOB TITLE%"
 	description = "Behead and hold %TARGET%'s head to succeed this objective. If the head gets destroyed before you can do this, you will fail this objective."
 
+	progression_reward = 16 MINUTES
+
 	///the body who needs to hold the head
 	var/mob/living/needs_to_hold_head
 	///the head that needs to be picked up
 	var/obj/item/bodypart/head/behead_goal
 
 /datum/traitor_objective/assassinate/behead/heads_of_staff
-	progression_reward = 4 MINUTES
+	progression_reward = 20 MINUTES
 	telecrystal_reward = list(3, 4)
 
 	heads_of_staff = TRUE

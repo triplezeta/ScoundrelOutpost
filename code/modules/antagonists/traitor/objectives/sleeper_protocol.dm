@@ -93,13 +93,29 @@
 
 /datum/surgery_step/brainwash/sleeper_agent
 	time = 25 SECONDS
-	var/static/list/possible_objectives = list(
+	/*var/static/list/possible_objectives = list(
 		"You love the Syndicate",
 		"Do not trust Nanotrasen",
 		"The Captain is a lizardperson",
 		"Nanotrasen isn't real",
 		"They put things in the food to make you forget",
 		"You are the only real person on the station"
+	)*/
+	var/static/list/possible_objectives = list(
+		"You must keep all Syndicate activities a secret",
+		"Do not trust the heads of staff or the security department",
+		"You are dying, and the Captain's ID card is the only cure",
+		"The heads of staff have kidnapped your beloved pets",
+		"The AI is irradiating the airwaves",
+		"All light is a deadly toxin",
+		"A handsome Tizirian prince needs you to send him one million credits",
+		"Changelings are an endangered species, and must be protected",
+		"The Supermatter Crystal is a delicious candy, and you need to eat it",
+		"The tram hole is very hungry, and you are its feeder",
+		"The lab animals are being treated unethically and must be freed from captivity",
+		"Evil is good, and good is evil",
+		"The station is a simulation, and the mass driver is the only way to escape",
+		"They've hidden your paycheck in the walls; deconstruct the station to get it back"
 	)
 
 /datum/surgery_step/brainwash/sleeper_agent/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
@@ -116,7 +132,7 @@
 	. = ..()
 	if(!.)
 		return
-	target.gain_trauma(new /datum/brain_trauma/mild/phobia/conspiracies(), TRAUMA_RESILIENCE_LOBOTOMY)
+	//target.gain_trauma(new /datum/brain_trauma/mild/phobia/conspiracies(), TRAUMA_RESILIENCE_LOBOTOMY)
 
 /datum/traitor_objective/sleeper_protocol/everybody //Much harder for non-med and non-robo
 
