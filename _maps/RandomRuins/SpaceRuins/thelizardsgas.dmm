@@ -16,12 +16,6 @@
 /obj/item/flashlight,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/thelizardsgas)
-"bo" = (
-/obj/structure/rack,
-/obj/item/clothing/shoes/cowboy,
-/obj/structure/cable,
-/turf/open/floor/iron/white/side,
-/area/ruin/space/has_grav/thelizardsgas)
 "bp" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 4
@@ -347,6 +341,12 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/thelizardsgas)
+"Iy" = (
+/obj/structure/rack,
+/obj/item/clothing/shoes/cowboy,
+/obj/structure/cable,
+/turf/open/floor/iron/white/side,
+/area/ruin/space/has_grav/thelizardsgas)
 "Je" = (
 /turf/open/floor/iron/white/side{
 	dir = 8
@@ -420,15 +420,6 @@
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/engine/plasma{
 	initial_gas_mix = "plasma=35000;TEMP=293.15"
-	},
-/area/ruin/space/has_grav/thelizardsgas)
-"Pb" = (
-/obj/machinery/atmospherics/pipe/smart/simple/yellow/hidden,
-/obj/structure/sign/warning/vacuum{
-	pixel_x = 32
-	},
-/turf/open/floor/plating{
-	icon_state = "platingdmg1"
 	},
 /area/ruin/space/has_grav/thelizardsgas)
 "Pi" = (
@@ -553,6 +544,14 @@
 /obj/machinery/atmospherics/components/unary/portables_connector/visible/layer4{
 	dir = 1
 	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/thelizardsgas)
+"YC" = (
+/obj/machinery/atmospherics/pipe/smart/simple/yellow/hidden,
+/obj/structure/sign/warning/vacuum{
+	pixel_x = 32
+	},
+/obj/effect/mapping_helpers/broken_floor,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/thelizardsgas)
 "YK" = (
@@ -804,7 +803,7 @@ sN
 iO
 Ss
 GM
-Pb
+YC
 ss
 Bu
 Bu
@@ -961,7 +960,7 @@ LT
 xy
 Kw
 mR
-bo
+Iy
 Zs
 zn
 UO
