@@ -300,6 +300,8 @@ SUBSYSTEM_DEF(ticker)
 		else
 			stack_trace("[S] [S.type] found in start landmarks list, which isn't a start landmark!")
 
+	var/special_role_count = 0
+
 	// handle persistence stuff that requires ckeys, in this case hardcore mode and temporal scarring
 	for(var/i in GLOB.player_list)
 		if(!ishuman(i))
@@ -309,12 +311,17 @@ SUBSYSTEM_DEF(ticker)
 		iter_human.increment_scar_slot()
 		iter_human.load_persistent_scars()
 
+		if(iter_human.mind?.special_role)
+			special_role_count++
+
 		if(!iter_human.hardcore_survival_score)
 			continue
 		if(iter_human.mind?.special_role)
 			to_chat(iter_human, span_notice("You will gain [round(iter_human.hardcore_survival_score) * 2] hardcore random points if you greentext this round!"))
 		else
 			to_chat(iter_human, span_notice("You will gain [round(iter_human.hardcore_survival_score)] hardcore random points if you survive this round!"))
+
+	message_admins("Game started with [special_role_count] antagonist(s) out of [GLOB.alive_player_list.len] players.")
 
 //These callbacks will fire after roundstart key transfer
 /datum/controller/subsystem/ticker/proc/OnRoundstart(datum/callback/cb)
