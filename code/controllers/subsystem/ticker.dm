@@ -321,7 +321,7 @@ SUBSYSTEM_DEF(ticker)
 		else
 			to_chat(iter_human, span_notice("You will gain [round(iter_human.hardcore_survival_score)] hardcore random points if you survive this round!"))
 
-	message_admins("Game started with [special_role_count] antagonist(s) out of [GLOB.alive_player_list.len] players.")
+	message_admins(span_alert("Game started with [special_role_count] antagonist(s) out of [GLOB.alive_player_list.len] players."))
 
 //These callbacks will fire after roundstart key transfer
 /datum/controller/subsystem/ticker/proc/OnRoundstart(datum/callback/cb)
