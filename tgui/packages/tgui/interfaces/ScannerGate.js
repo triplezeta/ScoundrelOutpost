@@ -100,7 +100,8 @@ const ScannerGateOff = (props, context) => {
         />
         <Button
           content="Zombie"
-          onClick={() => act('set_mode', { new_mode: 'Zombie' })} />
+          onClick={() => act('set_mode', { new_mode: 'Zombie' })}
+        />
       </Box>
     </>
   );
@@ -182,7 +183,8 @@ const ScannerGateZombie = (props, context) => {
   return (
     <>
       <Box mb={2}>
-        Trigger if the person scanned is {reverse ? 'not' : ''} a zombie. All zombie types will be detected, including dormant zombies.
+        Trigger if the person scanned is {reverse ? 'not' : ''} a zombie. All
+        zombie types will be detected, including dormant zombies.
       </Box>
       <ScannerGateMode />
     </>
