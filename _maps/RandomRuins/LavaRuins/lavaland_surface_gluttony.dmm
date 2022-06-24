@@ -6,7 +6,7 @@
 	},
 /obj/structure/stone_tile/surrounding/cracked,
 /obj/effect/mob_spawn/corpse/human/skeleton,
-/turf/open/lava/smooth/lava_land_surface,
+/turf/open/indestructible/necropolis,
 /area/lavaland/surface/outdoors)
 "aO" = (
 /obj/structure/stone_tile/surrounding_tile/burnt{
@@ -95,7 +95,7 @@
 /obj/structure/stone_tile/surrounding_tile/cracked{
 	dir = 8
 	},
-/turf/open/lava/smooth/lava_land_surface,
+/turf/open/indestructible/necropolis,
 /area/lavaland/surface/outdoors)
 "hV" = (
 /obj/structure/stone_tile/center/burnt,
@@ -108,7 +108,10 @@
 /obj/structure/stone_tile/surrounding_tile/burnt{
 	dir = 8
 	},
-/turf/open/lava/smooth/lava_land_surface,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"ic" = (
+/turf/open/indestructible/necropolis,
 /area/lavaland/surface/outdoors)
 "ie" = (
 /obj/item/veilrender/vealrender,
@@ -130,7 +133,7 @@
 /obj/structure/stone_tile/surrounding_tile/cracked{
 	dir = 1
 	},
-/turf/open/lava/smooth/lava_land_surface,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "jM" = (
 /turf/closed/indestructible/necropolis,
@@ -181,7 +184,7 @@
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 1
 	},
-/turf/open/lava/smooth/lava_land_surface,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "nT" = (
 /turf/closed/indestructible/riveted/boss,
@@ -263,11 +266,17 @@
 /obj/item/food/meat/slab/human/mutant/ethereal,
 /turf/open/indestructible/necropolis,
 /area/ruin/powered/gluttony)
+"yR" = (
+/obj/structure/stone_tile/block/burnt{
+	dir = 4
+	},
+/turf/open/indestructible/necropolis,
+/area/lavaland/surface/outdoors)
 "zd" = (
 /obj/structure/stone_tile/block/burnt{
 	dir = 4
 	},
-/turf/open/lava/smooth/lava_land_surface,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "zr" = (
 /obj/structure/stone_tile/block/burnt{
@@ -309,7 +318,7 @@
 /area/ruin/powered/gluttony)
 "DB" = (
 /obj/structure/stone_tile/slab/burnt,
-/turf/open/lava/smooth/lava_land_surface,
+/turf/open/indestructible/necropolis,
 /area/lavaland/surface/outdoors)
 "DH" = (
 /obj/structure/headpike/bone,
@@ -320,14 +329,11 @@
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 6
 	},
-/turf/open/lava/smooth/lava_land_surface,
+/turf/open/indestructible/necropolis,
 /area/lavaland/surface/outdoors)
 "Eq" = (
 /obj/structure/stone_tile/surrounding_tile/burnt,
 /obj/structure/stone_tile/center/burnt,
-/turf/open/indestructible/necropolis,
-/area/ruin/powered/gluttony)
-"ED" = (
 /turf/open/indestructible/necropolis,
 /area/ruin/powered/gluttony)
 "EN" = (
@@ -339,7 +345,7 @@
 /obj/structure/stone_tile/surrounding_tile/cracked{
 	dir = 1
 	},
-/turf/open/lava/smooth/lava_land_surface,
+/turf/open/indestructible/necropolis,
 /area/lavaland/surface/outdoors)
 "Fi" = (
 /obj/effect/decal/cleanable/blood/gibs/down,
@@ -391,7 +397,7 @@
 /obj/structure/stone_tile/block/burnt{
 	dir = 8
 	},
-/turf/open/lava/smooth/lava_land_surface,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Ol" = (
 /obj/effect/decal/cleanable/blood/footprints{
@@ -459,10 +465,6 @@
 /obj/structure/stone_tile/slab/burnt,
 /turf/open/indestructible/necropolis,
 /area/ruin/powered/gluttony)
-"Vc" = (
-/obj/structure/stone_tile/slab/cracked,
-/turf/open/indestructible/necropolis,
-/area/ruin/powered/gluttony)
 "Vz" = (
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 8
@@ -526,13 +528,6 @@
 /obj/structure/bonfire/prelit,
 /turf/open/lava/smooth/lava_land_surface,
 /area/ruin/powered/gluttony)
-"ZV" = (
-/obj/structure/stone_tile/block,
-/obj/structure/stone_tile/block/cracked{
-	dir = 1
-	},
-/turf/open/indestructible/necropolis,
-/area/ruin/powered/gluttony)
 
 (1,1,1) = {"
 Zu
@@ -588,7 +583,7 @@ Zu
 jM
 ZT
 UG
-Vc
+CU
 qs
 UH
 pj
@@ -634,7 +629,7 @@ MH
 Zu
 MH
 nT
-ZV
+IW
 eq
 nT
 nT
@@ -654,7 +649,7 @@ ly
 Vz
 Ck
 xA
-ED
+kr
 nT
 nT
 nT
@@ -672,7 +667,7 @@ ls
 ls
 eN
 vU
-MH
+ic
 MH
 MH
 DH
@@ -700,7 +695,7 @@ Zu
 nT
 yx
 Rf
-Vc
+CU
 nT
 UH
 Pd
@@ -721,7 +716,7 @@ Ck
 Eq
 Sr
 fY
-zd
+yR
 zd
 nM
 Zu

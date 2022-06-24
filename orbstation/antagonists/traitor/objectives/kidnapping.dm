@@ -1,7 +1,11 @@
 /datum/traitor_objective_category/kidnapping
 	name = "Kidnap Personnel"
 	objectives = list( //Similar weights to destroy heirloom objectives
-		/datum/traitor_objective/kidnapping/common = 4,
+		list(
+			/datum/traitor_objective/kidnapping/common = 20,
+			/datum/traitor_objective/kidnapping/less_common = 1,
+		) = 4,
+		/datum/traitor_objective/kidnapping/uncommon = 3,
 		/datum/traitor_objective/kidnapping/rare = 2,
 		/datum/traitor_objective/kidnapping/captain = 1
 	)
