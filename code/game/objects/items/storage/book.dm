@@ -31,7 +31,7 @@ GLOBAL_LIST_INIT(bibleitemstates, list("bible", "koran", "scrapbook", "burning",
 	return 0
 
 /obj/item/storage/book/bible
-	name = "bible"
+	name = "holy book"
 	desc = "Apply to head repeatedly."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "bible"
@@ -40,7 +40,7 @@ GLOBAL_LIST_INIT(bibleitemstates, list("bible", "koran", "scrapbook", "burning",
 	lefthand_file = 'icons/mob/inhands/misc/books_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/books_righthand.dmi'
 	var/mob/affecting = null
-	var/deity_name = "Christ"
+	var/deity_name = "Space God"
 	force_string = "holy"
 
 /obj/item/storage/book/bible/examine(mob/user)
