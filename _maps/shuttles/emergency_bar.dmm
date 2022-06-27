@@ -159,12 +159,6 @@
 	},
 /turf/open/floor/iron,
 /area/shuttle/escape)
-"aF" = (
-/obj/structure/musician/piano{
-	icon_state = "piano"
-	},
-/turf/open/floor/iron/grimy,
-/area/shuttle/escape)
 "aG" = (
 /obj/structure/chair/stool/directional/west{
 	can_buckle = 1
@@ -184,6 +178,24 @@
 /turf/open/floor/mineral/plastitanium/red/brig,
 /area/shuttle/escape/brig)
 "aI" = (
+/turf/open/floor/mineral/plastitanium/red/brig,
+/area/shuttle/escape/brig)
+"aJ" = (
+/obj/machinery/door/airlock/public/glass{
+	name = "Emergency Shuttle Brig"
+	},
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/airlock/access/all/security/general,
+/turf/open/floor/iron,
+/area/shuttle/escape/brig)
+"aK" = (
+/obj/machinery/door/airlock/titanium{
+	name = "Emergency Shuttle Airlock"
+	},
+/obj/effect/mapping_helpers/airlock/access/all/security/general,
 /turf/open/floor/mineral/plastitanium/red/brig,
 /area/shuttle/escape/brig)
 "aL" = (
@@ -585,17 +597,6 @@
 /obj/machinery/stasis,
 /turf/open/floor/mineral/titanium,
 /area/shuttle/escape)
-"da" = (
-/obj/machinery/door/airlock/public/glass{
-	name = "Emergency Shuttle Brig"
-	},
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
-	dir = 1
-	},
-/obj/effect/mapping_helpers/airlock/access/all/security/general,
-/turf/open/floor/iron,
-/area/shuttle/escape/brig)
 "en" = (
 /obj/structure/chair/stool/bar/directional/west{
 	can_buckle = 1;
@@ -607,7 +608,7 @@
 	},
 /turf/open/floor/iron,
 /area/shuttle/escape)
-"ib" = (
+"fu" = (
 /obj/structure/extinguisher_cabinet/directional/east,
 /obj/structure/table,
 /obj/item/storage/box/drinkingglasses,
@@ -617,13 +618,6 @@
 	},
 /turf/open/floor/iron,
 /area/shuttle/escape)
-"zT" = (
-/obj/machinery/door/airlock/titanium{
-	name = "Emergency Shuttle Airlock"
-	},
-/obj/effect/mapping_helpers/airlock/access/all/security/general,
-/turf/open/floor/mineral/plastitanium/red/brig,
-/area/shuttle/escape/brig)
 "EL" = (
 /obj/effect/turf_decal/tile/bar,
 /obj/effect/turf_decal/tile/bar{
@@ -631,6 +625,10 @@
 	},
 /obj/machinery/status_display/evac/directional/south,
 /turf/open/floor/iron,
+/area/shuttle/escape)
+"Rb" = (
+/obj/structure/musician/piano,
+/turf/open/floor/iron/grimy,
 /area/shuttle/escape)
 
 (1,1,1) = {"
@@ -641,7 +639,7 @@ aa
 ab
 ab
 ab
-zT
+aK
 ab
 aT
 ab
@@ -736,7 +734,7 @@ an
 as
 ab
 ac
-da
+aJ
 ac
 ae
 aE
@@ -831,7 +829,7 @@ ae
 ap
 au
 ab
-aF
+Rb
 bH
 aP
 aE
@@ -858,7 +856,7 @@ ab
 aG
 bW
 bI
-ib
+fu
 ad
 aY
 aj
