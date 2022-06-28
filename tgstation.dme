@@ -3504,7 +3504,6 @@
 #include "code\modules\mob\living\simple_animal\bot\secbot.dm"
 #include "code\modules\mob\living\simple_animal\bot\SuperBeepsky.dm"
 #include "code\modules\mob\living\simple_animal\bot\vibebot.dm"
-#include "code\modules\mob\living\simple_animal\friendly\amoung.dm"
 #include "code\modules\mob\living\simple_animal\friendly\butterfly.dm"
 #include "code\modules\mob\living\simple_animal\friendly\cat.dm"
 #include "code\modules\mob\living\simple_animal\friendly\crab.dm"
@@ -4559,4 +4558,5 @@
 #include "orbstation\Chaplain\ratlain.dm"
 #include "orbstation\clothing\misc.dm"
 #include "orbstation\datums\components\crafting\recipes.dm"
+#include "orbstation\mob\simple_animal\friendly\amoung.dm"
 // END_INCLUDE
