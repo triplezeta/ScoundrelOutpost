@@ -13,7 +13,7 @@
 /mob/living/simple_animal/amoung //default color is red, others are defined below
 	name = "amoung"
 	desc = "What a fascinating and strange little creature. Probably harmless?"
-	icon = 'icons/mob/amoung.dmi'
+	icon = 'orbstation/icons/mob/amoung.dmi'
 	icon_state = "amoung"
 	icon_living = "amoung"
 	icon_dead = "amoung_dead"
