@@ -49908,7 +49908,7 @@
 /turf/open/floor/iron,
 /area/station/hallway/primary/starboard)
 "pxB" = (
-/obj/structure/sign/poster/contraband/the_big_gas_giant_truth,
+/obj/structure/sign/poster/contraband/random,
 /turf/closed/wall,
 /area/station/maintenance/department/medical/central)
 "pxL" = (
