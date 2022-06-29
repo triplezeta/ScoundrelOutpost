@@ -42,50 +42,33 @@
 	footstep_type = FOOTSTEP_MOB_SHOE
 	held_items = list(null, null)
 	greyscale_colors = "#ffffff"
+	var/static/list/amoung_colors = list(
+		"red" = "#ff0033",
+		"blue" = "#3366ff",
+		"green" = "#10802d",
+		"pink" = "#ee55ba",
+		"yellow" = "#e9ea53",
+		"black" = "#3f484e",
+		"white" = "#d6e1f0",
+		"purple" = "#6b30bc",
+		"brown" = "#72491e",
+		"cyan" = "#39e2dd",
+		"lime" = "#50f038"
+	)
 
 /mob/living/simple_animal/amoung/Initialize(mapload)
 	. = ..()
+	random_colour()
 	set_greyscale(new_config=/datum/greyscale_config/amoung)
 	ADD_TRAIT(src, TRAIT_VENTCRAWLER_ALWAYS, INNATE_TRAIT)
 
+///picks a random colour for our amoung
+/mob/living/simple_animal/amoung/proc/random_colour()
+	var/our_color = pick(amoung_colors)
+	set_greyscale(colors=list(amoung_colors[our_color]))
+
 /mob/living/simple_animal/amoung/bee_friendly()
 	return TRUE //why not lol
-
-/mob/living/simple_animal/amoung/red
-	greyscale_colors = "#ff0033"
-
-/mob/living/simple_animal/amoung/blue
-	greyscale_colors = "#3366ff"
-
-/mob/living/simple_animal/amoung/green
-	greyscale_colors = "#10802d"
-
-/mob/living/simple_animal/amoung/pink
-	greyscale_colors = "#ee55ba"
-
-/mob/living/simple_animal/amoung/orange
-	greyscale_colors = "#f17d0e"
-
-/mob/living/simple_animal/amoung/yellow
-	greyscale_colors = "#e9ea53"
-
-/mob/living/simple_animal/amoung/black
-	greyscale_colors = "#3f484e"
-
-/mob/living/simple_animal/amoung/white
-	greyscale_colors = "#d6e1f0"
-
-/mob/living/simple_animal/amoung/purple
-	greyscale_colors = "#6b30bc"
-
-/mob/living/simple_animal/amoung/brown
-	greyscale_colors = "#72491e"
-
-/mob/living/simple_animal/amoung/cyan
-	greyscale_colors = "#39e2dd"
-
-/mob/living/simple_animal/amoung/lime
-	greyscale_colors = "#50f038"
 
 	//amoung pequeño amoung pequeño amoung pequeño amoung pequeño amoung pequeño
 	//amoung pequeño amoung pequeño amoung pequeño amoung pequeño amoung pequeño
@@ -101,38 +84,3 @@
 	. = ..()
 	set_greyscale(new_config=/datum/greyscale_config/amoung_pequeno)
 
-/mob/living/simple_animal/amoung/pequeno/red
-	greyscale_colors = "#ff0033"
-
-/mob/living/simple_animal/amoung/pequeno/blue
-	greyscale_colors = "#3366ff"
-
-/mob/living/simple_animal/amoung/pequeno/green
-	greyscale_colors = "#10802d"
-
-/mob/living/simple_animal/amoung/pequeno/pink
-	greyscale_colors = "#ee55ba"
-
-/mob/living/simple_animal/amoung/pequeno/orange
-	greyscale_colors = "#f17d0e"
-
-/mob/living/simple_animal/amoung/pequeno/yellow
-	greyscale_colors = "#e9ea53"
-
-/mob/living/simple_animal/amoung/pequeno/black
-	greyscale_colors = "#3f484e"
-
-/mob/living/simple_animal/amoung/pequeno/white
-	greyscale_colors = "#d6e1f0"
-
-/mob/living/simple_animal/amoung/pequeno/purple
-	greyscale_colors = "#6b30bc"
-
-/mob/living/simple_animal/amoung/pequeno/brown
-	greyscale_colors = "#72491e"
-
-/mob/living/simple_animal/amoung/pequeno/cyan
-	greyscale_colors = "#39e2dd"
-
-/mob/living/simple_animal/amoung/pequeno/lime
-	greyscale_colors = "#50f038"
