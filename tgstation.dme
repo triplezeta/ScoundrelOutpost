@@ -4558,5 +4558,6 @@
 #include "orbstation\Chaplain\ratlain.dm"
 #include "orbstation\clothing\misc.dm"
 #include "orbstation\datums\components\crafting\recipes.dm"
+#include "orbstation\datums\greyscale\config_types\greyscale_configs.dm"
 #include "orbstation\mob\simple_animal\friendly\amoung.dm"
 // END_INCLUDE
