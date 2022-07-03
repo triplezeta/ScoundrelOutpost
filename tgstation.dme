@@ -4556,10 +4556,10 @@
 #include "interface\stylesheet.dm"
 #include "interface\skin.dmf"
 #include "orbstation\antagonists\traitor\objectives\double_cross.dm"
-#include "orbstation\antagonists\traitor\objectives\kidnapping.dm"
 #include "orbstation\antagonists\traitor\objectives\final_objective\malware_injection.dm"
 #include "orbstation\Chaplain\ratlain.dm"
 #include "orbstation\clothing\misc.dm"
 #include "orbstation\datums\components\crafting\recipes.dm"
 #include "orbstation\datums\greyscale\config_types\greyscale_configs.dm"
 #include "orbstation\mob\simple_animal\friendly\amoung.dm"
+// END_INCLUDE
