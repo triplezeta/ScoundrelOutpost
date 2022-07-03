@@ -1,3 +1,5 @@
+#define KIDNAP_BASE_PROG_REWARD 15 MINUTES
+
 /datum/traitor_objective_category/kidnapping
 	name = "Kidnap Personnel"
 	objectives = list( //Similar weights to destroy heirloom objectives
@@ -13,13 +15,15 @@
 /datum/traitor_objective/kidnapping
 	name = "Kidnap %TARGET% the %JOB TITLE% and deliver them to %AREA%"
 	description = "%TARGET% holds extremely important information regarding secret NT projects - and you'll need to kidnap and deliver them to %AREA%, where our transport pod will be waiting. \
-		You'll get additional reward if %TARGET% is delivered alive."
+		They must be delivered ALIVE, or this objective will fail."
 
 	abstract_type = /datum/traitor_objective/kidnapping
 
 	//this is a prototype so this progression is for all basic level kill objectives
-	progression_reward = list(2 MINUTES, 4 MINUTES)
-	telecrystal_reward = list(1, 2)
+	progression_reward = KIDNAP_BASE_PROG_REWARD
+	telecrystal_reward = list(2, 3)
+	
+	progression_minimum = 30 MINUTES
 
 	/// The jobs that this objective is targetting.
 	var/list/target_jobs
@@ -35,7 +39,6 @@
 	var/list/victim_belogings = list()
 
 /datum/traitor_objective/kidnapping/common
-	progression_maximum = 30 MINUTES
 	target_jobs = list(
 		// Medical
 		/datum/job/doctor,
@@ -62,13 +65,11 @@
 	)
 
 /datum/traitor_objective/kidnapping/less_common
-	progression_maximum = 15 MINUTES
 	target_jobs = list(
 		/datum/job/assistant
 	)
 
 /datum/traitor_objective/kidnapping/uncommon //Hard to fish out victims
-	progression_maximum = 45 MINUTES
 	target_jobs = list(
 		// Medical
 		/datum/job/virologist,
@@ -80,13 +81,11 @@
 		/datum/job/scientist,
 	)
 
-	progression_reward = list(4 MINUTES, 8 MINUTES)
-	telecrystal_reward = list(1, 2)
+	progression_reward = KIDNAP_BASE_PROG_REWARD + 3 MINUTES
+	telecrystal_reward = list(3, 4)
 	alive_bonus = 1
 
 /datum/traitor_objective/kidnapping/rare
-	progression_minimum = 15 MINUTES
-	progression_maximum = 60 MINUTES
 	target_jobs = list(
 		// Security
 		/datum/job/security_officer,
@@ -96,22 +95,23 @@
 		/datum/job/head_of_personnel,
 		/datum/job/chief_medical_officer,
 		/datum/job/research_director,
+		/datum/job/chief_engineer,
 		/datum/job/quartermaster,
 	)
 
-	progression_reward = list(8 MINUTES, 12 MINUTES)
-	telecrystal_reward = list(1, 2)
+	progression_reward = KIDNAP_BASE_PROG_REWARD + 6 MINUTES
+	telecrystal_reward = list(4, 5)
 	alive_bonus = 2
 
 /datum/traitor_objective/kidnapping/captain
-	progression_minimum = 30 MINUTES
+	progression_minimum = 60 MINUTES
 	target_jobs = list(
 		/datum/job/head_of_security,
 		/datum/job/captain
 	)
 
-	progression_reward = list(12 MINUTES, 16 MINUTES)
-	telecrystal_reward = list(2, 3)
+	progression_reward = KIDNAP_BASE_PROG_REWARD + 10 MINUTES
+	telecrystal_reward = 5
 	alive_bonus = 2
 
 /datum/traitor_objective/kidnapping/generate_objective(datum/mind/generating_for, list/possible_duplicates)
@@ -146,11 +146,29 @@
 	var/datum/mind/target_mind = pick(possible_targets)
 	victim = target_mind.current
 	AddComponent(/datum/component/traitor_objective_register, victim, fail_signals = COMSIG_PARENT_QDELETING)
+	var/list/whitelisted_areas = typecacheof(list(
+		/area/station/commons,
+		/area/station/maintenance/tram,
+		/area/station/maintenance/disposal,
+		/area/station/maintenance/radshelter,
+		/area/station/holodeck/rec_center,
+		/area/station/service/cafeteria,
+		/area/station/service/kitchen/diner,
+		/area/station/service/bar,
+		/area/station/service/library,
+		/area/station/service/chapel,
+		/area/station/engineering/gravity_generator,
+		/area/station/medical/morgue,
+		/area/station/command/bridge,
+		/area/station/command/meeting_room,
+		/area/station/command/corporate_showroom,
+		/area/station/command/teleporter,
+		/area/station/command/gateway,
+	))
 	var/list/possible_areas = GLOB.the_station_areas.Copy()
 	for(var/area/possible_area as anything in possible_areas)
-		if(istype(possible_area, /area/station/hallway) || istype(possible_area, /area/station/security) || initial(possible_area.outdoors))
+		if(!is_type_in_typecache(possible_area, whitelisted_areas))
 			possible_areas -= possible_area
-
 	dropoff_area = pick(possible_areas)
 	replace_in_name("%TARGET%", target_mind.name)
 	replace_in_name("%JOB TITLE%", target_mind.assigned_role.title)
@@ -189,6 +207,7 @@
 /datum/traitor_objective/kidnapping/proc/call_pod(mob/living/user)
 	pod_called = TRUE
 	var/obj/structure/closet/supplypod/extractionpod/new_pod = new()
+	new_pod.explosionSize = list(0,0,0,0)
 	RegisterSignal(new_pod, COMSIG_ATOM_ENTERED, .proc/enter_check)
 	new /obj/effect/pod_landingzone(get_turf(user), new_pod)
 
@@ -220,7 +239,7 @@
 
 	addtimer(CALLBACK(src, .proc/handle_victim, sent_mob), 1.5 SECONDS)
 
-	if(sent_mob != victim)
+	if(sent_mob != victim || sent_mob.stat == DEAD)
 		fail_objective(penalty_cost = telecrystal_penalty)
 		source.startExitSequence(source)
 		return
@@ -287,7 +306,10 @@
 	sent_mob.adjust_timed_status_effect(10 SECONDS, /datum/status_effect/dizziness)
 	sent_mob.blur_eyes(5 SECONDS)
 
+	to_chat(sent_mob, span_hypnophrase("Your mind is a blur... you have no memory of the moments before your kidnapping or the identity of your assailant."))
+
 	new /obj/effect/pod_landingzone(pick(possible_turfs), return_pod)
 
 
 
+#undef KIDNAP_BASE_PROG_REWARD

@@ -64,6 +64,7 @@
 		"turbine_part_compressor",
 		"turbine_part_rotor",
 		"turbine_part_stator",
+		"watering_can",
 	)
 
 /datum/techweb_node/mmi
@@ -897,7 +898,7 @@
 		"paladin_module",
 		"robocop_module",
 		"corporate_module",
-		"drone_module",		
+		"drone_module",
 		"oxygen_module",
 		"safeguard_module",
 		"protectstation_module",
@@ -906,7 +907,7 @@
 		"remove_module",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
-	
+
 /datum/techweb_node/ai_adv
 	id = "ai_adv"
 	display_name = "Advanced Artificial Intelligence"
@@ -1326,6 +1327,7 @@
 		"hydro_tray",
 		"portaseeder",
 		"seed_extractor",
+		"adv_watering_can",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 4000)
 	required_experiments = list(/datum/experiment/scanning/random/plants/wild)
@@ -1564,7 +1566,8 @@
 		"mod_mag_harness",
 		"mod_pathfinder",
 		"mod_holster",
-		"mod_projectile_dampener"
+		"mod_sonar",
+		"mod_projectile_dampener",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 
