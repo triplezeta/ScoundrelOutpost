@@ -9,8 +9,8 @@
 /datum/round_event_control/changeling_infiltrator
 	name = "Changeling Infiltrator"
 	typepath = /datum/round_event/ghost_role/changeling_infiltrator
-	weight = 5 // same as aliens
-	min_players = 15
+	weight = 8 // slightly higher than aliens
+	min_players = 14
 	earliest_start = 30 MINUTES
 	max_occurrences = 1
 	dynamic_should_hijack = TRUE
@@ -34,7 +34,7 @@
 
 	return SUCCESSFUL_SPAWN
 
-///Proc that spawns the changeling infiltrator. also called by the changeling infiltrator ruleset
+///Proc that spawns the changeling infiltrator's pod and makes the spawner spawn them. Also called by the changeling infiltrator ruleset
 /proc/spawn_changeling_infiltrator(mob/new_ling)
 	if(!new_ling)
 		return
@@ -55,14 +55,12 @@
 		pod_spawn.Destroy() // removes the spawn point from the landmarks list so the game doesn't spawn a carp on our poor changeling
 
 	if(!T)
-		message_admins("Changeling infiltrator event found no turf to load in.")
-		qdel(ship)
-		return
+		CRASH("Changeling infiltrator event found no turf to load in.")
 
 	if(!ship.load(T, centered = TRUE))
 		CRASH("Loading changeling infiltrator ship failed!")
 
-	// spawns the changeling at the changeling spawner object
+	// Spawns the changeling at the changeling spawner object
 	// don't feel great about this, but the problem is that get_affected_turfs returns a list of turfs
 	// so you have to loop through the turfs and then loop through each turf to find the spawner object
 	// the pirate event also does this. it is what it is
@@ -71,13 +69,11 @@
 			var/mob/living/carbon/human/new_mob = spawner.create(new_ling)
 			return new_mob
 
-	return
-
 /obj/effect/mob_spawn/ghost_role/human/changeling_infiltrator
 	name = "changeling sleeper"
 	desc = "An old cryo sleeper, desperately frozen shut many years ago."
 	icon = 'icons/obj/machines/sleeper.dmi'
-	icon_state = "sleeper"
+	icon_state = "sleeper_s"
 	prompt_name = "a changeling infiltrator"
 	outfit = /datum/outfit/changeling_infiltrator
 	anchored = TRUE
@@ -90,7 +86,7 @@
 	important_text = "Use the navigation computer and shuttle console to navigate the pod to the station, and sneak your way on board."
 	spawner_job_path = /datum/job/changeling_infiltrator
 
-///Makes the player a changeling with a unique objective to fully absorb a certain amount of people, as well as an "escape with identity" objective
+///Makes the player a changeling with a unique objective to fully absorb a certain amount of people, as well as an escape objective
 /obj/effect/mob_spawn/ghost_role/human/changeling_infiltrator/special(mob/living/spawned_mob, mob/mob_possessor)
 	. = ..()
 	var/datum/antagonist/changeling/antag_datum = new
@@ -102,11 +98,10 @@
 	absorb_objective.gen_amount_goal()
 	antag_datum.objectives += absorb_objective
 
-	// add "escape with [person]'s identity" objective
-	var/datum/objective/escape/escape_with_identity/identity_theft = new
-	identity_theft.owner = spawned_mob
-	identity_theft.find_target()
-	antag_datum.objectives += identity_theft
+	// add escape objective
+	var/datum/objective/escape/escape_objective = new
+	escape_objective.owner = spawned_mob
+	antag_datum.objectives += escape_objective
 
 	to_chat(spawned_mob, span_alert("[flavour_text]"))
 
@@ -120,9 +115,8 @@
 /datum/objective/true_absorb
 	name = "true absorb"
 
-///Sets the number of required absorbs. 1 absorb for every [players_per_absorb] players
-/datum/objective/true_absorb/proc/gen_amount_goal(players_per_absorb = 10)
-	//target_amount = rand (lowbound,highbound)
+///Sets the number of required absorbs. 1 + 1 extra absorb for every [players_per_absorb] players, up to a maximum of [target_cap]
+/datum/objective/true_absorb/proc/gen_amount_goal(players_per_absorb = 10, target_cap = 5)
 	target_amount = 1
 	var/player_count = 0
 	var/list/datum/mind/owners = get_owners()
@@ -141,6 +135,8 @@
 				if(player_count == players_per_absorb)
 					target_amount ++
 					player_count = 0
+
+	target_amount = min(target_amount, target_cap)
 
 	update_explanation_text()
 	return target_amount
@@ -168,19 +164,18 @@
 	return absorbed_count >= target_amount
 
 // Outfit that the changeling spawns with
-// a bunch of chameleon gear to make them less immediately suspicious, but anyone attentive will notice they're not on the crew manifest
+// Includes some chameleon gear to make them less immediately suspicious, but anyone attentive will notice they're not on the crew manifest
 
 /datum/outfit/changeling_infiltrator
 	name = "Changeling Infiltrator"
 	uniform = /obj/item/clothing/under/chameleon
-	suit = /obj/item/clothing/suit/chameleon
 	shoes = /obj/item/clothing/shoes/chameleon
 	back = /obj/item/storage/backpack/chameleon
 	r_pocket = /obj/item/flashlight
-	id = /obj/item/card/id/advanced/chameleon
+	id = /obj/item/card/id/advanced/chameleon // agent ID also gives them maint access, which is very important
 	box = /obj/item/storage/box/survival/engineer/radio
 
-// the toolbox on their pod has the contents and power of a Syndicate toolbox but looks like a normal one
+// the toolbox on their pod has the contents and power of a Syndicate toolbox but looks like a normal emergency one
 
 /obj/item/storage/toolbox/syndicate/secret
 	name = "emergency toolbox"
@@ -194,6 +189,8 @@
 /area/shuttle/changeling_pod
 	name = "Abandoned Pod"
 	requires_power = TRUE
+
+// see _maps\shuttles\changeling_pod.dmm
 
 /datum/map_template/shuttle/changeling_pod
 	name = "abandoned pod"
@@ -214,11 +211,11 @@
 	shuttleId = "changelingpod"
 	lock_override = CAMERA_LOCK_STATION
 	shuttlePortId = "changelingpod_custom"
-	x_offset = -3
+	x_offset = 0
 	y_offset = 2
 	see_hidden = TRUE
 
 /obj/docking_port/mobile/changeling_pod
 	name = "abandoned pod"
 	id = "changelingpod"
-	rechargeTime = 5 MINUTES
+	rechargeTime = 10 MINUTES // long recharge time since you're not meant to use it too often

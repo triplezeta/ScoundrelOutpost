@@ -11,7 +11,7 @@
 	antag_flag = ROLE_CHANGELING
 	weight = 3
 	cost = 12
-	requirements = list(70,70,60,50,40,20,20,10,10,10)
+	requirements = list(70,60,50,50,40,20,20,10,10,10)
 	required_candidates = 1
 	repeatable = FALSE
 
