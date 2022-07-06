@@ -16,32 +16,37 @@
 
 	var/list/possible_heavies = list()
 
-	// Ignored factors: threat cost, minimum round time
-	for (var/datum/dynamic_ruleset/midround/ruleset as anything in midround_rules)
-		if (ruleset.midround_ruleset_style != MIDROUND_RULESET_STYLE_HEAVY)
-			continue
+	// ORBSTATION: when calculating if a ruleset is acceptable, we will pretend the threat level is 30 higher than the actual threat level
+	var/pretend_threat_level = min(threat_level + 30, 100)
 
-		if (ruleset.weight == 0)
-			continue
+	if(EMERGENCY_IDLE_OR_RECALLED) // ORBSTATION: only run a heavy ruleset if the emergency shuttle hasn't been called
+		// Ignored factors: threat cost, minimum round time
+		dynamic_log("Attempting to spawn a heavy ruleset with the threat level of [pretend_threat_level].")
+		for (var/datum/dynamic_ruleset/midround/ruleset as anything in midround_rules)
+			if (ruleset.midround_ruleset_style != MIDROUND_RULESET_STYLE_HEAVY)
+				continue
 
-		if (ruleset.cost > max_threat_level)
-			continue
+			if (ruleset.weight == 0)
+				continue
 
-		if (!ruleset.acceptable(GLOB.alive_player_list.len, threat_level))
-			continue
+			if (ruleset.cost > max_threat_level)
+				continue
 
-		if (ruleset.minimum_round_time > world.time - SSticker.round_start_time)
-			continue
+			if (!ruleset.acceptable(GLOB.alive_player_list.len, pretend_threat_level))
+				continue
 
-		if(istype(ruleset, /datum/dynamic_ruleset/midround/from_ghosts) && !(GLOB.ghost_role_flags & GHOSTROLE_MIDROUND_EVENT))
-			continue
+			if (ruleset.minimum_round_time > world.time - SSticker.round_start_time)
+				continue
 
-		ruleset.trim_candidates()
+			if(istype(ruleset, /datum/dynamic_ruleset/midround/from_ghosts) && !(GLOB.ghost_role_flags & GHOSTROLE_MIDROUND_EVENT))
+				continue
 
-		if (!ruleset.ready())
-			continue
+			ruleset.trim_candidates()
 
-		possible_heavies[ruleset] = ruleset.get_weight()
+			if (!ruleset.ready())
+				continue
+
+			possible_heavies[ruleset] = ruleset.get_weight()
 
 	if (possible_heavies.len == 0)
 		var/datum/round_event_control/round_event_control_type = pick(unfavorable_random_events)
