@@ -4632,6 +4632,8 @@
 #include "interface\menu.dm"
 #include "interface\stylesheet.dm"
 #include "interface\skin.dmf"
+#include "orbstation\antagonists\rulesets_midround.dm"
+#include "orbstation\antagonists\changeling_infiltrator\changeling_infiltrator.dm"
 #include "orbstation\antagonists\traitor\objectives\double_cross.dm"
 #include "orbstation\antagonists\traitor\objectives\final_objective\malware_injection.dm"
 #include "orbstation\Chaplain\ratlain.dm"
