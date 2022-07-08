@@ -1,3 +1,23 @@
+//////////////////////////////////////////////
+//                                          //
+//           SYNDICATE TRAITORS             //
+//                                          //
+//////////////////////////////////////////////
+
+/datum/dynamic_ruleset/midround/autotraitor
+	counts_toward_traitor_limit = TRUE
+
+// Don't create more traitors if it exceeds the limit for the current population & threat level.
+/datum/dynamic_ruleset/midround/autotraitor/ready(forced = FALSE)
+	if(!forced)
+		if(!mode.calculate_traitor_limit())
+			message_admins("Midround ruleset [name] could not be executed due to the traitor limit.")
+			return FALSE
+	return ..()
+
+/datum/dynamic_ruleset/midround/autotraitor/execute()
+	mode.traitor_limit_antag_count ++
+	return ..()
 
 //////////////////////////////////////////////
 //                                          //
