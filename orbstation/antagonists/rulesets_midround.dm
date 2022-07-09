@@ -27,13 +27,18 @@
 
 /datum/dynamic_ruleset/midround/from_ghosts/changeling_infiltrator
 	name = "Changeling Infiltrator"
-	midround_ruleset_style = MIDROUND_RULESET_STYLE_LIGHT
+	midround_ruleset_style = MIDROUND_RULESET_STYLE_HEAVY
 	antag_flag = ROLE_CHANGELING
-	weight = 3
+	weight = 5
 	cost = 12
-	requirements = list(70,60,50,50,40,20,20,10,10,10)
+	requirements = list(101,60,50,50,40,20,20,10,10,10)
 	required_candidates = 1
 	repeatable = FALSE
+
+/datum/dynamic_ruleset/midround/from_ghosts/changeling_infiltrator/ready(forced = FALSE)
+	if (required_candidates > (dead_players.len + list_observers.len))
+		return FALSE
+	return ..()
 
 /datum/dynamic_ruleset/midround/from_ghosts/changeling_infiltrator/generate_ruleset_body(mob/applicant)
 	var/mob/living/carbon/human/new_mob = spawn_changeling_infiltrator(applicant)
