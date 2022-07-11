@@ -27,6 +27,8 @@
 
 /obj/item/organ/internal/body_egg/alien_embryo/on_life(delta_time, times_fired)
 	. = ..()
+	if(!owner) // ORBSTATION: once the organ is expelled, it no longer has an owner, so we need to do this to prevent potential runtime errors
+		return
 	switch(stage)
 		if(3, 4)
 			if(DT_PROB(1, delta_time))
@@ -70,12 +72,12 @@
 	if(stage == 6 && prob(50))
 		for(var/datum/surgery/S in owner.surgeries)
 			if(S.location == BODY_ZONE_CHEST && istype(S.get_surgery_step(), /datum/surgery_step/manipulate_organs))
-				AttemptGrow(0)
+				AttemptGrow()
 				return
 		AttemptGrow()
 
-
-/obj/item/organ/internal/body_egg/alien_embryo/proc/AttemptGrow(gib_on_success=TRUE)
+/// ORBSTATION: instead of gibbing the victim, we'll give them a critical chest wound and dismember it, spilling their organs
+/obj/item/organ/internal/body_egg/alien_embryo/proc/AttemptGrow()
 	if(!owner || bursting)
 		return
 
@@ -93,6 +95,10 @@
 		return
 
 	var/mob/dead/observer/ghost = pick(candidates)
+
+	owner.apply_damage(50, BRUTE, BODY_ZONE_CHEST, forced = TRUE)
+	var/obj/item/bodypart/chest/chest_part = owner.get_bodypart(BODY_ZONE_CHEST)
+	chest_part.force_wound_upwards(/datum/wound/slash/critical)
 
 	var/mutable_appearance/overlay = mutable_appearance('icons/mob/alien.dmi', "burst_lie")
 	owner.add_overlay(overlay)
@@ -117,14 +123,13 @@
 		REMOVE_TRAIT(new_xeno, TRAIT_HANDS_BLOCKED, type)
 		new_xeno.notransform = 0
 		new_xeno.invisibility = 0
-
-	if(gib_on_success)
 		new_xeno.visible_message(span_danger("[new_xeno] bursts out of [owner] in a shower of gore!"), span_userdanger("You exit [owner], your previous host."), span_hear("You hear organic matter ripping and tearing!"))
-		owner.gib(TRUE)
-	else
-		new_xeno.visible_message(span_danger("[new_xeno] wriggles out of [owner]!"), span_userdanger("You exit [owner], your previous host."))
-		owner.adjustBruteLoss(40)
-		owner.cut_overlay(overlay)
+
+	owner.cut_overlay(overlay)
+	owner.spawn_gibs() // we still want the gory visual effect
+	if(owner.blood_volume)
+		owner.spray_blood(owner.dir, WOUND_SEVERITY_LOSS)
+	chest_part.dismember(BRUTE)
 	qdel(src)
 
 
