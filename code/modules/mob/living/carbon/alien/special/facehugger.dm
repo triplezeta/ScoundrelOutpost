@@ -161,6 +161,7 @@
 
 	if(!target.equip_to_slot_if_possible(src, ITEM_SLOT_MASK, 0, 1, 1))
 		return FALSE
+
 	log_combat(target, src, "was facehugged by")
 	return TRUE // time for a smoke
 
@@ -172,6 +173,10 @@
 	//ensure we detach once we no longer need to be attached
 	addtimer(CALLBACK(src, .proc/detach), MAX_IMPREGNATION_TIME)
 
+	// done after the detach callback so it detaches automatically, but before everything else so it doesnt impregnate
+	if (HAS_TRAIT(M, TRAIT_XCARD_XENO_IMMUNE))
+		VenomousBite(M)
+		return
 
 	if(!sterile)
 		M.take_bodypart_damage(strength,0) //done here so that humans in helmets take damage
