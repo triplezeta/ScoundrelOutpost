@@ -347,14 +347,6 @@
 	foodtypes = GRAIN | TOXIC
 	venue_value = FOOD_PRICE_CHEAP
 
-/obj/item/food/burger/catburger
-	name = "catburger"
-	desc = "Finally those cats and catpeople are worth something!"
-	icon_state = "catburger"
-	food_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/protein = 3, /datum/reagent/consumable/nutriment/vitamin = 2)
-	tastes = list("bun" = 4, "meat" = 2, "cat" = 2)
-	foodtypes = GRAIN | MEAT | GROSS
-
 /obj/item/food/burger/crab
 	name = "crab burger"
 	desc = "A delicious patty of the crabby kind, slapped in between a bun."
@@ -392,10 +384,10 @@
 	venue_value = FOOD_PRICE_NORMAL
 
 /obj/item/food/burger/chicken
-	name = "chicken sandwich" //Apparently the proud people of Americlapstan object to this thing being called a burger. Apparently McDonald's just calls it a burger in Europe as to not scare and confuse us.
-	desc = "A delicious chicken sandwich, it is said the proceeds from this treat helps criminalize disarming people on the space frontier."
+	name = "chicken sandwich"
+	desc = "A delicious chicken sandwich."
 	icon_state = "chickenburger"
-	tastes = list("bun" = 2, "chicken" = 4, "God's covenant" = 1)
+	tastes = list("bun" = 2, "chicken" = 4)
 	food_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/mayonnaise = 3, /datum/reagent/consumable/nutriment/protein = 7, /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/consumable/cooking_oil = 2)
 	foodtypes = GRAIN | MEAT | FRIED
 	venue_value = FOOD_PRICE_NORMAL
