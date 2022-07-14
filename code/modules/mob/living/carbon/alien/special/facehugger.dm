@@ -3,7 +3,7 @@
 //TODO: Make these simple_animals
 
 #define MIN_IMPREGNATION_TIME 100 //time it takes to impregnate someone
-#define MAX_IMPREGNATION_TIME 150
+#define MAX_IMPREGNATION_TIME 150 // WHY DOES THIS NOT SPECIFY UNITS
 
 #define MIN_ACTIVE_TIME 200 //time between being dropped and going idle
 #define MAX_ACTIVE_TIME 400
@@ -173,9 +173,9 @@
 	//ensure we detach once we no longer need to be attached
 	addtimer(CALLBACK(src, .proc/detach), MAX_IMPREGNATION_TIME)
 
-	// done after the detach callback so it detaches automatically, but before everything else so it doesnt impregnate
 	if (HAS_TRAIT(M, TRAIT_XCARD_XENO_IMMUNE))
 		VenomousBite(M)
+		PostBite(M)
 		return
 
 	if(!sterile)
@@ -287,6 +287,33 @@
 
 /obj/item/clothing/mask/facehugger/toy/Die()
 	return
+
+
+// ORBSTATION CODE: FACEHUGGER XCARD //
+
+/// Injects some nasty toxins into our victim -- used when the target has the xeno immunity x card option
+/// target -- the target of the bite	
+/obj/item/clothing/mask/facehugger/proc/VenomousBite(mob/living/carbon/target)
+	target.visible_message(span_danger("[src] bites [target]'s face, injecting acidic venom!"), \
+		span_userdanger("[src] bites your face, injecting acidic venom!"), \
+		span_userdanger("You feel [src] biting your face, injecting acidic venom!"))
+
+	// initial bite damage
+	target.reagents?.add_reagent(/datum/reagent/toxin/acid/, 5)
+	target.reagents?.add_reagent(/datum/reagent/toxin/curare/, 2.5)
+	target.reagents?.add_reagent(/datum/reagent/toxin/venom/, 5)
+
+	target.apply_damage(strength, BRUTE, BODY_ZONE_HEAD)
+
+    // lingering venom
+	target.reagents?.add_reagent(/datum/reagent/toxin/xenotoxin, 10)
+
+/// after biting the victim, fall off their face and go idle for a bit
+/obj/item/clothing/mask/facehugger/proc/PostBite(mob/living/carbon/target)
+    target.Unconscious(MAX_IMPREGNATION_TIME) // go unconscious for a short amount of time
+    detach()
+    addtimer(CALLBACK(target, /mob/proc/dropItemToGround, src, TRUE), rand(MIN_IMPREGNATION_TIME, MAX_IMPREGNATION_TIME)/10) // drop off the face after some amount of time
+    addtimer(CALLBACK(src, .proc/GoIdle), rand(MIN_IMPREGNATION_TIME, MAX_IMPREGNATION_TIME)/10) // go idle immediately after that
 
 #undef MIN_ACTIVE_TIME
 #undef MAX_ACTIVE_TIME
