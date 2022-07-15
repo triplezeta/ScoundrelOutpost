@@ -299,10 +299,10 @@
 		span_userdanger("You feel [src] bite your face, injecting acidic venom!"))
 
 	// initial bite damage
-	target.reagents?.add_reagent(/datum/reagent/toxin/acid/, 5)
-	// target.reagents?.add_reagent(/datum/reagent/toxin/venom/, 5)
+	target.reagents?.add_reagent(/datum/reagent/toxin/acid/, 7)
+	target.reagents?.add_reagent(/datum/reagent/toxin/venom/, 5)
 
-	target.apply_damage(strength, BRUTE, BODY_ZONE_HEAD)
+	target.apply_damage((1 + rand()) * strength, BRUTE, BODY_ZONE_HEAD)
 
     // lingering venom
 	target.reagents?.add_reagent(/datum/reagent/toxin/xenotoxin, 10)
