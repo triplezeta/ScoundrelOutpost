@@ -300,7 +300,7 @@
 
 	// initial bite damage
 	target.reagents?.add_reagent(/datum/reagent/toxin/acid/, 7)
-	target.reagents?.add_reagent(/datum/reagent/toxin/venom/, 5)
+	target.reagents?.add_reagent(/datum/reagent/toxin/histamine/, 5)
 
 	target.apply_damage((1 + rand()) * strength, BRUTE, BODY_ZONE_HEAD)
 
