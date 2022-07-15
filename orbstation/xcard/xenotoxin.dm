@@ -2,18 +2,19 @@
 #define STAM_DAMAGE_MIN 1
 #define STAM_DAMAGE_MAX 5
 // note that this is a percent, not a value from 0 to 1
-#define STAM_DAMAGE_RATE 2
+#define STAM_DAMAGE_RATE 15
 
 // values concerning the occasional burst of damage
 // how much more damage a damage burst frame does than a normal one. this goes up by one every damage burst
-#define DAMAGE_BURST_MUL 10
+#define DAMAGE_BURST_MUL 7
 // again, note that this is a percent chance
-#define DAMAGE_BURST_RATE 1
+#define DAMAGE_BURST_RATE 5
 #define JITTER_TIME 10 SECONDS
-// note that unlike tox damage, stamina damage, etc, organ damage is NOT multiplied by DAMAGE_BURST_MUL
-#define ORGAN_DAMAGE_MIN 1
-#define ORGAN_DAMAGE_MAX 5
-#define SCREAM_PROB 1
+// note that unlike tox damage, stamina damage, etc, organ damage is NOT multiplied by DAMAGE_BURST_MUL or increased by damage_spikes
+#define ORGAN_DAMAGE_MIN 3
+#define ORGAN_DAMAGE_MAX 10
+// chance to scream on a bad damage burst
+#define SCREAM_PROB 50
 
 /datum/reagent/toxin/xenotoxin
     name = "Xenotoxin"
@@ -36,17 +37,13 @@
     if (DT_PROB(STAM_DAMAGE_RATE, delta_time))
         M.adjustStaminaLoss(rand(STAM_DAMAGE_MIN, STAM_DAMAGE_MAX) * REM * delta_time, 0)
 
-    // TODO
-    // a bunch of lines in this file say "unable to determine offset in proc", the debugger shows really strange behavior, and the code just isnt working like it should
-    // maybe it's cursed
-
     if (DT_PROB(DAMAGE_BURST_RATE, delta_time))
-        if (prob(clamp(50 - M.health, 0, 50) + damage_spikes))
+        // chance to have a bad spike starts at ten percent, and increases as you lose health and have more spikes
+        // once 40% health is reached, further health loss no longer increases the chances, creating a softcap in that respect
+        if (prob(clamp(50 - M.health, 10, 60) + damage_spikes)) 
             to_chat(M, span_danger("Your heartrate spikes, and it feels like acid is running through your veins!"))
             damage_burst_bad(M, DAMAGE_BURST_MUL + damage_spikes, delta_time)
-            damage_burst_normal(M, DAMAGE_BURST_MUL + damage_spikes, delta_time)
         else
-            // TODO why isnt this happening?
             to_chat(M, span_danger("Your blood hurts!"))
             damage_burst_normal(M, DAMAGE_BURST_MUL + damage_spikes, delta_time)
     
@@ -54,7 +51,7 @@
 
     return
 
-/datum/reagent/toxin/xenotoxin/damage_burst_normal(mob/living/carbon/M, damage_mul, delta_time)
+/datum/reagent/toxin/xenotoxin/proc/damage_burst_normal(mob/living/carbon/M, damage_mul, delta_time)
     M.adjustToxLoss(damage_mul * toxpwr * REM * delta_time, 0)
     M.adjustStaminaLoss(damage_mul * rand(STAM_DAMAGE_MIN, STAM_DAMAGE_MAX) * REM * delta_time, 0)  // REM is reagent-effects-multiplier
 
@@ -64,19 +61,19 @@
     var/obj/item/organ/organ = pick(M.internal_organs) // choose a random organ
     organ = pick(organ, M.getorganslot(ORGAN_SLOT_LIVER)) // choose randomly between that organ and the liver
     organ.applyOrganDamage(rand(ORGAN_DAMAGE_MIN,ORGAN_DAMAGE_MAX)) // deal a small amount of random (non-increasing) damage to that organ
-    to_chat(M, "picked organ [organ]") // TODO why isnt this printing?
 
     return
 
-/datum/reagent/toxin/xenotoxin/damage_burst_bad(mob/living/carbon/M, damage_mul, delta_time)
+/datum/reagent/toxin/xenotoxin/proc/damage_burst_bad(mob/living/carbon/M, damage_mul, delta_time)
 
     M.set_timed_status_effect((JITTER_TIME + damage_spikes) * REM * delta_time, /datum/status_effect/dizziness, only_if_higher = TRUE)
     M.set_timed_status_effect((JITTER_TIME + damage_spikes) * REM * delta_time, /datum/status_effect/jitter, only_if_higher = TRUE)
 
     if(prob(SCREAM_PROB))
-        // TODO why is this happening so much? it should only be called 1% of the time!
         M.emote("scream")
 
+    // do the normal amount of damage
+    damage_burst_normal(M, damage_mul, delta_time)
     // do a little extra damage, for funsies
     damage_burst_normal(M, damage_mul/2, delta_time)
 
