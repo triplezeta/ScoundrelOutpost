@@ -15,6 +15,13 @@
 /obj/structure/railing/corner,
 /turf/open/floor/plating/icemoon,
 /area/centcom/syndicate_mothership/control)
+"ag" = (
+/obj/effect/turf_decal/stripes/box,
+/obj/machinery/portable_atmospherics/pump/lil_pump{
+	desc = "A betrayer to pump-kind."
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/centcom/syndicate_mothership/expansion_bombthreat)
 "ai" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/general/hidden,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/orange/hidden/layer5,
@@ -1423,10 +1430,6 @@
 	},
 /turf/open/floor/mineral/titanium,
 /area/centcom/syndicate_mothership/control)
-"ee" = (
-/obj/structure/musician/piano,
-/turf/open/misc/beach/sand,
-/area/centcom/central_command_areas/holding)
 "ef" = (
 /obj/item/kirbyplants{
 	icon_state = "plant-22"
@@ -2309,14 +2312,6 @@
 /obj/machinery/status_display/ai/directional/south,
 /turf/open/floor/iron/dark,
 /area/centcom/central_command_areas/briefing)
-"gG" = (
-/obj/effect/turf_decal/stripes/box,
-/obj/machinery/portable_atmospherics/pump{
-	desc = "A betrayer to pump-kind.";
-	name = "Lil Pump"
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/centcom/syndicate_mothership/expansion_bombthreat)
 "gH" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/structure/chair/sofa/corp/right{
@@ -5516,18 +5511,6 @@
 /obj/item/storage/box/donkpockets,
 /turf/open/floor/iron,
 /area/centcom/syndicate_mothership/control)
-"pz" = (
-/obj/structure/chair{
-	dir = 8
-	},
-/obj/machinery/computer/security/telescreen/entertainment/directional/south,
-/obj/structure/sign/warning/secure_area/directional/east,
-/obj/effect/turf_decal/stripes/line{
-	dir = 6
-	},
-/obj/machinery/light/directional/south,
-/turf/open/floor/iron,
-/area/centcom/central_command_areas/ferry)
 "pA" = (
 /obj/docking_port/stationary{
 	dir = 8;
@@ -6667,15 +6650,6 @@
 /obj/machinery/newscaster/directional/south,
 /turf/open/floor/iron,
 /area/centcom/central_command_areas/control)
-"tj" = (
-/obj/effect/turf_decal/siding/purple{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/thinplating_new/light{
-	dir = 4
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/centcom/syndicate_mothership/expansion_chemicalwarfare)
 "tk" = (
 /obj/structure/window/reinforced/survival_pod{
 	name = "Tinted Window";
@@ -6700,6 +6674,18 @@
 	},
 /turf/open/floor/wood,
 /area/centcom/central_command_areas/admin)
+"tn" = (
+/obj/structure/chair{
+	dir = 8
+	},
+/obj/machinery/computer/security/telescreen/entertainment/directional/south,
+/obj/structure/sign/warning/secure_area/directional/east,
+/obj/effect/turf_decal/stripes/line{
+	dir = 6
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/iron,
+/area/centcom/central_command_areas/ferry)
 "to" = (
 /obj/machinery/computer/shuttle/ferry{
 	dir = 4
@@ -8511,6 +8497,16 @@
 	},
 /turf/open/floor/wood/tile,
 /area/centcom/central_command_areas/holding)
+"yS" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/box/emps,
+/obj/item/gun/energy/ionrifle,
+/obj/structure/sign/departments/medbay/alt/directional/south,
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/turf/open/floor/iron,
+/area/centcom/central_command_areas/armory)
 "yT" = (
 /obj/effect/turf_decal/tile/yellow/half,
 /obj/effect/turf_decal/tile/yellow/half{
@@ -10270,6 +10266,15 @@
 	heat_capacity = 1e+006
 	},
 /area/centcom/tdome/observation)
+"Dz" = (
+/obj/effect/turf_decal/siding/purple{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating_new/light{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/centcom/syndicate_mothership/expansion_chemicalwarfare)
 "DA" = (
 /obj/structure/chair/sofa/bench/left{
 	dir = 8
@@ -12925,16 +12930,6 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/mineral/titanium/blue,
 /area/centcom/central_command_areas/evacuation/ship)
-"LK" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/box/emps,
-/obj/item/gun/energy/ionrifle,
-/obj/structure/sign/departments/medbay/alt/directional/south,
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/turf/open/floor/iron,
-/area/centcom/central_command_areas/armory)
 "LN" = (
 /obj/structure/table,
 /obj/item/storage/lockbox,
@@ -14226,6 +14221,10 @@
 	},
 /turf/open/floor/iron,
 /area/centcom/central_command_areas/armory)
+"Pu" = (
+/obj/structure/musician/piano,
+/turf/open/misc/beach/sand,
+/area/centcom/central_command_areas/holding)
 "Pv" = (
 /obj/effect/turf_decal/tile/brown{
 	dir = 8
@@ -24775,7 +24774,7 @@ aa
 aa
 kb
 nH
-tj
+Dz
 Ib
 Ib
 Ib
@@ -26076,7 +26075,7 @@ HZ
 HZ
 HZ
 Nv
-gG
+ag
 XG
 kv
 qK
@@ -38438,7 +38437,7 @@ yg
 yg
 Fl
 Uy
-ee
+Pu
 Uy
 fg
 OL
@@ -54087,7 +54086,7 @@ vE
 wt
 xg
 wt
-pz
+tn
 mD
 pD
 pX
@@ -58206,7 +58205,7 @@ RV
 Sq
 gX
 sE
-LK
+yS
 Ya
 aa
 aa
