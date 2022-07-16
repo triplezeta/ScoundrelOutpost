@@ -218,7 +218,7 @@
 
 /obj/item/food/lizard_surf_n_turf
 	name = "\improper Zagosk surf 'n' turf smorgasbord"
-	desc = "A massive platter of Tizira's finest meat and seafood, typically shared by groups at the beach. Of course, nothing's stopping you eating it on your own... fatass."
+	desc = "A massive platter of Tizira's finest meat and seafood, typically shared by groups at the beach. Of course, nothing's stopping you eating it on your own."
 	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "surf_n_turf"
 	food_reagents = list(/datum/reagent/consumable/nutriment = 15, /datum/reagent/consumable/nutriment/protein = 10, /datum/reagent/consumable/nutriment/vitamin = 10)
@@ -518,7 +518,7 @@
 
 /obj/item/food/cakeslice/korta_brittle
 	name = "korta brittle slice"
-	desc = "A little slice of korta nut brittle. A diabetic's worst enemy."
+	desc = "A little slice of korta nut brittle."
 	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "korta_brittle_slice"
 	food_reagents = list(/datum/reagent/consumable/sugar = 4, /datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/korta_nectar = 3)
