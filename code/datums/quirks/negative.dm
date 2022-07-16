@@ -742,7 +742,7 @@
 
 /datum/quirk/unstable
 	name = "Unstable"
-	desc = "Due to past troubles, you are unable to recover your sanity if you lose it. Be very careful managing your mood!"
+	desc = "Due to past troubles, you are unable to recover from stress. Be very careful managing your mood!"
 	icon = "angry"
 	value = -10
 	mob_trait = TRAIT_UNSTABLE

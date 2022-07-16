@@ -49,7 +49,7 @@
 
 /datum/component/mood/proc/print_mood(mob/user)
 	var/msg = "[span_info("<EM>My current mental status:</EM>")]\n"
-	msg += span_notice("My current sanity: ") //Long term
+	msg += span_notice("My current stress: ") //Long term
 	switch(sanity)
 		if(SANITY_GREAT to INFINITY)
 			msg += "[span_boldnicegreen("My mind feels like a temple!")]\n"
