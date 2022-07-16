@@ -1343,6 +1343,7 @@
 		"jawsoflife",
 		"laserscalpel",
 		"mechanicalpinches",
+		"rangedanalyzer",
 		"searingtool",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 7500)
