@@ -309,10 +309,10 @@
 
 /// after biting the victim, fall off their face and go idle for a bit
 /obj/item/clothing/mask/facehugger/proc/PostBite(mob/living/carbon/target)
-    target.Unconscious(MAX_IMPREGNATION_TIME/5) // go unconscious for a short amount of time
+    target.Unconscious(MAX_IMPREGNATION_TIME * 0.2) // go unconscious for a short amount of time
     detach()
-    addtimer(CALLBACK(target, /mob/proc/dropItemToGround, src, TRUE), rand(MIN_IMPREGNATION_TIME, MAX_IMPREGNATION_TIME)/8) // drop off the face after some amount of time
-    addtimer(CALLBACK(src, .proc/GoIdle), rand(MIN_IMPREGNATION_TIME, MAX_IMPREGNATION_TIME)/8) // go idle immediately after that
+    addtimer(CALLBACK(target, /mob/proc/dropItemToGround, src, TRUE), rand(MIN_IMPREGNATION_TIME, MAX_IMPREGNATION_TIME) * 0.125) // drop off the face after some amount of time
+    addtimer(CALLBACK(src, .proc/GoIdle), rand(MIN_IMPREGNATION_TIME, MAX_IMPREGNATION_TIME) * 0.125) // go idle immediately after that
 
 #undef MIN_ACTIVE_TIME
 #undef MAX_ACTIVE_TIME
