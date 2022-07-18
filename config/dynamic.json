@@ -2,23 +2,53 @@
 	"Dynamic": {},
 	"Roundstart": {
 		"Traitors": {
-			"weight": 4
+			"cost": 8,
+			"scaling_cost": 9,
+			"weight": 0,
+			"required_candidates": 1,
+			"minimum_required_age": 0,
+			"requirements": [
+				10,
+				10,
+				10,
+				10,
+				10,
+				10,
+				10,
+				10,
+				10,
+				10
+			],
+			"antag_cap": {
+				"denominator": 24
+			},
+			"protected_roles": [
+				"Prisoner",
+				"Security Officer",
+				"Warden",
+				"Detective",
+				"Head of Security",
+				"Captain"
+			],
+			"restricted_roles": [
+				"Cyborg"
+			]
 		},
 
 		"Blood Brothers": {
-			"weight": 4
+			"weight": 0
 		},
 
 		"Changelings": {
-			"weight": 4
+			"weight": 0
 		},
 
 		"Heretics": {
-			"weight": 1
+			"weight": 0
 		},
 
 		"Wizard": {
-			"weight": 1
+			"weight": 0
 		},
 
 		"Blood Cult": {
@@ -31,35 +61,20 @@
 
 		"Revolution": {
 			"weight": 0
-		},
-
-		"Families": {
-			"weight": 0
-		},
-		
-		"Thieves": {
-			"weight": 0
-		},
-		"Thief": {
-			"weight": 0
 		}
 	},
 
 	"Midround": {
 		"Syndicate Sleeper Agent": {
-			"weight": 2
-		},
-
-		"Family Head Aspirants": {
 			"weight": 0
 		},
 
 		"Malfunctioning AI": {
-			"weight": 1
+			"weight": 0
 		},
 
 		"Wizard": {
-			"weight": 1
+			"weight": 0
 		},
 
 		"Nuclear Assault": {
@@ -67,7 +82,7 @@
 		},
 
 		"Blob": {
-			"weight": 1
+			"weight": 0
 		},
 
 		"Blob Infection": {
@@ -75,7 +90,7 @@
 		},
 
 		"Alien Infestation": {
-			"weight": 1
+			"weight": 0
 		},
 
 		"Nightmare": {

@@ -9,6 +9,12 @@
 	},
 /turf/open/floor/plating/abductor,
 /area/shuttle/escape)
+"bm" = (
+/obj/machinery/shower/directional/west{
+	name = "emergency shower"
+	},
+/turf/open/floor/plating/abductor,
+/area/shuttle/escape)
 "eD" = (
 /obj/item/kirbyplants/photosynthetic,
 /obj/machinery/light/directional/north,
@@ -41,6 +47,13 @@
 /obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
 /turf/open/floor/plating/abductor,
 /area/shuttle/escape)
+"jI" = (
+/obj/machinery/door/airlock/abductor{
+	name = "Holding Facility"
+	},
+/obj/effect/mapping_helpers/airlock/access/all/security/general,
+/turf/open/floor/plating/abductor,
+/area/shuttle/escape/brig)
 "jJ" = (
 /obj/machinery/door/airlock/abductor{
 	name = "Command Center"
@@ -54,14 +67,6 @@
 	},
 /turf/open/floor/plating/abductor,
 /area/shuttle/escape/brig)
-"kr" = (
-/obj/structure/table/abductor,
-/obj/item/organ/internal/heart/gland/access{
-	pixel_x = 10
-	},
-/obj/item/organ/internal/heart/gland/egg,
-/turf/open/floor/plating/abductor,
-/area/shuttle/escape)
 "lK" = (
 /obj/machinery/light/directional/west,
 /turf/open/floor/plating/abductor,
@@ -193,6 +198,14 @@
 	},
 /turf/open/floor/plating/abductor,
 /area/shuttle/escape/brig)
+"IM" = (
+/obj/structure/table/abductor,
+/obj/item/organ/internal/heart/gland/access{
+	pixel_x = 10
+	},
+/obj/item/organ/internal/heart/gland/egg,
+/turf/open/floor/plating/abductor,
+/area/shuttle/escape)
 "JK" = (
 /obj/item/lazarus_injector,
 /obj/structure/table/abductor,
@@ -219,20 +232,6 @@
 "OR" = (
 /obj/structure/chair/office{
 	dir = 4
-	},
-/turf/open/floor/plating/abductor,
-/area/shuttle/escape)
-"Pt" = (
-/obj/machinery/door/airlock/abductor{
-	name = "Holding Facility"
-	},
-/obj/effect/mapping_helpers/airlock/access/all/security/general,
-/turf/open/floor/plating/abductor,
-/area/shuttle/escape/brig)
-"Qf" = (
-/obj/machinery/shower{
-	dir = 8;
-	name = "emergency shower"
 	},
 /turf/open/floor/plating/abductor,
 /area/shuttle/escape)
@@ -567,7 +566,7 @@ ZJ
 Um
 Um
 Um
-kr
+IM
 jj
 "}
 (12,1,1) = {"
@@ -634,7 +633,7 @@ sG
 vw
 nH
 yR
-Qf
+bm
 JK
 Ro
 nH
@@ -717,7 +716,7 @@ tb
 ui
 ui
 ui
-Pt
+jI
 Um
 Um
 Um
