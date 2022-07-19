@@ -7,14 +7,6 @@
 #define ETHEREAL_PENALTY_CLUMSY 4
 #define ETHEREAL_PENALTY_PARAPLEGIA 5
 
-#define ETHEREAL_RESPAWN_MESSAGES list( \
-	ETHEREAL_PENALTY_NONE = "You burst out of the crystal with vigour, miraculously unharmed!", \
-	ETHEREAL_PENALTY_SLEEPY = "You burst out of the crystal, slightly drained from the recovery process!", \
-	ETHEREAL_PENALTY_FRAIL = "You burst out of the crystal, feeling a phantom ache from your past wounds!", \
-	ETHEREAL_PENALTY_FRAGILE = "You slip tentatively out of the crystal, your limbs feel like paper after all this regrowth!", \
-	ETHEREAL_PENALTY_CLUMSY = "You fall face-first out of the crystal, but at least you are alive!", \
-	ETHEREAL_PENALTY_PARAPLEGIA = "You collapse forwards out of the crystal, you can't take much more of this!",)
-
 /datum/ethereal_penalty
 	var/trait
 	var/output
@@ -85,7 +77,6 @@
 	return "You burst out of the crystal with vigour, miraculously unharmed!"
 
 #undef ETHEREAL_RESPAWN_PENALTIES
-#undef ETHEREAL_RESPAWN_MESSAGES
 #undef ETHEREAL_RESPAWN_TRAIT
 
 #undef ETHEREAL_PENALTY_NONE
