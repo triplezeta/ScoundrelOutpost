@@ -24,9 +24,9 @@
 	var/rods = 2
 	var/cable = 1
 	var/list/debris = list()
-	/// Time it takes to pry open the windoor with the jaws of life.
+	/// ORBSTATION: Time it takes to pry open the windoor with the jaws of life. Time to disassemble is this * 1.5.
 	var/pry_time = 4 SECONDS
-	/// Percent chance for the windoor to break when pried open with the jaws of life.
+	/// ORBSTATION: Percent chance for the windoor to break when pried open with the jaws of life.
 	var/pry_break_chance = 30
 
 /obj/machinery/door/window/Initialize(mapload, set_dir, unres_sides)
