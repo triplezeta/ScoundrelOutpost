@@ -38,7 +38,7 @@
 	progression_maximum = 30 MINUTES
 	allow_more_than_max = TRUE
 	applicable_jobs = list(
-		JOB_STATION_ENGINEER = /obj/machinery/telecomms/hub,
+		JOB_STATION_ENGINEER = /obj/machinery/telecomms/server/presets/common,
 		JOB_SCIENTIST = /obj/machinery/rnd/server,
 	)
 
