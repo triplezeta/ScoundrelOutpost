@@ -10,7 +10,7 @@
 	icon_state = "bloodhand_left"
 	var/icon_left = "bloodhand_left"
 	var/icon_right = "bloodhand_right"
-	hitsound = 'sound/hallucinations/growl1.ogg'
+	hitsound = 'sound/weapons/slash.ogg'
 	force = 21 // Just enough to break airlocks with melee attacks
 	sharpness = SHARP_EDGED
 	wound_bonus = -30
@@ -34,11 +34,9 @@
 	. = ..()
 	if(!proximity_flag)
 		return
-	else if(isliving(target))
-		if(ishuman(target))
-			try_to_zombie_infect(target)
-		else
-			check_feast(target, user)
+	else if(isliving(target) && !ishuman(target))
+		// ORBSTATION: Zombie claws don't infect people, there's a bite action for that.
+		check_feast(target, user)
 
 /proc/try_to_zombie_infect(mob/living/carbon/human/target)
 	CHECK_DNA_AND_SPECIES(target)
