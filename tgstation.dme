@@ -4641,11 +4641,12 @@
 #include "orbstation\antagonists\changeling_infiltrator\changeling_infiltrator.dm"
 #include "orbstation\antagonists\traitor\objectives\double_cross.dm"
 #include "orbstation\antagonists\traitor\objectives\final_objective\malware_injection.dm"
-#include "orbstation\Chaplain\ratlain.dm"
+#include "orbstation\chaplain\ratlain.dm"
 #include "orbstation\clothing\misc.dm"
 #include "orbstation\datums\components\crafting\recipes.dm"
 #include "orbstation\datums\greyscale\config_types\greyscale_configs.dm"
 #include "orbstation\mob\simple_animal\friendly\amoung.dm"
+#include "orbstation\species\ethereal\respawn_penalties.dm"
 #include "orbstation\species\zombie\zombie_bite.dm"
 #include "orbstation\species\zombie\zombies.dm"
 // END_INCLUDE
