@@ -1,5 +1,5 @@
 /// Time it takes to bite the target.
-#define ZOMBIE_BITE_TIME 10 SECONDS
+#define ZOMBIE_BITE_TIME 8 SECONDS
 
 /datum/action/zombie_bite
 	name = "Bite"

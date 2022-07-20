@@ -34,10 +34,9 @@
 	. = ..()
 	if(!proximity_flag)
 		return
-	else if(isliving(target))
+	else if(isliving(target) && !ishuman(target))
 		// ORBSTATION: Zombie claws don't infect people, there's a bite action for that.
-		if(!ishuman(target))
-			check_feast(target, user)
+		check_feast(target, user)
 
 /proc/try_to_zombie_infect(mob/living/carbon/human/target)
 	CHECK_DNA_AND_SPECIES(target)
