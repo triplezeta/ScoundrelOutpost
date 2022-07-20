@@ -44,8 +44,8 @@
 	if(ismonkey(target))
 		to_chat(owner, span_warning("You can only bite humanoid targets!"))
 		return FALSE
-	if(NOBLOOD in target.dna.species.species_traits || NOZOMBIE in target.dna.species.species_traits) // you cannot bite plasmamen, skeletons, golems, other zombies, etc
-		to_chat(owner, span_warning("You can't seem to bite this person!"))
+	if((NOBLOOD in target.dna.species.species_traits) || (NOZOMBIE in target.dna.species.species_traits)) // you cannot bite plasmamen, skeletons, golems, other zombies, etc
+		to_chat(owner, span_warning("This person has no blood to infect!"))
 		return FALSE
 	if(owner.grab_state < GRAB_NECK)
 		to_chat(owner, span_warning("You need a stronger grip to bite this person!"))
