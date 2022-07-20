@@ -440,7 +440,7 @@
 	icon_state = "leftsecure"
 	base_state = "leftsecure"
 	var/id = null
-	max_integrity = 200 //Stronger doors for prison (regular window door health is 75)
+	max_integrity = 220 //Stronger doors for prison (regular window door health is 75)
 	reinf = 1
 	explosion_block = 1
 	pry_time = 10 SECONDS
