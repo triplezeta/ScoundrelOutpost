@@ -7,7 +7,7 @@
 	closingLayer = ABOVE_WINDOW_LAYER
 	resistance_flags = ACID_PROOF
 	var/base_state = "left"
-	max_integrity = 150 //If you change this, consider changing ../door/window/brigdoor/ max_integrity at the bottom of this .dm file
+	max_integrity = 75 // ORBSTATION: it's a door made of GLASS. in practice takes about 7 hits from a circular saw or toolbox
 	integrity_failure = 0
 	armor = list(MELEE = 20, BULLET = 50, LASER = 50, ENERGY = 50, BOMB = 10, BIO = 0, FIRE = 70, ACID = 100)
 	visible = FALSE
@@ -24,6 +24,10 @@
 	var/rods = 2
 	var/cable = 1
 	var/list/debris = list()
+	/// ORBSTATION: Time it takes to pry open the windoor with the jaws of life. Time to disassemble is this * 1.5.
+	var/pry_time = 4 SECONDS
+	/// ORBSTATION: Percent chance for the windoor to break when pried open with the jaws of life.
+	var/pry_break_chance = 30
 
 /obj/machinery/door/window/Initialize(mapload, set_dir, unres_sides)
 	. = ..()
@@ -253,6 +257,7 @@
 
 /obj/machinery/door/window/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1) && !disassembled)
+		playsound(src, SFX_SHATTER, 70, TRUE)
 		for(var/obj/fragment in debris)
 			fragment.forceMove(get_turf(src))
 			transfer_fingerprints_to(fragment)
@@ -284,9 +289,6 @@
 	. = ..()
 	if(flags_1 & NODECONSTRUCT_1)
 		return
-	if(density || operating)
-		to_chat(user, span_warning("You need to open the door to access the maintenance panel!"))
-		return
 	add_fingerprint(user)
 	tool.play_tool_sound(src)
 	panel_open = !panel_open
@@ -297,14 +299,14 @@
 	. = ..()
 	if(flags_1 & NODECONSTRUCT_1)
 		return
-	if(!panel_open || density || operating)
+	if(!panel_open)
 		return
 	add_fingerprint(user)
-	user.visible_message(span_notice("[user] removes the electronics from the [name]."), \
-	span_notice("You start to remove electronics from the [name]..."))
-	if(!tool.use_tool(src, user, 40, volume=50))
+	user.visible_message(span_notice("[user] starts to remove the electronics from \the [name]."), \
+	span_notice("You start to remove the electronics from \the [name]..."))
+	if(!tool.use_tool(src, user, pry_time * 1.5, volume=50))
 		return
-	if(!panel_open || density || operating || !loc)
+	if(!panel_open || !loc)
 		return
 	var/obj/structure/windoor_assembly/windoor_assembly = new /obj/structure/windoor_assembly(loc)
 	switch(base_state)
@@ -361,8 +363,25 @@
 			open(2)
 		else
 			close(2)
-	else
-		to_chat(user, span_warning("The door's motors resist your efforts to force it!"))
+	else if(!panel_open)
+		if(!density)
+			to_chat(user, span_notice("\The [name] is already open!"))
+			return
+		if(istype(I, /obj/item/crowbar/power)) // ORBSTATION: jaws of life can pry open windoors, but with a chance to break them
+			add_fingerprint(user)
+			user.visible_message(span_notice("[user] starts to pry open \the [name] with [I]."), \
+			span_notice("You start prying open \the [name] with [I]..."))
+			if(!I.use_tool(src, user, pry_time, volume=80))
+				return
+			if(!loc)
+				return
+			if(prob(pry_break_chance))
+				user.visible_message(span_danger("\The [name] breaks apart under the force of [I]!"))
+				deconstruct(disassembled = FALSE)
+			else
+				open(2)
+		else
+			to_chat(user, span_warning("The door's motors resist your efforts to force it!"))
 
 /obj/machinery/door/window/do_animate(animation)
 	switch(animation)
@@ -421,9 +440,11 @@
 	icon_state = "leftsecure"
 	base_state = "leftsecure"
 	var/id = null
-	max_integrity = 300 //Stronger doors for prison (regular window door health is 200)
+	max_integrity = 220 //Stronger doors for prison (regular window door health is 75)
 	reinf = 1
 	explosion_block = 1
+	pry_time = 10 SECONDS
+	pry_break_chance = 60
 
 /obj/machinery/door/window/brigdoor/security/cell
 	name = "cell door"
