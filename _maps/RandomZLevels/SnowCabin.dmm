@@ -101,6 +101,16 @@
 	},
 /turf/open/floor/wood,
 /area/awaymission/cabin)
+"as" = (
+/obj/structure/sink/directional/west,
+/obj/structure/mirror/directional/north,
+/turf/open/floor/iron/freezer,
+/area/awaymission/cabin)
+"at" = (
+/obj/structure/sink/directional/east,
+/obj/structure/mirror/directional/north,
+/turf/open/floor/iron/freezer,
+/area/awaymission/cabin)
 "au" = (
 /obj/structure/dresser,
 /turf/open/floor/wood,
@@ -183,6 +193,11 @@
 	},
 /turf/open/floor/plating/snowed/snow_cabin,
 /area/awaymission/cabin/snowforest/sovietsurface)
+"aH" = (
+/obj/machinery/shower/directional/north,
+/obj/structure/curtain,
+/turf/open/floor/iron/freezer,
+/area/awaymission/cabin)
 "aI" = (
 /obj/machinery/light/directional/east,
 /obj/structure/table/wood,
@@ -254,6 +269,18 @@
 	name = "Fireplace"
 	},
 /obj/structure/fireplace,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/awaymission/cabin)
+"aS" = (
+/obj/structure/sink/kitchen/directional/south{
+	desc = "A sink used for washing one's hands and face. It looks rusty and home-made";
+	name = "sink"
+	},
+/obj/structure/janitorialcart,
+/obj/item/mop,
+/obj/item/reagent_containers/glass/bucket,
+/obj/item/clothing/suit/caution,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/awaymission/cabin)
@@ -427,6 +454,13 @@
 /obj/machinery/reagentgrinder,
 /turf/open/floor/iron/cafeteria,
 /area/awaymission/cabin)
+"bz" = (
+/obj/structure/sink/kitchen/directional/south{
+	desc = "A sink used for washing one's hands and face. It looks rusty and home-made";
+	name = "sink"
+	},
+/turf/open/floor/iron/cafeteria,
+/area/awaymission/cabin)
 "bA" = (
 /obj/machinery/chem_master/condimaster,
 /turf/open/floor/iron/freezer,
@@ -449,9 +483,26 @@
 /obj/machinery/atmospherics/components/unary/cryo_cell,
 /turf/open/floor/iron/white,
 /area/awaymission/cabin)
+"bG" = (
+/obj/structure/sink/directional/east,
+/turf/open/floor/iron/white,
+/area/awaymission/cabin)
+"bH" = (
+/obj/machinery/shower/directional/north,
+/obj/structure/curtain,
+/obj/item/soap/nanotrasen{
+	pixel_x = -1;
+	pixel_y = -3
+	},
+/turf/open/floor/iron/freezer,
+/area/awaymission/cabin)
 "bI" = (
 /turf/open/lava,
 /area/awaymission/cabin/caves/mountain)
+"bJ" = (
+/obj/structure/sink/directional/west,
+/turf/open/floor/iron/freezer,
+/area/awaymission/cabin)
 "bK" = (
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 1
@@ -597,15 +648,6 @@
 	},
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/open/floor/iron/white,
-/area/awaymission/cabin)
-"cn" = (
-/obj/machinery/shower/directional/north,
-/obj/structure/curtain,
-/obj/item/soap/nanotrasen{
-	pixel_x = -1;
-	pixel_y = -3
-	},
-/turf/open/floor/iron/freezer,
 /area/awaymission/cabin)
 "co" = (
 /turf/open/chasm{
@@ -2660,42 +2702,6 @@
 /obj/item/clothing/neck/scarf/christmas,
 /turf/open/floor/wood,
 /area/awaymission/cabin)
-"ju" = (
-/obj/machinery/light/directional/west,
-/obj/structure/closet/secure_closet/personal/cabinet{
-	anchored = 1
-	},
-/obj/item/clothing/suit/hooded/wintercoat,
-/obj/item/clothing/suit/hooded/wintercoat,
-/obj/item/clothing/shoes/winterboots,
-/obj/item/clothing/shoes/winterboots,
-/obj/item/clothing/neck/stripedbluescarf,
-/turf/open/floor/wood,
-/area/awaymission/cabin)
-"jv" = (
-/obj/machinery/light/directional/west,
-/obj/structure/closet/secure_closet/personal/cabinet{
-	anchored = 1
-	},
-/obj/item/clothing/suit/hooded/wintercoat,
-/obj/item/clothing/suit/hooded/wintercoat,
-/obj/item/clothing/shoes/winterboots,
-/obj/item/clothing/shoes/winterboots,
-/obj/item/clothing/neck/stripedgreenscarf,
-/turf/open/floor/wood,
-/area/awaymission/cabin)
-"jw" = (
-/obj/machinery/light/directional/west,
-/obj/structure/closet/secure_closet/personal/cabinet{
-	anchored = 1
-	},
-/obj/item/clothing/suit/hooded/wintercoat,
-/obj/item/clothing/suit/hooded/wintercoat,
-/obj/item/clothing/shoes/winterboots,
-/obj/item/clothing/shoes/winterboots,
-/obj/item/clothing/neck/stripedredscarf,
-/turf/open/floor/wood,
-/area/awaymission/cabin)
 "jx" = (
 /obj/structure/table/wood/poker,
 /obj/item/dice/d6{
@@ -3690,13 +3696,6 @@
 	},
 /turf/open/indestructible,
 /area/awaymission/cabin/caves/mountain)
-"ta" = (
-/obj/structure/sink/kitchen/directional/south{
-	desc = "A sink used for washing one's hands and face. It looks rusty and home-made";
-	name = "sink"
-	},
-/turf/open/floor/iron/cafeteria,
-/area/awaymission/cabin)
 "td" = (
 /obj/effect/turf_decal/tile/blue/fourcorners,
 /turf/open/floor/iron/dark,
@@ -3717,11 +3716,6 @@
 	},
 /turf/open/misc/asteroid/snow/snow_cabin,
 /area/awaymission/cabin/caves)
-"tu" = (
-/obj/structure/sink/directional/west,
-/obj/structure/mirror/directional/north,
-/turf/open/floor/iron/freezer,
-/area/awaymission/cabin)
 "tC" = (
 /obj/effect/decal/cleanable/glitter/blue{
 	desc = "It looks like fancy glitter to me.";
@@ -3797,6 +3791,28 @@
 	},
 /turf/open/misc/ice/smooth,
 /area/awaymission/cabin/caves)
+"vo" = (
+/obj/effect/rune/malformed{
+	color = "#5772E0";
+	cultist_desc = "The snowman council will now decide your fate.";
+	cultist_name = "The Snowman Council Rune";
+	desc = "An odd collection of symbols drawn in what seems to be frozen water. Despite the fancy setup, the rune seems quite mundane which makes it unworthy of translation.";
+	icon_state = "2";
+	invocation = "Frosty the Snowman was a jolly happy soul with a corncob pipe and a button nose and his eyes made out of coal!";
+	invoke_damage = 60;
+	name = "ice rune"
+	},
+/obj/item/clothing/suit/costume/snowman{
+	desc = "The dead body of a snowman. There's holes to stick your own body in it.";
+	name = "snowman corpse"
+	},
+/obj/item/clothing/head/snowman{
+	desc = "The head of a dead snowman. There's enough room inside for your own head.";
+	pixel_x = -1;
+	pixel_y = 10
+	},
+/turf/open/misc/asteroid/snow/snow_cabin,
+/area/awaymission/cabin/caves)
 "vD" = (
 /obj/effect/turf_decal/weather/snow,
 /obj/item/modular_computer/tablet/pda/syndicate{
@@ -3823,6 +3839,18 @@
 /obj/effect/decal/cleanable/plasma,
 /turf/open/misc/asteroid/snow/snow_cabin,
 /area/awaymission/cabin/caves)
+"wo" = (
+/obj/machinery/light/directional/west,
+/obj/structure/closet/secure_closet/personal/cabinet{
+	anchored = 1
+	},
+/obj/item/clothing/suit/hooded/wintercoat,
+/obj/item/clothing/suit/hooded/wintercoat,
+/obj/item/clothing/shoes/winterboots,
+/obj/item/clothing/shoes/winterboots,
+/obj/item/clothing/neck/large_scarf/green,
+/turf/open/floor/wood,
+/area/awaymission/cabin)
 "wI" = (
 /obj/item/toy/figure/borg{
 	desc = "The robot that was manufactured just for this exploration team.";
@@ -3927,10 +3955,6 @@
 /obj/structure/table,
 /turf/open/floor/iron/dark,
 /area/awaymission/cabin/caves/mountain)
-"yC" = (
-/obj/structure/sink/directional/west,
-/turf/open/floor/iron/freezer,
-/area/awaymission/cabin)
 "yJ" = (
 /obj/structure/sign/poster/contraband/free_drone{
 	desc = "This poster seems to be meant for a bunch of machines that used to be deployed on space stations."
@@ -3980,28 +4004,6 @@
 	},
 /turf/open/misc/asteroid/snow/snow_cabin,
 /area/awaymission/cabin/snowforest)
-"zl" = (
-/obj/effect/rune/malformed{
-	color = "#5772E0";
-	cultist_desc = "The snowman council will now decide your fate.";
-	cultist_name = "The Snowman Council Rune";
-	desc = "An odd collection of symbols drawn in what seems to be frozen water. Despite the fancy setup, the rune seems quite mundane which makes it unworthy of translation.";
-	icon_state = "2";
-	invocation = "Frosty the Snowman was a jolly happy soul with a corncob pipe and a button nose and his eyes made out of coal!";
-	invoke_damage = 60;
-	name = "ice rune"
-	},
-/obj/item/clothing/suit/costume/snowman{
-	desc = "The dead body of a snowman. There's holes to stick your own body in it.";
-	name = "snowman corpse"
-	},
-/obj/item/clothing/head/snowman{
-	desc = "The head of a dead snowman. There's enough room inside for your own head.";
-	pixel_x = -1;
-	pixel_y = 10
-	},
-/turf/open/misc/asteroid/snow/snow_cabin,
-/area/awaymission/cabin/caves)
 "zm" = (
 /obj/structure/sign/warning/no_smoking/circle,
 /turf/closed/wall/mineral/wood,
@@ -4084,6 +4086,18 @@
 	},
 /turf/open/misc/asteroid/snow/snow_cabin,
 /area/awaymission/cabin/caves)
+"Bl" = (
+/obj/machinery/light/directional/west,
+/obj/structure/closet/secure_closet/personal/cabinet{
+	anchored = 1
+	},
+/obj/item/clothing/suit/hooded/wintercoat,
+/obj/item/clothing/suit/hooded/wintercoat,
+/obj/item/clothing/shoes/winterboots,
+/obj/item/clothing/shoes/winterboots,
+/obj/item/clothing/neck/large_scarf/blue,
+/turf/open/floor/wood,
+/area/awaymission/cabin)
 "BR" = (
 /mob/living/simple_animal/hostile/skeleton/ice{
 	desc = "A reanimated skeleton covered in thick sheet of natural ice. It is obvious to tell that they look really slow.";
@@ -4259,11 +4273,6 @@
 /obj/effect/decal/cleanable/shreds,
 /turf/open/misc/ice/smooth,
 /area/awaymission/cabin/caves)
-"KP" = (
-/obj/structure/sink/directional/east,
-/obj/structure/mirror/directional/north,
-/turf/open/floor/iron/freezer,
-/area/awaymission/cabin)
 "Lc" = (
 /obj/structure/flora{
 	desc = "Looks frozen.";
@@ -4316,6 +4325,18 @@
 	},
 /turf/open/misc/asteroid/snow/snow_cabin,
 /area/awaymission/cabin/caves)
+"LI" = (
+/obj/machinery/light/directional/west,
+/obj/structure/closet/secure_closet/personal/cabinet{
+	anchored = 1
+	},
+/obj/item/clothing/suit/hooded/wintercoat,
+/obj/item/clothing/suit/hooded/wintercoat,
+/obj/item/clothing/shoes/winterboots,
+/obj/item/clothing/shoes/winterboots,
+/obj/item/clothing/neck/large_scarf/red,
+/turf/open/floor/wood,
+/area/awaymission/cabin)
 "LS" = (
 /obj/structure/sign{
 	pixel_x = 32
@@ -4412,18 +4433,6 @@
 	},
 /turf/open/floor/wood,
 /area/awaymission/cabin)
-"NS" = (
-/obj/structure/sink/kitchen/directional/south{
-	desc = "A sink used for washing one's hands and face. It looks rusty and home-made";
-	name = "sink"
-	},
-/obj/structure/janitorialcart,
-/obj/item/mop,
-/obj/item/reagent_containers/glass/bucket,
-/obj/item/clothing/suit/caution,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
-/area/awaymission/cabin)
 "Oe" = (
 /turf/open/misc/asteroid/snow/snow_cabin,
 /area/awaymission/cabin/caves)
@@ -4470,17 +4479,6 @@
 /obj/effect/turf_decal/tile/blue/fourcorners,
 /turf/open/indestructible,
 /area/awaymission/cabin/caves/mountain)
-"Pl" = (
-/obj/item/shovel{
-	desc = "A large tool for digging and moving snow.";
-	force = 10;
-	name = "snow shovel"
-	},
-/obj/effect/decal/remains/human{
-	color = "#72e4fa"
-	},
-/turf/open/misc/asteroid/snow/snow_cabin,
-/area/awaymission/cabin/caves)
 "Po" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/glitter/blue{
@@ -4489,11 +4487,6 @@
 	},
 /turf/open/misc/asteroid/snow/snow_cabin,
 /area/awaymission/cabin/caves)
-"PN" = (
-/obj/machinery/shower/directional/north,
-/obj/structure/curtain,
-/turf/open/floor/iron/freezer,
-/area/awaymission/cabin)
 "PV" = (
 /turf/open/misc/ice/smooth,
 /area/awaymission/cabin/caves)
@@ -4638,10 +4631,6 @@
 	name = "shutter button"
 	},
 /turf/open/floor/wood,
-/area/awaymission/cabin)
-"SF" = (
-/obj/structure/sink/directional/east,
-/turf/open/floor/iron/white,
 /area/awaymission/cabin)
 "SQ" = (
 /obj/structure/table/wood,
@@ -4826,6 +4815,17 @@
 	name = "icy wind"
 	},
 /obj/effect/decal/cleanable/oil,
+/turf/open/misc/asteroid/snow/snow_cabin,
+/area/awaymission/cabin/caves)
+"Wx" = (
+/obj/item/shovel{
+	desc = "A large tool for digging and moving snow.";
+	force = 10;
+	name = "snow shovel"
+	},
+/obj/effect/decal/remains/human{
+	color = "#72e4fa"
+	},
 /turf/open/misc/asteroid/snow/snow_cabin,
 /area/awaymission/cabin/caves)
 "Wy" = (
@@ -26393,9 +26393,9 @@ RC
 RC
 th
 an
-tu
+as
 aB
-PN
+aH
 an
 an
 an
@@ -26654,7 +26654,7 @@ an
 an
 an
 an
-NS
+aS
 hg
 aq
 ht
@@ -26907,9 +26907,9 @@ RC
 RC
 th
 an
-KP
+at
 aC
-PN
+aH
 an
 an
 an
@@ -28965,7 +28965,7 @@ an
 an
 So
 aV
-ju
+Bl
 au
 ji
 an
@@ -30505,9 +30505,9 @@ pL
 RC
 th
 an
-tu
+as
 aB
-PN
+aH
 an
 an
 an
@@ -31019,16 +31019,16 @@ RC
 pL
 th
 an
-KP
+at
 aC
-PN
+aH
 an
 an
 an
 aq
 ht
 an
-ta
+bz
 bO
 bW
 ck
@@ -31535,7 +31535,7 @@ an
 an
 aq
 au
-jv
+wo
 aV
 aq
 an
@@ -32571,7 +32571,7 @@ eg
 aq
 an
 aJ
-SF
+bG
 bE
 cv
 hq
@@ -33077,7 +33077,7 @@ an
 an
 Vg
 aV
-jw
+LI
 au
 jh
 an
@@ -34617,9 +34617,9 @@ RC
 RC
 th
 an
-tu
+as
 aB
-PN
+aH
 an
 an
 an
@@ -34883,7 +34883,7 @@ bf
 bb
 an
 bj
-cn
+bH
 an
 kk
 aq
@@ -35140,7 +35140,7 @@ bb
 az
 an
 bk
-yC
+bJ
 an
 aq
 aq
@@ -45069,7 +45069,7 @@ gx
 PV
 Oe
 Oe
-Pl
+Wx
 Oe
 Oe
 Oe
@@ -46722,7 +46722,7 @@ Oe
 Oe
 Oe
 Oe
-zl
+vo
 Oe
 Dl
 gx
