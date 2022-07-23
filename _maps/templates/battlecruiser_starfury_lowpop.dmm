@@ -18,7 +18,8 @@
 	pixel_y = 9
 	},
 /obj/item/knife/combat/survival{
-	pixel_y = 3
+	pixel_y = 3;
+	pixel_x = 1
 	},
 /obj/item/knife/combat/survival{
 	pixel_x = 6;
@@ -29,6 +30,10 @@
 "ai" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/item/toy/balloon/syndicate,
+/obj/effect/turf_decal/tile/dark_red{
+	dir = 4
+	},
+/obj/item/stock_parts/cell/hyper,
 /turf/open/floor/iron/dark,
 /area/shuttle/sbc_starfury)
 "an" = (
@@ -58,7 +63,7 @@
 	},
 /obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
 /obj/effect/mapping_helpers/airlock/cutaiwire,
-/turf/open/floor/plating,
+/turf/open/floor/iron/dark/smooth_large,
 /area/shuttle/sbc_starfury)
 "ay" = (
 /turf/open/floor/iron/dark,
@@ -118,11 +123,10 @@
 /obj/machinery/door/airlock{
 	name = "Crew Cabins"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/wood,
 /area/shuttle/sbc_starfury)
 "aS" = (
 /obj/machinery/light/small/red/directional/east,
-/obj/structure/cable,
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/shuttle/sbc_starfury)
 "aV" = (
@@ -214,6 +218,9 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
 	},
+/obj/effect/turf_decal/tile/dark_red{
+	dir = 4
+	},
 /turf/open/floor/iron/dark,
 /area/shuttle/sbc_starfury)
 "cM" = (
@@ -225,23 +232,29 @@
 /area/shuttle/sbc_starfury)
 "cO" = (
 /obj/machinery/light/directional/east,
-/obj/effect/turf_decal/tile/bar/diagonal_centre,
 /turf/open/floor/iron/dark/smooth_large,
 /area/shuttle/sbc_starfury)
 "cP" = (
 /obj/structure/table,
 /obj/item/grenade/syndieminibomb{
-	pixel_x = -1;
-	pixel_y = 3
+	pixel_x = -5;
+	pixel_y = 8
 	},
 /obj/item/grenade/syndieminibomb{
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = 8
 	},
 /obj/item/grenade/syndieminibomb{
-	pixel_x = 5;
-	pixel_y = -3
+	pixel_x = 9;
+	pixel_y = 8
 	},
-/obj/item/storage/belt/grenade/full,
+/obj/item/storage/backpack/duffelbag/syndie/c4{
+	pixel_x = -4;
+	pixel_y = 7
+	},
+/obj/item/storage/belt/grenade/full{
+	pixel_x = 5
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/sbc_starfury)
 "cU" = (
@@ -313,6 +326,7 @@
 /obj/item/storage/belt/medical{
 	pixel_y = 2
 	},
+/obj/item/storage/box/syndie_kit/chemical,
 /obj/item/gun/syringe/rapidsyringe,
 /turf/open/floor/iron/dark/smooth_large,
 /area/shuttle/sbc_starfury)
@@ -347,7 +361,7 @@
 /obj/machinery/door/airlock{
 	name = "Bar"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/wood,
 /area/shuttle/sbc_starfury)
 "dV" = (
 /obj/structure/lattice,
@@ -364,6 +378,7 @@
 /area/shuttle/sbc_starfury)
 "ea" = (
 /obj/machinery/light/small/directional/west,
+/mob/living/simple_animal/bot/medbot/mysterious,
 /turf/open/floor/iron/showroomfloor,
 /area/shuttle/sbc_starfury)
 "ec" = (
@@ -376,7 +391,7 @@
 	name = "Command Hallway"
 	},
 /obj/effect/mapping_helpers/airlock/cutaiwire,
-/turf/open/floor/plating,
+/turf/open/floor/iron/dark/smooth_large,
 /area/shuttle/sbc_starfury)
 "ep" = (
 /obj/vehicle/sealed/mecha/combat/marauder/mauler/loaded,
@@ -540,7 +555,21 @@
 	pixel_x = 6;
 	pixel_y = 12
 	},
-/obj/item/grenade/clusterbuster/emp,
+/obj/item/grenade/smokebomb{
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/obj/item/grenade/smokebomb{
+	pixel_y = 6;
+	pixel_x = 4
+	},
+/obj/item/grenade/smokebomb{
+	pixel_y = 6;
+	pixel_x = -1
+	},
+/obj/item/grenade/clusterbuster/emp{
+	pixel_y = -4
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/sbc_starfury)
 "hl" = (
@@ -565,7 +594,7 @@
 /obj/machinery/door/airlock/hatch{
 	name = "Crew Quarters"
 	},
-/turf/open/floor/iron/dark/smooth_large,
+/turf/open/floor/wood,
 /area/shuttle/sbc_starfury)
 "hq" = (
 /obj/machinery/power/smes/magical{
@@ -573,7 +602,8 @@
 	desc = "A high-capacity superconducting magnetic energy storage (SMES) unit. Uses Syndicate technology to generate infinite power."
 	},
 /obj/structure/cable,
-/turf/open/floor/iron/dark,
+/obj/machinery/power/terminal,
+/turf/open/floor/catwalk_floor/iron_dark,
 /area/shuttle/sbc_starfury)
 "ht" = (
 /obj/machinery/vending/boozeomat/syndicate_access,
@@ -630,6 +660,9 @@
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/item/aicard,
 /obj/item/restraints/handcuffs,
+/obj/effect/turf_decal/tile/green{
+	dir = 1
+	},
 /turf/open/floor/iron/dark,
 /area/shuttle/sbc_starfury)
 "im" = (
@@ -730,7 +763,16 @@
 	},
 /obj/structure/table,
 /obj/item/card/emag/doorjack{
-	pixel_x = 5
+	pixel_y = 3
+	},
+/obj/item/card/emag/doorjack{
+	pixel_x = 6;
+	pixel_y = -1
+	},
+/obj/item/flashlight/emp{
+	pixel_y = 12;
+	pixel_x = 6;
+	name = "EMP flashlight"
 	},
 /obj/item/clothing/glasses/thermal{
 	pixel_x = -2;
@@ -754,8 +796,10 @@
 /turf/open/floor/iron/dark/diagonal,
 /area/shuttle/sbc_starfury)
 "kJ" = (
-/obj/effect/turf_decal/tile/bar/diagonal_centre,
-/turf/open/floor/iron/dark/smooth_large,
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/turf/open/floor/catwalk_floor/iron_dark,
 /area/shuttle/sbc_starfury)
 "kR" = (
 /obj/effect/turf_decal/tile/red{
@@ -783,7 +827,8 @@
 /area/shuttle/sbc_starfury)
 "lA" = (
 /obj/machinery/power/port_gen/pacman,
-/turf/open/floor/iron/dark,
+/obj/structure/cable,
+/turf/open/floor/catwalk_floor/iron_dark,
 /area/shuttle/sbc_starfury)
 "lB" = (
 /obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
@@ -795,14 +840,14 @@
 	},
 /obj/effect/mapping_helpers/airlock/cutaiwire,
 /obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
-/turf/open/floor/plating,
+/turf/open/floor/iron/showroomfloor,
 /area/shuttle/sbc_starfury)
 "lJ" = (
 /obj/structure/rack{
 	dir = 8;
 	layer = 2.9
 	},
-/obj/item/storage/belt/military,
+/obj/item/ammo_box/magazine/sniper_rounds,
 /obj/item/gun/ballistic/automatic/sniper_rifle/syndicate,
 /turf/open/floor/pod/dark,
 /area/shuttle/sbc_starfury)
@@ -896,8 +941,25 @@
 /area/shuttle/sbc_starfury)
 "rr" = (
 /obj/structure/table,
-/obj/item/mod/module/energy_shield,
-/obj/item/mod/module/visor/medhud,
+/obj/item/mod/module/magnetic_harness{
+	pixel_y = 7;
+	pixel_x = 2
+	},
+/obj/item/mod/module/injector{
+	pixel_x = -5;
+	pixel_y = 5
+	},
+/obj/item/mod/module/holster{
+	pixel_x = 3
+	},
+/obj/item/mod/module/energy_shield{
+	pixel_y = -2;
+	pixel_x = -5
+	},
+/obj/item/mod/module/drill{
+	pixel_y = -7;
+	pixel_x = 6
+	},
 /turf/open/floor/pod/dark,
 /area/shuttle/sbc_starfury)
 "ry" = (
@@ -953,23 +1015,29 @@
 /obj/structure/chair/office{
 	dir = 4
 	},
+/obj/effect/turf_decal/tile/dark_red{
+	dir = 4
+	},
 /turf/open/floor/iron/dark/smooth_large,
 /area/shuttle/sbc_starfury)
 "wq" = (
 /obj/structure/table,
 /obj/item/shield/energy{
-	pixel_x = -5;
-	pixel_y = 10
-	},
-/obj/item/shield/energy{
-	pixel_x = 4;
+	pixel_x = -8;
 	pixel_y = 3
 	},
-/obj/item/shield/energy{
-	pixel_x = -5;
-	pixel_y = -4
-	},
 /obj/machinery/light/directional/south,
+/obj/item/implanter/krav_maga{
+	pixel_x = 2
+	},
+/obj/item/implanter/storage{
+	pixel_x = 2;
+	pixel_y = 5
+	},
+/obj/item/implanter/explosive{
+	pixel_y = 10;
+	pixel_x = 2
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/sbc_starfury)
 "xc" = (
@@ -995,7 +1063,7 @@
 	name = "Crew Quarters"
 	},
 /obj/effect/mapping_helpers/airlock/cutaiwire,
-/turf/open/floor/plating,
+/turf/open/floor/wood,
 /area/shuttle/sbc_starfury)
 "Ak" = (
 /obj/machinery/vending/medical/syndicate_access/cybersun,
@@ -1049,6 +1117,15 @@
 /obj/machinery/computer/med_data/syndie{
 	dir = 4
 	},
+/obj/effect/turf_decal/tile/green{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/green{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/green{
+	dir = 8
+	},
 /turf/open/floor/iron/dark,
 /area/shuttle/sbc_starfury)
 "Kf" = (
@@ -1073,15 +1150,28 @@
 /obj/machinery/computer/security{
 	network = list("SBC_Corvette")
 	},
+/obj/effect/turf_decal/tile/dark_red{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/dark_red,
+/obj/effect/turf_decal/tile/dark_red{
+	dir = 1
+	},
 /turf/open/floor/iron/dark,
 /area/shuttle/sbc_starfury)
 "Nw" = (
-/obj/structure/cable,
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/shuttle/sbc_starfury)
 "ND" = (
 /obj/machinery/computer/secure_data/syndie{
 	dir = 8
+	},
+/obj/effect/turf_decal/tile/dark_red{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/dark_red,
+/obj/effect/turf_decal/tile/dark_red{
+	dir = 1
 	},
 /turf/open/floor/iron/dark,
 /area/shuttle/sbc_starfury)
@@ -1109,7 +1199,7 @@
 	pixel_y = 25
 	},
 /obj/structure/cable,
-/turf/open/floor/iron/dark,
+/turf/open/floor/catwalk_floor/iron_dark,
 /area/shuttle/sbc_starfury)
 "Qu" = (
 /obj/structure/dresser,
@@ -1141,6 +1231,15 @@
 /area/shuttle/sbc_starfury)
 "Sb" = (
 /obj/machinery/computer/crew/syndie,
+/obj/effect/turf_decal/tile/green{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/green{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/green{
+	dir = 8
+	},
 /turf/open/floor/iron/dark,
 /area/shuttle/sbc_starfury)
 "Sh" = (
@@ -1170,15 +1269,25 @@
 /area/shuttle/sbc_starfury)
 "Wu" = (
 /obj/structure/table,
-/obj/machinery/cell_charger,
-/obj/item/stock_parts/cell/hyper,
-/obj/item/flashlight/emp{
-	pixel_y = 12;
-	pixel_x = 6;
-	name = "EMP flashlight"
-	},
-/obj/item/storage/backpack/duffelbag/syndie/c4{
+/obj/item/mod/module/visor/night{
+	pixel_y = 9;
 	pixel_x = -4
+	},
+/obj/item/mod/module/noslip{
+	pixel_y = -2;
+	pixel_x = -2
+	},
+/obj/item/mod/module/visor/medhud{
+	pixel_x = 8;
+	pixel_y = 5
+	},
+/obj/item/mod/module/welding/camera_vision{
+	pixel_y = -5;
+	pixel_x = -5
+	},
+/obj/item/mod/module/anomaly_locked/kinesis/plus{
+	pixel_x = 7;
+	pixel_y = -4
 	},
 /turf/open/floor/pod/dark,
 /area/shuttle/sbc_starfury)
@@ -1230,6 +1339,9 @@
 /obj/structure/chair/office{
 	dir = 8
 	},
+/obj/effect/turf_decal/tile/green{
+	dir = 1
+	},
 /turf/open/floor/iron/dark/smooth_large,
 /area/shuttle/sbc_starfury)
 "YV" = (
@@ -1239,6 +1351,9 @@
 	},
 /obj/item/storage/fancy/donut_box,
 /obj/item/assembly/flash/handheld,
+/obj/effect/turf_decal/tile/green{
+	dir = 1
+	},
 /turf/open/floor/iron/dark,
 /area/shuttle/sbc_starfury)
 "Za" = (
@@ -1684,11 +1799,11 @@ lB
 Sh
 Sh
 dV
-kJ
-kJ
-kJ
-kJ
-kJ
+as
+as
+as
+as
+as
 ae
 ac
 ac
@@ -1745,11 +1860,11 @@ Sh
 Sh
 Sh
 dU
-kJ
+as
 aW
 aW
 aW
-kJ
+as
 cU
 aH
 ae
@@ -1806,11 +1921,11 @@ Sh
 Sh
 dO
 dV
-kJ
+as
 cO
-kJ
-kJ
-kJ
+as
+as
+as
 ae
 aH
 ae
@@ -2150,7 +2265,7 @@ hB
 ec
 ae
 hq
-Nw
+kJ
 ae
 aH
 aH
@@ -2208,7 +2323,7 @@ aH
 aH
 aH
 hB
-ec
+df
 ae
 lA
 Nw

@@ -24,6 +24,10 @@
 	var/num_ghosts = length(GLOB.current_observers_list) + length(GLOB.dead_player_list)
 	if(num_ghosts < MIN_GHOSTS_FOR_BATTLECRUISER)
 		return FALSE
+	// This objective will only generate if the nuclear disk is secured.
+	for(var/obj/item/disk/nuclear/N in SSpoints_of_interest.real_nuclear_disks)
+		if(!N.is_secured())
+			return FALSE
 
 	return TRUE
 
