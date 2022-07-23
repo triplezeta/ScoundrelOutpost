@@ -363,10 +363,6 @@
 	},
 /turf/open/floor/wood,
 /area/shuttle/sbc_starfury)
-"dV" = (
-/obj/structure/lattice,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/shuttle/sbc_starfury)
 "dW" = (
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
@@ -1798,7 +1794,7 @@ lB
 lB
 Sh
 Sh
-dV
+ae
 as
 as
 as
@@ -1920,7 +1916,7 @@ ae
 Sh
 Sh
 dO
-dV
+ae
 as
 cO
 as
