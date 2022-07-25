@@ -1,5 +1,5 @@
 /// The minimum number of ghosts and observers needed before handing out battlecruiser objectives.
-#define MIN_GHOSTS_FOR_BATTLECRUISER 8
+#define MIN_GHOSTS_FOR_BATTLECRUISER 3
 
 /datum/traitor_objective/final/battlecruiser
 	name = "Reveal Station Coordinates to nearby Syndicate Battlecruiser"
@@ -24,6 +24,10 @@
 	var/num_ghosts = length(GLOB.current_observers_list) + length(GLOB.dead_player_list)
 	if(num_ghosts < MIN_GHOSTS_FOR_BATTLECRUISER)
 		return FALSE
+	// This objective will only generate if the nuclear disk is secured.
+	for(var/obj/item/disk/nuclear/N in SSpoints_of_interest.real_nuclear_disks)
+		if(!N.is_secured())
+			return FALSE
 
 	return TRUE
 

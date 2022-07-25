@@ -1,8 +1,14 @@
+/// If the number of ghosts is lower than this, the lowpop version of the battlecruiser map will be used.
+#define BATTLECRUISER_HIGHPOP_THREASHOLD 8
 
 /// The Starfury map template itself.
 /datum/map_template/battlecruiser_starfury
 	name = "SBC Starfury"
 	mappath = "_maps/templates/battlecruiser_starfury.dmm"
+
+/// Alt template for lowpop
+/datum/map_template/battlecruiser_starfury/lowpop
+	mappath = "_maps/templates/battlecruiser_starfury_lowpop.dmm"
 
 // Stationary docking ports for the Starfury's strike shuttles.
 /obj/docking_port/stationary/starfury_corvette
@@ -144,7 +150,12 @@
 	var/list/candidates = poll_ghost_candidates("Do you wish to be considered for battlecruiser crew?", ROLE_TRAITOR)
 	shuffle_inplace(candidates)
 
-	var/datum/map_template/ship = SSmapping.map_templates["battlecruiser_starfury.dmm"]
+	var/datum/map_template/ship
+	var/num_ghosts = length(GLOB.current_observers_list) + length(GLOB.dead_player_list)
+	if(num_ghosts >= BATTLECRUISER_HIGHPOP_THREASHOLD)
+		ship = SSmapping.map_templates["battlecruiser_starfury.dmm"]
+	else
+		ship = SSmapping.map_templates["battlecruiser_starfury_lowpop.dmm"]
 	var/x = rand(TRANSITIONEDGE, world.maxx - TRANSITIONEDGE - ship.width)
 	var/y = rand(TRANSITIONEDGE, world.maxy - TRANSITIONEDGE - ship.height)
 	var/z = SSmapping.empty_space?.z_value
@@ -188,3 +199,5 @@
 					)
 
 	priority_announce("Unidentified armed ship detected near the station.")
+
+#undef BATTLECRUISER_HIGHPOP_THREASHOLD
