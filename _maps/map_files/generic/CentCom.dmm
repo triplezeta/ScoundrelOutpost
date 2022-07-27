@@ -1946,6 +1946,15 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/iron,
 /area/centcom/central_command_areas/fore)
+"fC" = (
+/obj/effect/turf_decal/siding/purple{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating_new/light{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/centcom/syndicate_mothership/expansion_chemicalwarfare)
 "fD" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -2330,11 +2339,6 @@
 	pixel_y = 32
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/centcom/syndicate_mothership/control)
-"gM" = (
-/obj/structure/table/wood,
-/obj/item/paicard,
-/turf/open/floor/wood/tile,
 /area/centcom/syndicate_mothership/control)
 "gO" = (
 /turf/closed/indestructible/riveted,
@@ -12229,15 +12233,6 @@
 	},
 /turf/open/floor/iron,
 /area/centcom/tdome/arena)
-"JB" = (
-/obj/effect/turf_decal/siding/purple{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/thinplating_new/light{
-	dir = 4
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/centcom/syndicate_mothership/expansion_chemicalwarfare)
 "JC" = (
 /obj/machinery/abductor/pad{
 	team_number = 2
@@ -14942,6 +14937,11 @@
 	},
 /turf/open/floor/iron/white,
 /area/centcom/central_command_areas/control)
+"RA" = (
+/obj/structure/table/wood,
+/obj/item/pai_card,
+/turf/open/floor/wood/tile,
+/area/centcom/syndicate_mothership/control)
 "RB" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
@@ -15978,6 +15978,27 @@
 /obj/structure/flora/tree/dead/style_random,
 /turf/open/misc/asteroid/snow/icemoon,
 /area/centcom/syndicate_mothership/control)
+"Ur" = (
+/obj/structure/closet/secure_closet/personal/cabinet,
+/obj/item/clothing/under/rank/civilian/curator/treasure_hunter,
+/obj/item/clothing/under/dress/skirt,
+/obj/item/clothing/under/shorts/black,
+/obj/item/clothing/under/pants/track,
+/obj/item/clothing/accessory/armband/deputy,
+/obj/item/clothing/accessory/waistcoat,
+/obj/item/clothing/shoes/jackboots,
+/obj/item/clothing/shoes/laceup,
+/obj/item/clothing/neck/large_scarf/red,
+/obj/item/clothing/neck/tie/red,
+/obj/item/clothing/head/helmet/space/beret,
+/obj/item/clothing/suit/jacket/curator,
+/obj/item/clothing/suit/space/officer,
+/obj/item/clothing/gloves/fingerless,
+/obj/item/clothing/gloves/color/black,
+/obj/item/clothing/glasses/eyepatch,
+/obj/machinery/firealarm/directional/west,
+/turf/open/floor/iron/grimy,
+/area/centcom/central_command_areas/admin)
 "Us" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible,
 /obj/effect/turf_decal/siding/thinplating_new/dark{
@@ -17013,27 +17034,6 @@
 /obj/machinery/light/small/directional/north,
 /turf/open/misc/asteroid/snow/icemoon,
 /area/centcom/syndicate_mothership/control)
-"Xa" = (
-/obj/structure/closet/secure_closet/personal/cabinet,
-/obj/item/clothing/under/rank/civilian/curator/treasure_hunter,
-/obj/item/clothing/under/dress/skirt,
-/obj/item/clothing/under/shorts/black,
-/obj/item/clothing/under/pants/track,
-/obj/item/clothing/accessory/armband/deputy,
-/obj/item/clothing/accessory/waistcoat,
-/obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/shoes/laceup,
-/obj/item/clothing/neck/large_scarf/red,
-/obj/item/clothing/neck/tie/red,
-/obj/item/clothing/head/helmet/space/beret,
-/obj/item/clothing/suit/jacket/curator,
-/obj/item/clothing/suit/space/officer,
-/obj/item/clothing/gloves/fingerless,
-/obj/item/clothing/gloves/color/black,
-/obj/item/clothing/glasses/eyepatch,
-/obj/machinery/firealarm/directional/west,
-/turf/open/floor/iron/grimy,
-/area/centcom/central_command_areas/admin)
 "Xb" = (
 /obj/machinery/computer/security{
 	dir = 8
@@ -24683,7 +24683,7 @@ aa
 aa
 kb
 nH
-JB
+fC
 Ib
 Ib
 Ib
@@ -29310,7 +29310,7 @@ gv
 cV
 ng
 EU
-gM
+RA
 YE
 vN
 ng
@@ -57324,7 +57324,7 @@ On
 ZT
 To
 WX
-Xa
+Ur
 UR
 YU
 GB
