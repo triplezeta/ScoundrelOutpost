@@ -228,7 +228,7 @@
 /datum/antagonist/rev/proc/add_revolutionary(datum/mind/rev_mind,stun = TRUE)
 	if(!can_be_converted(rev_mind.current))
 		return FALSE
-	if(check_xcard_and_apply_if_necessary(rev_mind, owner.current))
+	if(check_xcard_and_apply_if_necessary(rev_mind.current, owner.current))
 		return FALSE
 	if(stun)
 		if(iscarbon(rev_mind.current))

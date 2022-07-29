@@ -173,7 +173,7 @@
 	//ensure we detach once we no longer need to be attached
 	addtimer(CALLBACK(src, .proc/detach), MAX_IMPREGNATION_TIME)
 
-	if (M.mind && HAS_TRAIT(M.mind, TRAIT_XCARD_XENO_IMMUNE))
+	if (HAS_TRAIT(M, TRAIT_XCARD_XENO_IMMUNE))
 		VenomousBite(M)
 		PostBite(M)
 		return
