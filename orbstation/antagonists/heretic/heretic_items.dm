@@ -1,0 +1,102 @@
+// Amber Focus
+
+/// Proximity thresholds for the various icon states. (See set_proximity_icon())
+#define FOCUS_PROXIMITY_HOT 3
+#define FOCUS_PROXIMITY_WARM 8
+#define FOCUS_PROXIMITY_COOL 16
+
+/obj/item/clothing/neck/heretic_focus
+	icon = 'orbstation/icons/obj/heretic_items.dmi'
+	icon_state = "focus_0"
+	worn_icon = 'orbstation/icons/mob/clothing/neck.dmi'
+
+/obj/item/clothing/neck/heretic_focus/equipped(mob/user, slot)
+	. = ..()
+	if(slot != ITEM_SLOT_NECK || !ishuman(user) || !IS_HERETIC(user))
+		stop_tracking()
+		return
+
+	// Update the worn icon.
+	icon_state = "focus_1"
+	user.update_inv_neck()
+
+	START_PROCESSING(SSfastprocess, src)
+
+/obj/item/clothing/neck/heretic_focus/dropped(mob/user)
+	. = ..()
+	stop_tracking()
+
+/obj/item/clothing/neck/heretic_focus/Destroy()
+	. = ..()
+	STOP_PROCESSING(SSfastprocess, src)
+
+/obj/item/clothing/neck/heretic_focus/process()
+	// if there's no influences left to track, no need to process! But we'll keep the eye open to obscure that there's no influences left.
+	if(!length(GLOB.reality_smash_track.smashes))
+		icon_state = "focus_1"
+		return PROCESS_KILL
+
+	var/closest_influence = 255
+	for(var/list/obj/effect/heretic_influence/smash as anything in GLOB.reality_smash_track.smashes)
+		if(smash.z != loc.z) // don't bother with influences on a different z-level
+			continue
+		var/distance_to_influence = get_dist(loc, smash)
+		if(distance_to_influence < closest_influence)
+			closest_influence = distance_to_influence
+
+	icon_state = set_proximity_icon(closest_influence)
+
+/// Change icon state (blink speed) of the focus based on how close it is to the closest influence.
+/obj/item/clothing/neck/heretic_focus/proc/set_proximity_icon(closest_influence)
+	switch(closest_influence)
+		if(0 to FOCUS_PROXIMITY_HOT)
+			return "focus_4" // eye stays open
+		if(FOCUS_PROXIMITY_HOT to FOCUS_PROXIMITY_WARM)
+			return "focus_3" // eye blinks rapidly
+		if(FOCUS_PROXIMITY_WARM to FOCUS_PROXIMITY_COOL)
+			return "focus_2" // eye blinks sometimes
+
+	return "focus_1" // eye blinks rarely
+
+///  Heretics can examine the focus for clarification on how close the nearest influence is.
+/obj/item/clothing/neck/heretic_focus/examine(mob/user)
+	. = ..()
+	if(!IS_HERETIC(user))
+		return
+
+	switch(icon_state)
+		if("focus_1")
+			. += span_red("There are no untapped influences nearby.")
+		if("focus_2")
+			. += span_notice("There is an untapped influence somewhere around here...")
+		if("focus_3")
+			. += span_boldnotice("There is an untapped influence nearby!")
+		if("focus_4")
+			. += span_boldnicegreen("The untapped influence is just within reach!")
+
+/// Stops processing and closes the eye.
+/obj/item/clothing/neck/heretic_focus/proc/stop_tracking()
+	STOP_PROCESSING(SSfastprocess, src)
+	icon_state = "focus_0"
+
+#undef FOCUS_PROXIMITY_HOT
+#undef FOCUS_PROXIMITY_WARM
+#undef FOCUS_PROXIMITY_COOL
+
+// Codex Cicatrix
+
+/// Heretics can examine the codex to see how many ghosts there are, and how many ghosts are orbiting them.
+/obj/item/codex_cicatrix/examine(mob/user)
+	. = ..()
+	if(!IS_HERETIC(user))
+		return
+
+	var/num_ghosts = length(GLOB.current_observers_list) + length(GLOB.dead_player_list)
+	var/num_orbiters = 0
+	for(var/mob/dead/ghost in user.orbiters?.orbiter_list)
+		if(!ghost.client) // skip over orbiters who aren't actually connected
+			continue
+		num_orbiters++
+
+	. += "Faded text is written on a dusty page..."
+	. += span_cult("Spirits following you: <b>[num_orbiters] / [num_ghosts]</b>")
