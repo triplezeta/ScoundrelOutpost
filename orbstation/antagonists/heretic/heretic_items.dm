@@ -42,7 +42,7 @@
 		return PROCESS_KILL
 
 	var/closest_influence = 255
-	for(var/list/obj/effect/heretic_influence/smash as anything in GLOB.reality_smash_track.smashes)
+	for(var/obj/effect/heretic_influence/smash as anything in GLOB.reality_smash_track.smashes)
 		if(smash.z != loc.z) // don't bother with influences on a different z-level
 			continue
 		var/distance_to_influence = get_dist(loc, smash)
