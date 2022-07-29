@@ -26,7 +26,7 @@
     icon = "head-side-cough-slash"
     value = 0
     mob_trait = TRAIT_XCARD_XENO_IMMUNE
-
+/*
 /datum/quirk/xcard_uncyborgable
     name = "Cyborg Incompatibility"
     desc = "Your brain is oddly-shaped, and will not fit into cyborg bodies or AI cores. \
@@ -34,3 +34,4 @@
     icon = "head-side-brain"
     value = 0
     mob_trait = TRAIT_XCARD_BORG_IMMUNE
+*/
