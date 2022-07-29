@@ -5,6 +5,11 @@
 #define FOCUS_PROXIMITY_WARM 8
 #define FOCUS_PROXIMITY_COOL 16
 
+/datum/heretic_knowledge/amber_focus
+	desc = "Allows you to transmute a sheet of glass and a pair of eyes to create an Amber Focus. \
+		A focus must be worn in order to cast more advanced spells. \
+		When worn, the eye will blink faster in reaction to nearby untapped influences."
+
 /obj/item/clothing/neck/heretic_focus
 	icon = 'orbstation/icons/obj/heretic_items.dmi'
 	icon_state = "focus_0"
@@ -84,6 +89,12 @@
 #undef FOCUS_PROXIMITY_COOL
 
 // Codex Cicatrix
+
+/datum/heretic_knowledge/codex_cicatrix
+	desc = "Allows you to transmute a bible, a fountain pen, and hide from an animal (or human) to create a Codex Cicatrix. \
+		The Codex Cicatrix can be used when draining influences to gain additional knowledge, but comes at greater risk of being noticed. \
+		It can also be used to draw and remove transmutation runes easier, \
+		and can be examined to see the number of ghosts currently present."
 
 /// Heretics can examine the codex to see how many ghosts there are, and how many ghosts are orbiting them.
 /obj/item/codex_cicatrix/examine(mob/user)
