@@ -4655,6 +4655,7 @@
 #include "orbstation\datums\components\crafting\recipes.dm"
 #include "orbstation\datums\greyscale\config_types\greyscale_configs.dm"
 #include "orbstation\mob\simple_animal\friendly\amoung.dm"
+#include "orbstation\objects\items\storage.dm"
 #include "orbstation\species\ethereal\respawn_penalties.dm"
 #include "orbstation\species\zombie\zombie_bite.dm"
 #include "orbstation\species\zombie\zombies.dm"
