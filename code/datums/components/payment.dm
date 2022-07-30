@@ -98,12 +98,32 @@
 
 		if(armless)
 			if(!user.pulling || !iscash(user.pulling) && !istype(user.pulling, /obj/item/card/id))
-				to_chat(user, span_notice("Try pulling a valid ID, space cash, holochip or coin while using \the [parent]!"))
+				//to_chat(user, span_notice("Try pulling a valid ID, space cash, holochip or coin while using \the [parent]!"))
+				switch(transaction_style)
+					if(PAYMENT_FRIENDLY)
+						to_chat(user, span_warning("I know you're trying hard, but you have to at least pull an ID or enough money along with you!"))
+					if(PAYMENT_ANGRY)
+						to_chat(user, span_warning("THIS IS POINTLESS AT LEAST DRAG SOME CASH WITH YOU IDIOT."))
+					if(PAYMENT_CLINICAL)
+						to_chat(user, span_warning("Scanning... [physical_cash_total] credits detected.  Insufficent funds."))
 				return FALSE
-		return FALSE
+			switch(transaction_style)
+				if(PAYMENT_FRIENDLY)
+					to_chat(user, span_warning("Sorry, you need more credits to complete the transaction!"))
+				if(PAYMENT_ANGRY)
+					to_chat(user, span_warning("LEARN TO COUNT DUMMY YOU NEED MORE MONEY."))
+				if(PAYMENT_CLINICAL)
+					to_chat(user, span_warning("Scanning... [physical_cash_total] credits detected.  Insufficent funds."))
+			return FALSE
+		// /armless
 
-	if(physical_cash_total < total_cost)
-		to_chat(user, span_notice("Insufficient funds. Aborting."))
+		switch(transaction_style)
+			if(PAYMENT_FRIENDLY)
+				to_chat(user, span_warning("Sorry, you need more credits to complete the transaction!"))
+			if(PAYMENT_ANGRY)
+				to_chat(user, span_warning("THAT'S NOT ENOUGH CASH YOU DUMB BUTT."))
+			if(PAYMENT_CLINICAL)
+				to_chat(user, span_warning("Scanning... [physical_cash_total] credits detected.  Insufficent funds."))
 		return FALSE
 	for(var/obj/cash_object in counted_money)
 		qdel(cash_object)
