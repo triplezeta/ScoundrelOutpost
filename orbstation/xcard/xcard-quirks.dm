@@ -1,7 +1,7 @@
 /datum/quirk/xcard_cult_convert_immune
     name = "Cult Conversion Immunity"
     desc = "Your powerful mental rigor prevents you from being forcefully recruited into cults. \
-            Instead, conversion attempts will deal burn damage. \
+            Instead, those awful cultists will sacrifice you in a shower of blood and viscera! \
             Please note that this quirk is intended only for those who find this content uncomfortable, \
             not for modifications of roleplay or game mechanics."
     icon = "face-smile-halo"

@@ -1,7 +1,8 @@
+/// Checks if the given person has the xcard revolution immunity trait. If so, deals damage to them and knocks them unconscious, returning TRUE. Otherwise, returns false.
 /datum/antagonist/rev/proc/check_xcard_and_apply_if_necessary(mob/living/carbon/victim, mob/aggressor)
 
     if(HAS_TRAIT(victim, TRAIT_XCARD_REV_IMMUNE))
-        to_chat(aggressor, span_warning("[victim] manages to resist your influence, but reels in pain from the psychic blast!"))
+        to_chat(aggressor, span_warning("[victim] manages to resist your influence through sheer force of will, but reels in pain from the psychic blast!"))
 
         to_chat(victim, span_hypnophrase("A wave of psychic influence rolls over you!"))
         to_chat(victim, span_hypnophrase("You reel in pain from \the [src]'s psychic blast!"))
