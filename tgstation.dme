@@ -4694,7 +4694,6 @@
 #include "orbstation\species\ethereal\respawn_penalties.dm"
 #include "orbstation\species\zombie\zombie_bite.dm"
 #include "orbstation\species\zombie\zombies.dm"
-#include "orbstation\xcard\facehugger.dm"
 #include "orbstation\xcard\revolution.dm"
 #include "orbstation\xcard\xcard-quirks.dm"
 #include "orbstation\xcard\xenotoxin.dm"

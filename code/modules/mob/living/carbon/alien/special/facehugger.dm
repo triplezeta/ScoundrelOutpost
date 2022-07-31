@@ -3,7 +3,7 @@
 //TODO: Make these simple_animals
 
 #define MIN_IMPREGNATION_TIME 100 //time it takes to impregnate someone
-#define MAX_IMPREGNATION_TIME 150 // WHY DOES THIS NOT SPECIFY UNITS
+#define MAX_IMPREGNATION_TIME 150
 
 #define MIN_ACTIVE_TIME 200 //time between being dropped and going idle
 #define MAX_ACTIVE_TIME 400
@@ -304,15 +304,15 @@
 
 	target.apply_damage((1 + rand()) * strength, BRUTE, BODY_ZONE_HEAD)
 
-    // lingering venom
+	// lingering venom
 	target.reagents?.add_reagent(/datum/reagent/toxin/xenotoxin, 10)
 
 /// after biting the victim, fall off their face and go idle for a bit
 /obj/item/clothing/mask/facehugger/proc/PostBite(mob/living/carbon/target)
-    target.Unconscious(MAX_IMPREGNATION_TIME * 0.2) // go unconscious for a short amount of time
-    detach()
-    addtimer(CALLBACK(target, /mob/proc/dropItemToGround, src, TRUE), rand(MIN_IMPREGNATION_TIME, MAX_IMPREGNATION_TIME) * 0.125) // drop off the face after some amount of time
-    addtimer(CALLBACK(src, .proc/GoIdle), rand(MIN_IMPREGNATION_TIME, MAX_IMPREGNATION_TIME) * 0.125) // go idle immediately after that
+	target.Unconscious(MAX_IMPREGNATION_TIME * 0.2) // go unconscious for a short amount of time
+	detach()
+	addtimer(CALLBACK(target, /mob/proc/dropItemToGround, src, TRUE), rand(MIN_IMPREGNATION_TIME, MAX_IMPREGNATION_TIME) * 0.125) // drop off the face after some amount of time
+	addtimer(CALLBACK(src, .proc/GoIdle), rand(MIN_IMPREGNATION_TIME, MAX_IMPREGNATION_TIME) * 0.125) // go idle immediately after that
 
 #undef MIN_ACTIVE_TIME
 #undef MAX_ACTIVE_TIME
