@@ -5,14 +5,21 @@
 #define STAM_DAMAGE_RATE 15
 
 // values concerning the occasional burst of damage
-// how much more damage a damage burst frame does than a normal one. this goes up by one every damage burst
+// how much more damage a damage burst frame does than a normal one. this effectively goes up by one every damage burst
 #define DAMAGE_BURST_MUL 7
 // again, note that this is a percent chance
 #define DAMAGE_BURST_RATE 5
 #define JITTER_TIME 10 SECONDS
-// note that unlike tox damage, stamina damage, etc, organ damage is NOT multiplied by DAMAGE_BURST_MUL or increased by damage_spikes
+// note that unlike tox damage, stamina damage, etc, organ damage is NOT multiplied by DAMAGE_BURST_MUL or increased by num_damage_bursts
 #define ORGAN_DAMAGE_MIN 3
 #define ORGAN_DAMAGE_MAX 10
+
+// initial chance of a damage burst being "bad" (dealing extra damage, causing jitters, and displaying a scarier warning message)
+#define BAD_BURST_CHANCE_MIN 10
+// the health value below which having lower health starts to increase the chance of having a bad damage burst
+#define BAD_BURST_HEALTH_RAMP_THRESHOLD 50
+// the percentage above which having low health no longer increases the probability of a bad damage burst
+#define BAD_BURST_CHANCE_SOFTCAP 60
 // chance to scream on a bad damage burst
 #define SCREAM_PROB 50
 
@@ -28,30 +35,43 @@
     metabolization_rate = 0.1 * REAGENTS_METABOLISM
 
     // number of times a damage burst has been triggered
-    var/damage_spikes = 0
+    // the more bursts you suffer, the more damage each one does and the higher the chance that you'll get "bad bursts" that deal extra damage
+    var/num_damage_bursts = 0
 
 /datum/reagent/toxin/xenotoxin/on_mob_life(mob/living/carbon/victim, delta_time, times_fired)
 
     ..()
 
+    // apply a fluctuating amount of stamina damage in little chunks over time
     if (DT_PROB(STAM_DAMAGE_RATE, delta_time))
         victim.adjustStaminaLoss(rand(STAM_DAMAGE_MIN, STAM_DAMAGE_MAX) * REM * delta_time, 0)
 
+    // check to see if we should apply a damage burst
+    // these deal sudden, larger amounts of toxin and stamina damage, and display a warning message
     if (DT_PROB(DAMAGE_BURST_RATE, delta_time))
-        // chance to have a bad spike starts at ten percent, and increases as you lose health and have more spikes
-        // once 40% health is reached, further health loss no longer increases the chances, creating a softcap in that respect
-        if (prob(clamp(50 - victim.health, 10, 60) + damage_spikes)) 
+
+        // base chance of a bad burst, which increases as victim's health decreases
+        var/bad_burst_base_chance = BAD_BURST_HEALTH_RAMP_THRESHOLD - victim.health
+
+        // actual chance, which is clamped to a min/max and increases with the number of previous bursts
+        // note that health decreasing below a certain point will no longer increase the chance, but further bursts will
+        // always make bad ones more likely
+        var/bad_burst_chance = clamp(bad_burst_base_chance, BAD_BURST_CHANCE_MIN, BAD_BURST_CHANCE_SOFTCAP) + num_damage_bursts
+
+        if (prob(bad_burst_chance))
             to_chat(victim, span_danger("Your heartrate spikes, and it feels like acid is running through your veins!"))
-            damage_burst_bad(victim, DAMAGE_BURST_MUL + damage_spikes, delta_time)
+            damage_burst_bad(victim, DAMAGE_BURST_MUL + num_damage_bursts, delta_time)
+
         else
             to_chat(victim, span_danger("Your blood hurts!"))
-            damage_burst_normal(victim, DAMAGE_BURST_MUL + damage_spikes, delta_time)
+            damage_burst_normal(victim, DAMAGE_BURST_MUL + num_damage_bursts, delta_time)
     
-        damage_spikes++
+        num_damage_bursts++
 
     return
 
 /datum/reagent/toxin/xenotoxin/proc/damage_burst_normal(mob/living/carbon/victim, damage_mul, delta_time)
+
     victim.adjustToxLoss(damage_mul * toxpwr * REM * delta_time, 0)
     victim.adjustStaminaLoss(damage_mul * rand(STAM_DAMAGE_MIN, STAM_DAMAGE_MAX) * REM * delta_time, 0)  // REM is reagent-effects-multiplier
 
@@ -66,11 +86,11 @@
 
 /datum/reagent/toxin/xenotoxin/proc/damage_burst_bad(mob/living/carbon/victim, damage_mul, delta_time)
 
-    victim.set_timed_status_effect((JITTER_TIME + damage_spikes) * REM * delta_time, /datum/status_effect/dizziness, only_if_higher = TRUE)
-    victim.set_timed_status_effect((JITTER_TIME + damage_spikes) * REM * delta_time, /datum/status_effect/jitter, only_if_higher = TRUE)
+    victim.set_timed_status_effect((JITTER_TIME + num_damage_bursts) * REM * delta_time, /datum/status_effect/dizziness, only_if_higher = TRUE)
+    victim.set_timed_status_effect((JITTER_TIME + num_damage_bursts) * REM * delta_time, /datum/status_effect/jitter, only_if_higher = TRUE)
 
     if(prob(SCREAM_PROB))
-        victim.emote("scream")
+        victim.emote("scream") // ow, my blood!
 
     // do the normal amount of damage
     damage_burst_normal(victim, damage_mul, delta_time)
@@ -87,4 +107,7 @@
 #undef JITTER_TIME
 #undef ORGAN_DAMAGE_MIN
 #undef ORGAN_DAMAGE_MAX
+#undef BAD_BURST_CHANCE_MIN
+#undef BAD_BURST_HEALTH_RAMP_THRESHOLD
+#undef BAD_BURST_CHANCE_SOFTCAP
 #undef SCREAM_PROB
