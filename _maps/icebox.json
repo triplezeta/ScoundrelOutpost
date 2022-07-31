@@ -28,7 +28,7 @@
 			"Linkage": null,
 			"Gravity": true,
 			"Ice Ruins Underground": true,
-			"Baseturf": "/turf/open/openspace/icemoon/keep_below",
+			"Baseturf": "/turf/open/misc/asteroid/snow/icemoon",
 			"No Parallax": true
 		},
 		{
@@ -38,7 +38,7 @@
 			"Gravity": true,
 			"Ice Ruins": true,
 			"Weather_Snowstorm": true,
-			"Baseturf": "/turf/open/openspace/icemoon/keep_below",
+			"Baseturf": "/turf/open/floor/plating/snowed/icemoon",
 			"No Parallax": true
 		}
 	],
