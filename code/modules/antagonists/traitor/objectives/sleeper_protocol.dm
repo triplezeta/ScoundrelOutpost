@@ -102,11 +102,11 @@
 		"You are the only real person on the station"
 	)*/
 	var/static/list/possible_objectives = list(
-		"You must keep all Syndicate activities a secret",
-		"Do not trust the heads of staff or the security department",
+		"The Syndicate does not exist; all supposed Syndicate activities are a hoax by Nanotrasen",
+		"You cannot comply with security and the heads of staff because they have no swag",
 		"You are dying, and the Captain's ID card is the only cure",
 		"The heads of staff have kidnapped your beloved pets",
-		"The AI is irradiating the airwaves",
+		"AIs do not actually exist. The station is haunted by a spooky ghost",
 		"All light is a deadly toxin",
 		"A handsome Tizirian prince needs you to send him one million credits",
 		"Changelings are an endangered species, and must be protected",
@@ -115,7 +115,14 @@
 		"The lab animals are being treated unethically and must be freed from captivity",
 		"Evil is good, and good is evil",
 		"The station is a simulation, and the mass driver is the only way to escape",
-		"They've hidden your paycheck in the walls; deconstruct the station to get it back"
+		"They've hidden your paycheck in the walls; deconstruct the station to get it back",
+		"The nuclear authentication disk is alive and YOU need to rescue it",
+		"To raise morale, you must make the crew ride the disposals network",
+		"The clown is the true leader of the station. If there is no clown, you must become one",
+		"You need to hide your department so the Syndicate can't find it",
+		"You have a supervillain alter ego. Don your costume and gloat over the do-gooders as you enact your evil scheme",
+		"You must amass a collection of as many hats as possible",
+		"Pun Pun is a member of the Space Monkey Mafia, and needs to pay for his crimes"
 	)
 
 /datum/surgery_step/brainwash/sleeper_agent/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
