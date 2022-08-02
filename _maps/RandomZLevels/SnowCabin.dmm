@@ -2702,6 +2702,42 @@
 /obj/item/clothing/neck/scarf/christmas,
 /turf/open/floor/wood,
 /area/awaymission/cabin)
+"ju" = (
+/obj/machinery/light/directional/west,
+/obj/structure/closet/secure_closet/personal/cabinet{
+	anchored = 1
+	},
+/obj/item/clothing/suit/hooded/wintercoat,
+/obj/item/clothing/suit/hooded/wintercoat,
+/obj/item/clothing/shoes/winterboots,
+/obj/item/clothing/shoes/winterboots,
+/obj/item/clothing/neck/large_scarf/blue,
+/turf/open/floor/wood,
+/area/awaymission/cabin)
+"jv" = (
+/obj/machinery/light/directional/west,
+/obj/structure/closet/secure_closet/personal/cabinet{
+	anchored = 1
+	},
+/obj/item/clothing/suit/hooded/wintercoat,
+/obj/item/clothing/suit/hooded/wintercoat,
+/obj/item/clothing/shoes/winterboots,
+/obj/item/clothing/shoes/winterboots,
+/obj/item/clothing/neck/large_scarf/green,
+/turf/open/floor/wood,
+/area/awaymission/cabin)
+"jw" = (
+/obj/machinery/light/directional/west,
+/obj/structure/closet/secure_closet/personal/cabinet{
+	anchored = 1
+	},
+/obj/item/clothing/suit/hooded/wintercoat,
+/obj/item/clothing/suit/hooded/wintercoat,
+/obj/item/clothing/shoes/winterboots,
+/obj/item/clothing/shoes/winterboots,
+/obj/item/clothing/neck/large_scarf/red,
+/turf/open/floor/wood,
+/area/awaymission/cabin)
 "jx" = (
 /obj/structure/table/wood/poker,
 /obj/item/dice/d6{
@@ -3657,6 +3693,17 @@
 	},
 /turf/open/floor/iron/dark,
 /area/awaymission/cabin/caves/mountain)
+"ss" = (
+/obj/item/shovel{
+	desc = "A large tool for digging and moving snow.";
+	force = 10;
+	name = "snow shovel"
+	},
+/obj/effect/decal/remains/human{
+	color = "#72e4fa"
+	},
+/turf/open/misc/asteroid/snow/snow_cabin,
+/area/awaymission/cabin/caves)
 "su" = (
 /obj/structure/flora{
 	desc = "Looks frozen.";
@@ -3839,18 +3886,6 @@
 /obj/effect/decal/cleanable/plasma,
 /turf/open/misc/asteroid/snow/snow_cabin,
 /area/awaymission/cabin/caves)
-"wo" = (
-/obj/machinery/light/directional/west,
-/obj/structure/closet/secure_closet/personal/cabinet{
-	anchored = 1
-	},
-/obj/item/clothing/suit/hooded/wintercoat,
-/obj/item/clothing/suit/hooded/wintercoat,
-/obj/item/clothing/shoes/winterboots,
-/obj/item/clothing/shoes/winterboots,
-/obj/item/clothing/neck/large_scarf/green,
-/turf/open/floor/wood,
-/area/awaymission/cabin)
 "wI" = (
 /obj/item/toy/figure/borg{
 	desc = "The robot that was manufactured just for this exploration team.";
@@ -4075,29 +4110,6 @@
 	},
 /turf/open/floor/iron/dark,
 /area/awaymission/cabin/caves/mountain)
-"AQ" = (
-/obj/structure/closet/crate/wooden{
-	desc = "Gotta know what waits within! Could it be a secret treasure cache or a deadly tool of sin?";
-	name = "wooden box"
-	},
-/obj/item/paper{
-	info = "Moving these crates through a tunnel that isn't even finished yet is really annoying. It's such a pain in the ass to haul even a single crate to the cabin. It made sense to haul food and other goods however these are fake fucking trophies. Why do they even need these fake artifacts for some asshole's trophy case? We'll just leave the crates in the cave that has all those bones inside. Fuck it.";
-	name = "Shipment Delivery Note"
-	},
-/turf/open/misc/asteroid/snow/snow_cabin,
-/area/awaymission/cabin/caves)
-"Bl" = (
-/obj/machinery/light/directional/west,
-/obj/structure/closet/secure_closet/personal/cabinet{
-	anchored = 1
-	},
-/obj/item/clothing/suit/hooded/wintercoat,
-/obj/item/clothing/suit/hooded/wintercoat,
-/obj/item/clothing/shoes/winterboots,
-/obj/item/clothing/shoes/winterboots,
-/obj/item/clothing/neck/large_scarf/blue,
-/turf/open/floor/wood,
-/area/awaymission/cabin)
 "BR" = (
 /mob/living/simple_animal/hostile/skeleton/ice{
 	desc = "A reanimated skeleton covered in thick sheet of natural ice. It is obvious to tell that they look really slow.";
@@ -4325,18 +4337,6 @@
 	},
 /turf/open/misc/asteroid/snow/snow_cabin,
 /area/awaymission/cabin/caves)
-"LI" = (
-/obj/machinery/light/directional/west,
-/obj/structure/closet/secure_closet/personal/cabinet{
-	anchored = 1
-	},
-/obj/item/clothing/suit/hooded/wintercoat,
-/obj/item/clothing/suit/hooded/wintercoat,
-/obj/item/clothing/shoes/winterboots,
-/obj/item/clothing/shoes/winterboots,
-/obj/item/clothing/neck/large_scarf/red,
-/turf/open/floor/wood,
-/area/awaymission/cabin)
 "LS" = (
 /obj/structure/sign{
 	pixel_x = 32
@@ -4817,17 +4817,6 @@
 /obj/effect/decal/cleanable/oil,
 /turf/open/misc/asteroid/snow/snow_cabin,
 /area/awaymission/cabin/caves)
-"Wx" = (
-/obj/item/shovel{
-	desc = "A large tool for digging and moving snow.";
-	force = 10;
-	name = "snow shovel"
-	},
-/obj/effect/decal/remains/human{
-	color = "#72e4fa"
-	},
-/turf/open/misc/asteroid/snow/snow_cabin,
-/area/awaymission/cabin/caves)
 "Wy" = (
 /obj/structure/fence/door,
 /turf/open/misc/asteroid/snow/snow_cabin,
@@ -4902,6 +4891,17 @@
 "Yd" = (
 /obj/structure/fence{
 	dir = 4
+	},
+/turf/open/misc/asteroid/snow/snow_cabin,
+/area/awaymission/cabin/caves)
+"ZQ" = (
+/obj/structure/closet/crate/wooden{
+	desc = "Gotta know what waits within! Could it be a secret treasure cache or a deadly tool of sin?";
+	name = "wooden box"
+	},
+/obj/item/paper{
+	default_raw_text = "Moving these crates through a tunnel that isn't even finished yet is really annoying. It's such a pain in the ass to haul even a single crate to the cabin. It made sense to haul food and other goods however these are fake fucking trophies. Why do they even need these fake artifacts for some asshole's trophy case? We'll just leave the crates in the cave that has all those bones inside. Fuck it.";
+	name = "Shipment Delivery Note"
 	},
 /turf/open/misc/asteroid/snow/snow_cabin,
 /area/awaymission/cabin/caves)
@@ -12349,7 +12349,7 @@ Oe
 Oe
 Oe
 Oe
-AQ
+ZQ
 ms
 ab
 ab
@@ -28965,7 +28965,7 @@ an
 an
 So
 aV
-Bl
+ju
 au
 ji
 an
@@ -31535,7 +31535,7 @@ an
 an
 aq
 au
-wo
+jv
 aV
 aq
 an
@@ -33077,7 +33077,7 @@ an
 an
 Vg
 aV
-LI
+jw
 au
 jh
 an
@@ -45069,7 +45069,7 @@ gx
 PV
 Oe
 Oe
-Wx
+ss
 Oe
 Oe
 Oe
