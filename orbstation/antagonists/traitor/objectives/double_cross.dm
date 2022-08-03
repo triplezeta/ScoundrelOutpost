@@ -42,5 +42,5 @@
 
 /obj/item/paper/calling_card/double_cross
 	color = "#ff3399" // slightly more purple than the normal one
-	info = {"Let this card act as a lesson to any agent of the Syndicate who is foolish enough
+	default_raw_text = {"Let this card act as a lesson to any agent of the Syndicate who is foolish enough
 	to fail their masters."}
