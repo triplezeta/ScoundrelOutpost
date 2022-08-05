@@ -3,6 +3,8 @@
 	typepath = /datum/round_event/brain_trauma
 	weight = 0
 	max_occurrences = 0
+	category = EVENT_CATEGORY_HEALTH
+	description = "A crewmember gains a random trauma."
 
 /datum/round_event/brain_trauma
 	fakeable = FALSE

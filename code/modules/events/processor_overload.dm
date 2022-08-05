@@ -4,6 +4,8 @@
 	weight = 15
 	min_players = 20
 	max_occurrences = 2
+	category = EVENT_CATEGORY_ENGINEERING
+	description = "Emps the telecomm processors, scrambling radio speech. Might blow up a few."
 
 /datum/round_event/processor_overload
 	announceWhen = 1
