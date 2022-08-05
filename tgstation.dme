@@ -4655,6 +4655,7 @@
 #include "orbstation\antagonists\rulesets_roundstart.dm"
 #include "orbstation\antagonists\changeling_infiltrator\changeling_infiltrator.dm"
 #include "orbstation\antagonists\heretic\heretic_items.dm"
+#include "orbstation\antagonists\heretic\heretic_knowledge.dm"
 #include "orbstation\antagonists\traitor\objectives\double_cross.dm"
 #include "orbstation\antagonists\traitor\objectives\final_objective\malware_injection.dm"
 #include "orbstation\chaplain\ratlain.dm"
