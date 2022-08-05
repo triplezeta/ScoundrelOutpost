@@ -103,11 +103,20 @@
 	return ..()
 
 /datum/dynamic_ruleset/midround/waking_heretic/execute()
-	var/mob/M = pick(living_players)
-	assigned += M
-	living_players -= M
-	var/datum/antagonist/heretic/new_heretic = new
-	M.mind.add_antag_datum(new_heretic)
-	message_admins("[ADMIN_LOOKUPFLW(M)] was selected by the [name] ruleset and has been made into a midround heretic.")
-	log_game("DYNAMIC: [key_name(M)] was selected by the [name] ruleset and has been made into a midround heretic.")
+	var/mob/picked_mob = pick(living_players)
+	assigned += picked_mob
+	living_players -= picked_mob
+	var/datum/antagonist/heretic/new_heretic = picked_mob.mind.add_antag_datum(antag_datum)
+	message_admins("[ADMIN_LOOKUPFLW(picked_mob)] was selected by the [name] ruleset and has been made into a midround heretic.")
+	log_game("DYNAMIC: [key_name(picked_mob)] was selected by the [name] ruleset and has been made into a midround heretic.")
+
+	// Heretics passively gain influence over time.
+	// As a consequence, latejoin heretics start out at a massive
+	// disadvantage if the round's been going on for a while.
+	// Let's give them some influence points when they arrive.
+	new_heretic.knowledge_points += round((world.time - SSticker.round_start_time) / new_heretic.passive_gain_timer)
+	// BUT let's not give smugglers a million points on arrival.
+	// Limit it to four missed passive gain cycles (4 points).
+	new_heretic.knowledge_points = min(new_heretic.knowledge_points, 5)
+
 	return TRUE
