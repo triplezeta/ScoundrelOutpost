@@ -122,19 +122,40 @@
 	// - One from heads of staff ("high value")
 	var/list/datum/mind/final_targets = list()
 
+	// ORBSTATION: Whether a head of staff has been selected yet.
+	var/head_selected = FALSE
+	// ORBSTATION: Whether a security member has been selected yet.
+	var/sec_selected = FALSE
+
+	// ORBSTATION: List of fallback targets in case there aren't enough valid targets left (see below).
+	var/list/datum/mind/fallback_targets = list()
+
 	// First target, any command.
 	for(var/datum/mind/head_mind as anything in shuffle(valid_targets))
 		if(head_mind.assigned_role?.departments_bitflags & DEPARTMENT_BITFLAG_COMMAND)
-			final_targets += head_mind
+			if(!head_selected)
+				head_selected = TRUE
+				final_targets += head_mind
+				valid_targets -= head_mind
+				// ORBSTATION: Head of Security is (obviously) a head AND security
+				if(head_mind.assigned_role?.departments_bitflags & DEPARTMENT_BITFLAG_SECURITY)
+					sec_selected = TRUE
+				continue
+			// ORBSTATION: Remove the other heads from the list so they can't be picked unless there's no other options.
+			fallback_targets += head_mind
 			valid_targets -= head_mind
-			break
 
 	// Second target, any security
 	for(var/datum/mind/sec_mind as anything in shuffle(valid_targets))
 		if(sec_mind.assigned_role?.departments_bitflags & DEPARTMENT_BITFLAG_SECURITY)
-			final_targets += sec_mind
+			if(!sec_selected)
+				sec_selected = TRUE
+				final_targets += sec_mind
+				valid_targets -= sec_mind
+				continue
+			// ORBSTATION: Remove the other security members from the list so they can't be picked unless there's no other options.
+			fallback_targets += sec_mind
 			valid_targets -= sec_mind
-			break
 
 	// Third target, someone in their department.
 	for(var/datum/mind/department_mind as anything in shuffle(valid_targets))
@@ -151,6 +172,12 @@
 	var/target_sanity = 0
 	while(length(final_targets) < 4 && length(valid_targets) > 4 && target_sanity < 25)
 		final_targets += pick_n_take(valid_targets)
+		target_sanity++
+
+	// ORBSTATION: If there STILL aren't enough targets, then select from the fallback list.
+	target_sanity = 0
+	while(length(final_targets) < 4 && length(fallback_targets) > 0 && target_sanity < 25)
+		final_targets += pick_n_take(fallback_targets)
 		target_sanity++
 
 	var/datum/antagonist/heretic/heretic_datum = IS_HERETIC(user)
