@@ -112,10 +112,12 @@
 /datum/chemical_reaction/reagent_explosion/potassium_explosion
 	required_reagents = list(/datum/reagent/water = 1, /datum/reagent/potassium = 1)
 	strengthdiv = 20
+	required_temp = 301 // 1 more than room temp
 
 /datum/chemical_reaction/reagent_explosion/holyboom
 	required_reagents = list(/datum/reagent/water/holywater = 1, /datum/reagent/potassium = 1)
 	strengthdiv = 20
+	required_temp = 301 // 1 more than room temp
 
 /datum/chemical_reaction/reagent_explosion/holyboom/on_reaction(datum/reagents/holder, datum/equilibrium/reaction, created_volume)
 	if(created_volume >= 150)
