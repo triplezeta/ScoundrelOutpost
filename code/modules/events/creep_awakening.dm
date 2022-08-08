@@ -3,6 +3,8 @@
 	typepath = /datum/round_event/obsessed
 	max_occurrences = 0
 	min_players = 200
+	category = EVENT_CATEGORY_HEALTH
+	description = "A random crewmember becomes obsessed with another."
 
 /datum/round_event/obsessed
 	fakeable = FALSE

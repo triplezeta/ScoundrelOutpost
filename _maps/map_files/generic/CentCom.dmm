@@ -1946,15 +1946,6 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/iron,
 /area/centcom/central_command_areas/fore)
-"fC" = (
-/obj/effect/turf_decal/siding/purple{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/thinplating_new/light{
-	dir = 4
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/centcom/syndicate_mothership/expansion_chemicalwarfare)
 "fD" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -2339,6 +2330,11 @@
 	pixel_y = 32
 	},
 /turf/open/floor/mineral/plastitanium,
+/area/centcom/syndicate_mothership/control)
+"gM" = (
+/obj/structure/table/wood,
+/obj/item/pai_card,
+/turf/open/floor/wood/tile,
 /area/centcom/syndicate_mothership/control)
 "gO" = (
 /turf/closed/indestructible/riveted,
@@ -4238,6 +4234,11 @@
 	icon_state = "alien11"
 	},
 /area/centcom/abductor_ship)
+"ma" = (
+/obj/effect/turf_decal/tile/neutral/fourcorners,
+/obj/structure/table/reinforced,
+/turf/open/floor/iron/dark,
+/area/centcom/tdome/administration)
 "mb" = (
 /obj/effect/turf_decal/siding/thinplating_new/dark{
 	dir = 5
@@ -6620,6 +6621,15 @@
 /obj/machinery/newscaster/directional/south,
 /turf/open/floor/iron,
 /area/centcom/central_command_areas/control)
+"th" = (
+/obj/effect/turf_decal/siding/purple{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating_new/light{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/centcom/syndicate_mothership/expansion_chemicalwarfare)
 "tk" = (
 /obj/structure/window/reinforced/survival_pod{
 	name = "Tinted Window";
@@ -14504,6 +14514,10 @@
 /obj/structure/flora/grass/both/style_random,
 /turf/open/misc/asteroid/snow/icemoon,
 /area/centcom/syndicate_mothership/control)
+"Qt" = (
+/obj/machinery/button/showtime,
+/turf/closed/indestructible/fakeglass,
+/area/centcom/tdome/administration)
 "Qu" = (
 /obj/structure/window/paperframe{
 	can_atmos_pass = 0
@@ -14937,11 +14951,6 @@
 	},
 /turf/open/floor/iron/white,
 /area/centcom/central_command_areas/control)
-"RA" = (
-/obj/structure/table/wood,
-/obj/item/pai_card,
-/turf/open/floor/wood/tile,
-/area/centcom/syndicate_mothership/control)
 "RB" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
@@ -16143,6 +16152,14 @@
 	},
 /turf/open/floor/iron,
 /area/centcom/central_command_areas/supplypod)
+"UN" = (
+/obj/effect/turf_decal/tile/neutral/fourcorners,
+/obj/structure/table/reinforced,
+/obj/machinery/button/showtime{
+	req_access = list("cent_thunder")
+	},
+/turf/open/floor/iron/dark,
+/area/centcom/tdome/administration)
 "UO" = (
 /obj/machinery/door/airlock/centcom{
 	name = "CentCom Security"
@@ -24683,7 +24700,7 @@ aa
 aa
 kb
 nH
-fC
+th
 Ib
 Ib
 Ib
@@ -29310,7 +29327,7 @@ gv
 cV
 ng
 EU
-RA
+gM
 YE
 vN
 ng
@@ -60455,7 +60472,7 @@ IG
 IG
 IG
 It
-Pj
+Qt
 Xn
 Sz
 Sz
@@ -61228,7 +61245,7 @@ fJ
 It
 Pj
 Xn
-Sz
+ma
 Sz
 dJ
 Wn
@@ -61742,7 +61759,7 @@ fJ
 It
 Pj
 Pl
-Sz
+UN
 Sz
 qd
 Wn
