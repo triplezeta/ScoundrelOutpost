@@ -4682,7 +4682,6 @@
 #include "orbstation\clothing\misc.dm"
 #include "orbstation\datums\components\crafting\recipes.dm"
 #include "orbstation\datums\greyscale\config_types\greyscale_configs.dm"
-#include "orbstation\datums\quirks\mind-quirk.dm"
 #include "orbstation\medical\surgery\lobotomy.dm"
 #include "orbstation\medical\surgery\pacification.dm"
 #include "orbstation\mob\simple_animal\friendly\amoung.dm"
