@@ -278,6 +278,7 @@
 #include "code\__DEFINES\dcs\signals\signals_mob\signals_mob_main.dm"
 #include "code\__DEFINES\dcs\signals\signals_mob\signals_mob_silicon.dm"
 #include "code\__DEFINES\dcs\signals\signals_mob\signals_mob_simple.dm"
+#include "code\__DEFINES\orb\traits.dm"
 #include "code\__DEFINES\research\anomalies.dm"
 #include "code\__HELPERS\_auxtools_api.dm"
 #include "code\__HELPERS\_lists.dm"
@@ -4692,4 +4693,7 @@
 #include "orbstation\species\ethereal\respawn_penalties.dm"
 #include "orbstation\species\zombie\zombie_bite.dm"
 #include "orbstation\species\zombie\zombies.dm"
+#include "orbstation\xcard\revolution.dm"
+#include "orbstation\xcard\xcard-quirks.dm"
+#include "orbstation\xcard\xenotoxin.dm"
 // END_INCLUDE
