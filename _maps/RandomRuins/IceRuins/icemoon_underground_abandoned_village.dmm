@@ -58,6 +58,20 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet,
 /area/ruin/powered)
+"gL" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/mob/living/simple_animal/hostile/illusion{
+	death_message = "disperses into the air in a cloud of red mist, you feel slightly more at ease.";
+	desc = "You can't quite make out what you're seeing.";
+	faction = list("cult");
+	health = 500;
+	maxHealth = 500;
+	melee_damage_lower = 10;
+	melee_damage_upper = 30;
+	name = "Village Elder"
+	},
+/turf/open/floor/engine/cult,
+/area/ruin/powered)
 "hD" = (
 /obj/effect/decal/cleanable/blood/gibs/limb,
 /turf/open/floor/engine/cult,
@@ -134,12 +148,6 @@
 	},
 /turf/open/floor/engine/cult,
 /area/ruin/powered)
-"mu" = (
-/obj/effect/decal/cleanable/blood/gibs/up,
-/obj/effect/mob_spawn/corpse/human/assistant,
-/mob/living/simple_animal/hostile/skeleton/survivor,
-/turf/open/misc/asteroid/snow/icemoon,
-/area/icemoon/underground/explored)
 "mI" = (
 /obj/structure/flora/bush/fullgrass/style_random,
 /obj/structure/flora/grass/both/style_random,
@@ -206,6 +214,11 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/powered)
+"sY" = (
+/obj/structure/sink/kitchen/directional/east,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/checker,
+/area/ruin/powered)
 "tg" = (
 /obj/structure/fence{
 	dir = 8
@@ -247,11 +260,6 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
-/area/ruin/powered)
-"uB" = (
-/obj/structure/sink/kitchen/directional/east,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/checker,
 /area/ruin/powered)
 "vi" = (
 /obj/effect/decal/cleanable/blood/drip,
@@ -315,6 +323,12 @@
 /area/ruin/powered)
 "Bq" = (
 /obj/structure/flora/tree/pine/style_random,
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
+"BS" = (
+/obj/effect/decal/cleanable/blood/gibs/up,
+/obj/effect/mob_spawn/corpse/human/assistant,
+/mob/living/simple_animal/hostile/skeleton/survivor,
 /turf/open/misc/asteroid/snow/icemoon,
 /area/icemoon/underground/explored)
 "Cd" = (
@@ -434,20 +448,6 @@
 	dir = 4
 	},
 /turf/open/floor/carpet,
-/area/ruin/powered)
-"PQ" = (
-/obj/effect/decal/cleanable/blood/splatter,
-/mob/living/simple_animal/hostile/illusion{
-	deathmessage = "disperses into the air in a cloud of red mist, you feel slightly more at ease.";
-	desc = "You can't quite make out what you're seeing.";
-	faction = list("cult");
-	health = 500;
-	maxHealth = 500;
-	melee_damage_lower = 10;
-	melee_damage_upper = 30;
-	name = "Village Elder"
-	},
-/turf/open/floor/engine/cult,
 /area/ruin/powered)
 "Qh" = (
 /obj/structure/closet/crate/trashcart,
@@ -775,7 +775,7 @@ Ei
 Ei
 Vn
 cj
-uB
+sY
 Vn
 Og
 zT
@@ -802,7 +802,7 @@ Og
 Og
 Ei
 Ei
-mu
+BS
 Vn
 rC
 ut
@@ -1042,7 +1042,7 @@ Og
 Ei
 Vn
 Cl
-PQ
+gL
 Ed
 jk
 aM
