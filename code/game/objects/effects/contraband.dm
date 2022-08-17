@@ -407,10 +407,10 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/contraband/random, 32)
 	desc = "The Griffin commands you to be the worst you can be. Will you?"
 	icon_state = "the_griffin"
 
-/obj/structure/sign/poster/contraband/lizard
+/obj/structure/sign/poster/contraband/empire_of_sin
 	name = "Empire of Sin"
 	desc = "This lewd poster depicts an undressed Tiziran giving the viewer bedroom eyes."
-	icon_state = "lizard"
+	icon_state = "empire_of_sin"
 
 /obj/structure/sign/poster/contraband/free_drone
 	name = "Free Drone"
