@@ -505,23 +505,6 @@
 /obj/structure/sign/warning/vacuum/external/directional/east,
 /turf/open/floor/plating,
 /area/shuttle/pirate)
-"br" = (
-/obj/structure/table/wood,
-/obj/item/storage/box/matches,
-/obj/item/reagent_containers/food/drinks/bottle/rum{
-	name = "Captain Pete's Private Reserve Cuban Spaced Rum";
-	pixel_x = -6;
-	pixel_y = 8
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_x = 6;
-	pixel_y = 12
-	},
-/obj/item/clothing/mask/cigarette/cigar,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/stripes/line,
-/turf/open/floor/wood,
-/area/shuttle/pirate)
 "bt" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 10
@@ -646,6 +629,18 @@
 	dir = 8
 	},
 /turf/open/floor/iron,
+/area/shuttle/pirate)
+"bK" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/sink/directional/south,
+/obj/structure/toilet{
+	dir = 8
+	},
+/obj/machinery/light/small/directional/south,
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	dir = 8
+	},
+/turf/open/floor/iron/showroomfloor,
 /area/shuttle/pirate)
 "bM" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
@@ -875,18 +870,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/shuttle/pirate)
-"lj" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/sink/directional/south,
-/obj/structure/toilet{
-	dir = 8
-	},
-/obj/machinery/light/small/directional/south,
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 8
-	},
-/turf/open/floor/iron/showroomfloor,
-/area/shuttle/pirate)
 "mD" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
 /obj/structure/closet/secure_closet/personal,
@@ -957,20 +940,6 @@
 /obj/effect/mapping_helpers/airlock/cutaiwire,
 /turf/open/floor/pod/dark,
 /area/shuttle/pirate)
-"yp" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/shower/directional/south{
-	name = "decontamination shower"
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on,
-/obj/structure/window{
-	dir = 4
-	},
-/obj/machinery/door/window{
-	name = "Decontamination"
-	},
-/turf/open/floor/plating,
-/area/shuttle/pirate)
 "zw" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
 /obj/machinery/door/airlock{
@@ -985,6 +954,37 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/tank_dispenser/oxygen,
 /turf/open/floor/plating,
+/area/shuttle/pirate)
+"Gk" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/shower/directional/south{
+	name = "decontamination shower"
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on,
+/obj/structure/window{
+	dir = 4
+	},
+/obj/machinery/door/window{
+	name = "Decontamination"
+	},
+/turf/open/floor/plating,
+/area/shuttle/pirate)
+"HM" = (
+/obj/structure/table/wood,
+/obj/item/storage/box/matches,
+/obj/item/reagent_containers/cup/glass/bottle/rum{
+	name = "Captain Pete's Private Reserve Cuban Spaced Rum";
+	pixel_x = -6;
+	pixel_y = 8
+	},
+/obj/item/reagent_containers/cup/glass/drinkingglass/shotglass{
+	pixel_x = 6;
+	pixel_y = 12
+	},
+/obj/item/clothing/mask/cigarette/cigar,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/wood,
 /area/shuttle/pirate)
 "JT" = (
 /obj/effect/turf_decal/stripes/line{
@@ -1004,6 +1004,38 @@
 	pixel_y = -1
 	},
 /turf/open/floor/pod/light,
+/area/shuttle/pirate)
+"KC" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table,
+/obj/item/storage/fancy/cigarettes{
+	pixel_x = 2;
+	pixel_y = 6
+	},
+/obj/item/storage/fancy/cigarettes/cigpack_carp{
+	pixel_x = 10;
+	pixel_y = 6
+	},
+/obj/item/storage/fancy/cigarettes/cigpack_robust{
+	pixel_x = 2
+	},
+/obj/item/storage/fancy/cigarettes/cigpack_midori{
+	pixel_x = 10
+	},
+/obj/item/storage/fancy/cigarettes/cigpack_uplift{
+	pixel_x = 10;
+	pixel_y = -6
+	},
+/obj/item/lighter{
+	pixel_x = -10;
+	pixel_y = -2
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/turf/open/floor/iron,
 /area/shuttle/pirate)
 "Ni" = (
 /obj/effect/turf_decal/stripes/line,
@@ -1064,38 +1096,6 @@
 	},
 /turf/open/floor/iron,
 /area/shuttle/pirate)
-"Vj" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/table,
-/obj/item/storage/fancy/cigarettes{
-	pixel_x = 2;
-	pixel_y = 6
-	},
-/obj/item/storage/fancy/cigarettes/cigpack_carp{
-	pixel_x = 10;
-	pixel_y = 6
-	},
-/obj/item/storage/fancy/cigarettes/cigpack_robust{
-	pixel_x = 2
-	},
-/obj/item/storage/fancy/cigarettes/cigpack_midori{
-	pixel_x = 10
-	},
-/obj/item/storage/fancy/cigarettes/cigpack_uplift{
-	pixel_x = 10;
-	pixel_y = -6
-	},
-/obj/item/lighter{
-	pixel_x = -10;
-	pixel_y = -2
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
-	dir = 1
-	},
-/turf/open/floor/iron,
-/area/shuttle/pirate)
 
 (1,1,1) = {"
 af
@@ -1143,7 +1143,7 @@ aj
 aj
 ax
 aq
-Vj
+KC
 aj
 RY
 aM
@@ -1164,7 +1164,7 @@ Oe
 OL
 zw
 dy
-br
+HM
 ep
 er
 af
@@ -1199,7 +1199,7 @@ aj
 yi
 aj
 aj
-yp
+Gk
 Ni
 aF
 aI
@@ -1377,7 +1377,7 @@ ao
 av
 bv
 aj
-lj
+bK
 aj
 aj
 aj

@@ -23,12 +23,6 @@ GLOBAL_LIST_INIT(biblenames, list("Holy Book", "Bible", "Quran", "Scrapbook", "B
 GLOBAL_LIST_INIT(biblestates, list("holybook", "bible", "koran", "scrapbook", "burning", "honk1", "honk2", "creeper", "white", "holylight", "atheist", "tome", "kingyellow", "ithaqua", "scientology", "melted", "necronomicon", "insuls", "gurugranthsahib"))
 GLOBAL_LIST_INIT(bibleitemstates, list("holybook", "bible", "koran", "scrapbook", "burning", "honk1", "honk2", "creeper", "white", "holylight", "atheist", "tome", "kingyellow", "ithaqua", "scientology", "melted", "necronomicon", "kingyellow", "gurugranthsahib"))
 
-/mob/proc/bible_check() //The bible, if held, might protect against certain things
-	var/obj/item/storage/book/bible/B = locate() in src
-	if(is_holding(B))
-		return B
-	return 0
-
 /obj/item/storage/book/bible
 	name = "holy book"
 	desc = "Apply to head repeatedly."
@@ -52,6 +46,7 @@ GLOBAL_LIST_INIT(bibleitemstates, list("holybook", "bible", "koran", "scrapbook"
 
 /obj/item/storage/book/bible/Initialize(mapload)
 	. = ..()
+	atom_storage.max_specific_storage = WEIGHT_CLASS_SMALL
 	AddComponent(/datum/component/anti_magic, MAGIC_RESISTANCE_HOLY)
 
 /obj/item/storage/book/bible/suicide_act(mob/user)
@@ -143,7 +138,7 @@ GLOBAL_LIST_INIT(bibleitemstates, list("holybook", "bible", "koran", "scrapbook"
 		H.visible_message(span_notice("[user] heals [H] with the power of [deity_name]!"))
 		to_chat(H, span_boldnotice("May the power of [deity_name] compel you to be healed!"))
 		playsound(src.loc, SFX_PUNCH, 25, TRUE, -1)
-		SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "blessing", /datum/mood_event/blessing)
+		H.add_mood_event("blessing", /datum/mood_event/blessing)
 	return TRUE
 
 /obj/item/storage/book/bible/attack(mob/living/M, mob/living/carbon/human/user, heal_mode = TRUE)
@@ -251,7 +246,7 @@ GLOBAL_LIST_INIT(bibleitemstates, list("holybook", "bible", "koran", "scrapbook"
 	desc = "To be applied to the head repeatedly."
 
 /obj/item/storage/book/bible/booze/PopulateContents()
-	new /obj/item/reagent_containers/food/drinks/bottle/whiskey(src)
+	new /obj/item/reagent_containers/cup/glass/bottle/whiskey(src)
 
 /obj/item/storage/book/bible/syndicate
 	icon_state ="ebook"
