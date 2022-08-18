@@ -23,7 +23,7 @@
 
 	// Update the worn icon.
 	icon_state = "focus_1"
-	user.update_inv_neck()
+	user.update_worn_neck()
 
 	START_PROCESSING(SSfastprocess, src)
 

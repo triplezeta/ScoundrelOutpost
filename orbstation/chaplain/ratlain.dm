@@ -21,7 +21,7 @@
 			blessedR.visible_message(span_notice("[chap] heals [blessedR] with the power of [GLOB.deity]!"))
 			to_chat(blessedR, span_boldnotice("May the power of [GLOB.deity] compel you to be healed!"))
 			playsound(chap, SOUND_SQUEAK, 25, TRUE, -1)
-			SEND_SIGNAL(blessedR, COMSIG_ADD_MOOD_EVENT, "blessing", /datum/mood_event/blessing)
+			blessedR.add_mood_event("blessing", /datum/mood_event/blessing)
 
 	return TRUE
 
