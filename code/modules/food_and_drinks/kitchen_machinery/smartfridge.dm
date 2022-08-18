@@ -142,7 +142,7 @@
 		return ..()
 
 /obj/machinery/smartfridge/proc/accept_check(obj/item/O)
-	if(istype(O, /obj/item/food/grown/) || istype(O, /obj/item/seeds/) || istype(O, /obj/item/grown/) || istype(O, /obj/item/graft/) || istype(O,/obj/item/reagent_containers/food/condiment))
+	if(istype(O, /obj/item/food/grown/) || istype(O, /obj/item/seeds/) || istype(O, /obj/item/grown/) || istype(O, /obj/item/graft/) || istype(O,/obj/item/reagent_containers/condiment))
 		return TRUE
 	return FALSE
 
@@ -391,7 +391,7 @@
 	base_build_path = /obj/machinery/smartfridge/food
 
 /obj/machinery/smartfridge/food/accept_check(obj/item/O)
-	if(IS_EDIBLE(O) || istype(O,/obj/item/reagent_containers/food/condiment))
+	if(IS_EDIBLE(O) || istype(O,/obj/item/reagent_containers/condiment))
 		return TRUE
 	return FALSE
 
