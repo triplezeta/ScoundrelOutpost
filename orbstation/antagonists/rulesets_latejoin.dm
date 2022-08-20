@@ -27,6 +27,4 @@
 		JOB_WARDEN,
 		JOB_SECURITY_OFFICER,
 	)
-	requirements = list(101,101,50,40,35,20,20,15,10,10)
 	required_enemies = list(1,1,1,1,1,1,1,1,1,1) // the game is supposed to make one of your sac targets a security member
-	minimum_players = 15 // same as the other heretic roles as listed in our dynamic.json

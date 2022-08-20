@@ -4,18 +4,18 @@
 //                                          //
 //////////////////////////////////////////////
 
-/datum/dynamic_ruleset/midround/autotraitor
+/datum/dynamic_ruleset/midround/from_living/autotraitor
 	counts_toward_traitor_limit = TRUE
 
 // Don't create more traitors if it exceeds the limit for the current population & threat level.
-/datum/dynamic_ruleset/midround/autotraitor/ready(forced = FALSE)
+/datum/dynamic_ruleset/midround/from_living/autotraitor/ready(forced = FALSE)
 	if(!forced)
 		if(!mode.calculate_traitor_limit())
 			message_admins("Midround ruleset [name] could not be executed due to the traitor limit.")
 			return FALSE
 	return ..()
 
-/datum/dynamic_ruleset/midround/autotraitor/execute()
+/datum/dynamic_ruleset/midround/from_living/autotraitor/execute()
 	mode.traitor_limit_antag_count ++
 	return ..()
 
@@ -53,7 +53,7 @@
 //                                          //
 //////////////////////////////////////////////
 
-/datum/dynamic_ruleset/midround/waking_heretic
+/datum/dynamic_ruleset/midround/from_living/waking_heretic
 	name = "Waking Heretic"
 	midround_ruleset_style = MIDROUND_RULESET_STYLE_LIGHT // heretics need time to set up, so this should happen earlier in the round
 	antag_datum = /datum/antagonist/heretic
@@ -86,7 +86,7 @@
 	cost = 10
 	repeatable = TRUE
 
-/datum/dynamic_ruleset/midround/waking_heretic/trim_candidates()
+/datum/dynamic_ruleset/midround/from_living/waking_heretic/trim_candidates()
 	..()
 	for(var/mob/living/player in living_players)
 		if(issilicon(player))
@@ -96,13 +96,13 @@
 		else if(player.mind && (player.mind.special_role || player.mind.antag_datums?.len > 0))
 			living_players -= player
 
-/datum/dynamic_ruleset/midround/waking_heretic/ready(forced = FALSE)
+/datum/dynamic_ruleset/midround/from_living/waking_heretic/ready(forced = FALSE)
 	if (required_candidates > living_players.len)
 		log_game("DYNAMIC: FAIL: [src] does not have enough candidates, using living_players ([required_candidates] needed, [living_players.len] found)")
 		return FALSE
 	return ..()
 
-/datum/dynamic_ruleset/midround/waking_heretic/execute()
+/datum/dynamic_ruleset/midround/from_living/waking_heretic/execute()
 	var/mob/picked_mob = pick(living_players)
 	assigned += picked_mob
 	living_players -= picked_mob

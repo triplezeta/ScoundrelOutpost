@@ -4698,6 +4698,7 @@
 #include "orbstation\clothing\misc.dm"
 #include "orbstation\datums\components\crafting\recipes.dm"
 #include "orbstation\datums\greyscale\config_types\greyscale_configs.dm"
+#include "orbstation\food\drinks_alcoholic.dm"
 #include "orbstation\hydroponics\grown.dm"
 #include "orbstation\medical\surgery\lobotomy.dm"
 #include "orbstation\medical\surgery\pacification.dm"
