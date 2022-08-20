@@ -434,7 +434,7 @@
 	supplementary_reagents = list(
 		/datum/reagent/medicine/rezadone = 3,
 		/datum/reagent/consumable/entpoly = 3,
-		/datum/reagent/consumable/red_queen = 2,
+		/datum/reagent/consumable/ethanol/red_queen = 2,
 		/datum/reagent/consumable/peachjuice = 2,
 		/datum/reagent/uranium = 1,
 		/datum/reagent/liquidgibs = 1)
@@ -590,7 +590,7 @@
 	supplementary_reagents = list(
 		/datum/reagent/consumable/honey = 4,
 		/datum/reagent/consumable/korta_nectar = 3,
-		/datum/reagent/consumable/red_queen = 3,
+		/datum/reagent/consumable/ethanol/red_queen = 3,
 		/datum/reagent/consumable/ethanol/champagne = 2,
 		/datum/reagent/consumable/ethanol/sugar_rush = 2,
 		/datum/reagent/consumable/sugar = 1,

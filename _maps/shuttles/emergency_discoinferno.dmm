@@ -177,12 +177,6 @@
 /obj/item/coin/plasma,
 /turf/open/floor/wood,
 /area/shuttle/escape)
-"I" = (
-/obj/machinery/computer/slot_machine{
-	dir = 3
-	},
-/turf/open/floor/wood,
-/area/shuttle/escape)
 "J" = (
 /obj/structure/chair/comfy/brown{
 	dir = 1
@@ -192,10 +186,6 @@
 "K" = (
 /obj/structure/table/wood/fancy,
 /obj/item/reagent_containers/cup/glass/bottle/absinthe,
-/turf/open/floor/wood,
-/area/shuttle/escape)
-"L" = (
-/obj/structure/table/wood/fancy,
 /turf/open/floor/wood,
 /area/shuttle/escape)
 "M" = (
@@ -212,8 +202,16 @@
 "O" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/shuttle/escape)
+"P" = (
+/obj/machinery/computer/slot_machine,
+/turf/open/floor/wood,
+/area/shuttle/escape)
 "R" = (
 /turf/open/floor/light/colour_cycle/dancefloor_b,
+/area/shuttle/escape)
+"T" = (
+/obj/structure/table/wood/fancy,
+/turf/open/floor/wood,
 /area/shuttle/escape)
 
 (1,1,1) = {"
@@ -260,7 +258,7 @@ q
 c
 x
 C
-I
+P
 b
 b
 "}
@@ -452,7 +450,7 @@ q
 c
 B
 H
-L
+T
 b
 b
 "}
