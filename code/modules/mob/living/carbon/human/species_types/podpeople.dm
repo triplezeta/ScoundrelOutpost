@@ -49,10 +49,8 @@
 		var/turf/T = H.loc
 		light_amount = min(1, T.get_lumcount()) - 0.5
 		H.adjust_nutrition(5 * light_amount * delta_time)
-		/*if(light_amount > 0.2) //if there's enough light, heal
-			H.heal_overall_damage(0.5 * delta_time, 0.5 * delta_time, 0, BODYTYPE_ORGANIC)
-			H.adjustToxLoss(-0.5 * delta_time)
-			H.adjustOxyLoss(-0.5 * delta_time)*/
+		if(light_amount > 0.2) //if there's enough light, call the healing proc
+			handle_light_healing(H, delta_time)
 
 	if(H.nutrition > NUTRITION_LEVEL_ALMOST_FULL) //don't make podpeople fat because they stood in the sun for too long
 		H.set_nutrition(NUTRITION_LEVEL_ALMOST_FULL)
@@ -60,6 +58,9 @@
 	if(H.nutrition < NUTRITION_LEVEL_STARVING + 50)
 		H.take_overall_damage(1 * delta_time, 0)
 	..()
+
+/datum/species/pod/proc/handle_light_healing(mob/living/carbon/human/H, delta_time)
+	return //regular podpeople don't heal from light
 
 /datum/species/pod/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H, delta_time, times_fired)
 	if(chem.type == /datum/reagent/toxin/plantbgone)
@@ -103,3 +104,42 @@
 	var/obj/item/organ/external/organ = human_mob.getorganslot(ORGAN_SLOT_EXTERNAL_POD_HAIR)
 	organ.set_sprite(new_style)
 	human_mob.update_body_parts()
+
+/datum/species/pod/create_pref_unique_perks()
+	var/list/to_add = list()
+
+	to_add += list(
+		list(
+			SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
+			SPECIES_PERK_ICON = "lightbulb",
+			SPECIES_PERK_NAME = "Light Nutrition",
+			SPECIES_PERK_DESC = "Podpeople passively gain nutrition while standing in well-lit areas.",
+		),
+		list(
+			SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
+			SPECIES_PERK_ICON = "leaf",
+			SPECIES_PERK_NAME = "Plant Weaknesses",
+			SPECIES_PERK_DESC = "Podpeople are harmed by weedkiller, and mutate rapidly when shot with a floral somatoray on mutate mode. \
+			Podpeople are also delicious to goats.",
+		),
+		list(
+			SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
+			SPECIES_PERK_ICON = "lightbulb",
+			SPECIES_PERK_NAME = "Light Starvation",
+			SPECIES_PERK_DESC = "Podpeople lose nutrition while standing in darkness, and take constant damage while starving.",
+		),
+	)
+
+	return to_add
+
+//podperson sprouts - the same as regular podpeople in every way, except they also heal rapidly while standing in bright light.
+//These only come from reviving someone via replica pod, or being spawned via the seed vault ghost role.
+/datum/species/pod/sprout
+	id = SPECIES_PODPERSON_SPROUT
+	examine_limb_id = SPECIES_PODPERSON
+
+//Sprouts heal rapidly while standing in light
+/datum/species/pod/sprout/handle_light_healing(mob/living/carbon/human/H, delta_time)
+	H.heal_overall_damage(0.5 * delta_time, 0.5 * delta_time, 0, BODYTYPE_ORGANIC)
+	H.adjustToxLoss(-0.5 * delta_time)
+	H.adjustOxyLoss(-0.5 * delta_time)
