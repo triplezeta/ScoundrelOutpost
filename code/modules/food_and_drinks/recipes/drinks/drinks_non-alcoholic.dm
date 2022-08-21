@@ -106,6 +106,10 @@
 	results = list(/datum/reagent/consumable/cream_soda = 4)
 	required_reagents = list(/datum/reagent/consumable/sugar = 2, /datum/reagent/consumable/sodawater = 2, /datum/reagent/consumable/vanilla = 1)
 
+/datum/chemical_reaction/drink/red_queen
+	results = list(/datum/reagent/consumable/red_queen = 10)
+	required_reagents = list(/datum/reagent/consumable/tea = 6, /datum/reagent/mercury = 2, /datum/reagent/consumable/blackpepper = 1, /datum/reagent/growthserum = 1)
+
 /datum/chemical_reaction/drink/toechtauese_syrup
 	results = list(/datum/reagent/consumable/toechtauese_syrup = 10)
 	required_reagents = list(/datum/reagent/consumable/toechtauese_juice = 6, /datum/reagent/consumable/sugar = 4)
