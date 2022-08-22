@@ -145,7 +145,7 @@
 	icon = 'icons/obj/lavaland/spawners.dmi'
 	icon_state = "terrarium"
 	density = TRUE
-	mob_species = /datum/species/pod
+	mob_species = /datum/species/pod/sprout
 	you_are_text = "You are a sentient ecosystem, an example of the mastery over life that your creators possessed."
 	flavour_text = "Your masters, benevolent as they were, created uncounted seed vaults and spread them across \
 	the universe to every planet they could chart. You are in one such seed vault. \
