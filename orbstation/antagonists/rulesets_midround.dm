@@ -88,24 +88,19 @@
 
 /datum/dynamic_ruleset/midround/from_living/waking_heretic/trim_candidates()
 	..()
-	for(var/mob/living/player in living_players)
+	candidates = living_players
+	for(var/mob/living/player in candidates)
 		if(issilicon(player))
-			living_players -= player
+			candidates -= player
 		else if(is_centcom_level(player.z))
-			living_players -= player
+			candidates -= player
 		else if(player.mind && (player.mind.special_role || player.mind.antag_datums?.len > 0))
-			living_players -= player
-
-/datum/dynamic_ruleset/midround/from_living/waking_heretic/ready(forced = FALSE)
-	if (required_candidates > living_players.len)
-		log_game("DYNAMIC: FAIL: [src] does not have enough candidates, using living_players ([required_candidates] needed, [living_players.len] found)")
-		return FALSE
-	return ..()
+			candidates -= player
 
 /datum/dynamic_ruleset/midround/from_living/waking_heretic/execute()
-	var/mob/picked_mob = pick(living_players)
+	var/mob/picked_mob = pick(candidates)
 	assigned += picked_mob
-	living_players -= picked_mob
+	candidates -= picked_mob
 	var/datum/antagonist/heretic/new_heretic = picked_mob.mind.add_antag_datum(antag_datum)
 	message_admins("[ADMIN_LOOKUPFLW(picked_mob)] was selected by the [name] ruleset and has been made into a midround heretic.")
 	log_game("DYNAMIC: [key_name(picked_mob)] was selected by the [name] ruleset and has been made into a midround heretic.")
