@@ -3,7 +3,7 @@
 
 /datum/action/zombie_bite
 	name = "Bite"
-	icon_icon = 'icons/obj/surgery.dmi'
+	icon_icon = 'icons/obj/medical/surgery.dmi'
 	button_icon_state = "brain-x-d"
 	/// Set to TRUE when the user is currently trying to bite someone.
 	var/is_biting = FALSE
