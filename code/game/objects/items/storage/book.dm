@@ -24,12 +24,12 @@ GLOBAL_LIST_INIT(biblestates, list("holybook", "bible", "koran", "scrapbook", "b
 GLOBAL_LIST_INIT(bibleitemstates, list("holybook", "bible", "koran", "scrapbook", "burning", "honk1", "honk2", "creeper", "white", "holylight", "atheist", "tome", "kingyellow", "ithaqua", "scientology", "melted", "necronomicon", "kingyellow", "gurugranthsahib"))
 
 /obj/item/storage/book/bible
-	name = "holy book"
+	name = "bible"
 	desc = "Apply to head repeatedly."
-	icon = 'icons/obj/storage.dmi'
-	icon_state = "holybook"
-	inhand_icon_state = "holybook"
-	worn_icon_state = "holybook"
+	icon = 'icons/obj/storage/storage.dmi'
+	icon_state = "bible"
+	inhand_icon_state = "bible"
+	worn_icon_state = "bible"
 	lefthand_file = 'icons/mob/inhands/misc/books_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/books_righthand.dmi'
 	var/mob/affecting = null
@@ -61,7 +61,7 @@ GLOBAL_LIST_INIT(bibleitemstates, list("holybook", "bible", "koran", "scrapbook"
 
 	var/list/skins = list()
 	for(var/i in 1 to GLOB.biblestates.len)
-		var/image/bible_image = image(icon = 'icons/obj/storage.dmi', icon_state = GLOB.biblestates[i])
+		var/image/bible_image = image(icon = 'icons/obj/storage/storage.dmi', icon_state = GLOB.biblestates[i])
 		skins += list("[GLOB.biblenames[i]]" = bible_image)
 
 	var/choice = show_radial_menu(user, src, skins, custom_check = CALLBACK(src, .proc/check_menu, user), radius = 40, require_near = TRUE)
@@ -101,7 +101,7 @@ GLOBAL_LIST_INIT(bibleitemstates, list("holybook", "bible", "koran", "scrapbook"
 		return FALSE
 	if(!istype(user) || !user.is_holding(src))
 		return FALSE
-	if(!user.can_read(src) || user.is_blind() || user.incapacitated())
+	if(user.incapacitated())
 		return FALSE
 	if(user.mind?.holy_role != HOLY_ROLE_HIGHPRIEST)
 		return FALSE
