@@ -4718,6 +4718,7 @@
 #include "orbstation\hydroponics\grown.dm"
 #include "orbstation\medical\surgery\lobotomy.dm"
 #include "orbstation\medical\surgery\pacification.dm"
+#include "orbstation\mob\living.dm"
 #include "orbstation\mob\simple_animal\friendly\amoung.dm"
 #include "orbstation\modules\research\designs\mechfabricator_designs.dm"
 #include "orbstation\modules\research\techweb\all_nodes.dm"
