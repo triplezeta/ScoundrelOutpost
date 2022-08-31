@@ -226,6 +226,7 @@
 		if(istype(mute))
 			if(!HAS_TRAIT(talking_movable, TRAIT_CAN_SIGN_ON_COMMS))
 				return FALSE
+			message = punctuation_to_periods(message) // ORBSTATION: signing doesn't communicate tone over radio
 			switch(mute.check_signables_state())
 				if(SIGN_ONE_HAND) // One hand full
 					message = stars(message)
