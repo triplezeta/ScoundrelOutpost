@@ -21,22 +21,22 @@
 	integer = FALSE
 	default = 15
 	min_val = 0
-	max_val = 500
+	max_val = 200
 /datum/config_entry/number/shuffle_max_prob
 	integer = FALSE
 	default = 75
 	min_val = 0
-	max_val = 500
+	max_val = 200
 /datum/config_entry/number/shuffle_add_prob
 	integer = FALSE
 	default = 5
 	min_val = 0
-	max_val = 500
+	max_val = 200
 /datum/config_entry/number/shuffle_sub_prob
 	integer = FALSE
 	default = 10
-	min_val = 0
-	max_val = 500
+	min_val = 5 // this cannot be zero, because if the probability gets to or above 100% you need something to pull it back down
+	max_val = 200
 // Note that eat_prob and visual_prob do not operate on the same sliding scale and are flat.
 // Eat is only run on shuffled items, while the visual muss-up check is done on all table/rack items.
 // Both of these can be disabled per-area.
