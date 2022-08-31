@@ -204,6 +204,10 @@ GLOBAL_PROTECT(admin_verbs_debug)
 	/client/proc/open_lua_editor,
 	/client/proc/validate_puzzgrids,
 	/client/proc/debug_spell_requirements,
+	/client/proc/manual_table_shuffle,
+	/client/proc/extreme_table_shuffle,
+	/client/proc/display_shuffle_log,
+	/client/proc/show_high_rollers,
 	)
 GLOBAL_LIST_INIT(admin_verbs_possess, list(/proc/possess, /proc/release))
 GLOBAL_PROTECT(admin_verbs_possess)

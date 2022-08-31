@@ -527,3 +527,46 @@ MAXFINE 2000
 ## Comment if you wish to enable title music playing at the lobby screen. This flag is disabled by default to facilitate better code testing on local machines.
 ## Do keep in mind that this flag will not affect individual player's preferences: if they opt-out on your server, it will never play for them.
 DISALLOW_TITLE_MUSIC
+
+##
+## Table Shuffle Constants
+##
+
+## Uncomment to disable table shuffle subsystem
+#DISABLE_TABLE_SHUFFLE
+
+## Uncomment this to only add items from vendors, never shuffle what's already there
+#SHUFFLE_VEND_ONLY
+
+## Sets the maximum value something must have if it wants to be vended for free during shuffling.
+## Venders will never vend premium or contraband during this process.  Default 150.
+#SHUFFLE_VEND_BUDGET 250
+
+## These constants produce a specific probability curve depending on how many randomizable entities exist.
+## The more tables, racks, closets, etc, within a target area, the more the probability increases
+## This starts at min_prob and adds add_prob until it reaches max_prob
+## Once the shuffling starts, each successful shuffle decreases the probability of continuing by sub_prob.
+## The first failure to continue ends the process, and the decreases are not capped by min_prob.
+## This creates a hard maximum on the amount of chaos that can be introduced at round start.
+## These numbers are locked to values between 0-500 but I would not exceed 100.
+
+#SHUFFLE_MIN_PROB 17.5
+#SHUFFLE_MAX_PROB 77.5
+#SHUFFLE_ADD_PROB 7.5
+#SHUFFLE_SUB_PROB 15
+
+## Chances that a food or drink item that the algorithm chooses for another reason
+## will be eaten or drunk.  Usually, this will only happen if it has an aesthetic
+## side effect, like leaving trash.  Drinks and some condiments may be partially drained.
+#SHUFFLE_EAT_PROB 55
+
+## Chances that an item on a table or rack will be visually out of place by a few pixels,
+## or that the items on a table will have their order messed with.
+## This change is not logged in the shuffle log and can be disabled per-area.
+## It should not proc anywhere item positioning is meaningful (surgery tools, etc).
+#SHUFFLE_VISUAL_PROB 5
+
+## Debug: The table shuffle's high roller list will keep track of any area which
+## has more than this many things happen in it.  Use this verb to see if the randomness
+## is at a level you desire: display table shuffle high rollers
+#SHUFFLE_HIGH_ROLLER_THRESHOLD 6
