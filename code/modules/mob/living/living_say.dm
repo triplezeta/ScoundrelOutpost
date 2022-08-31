@@ -347,8 +347,6 @@ GLOBAL_LIST_INIT(message_modes_stat_limits, list(
 		var/mob/living/carbon/mute = src
 		if(istype(mute))
 			switch(mute.check_signables_state())
-				if(SIGN_ONE_HAND) // One arm
-					message = stars(message)
 				if(SIGN_HANDS_FULL) // Full hands
 					mute.visible_message("tries to sign, but can't with [src.p_their()] hands full!", visible_message_flags = EMOTE_MESSAGE)
 					return FALSE
