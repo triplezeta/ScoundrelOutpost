@@ -121,6 +121,7 @@
 					if(5 to INFINITY)
 						currentspeed = 2.5
 						mad = TRUE
+			mad = FALSE
 			if(target && !check_purity(target))
 				if(target.loc == loc && isturf(target.loc)) //LADIES AND GENTLEMAN WE GOTEM PREPARE TO DUMP
 					start_washing()
