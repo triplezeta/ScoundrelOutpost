@@ -56,6 +56,24 @@
 /obj/effect/mob_spawn/ghost_role/human/pirate/skeleton/gunner,
 /turf/open/floor/wood/airless,
 /area/shuttle/pirate/flying_dutchman)
+"am" = (
+/obj/structure/railing{
+	color = "#4C3117";
+	dir = 5;
+	name = "wooden railing"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/obj/structure/table/wood,
+/obj/item/reagent_containers/cup/glass/bottle/beer{
+	pixel_x = -5;
+	pixel_y = 8
+	},
+/obj/item/stack/cannonball/fourteen,
+/obj/item/reagent_containers/cup/bucket/wooden,
+/turf/open/floor/wood/airless,
+/area/shuttle/pirate/flying_dutchman)
 "an" = (
 /obj/structure/railing{
 	color = "#4C3117";
@@ -89,12 +107,6 @@
 	dir = 1
 	},
 /turf/open/floor/wood/airless,
-/area/shuttle/pirate/flying_dutchman)
-"aw" = (
-/obj/machinery/computer/monitor/secret{
-	dir = 8
-	},
-/turf/open/floor/carpet/royalblack/airless,
 /area/shuttle/pirate/flying_dutchman)
 "aB" = (
 /obj/structure/railing/corner{
@@ -197,24 +209,6 @@
 	},
 /turf/open/floor/wood/airless,
 /area/shuttle/pirate/flying_dutchman)
-"cv" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 10
-	},
-/obj/machinery/light/floor,
-/obj/structure/rack{
-	icon = 'icons/obj/stationobjs.dmi';
-	icon_state = "minibar";
-	name = "skeletal minibar"
-	},
-/obj/item/reagent_containers/condiment/milk{
-	pixel_x = -5
-	},
-/obj/item/reagent_containers/condiment/milk{
-	pixel_x = 5
-	},
-/turf/open/floor/wood/airless,
-/area/shuttle/pirate/flying_dutchman)
 "da" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -295,16 +289,6 @@
 	},
 /turf/open/floor/wood/airless,
 /area/shuttle/pirate/flying_dutchman)
-"gm" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 6
-	},
-/obj/machinery/light/small/directional/south,
-/obj/structure/fermenting_barrel/gunpowder,
-/obj/item/reagent_containers/cup/bucket/wooden,
-/obj/item/reagent_containers/cup/bucket/wooden,
-/turf/open/floor/wood/airless,
-/area/shuttle/pirate/flying_dutchman)
 "gq" = (
 /obj/machinery/computer/shuttle/pirate{
 	dir = 1
@@ -335,6 +319,16 @@
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/wood/airless,
 /area/shuttle/pirate/flying_dutchman)
+"gS" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/obj/machinery/light/small/directional/south,
+/obj/structure/fermenting_barrel/gunpowder,
+/obj/item/reagent_containers/cup/bucket/wooden,
+/obj/item/reagent_containers/cup/bucket/wooden,
+/turf/open/floor/wood/airless,
+/area/shuttle/pirate/flying_dutchman)
 "hz" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -351,6 +345,20 @@
 	pixel_x = -8
 	},
 /turf/open/floor/wood/airless,
+/area/shuttle/pirate/flying_dutchman)
+"iq" = (
+/obj/structure/closet/cabinet{
+	anchored = 1;
+	desc = "What kind of scary things could be here?";
+	name = "Davy Jones' Locker"
+	},
+/obj/item/restraints/legcuffs/bola,
+/obj/item/restraints/legcuffs/bola,
+/obj/item/restraints/legcuffs/bola,
+/obj/item/gun/energy/laser,
+/obj/item/megaphone,
+/obj/item/claymore/cutlass,
+/turf/open/floor/carpet/royalblack/airless,
 /area/shuttle/pirate/flying_dutchman)
 "it" = (
 /obj/effect/turf_decal/siding/wood/end{
@@ -384,20 +392,6 @@
 /obj/structure/cable,
 /obj/machinery/light/floor,
 /turf/open/space/basic,
-/area/shuttle/pirate/flying_dutchman)
-"oS" = (
-/obj/structure/closet/cabinet{
-	anchored = 1;
-	desc = "What kind of scary things could be here?";
-	name = "Davy Jones' Locker"
-	},
-/obj/item/restraints/legcuffs/bola,
-/obj/item/restraints/legcuffs/bola,
-/obj/item/restraints/legcuffs/bola,
-/obj/item/gun/energy/laser,
-/obj/item/megaphone,
-/obj/item/claymore/cutlass,
-/turf/open/floor/carpet/royalblack/airless,
 /area/shuttle/pirate/flying_dutchman)
 "pG" = (
 /obj/structure/window/reinforced/shuttle/survival_pod,
@@ -454,6 +448,12 @@
 	},
 /turf/open/floor/carpet/blue/airless,
 /area/shuttle/pirate/flying_dutchman)
+"sW" = (
+/obj/machinery/computer/monitor{
+	dir = 8
+	},
+/turf/open/floor/carpet/royalblack/airless,
+/area/shuttle/pirate/flying_dutchman)
 "tt" = (
 /obj/machinery/piratepad,
 /turf/open/floor/carpet/royalblack/airless,
@@ -462,21 +462,6 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
-/turf/open/floor/wood/airless,
-/area/shuttle/pirate/flying_dutchman)
-"tQ" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
-/obj/structure/rack{
-	icon = 'icons/obj/stationobjs.dmi';
-	icon_state = "minibar";
-	name = "skeletal minibar"
-	},
-/obj/item/food/grown/sugarcane,
-/obj/item/food/grown/sugarcane,
-/obj/item/food/grown/sugarcane,
-/obj/item/reagent_containers/cup/bucket/wooden,
 /turf/open/floor/wood/airless,
 /area/shuttle/pirate/flying_dutchman)
 "uk" = (
@@ -600,6 +585,34 @@
 	},
 /turf/open/floor/wood/airless,
 /area/shuttle/pirate/flying_dutchman)
+"Ac" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/obj/machinery/light/small/directional/south,
+/obj/structure/fermenting_barrel/gunpowder,
+/obj/item/reagent_containers/cup/bucket/wooden,
+/obj/item/reagent_containers/cup/bucket/wooden,
+/turf/open/floor/wood/airless,
+/area/shuttle/pirate/flying_dutchman)
+"BK" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/obj/machinery/light/floor,
+/obj/structure/rack{
+	icon = 'icons/obj/stationobjs.dmi';
+	icon_state = "minibar";
+	name = "skeletal minibar"
+	},
+/obj/item/reagent_containers/condiment/milk{
+	pixel_x = -5
+	},
+/obj/item/reagent_containers/condiment/milk{
+	pixel_x = 5
+	},
+/turf/open/floor/wood/airless,
+/area/shuttle/pirate/flying_dutchman)
 "Cv" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -621,6 +634,27 @@
 	pixel_y = 2
 	},
 /turf/closed/wall/mineral/wood/nonmetal,
+/area/shuttle/pirate/flying_dutchman)
+"Dr" = (
+/obj/structure/table,
+/obj/item/reagent_containers/cup/glass/bottle/rum{
+	desc = "Rum with ghostly properties that can help the drinker enter the spirit realm. It has fermented under the sea of space for ages.";
+	name = "Ghost Pirate Rum";
+	pixel_x = -4;
+	pixel_y = 12
+	},
+/obj/item/clothing/mask/cigarette/cigar{
+	pixel_x = 4
+	},
+/obj/item/reagent_containers/cup/glass/drinkingglass/shotglass{
+	pixel_x = -7;
+	pixel_y = 5
+	},
+/obj/item/lighter{
+	pixel_x = 8;
+	pixel_y = 11
+	},
+/turf/open/floor/carpet/royalblack/airless,
 /area/shuttle/pirate/flying_dutchman)
 "EU" = (
 /obj/machinery/shuttle_scrambler,
@@ -779,51 +813,12 @@
 	},
 /turf/open/floor/wood/airless,
 /area/shuttle/pirate/flying_dutchman)
-"OP" = (
-/obj/structure/railing{
-	color = "#4C3117";
-	dir = 5;
-	name = "wooden railing"
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 5
-	},
-/obj/structure/table/wood,
-/obj/item/reagent_containers/cup/glass/bottle/beer{
-	pixel_x = -5;
-	pixel_y = 8
-	},
-/obj/item/stack/cannonball/fourteen,
-/obj/item/reagent_containers/cup/bucket/wooden,
-/turf/open/floor/wood/airless,
-/area/shuttle/pirate/flying_dutchman)
 "Pm" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
 	},
 /turf/open/floor/wood/airless,
-/area/shuttle/pirate/flying_dutchman)
-"PP" = (
-/obj/structure/table,
-/obj/item/reagent_containers/cup/glass/bottle/rum{
-	desc = "Rum with ghostly properties that can help the drinker enter the spirit realm. It has fermented under the sea of space for ages.";
-	name = "Ghost Pirate Rum";
-	pixel_x = -4;
-	pixel_y = 12
-	},
-/obj/item/clothing/mask/cigarette/cigar{
-	pixel_x = 4
-	},
-/obj/item/reagent_containers/cup/glass/drinkingglass/shotglass{
-	pixel_x = -7;
-	pixel_y = 5
-	},
-/obj/item/lighter{
-	pixel_x = 8;
-	pixel_y = 11
-	},
-/turf/open/floor/carpet/royalblack/airless,
 /area/shuttle/pirate/flying_dutchman)
 "PS" = (
 /obj/effect/turf_decal/siding/wood/corner{
@@ -882,16 +877,6 @@
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/carpet/blue/airless,
 /area/shuttle/pirate/flying_dutchman)
-"Sy" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 10
-	},
-/obj/machinery/light/small/directional/south,
-/obj/structure/fermenting_barrel/gunpowder,
-/obj/item/reagent_containers/cup/bucket/wooden,
-/obj/item/reagent_containers/cup/bucket/wooden,
-/turf/open/floor/wood/airless,
-/area/shuttle/pirate/flying_dutchman)
 "SV" = (
 /obj/effect/turf_decal/siding/wood/end{
 	dir = 4
@@ -903,6 +888,21 @@
 	dir = 8
 	},
 /turf/open/floor/plating/airless,
+/area/shuttle/pirate/flying_dutchman)
+"Uk" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/structure/rack{
+	icon = 'icons/obj/stationobjs.dmi';
+	icon_state = "minibar";
+	name = "skeletal minibar"
+	},
+/obj/item/food/grown/sugarcane,
+/obj/item/food/grown/sugarcane,
+/obj/item/food/grown/sugarcane,
+/obj/item/reagent_containers/cup/bucket/wooden,
+/turf/open/floor/wood/airless,
 /area/shuttle/pirate/flying_dutchman)
 "Vm" = (
 /obj/structure/railing/corner{
@@ -1191,9 +1191,9 @@ by
 WB
 Le
 be
-tQ
+Uk
 dZ
-cv
+BK
 pG
 gQ
 fY
@@ -1205,7 +1205,7 @@ WR
 WR
 Ms
 vt
-oS
+iq
 WR
 "}
 (10,1,1) = {"
@@ -1228,7 +1228,7 @@ Sp
 dM
 KZ
 Le
-Sy
+Ac
 WR
 Fv
 rN
@@ -1265,7 +1265,7 @@ WR
 (12,1,1) = {"
 af
 af
-OP
+am
 aB
 WB
 km
@@ -1282,11 +1282,11 @@ Lt
 PS
 hV
 RO
-gm
+gS
 WR
 tH
 kz
-PP
+Dr
 WR
 "}
 (13,1,1) = {"
@@ -1339,7 +1339,7 @@ Gr
 WR
 EU
 bO
-aw
+sW
 WR
 WR
 "}
