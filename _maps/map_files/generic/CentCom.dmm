@@ -1053,6 +1053,21 @@
 	},
 /turf/open/floor/iron,
 /area/centcom/central_command_areas/admin)
+"de" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	dir = 1
+	},
+/obj/machinery/computer/monitor{
+	dir = 1
+	},
+/obj/structure/cable,
+/obj/machinery/status_display/evac/directional/south,
+/turf/open/floor/iron,
+/area/centcom/central_command_areas/admin/storage)
 "df" = (
 /obj/structure/rack,
 /obj/item/nullrod/claymore/saber/red{
@@ -6900,6 +6915,15 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/iron,
 /area/centcom/central_command_areas/evacuation)
+"tW" = (
+/obj/effect/turf_decal/siding/purple{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating_new/light{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/centcom/syndicate_mothership/expansion_chemicalwarfare)
 "tX" = (
 /obj/machinery/door/airlock{
 	icon = 'icons/obj/doors/airlocks/station/uranium.dmi';
@@ -8922,21 +8946,6 @@
 /obj/effect/turf_decal/tile/brown,
 /turf/open/floor/iron,
 /area/centcom/central_command_areas/supplypod/loading/three)
-"Aa" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 1
-	},
-/obj/machinery/computer/monitor/secret{
-	dir = 1
-	},
-/obj/structure/cable,
-/obj/machinery/status_display/evac/directional/south,
-/turf/open/floor/iron,
-/area/centcom/central_command_areas/admin/storage)
 "Ab" = (
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /turf/open/floor/iron,
@@ -10972,18 +10981,6 @@
 /obj/structure/chair/stool/directional/north,
 /turf/open/floor/iron/dark/textured_large,
 /area/centcom/syndicate_mothership/control)
-"FI" = (
-/obj/effect/turf_decal/delivery,
-/obj/effect/turf_decal/siding/thinplating_new/dark{
-	dir = 1
-	},
-/obj/machinery/door/poddoor/shutters{
-	id = "FBBZ1";
-	name = "Security Shutters"
-	},
-/obj/structure/fans/tiny,
-/turf/open/floor/mineral/titanium,
-/area/centcom/syndicate_mothership/control)
 "FJ" = (
 /obj/structure/fence/cut/large{
 	dir = 4
@@ -11663,6 +11660,18 @@
 	},
 /turf/open/floor/vault/rock,
 /area/centcom/central_command_areas/holding)
+"HM" = (
+/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/siding/thinplating_new/dark{
+	dir = 1
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "FBBZ1";
+	name = "Security Shutters"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/mineral/titanium,
+/area/centcom/syndicate_mothership/control)
 "HN" = (
 /turf/open/floor/mineral/titanium,
 /area/centcom/syndicate_mothership/control)
@@ -12990,15 +12999,6 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/centcom/syndicate_mothership/control)
-"Mk" = (
-/obj/effect/turf_decal/siding/purple{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/thinplating_new/light{
-	dir = 4
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/centcom/syndicate_mothership/expansion_chemicalwarfare)
 "Ml" = (
 /obj/structure/bookcase/random/adult,
 /turf/open/floor/carpet/black,
@@ -24700,7 +24700,7 @@ aa
 aa
 kb
 nH
-Mk
+tW
 Ib
 Ib
 Ib
@@ -33691,7 +33691,7 @@ Zb
 ll
 ZJ
 rP
-FI
+HM
 ng
 nz
 nz
@@ -33948,7 +33948,7 @@ Zb
 ll
 ll
 ll
-FI
+HM
 oS
 vL
 uv
@@ -34205,7 +34205,7 @@ Zb
 ll
 ll
 ll
-FI
+HM
 Dg
 vL
 uv
@@ -57603,7 +57603,7 @@ Mo
 Sx
 Gs
 Ow
-Aa
+de
 YU
 uZ
 oe
