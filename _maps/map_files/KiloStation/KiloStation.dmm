@@ -2823,6 +2823,7 @@
 	},
 /obj/item/surgical_drapes,
 /obj/item/clothing/mask/surgical,
+/obj/effect/mob_spawn/corpse/amoung,
 /turf/open/floor/iron/dark,
 /area/station/maintenance/fore)
 "aND" = (
@@ -46357,8 +46358,8 @@
 /area/station/security/prison)
 "ngW" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/cat_butcherer,
 /obj/effect/mapping_helpers/broken_floor,
+/mob/living/simple_animal/hostile/amoung/surgeon,
 /turf/open/floor/plating,
 /area/station/maintenance/fore)
 "nhc" = (
@@ -54910,12 +54911,13 @@
 /obj/structure/closet/crate/freezer{
 	name = "organ storage"
 	},
-/obj/item/organ/external/tail/cat,
-/obj/item/organ/external/tail/cat,
-/obj/item/organ/internal/ears/cat,
-/obj/item/organ/internal/ears/cat,
-/obj/item/organ/internal/heart,
 /obj/structure/sign/poster/contraband/random/directional/east,
+/obj/item/stock_parts/manipulator,
+/obj/item/stock_parts/manipulator,
+/obj/item/stack/cable_coil,
+/obj/item/stack/sheet/cloth/five,
+/obj/effect/mob_spawn/corpse/amoung/pequeno,
+/obj/effect/mob_spawn/corpse/amoung/pequeno,
 /turf/open/floor/iron/dark,
 /area/station/maintenance/fore)
 "pIO" = (
