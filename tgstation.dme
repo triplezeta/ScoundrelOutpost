@@ -4750,6 +4750,7 @@
 #include "orbstation\quirks\xcard\revolution.dm"
 #include "orbstation\quirks\xcard\xcard-quirks.dm"
 #include "orbstation\quirks\xcard\xenotoxin.dm"
+#include "orbstation\shuttles\shuttles.dm"
 #include "orbstation\species\ethereal\respawn_penalties.dm"
 #include "orbstation\species\zombie\zombie_bite.dm"
 #include "orbstation\species\zombie\zombies.dm"
