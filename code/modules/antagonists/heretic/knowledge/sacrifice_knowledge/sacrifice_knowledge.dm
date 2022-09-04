@@ -9,7 +9,7 @@
  * Allows the heretic to sacrifice living heart targets.
  */
 /datum/heretic_knowledge/hunt_and_sacrifice
-	name = "Heartbeat of the Mansus"
+	name = "Heartbeat of the Mansus (Sacrifice)"
 	desc = "Allows you to sacrifice targets to the Mansus by bringing them to a rune in critical (or worse) condition. \
 		If you have no targets, stand on a transmutation rune and invoke it to aquire some."
 	required_atoms = list(/mob/living/carbon/human = 1)
