@@ -2,7 +2,7 @@
 // It functions almost identically (see code/datums/diseases/alien_embryo.dm)
 /obj/item/organ/internal/body_egg/alien_embryo
 	name = "alien embryo"
-	icon = 'icons/mob/alien.dmi'
+	icon = 'icons/mob/nonhuman-player/alien.dmi'
 	icon_state = "larva0_dead"
 	food_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/toxin/acid = 10)
 	///What stage of growth the embryo is at. Developed embryos give the host symptoms suggesting that an embryo is inside them.
@@ -100,7 +100,7 @@
 	var/obj/item/bodypart/chest/chest_part = owner.get_bodypart(BODY_ZONE_CHEST)
 	chest_part.force_wound_upwards(/datum/wound/slash/critical)
 
-	var/mutable_appearance/overlay = mutable_appearance('icons/mob/alien.dmi', "burst_lie")
+	var/mutable_appearance/overlay = mutable_appearance('icons/mob/nonhuman-player/alien.dmi', "burst_lie")
 	owner.add_overlay(overlay)
 
 	var/atom/xeno_loc = get_turf(owner)
@@ -139,7 +139,7 @@ Des: Adds the infection image to all aliens for this embryo
 ----------------------------------------*/
 /obj/item/organ/internal/body_egg/alien_embryo/AddInfectionImages()
 	for(var/mob/living/carbon/alien/alien in GLOB.player_list)
-		var/I = image('icons/mob/alien.dmi', loc = owner, icon_state = "infected[stage]")
+		var/I = image('icons/mob/nonhuman-player/alien.dmi', loc = owner, icon_state = "infected[stage]")
 		alien.client?.images += I
 
 /*----------------------------------------

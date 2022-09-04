@@ -90,7 +90,7 @@
 // Hair Definitions //
 //////////////////////
 /datum/sprite_accessory/hair
-	icon = 'icons/mob/human_face.dmi'   // default icon for all hairs
+	icon = 'icons/mob/species/human/human_face.dmi'   // default icon for all hairs
 
 	// please make sure they're sorted alphabetically and, where needed, categorized
 	// try to capitalize the names please~
@@ -814,7 +814,7 @@
 */
 
 /datum/sprite_accessory/gradient
-	icon = 'icons/mob/hair_gradients.dmi'
+	icon = 'icons/mob/species/hair_gradients.dmi'
 	///whether this gradient applies to hair and/or beards. Some gradients do not work well on beards.
 	var/gradient_category = GRADIENT_APPLIES_TO_HAIR|GRADIENT_APPLIES_TO_FACIAL_HAIR
 
@@ -905,7 +905,7 @@
 /////////////////////////////
 
 /datum/sprite_accessory/facial_hair
-	icon = 'icons/mob/human_face.dmi'
+	icon = 'icons/mob/species/human/human_face.dmi'
 	gender = MALE // barf (unless you're a dorf, dorfs dig chix w/ beards :P)
 	em_block = TRUE
 
@@ -1682,7 +1682,7 @@
 /////////////////////////////
 
 /datum/sprite_accessory/body_markings
-	icon = 'icons/mob/mutant_bodyparts.dmi'
+	icon = 'icons/mob/species/mutant_bodyparts.dmi'
 
 /datum/sprite_accessory/body_markings/none
 	name = "None"
@@ -1722,7 +1722,7 @@
 	color_src = FACEHAIR
 
 /datum/sprite_accessory/tails
-	icon = 'icons/mob/mutant_bodyparts.dmi'
+	icon = 'icons/mob/species/mutant_bodyparts.dmi'
 	em_block = TRUE
 
 /datum/sprite_accessory/tails/lizard/smooth
@@ -1752,7 +1752,7 @@
 	color_src = FALSE
 
 /datum/sprite_accessory/pod_hair
-	icon = 'icons/mob/podperson_hair.dmi'
+	icon = 'icons/mob/species/podperson_hair.dmi'
 	em_block = TRUE
 
 /datum/sprite_accessory/pod_hair/ivy
@@ -1796,7 +1796,7 @@
 	icon_state = "hibiscus"
 
 /datum/sprite_accessory/snouts
-	icon = 'icons/mob/mutant_bodyparts.dmi'
+	icon = 'icons/mob/species/mutant_bodyparts.dmi'
 	em_block = TRUE
 
 /datum/sprite_accessory/snouts/sharp
@@ -1826,7 +1826,7 @@
 	color_src = FACEHAIR
 
 /datum/sprite_accessory/horns
-	icon = 'icons/mob/mutant_bodyparts.dmi'
+	icon = 'icons/mob/species/mutant_bodyparts.dmi'
 	em_block = TRUE
 
 /datum/sprite_accessory/horns/none
@@ -1854,7 +1854,7 @@
 	icon_state = "angler"
 
 /datum/sprite_accessory/ears
-	icon = 'icons/mob/mutant_bodyparts.dmi'
+	icon = 'icons/mob/species/mutant_bodyparts.dmi'
 	em_block = TRUE
 
 /datum/sprite_accessory/ears/none
@@ -1997,7 +1997,7 @@
 	dimension_y = 32
 
 /datum/sprite_accessory/frills
-	icon = 'icons/mob/mutant_bodyparts.dmi'
+	icon = 'icons/mob/species/mutant_bodyparts.dmi'
 
 /datum/sprite_accessory/frills/none
 	name = "None"
@@ -2016,11 +2016,11 @@
 	icon_state = "aqua"
 
 /datum/sprite_accessory/spines
-	icon = 'icons/mob/mutant_bodyparts.dmi'
+	icon = 'icons/mob/species/mutant_bodyparts.dmi'
 	em_block = TRUE
 
 /datum/sprite_accessory/spines_animated
-	icon = 'icons/mob/mutant_bodyparts.dmi'
+	icon = 'icons/mob/species/mutant_bodyparts.dmi'
 	em_block = TRUE
 
 /datum/sprite_accessory/spines/none
@@ -2082,7 +2082,7 @@
 	name = "Digitigrade Legs"
 
 /datum/sprite_accessory/caps
-	icon = 'icons/mob/mutant_bodyparts.dmi'
+	icon = 'icons/mob/species/mutant_bodyparts.dmi'
 	color_src = HAIR
 	em_block = TRUE
 
@@ -2091,7 +2091,7 @@
 	icon_state = "round"
 
 /datum/sprite_accessory/moth_wings
-	icon = 'icons/mob/moth_wings.dmi'
+	icon = 'icons/mob/species/moth/moth_wings.dmi'
 	color_src = null
 	em_block = TRUE
 
@@ -2189,7 +2189,7 @@
 	icon_state = "plasmafire"
 
 /datum/sprite_accessory/moth_antennae //Finally splitting the sprite
-	icon = 'icons/mob/moth_antennae.dmi'
+	icon = 'icons/mob/species/moth/moth_antennae.dmi'
 	color_src = null
 
 /datum/sprite_accessory/moth_antennae/plain
@@ -2272,7 +2272,7 @@
 	icon_state = "plasmafire"
 
 /datum/sprite_accessory/moth_markings // the markings that moths can have. finally something other than the boring tan
-	icon = 'icons/mob/moth_markings.dmi'
+	icon = 'icons/mob/species/moth/moth_markings.dmi'
 	color_src = null
 
 /datum/sprite_accessory/moth_markings/none
