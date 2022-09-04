@@ -4716,6 +4716,7 @@
 #include "interface\menu.dm"
 #include "interface\stylesheet.dm"
 #include "interface\skin.dmf"
+#include "orbstation\antagonists\acting_captain_check.dm"
 #include "orbstation\antagonists\dynamic.dm"
 #include "orbstation\antagonists\rulesets_latejoin.dm"
 #include "orbstation\antagonists\rulesets_midround.dm"
