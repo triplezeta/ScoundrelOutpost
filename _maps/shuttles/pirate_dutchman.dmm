@@ -108,6 +108,12 @@
 	},
 /turf/open/floor/wood/airless,
 /area/shuttle/pirate/flying_dutchman)
+"aw" = (
+/obj/machinery/computer/monitor{
+	dir = 8
+	},
+/turf/open/floor/carpet/royalblack/airless,
+/area/shuttle/pirate/flying_dutchman)
 "aB" = (
 /obj/structure/railing/corner{
 	color = "#4C3117";
@@ -346,20 +352,6 @@
 	},
 /turf/open/floor/wood/airless,
 /area/shuttle/pirate/flying_dutchman)
-"iq" = (
-/obj/structure/closet/cabinet{
-	anchored = 1;
-	desc = "What kind of scary things could be here?";
-	name = "Davy Jones' Locker"
-	},
-/obj/item/restraints/legcuffs/bola,
-/obj/item/restraints/legcuffs/bola,
-/obj/item/restraints/legcuffs/bola,
-/obj/item/gun/energy/laser,
-/obj/item/megaphone,
-/obj/item/claymore/cutlass,
-/turf/open/floor/carpet/royalblack/airless,
-/area/shuttle/pirate/flying_dutchman)
 "it" = (
 /obj/effect/turf_decal/siding/wood/end{
 	dir = 1
@@ -447,12 +439,6 @@
 	dir = 4
 	},
 /turf/open/floor/carpet/blue/airless,
-/area/shuttle/pirate/flying_dutchman)
-"sW" = (
-/obj/machinery/computer/monitor{
-	dir = 8
-	},
-/turf/open/floor/carpet/royalblack/airless,
 /area/shuttle/pirate/flying_dutchman)
 "tt" = (
 /obj/machinery/piratepad,
@@ -593,6 +579,33 @@
 /obj/structure/fermenting_barrel/gunpowder,
 /obj/item/reagent_containers/cup/bucket/wooden,
 /obj/item/reagent_containers/cup/bucket/wooden,
+/turf/open/floor/wood/airless,
+/area/shuttle/pirate/flying_dutchman)
+"Bh" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/obj/machinery/light/floor,
+/obj/docking_port/stationary{
+	dir = 8;
+	dwidth = 11;
+	height = 16;
+	shuttle_id = "pirateship_home";
+	name = "Deep Space";
+	width = 17
+	},
+/obj/docking_port/mobile/pirate{
+	dheight = 7;
+	dir = 8;
+	dwidth = 18;
+	height = 6;
+	launch_status = 0;
+	movement_force = list("KNOCKDOWN" = 0, "THROW" = 0);
+	name = "Pirate Ship";
+	port_direction = 4;
+	preferred_direction = 8;
+	width = 13
+	},
 /turf/open/floor/wood/airless,
 /area/shuttle/pirate/flying_dutchman)
 "BK" = (
@@ -759,33 +772,6 @@
 	},
 /turf/open/floor/wood/airless,
 /area/shuttle/pirate/flying_dutchman)
-"LD" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 6
-	},
-/obj/machinery/light/floor,
-/obj/docking_port/stationary{
-	dir = 8;
-	dwidth = 11;
-	height = 16;
-	id = "pirateship_home";
-	name = "Deep Space";
-	width = 17
-	},
-/obj/docking_port/mobile/pirate{
-	dheight = 7;
-	dir = 8;
-	dwidth = 18;
-	height = 6;
-	launch_status = 0;
-	movement_force = list("KNOCKDOWN" = 0, "THROW" = 0);
-	name = "Pirate Ship";
-	port_direction = 4;
-	preferred_direction = 8;
-	width = 13
-	},
-/turf/open/floor/wood/airless,
-/area/shuttle/pirate/flying_dutchman)
 "Ms" = (
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/carpet/royalblack/airless,
@@ -848,6 +834,20 @@
 	dir = 1
 	},
 /turf/open/floor/wood/airless,
+/area/shuttle/pirate/flying_dutchman)
+"QU" = (
+/obj/structure/closet/cabinet{
+	anchored = 1;
+	desc = "What kind of scary things could be here?";
+	name = "Davy Jones' Locker"
+	},
+/obj/item/restraints/legcuffs/bola,
+/obj/item/restraints/legcuffs/bola,
+/obj/item/restraints/legcuffs/bola,
+/obj/item/gun/energy/laser,
+/obj/item/megaphone,
+/obj/item/claymore/cutlass,
+/turf/open/floor/carpet/royalblack/airless,
 /area/shuttle/pirate/flying_dutchman)
 "RO" = (
 /obj/effect/turf_decal/siding/wood/corner,
@@ -1205,7 +1205,7 @@ WR
 WR
 Ms
 vt
-iq
+QU
 WR
 "}
 (10,1,1) = {"
@@ -1323,7 +1323,7 @@ af
 af
 af
 zO
-LD
+Bh
 WR
 vi
 WR
@@ -1339,7 +1339,7 @@ Gr
 WR
 EU
 bO
-sW
+aw
 WR
 WR
 "}
