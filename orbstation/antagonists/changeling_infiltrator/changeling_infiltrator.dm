@@ -217,5 +217,5 @@
 
 /obj/docking_port/mobile/changeling_pod
 	name = "abandoned pod"
-	id = "changelingpod"
+	shuttle_id = "changelingpod"
 	rechargeTime = 10 MINUTES // long recharge time since you're not meant to use it too often
