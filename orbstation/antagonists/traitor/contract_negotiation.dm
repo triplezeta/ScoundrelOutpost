@@ -43,6 +43,7 @@
 	if(!custom_objective_text) // such as if the user hits "cancel"
 		return source
 
+	log_traitor("[key_name(user)] opted out of uplink objectives and chose a custom objective: [custom_objective_text]")
 	message_admins("[ADMIN_LOOKUPFLW(user)] has chosen a custom traitor objective: [span_syndradio("[custom_objective_text]")] | [ADMIN_SYNDICATE_REPLY(user)]")
 
 	// Let's fail all the objectives on the uplink to get them out of the way.
