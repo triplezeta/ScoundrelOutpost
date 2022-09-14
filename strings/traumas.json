@@ -38,53 +38,53 @@
     ],
 
     "god_foe": [
-        "MORTALS",
+		"BLASPHEMERS",
+		"PARASITES",
+		"PEASANTS",
+		"UNBELIEVERS",
+		"WEAKLINGS",
         "HERETICS",
         "INSECTS",
-	"UNBELIEVERS",
-	"BLASPHEMERS",
-	"PARASITES",
-	"WEAKLINGS",
-	"PEASANTS"
+        "MORTALS"
     ],
 
     "god_aggressive": [
+		"ALL WILL FALL BEFORE ME!",
+		"BURN, @pick(god_foe)!",
+		"DEATH TO @pick(god_foe)!",
+		"ENDLESS SUFFERING AWAITS YOU, @pick(god_foe).",
         "BEGONE, @pick(god_foe)!",
-        "DIE, @pick(god_foe)!",
         "BLEED, @pick(god_foe)!",
-	"BURN, @pick(god_foe)!",
-	"ALL WILL FALL BEFORE ME!",
-	"ENDLESS SUFFERING AWAITS YOU, @pick(god_foe).",
-	"DEATH TO @pick(god_foe)!"
+        "DIE, @pick(god_foe)!"
     ],
 
     "god_neutral": [
-        "STOP",
-	"HALT.",
+		"BE HEALED, MORTALS. I AM FEELING MERCIFUL.",
+		"BEGONE, MORTALS.",
+		"DANCE FOR ME, LITTLE MORTALS.",
+		"HALT.",
+		"HONK...",
+		"MORTALS, SAY YOUR NAME",
+		"REST, MORTALS, TOMORROW IS A LONG DAY.",
+		"SEE THE TRUTH BEFORE YOU, MORTALS.",
+		"YOU MORTALS MAKE ME SICK.",
+		"YOU. STOP.",
         "BE SILENT.",
         "QUIET",
-	"SEE THE TRUTH BEFORE YOU, MORTALS.",
-	"MORTALS, SAY YOUR NAME",
-	"BEGONE, MORTALS.",
-	"BE HEALED, MORTALS. I AM FEELING MERCIFUL.",
-	"DANCE FOR ME, LITTLE MORTALS.",
-	"YOU. STOP.",
-	"REST, MORTALS, TOMORROW IS A LONG DAY.",
-	"YOU MORTALS MAKE ME SICK.",
-	"HONK..."
+        "STOP"
     ],
 
     "god_unstun": [
-	"GET UP. I HAVE NO TIME TO LOSE.",
-	"GET UP, PRIEST.",
-	"GET UP."
+		"GET UP, PRIEST.",
+		"GET UP. I HAVE NO TIME TO LOSE.",
+		"GET UP."
     ],
 
     "god_heal": [
-	"YOU WILL LIVE TO SEE ANOTHER DAY.",
-	"YOU SHALL SURVIVE THIS, MY PRIEST.",
-	"BE HEALED, PRIEST.",
-	"YOUR LIFE IS IMPORTANT. KEEP IT."
+		"BE HEALED, PRIEST.",
+		"YOU SHALL SURVIVE THIS, MY PRIEST.",
+		"YOU WILL LIVE TO SEE ANOTHER DAY.",
+		"YOUR LIFE IS IMPORTANT. KEEP IT."
     ]
 
 }

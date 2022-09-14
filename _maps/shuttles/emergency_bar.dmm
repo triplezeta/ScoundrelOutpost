@@ -147,6 +147,10 @@
 	},
 /turf/open/floor/iron,
 /area/shuttle/escape)
+"aF" = (
+/obj/structure/musician/piano,
+/turf/open/floor/iron/grimy,
+/area/shuttle/escape)
 "aG" = (
 /obj/structure/chair/stool/directional/west{
 	can_buckle = 1
@@ -196,14 +200,6 @@
 	},
 /turf/open/floor/mineral/plastitanium/red/brig,
 /area/shuttle/escape/brig)
-"aN" = (
-/obj/structure/chair/stool/bar/directional/south,
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
-	dir = 1
-	},
-/turf/open/floor/iron,
-/area/shuttle/escape)
 "aO" = (
 /obj/structure/table/wood/shuttle_bar{
 	boot_dir = 9
@@ -574,28 +570,7 @@
 /obj/machinery/stasis,
 /turf/open/floor/mineral/titanium,
 /area/shuttle/escape)
-"en" = (
-/obj/structure/chair/stool/bar/directional/west{
-	can_buckle = 1;
-	name = "buckleable bar stool"
-	},
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
-	dir = 1
-	},
-/turf/open/floor/iron,
-/area/shuttle/escape)
-"fu" = (
-/obj/structure/extinguisher_cabinet/directional/east,
-/obj/structure/table,
-/obj/item/storage/box/drinkingglasses,
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
-	dir = 1
-	},
-/turf/open/floor/iron,
-/area/shuttle/escape)
-"iu" = (
+"oh" = (
 )
 "EL" = (
 /obj/effect/turf_decal/tile/bar,
@@ -605,9 +580,34 @@
 /obj/machinery/status_display/evac/directional/south,
 /turf/open/floor/iron,
 /area/shuttle/escape)
-"Rb" = (
-/obj/structure/musician/piano,
-/turf/open/floor/iron/grimy,
+"Fo" = (
+/obj/structure/chair/stool/bar/directional/east{
+	can_buckle = 1;
+	name = "buckleable bar stool"
+	},
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/turf/open/floor/iron,
+/area/shuttle/escape)
+"Mj" = (
+/obj/structure/chair/stool/bar/directional/north,
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/turf/open/floor/iron,
+/area/shuttle/escape)
+"Zp" = (
+/obj/structure/extinguisher_cabinet/directional/east,
+/obj/structure/table,
+/obj/item/storage/box/drinkingglasses,
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/turf/open/floor/iron,
 /area/shuttle/escape)
 
 (1,1,1) = {"
@@ -752,7 +752,7 @@ bv
 by
 bC
 bE
-iu
+oh
 "}
 (7,1,1) = {"
 ac
@@ -762,13 +762,13 @@ an
 az
 aE
 aE
-en
-en
-en
-en
-en
-en
-en
+Fo
+Fo
+Fo
+Fo
+Fo
+Fo
+Fo
 aE
 ca
 ae
@@ -793,7 +793,7 @@ aR
 aR
 aR
 bd
-aN
+Mj
 aE
 bn
 bi
@@ -808,7 +808,7 @@ ae
 ap
 au
 ab
-Rb
+aF
 bH
 aP
 aE
@@ -835,11 +835,11 @@ ab
 aG
 bW
 bI
-fu
+Zp
 ad
 aY
 aj
-iu
+oh
 be
 bT
 bk
