@@ -35,7 +35,7 @@
 
 	for(var/datum/objective/primary_objective in traitor_datum.objectives)
 		if(istype(primary_objective, /datum/objective/custom) || istype(primary_objective, /datum/objective/traitor_final)) // prevents overriding pre-existing custom objectives or final objectives
-			to_chat(user, span_warning("Request denied. The terms of your current contract are non-negotiatable."))
+			to_chat(user, span_warning("Request denied. The terms of your current contract are non-negotiable."))
 			return source
 
 	// Allow the traitor to write down a custom objective if they so wish.
@@ -45,6 +45,10 @@
 
 	log_traitor("[key_name(user)] opted out of uplink objectives and chose a custom objective: [custom_objective_text]")
 	message_admins("[ADMIN_LOOKUPFLW(user)] has chosen a custom traitor objective: [span_syndradio("[custom_objective_text]")] | [ADMIN_SYNDICATE_REPLY(user)]")
+
+	for(var/client/admin_client in GLOB.admins)
+		if(admin_client.prefs.toggles & SOUND_ADMINHELP)
+			SEND_SOUND(admin_client, sound('sound/effects/gong.ogg'))
 
 	// Let's fail all the objectives on the uplink to get them out of the way.
 	for(var/datum/traitor_objective/active_objective as anything in uplink_handler.active_objectives)
