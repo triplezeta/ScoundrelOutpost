@@ -4760,6 +4760,7 @@
 #include "orbstation\medical\surgery\pacification.dm"
 #include "orbstation\mob\living.dm"
 #include "orbstation\mob\simple_animal\friendly\amoung.dm"
+#include "orbstation\modules\client\looc.dm"
 #include "orbstation\modules\research\designs\mechfabricator_designs.dm"
 #include "orbstation\modules\research\techweb\all_nodes.dm"
 #include "orbstation\modules\surgery\bodyparts\robot_bodyparts.dm"
