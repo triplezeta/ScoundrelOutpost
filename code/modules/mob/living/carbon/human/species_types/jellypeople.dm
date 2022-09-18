@@ -4,7 +4,8 @@
 	plural_form = "Jellypeople"
 	id = SPECIES_JELLYPERSON
 	say_mod = "chirps"
-	species_traits = list(MUTCOLORS,EYECOLOR,NOBLOOD)
+	species_traits = list(MUTCOLORS,EYECOLOR,NOBLOOD,HAIR)
+	hair_alpha = 200
 	inherent_traits = list(
 		TRAIT_TOXINLOVER,
 	)
@@ -36,7 +37,7 @@
 /datum/species/jelly/get_species_description()
 	return "A relatively new race of sentient, humanoid slimes. \
 		The jellypeople are insatiably curious and yet to form a cultural identity of their own."
-	
+
 /datum/species/jelly/get_species_lore()
 	return list(
 		"For years, jellypeople were little more than a scientific curiosity. \
