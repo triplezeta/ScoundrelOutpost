@@ -3,7 +3,12 @@
 	set name = "Local Shuffle Log"
 	set category = "Debug"
 	var/area/A = get_area(usr)
-	usr << browse("[A] Shuffle Log<br><div style='padding-left:3px;border-left:2px solid black;'>[A.shuffle_log]</div>","window=[A.type]_shuffle")
+	if(length(A.shuffle_log) == 0)
+		if(config.Get(/datum/config_entry/flag/disable_table_shuffle))
+			A.shuffle_log = "The table shuffle subsystem is disabled."
+		else
+			A.shuffle_log = "No events.  This may be because the probabilities are turned down, because there is nothing to shuffle or valid places to shuffle to and from, or just sheer bad luck."
+	usr << browse("<u title='[A.type]'>[A]</u> Shuffle Log<br><div style='padding-left:3px;border-left:2px solid black;'>[A.shuffle_log]</div>","window=[A.type]_shuffle")
 
 /client/proc/manual_table_shuffle()
 	set name = "Shuffle Local Area"
@@ -88,8 +93,9 @@
 
 /datum/controller/subsystem/table_shuffle/Topic(href,href_list)
 	for(var/area_type in href_list)
-		var/area/A = locate(text2path(area_type))
-		if(A)
-			usr << browse("[A] Shuffle Log<br><div style='padding-left:3px;border-left:2px solid black;'>[A.shuffle_log]</div>","window=[A.type]_shuffle")
+		var/area/A = text2path(area_type)
+		if(ispath(A) && (A in GLOB.areas_by_type))
+			A = GLOB.areas_by_type[A]
+			usr << browse("<u title='[A.type]'>[A]</u> Shuffle Log<br><div style='padding-left:3px;border-left:2px solid black;'>[A.shuffle_log]</div>","window=[A.type]_shuffle")
 			return
 	return ..()

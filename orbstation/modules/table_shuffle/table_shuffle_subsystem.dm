@@ -268,7 +268,7 @@ SUBSYSTEM_DEF(table_shuffle)
 				I.forceMove(get_turf(B))
 				// We are trying to get a narrative reference point for the box's location for describe_journey
 				var/atom/bloc = B.loc
-				if(isturf(B))
+				if(isturf(bloc))
 					if(bloc in table_turfs)
 						bloc = table_turfs[bloc]
 					else if(bloc in destinations)
@@ -314,39 +314,69 @@ SUBSYSTEM_DEF(table_shuffle)
 	var/vends = 0
 	var/moves = 0
 	var/decays = 0
+	var/non_events = 0
 	for(var/obj/item/I in all_moves)
 		var/stats = describe_journey(A,I,all_moves[I],table_turfs,destinations)
+		if(!stats)
+			non_events++
+			continue
 		if(stats & 1) vends++
 		if(stats & 2) moves++
 		if(stats & 4) decays++
-	A.shuffle_log += "<p><b>In total, [vends] free items and [decays] consumed items out of [all_moves.len] events.</b></p>"
+	. = all_moves.len - non_events
+	if(. > 0)
+		A.shuffle_log += "<p><b>In total, [vends] free items and [decays] consumed items out of [all_moves.len - non_events] events.</b></p>"
 	if(!manual)
 		total_vends += vends
 		total_moves += moves
 		total_decays += decays
-
-	return all_moves.len
+		if(. == 0)
+			affected_area_amt-- // we included it but nothing happened, don't contribute to total
 
 /datum/controller/subsystem/table_shuffle/proc/shuffle_decay_item(var/opt,var/area/A, var/obj/item/I, var/list/source_turfs,var/list/candidate_turfs, var/list/candidate_closets,var/list/item_log,var/deferred=0)
-	if(opt & SHUFFLE_DECAY)
-		if(istype(I,/obj/item/food))
-			if(ispath(I:trash_type) && prob(prob_eat))
-				var/J = new I:trash_type(I.loc)
-				item_log[1]=J
-				item_log[4]=200 // item has transformed, will be qdel'd in describe_journey
-				I = J
+	var/obj/effect/decal/cleanable/extra_dirt = null
+	if((opt & SHUFFLE_DECAY) && prob(prob_eat))
+		if(istype(I,/obj/item/food) && ispath(I:trash_type))
+			var/J = new I:trash_type(I.loc)
+			item_log[1]=J
+			item_log[4]=200 // item has transformed, will be qdel'd in describe_journey
+			I = J
+			if(prob(prob_min))
+				extra_dirt = pick(/obj/effect/decal/cleanable/ants,/obj/effect/decal/cleanable/dirt)
+
+		if(istype(I,/obj/item/match))
+			I:lit = 1
+			I:matchburnout()
+			item_log[4]=100
+			if(prob(prob_min))
+				extra_dirt = /obj/effect/decal/cleanable/ash
+
+		// The isnull type_butt check is a sanity I added to pipes so that they don't get used up
+		// Really who takes a cigarette out and doesn't smoke it I ought to make it 100%
+		if(istype(I,/obj/item/clothing/mask/cigarette) && !isnull(I:type_butt))
+			var/J = new I:type_butt(I.loc)
+			item_log[1] = J
+			item_log[4] = 200
+			I = J
+			if(prob(prob_min))
+				extra_dirt = /obj/effect/decal/cleanable/ash
+
 		// For the most part we are being careful to do nothing bad here.
 		// Mostly we affect drinks and condiments (salt, pepper, and ketchup, not bags of flour which share a common type)
 		// We will also snack on pills, which shouldn't end up being a huge problem.
-		if(istype(I,/obj/item/reagent_containers) && I.reagents?.total_volume && prob(prob_eat))
+		if(istype(I,/obj/item/reagent_containers) && I.reagents?.total_volume)
+
+			// Drinking glasses
 			if(istype(I,/obj/item/reagent_containers/cup/glass))
 				var/removal_amt = pick(0.25,0.5,0.5,0.5,0.75,1,1,1)
 				item_log[4]=100*removal_amt // drink
 				removal_amt = round(removal_amt * I.reagents.total_volume)
 				I.reagents.remove_any(removal_amt)
 				I.update_icon()
+
+			// Soh-dah cans
 			if(istype(I,/obj/item/reagent_containers/cup/soda_cans))
-				// Pop open a can
+				// Pop it open
 				I.reagents.flags |= OPENCONTAINER
 				I:spillable = TRUE
 				var/removal_amt = pick(0.25,0.5,0.5,0.5,0.75,1,1,1)
@@ -360,9 +390,11 @@ SUBSYSTEM_DEF(table_shuffle)
 					item_log[4]=100*removal_amt // drink
 					removal_amt = round(removal_amt * I.reagents.total_volume)
 					I.reagents.remove_any(removal_amt)
+			// Pills and also patches
 			if(istype(I,/obj/item/reagent_containers/pill))
 				item_log[4]=200// item will be qdel'd in describe_journey
 				return
+			//have to be alittle careful here
 			if(istype(I,/obj/item/reagent_containers/condiment))
 				if(I:amount_per_transfer_from_this == 1) // should only be salt and pepper shakers
 					var/removal_amt = min(pick(1,1,2,2,4,6,8,10,I:volume),I.reagents.total_volume)
@@ -381,6 +413,9 @@ SUBSYSTEM_DEF(table_shuffle)
 				I.pixel_x = 0
 				I.pixel_y = 0
 				item_log[5]=O
+				if(ispath(extra_dirt))
+					extra_dirt = new extra_dirt(O.loc)
+					step_rand(extra_dirt)
 				return
 			// otherwise fall through
 		if(2)
@@ -391,6 +426,9 @@ SUBSYSTEM_DEF(table_shuffle)
 					I.pixel_x = rand(-8,8)
 					I.pixel_y = rand(-8,8)
 					item_log[5] = candidate_turfs[T]
+					if(ispath(extra_dirt))
+						extra_dirt = new extra_dirt(T)
+						step_rand(extra_dirt)
 					return
 			// otherwise fall through
 	var/turf/T = I.loc
@@ -400,10 +438,16 @@ SUBSYSTEM_DEF(table_shuffle)
 	if(I.loc != T)
 		I.pixel_x = rand(-8,8)
 		I.pixel_y = rand(-8,8)
+		if(ispath(extra_dirt))
+			extra_dirt = new extra_dirt(I.loc)
 		if(I.loc in candidate_turfs)
 			item_log[5] = candidate_turfs[I.loc]
+			if(extra_dirt)
+				step_rand(extra_dirt)
 		else if(I.loc in source_turfs)
 			item_log[5] = source_turfs[I.loc]
+			if(extra_dirt)
+				step_rand(extra_dirt)
 
 
 /datum/controller/subsystem/table_shuffle/proc/describe_journey(var/area/A, var/obj/item/I, var/list/journey,var/list/table_turfs,var/list/destinations)
@@ -418,24 +462,39 @@ SUBSYSTEM_DEF(table_shuffle)
 	var/story = "<p>"
 	. = 2 // we are also returning a micro-bitfield 1:vend 2:move 4:decay
 
+	// Easy start: vending
 	if(istype(oloc,/obj/machinery/vending))
-		story += "[oitem] was vended from \the [oloc]. "
+		story += "<u title='[oitem?.type]'>[oitem]</u> was vended from <u title='[oloc?.type]'>\the [oloc]</u>. "
 		. = 3
+	// Complicated: Out of a box
 	else if(istype(oloc,/obj/item))
+		// box was in closet/crate?
 		if(istype(oloc.loc,/obj/structure))
-			story += "[oitem] was removed from \the [oloc] in \the [oloc.loc]. "
+			story += "<u title='[oitem?.type]'>[oitem]</u> was removed from <u title='[oloc?.type]'>\the [oloc]</u> in <u title='[oloc?.loc?.type]'>\the [oloc?.loc]</u>. "
+		// box was on a table/rack/etc?
+		else if(isturf(oloc.loc))
+			if(oloc.loc in table_turfs)
+				start_reference = table_turfs[oloc.loc]
+				story += "<u title='[oitem?.type]'>[oitem]</u> was removed from <u title='[oloc?.type]'>\the [oloc]</u> on <u title='[start_reference?.type]'>\the [start_reference]</u>. "
+			else // possibly started on something else or was vended?  May never occur
+				story += "<u title='[oitem?.type]'>[oitem]</u> was removed from <u title='[oloc?.type]'>\the [oloc]</u>. "
+		// ???
 		else
-			story += "[oitem] was removed from \the [oloc]. "
+			story += "<u title='[oitem?.type]'>[oitem]</u> had <u title='Not turf or recognized container'>a confusing beginning</u> on <u title='[oloc?.type]'>\the [oloc]</u>. "
+	//Simpler: came out of a closet
 	else if(istype(oloc,/obj/structure)) // coming out of a closet or crate
-		story += "[oitem] was removed from \the [oloc]. "
+		story += "<u title='[oitem?.type]'>[oitem]</u> was removed from <u title='[oloc?.type]'>\the [oloc]</u>. "
+	// mostly simple: Probably started on a table/rack/etc
 	else if(isturf(oloc))
 		if(oloc in table_turfs)
 			start_reference = table_turfs[oloc]
-			story += "[oitem] started atop \the [start_reference]. "
+			story += "<u title='[oitem?.type]'>[oitem]</u> started atop <u title='[start_reference?.type]'>\the [start_reference]</u>. "
 		else
-			story += "[oitem] had a mysterious beginning on \the [oloc]. "
+			story += "<u title='[oitem?.type]'>[oitem]</u> had <u title='Turf starting location, no reference structure'>a mysterious beginning</u> on <u title='[oloc?.type]'>\the [oloc]</u>. "
+	else if(isnull(oloc)) // this hasn't happened yet, but it's worth putting in
+		story += "It turns out that <u title='[oitem?.type]'>\the [oitem]</u> was a destined hero brought here from <u title='Object started in nullspace'>another world</u>. "
 	else
-		story += "[oitem] had a confusing beginning on \the [oloc]. "
+		story += "<u title='[oitem?.type]'>[oitem]</u> had <u title='Not turf or recognized container'>a confusing beginning</u> on <u title='[oloc?.type]'>\the [oloc]</u>. "
 
 	if(eat_amt > 0)
 		. += 4
@@ -443,7 +502,7 @@ SUBSYSTEM_DEF(table_shuffle)
 			story += "It was [eat_amt]% consumed. "
 		else // flag value of 200 indicating the item was replaced / should be destroyed
 			if(oitem != I)
-				story += "It was consumed, leaving trash behind. "
+				story += "It was consumed, leaving <u title='[I] ([I?.type])'>trash</u> behind. "
 				qdel(oitem) // we kept the original until now
 			else // this happens when we eat a pill or apply a patch, we don't want to deal with nulls in the lists
 				story += "It was consumed entirely."
@@ -452,26 +511,44 @@ SUBSYSTEM_DEF(table_shuffle)
 				return
 
 	var/turf/T = I.loc
+	// Not on a turf - probably in a closet
 	if(!istype(T))
-		story += "It got hidden in \the [T].</p>"
-	else if(T != get_turf(destination_reference)) // was knocked onto the floor from wherever it last was
+		if(isnull(T))
+			var/agent = pick("choir of angels","band of demons","posse of clowns","syndicate operative","Nanotrasen Death Squad","flying spaghetti monster","telekientic butt")
+			var/safety = pick("heaven","hell","clown school","the syndicate","lavaland","the icemoon","nullspace","my butt","candy mountain")
+			story += "\An [agent] whisked it away to <u title='Entity ended up in nullspace?'>[safety]</u> when nobody was looking.</p>"
+		else
+			story += "It got hidden in <u title='[T?.type]'>\the [T]</u>.</p>"
+	// Was on a table and then knocked on the floor
+	else if(T != get_turf(destination_reference))
+		// It was moved to a different table before it was knocked down
 		if(get_turf(destination_reference) != get_turf(oloc))
 			story += "It was moved to \the [destination_reference] and then knocked onto \the [I.loc].</p>"
-		else
+		else // or it wasn't
 			story += "It was knocked onto \the [I.loc].</p>"
-	else
-		if(isturf(destination_reference)) // this shouldn't be, we should set this variable to a known thing
-			story += "It mysteriously ended up on \the [destination_reference].</p>"
+
+	else // Still on the destination reference's turf
+
+		// this shouldn't be, the destination reference should be set to an object
+		if(isturf(destination_reference))
+			story += "It <u title='reference object is a turf'>mysteriously</u> ended up on <u title='[destination_reference?.type]'>\the [destination_reference]</u>.</p>"
+
+		// Not at the original location
 		else if(T != get_turf(oloc))
-			if(start_reference && (start_reference.name == destination_reference.name))
-				story += "It was moved to another [destination_reference].</p>"
+			if(start_reference && (start_reference.name == destination_reference.name)) // Notice if they are named the same thing
+				story += "It was moved to another <u title='[destination_reference?.type]'>[destination_reference]</u>.</p>"
 			else
-				story += "It was moved to \the [destination_reference].</p>"
+				story += "It was moved to <u title='[destination_reference?.type]'>\the [destination_reference]</u>.</p>"
+
 		else if(!isnull(T)) // probably vended and not moved
 			story += "It was left there.</p>"
-			. -= 2
+			. -= 2 // remove the "something moved" bit
+
 			if(. == 0) // Non-event: this can happen if an item is randomly decided to move to its own location or failed to fall off a table
 				return
-		else
-			story += "It ended up in nullspace for some reason.</p>"
+
+		else // has not happened, but worth checking
+			var/agent = pick("choir of angels","band of demons","posse of clowns","syndicate operative","Nanotrasen Death Squad","flying spaghetti monster","telekientic butt")
+			var/safety = pick("heaven","hell","clown school","the syndicate","lavaland","the icemoon","nullspace","my butt","candy mountain")
+			story += "\An [agent] whisked it away to <u title='Entity ended up in nullspace?'>[safety]</u> when nobody was looking.</p>"
 	A.shuffle_log += story
