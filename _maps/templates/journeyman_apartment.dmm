@@ -96,12 +96,12 @@
 /turf/open/floor/engine/cult,
 /area/wizard_apartment)
 "s" = (
-/obj/structure/dresser,
 /obj/item/staff/broom,
 /obj/item/staff,
 /obj/item/radio/headset,
 /obj/item/storage/backpack/satchel,
-/turf/open/floor/carpet,
+/obj/structure/closet/cabinet,
+/turf/open/floor/engine/cult,
 /area/wizard_apartment)
 "t" = (
 /obj/structure/aquarium/prefilled,
@@ -125,33 +125,33 @@
 /area/wizard_apartment)
 "x" = (
 /obj/structure/table/wood/fancy,
-/obj/effect/spawner/random/entertainment/drugs{
+/obj/item/food/grown/cannabis{
+	pixel_y = 10;
+	pixel_x = -2
+	},
+/obj/item/cigbutt/roach{
+	pixel_x = -4;
+	pixel_y = 5
+	},
+/obj/item/cigbutt/roach{
 	pixel_y = 8;
-	pixel_x = 6
+	pixel_x = 4
 	},
-/obj/effect/spawner/random/entertainment/drugs{
-	pixel_x = -4;
-	pixel_y = 5
-	},
-/obj/effect/spawner/random/entertainment/drugs{
-	pixel_x = -4;
-	pixel_y = 5
-	},
-/obj/effect/spawner/random/entertainment/drugs{
-	pixel_y = 2;
-	pixel_x = 3
+/obj/item/cigbutt/roach{
+	pixel_y = 3;
+	pixel_x = 2
 	},
 /turf/open/floor/carpet,
 /area/wizard_apartment)
 "y" = (
 /obj/structure/table/wood/fancy,
 /obj/item/storage/dice{
-	icon_state = "magicdicebag"
+	icon_state = "magicdicebag";
+	pixel_y = 4
 	},
 /turf/open/floor/engine/cult,
 /area/wizard_apartment)
 "z" = (
-/obj/structure/dresser,
 /obj/item/clothing/suit/wizrobe/marisa,
 /obj/item/clothing/head/wizard/marisa,
 /obj/item/clothing/suit/wizrobe/red,
@@ -160,6 +160,7 @@
 /obj/item/clothing/head/wizard/black,
 /obj/item/clothing/suit/wizrobe/black,
 /obj/machinery/light/directional/west,
+/obj/structure/closet/cabinet,
 /turf/open/floor/carpet,
 /area/wizard_apartment)
 "A" = (
@@ -191,7 +192,13 @@
 /area/wizard_apartment)
 "D" = (
 /obj/structure/table/wood/fancy,
-/obj/item/food/drug/moon_rock,
+/obj/item/food/drug/moon_rock{
+	pixel_x = 6;
+	pixel_y = 4
+	},
+/obj/item/food/drug/moon_rock{
+	pixel_x = -2
+	},
 /turf/open/floor/engine/cult,
 /area/wizard_apartment)
 "E" = (
@@ -231,7 +238,7 @@
 /turf/open/floor/carpet/donk,
 /area/wizard_apartment)
 "K" = (
-/obj/machinery/light/small/broken/directional/south,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/iron/white,
 /area/wizard_apartment)
 "L" = (
@@ -254,6 +261,10 @@
 "P" = (
 /obj/structure/destructible/cult/item_dispenser/archives/library,
 /obj/machinery/light/directional/east,
+/turf/open/floor/engine/cult,
+/area/wizard_apartment)
+"Q" = (
+/obj/effect/rune/teleport,
 /turf/open/floor/engine/cult,
 /area/wizard_apartment)
 "R" = (
@@ -474,8 +485,8 @@ y
 g
 H
 H
-S
-w
+Q
+a
 N
 "}
 (12,1,1) = {"

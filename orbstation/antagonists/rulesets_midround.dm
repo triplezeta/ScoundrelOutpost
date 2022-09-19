@@ -73,25 +73,12 @@
 /datum/dynamic_ruleset/midround/from_ghosts/wizard_journeyman/ready(forced = FALSE)
 	if (!check_candidates())
 		return FALSE
-	if(GLOB.wizardstart.len == 0)
-		log_admin("Cannot accept Wizard ruleset. Couldn't find any wizard spawn points.")
-		message_admins("Cannot accept Wizard ruleset. Couldn't find any wizard spawn points.")
-		return FALSE
 	return ..()
-
-/datum/dynamic_ruleset/midround/from_ghosts/wizard_journeyman/generate_ruleset_body(mob/applicant)
-	var/mob/living/carbon/human/new_character = ..(applicant)
-	new_character.set_resting(TRUE, silent = TRUE)
-	if(prob(50))
-		new_character.adjust_timed_status_effect(rand(30 SECONDS, 40 SECONDS), /datum/status_effect/drugginess)
-	else
-		new_character.adjust_drunk_effect(rand(15, 25))
-	new_character.adjust_disgust(rand(5, 55))
-	return new_character
 
 /datum/dynamic_ruleset/midround/from_ghosts/wizard_journeyman/finish_setup(mob/new_character, index)
 	..()
-	new_character.forceMove(pick(GLOB.wizardstart))
+	if (GLOB.journeymanstart.len)
+		new_character.forceMove(pick(GLOB.journeymanstart))
 
 //////////////////////////////////////////////
 //                                          //
