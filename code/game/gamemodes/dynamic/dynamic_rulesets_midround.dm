@@ -342,19 +342,26 @@
 	cost = 10
 	requirements = REQUIREMENTS_VERY_HIGH_THREAT_NEEDED
 	flags = HIGH_IMPACT_RULESET
+	var/static/lair_exists = FALSE
 
 /datum/dynamic_ruleset/midround/from_ghosts/wizard/ready(forced = FALSE)
 	if (!check_candidates())
 		return FALSE
-	if(GLOB.wizardstart.len == 0)
-		log_admin("Cannot accept Wizard ruleset. Couldn't find any wizard spawn points.")
-		message_admins("Cannot accept Wizard ruleset. Couldn't find any wizard spawn points.")
+	if(!lair_exists)
+		var/datum/map_template/wizard_apartment/new_level = new()
+		if(!new_level.load_new_z())
+			message_admins("The wizard apartment z-level failed to load, so journeymen have nowhere to spawn.")
+			CRASH("Failed to initialize wizard apartment z-level!")
+		lair_exists = TRUE
+	if(GLOB.journeymanstart.len == 0)
+		log_admin("Cannot accept Wizard Journeyman ruleset. Couldn't find any spawn points.")
+		message_admins("Cannot accept Wizard Journeyman ruleset. Couldn't find any spawn points.")
 		return FALSE
 	return ..()
 
 /datum/dynamic_ruleset/midround/from_ghosts/wizard/finish_setup(mob/new_character, index)
 	..()
-	new_character.forceMove(pick(GLOB.wizardstart))
+	new_character.forceMove(pick(GLOB.journeymanstart))
 
 //////////////////////////////////////////////
 //                                          //
