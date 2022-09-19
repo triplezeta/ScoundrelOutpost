@@ -57,7 +57,7 @@ SUBSYSTEM_DEF(table_shuffle)
 
 /datum/controller/subsystem/table_shuffle/Initialize()
 	if(config.Get(/datum/config_entry/flag/disable_table_shuffle))
-		return
+		return SS_INIT_NO_NEED
 	vend_only = config.Get(/datum/config_entry/flag/shuffle_vend_only)
 
 	prob_min = config.Get(/datum/config_entry/number/shuffle_min_prob)
@@ -82,7 +82,7 @@ SUBSYSTEM_DEF(table_shuffle)
 	var/msg = "Table shuffle averaged [round(event_total / affected_area_amt)] events among [affected_area_amt] affected areas, [high_rollers.len] being high rollers."
 	to_chat(world, span_boldannounce("[msg]"))
 	log_world(msg)
-	return ..()
+	return SS_INIT_SUCCESS
 
 /datum/controller/subsystem/table_shuffle/proc/shuffle_area(var/area/A,var/manual = 0)
 	if(!is_station_level(A.z) || (A.shuffle_options == 0)) return
@@ -248,7 +248,7 @@ SUBSYSTEM_DEF(table_shuffle)
 				if(opt & SHUFFLE_FROM_BOXES)
 					if(istype(I,/obj/item/storage) && I.contents.len)
 						boxes += I
-				I.loc = C.loc
+				I.forceMove(C.loc)
 				var/list/journey = list(I,C,I,0,C)
 				all_moves[I]=journey
 				closet_prob -= prob_sub
@@ -265,7 +265,7 @@ SUBSYSTEM_DEF(table_shuffle)
 			var/box_prob = min(prob_max,prob_min + B.contents.len * prob_add) / 2
 			while(B.contents.len && prob(box_prob))
 				var/obj/I = pick(B.contents)
-				I.loc = get_turf(B)
+				I.forceMove(get_turf(B))
 				// We are trying to get a narrative reference point for the box's location for describe_journey
 				var/atom/bloc = B.loc
 				if(isturf(B))
@@ -290,8 +290,8 @@ SUBSYSTEM_DEF(table_shuffle)
 				if(I.anchored || I.density) continue
 				if(opt & SHUFFLE_VISUAL)
 					if(prob(prob_visual))
-						I.loc = null
-						I.loc = T //change position in turf contents list (over/under other items)
+						I.moveToNullspace()
+						I.forceMove(T) //change position in turf contents list (over/under other items)
 					if(prob(prob_visual))
 						I.pixel_x += rand(-8,8) // shift appearance on table/rack
 						I.pixel_y += rand(-8,8)
@@ -377,7 +377,7 @@ SUBSYSTEM_DEF(table_shuffle)
 		if(3)
 			if(candidate_closets.len && (opt & SHUFFLE_TO_CLOSETS) )
 				var/obj/O = pick(candidate_closets)
-				I.loc = O
+				I.forceMove(O)
 				I.pixel_x = 0
 				I.pixel_y = 0
 				item_log[5]=O
@@ -387,7 +387,7 @@ SUBSYSTEM_DEF(table_shuffle)
 			if(candidate_turfs.len) // This will only be full if you can shuffle to tables/racks
 				var/turf/T = pick(candidate_turfs)
 				if(T != I.loc)
-					I.loc = T
+					I.forceMove(T)
 					I.pixel_x = rand(-8,8)
 					I.pixel_y = rand(-8,8)
 					item_log[5] = candidate_turfs[T]
