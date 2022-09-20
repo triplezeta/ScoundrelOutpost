@@ -4738,6 +4738,7 @@
 #include "interface\menu.dm"
 #include "interface\stylesheet.dm"
 #include "interface\skin.dmf"
+#include "orbstation\_globalvars\pod_bloodtypes.dm"
 #include "orbstation\antagonists\acting_captain_check.dm"
 #include "orbstation\antagonists\dynamic.dm"
 #include "orbstation\antagonists\rulesets_latejoin.dm"
@@ -4775,6 +4776,7 @@
 #include "orbstation\quirks\xcard\xenotoxin.dm"
 #include "orbstation\shuttles\shuttles.dm"
 #include "orbstation\species\ethereal\respawn_penalties.dm"
+#include "orbstation\species\podpeople\random_blood.dm"
 #include "orbstation\species\zombie\zombie_bite.dm"
 #include "orbstation\species\zombie\zombies.dm"
 // END_INCLUDE
