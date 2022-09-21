@@ -69,6 +69,12 @@
 			if("feet")
 				if(!H.shoes)
 					affecting = H.get_bodypart(pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG))
+					if(IS_DIGITIGRADE_LIMB(affecting))
+						playsound(src, 'sound/effects/snap.ogg', 50, TRUE)
+						armed = FALSE
+						update_appearance()
+						pulse(FALSE)
+						return FALSE
 					H.Paralyze(60)
 			if(BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_PRECISE_R_HAND)
 				if(!H.gloves)
