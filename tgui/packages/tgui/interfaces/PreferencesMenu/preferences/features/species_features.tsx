@@ -60,6 +60,11 @@ export const feature_lizard_tail: FeatureChoiced = {
   component: FeatureDropdownInput,
 };
 
+export const feature_rat_tail: FeatureChoiced = {
+  name: 'Tail',
+  component: FeatureDropdownInput,
+};
+
 export const feature_mcolor: Feature<string> = {
   name: 'Mutant color',
   component: FeatureColorInput,
@@ -78,9 +83,4 @@ export const feature_vampire_status: Feature<string> = {
 export const heterochromatic: Feature<string> = {
   name: 'Heterochromatic (Right Eye) color',
   component: FeatureColorInput,
-};
-
-export const feature_rat_tail: FeatureChoiced = {
-  name: "Tail",
-  component: FeatureDropdownInput,
 };
