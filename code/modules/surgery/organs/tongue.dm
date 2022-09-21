@@ -30,7 +30,8 @@
 		/datum/language/sylvan,
 		/datum/language/shadowtongue,
 		/datum/language/terrum,
-		/datum/language/nekomimetic
+		/datum/language/nekomimetic,
+		/datum/language/ratvaric
 	))
 
 /obj/item/organ/internal/tongue/Initialize(mapload)
