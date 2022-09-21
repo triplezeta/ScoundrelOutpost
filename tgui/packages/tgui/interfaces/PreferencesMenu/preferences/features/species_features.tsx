@@ -79,3 +79,8 @@ export const heterochromatic: Feature<string> = {
   name: 'Heterochromatic (Right Eye) color',
   component: FeatureColorInput,
 };
+
+export const feature_rat_tail: FeatureChoiced = {
+  name: "Tail",
+  component: FeatureDropdownInput,
+};

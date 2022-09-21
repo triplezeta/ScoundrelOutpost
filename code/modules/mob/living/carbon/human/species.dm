@@ -694,6 +694,10 @@ GLOBAL_LIST_EMPTY(features_by_species)
 		if(!source.dna.features["ears"] || source.dna.features["ears"] == "None" || source.head && (source.head.flags_inv & HIDEHAIR) || (source.wear_mask && (source.wear_mask.flags_inv & HIDEHAIR)) || !noggin || !IS_ORGANIC_LIMB(noggin))
 			bodyparts_to_add -= "ears"
 
+	if(mutant_bodyparts["rat_ears"]) // ORBSTATION
+		if(!source.dna.features["rat_ears"] || source.dna.features["rat_ears"] == "None" || source.head && (source.head.flags_inv & HIDEHAIR) || (source.wear_mask && (source.wear_mask.flags_inv & HIDEHAIR)) || !noggin || !IS_ORGANIC_LIMB(noggin))
+			bodyparts_to_add -= "rat_ears"
+
 	if(!bodyparts_to_add)
 		return
 
@@ -713,6 +717,8 @@ GLOBAL_LIST_EMPTY(features_by_species)
 					accessory = GLOB.legs_list[source.dna.features["legs"]]
 				if("caps")
 					accessory = GLOB.caps_list[source.dna.features["caps"]]
+				if("rat_ears") // ORBSTATION
+					accessory = GLOB.rat_ears_list[source.dna.features["rat_ears"]]
 
 			if(!accessory || accessory.icon_state == "none")
 				continue
