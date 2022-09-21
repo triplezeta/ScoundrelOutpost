@@ -205,8 +205,12 @@
 					if(istype(content, R.result))
 						return ", object already present."
 			//If we're a mob we'll try a do_after; non mobs will instead instantly construct the item
-			if(ismob(a) && !do_after(a, R.time, target = a))
-				return "."
+			if(ismob(a))
+				var/craft_time = R.time
+				if(HAS_TRAIT(a, TRAIT_FAST_CRAFTER))
+					craft_time *= FAST_CRAFTER_MOD
+				if(!do_after(a, craft_time, target = a))
+					return "."
 			contents = get_surroundings(a,R.blacklist)
 			if(!check_contents(a, R, contents))
 				return ", missing component."

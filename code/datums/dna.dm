@@ -220,6 +220,13 @@ GLOBAL_LIST_INIT(total_uf_len_by_block, populate_total_uf_len_by_block())
 		L[DNA_MUSHROOM_CAPS_BLOCK] = construct_block(GLOB.caps_list.Find(features["caps"]), GLOB.caps_list.len)
 	if(features["pod_hair"])
 		L[DNA_POD_HAIR_BLOCK] = construct_block(GLOB.pod_hair_list.Find(features["pod_hair"]), GLOB.pod_hair_list.len)
+	// ORBSTATION
+	if(features["rat_snout"])
+		L[DNA_RAT_SNOUT_BLOCK] = construct_block(GLOB.rat_snouts_list.Find(features["rat_snout"]), GLOB.rat_snouts_list.len)
+	if(features["rat_tail"])
+		L[DNA_RAT_TAIL_BLOCK] = construct_block(GLOB.rat_tails_list.Find(features["rat_tail"]), GLOB.rat_tails_list.len)
+	if(features["rat_ears"])
+		L[DNA_RAT_EARS_BLOCK] = construct_block(GLOB.rat_ears_list.Find(features["rat_ears"]), GLOB.rat_ears_list.len)
 
 	for(var/blocknum in 1 to DNA_FEATURE_BLOCKS)
 		. += L[blocknum] || random_string(GET_UI_BLOCK_LEN(blocknum), GLOB.hex_characters)
@@ -352,6 +359,13 @@ GLOBAL_LIST_INIT(total_uf_len_by_block, populate_total_uf_len_by_block())
 			set_uni_feature_block(blocknumber, construct_block(GLOB.caps_list.Find(features["caps"]), GLOB.caps_list.len))
 		if(DNA_POD_HAIR_BLOCK)
 			set_uni_feature_block(blocknumber, construct_block(GLOB.pod_hair_list.Find(features["pod_hair"]), GLOB.pod_hair_list.len))
+		// ORBSTATION
+		if(DNA_RAT_SNOUT_BLOCK)
+			set_uni_feature_block(blocknumber, construct_block(GLOB.rat_snouts_list.Find(features["rat_snout"]), GLOB.rat_snouts_list.len))
+		if(DNA_RAT_TAIL_BLOCK)
+			set_uni_feature_block(blocknumber, construct_block(GLOB.rat_tails_list.Find(features["rat_tail"]), GLOB.rat_tails_list.len))
+		if(DNA_RAT_EARS_BLOCK)
+			set_uni_feature_block(blocknumber, construct_block(GLOB.rat_ears_list.Find(features["rat_ears"]), GLOB.rat_ears_list.len))
 
 //Please use add_mutation or activate_mutation instead
 /datum/dna/proc/force_give(datum/mutation/human/HM)
@@ -604,6 +618,13 @@ GLOBAL_LIST_INIT(total_uf_len_by_block, populate_total_uf_len_by_block())
 		dna.features["caps"] = GLOB.caps_list[deconstruct_block(get_uni_feature_block(features, DNA_MUSHROOM_CAPS_BLOCK), GLOB.caps_list.len)]
 	if(dna.features["pod_hair"])
 		dna.features["pod_hair"] = GLOB.pod_hair_list[deconstruct_block(get_uni_feature_block(features, DNA_POD_HAIR_BLOCK), GLOB.pod_hair_list.len)]
+	// ORBSTATION
+	if(dna.features["rat_snout"])
+		dna.features["rat_snout"] = GLOB.rat_snouts_list[deconstruct_block(get_uni_feature_block(features, DNA_RAT_SNOUT_BLOCK), GLOB.rat_snouts_list.len)]
+	if(dna.features["rat_tail"])
+		dna.features["rat_tail"] = GLOB.rat_tails_list[deconstruct_block(get_uni_feature_block(features, DNA_RAT_TAIL_BLOCK), GLOB.rat_tails_list.len)]
+	if(dna.features["rat_ears"])
+		dna.features["rat_ears"] = GLOB.rat_ears_list[deconstruct_block(get_uni_feature_block(features, DNA_RAT_EARS_BLOCK), GLOB.rat_ears_list.len)]
 
 	for(var/obj/item/organ/external/external_organ as anything in external_organs)
 		external_organ.mutate_feature(features, src)
