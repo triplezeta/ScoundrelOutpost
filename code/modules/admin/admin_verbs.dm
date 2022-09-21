@@ -206,6 +206,7 @@ GLOBAL_PROTECT(admin_verbs_debug)
 	/client/proc/open_lua_editor,
 	/client/proc/validate_puzzgrids,
 	/client/proc/debug_spell_requirements,
+	/client/proc/debug_hallucination_weighted_list_per_type,
 	/client/proc/manual_table_shuffle,
 	/client/proc/extreme_table_shuffle,
 	/client/proc/display_shuffle_log,
