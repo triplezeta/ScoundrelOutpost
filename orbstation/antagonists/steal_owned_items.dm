@@ -11,8 +11,8 @@ GLOBAL_LIST_EMPTY(owned_theft_items)
 	if(text)
 		explanation_text = text
 	if (!GLOB.owned_theft_items.len)
-		for (var/I in subtypesof(/datum/objective_item/steal/owned))
-			new I
+		for (var/objective in subtypesof(/datum/objective_item/steal/owned))
+			new objective
 
 /**
  * Creates a target for this objective.
@@ -41,12 +41,14 @@ GLOBAL_LIST_EMPTY(owned_theft_items)
 /datum/objective_item/steal/owned
 	/// Will only trigger if this job currently exists in the round.
 	var/list/owner
+	/// If true, will not be added to list of objectives
+	var/abstract = FALSE
 
 /datum/objective_item/steal/owned/New()
-	if(TargetExists())
-		GLOB.owned_theft_items += src
-	else
+	if (abstract || !TargetExists())
 		qdel(src)
+		return
+	GLOB.owned_theft_items += src
 
 /datum/objective_item/steal/owned/proc/owner_exists()
 	if (!owner || owner.len == 0)
@@ -152,9 +154,41 @@ GLOBAL_LIST_EMPTY(owned_theft_items)
 	excludefromjob = list(JOB_RESEARCH_DIRECTOR, JOB_SCIENTIST)
 	owner = list(JOB_RESEARCH_DIRECTOR, JOB_SCIENTIST)
 
-/datum/objective_item/steal/owned/corgimeat
-	name = "a piece of corgi meat"
-	targetitem = /obj/item/food/meat/slab/corgi
+/datum/objective_item/steal/owned/pet
+	abstract = TRUE
+	name = "a pet"
+	targetitem = /obj/item/clothing/head/mob_holder
 	difficulty = 5
+	/// Typepaths of pet to steal
+	var/list/pet_type
+
+/datum/objective_item/steal/owned/pet/check_special_completion(obj/item/clothing/head/mob_holder/holder)
+	if (!istype(holder))
+		return FALSE
+	if (!holder.held_mob)
+		return FALSE
+	return (is_type_in_list(holder.held_mob, pet_type))
+
+/obj/item/clothing/head/mob_holder/add_stealing_item_objective()
+	GLOB.steal_item_handler.objectives_by_path[/obj/item/clothing/head/mob_holder] += src
+
+/datum/objective_item/steal/owned/pet/ian
+	abstract = FALSE
+	name = "Ian"
+	pet_type = list(/mob/living/simple_animal/pet/dog/corgi/ian, /mob/living/simple_animal/pet/dog/corgi/puppy/ian)
 	excludefromjob = list(JOB_HEAD_OF_PERSONNEL)
 	owner = list(JOB_HEAD_OF_PERSONNEL)
+
+/datum/objective_item/steal/owned/pet/renault
+	abstract = FALSE
+	name = "Renault"
+	pet_type = list(/mob/living/simple_animal/pet/fox/renault)
+	excludefromjob = list(JOB_CAPTAIN)
+	owner = list(JOB_CAPTAIN)
+
+/datum/objective_item/steal/owned/pet/runtime
+	abstract = FALSE
+	name = "Runtime"
+	pet_type = list(/mob/living/simple_animal/pet/cat/runtime)
+	excludefromjob = list(JOB_CHIEF_MEDICAL_OFFICER)
+	owner = list(JOB_CHIEF_MEDICAL_OFFICER)
