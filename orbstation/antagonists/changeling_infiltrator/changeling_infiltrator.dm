@@ -104,16 +104,10 @@
 ///Makes the player a changeling with a unique objective to fully absorb a certain amount of people, as well as an escape objective
 /obj/effect/mob_spawn/ghost_role/human/changeling_infiltrator/special(mob/living/spawned_mob, mob/mob_possessor)
 	. = ..()
-	var/datum/antagonist/changeling/infiltrator/antag_datum = new
-	var/datum/mind/spawned_mind = spawned_mob.mind
-	if (!spawned_mind)
-		return
 
 	to_chat(spawned_mob, span_alert("[flavour_text]"))
-
+	var/datum/antagonist/changeling/infiltrator/antag_datum = new
 	spawned_mob.mind.add_antag_datum(antag_datum)
-	// spawned_mob.regenerate_icons() // have to do this or else the hair is invisible at first
-
 	to_chat(spawned_mob, span_alert("[important_text]"))
 
 // True absorb objective - this requires using the absorb ability, *NOT* DNA sting
