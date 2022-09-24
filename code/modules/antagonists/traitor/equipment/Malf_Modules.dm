@@ -1,4 +1,4 @@
-#define DEFAULT_DOOMSDAY_TIMER 4500
+#define DEFAULT_DOOMSDAY_TIMER 5400
 #define DOOMSDAY_ANNOUNCE_INTERVAL 600
 
 GLOBAL_LIST_INIT(blacklisted_malf_machines, typecacheof(list(
