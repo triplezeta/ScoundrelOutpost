@@ -152,20 +152,16 @@
 	update_explanation_text()
 
 /datum/objective/true_absorb/check_completion()
-	to_chat(world, "check completion")
 	var/list/datum/mind/owners = get_owners()
 	var/absorbed_count = 0
 	for(var/datum/mind/M in owners)
 		if(!M)
 			continue
 		var/datum/antagonist/changeling/changeling = M.has_antag_datum(/datum/antagonist/changeling)
-		to_chat(world, "[M.name] is changeling [changeling]")
 		if(!changeling || !changeling.stored_profiles)
 			continue
-		to_chat(world, "[M.name] absorbed [changeling.true_absorbs]")
 		absorbed_count += changeling.true_absorbs
 
-	to_chat(world, "check completion [absorbed_count] [target_amount]")
 	return absorbed_count >= target_amount
 
 // Outfit that the changeling spawns with
