@@ -358,7 +358,6 @@
 	// Orbstation: If the sacrifice target has the paraplegic quirk, temporarily heal their trauma so they can move until the minigame ends.
 	if(sac_target.has_quirk(/datum/quirk/paraplegic))
 		sac_target.cure_trauma_type(/datum/brain_trauma/severe/paralysis/paraplegic, TRAUMA_RESILIENCE_ABSOLUTE)
-		addtimer(CALLBACK(src, .proc/restore_paraplegia, sac_target), SACRIFICE_REALM_DURATION, TIMER_STOPPABLE)
 	LAZYSET(return_timers, REF(sac_target), win_timer)
 
 /**
@@ -371,10 +370,6 @@
 		return
 
 	to_chat(sac_target, span_hypnophrase("The worst is behind you... Not much longer! Hold fast, or expire!"))
-
-/// Orbstation: Gives the target their paraplegia back if it was removed when they got sacrificed.
-/datum/heretic_knowledge/hunt_and_sacrifice/proc/restore_paraplegia(mob/living/carbon/human/sac_target)
-	sac_target.gain_trauma(/datum/brain_trauma/severe/paralysis/paraplegic, TRAUMA_RESILIENCE_ABSOLUTE)
 
 /**
  * This proc is called from [proc/begin_sacrifice] if the target survived the shadow realm, or [COMSIG_LIVING_DEATH] if they don't.
@@ -402,6 +397,10 @@
 	sac_target.remove_status_effect(/datum/status_effect/unholy_determination)
 	sac_target.reagents?.del_reagent(/datum/reagent/inverse/helgrasp/heretic)
 	sac_target.clear_mood_event("shadow_realm")
+
+	// Orbstation: Gives the target their paraplegia back if it was removed when they got sacrificed.
+	if(sac_target.has_quirk(/datum/quirk/paraplegic))
+		sac_target.gain_trauma(/datum/brain_trauma/severe/paralysis/paraplegic, TRAUMA_RESILIENCE_ABSOLUTE)
 
 	// Wherever we end up, we sure as hell won't be able to explain
 	sac_target.adjust_timed_status_effect(30 SECONDS, /datum/status_effect/speech/slurring/heretic)
