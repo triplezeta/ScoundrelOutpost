@@ -61,7 +61,6 @@
 /turf/open/floor/mineral/plastitanium/red/brig,
 /area/shuttle/escape/brig)
 "gd" = (
-/obj/structure/closet,
 /obj/item/fishing_hook/shiny,
 /obj/item/fishing_hook/shiny,
 /obj/item/fishing_hook/magnet,
@@ -70,6 +69,9 @@
 /obj/item/fishing_hook/weighted,
 /obj/effect/turf_decal/stripes,
 /obj/item/fishing_rod,
+/obj/structure/closet{
+	anchored = 1
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
 "gI" = (
@@ -103,7 +105,9 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/shuttle/escape)
 "ko" = (
-/obj/structure/closet,
+/obj/structure/closet{
+	anchored = 1
+	},
 /obj/item/bait_can/worm/premium,
 /obj/item/bait_can/worm/premium,
 /obj/item/bait_can/worm,
@@ -350,13 +354,13 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
-/obj/structure/closet/emcloset/anchored,
 /obj/machinery/light/directional/west,
 /obj/item/storage/medkit/o2{
 	pixel_x = 3;
 	pixel_y = 3
 	},
 /obj/item/storage/medkit/toxin,
+/obj/structure/closet/emcloset/anchored,
 /turf/open/floor/iron/white,
 /area/shuttle/escape)
 "Ib" = (
@@ -421,7 +425,6 @@
 /turf/open/floor/mineral/titanium/tiled/yellow,
 /area/shuttle/escape)
 "MO" = (
-/obj/structure/closet,
 /obj/machinery/light/directional/north,
 /obj/item/fishing_line/bouncy,
 /obj/item/fishing_line/bouncy,
@@ -431,6 +434,9 @@
 /obj/item/fishing_line/reinforced,
 /obj/effect/turf_decal/stripes,
 /obj/item/fishing_rod,
+/obj/structure/closet{
+	anchored = 1
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
 "Nc" = (
