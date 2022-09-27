@@ -59,7 +59,7 @@
 "bl" = (
 /obj/effect/spawner/structure/window/reinforced/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = secshuttle
+	id = "secshuttle"
 	},
 /turf/open/floor/plating,
 /area/shuttle/escape)
@@ -265,6 +265,10 @@
 /obj/effect/turf_decal/tile/dark/half/contrasted{
 	dir = 1
 	},
+/turf/open/floor/wood/tile,
+/area/shuttle/escape)
+"nN" = (
+/obj/effect/spawner/structure/window/reinforced/shuttle,
 /turf/open/floor/wood/tile,
 /area/shuttle/escape)
 "nY" = (
@@ -647,7 +651,7 @@
 /obj/effect/turf_decal/tile/dark/opposingcorners,
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
-	id = secshuttle;
+	id = "secshuttle";
 	pixel_x = 5
 	},
 /obj/machinery/recharger{
@@ -906,7 +910,7 @@
 "Tq" = (
 /obj/effect/turf_decal/tile/dark/anticorner/contrasted,
 /obj/item/kirbyplants/random,
-/turf/open/floor/plating/airless,
+/turf/open/floor/wood/tile,
 /area/shuttle/escape)
 "TL" = (
 /obj/effect/turf_decal/tile/dark/opposingcorners,
@@ -1310,7 +1314,7 @@ aa
 XZ
 Me
 Me
-aa
+nN
 jL
 WY
 ZT
