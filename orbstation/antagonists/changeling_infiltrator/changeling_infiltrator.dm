@@ -23,6 +23,7 @@
 /datum/round_event_control/changeling_infiltrator
 	name = "Changeling Infiltrator"
 	description = "A Changeling Infiltrator spawns in a pod, tasked to eat some of the crew."
+	category = EVENT_CATEGORY_INVASION
 	typepath = /datum/round_event/ghost_role/changeling_infiltrator
 	weight = 8 // slightly higher than aliens
 	min_players = 14
