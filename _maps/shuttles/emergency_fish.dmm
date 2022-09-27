@@ -196,7 +196,7 @@
 	name = "Holding Area"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/security/general,
-/turf/open/floor/mineral/titanium/white,
+/turf/open/floor/mineral/plastitanium/red/brig,
 /area/shuttle/escape/brig)
 "jL" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -401,7 +401,7 @@
 "sj" = (
 /obj/machinery/door/airlock/shuttle/glass,
 /turf/open/floor/mineral/titanium/blue,
-/area/shuttle/escape/brig)
+/area/shuttle/escape)
 "sr" = (
 /obj/effect/turf_decal/tile/brown/opposingcorners,
 /turf/open/floor/mineral/titanium/tiled/yellow,
@@ -676,6 +676,9 @@
 "Ih" = (
 /turf/open/floor/wood/tile,
 /area/shuttle/escape)
+"IB" = (
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/escape/brig)
 "ID" = (
 /obj/effect/turf_decal/tile/dark{
 	dir = 8
@@ -1079,7 +1082,7 @@ sj
 Me
 aa
 aa
-Me
+IB
 UW
 UW
 UW
