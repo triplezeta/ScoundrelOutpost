@@ -61,7 +61,7 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = secshuttle
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/shuttle/escape)
 "bB" = (
 /obj/effect/turf_decal/tile/dark/half/contrasted{
@@ -103,10 +103,8 @@
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/escape)
 "fh" = (
-/obj/machinery/door/airlock/shuttle{
-	name = "Emergency Shuttle Airlock"
-	},
-/turf/open/floor/plating,
+/obj/machinery/door/airlock/shuttle/glass,
+/turf/open/floor/mineral/titanium/white,
 /area/shuttle/escape)
 "fA" = (
 /obj/machinery/light/directional/east,
@@ -114,7 +112,9 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/dark/opposingcorners,
-/obj/item/stack/sheet/mineral/sandbags,
+/obj/item/stack/sheet/mineral/sandbags{
+	amount = 5
+	},
 /turf/open/floor/mineral/plastitanium/red/brig,
 /area/shuttle/escape/brig)
 "gd" = (
@@ -246,10 +246,6 @@
 "kX" = (
 /turf/open/water/beach/biodome,
 /area/shuttle/escape)
-"lC" = (
-/obj/effect/spawner/structure/window/reinforced/shuttle,
-/turf/open/floor/plating/airless,
-/area/shuttle/escape)
 "lW" = (
 /turf/open/chasm,
 /area/shuttle/escape)
@@ -375,13 +371,11 @@
 /turf/open/floor/wood/tile,
 /area/shuttle/escape)
 "rj" = (
-/obj/machinery/door/airlock/shuttle{
-	name = "Emergency Shuttle Airlock"
-	},
 /obj/docking_port/mobile/emergency{
 	name = "Angler's Choice emergency shuttle"
 	},
-/turf/open/floor/plating,
+/obj/machinery/door/airlock/shuttle/glass,
+/turf/open/floor/mineral/titanium/white,
 /area/shuttle/escape)
 "rk" = (
 /obj/machinery/light/directional/south,
@@ -401,10 +395,8 @@
 /turf/open/floor/wood/tile,
 /area/shuttle/escape)
 "sj" = (
-/obj/machinery/door/airlock/shuttle{
-	name = "Emergency Shuttle Airlock"
-	},
-/turf/open/floor/plating,
+/obj/machinery/door/airlock/shuttle/glass,
+/turf/open/floor/mineral/titanium/blue,
 /area/shuttle/escape/brig)
 "sr" = (
 /obj/effect/turf_decal/tile/brown/opposingcorners,
@@ -423,7 +415,7 @@
 /obj/machinery/computer/atmos_alert{
 	dir = 4
 	},
-/turf/open/floor/mineral/titanium/tiled/blue,
+/turf/open/floor/plating,
 /area/shuttle/escape)
 "ut" = (
 /obj/machinery/light/directional/south,
@@ -914,7 +906,7 @@
 "Tq" = (
 /obj/effect/turf_decal/tile/dark/anticorner/contrasted,
 /obj/item/kirbyplants/random,
-/turf/open/floor/wood/tile,
+/turf/open/floor/plating/airless,
 /area/shuttle/escape)
 "TL" = (
 /obj/effect/turf_decal/tile/dark/opposingcorners,
@@ -1146,7 +1138,7 @@ jL
 Me
 UW
 UW
-lC
+bl
 tw
 Pd
 Ie
@@ -1202,7 +1194,7 @@ aa
 nz
 wF
 Me
-lC
+aa
 PS
 AN
 Xx
@@ -1318,7 +1310,7 @@ aa
 XZ
 Me
 Me
-lC
+aa
 jL
 WY
 ZT
@@ -1378,7 +1370,7 @@ jL
 Me
 UW
 UW
-lC
+bl
 Jh
 Pd
 Ie
