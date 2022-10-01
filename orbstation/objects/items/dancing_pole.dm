@@ -11,8 +11,7 @@
 	name = "Dancing Pole"
 	desc = "Show off your moves!"
 	icon = 'orbstation/icons/obj/dancing_pole.dmi'
-	icon_state = "pole"
-	plane = GAME_PLANE_UPPER
+	icon_state = "base"
 	anchored = FALSE
 	density = TRUE
 	var/emagged = FALSE
@@ -21,6 +20,7 @@
 /obj/structure/dancing_pole/Initialize(mapload)
 	. = ..()
 	register_context()
+	overlays += mutable_appearance(icon, "pole", layer, GAME_PLANE_UPPER)
 
 /obj/structure/dancing_pole/AltClick(mob/living/carbon/human/user)
 	. = ..()
@@ -34,14 +34,15 @@
 	emagged = TRUE
 	do_sparks(5, FALSE, src)
 
-#define DANCE_OFFSET 7
-
 /obj/structure/dancing_pole/attack_hand(mob/living/carbon/human/user, list/modifiers)
 	if (!anchored)
 		balloon_alert(user, "pole isn't anchored")
 		return
 	if (dancer?.resolve())
 		balloon_alert(user, "already occupied")
+		return
+	if (HAS_TRAIT(user, TRAIT_IMMOBILIZED))
+		balloon_alert(user, "too tired")
 		return
 
 	dance(user)
@@ -58,22 +59,26 @@
 /obj/structure/dancing_pole/proc/dance(mob/living/carbon/human/user)
 	var/last_loc = user.loc
 	user.forceMove(loc)
+
 	var/prev_plane = user.plane
-	user.plane = GAME_PLANE_UPPER
 	var/prev_y = user.pixel_y
-	user.pixel_y = DANCE_OFFSET
+	var/prev_x = user.pixel_x
+	apply_dir(user, user.dir)
+	RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE, .proc/on_rotated)
 	spin_dancer(user)
 
 	dancer = WEAKREF(user)
 	START_PROCESSING(SSobj, src)
 
-	user.Immobilize(10 SECONDS)
+	user.Immobilize(11.5 SECONDS)
 	user.visible_message("<B>[user] is [get_brag_message()]!</B>")
 
 	if (emagged)
 		addtimer(CALLBACK(src, .proc/overdrive, user), 5 SECONDS)
 
 	if (!do_after(user, 10 SECONDS, src))
+		if (!user)
+			return
 		user.visible_message("<B>[user] slips off the pole!</B>")
 		user.throw_at(get_edge_target_turf(src, pick(GLOB.alldirs)), rand(1, 10), rand(1, 10))
 		user.Stun(10 SECONDS)
@@ -91,10 +96,51 @@
 			user.forceMove(last_loc)
 			user.emote("bow")
 
+	if (!user)
+		return
+	UnregisterSignal(user, COMSIG_ATOM_DIR_CHANGE)
 	user.plane = prev_plane
 	user.pixel_y = prev_y
+	user.pixel_x = prev_x
 	STOP_PROCESSING(SSobj, src)
 	dancer = null
+
+/// Respond to a dancer changing direction in order to reposition it.
+/obj/structure/dancing_pole/proc/on_rotated(mob/source, old_dir, new_dir)
+	SIGNAL_HANDLER
+
+	var/mob/living/current_dancer = dancer?.resolve()
+	if (!current_dancer)
+		return
+	if (!istype(current_dancer))
+		return
+	if (current_dancer != source)
+		return
+	if (old_dir == new_dir)
+		return
+
+	apply_dir(current_dancer, new_dir)
+
+#define DANCE_OFFSETS list(\
+	TEXT_SOUTH = list(0, 10),\
+	TEXT_NORTH = list(0, 6),\
+	TEXT_EAST = list(-5, 7),\
+	TEXT_WEST = list(5, 7),\
+	)
+
+/// Applies a layer and positional offset based upon current facing direction.
+/obj/structure/dancing_pole/proc/apply_dir(mob/living/carbon/human/dancer, dir)
+	if (dir == SOUTH)
+		dancer.plane = GAME_PLANE
+	else
+		dancer.plane = GAME_PLANE_UPPER
+
+	var/list/offsets_dir = DANCE_OFFSETS
+	var/offset = offsets_dir["[dir]"]
+	dancer.pixel_x = offset[1]
+	dancer.pixel_y = offset[2]
+
+#undef DANCE_OFFSETS
 
 /// Spins the current dancer every 2 seconds.
 /obj/structure/dancing_pole/process()
