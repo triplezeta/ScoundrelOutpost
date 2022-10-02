@@ -39,6 +39,10 @@ GLOBAL_LIST_EMPTY(moth_antennae_list)
 GLOBAL_LIST_EMPTY(moth_markings_list)
 GLOBAL_LIST_EMPTY(caps_list)
 GLOBAL_LIST_EMPTY(pod_hair_list)
+	//ORBSTATION
+GLOBAL_LIST_EMPTY(rat_snouts_list)
+GLOBAL_LIST_EMPTY(rat_tails_list)
+GLOBAL_LIST_EMPTY(rat_ears_list)
 
 GLOBAL_LIST_INIT(color_list_ethereal, list(
 	"Blue" = "#3399ff",

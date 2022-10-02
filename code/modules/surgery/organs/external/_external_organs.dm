@@ -160,10 +160,10 @@
 		var/list/inner_icon_state_builder = list()
 		inner_icon_state_builder += sprite_datum.gender_specific ? gender : "m"
 		inner_icon_state_builder += feature_key + "inner"
-		icon_state_builder += sprite_datum.icon_state
-		icon_state_builder += mutant_bodyparts_layertext(image_layer)
+		inner_icon_state_builder += sprite_datum.icon_state
+		inner_icon_state_builder += mutant_bodyparts_layertext(image_layer)
 
-		var/finished_inner_icon_state = icon_state_builder.Join("_")
+		var/finished_inner_icon_state = inner_icon_state_builder.Join("_")
 
 		var/mutable_appearance/inner_appearance = mutable_appearance(sprite_datum.icon, finished_inner_icon_state, layer = -image_layer)
 

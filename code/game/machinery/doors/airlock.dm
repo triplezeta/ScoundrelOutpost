@@ -353,16 +353,17 @@
 		seal = null
 		update_appearance()
 
-/obj/machinery/door/airlock/bumpopen(mob/living/user) //Airlocks now zap you when you 'bump' them open when they're electrified. --NeoFite
-	if(!issilicon(usr))
-		if(isElectrified() && shock(user, 100))
-			return
-		else if(user.hallucinating() && iscarbon(user) && prob(1) && !operating)
-			var/mob/living/carbon/C = user
-			if(!C.wearing_shock_proof_gloves())
-				new /datum/hallucination/shock(C)
-				return
-	..()
+/obj/machinery/door/airlock/bumpopen(mob/living/user)
+	if(issilicon(user) || !iscarbon(user))
+		return ..()
+
+	if(isElectrified() && shock(user, 100))
+		return
+
+	if(SEND_SIGNAL(user, COMSIG_CARBON_BUMPED_AIRLOCK_OPEN, src) & STOP_BUMP)
+		return
+
+	return ..()
 
 /obj/machinery/door/airlock/proc/isElectrified()
 	return (secondsElectrified != MACHINE_NOT_ELECTRIFIED)
@@ -435,6 +436,8 @@
 /obj/machinery/door/airlock/proc/shock(mob/living/user, prb)
 	if(!istype(user) || !hasPower()) // unpowered, no shock
 		return FALSE
+	if(HAS_TRAIT(user, TRAIT_AIRLOCK_SHOCKIMMUNE)) // Be a bit more clever man come on
+		return FALSE
 	if(!COOLDOWN_FINISHED(src, shockCooldown))
 		return FALSE //Already shocked someone recently?
 	if(!prob(prb))
@@ -443,6 +446,9 @@
 	var/check_range = TRUE
 	if(electrocute_mob(user, get_area(src), src, 1, check_range))
 		COOLDOWN_START(src, shockCooldown, 1 SECONDS)
+		// Provides timed airlock shock immunity, to prevent overly cheesy deathtraps
+		ADD_TRAIT(user, TRAIT_AIRLOCK_SHOCKIMMUNE, REF(src))
+		addtimer(TRAIT_CALLBACK_REMOVE(user, TRAIT_AIRLOCK_SHOCKIMMUNE, REF(src)), 1 SECONDS)
 		return TRUE
 	else
 		return FALSE

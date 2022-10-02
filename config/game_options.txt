@@ -394,6 +394,9 @@ ROUNDSTART_RACES jelly
 #ROUNDSTART_RACES military_synth
 #ROUNDSTART_RACES agent
 
+## ORBSTATION RACES - if you comment these out you'll make us very sad
+ROUNDSTART_RACES ratfolk
+
 ##-------------------------------------------------------------------------------------------
 
 ## Roundstart no-reset races

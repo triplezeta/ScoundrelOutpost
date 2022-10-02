@@ -20,7 +20,6 @@
 	heatmod = 1.5
 	payday_modifier = 1.0
 	meat = /obj/item/food/meat/slab/human/mutant/plant
-	exotic_blood = /datum/reagent/water
 	disliked_food = MEAT | DAIRY | SEAFOOD | BUGS
 	liked_food = VEGETABLES | FRUIT | GRAIN
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
@@ -111,6 +110,12 @@
 			SPECIES_PERK_ICON = "lightbulb",
 			SPECIES_PERK_NAME = "Light Nutrition",
 			SPECIES_PERK_DESC = "Podpeople passively gain nutrition while standing in well-lit areas.",
+		),
+		list(
+			SPECIES_PERK_TYPE = SPECIES_NEUTRAL_PERK,
+			SPECIES_PERK_ICON = "tint",
+			SPECIES_PERK_NAME = initial(exotic_blood.name),
+			SPECIES_PERK_DESC = "Podpeople blood is Water or a random fruit juice, which can make recieving medical treatment harder.",
 		),
 		list(
 			SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,

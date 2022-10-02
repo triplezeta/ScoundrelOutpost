@@ -89,6 +89,13 @@
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/moth_markings, GLOB.moth_markings_list)
 	if(!GLOB.pod_hair_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/pod_hair, GLOB.pod_hair_list)
+	// ORBSTATION
+	if(!GLOB.rat_snouts_list.len)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/rat_snouts, GLOB.rat_snouts_list)
+	if(!GLOB.rat_tails_list.len)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/rat, GLOB.rat_tails_list)
+	if(!GLOB.rat_ears_list.len)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/rat_ears, GLOB.rat_ears_list)
 
 	//For now we will always return none for tail_human and ears. | "For now" he says.
 	return(list(
@@ -110,6 +117,10 @@
 		"moth_markings" = pick(GLOB.moth_markings_list),
 		"tail_monkey" = "None",
 		"pod_hair" = pick(GLOB.pod_hair_list),
+		// ORBSTATION
+		"rat_snout" = pick(GLOB.rat_snouts_list),
+		"rat_tail" = pick(GLOB.rat_tails_list),
+		"rat_ears" = pick(GLOB.rat_ears_list),
 	))
 
 /proc/random_hairstyle(gender)
