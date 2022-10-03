@@ -5,7 +5,6 @@ GLOBAL_LIST_EMPTY(journeymanstart)
 	faction = ROLE_WIZARD
 
 /datum/antagonist/wizard_journeyman
-	var/static/lair_exists = FALSE
 	name = "\improper Space Wizard Journeyman"
 	roundend_category = "wizards/witches"
 	antagpanel_category = "Wizard"
@@ -13,12 +12,49 @@ GLOBAL_LIST_EMPTY(journeymanstart)
 	antag_hud_name = "wizard"
 	antag_moodlet = /datum/mood_event/focused
 	hijack_speed = 0.5
-	ui_name = "AntagInfoWizard"
+	ui_name = "AntagInfoWizardJourneyman"
 	suicide_cry = "FOR THE FEDERATION!!"
 	preview_outfit = /datum/outfit/wizard
-	var/give_objectives = TRUE
-	var/outfit_type = /datum/outfit/wizard
 	show_to_ghosts = TRUE
+	/// True if the wizard journeyman lair has been instantiated
+	var/static/lair_exists = FALSE
+	/// True if we want you to be granted objectives
+	var/give_objectives = TRUE
+	/// Gear to apply
+	var/outfit_type = /datum/outfit/wizard
+	/// This mob's Grand Ritual ability
+	var/datum/action/grand_ritual/ritual = new
+
+/datum/antagonist/wizard_journeyman/ui_data(mob/user)
+	var/list/data = list()
+	data["ritual"] = list(\
+		"remaining" = GRAND_RITUAL_FINALE_COUNT - ritual.times_completed,
+		"next_area" = initial(ritual.target_area.name),)
+	return data
+
+/datum/antagonist/wizard_journeyman/apply_innate_effects(mob/living/mob_override)
+	. = ..()
+	var/mob/living/current = owner.current
+	ritual.Grant(current)
+	current.faction |= ROLE_WIZARD
+	RegisterSignal(ritual, COMSIG_GRAND_RITUAL_FINAL_COMPLETE, .proc/on_ritual_complete)
+
+/datum/antagonist/wizard_journeyman/remove_innate_effects(mob/living/mob_override)
+	. = ..()
+	var/mob/living/current = owner.current
+	ritual.Remove(current)
+	current.faction -= ROLE_WIZARD
+	UnregisterSignal(ritual, COMSIG_GRAND_RITUAL_FINAL_COMPLETE)
+
+/// If we receive this signal, you're done with objectives
+/datum/antagonist/wizard_journeyman/proc/on_ritual_complete()
+	SIGNAL_HANDLER
+	var/datum/objective/custom/successful_ritual = new()
+	successful_ritual.owner = owner
+	successful_ritual.explanation_text = "Complete the Grand Ritual and rewrite reality to your own whim."
+	successful_ritual.completed = TRUE
+	objectives = list(successful_ritual)
+	UnregisterSignal(ritual, COMSIG_GRAND_RITUAL_FINAL_COMPLETE)
 
 /datum/antagonist/wizard_journeyman/on_gain()
 	send_to_lair()

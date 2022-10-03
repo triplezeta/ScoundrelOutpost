@@ -56,7 +56,6 @@ GLOBAL_LIST_EMPTY(owned_theft_items)
 	for (var/mob/player as anything in GLOB.player_list)
 		if (player.stat == DEAD)
 			continue
-		to_chat(world, "test [player.mind?.assigned_role.title]")
 		if (!(player.mind?.assigned_role.title in owner))
 			continue
 		if (is_centcom_level(player.z))
