@@ -289,7 +289,7 @@
 // Ditto. This proc is used when you're speaking locally.
 /mob/living/carbon/human/get_alt_name()
 	if(name != GetVoice())
-		return " (as [get_id_name("Unknown", check_plurality = TRUE)])"
+		return " (as [get_id_name("Unknown", check_plurality = TRUE, append_system_name = TRUE)])"
 
 // Adds a box of plural system chips to the HoP's locker.
 
