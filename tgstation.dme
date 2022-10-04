@@ -4764,6 +4764,8 @@
 #include "orbstation\antagonists\traitor\contract_negotiation.dm"
 #include "orbstation\antagonists\traitor\objectives\double_cross.dm"
 #include "orbstation\antagonists\traitor\objectives\final_objective\malware_injection.dm"
+#include "orbstation\antagonists\wizard_journeyman\journeyman_outfit.dm"
+#include "orbstation\antagonists\wizard_journeyman\wizard_apartment.dm"
 #include "orbstation\antagonists\wizard_journeyman\wizard_journeyman.dm"
 #include "orbstation\antagonists\wizard_journeyman\diploma\diploma_spell.dm"
 #include "orbstation\antagonists\wizard_journeyman\diploma\journeyman_diploma.dm"
@@ -4818,6 +4820,7 @@
 #include "orbstation\species\zombie\zombie_bite.dm"
 #include "orbstation\species\zombie\zombies.dm"
 #include "orbstation\spells\eldritch_transform.dm"
+#include "orbstation\spells\minor_variants.dm"
+#include "orbstation\spells\robed_robeless_spells.dm"
 #include "orbstation\spells\staff.dm"
-#include "orbstation\spells\variants.dm"
 // END_INCLUDE

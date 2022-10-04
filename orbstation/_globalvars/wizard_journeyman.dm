@@ -3,6 +3,11 @@
 #define DIPLOMA_SPELL_UNCOMMON 3
 #define DIPLOMA_SPELL_COMMON 5
 
+// Diploma spell categories
+#define DIPLOMA_SPELL_OFFENSIVE "offensive"
+#define DIPLOMA_SPELL_DEFENSIVE "defensive"
+#define DIPLOMA_SPELL_OTHER "other"
+
 /// Number of times you need to perform the grand ritual to complete it
 #define GRAND_RITUAL_FINALE_COUNT 7
 

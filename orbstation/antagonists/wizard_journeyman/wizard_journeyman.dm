@@ -1,9 +1,5 @@
 GLOBAL_LIST_EMPTY(journeymanstart)
 
-/datum/job/wizard_journeyman
-	title = "Wizard Journeyman"
-	faction = ROLE_WIZARD
-
 /datum/antagonist/wizard_journeyman
 	name = "\improper Space Wizard Journeyman"
 	roundend_category = "wizards/witches"
@@ -13,15 +9,15 @@ GLOBAL_LIST_EMPTY(journeymanstart)
 	antag_moodlet = /datum/mood_event/focused
 	hijack_speed = 0.5
 	ui_name = "AntagInfoWizardJourneyman"
-	suicide_cry = "FOR THE FEDERATION!!"
-	preview_outfit = /datum/outfit/wizard
+	suicide_cry = "ARE YOU WATCHING THIS, GUYS?!"
+	preview_outfit = /datum/outfit/journeyman_wizard
 	show_to_ghosts = TRUE
 	/// True if the wizard journeyman lair has been instantiated
 	var/static/lair_exists = FALSE
 	/// True if we want you to be granted objectives
 	var/give_objectives = TRUE
 	/// Gear to apply
-	var/outfit_type = /datum/outfit/wizard
+	var/outfit_type = /datum/outfit/journeyman_wizard
 	/// This mob's Grand Ritual ability
 	var/datum/action/grand_ritual/ritual = new
 
@@ -56,6 +52,7 @@ GLOBAL_LIST_EMPTY(journeymanstart)
 	objectives = list(successful_ritual)
 	UnregisterSignal(ritual, COMSIG_GRAND_RITUAL_FINAL_COMPLETE)
 
+/// On application, teleport to lair and set up
 /datum/antagonist/wizard_journeyman/on_gain()
 	send_to_lair()
 	equip_wizard()
@@ -65,6 +62,7 @@ GLOBAL_LIST_EMPTY(journeymanstart)
 	. = ..()
 	rename_wizard()
 
+/// Become human and put on the robe and wizard hat
 /datum/antagonist/wizard_journeyman/proc/equip_wizard()
 	if (!owner)
 		CRASH("Antag datum with no owner.")
@@ -76,6 +74,7 @@ GLOBAL_LIST_EMPTY(journeymanstart)
 	graduate.set_species(/datum/species/human)
 	graduate.equipOutfit(outfit_type)
 
+/// Generate objectives
 /datum/antagonist/wizard_journeyman/proc/create_objectives()
 	add_theft_objective()
 	switch(rand(1,100))
@@ -87,12 +86,14 @@ GLOBAL_LIST_EMPTY(journeymanstart)
 			add_diskie_objective()
 	add_roundend_objective()
 
+/// Steal something
 /datum/antagonist/wizard_journeyman/proc/add_theft_objective()
 	var/datum/objective/steal/owned/theft = new
 	theft.owner = owner
 	theft.find_target(list(owner))
 	objectives += theft
 
+/// Trap someone alive and well on the station
 /datum/antagonist/wizard_journeyman/proc/add_maroon_objective()
 	var/datum/objective/protect/protect = new
 	protect.owner = owner
@@ -106,12 +107,14 @@ GLOBAL_LIST_EMPTY(journeymanstart)
 	objectives += protect
 	objectives += maroon
 
+/// Get that fuckin disk
 /datum/antagonist/wizard_journeyman/proc/add_diskie_objective()
 	var/datum/objective/steal/theft = new
 	theft.owner = owner
 	theft.set_target(new /datum/objective_item/steal/nukedisc)
 	objectives += theft
 
+/// Don't die, or do
 /datum/antagonist/wizard_journeyman/proc/add_roundend_objective()
 	switch(rand(1,100))
 		if (1 to 60)
@@ -131,6 +134,7 @@ GLOBAL_LIST_EMPTY(journeymanstart)
 			martyr_objective.owner = owner
 			objectives += martyr_objective
 
+/// Create wizard's house if it doesn't exist, then insert wizard
 /datum/antagonist/wizard_journeyman/proc/send_to_lair()
 	if (!owner)
 		CRASH("Antag datum with no owner.")
@@ -146,6 +150,7 @@ GLOBAL_LIST_EMPTY(journeymanstart)
 		return
 	owner.current.forceMove(pick(GLOB.journeymanstart))
 
+/// You partied hard after graduating wizard school
 /datum/antagonist/wizard_journeyman/proc/grant_hangover()
 	if (!owner)
 		CRASH("Antag datum with no owner.")
@@ -159,6 +164,7 @@ GLOBAL_LIST_EMPTY(journeymanstart)
 		partygoer.adjust_drunk_effect(rand(15, 25))
 	partygoer.adjust_disgust(rand(5, 55))
 
+/// The random names are pretty good but our players are better
 /datum/antagonist/wizard_journeyman/proc/rename_wizard()
 	set waitfor = FALSE
 
@@ -170,28 +176,3 @@ GLOBAL_LIST_EMPTY(journeymanstart)
 	if (!newname)
 		newname = randomname
 	wiz_mob.fully_replace_character_name(wiz_mob.real_name, newname)
-
-/datum/map_template/wizard_apartment
-	name = "wizard's apartment"
-	mappath = "_maps/templates/journeyman_apartment.dmm"
-
-/area/wizard_apartment
-	name = "Wizard's Apartment"
-	icon = 'icons/area/areas_centcom.dmi'
-	icon_state = "wizards_den"
-	static_lighting = TRUE
-	requires_power = FALSE
-	has_gravity = STANDARD_GRAVITY
-	area_flags = UNIQUE_AREA | NOTELEPORT
-	flags_1 = NONE
-	network_root_id = "MAGIC_NET"
-
-/obj/effect/landmark/start/wizard_journeyman
-	name = "wizard"
-	icon = 'icons/effects/landmarks_static.dmi'
-	icon_state = "wiznerd_spawn"
-
-/obj/effect/landmark/start/wizard_journeyman/Initialize(mapload)
-	..()
-	GLOB.journeymanstart += loc
-	return INITIALIZE_HINT_QDEL

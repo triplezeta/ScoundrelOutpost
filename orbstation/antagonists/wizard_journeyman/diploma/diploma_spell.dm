@@ -23,6 +23,12 @@
 	/// How likely is this spell to be drafted?
 	var/weight = DIPLOMA_SPELL_COMMON
 
+/datum/diploma_spell/New()
+	if(!ispath(spell_type))
+		return
+	if(initial(spell_type.spell_requirements) & SPELL_REQUIRES_WIZARD_GARB)
+		requires_wizard_garb = TRUE
+
 /**
  * Determines if this entry can be purchased from a spellbook
  * Used for configs / round related restrictions.

@@ -1,6 +1,7 @@
 /// Number of times you need to cast on the rune to complete it
 #define GRAND_RUNE_INVOKES_TO_COMPLETE 3
 /// Returns true if you're a wizard or a journeyman
+/// You will probably never have both of these at the same time but if a big wizard wants to finish the rune of a small one who am I to say they can't?
 #define IS_WIZARD_OR_JOURNEYMAN(mob) (mob?.mind?.has_antag_datum(/datum/antagonist/wizard_journeyman || mob?.mind?.has_antag_datum(/datum/antagonist/wizard)))
 
 /**
@@ -29,7 +30,7 @@
 	var/list/magic_words = list()
 	/**
 	 * Possible things you can yell when invoking the rune. Wizards are silly, so... so are these.
-	 * It was actually really hard to think of any three-part magic words which weren't dumb jokes.
+	 * It was actually really hard to think of any three-part incantations which weren't dumb jokes.
 	 * Please do contribute more if you think of some.
 	 */
 	var/static/list/possible_magic_words = list(
@@ -48,8 +49,10 @@
 		list("Drivaron Ple'ez!", "Shabadoobie!", "Henshin!!"),
 		list("Bish", "Bash", "Bosh!"),
 		list("Halev Li'af!", "Epizadh!", "Free!!"),
-		list("One and a...", "Two and a...", "One Two Three Four!!"),
 		list("*scream", "*scream", "*scream"),
+		list("One and a...", "Two and a...", "One Two Three Four!!"),
+		list("Let expanse contract!", "Let eon become instant!", "Throw wide the gates!!"),
+		list("The arcane is mine to command!", "Yawn wide, ever-hungering void!", "Behold, a sorcerer of eld!!"),
 		list("git checkout origin master", "git reset --hard HEAD~2", "git push origin master --force!!",)
 	)
 
@@ -108,4 +111,3 @@
 
 #undef GRAND_RUNE_INVOKES_TO_COMPLETE
 #undef IS_WIZARD_OR_JOURNEYMAN
-
