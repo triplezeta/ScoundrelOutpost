@@ -21,6 +21,8 @@
 	/// This references a tgui icon, so it can be FontAwesome or a tgfont (with a tg- prefix).
 	var/icon
 
+	var/xcard_quirk = FALSE //if true, this quirk will be displayed in the x-card section of the quirk list
+
 /datum/quirk/Destroy()
 	if(quirk_holder)
 		remove_from_current_holder()

@@ -4798,6 +4798,7 @@
 #include "orbstation\orb_species\ratfolk\ratfolk_organs_internal.dm"
 #include "orbstation\quirks\plurality.dm"
 #include "orbstation\quirks\tongue_tied.dm"
+#include "orbstation\quirks\xcard\bioscrambler_immune.dm"
 #include "orbstation\quirks\xcard\revolution.dm"
 #include "orbstation\quirks\xcard\xcard-quirks.dm"
 #include "orbstation\quirks\xcard\xenotoxin.dm"
