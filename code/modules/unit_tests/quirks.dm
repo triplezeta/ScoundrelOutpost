@@ -14,7 +14,7 @@
 			TEST_FAIL("[quirk_type] has no icon!")
 			continue
 
-		if (istype(quirk_type, /datum/quirk/xcard)) //ORBSTATION: x-card quirks all use the same icon, and so the next text should be skipped
+		if(initial(quirk_type.xcard_quirk)) //ORBSTATION: x-card quirks all use the same icon, and so the next text should be skipped
 			continue
 
 		if (icon in used_icons)
