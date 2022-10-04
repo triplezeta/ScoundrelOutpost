@@ -211,6 +211,7 @@ $department_map: (
           'positive': colors.$green,
           'neutral': colors.$white,
           'negative': colors.$red,
+          'xcard': colors.$blue,
         );
 
         @each $quality, $color-value in $quality_map {

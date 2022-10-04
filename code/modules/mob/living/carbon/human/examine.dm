@@ -347,6 +347,7 @@
 		if(12 to INFINITY)
 			msg += "[span_notice("<b><i>[t_He] [t_is] just absolutely fucked up, you can look again to take a closer look...</i></b>")]\n"
 
+	msg += examine_xcards() //ORBSTATION: display x-cards on examine
 
 	if (length(msg))
 		. += span_warning("[msg.Join("")]")
