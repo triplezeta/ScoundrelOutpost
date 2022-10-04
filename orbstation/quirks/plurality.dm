@@ -58,7 +58,8 @@
 	if(!user.is_holding(src))
 		return
 	if(locked)
-		to_chat(user, span_warning("[src] is locked and cannot be modified right now."))
+		to_chat(user, span_warning("[src] is locked and cannot be modified right now. It can be unlocked by an ID card with Head of Personnel access."))
+		balloon_alert(user, "locked")
 		return
 	if(!system_name)
 		var/new_system_name
@@ -68,7 +69,7 @@
 			to_chat(user, span_notice("The chip's associated system name was automatically set to [new_system_name]."))
 			// no return here because we're jumping right into the Choose Action menu
 		else
-			new_system_name = tgui_input_text(user, "Input the new system name:", "Set System Name", max_length = 20)
+			new_system_name = tgui_input_text(user, "Input the new system name:", "Set System Name", max_length = 42)
 			if(!new_system_name)
 				return
 			update_system_name(new_system_name)
@@ -76,7 +77,7 @@
 			return
 	var/popup_input = tgui_input_list(user, "Choose Action", "Plural System Interface", list("Add Member", "Remove Member", "Edit Member", "Clear Members", "Edit System Name"))
 	if(popup_input == "Add Member")
-		var/new_member_name = tgui_input_text(user, "Input the name of the new system member:", "Add Member", max_length = 30)
+		var/new_member_name = tgui_input_text(user, "Input the name of the new system member:", "Add Member", max_length = 42)
 		if(!new_member_name)
 			return
 		if(new_member_name == "Show ID") // kinda hacky way of preventing some weirdness with the ID
@@ -102,7 +103,7 @@
 		if(!system_member_names.len)
 			to_chat(user, span_warning("ERROR: There are no members registered with [system_name]."))
 			return
-		var/selected_member = tgui_input_list(user, "Select system member to edit:", "Remove Member", system_member_names)
+		var/selected_member = tgui_input_list(user, "Select system member to edit:", "Select Member", system_member_names)
 		if(!selected_member)
 			return
 		var/edited_member_name = tgui_input_text(user, "Input the new name of [selected_member]:", "Edit Member", max_length = 30)
@@ -165,7 +166,7 @@
 		return
 	if(!user.is_holding(src))
 		return
-	// if there is a plural system chip attached and the system has members, shows a popup through which
+	// if there is a plural system chip attached and the system has members, shows a popup through which the user can select a member to display as the current fronter
 	if(plural_system?.system_member_names.len && plural_system_compatible)
 		var/list/menu_options = plural_system.system_member_names.Copy()
 		menu_options |= "Show ID"
