@@ -122,9 +122,6 @@
 
 	INVOKE_ASYNC(src, .proc/draw_rune, target_turf)
 
-#define BASE_INVOKE_TIME 7 SECONDS
-#define ADD_INVOKE_TIME 1 SECONDS
-
 /// Draws the ritual rune
 /datum/action/grand_ritual/proc/draw_rune(turf/target_turf)
 	drawing_rune = TRUE
@@ -135,14 +132,10 @@
 		return
 
 	target_turf.balloon_alert(owner, "rune created")
-	var/invoke_time = (BASE_INVOKE_TIME) + (times_completed * (ADD_INVOKE_TIME))
-	var/obj/effect/grand_rune/new_rune = new /obj/effect/grand_rune(target_turf, invoke_time)
+	var/obj/effect/grand_rune/new_rune = new /obj/effect/grand_rune(target_turf, times_completed)
 	rune = WEAKREF(new_rune)
 	RegisterSignal(new_rune, COMSIG_GRAND_RUNE_COMPLETE, .proc/on_rune_complete)
 	drawing_rune = FALSE
-
-#undef BASE_INVOKE_TIME
-#undef ADD_INVOKE_TIME
 
 /// Called when you finish invoking a rune you drew, get ready for another one.
 /datum/action/grand_ritual/proc/on_rune_complete(atom/source)

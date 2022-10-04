@@ -3,6 +3,10 @@
 /// Returns true if you're a wizard or a journeyman
 /// You will probably never have both of these at the same time but if a big wizard wants to finish the rune of a small one who am I to say they can't?
 #define IS_WIZARD_OR_JOURNEYMAN(mob) (mob?.mind?.has_antag_datum(/datum/antagonist/wizard_journeyman || mob?.mind?.has_antag_datum(/datum/antagonist/wizard)))
+/// Base time to take to invoke one stage of the rune. This is done three times to complete the rune.
+#define BASE_INVOKE_TIME 7 SECONDS
+/// Time to add on to each step every time a previous rune is completed.
+#define ADD_INVOKE_TIME 1 SECONDS
 
 /**
  * Magic rune used in the grand ritual.
@@ -20,8 +24,10 @@
 	interaction_flags_atom = INTERACT_ATOM_ATTACK_HAND
 	resistance_flags = FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	layer = SIGIL_LAYER
-	/// Time it takes to invoke each step
-	var/invoke_time
+	/// How many prior grand rituals have been completed?
+	var/potency = 0
+	/// Time to take per invocation of rune.
+	var/invoke_time = BASE_INVOKE_TIME
 	/// Prevent ritual spam click.
 	var/is_in_use = FALSE
 	/// Number of times this rune has been cast
@@ -57,13 +63,17 @@
 	)
 
 // Prepare magic words and hide from silicons
-/obj/effect/grand_rune/Initialize(mapload, invoke_time = 7 SECONDS)
+/obj/effect/grand_rune/Initialize(mapload, potency = 0)
 	. = ..()
-	src.invoke_time = invoke_time
+	src.potency = potency
+	invoke_time = (BASE_INVOKE_TIME) + (potency * (ADD_INVOKE_TIME))
 	magic_words = pick(possible_magic_words)
 	var/image/silicon_image = image(icon = 'icons/effects/eldritch.dmi', icon_state = null, loc = src)
 	silicon_image.override = TRUE
 	add_alt_appearance(/datum/atom_hud/alternate_appearance/basic/silicons, "heretic_rune", silicon_image)
+
+#undef BASE_INVOKE_TIME
+#undef ADD_INVOKE_TIME
 
 /obj/effect/grand_rune/examine(mob/user)
 	. = ..()
@@ -108,6 +118,9 @@
 		SEND_SIGNAL(src, COMSIG_GRAND_RUNE_COMPLETE)
 		return
 	INVOKE_ASYNC(src, .proc/invoke_rune, user)
+
+/obj/effect/grand_rune/proc/get_invoke_time()
+	return  (BASE_INVOKE_TIME) + (times_completed * (ADD_INVOKE_TIME))
 
 #undef GRAND_RUNE_INVOKES_TO_COMPLETE
 #undef IS_WIZARD_OR_JOURNEYMAN
