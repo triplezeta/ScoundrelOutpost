@@ -32,7 +32,7 @@
 	name = "X-CARD: Facehuggers"
 	desc = "Facehuggers are unable to infect you, and will instead bite your face, injecting a unique venom."
 	mob_trait = TRAIT_XCARD_XENO_IMMUNE
-	examine_text = "immune to facehugger implantation, and will be injected with deadly neurotoxin instead."
+	examine_text = "immune to facehugger implantation, and will be injected with deadly xenotoxin instead."
 /*
 /datum/quirk/xcard/uncyborgable
 	name = "Cyborg Incompatibility"
