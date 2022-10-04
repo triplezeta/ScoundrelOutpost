@@ -27,7 +27,6 @@
 			victim.adjustToxLoss(30)
 			victim.blur_eyes(20)
 			victim.set_timed_status_effect(10 SECONDS, /datum/status_effect/dizziness)
-	return
 
 //and the same thing again, for the bioscrambler armor. yes, the code is all copy-pasted there, too.
 /obj/item/clothing/suit/armor/reactive/bioscrambling/proc/alt_swap(mob/living/carbon/human/victim)
