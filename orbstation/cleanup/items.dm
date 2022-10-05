@@ -12,8 +12,6 @@
 	name = "holy book"
 	icon_state = "holybook"
 	inhand_icon_state = "holybook"
-	worn_icon_state = "holybook"
-
 /obj/item/food/raw_meatball
 	desc = "A great meal all round. Kinda raw"
 
@@ -28,3 +26,7 @@
 /obj/item/clothing/head/rabbitears
 	name = "rabbit ears"
 	desc = "bnuuy"
+
+// Removes banana glutton until such time as we unremove it again
+/obj/item/grenade/spawnergrenade/clown
+	spawner_type = list(/mob/living/simple_animal/hostile/retaliate/clown/fleshclown, /mob/living/simple_animal/hostile/retaliate/clown/clownhulk, /mob/living/simple_animal/hostile/retaliate/clown/longface, /mob/living/simple_animal/hostile/retaliate/clown/clownhulk/chlown, /mob/living/simple_animal/hostile/retaliate/clown/clownhulk/honcmunculus, /mob/living/simple_animal/hostile/retaliate/clown/mutant/glutton, /mob/living/simple_animal/hostile/retaliate/clown/honkling, /mob/living/simple_animal/hostile/retaliate/clown/lube)
