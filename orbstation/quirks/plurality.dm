@@ -76,82 +76,85 @@
 			to_chat(user, span_notice("Successfully set the chip's associated system name to [new_system_name]."))
 			return
 	var/popup_input = tgui_input_list(user, "Choose Action", "Plural System Interface", list("Add Member", "Remove Member", "Edit Member", "Clear Members", "Edit System Name"))
-	if(popup_input == "Add Member")
-		var/new_member_name = tgui_input_text(user, "Input the name of the new system member:", "Add Member", max_length = 42)
-		if(!new_member_name)
+	switch(popup_input)
+		if("Add Member")
+			var/new_member_name = tgui_input_text(user, "Input the name of the new system member:", "Add Member", max_length = 42)
+			if(!new_member_name)
+				return
+			if(new_member_name == "Show ID") // kinda hacky way of preventing some weirdness with the ID
+				to_chat(user, span_warning("ERROR: Invalid member name."))
+				return
+			if(new_member_name in system_member_names)
+				to_chat(user, span_warning("ERROR: Duplicate member name."))
+				return
+			system_member_names |= new_member_name
+			to_chat(user, span_notice("Successfully added new member [new_member_name] to the chip's associated system."))
 			return
-		if(new_member_name == "Show ID") // kinda hacky way of preventing some weirdness with the ID
-			to_chat(user, span_warning("ERROR: Invalid member name."))
+		if("Remove Member")
+			if(!system_member_names.len)
+				to_chat(user, span_warning("ERROR: There are no members registered with [system_name]."))
+				return
+			var/selected_member = tgui_input_list(user, "Select system member to remove:", "Remove Member", system_member_names)
+			if(!selected_member || !(selected_member in system_member_names))
+				return
+			system_member_names -= selected_member
+			to_chat(user, span_notice("Successfully removed member [selected_member] from the chip's associated system."))
 			return
-		if(new_member_name in system_member_names)
-			to_chat(user, span_warning("ERROR: Duplicate member name."))
+		if("Edit Member")
+			if(!system_member_names.len)
+				to_chat(user, span_warning("ERROR: There are no members registered with [system_name]."))
+				return
+			var/selected_member = tgui_input_list(user, "Select system member to edit:", "Select Member", system_member_names)
+			if(!selected_member)
+				return
+			var/edited_member_name = tgui_input_text(user, "Input the new name of [selected_member]:", "Edit Member", max_length = 30)
+			if(!edited_member_name)
+				return
+			if(!(selected_member in system_member_names))
+				to_chat(user, span_warning("ERROR: Could not find member [selected_member] in [system_name]."))
+				return
+			system_member_names -= selected_member
+			system_member_names |= edited_member_name
+			to_chat(user, span_notice("Successfully renamed member [selected_member] to [edited_member_name]."))
 			return
-		system_member_names |= new_member_name
-		to_chat(user, span_notice("Successfully added new member [new_member_name] to the chip's associated system."))
-		return
-	if(popup_input == "Remove Member")
-		if(!system_member_names.len)
-			to_chat(user, span_warning("ERROR: There are no members registered with [system_name]."))
+		if("Clear Members")
+			if(!system_member_names.len)
+				to_chat(user, span_warning("ERROR: There are no members registered with [system_name]."))
+				return
+			var/clear_confirmation = tgui_alert(user, "Do you really want to clear all members from the system?", "Clear Members", list("Yes", "No"))
+			if(clear_confirmation == "Yes")
+				system_member_names.Cut()
+				to_chat(user, span_notice("Successfully cleared all members from [system_name]."))
 			return
-		var/selected_member = tgui_input_list(user, "Select system member to remove:", "Remove Member", system_member_names)
-		if(!selected_member || !(selected_member in system_member_names))
+		if("Edit System Name")
+			if(system_name_locked)
+				to_chat(user, span_warning("ERROR: This chip cannot have its system name changed without being swiped first by an ID with Head of Personnel access."))
+				return
+			var/new_system_name = tgui_input_text(user, "Input the new system name:", "Edit System Name", max_length = 20)
+			if(!new_system_name)
+				return
+			to_chat(user, span_notice("Successfully changed the chip's associated system name from [system_name] to [new_system_name]."))
+			update_system_name(new_system_name)
 			return
-		system_member_names -= selected_member
-		to_chat(user, span_notice("Successfully removed member [selected_member] from the chip's associated system."))
-		return
-	if(popup_input == "Edit Member")
-		if(!system_member_names.len)
-			to_chat(user, span_warning("ERROR: There are no members registered with [system_name]."))
-			return
-		var/selected_member = tgui_input_list(user, "Select system member to edit:", "Select Member", system_member_names)
-		if(!selected_member)
-			return
-		var/edited_member_name = tgui_input_text(user, "Input the new name of [selected_member]:", "Edit Member", max_length = 30)
-		if(!edited_member_name)
-			return
-		if(!(selected_member in system_member_names))
-			to_chat(user, span_warning("ERROR: Could not find member [selected_member] in [system_name]."))
-			return
-		system_member_names -= selected_member
-		system_member_names |= edited_member_name
-		to_chat(user, span_notice("Successfully renamed member [selected_member] to [edited_member_name]."))
-		return
-	if(popup_input == "Clear Members")
-		if(!system_member_names.len)
-			to_chat(user, span_warning("ERROR: There are no members registered with [system_name]."))
-			return
-		var/clear_confirmation = tgui_alert(user, "Do you really want to clear all members from the system?", "Clear Members", list("Yes", "No"))
-		if(clear_confirmation == "Yes")
-			system_member_names.Cut()
-			to_chat(user, span_notice("Successfully cleared all members from [system_name]."))
-		return
-	if(popup_input == "Edit System Name")
-		if(system_name_locked)
-			to_chat(user, span_warning("ERROR: This chip cannot have its system name changed without being swiped first by an ID with Head of Personnel access."))
-			return
-		var/new_system_name = tgui_input_text(user, "Input the new system name:", "Edit System Name", max_length = 20)
-		if(!new_system_name)
-			return
-		to_chat(user, span_notice("Successfully changed the chip's associated system name from [system_name] to [new_system_name]."))
-		update_system_name(new_system_name)
-		return
 
 /// Changes the system_name variable and automatically updates the name of the chip to include it.
 /obj/item/plural_system_chip/proc/update_system_name(new_system_name)
 	system_name = new_system_name
 	name = "[initial(name)] {[system_name]}"
 
-/obj/item/plural_system_chip/attackby(obj/item/W, mob/user, params)
-	if(W.GetID())
-		if(allowed(user))
-			locked = !locked
-			system_name_locked = FALSE
-			balloon_alert(user, locked ? "locked" : "unlocked")
-			update_appearance()
-			return
-		else
-			balloon_alert(user, "access denied!")
-			return
+/obj/item/plural_system_chip/attackby(obj/item/item, mob/user, params)
+	if(!item.GetID())
+		return
+
+	if(!allowed(user))
+		balloon_alert(user, "access denied!")
+		return
+
+	locked = !locked
+	system_name_locked = FALSE
+	balloon_alert(user, locked ? "locked" : "unlocked")
+	update_appearance()
+	return
 
 // Code that allows ID cards to have plural system chips attached to them and interface with them to change the label of the ID.
 
@@ -182,32 +185,34 @@
 	..() // if there is no plural system chip or the "Show ID" option was chosen, just show the ID like normal
 
 /obj/item/card/id/attackby(obj/item/item, mob/user, params)
-	if(istype(item, /obj/item/plural_system_chip))
-		if(!plural_system_compatible)
-			to_chat(user, span_warning("This ID card is incompatible with plural system chips."))
-			return
+	if(!istype(item, /obj/item/plural_system_chip))
+		return ..()
 
-		var/obj/item/plural_system_chip/new_chip = item
+	if(!plural_system_compatible)
+		to_chat(user, span_warning("This ID card is incompatible with plural system chips."))
+		return
 
-		if(plural_system)
-			to_chat(user, span_warning("There's already a plural system chip installed. Use a screwdriver to remove it."))
-			return
-		if(!registered_name)
-			to_chat(user, span_warning("ERROR: [src] has no registered name. Take it to an identification console."))
-			return
-		if(!new_chip.system_member_names.len)
-			to_chat(user, span_warning("[new_chip] has no system members registered with it."))
-			return
-		if(!user.transferItemToLoc(new_chip, src))
-			return
+	var/obj/item/plural_system_chip/new_chip = item
 
-		plural_system = new_chip
-		to_chat(user, span_notice("You insert [plural_system] into [src]."))
-		plural_system.fronter_name = plural_system.system_member_names[1]
-		plural_system.locked = TRUE
-		plural_system.update_appearance()
-		update_label()
-		playsound(src, 'sound/machines/pda_button1.ogg', 50, TRUE)
+	if(plural_system)
+		to_chat(user, span_warning("There's already a plural system chip installed. Use a screwdriver to remove it."))
+		return
+	if(!registered_name)
+		to_chat(user, span_warning("ERROR: [src] has no registered name. Take it to an identification console."))
+		return
+	if(!new_chip.system_member_names.len)
+		to_chat(user, span_warning("[new_chip] has no system members registered with it."))
+		return
+	if(!user.transferItemToLoc(new_chip, src))
+		return
+
+	plural_system = new_chip
+	to_chat(user, span_notice("You insert [plural_system] into [src]."))
+	plural_system.fronter_name = plural_system.system_member_names[1]
+	plural_system.locked = TRUE
+	plural_system.update_appearance()
+	update_label()
+	playsound(src, 'sound/machines/pda_button1.ogg', 50, TRUE)
 
 /obj/item/card/id/screwdriver_act(mob/living/user, obj/item/screwtool)
 	if(!plural_system)
