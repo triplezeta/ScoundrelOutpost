@@ -6,3 +6,4 @@
 	name = "Greater Abyssal Gaze"
 	cooldown_time = 15 SECONDS
 	blind_duration = 10 SECONDS
+	cooldown_reduction_per_rank = 1 SECONDS

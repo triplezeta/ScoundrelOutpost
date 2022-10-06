@@ -9,7 +9,7 @@
 
 	sound = 'sound/magic/demon_consume.ogg'
 	cooldown_time = 30 SECONDS
-	cooldown_reduction_per_rank = 3.75 SECONDS
+	cooldown_reduction_per_rank = 3 SECONDS
 
 	invocation = "Someone does a weird gesture." // Overriden in before cast
 	invocation_self_message = span_notice("Your flesh unravels and reknits itself!")

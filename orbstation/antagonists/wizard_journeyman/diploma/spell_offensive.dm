@@ -1,3 +1,7 @@
+/**
+ * Spells which hurt, disable, or greatly annoy people.
+ */
+
 /datum/diploma_spell/magicm
 	name = "Magic Missile"
 	desc = "Fires several slow moving, magic projectiles at nearby targets which impede their movement."
@@ -67,6 +71,13 @@
 	spell_type = /datum/action/cooldown/spell/apply_mutations/mutate
 	category = DIPLOMA_SPELL_OFFENSIVE
 	weight = DIPLOMA_SPELL_RARE
+
+/datum/diploma_spell/duffelbag
+	name = "Bestow Cursed Duffel Bag"
+	desc = "Places a dire curse upon your target, burdening them with a demonic bag. \
+		This backpack slows them down and must be fed periodically, lest it become hungry enough to bite its owner."
+	spell_type = /datum/action/cooldown/spell/touch/duffelbag
+	category = DIPLOMA_SPELL_OFFENSIVE
 
 /datum/diploma_spell/teslablast
 	name = "Tesla Blast"

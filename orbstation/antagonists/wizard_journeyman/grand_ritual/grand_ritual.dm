@@ -58,6 +58,7 @@
 		/area/station/medical/patients_rooms, \
 		/area/station/medical/surgery, \
 		/area/station/medical/cryo, \
+		/area/station/security/prison/safe, \
 		/area/station/science/ordnance/burnchamber, \
 		/area/station/science/ordnance/freezerchamber, \
 		/area/station/science/ordnance/bomb, \
@@ -67,6 +68,19 @@
 /datum/action/grand_ritual/New(Target)
 	. = ..()
 	set_new_area()
+
+/datum/action/grand_ritual/IsAvailable()
+	. = ..()
+	if (!.)
+		return
+
+	// Cannot use while inside a vent.
+	if ((owner.movement_type & VENTCRAWLING))
+		return FALSE
+	// Cannot use while phased
+	if (HAS_TRAIT(owner, TRAIT_MAGICALLY_PHASED))
+		return FALSE
+	return TRUE
 
 /datum/action/grand_ritual/Trigger(trigger_flags)
 	. = ..()
@@ -78,6 +92,20 @@
 		start_drawing_rune()
 	else
 		pinpoint_area()
+
+
+/datum/action/grand_ritual/Grant(mob/grant_to)
+	. = ..()
+	RegisterSignal(owner, list(
+			COMSIG_MOB_ENTER_JAUNT,
+			COMSIG_MOB_AFTER_EXIT_JAUNT,
+		), .proc/update_icon_on_signal)
+
+/datum/action/grand_ritual/Remove(mob/remove_from)
+	. = ..()
+	UnregisterSignal(remove_from, list(
+		COMSIG_MOB_AFTER_EXIT_JAUNT,
+		COMSIG_MOB_ENTER_JAUNT,))
 
 /// If the target area doesn't exist or has been invalidated somehow, pick another one
 /datum/action/grand_ritual/proc/validate_area()

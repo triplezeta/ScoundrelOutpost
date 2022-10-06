@@ -1,3 +1,6 @@
+/**
+ * Spells which have niche or difficult to categorise effects.
+ */
 
 /datum/diploma_spell/item/wands
 	name = "Wand Assortment"
@@ -86,3 +89,17 @@
 	spell_type = /datum/action/cooldown/spell/voice_of_god
 	category = DIPLOMA_SPELL_OTHER
 	weight = DIPLOMA_SPELL_RARE
+
+/datum/diploma_spell/summon_item
+	name = "Instant Summons"
+	desc = "Bind an item to yourself, then cast again to retrieve it from wherever it currently happens to be. \
+		Not very useful if you don't have an important item you want to make sure to keep hold of."
+	spell_type = /datum/action/cooldown/spell/summonitem
+	category = DIPLOMA_SPELL_OTHER
+
+/datum/diploma_spell/haunt_objects
+	name = "Haunt Objects"
+	desc = "Summons depraved spirits to possess nearby objects, causing them to attack the living. \
+		As you are the living, make sure that you have an exit strategy."
+	spell_type = /datum/action/cooldown/spell/aoe/haunt_object
+	category = DIPLOMA_SPELL_OTHER

@@ -12,7 +12,7 @@
 		/obj/item/wizard_diploma = 1, )
 	ears = /obj/item/radio/headset
 	shoes = /obj/item/clothing/shoes/sandal/magic
-	r_pocket = /obj/item/teleportation_scroll
+	r_pocket = /obj/item/teleportation_scroll/apprentice // You just get to the station, then you're on your own
 	r_hand = /obj/item/reagent_containers/cup/glass/bottle/beer/almost_empty
 
 /// Randomise outfit

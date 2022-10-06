@@ -1,3 +1,7 @@
+/**
+ * Spells which help you survive or run away.
+ * Includes almost all transit spells, which you really REALLY want at least one of.
+ */
 
 /datum/diploma_spell/disabletech
 	name = "Disable Tech"
@@ -10,6 +14,15 @@
 	desc = "Throws everything around the user away."
 	spell_type = /datum/action/cooldown/spell/aoe/repulse/wizard
 	category = DIPLOMA_SPELL_DEFENSIVE
+
+/datum/diploma_spell/lichdom
+	name = "Lichdom"
+	desc = "Bind your soul to an item on the space station to become an immortal skeleton. \
+		So long as that item remains intact, you cannot be permanently killed. \
+		Be warned that the crew may be able to track your spirit back to where you stashed your soulstone."
+	spell_type = /datum/action/cooldown/spell/lichdom
+	category = DIPLOMA_SPELL_DEFENSIVE
+	weight = DIPLOMA_SPELL_RARE
 
 /datum/diploma_spell/timestop
 	name = "Time Stop"
@@ -123,4 +136,10 @@
 	name = "Abyssal Gaze"
 	desc = "A simple curse which blinds and chills its victim for a short duration."
 	spell_type = /datum/action/cooldown/spell/pointed/abyssal_gaze/greater
+	category = DIPLOMA_SPELL_DEFENSIVE
+
+/datum/diploma_spell/overload_lights
+	name = "Overload Lights"
+	desc = "Overload nearby lightbulbs with power, causing them to zap people nearby."
+	spell_type = /datum/action/cooldown/spell/aoe/overload_lights
 	category = DIPLOMA_SPELL_DEFENSIVE

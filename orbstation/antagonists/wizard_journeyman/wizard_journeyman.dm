@@ -47,7 +47,7 @@ GLOBAL_LIST_EMPTY(journeymanstart)
 	SIGNAL_HANDLER
 	var/datum/objective/custom/successful_ritual = new()
 	successful_ritual.owner = owner
-	successful_ritual.explanation_text = "Complete the Grand Ritual and rewrite reality to your own whim."
+	successful_ritual.explanation_text = "Complete the Grand Ritual at least seven times."
 	successful_ritual.completed = TRUE
 	objectives = list(successful_ritual)
 	UnregisterSignal(ritual, COMSIG_GRAND_RITUAL_FINAL_COMPLETE)
