@@ -140,10 +140,22 @@
 	event_control_path = /datum/round_event_control/mass_hallucination
 	wizard_message = "You create a powerful illusion!"
 
-/datum/grand_event/event/ult_storm
+/datum/grand_event/event/cult_storm
 	min_escalation = 6
 	max_escalation = 7
 	event_control_path = /datum/round_event_control/portal_storm_narsie
+	wizard_message = "You tap into a rift between worlds!"
+
+/datum/grand_event/event/carp_storm
+	min_escalation = 2
+	max_escalation = 6
+	event_control_path = /datum/round_event_control/portal_storm_carp
+	wizard_message = "You create a gateway to the carp migration stream!"
+
+/datum/grand_event/event/clown_storm
+	min_escalation = 2
+	max_escalation = 6
+	event_control_path = /datum/round_event_control/portal_storm_clown
 	wizard_message = "You tap into a rift between worlds!"
 
 /datum/grand_event/event/grey_tide
@@ -168,6 +180,12 @@
 	min_escalation = 3
 	max_escalation = 6
 	event_control_path = /datum/round_event_control/scrubber_clog/critical
+	wizard_message = "You complete a minor summoning!"
+
+/datum/grand_event/event/clog_fantastical
+	min_escalation = 4
+	max_escalation = 7
+	event_control_path = /datum/round_event_control/scrubber_clog/fantastical
 	wizard_message = "You complete a minor summoning!"
 
 /datum/grand_event/event/clog_strange
@@ -333,3 +351,21 @@
 	max_escalation = 7
 	event_control_path = /datum/round_event_control/wizard/shuffleloc
 	wizard_message = "You tear open a hole in reality!"
+
+/datum/grand_event/event/rain_pets
+	min_escalation = 0
+	max_escalation = 4
+	event_control_path = /datum/round_event_control/wizard/indoor_weather_animal
+	wizard_message = "Your power creates localised weather!"
+
+/datum/grand_event/event/rain_food
+	min_escalation = 0
+	max_escalation = 4
+	event_control_path = /datum/round_event_control/wizard/indoor_weather_food
+	wizard_message = "Your power creates localised weather!"
+
+/datum/grand_event/event/rain_money
+	min_escalation = 0
+	max_escalation = 4
+	event_control_path = /datum/round_event_control/wizard/indoor_weather_cash
+	wizard_message = "Your power creates localised weather!"

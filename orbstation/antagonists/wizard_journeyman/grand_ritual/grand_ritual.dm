@@ -25,6 +25,8 @@
 	var/area/target_area
 	/// Number of times the grand ritual has been completed somewhere by this user
 	var/times_completed = 0
+	/// If you have drawn your finale rune
+	var/drew_finale = FALSE
 	/// True while you are drawing a rune, prevents action spamming
 	var/drawing_rune = FALSE
 	/// Weakref to a rune drawn in the current area, if there is one
@@ -58,6 +60,7 @@
 		/area/station/medical/patients_rooms, \
 		/area/station/medical/surgery, \
 		/area/station/medical/cryo, \
+		/area/station/medical/break_room, \
 		/area/station/security/prison/safe, \
 		/area/station/science/ordnance/burnchamber, \
 		/area/station/science/ordnance/freezerchamber, \
@@ -163,10 +166,19 @@
 		return
 
 	target_turf.balloon_alert(owner, "rune created")
-	var/obj/effect/grand_rune/new_rune = new /obj/effect/grand_rune(target_turf, times_completed)
+	var/obj/effect/grand_rune/new_rune = create_appropriate_rune(target_turf)
 	rune = WEAKREF(new_rune)
 	RegisterSignal(new_rune, COMSIG_GRAND_RUNE_COMPLETE, .proc/on_rune_complete)
 	drawing_rune = FALSE
+
+/// The seventh rune we spawn is special
+/datum/action/grand_ritual/proc/create_appropriate_rune(turf/target_turf)
+	if (times_completed < GRAND_RITUAL_FINALE_COUNT - 1)
+		return new /obj/effect/grand_rune(target_turf, times_completed)
+	if (drew_finale)
+		return new /obj/effect/grand_rune(target_turf, times_completed)
+	drew_finale = TRUE
+	return new /obj/effect/grand_rune/finale(target_turf, times_completed)
 
 /// Called when you finish invoking a rune you drew, get ready for another one.
 /datum/action/grand_ritual/proc/on_rune_complete(atom/source)
@@ -175,9 +187,16 @@
 	rune = null
 	if (times_completed < GRAND_RITUAL_FINALE_COUNT)
 		times_completed++
-	if (times_completed == GRAND_RITUAL_FINALE_COUNT)
-		SEND_SIGNAL(src, COMSIG_GRAND_RITUAL_FINAL_COMPLETE)
 	set_new_area()
+	switch (times_completed)
+		if (GRAND_RITUAL_RUNES_WARNING_POTENCY)
+			to_chat(owner, span_warning("Your collected power is growing, \
+				but further rituals will alert your enemies to your position."))
+		if (GRAND_RITUAL_IMMINENT_FINALE_POTENCY)
+			to_chat(owner, span_warning("You are overflowing with power! \
+				Your next Grand Ritual will allow you to choose its powerful effect, and grant you victory."))
+		if (GRAND_RITUAL_FINALE_COUNT)
+			SEND_SIGNAL(src, COMSIG_GRAND_RITUAL_FINAL_COMPLETE)
 
 /// Pinpoints the ritual area
 /datum/action/grand_ritual/proc/pinpoint_area()

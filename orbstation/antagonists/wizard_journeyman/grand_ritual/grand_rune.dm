@@ -7,10 +7,6 @@
 #define BASE_INVOKE_TIME 7 SECONDS
 /// Time to add on to each step every time a previous rune is completed.
 #define ADD_INVOKE_TIME 2 SECONDS
-/// The crew will start being warned every time a rune is created after this many invocations.
-#define CREW_WARNING_POTENCY 3
-/// The crew will get a louder warning when this level of rune is created
-#define CREW_URGENT_WARNING_POTENCY 6
 
 /**
  * Magic rune used in the grand ritual.
@@ -36,6 +32,8 @@
 	var/is_in_use = FALSE
 	/// Number of times this rune has been cast
 	var/times_invoked = 0
+	/// What colour you glow while channeling
+	var/spell_colour = "#de3aff48"
 	/// Magic words you say to invoke the ritual
 	var/list/magic_words = list()
 	/**
@@ -74,7 +72,7 @@
 /obj/effect/grand_rune/Initialize(mapload, potency = 0)
 	. = ..()
 	src.potency = potency
-	invoke_time = (BASE_INVOKE_TIME) + (potency * (ADD_INVOKE_TIME))
+	invoke_time = get_invoke_time()
 	magic_words = pick(possible_magic_words)
 	var/image/silicon_image = image(icon = 'icons/effects/eldritch.dmi', icon_state = null, loc = src)
 	silicon_image.override = TRUE
@@ -84,15 +82,12 @@
 /// I cast Summon Security
 /obj/effect/grand_rune/proc/announce_rune()
 	var/area/created_area = get_area(src)
-	if (potency >= CREW_URGENT_WARNING_POTENCY)
+	if (potency >= GRAND_RITUAL_IMMINENT_FINALE_POTENCY)
 		priority_announce("Major anomalous fluctuations to local spacetime detected in: [created_area.name].", "Anomaly Alert")
 		return
-	if (potency >= CREW_WARNING_POTENCY)
+	if (potency >= GRAND_RITUAL_RUNES_WARNING_POTENCY)
 		priority_announce("Unusual anomalous energy fluctuations detected in: [created_area.name].", "Anomaly Alert")
 		return
-
-#undef CREW_WARNING_POTENCY
-#undef CREW_URGENT_WARNING_POTENCY
 
 /obj/effect/grand_rune/examine(mob/user)
 	. = ..()
@@ -148,12 +143,12 @@
 /// Add special effects for casting a spell, basically you glow and hover in the air.
 /obj/effect/grand_rune/proc/add_channel_effect(mob/living/user)
 	user.AddElement(/datum/element/forced_gravity, 0)
-	user.add_filter("teleport_glow", 2, list("type" = "outline", "color" = "#de3aff48", "size" = 2))
+	user.add_filter("channeling_glow", 2, list("type" = "outline", "color" = spell_colour, "size" = 2))
 
 /// Remove special effects for casting a spell
 /obj/effect/grand_rune/proc/remove_channel_effect(mob/living/user)
 	user.RemoveElement(/datum/element/forced_gravity, 0)
-	user.remove_filter("teleport_glow")
+	user.remove_filter("channeling_glow")
 
 /obj/effect/grand_rune/proc/get_invoke_time()
 	return  (BASE_INVOKE_TIME) + (potency * (ADD_INVOKE_TIME))
@@ -197,7 +192,6 @@
 		possible_effects += effect
 
 	var/datum/grand_side_effect/final_effect = pick(possible_effects)
-	to_chat(world, "triggering [final_effect]")
 	final_effect.trigger(potency, loc, user)
 
 /**
@@ -243,7 +237,91 @@
 #undef BASE_INVOKE_TIME
 #undef ADD_INVOKE_TIME
 
-/// Spawned when we are done with the rune
+/**
+ * Variant rune used for the Final Ritual
+ */
+/obj/effect/grand_rune/finale
+	/// What does the player want to do?
+	var/datum/grand_finale/finale_effect
+	/// Has the player chosen an outcome?
+	var/chosen_effect = FALSE
+	/// If we need to warn the crew, have we done so?
+	var/dire_warnings_given = 0
+
+/obj/effect/grand_rune/finale/invoke_rune(mob/living/user)
+	if(!finale_effect)
+		return ..()
+	if (!finale_effect.dire_warning)
+		return ..()
+	if (dire_warnings_given != times_invoked)
+		return ..()
+	var/area/created_area = get_area(src)
+	var/announce = null
+	switch (dire_warnings_given)
+		if (0)
+			announce = "Large anomalous energy spike detected in: [created_area.name]."
+		if (1)
+			announce = "Automatic causality stabilisation failed, recommend urgent intervention in: [created_area.name]."
+		if (2)
+			announce = "Imminent local reality failure in: [created_area.name]. All crew please prepare to evacuate."
+	if (announce)
+		priority_announce(announce, "Anomaly Alert")
+	dire_warnings_given++
+	return ..()
+
+/obj/effect/grand_rune/finale/interact(mob/living/user)
+	if (chosen_effect)
+		return ..()
+	select_finale(user)
+
+#define PICK_NOTHING "Continuation"
+
+/// Make a selection from a radial menu.
+/obj/effect/grand_rune/finale/proc/select_finale(mob/living/user)
+	var/list/options = list()
+	var/list/picks_to_instances = list()
+	for (var/typepath as anything in subtypesof(/datum/grand_finale))
+		var/datum/grand_finale/finale_type = new typepath()
+		if (finale_type.minimum_time >= world.time - SSticker.round_start_time)
+			continue
+		var/datum/radial_menu_choice/choice = new()
+		choice.name = finale_type.name
+		choice.image = image(icon = finale_type.icon, icon_state = finale_type.icon_state)
+		choice.info = finale_type.desc
+		options += list("[choice.name]" = choice)
+		picks_to_instances[choice.name] = finale_type
+
+	var/datum/radial_menu_choice/choice_none = new()
+	choice_none.name = PICK_NOTHING
+	choice_none.image = image(icon = 'icons/mob/actions/actions_cult.dmi', icon_state = "draw")
+	choice_none.info = "The ultimate prank! They will never expect you to continue to do \
+		exactly the same kind of thing you've been doing this whole time!"
+	options += list("[choice_none.name]" = choice_none)
+
+	var/pick = show_radial_menu(user, user, options, require_near = TRUE, tooltips = TRUE)
+	if (!pick)
+		return
+	chosen_effect = TRUE
+	if (pick == PICK_NOTHING)
+		return
+	finale_effect = picks_to_instances[pick]
+	invoke_time = get_invoke_time()
+	if (finale_effect.glow_colour)
+		spell_colour = finale_effect.glow_colour
+
+/obj/effect/grand_rune/finale/summon_round_event(mob/living/user)
+	if (!finale_effect)
+		return ..()
+	finale_effect.trigger(user)
+
+/obj/effect/grand_rune/finale/get_invoke_time()
+	if (!finale_effect)
+		return ..()
+	return finale_effect.ritual_invoke_time
+
+/**
+ * Spawned when we are done with the rune
+ */
 /obj/effect/decal/cleanable/grand_remains
 	name = "circle of ash"
 	desc = "Looks like someone's been drawing shapes with ash on the ground."
@@ -256,24 +334,3 @@
 	resistance_flags = FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	clean_type = CLEAN_TYPE_HARD_DECAL
 	layer = SIGIL_LAYER
-
-
-/obj/effect/debug_rune
-	name = "grand rune"
-	desc = "A flowing circle of shapes and runes is etched into the floor, the lines twist and move before your eyes."
-	icon = 'orbstation/icons/effects/rune.dmi'
-	icon_state = "rune"
-	pixel_x = -28
-	pixel_y = -33
-	anchored = TRUE
-	interaction_flags_atom = INTERACT_ATOM_ATTACK_HAND
-	resistance_flags = FIRE_PROOF | UNACIDABLE | ACID_PROOF
-	layer = SIGIL_LAYER
-
-/obj/effect/debug_rune/interact(mob/living/user)
-	. = ..()
-
-	var/datum/grand_finale/midas/usuper = new()
-	usuper.trigger(user)
-
-	return TRUE

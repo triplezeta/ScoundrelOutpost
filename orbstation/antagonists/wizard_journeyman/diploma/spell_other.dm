@@ -103,3 +103,10 @@
 		As you are the living, make sure that you have an exit strategy."
 	spell_type = /datum/action/cooldown/spell/aoe/haunt_object
 	category = DIPLOMA_SPELL_OTHER
+
+/datum/diploma_spell/clown_gear
+	name = "Endless Clown Tools"
+	desc = "Reach your hand into the clown dimension and pull out some kind of prank-related item. \
+		Great for parties, dubiously useful in a life or death situation."
+	spell_type = /datum/action/cooldown/spell/clown_pockets
+	category = DIPLOMA_SPELL_OTHER
