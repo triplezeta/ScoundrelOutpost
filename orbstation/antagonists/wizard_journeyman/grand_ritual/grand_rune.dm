@@ -256,3 +256,24 @@
 	resistance_flags = FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	clean_type = CLEAN_TYPE_HARD_DECAL
 	layer = SIGIL_LAYER
+
+
+/obj/effect/debug_rune
+	name = "grand rune"
+	desc = "A flowing circle of shapes and runes is etched into the floor, the lines twist and move before your eyes."
+	icon = 'orbstation/icons/effects/rune.dmi'
+	icon_state = "rune"
+	pixel_x = -28
+	pixel_y = -33
+	anchored = TRUE
+	interaction_flags_atom = INTERACT_ATOM_ATTACK_HAND
+	resistance_flags = FIRE_PROOF | UNACIDABLE | ACID_PROOF
+	layer = SIGIL_LAYER
+
+/obj/effect/debug_rune/interact(mob/living/user)
+	. = ..()
+
+	var/datum/grand_finale/midas/usuper = new()
+	usuper.trigger(user)
+
+	return TRUE

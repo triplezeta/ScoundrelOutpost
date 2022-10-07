@@ -1,4 +1,3 @@
-
 /**
  * Describes something which can happen in a local area when the grand ritual is completed.
  */
@@ -73,7 +72,6 @@
 	var/datum/dimension_theme/theme = new()
 	theme = theme.get_random_theme()
 	var/range = round(LERP(2, 4, potency/GRAND_RITUAL_FINALE_COUNT))
-	to_chat(world, "transform range [range]")
 
 	var/list/turfs_to_transform = list()
 

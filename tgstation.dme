@@ -4776,6 +4776,7 @@
 #include "orbstation\antagonists\wizard_journeyman\grand_ritual\grand_event_entries_events.dm"
 #include "orbstation\antagonists\wizard_journeyman\grand_ritual\grand_event_entries_midround.dm"
 #include "orbstation\antagonists\wizard_journeyman\grand_ritual\grand_ritual.dm"
+#include "orbstation\antagonists\wizard_journeyman\grand_ritual\grand_ritual_finale.dm"
 #include "orbstation\antagonists\wizard_journeyman\grand_ritual\grand_rune.dm"
 #include "orbstation\antagonists\wizard_journeyman\grand_ritual\grand_side_effect.dm"
 #include "orbstation\chaplain\ratlain.dm"

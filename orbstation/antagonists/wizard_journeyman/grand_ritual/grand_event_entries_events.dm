@@ -237,6 +237,7 @@
 	max_escalation = 7
 	event_control_path = /datum/round_event_control/wizard/robelesscasting
 	wizard_message = "You tap directly into a ley line, you can feel the power flowing through you!"
+	once_only = TRUE
 
 /datum/grand_event/event/fast_cast
 	min_escalation = 0
