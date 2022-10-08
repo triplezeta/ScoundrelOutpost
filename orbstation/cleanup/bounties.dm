@@ -1,4 +1,6 @@
-
+/**
+ * Previously references containing tizirans, we're funnier than that.
+ */
 /datum/bounty/item/assistant/donkpocket
 	description = "Consumer safety recall: Warning. Donk-Pockets manufactured in the past year contain hazardous %SOMETHING% biomatter. Return units to CentCom immediately."
 
