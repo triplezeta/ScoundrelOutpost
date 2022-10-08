@@ -347,11 +347,14 @@ export const FeatureValueInput = (
 
 // ORBSTATION FEATURES
 
+const shortFlavorTextLength: number = 200;
+const longFlavorTextLength: number = 750;
+
 export const FeatureTextInput = (props: FeatureValueProps<string>) => {
   return (
     <TextArea
       height="100px"
-      maxLength={750}
+      maxLength={longFlavorTextLength}
       value={props.value}
       onChange={(_, value) => props.handleSetValue(value)}
     />
@@ -362,7 +365,7 @@ export const FeatureShortTextInput = (props: FeatureValueProps<string>) => {
   return (
     <Input
       width="100%"
-      maxLength={200}
+      maxLength={shortFlavorTextLength}
       value={props.value}
       onChange={(_, value) => props.handleSetValue(value)}
     />
