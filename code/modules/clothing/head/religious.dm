@@ -12,7 +12,7 @@
 	desc = "Signals that you follow the Jewish Halakha. Keeps the head covered and the soul extra-Orthodox."
 	icon_state = "kippah"
 
-/obj/item/clothing/head/taqiyahwhite
+/obj/item/clothing/head/taqiyah/white
 	name = "white taqiyah"
 	desc = "An extra-mustahabb way of showing your devotion to Allah."
 	icon_state = "taqiyahwhite"
