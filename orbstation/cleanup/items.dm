@@ -12,8 +12,6 @@
 	name = "holy book"
 	icon_state = "holybook"
 	inhand_icon_state = "holybook"
-	worn_icon_state = "holybook"
-
 /obj/item/food/raw_meatball
 	desc = "A great meal all round. Kinda raw"
 
