@@ -692,7 +692,7 @@
 	pixel_x = 2
 	},
 /obj/item/card/id/advanced/black/syndicate_command/captain_id/syndie_spare,
-/obj/item/clothing/head/hos/syndicate,
+/obj/item/clothing/head/hats/hos/syndicate,
 /obj/item/clothing/head/hos/beret/syndicate,
 /obj/item/clothing/under/syndicate/skirt,
 /obj/item/clothing/under/syndicate,
@@ -876,11 +876,11 @@
 /turf/open/floor/plating,
 /area/shuttle/sbc_starfury)
 "mO" = (
-/obj/structure/shuttle/engine/huge,
+/obj/machinery/power/shuttle_engine/huge,
 /turf/open/floor/plating,
 /area/shuttle/sbc_starfury)
 "mP" = (
-/obj/structure/shuttle/engine/large,
+/obj/machinery/power/shuttle_engine/large,
 /turf/open/floor/plating,
 /area/shuttle/sbc_starfury)
 "ng" = (
