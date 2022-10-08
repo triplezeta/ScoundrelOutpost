@@ -30,4 +30,3 @@
 		"Please, make it stop...",
 		"HELP ME SOMEONE, WHY AM I READING THIS...",
 	)
-
