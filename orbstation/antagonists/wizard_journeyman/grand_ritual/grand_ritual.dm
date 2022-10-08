@@ -67,11 +67,6 @@
 		/area/station/science/ordnance/bomb, \
 		/area/station/science/server, ))
 
-
-/datum/action/grand_ritual/New(Target)
-	. = ..()
-	set_new_area()
-
 /datum/action/grand_ritual/IsAvailable()
 	. = ..()
 	if (!.)
@@ -99,6 +94,7 @@
 
 /datum/action/grand_ritual/Grant(mob/grant_to)
 	. = ..()
+	set_new_area()
 	RegisterSignal(owner, list(
 			COMSIG_MOB_ENTER_JAUNT,
 			COMSIG_MOB_AFTER_EXIT_JAUNT,

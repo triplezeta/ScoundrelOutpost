@@ -59,7 +59,7 @@
 	name = "Wizard Journeyman"
 	midround_ruleset_style = MIDROUND_RULESET_STYLE_HEAVY
 	antag_datum = /datum/antagonist/wizard_journeyman
-	antag_flag = ROLE_WIZARD_MIDROUND
+	antag_flag = ROLE_WIZARD_JOURNEYMAN
 	antag_flag_override = ROLE_WIZARD
 	enemy_roles = list(
 		JOB_CAPTAIN,

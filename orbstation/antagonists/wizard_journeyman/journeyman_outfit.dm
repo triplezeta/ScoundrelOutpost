@@ -18,7 +18,7 @@
 /// Randomise outfit
 /datum/outfit/journeyman_wizard/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
-	var/random_outfit = rand(1, 3)
+	var/random_outfit = (visualsOnly) ? 1 : rand(1, 3) // Don't randomise on prefs screen
 	switch(random_outfit)
 		if (1)
 			suit = /obj/item/clothing/suit/wizrobe
