@@ -98,7 +98,7 @@
 	category = DIPLOMA_SPELL_OTHER
 
 /datum/diploma_spell/haunt_objects
-	name = "Haunt Objects"
+	name = "Call Poltergeists"
 	desc = "Summons depraved spirits to possess nearby objects, causing them to attack the living. \
 		As you are the living, make sure that you have an exit strategy."
 	spell_type = /datum/action/cooldown/spell/aoe/haunt_object

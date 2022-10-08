@@ -3,7 +3,7 @@
  * But I want to so here's a copy/pasted version which doesn't include the revenant parts.
  */
 /datum/action/cooldown/spell/aoe/haunt_object
-	name = "Haunt Objects"
+	name = "Call Poltergeists"
 	desc = "Summons depraved spirits to possess nearby objects, causing them to attack the living. \
 		Items closer to you are more likely to be haunted."
 	icon_icon = 'icons/mob/actions/actions_revenant.dmi'

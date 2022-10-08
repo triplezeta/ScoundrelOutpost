@@ -386,26 +386,35 @@
 	var/mob_type = pick(permitted_mobs)
 	while(count > 0 && length(valid_turfs) > 0)
 		count--
-		new /obj/effect/temp_visual/delayed_mob_portal(pick_n_take(valid_turfs), mob_type, rand(10 SECONDS, 15 SECONDS))
+		var/turf/spawn_loc = pick_n_take(valid_turfs)
+		addtimer(CALLBACK(src, .proc/create_portal, mob_type, spawn_loc), rand(0, 1 SECONDS))
+
+/datum/grand_side_effect/spawn_delayed_mobs/proc/create_portal(mob_type, turf/spawn_loc)
+	var/spawn_delay = rand(10 SECONDS, 15 SECONDS)
+	new /obj/effect/temp_visual/delayed_mob_portal(spawn_loc, spawn_delay)
+	addtimer(CALLBACK(src, .proc/create_mob, mob_type, spawn_loc), spawn_delay)
+
+/datum/grand_side_effect/spawn_delayed_mobs/proc/create_mob(mob_path, loc)
+	if (!loc)
+		return
+	if (!mob_path)
+		return
+	playsound(get_turf(src),'sound/magic/teleport_app.ogg', 60, TRUE)
+	do_sparks(5, FALSE, loc)
+	new mob_path(loc)
 
 /// Spawns a mob when it expires
 /obj/effect/temp_visual/delayed_mob_portal
 	icon_state = "rift"
-	/// Typepath of mob to create
-	var/mob_path
 
-/obj/effect/temp_visual/delayed_mob_portal/Initialize(mapload, mob_path, duration = 15 SECONDS)
-	src.mob_path = mob_path
+/obj/effect/temp_visual/delayed_mob_portal/Initialize(mapload, duration = 15 SECONDS)
 	src.duration = duration
+	animate(src, transform = matrix()*0, time = 0)
+	animate(transform = matrix(), time = 2)
 	add_filter("portal_ripple", 2, list("type" = "ripple", "flags" = WAVE_BOUNDED, "radius" = 0, "size" = 2))
 	var/filter = get_filter("portal_ripple")
 	animate(filter, radius = 0, time = 0.2 SECONDS, size = 2, easing = JUMP_EASING, loop = -1, flags = ANIMATION_PARALLEL)
 	animate(radius = 32, time = 1.5 SECONDS, size = 0)
-	return ..()
-
-/obj/effect/temp_visual/delayed_mob_portal/Destroy()
-	playsound(get_turf(src),'sound/magic/teleport_app.ogg', 60, TRUE)
-	new mob_path(loc)
 	return ..()
 
 /// Provides musical accompaniment

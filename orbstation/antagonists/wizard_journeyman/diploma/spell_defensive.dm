@@ -71,14 +71,14 @@
 	category = DIPLOMA_SPELL_DEFENSIVE
 
 /datum/diploma_spell/mirror_walk
-	name = "Mirror Walk"
+	name = "Enter Mirrors"
 	desc = "Travel freely through various reflective surfaces such as mirrors and windows."
 	spell_type = /datum/action/cooldown/spell/jaunt/mirror_walk/wizard
 	category = DIPLOMA_SPELL_DEFENSIVE
 	weight = DIPLOMA_SPELL_UNCOMMON
 
 /datum/diploma_spell/blood_walk
-	name = "Blood Walk"
+	name = "Autotransfusion"
 	desc = "Sink your body into any pool of blood and emerge from any other. \
 		Paint the halls red with gore for best effect, or risk being trapped by a simple janitor."
 	spell_type = /datum/action/cooldown/spell/jaunt/bloodcrawl/wizard
@@ -86,7 +86,7 @@
 	weight = DIPLOMA_SPELL_UNCOMMON
 
 /datum/diploma_spell/shadow_walk
-	name = "Shadow Walk"
+	name = "Shadowmeld"
 	desc = "Travel freely through darkened areas and heal while intangible. \
 		You will be forced into corporeality if you enter the light."
 	spell_type = /datum/action/cooldown/spell/jaunt/shadow_walk/wizard
@@ -101,7 +101,7 @@
 	weight = DIPLOMA_SPELL_UNCOMMON
 
 /datum/diploma_spell/passage
-	name = "Ashen Passage"
+	name = "Ash Form"
 	desc = "Turn your body to ash for just long enough to pass through nearby walls."
 	spell_type = /datum/action/cooldown/spell/jaunt/ethereal_jaunt/ash/wizard
 	category = DIPLOMA_SPELL_DEFENSIVE
@@ -139,7 +139,7 @@
 	category = DIPLOMA_SPELL_DEFENSIVE
 
 /datum/diploma_spell/overload_lights
-	name = "Overload Lights"
+	name = "Power Surge"
 	desc = "Overload nearby lightbulbs with power, causing them to zap people nearby."
 	spell_type = /datum/action/cooldown/spell/aoe/overload_lights
 	category = DIPLOMA_SPELL_DEFENSIVE

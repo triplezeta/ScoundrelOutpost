@@ -3,7 +3,7 @@
  * But I want to so here's a copy/pasted version which doesn't include the revenant parts.
  */
 /datum/action/cooldown/spell/aoe/overload_lights
-	name = "Overload Lights"
+	name = "Power Surge"
 	desc = "Directs a large amount of magical power into nearby electrical lights, causing lights to shock those nearby."
 	icon_icon = 'icons/mob/actions/actions_revenant.dmi'
 	button_icon_state = "overload_lights"
