@@ -26,6 +26,14 @@
 	earliest_start = 0 MINUTES
 	description = "Money will rain from the sky."
 
+/datum/round_event_control/wizard/indoor_weather_fish
+	name = "Indoor Weather: Fish"
+	weight = 2
+	typepath = /datum/round_event/wizard/indoor_weather/fish
+	max_occurrences = 2
+	earliest_start = 0 MINUTES
+	description = "Fish will rain from the sky."
+
 /datum/round_event/wizard/indoor_weather
 	end_when = 20
 	/// Where is it happening?
@@ -131,3 +139,10 @@
 	)
 	var/cash_path = pick_weight(possible_paths)
 	return new cash_path()
+
+/// Spawns fish
+/datum/round_event/wizard/indoor_weather/fish
+
+/datum/round_event/wizard/indoor_weather/fish/get_item()
+	var/fish_path = pick(subtypesof(/obj/item/fish))
+	return new fish_path()

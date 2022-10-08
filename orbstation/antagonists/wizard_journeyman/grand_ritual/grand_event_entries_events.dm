@@ -375,3 +375,9 @@
 	max_escalation = 4
 	event_control_path = /datum/round_event_control/wizard/indoor_weather_cash
 	wizard_message = "Your power creates localised weather!"
+
+/datum/grand_event/event/rain_fish
+	min_escalation = 0
+	max_escalation = 4
+	event_control_path = /datum/round_event_control/wizard/indoor_weather_fish
+	wizard_message = "Your power creates localised weather!"
