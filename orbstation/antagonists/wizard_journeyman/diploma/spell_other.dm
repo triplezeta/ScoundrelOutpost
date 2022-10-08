@@ -110,3 +110,11 @@
 		Great for parties, dubiously useful in a life or death situation."
 	spell_type = /datum/action/cooldown/spell/clown_pockets
 	category = DIPLOMA_SPELL_OTHER
+
+/datum/diploma_spell/item/eldritch_minion
+	name = "Demonology 101"
+	desc = "Everything you need in order to summon your own eldritch familiar, except for a \
+		3x3 area of floorspace and a spirit to twist to your will."
+	item_path = /obj/item/demonology_for_dummies
+	category = DIPLOMA_SPELL_OTHER
+	weight = DIPLOMA_SPELL_RARE

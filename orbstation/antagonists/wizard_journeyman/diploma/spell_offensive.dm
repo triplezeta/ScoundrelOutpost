@@ -146,3 +146,17 @@
 	desc = "Pulls everything around you closer with the power of void. Knocks down people at medium range and harms them at close range."
 	spell_type = /datum/action/cooldown/spell/aoe/void_pull/wizard
 	category = DIPLOMA_SPELL_OFFENSIVE
+
+/datum/diploma_spell/tentacles
+	name = "Tentacle Burst"
+	desc = "Summon waves of tentacles to ensnare everyone around you."
+	spell_type = /datum/action/cooldown/spell/aoe_staggered/tentacle_burst
+	category = DIPLOMA_SPELL_OFFENSIVE
+	weight = DIPLOMA_SPELL_RARE
+
+/datum/diploma_spell/animate_limb
+	name = "Animate Limb"
+	desc = "Disarm your enemies by detaching their arms and reanimating them as your minions."
+	spell_type = /datum/action/cooldown/spell/touch/animate_limb
+	category = DIPLOMA_SPELL_OFFENSIVE
+	weight = DIPLOMA_SPELL_RARE
