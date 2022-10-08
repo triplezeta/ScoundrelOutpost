@@ -21,3 +21,8 @@
 
 /datum/round_event/scrubber_clog/fantastical/announce()
 	priority_announce("Anomalous lifesigns detected in the [get_area_name(scrubber)] ventilation network.", "Security Alert")
+
+/// Notify ghosts about which vent has stuff coming out of if
+/datum/round_event/scrubber_clog/setup()
+	. = ..()
+	announce_to_ghosts(scrubber)

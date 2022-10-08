@@ -4789,6 +4789,7 @@
 #include "orbstation\datums\components\crafting\recipes.dm"
 #include "orbstation\datums\greyscale\config_types\greyscale_configs.dm"
 #include "orbstation\events\anomalies.dm"
+#include "orbstation\events\carp_rift.dm"
 #include "orbstation\events\indoor_weather.dm"
 #include "orbstation\events\portal_storm.dm"
 #include "orbstation\events\scrubber_clog.dm"

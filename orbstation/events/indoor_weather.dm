@@ -45,9 +45,9 @@
 		"Recreation and Relaxation Division" = /area/station/commons)
 
 /datum/round_event/wizard/indoor_weather/setup()
-	target_region = pick(possible_regions)
+	target_region = pick(possible_regions) // can't use get_safe_random_turfs because it disqualifies some of my areas
 	target_turfs = list()
-	for (var/turf/turf in get_area_turfs(possible_regions[target_region], subtypes = TRUE))
+	for (var/turf/turf as anything in get_area_turfs(possible_regions[target_region], subtypes = TRUE))
 		if (turf.is_blocked_turf(exclude_mobs = TRUE))
 			continue
 		target_turfs += turf
