@@ -3,7 +3,7 @@ import { BooleanLike, classes } from 'common/react';
 import { ComponentType, createComponentVNode, InfernoNode } from 'inferno';
 import { VNodeFlags } from 'inferno-vnode-flags';
 import { sendAct, useBackend, useLocalState } from '../../../../backend';
-import { Box, Button, Dropdown, NumberInput, Stack } from '../../../../components';
+import { Box, Button, Dropdown, NumberInput, Stack, TextArea, Input } from '../../../../components';
 import { createSetPreference, PreferencesMenuData } from '../../data';
 import { ServerPreferencesFetcher } from '../../ServerPreferencesFetcher';
 
@@ -341,6 +341,33 @@ export const FeatureValueInput = (
           }
         );
       }}
+    />
+  );
+};
+
+// ORBSTATION FEATURES
+
+const shortFlavorTextLength: number = 200;
+const longFlavorTextLength: number = 750;
+
+export const FeatureTextInput = (props: FeatureValueProps<string>) => {
+  return (
+    <TextArea
+      height="100px"
+      maxLength={longFlavorTextLength}
+      value={props.value}
+      onChange={(_, value) => props.handleSetValue(value)}
+    />
+  );
+};
+
+export const FeatureShortTextInput = (props: FeatureValueProps<string>) => {
+  return (
+    <Input
+      width="100%"
+      maxLength={shortFlavorTextLength}
+      value={props.value}
+      onChange={(_, value) => props.handleSetValue(value)}
     />
   );
 };

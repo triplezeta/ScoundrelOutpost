@@ -14,6 +14,9 @@
 			TEST_FAIL("[quirk_type] has no icon!")
 			continue
 
+		if(initial(quirk_type.xcard_quirk)) //ORBSTATION: x-card quirks all use the same icon, and so the next text should be skipped
+			continue
+
 		if (icon in used_icons)
 			TEST_FAIL("[icon] used in both [quirk_type] and [used_icons[icon]]!")
 			continue

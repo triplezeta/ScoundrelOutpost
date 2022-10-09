@@ -357,7 +357,6 @@
 /turf/open/floor/engine/cult,
 /area/ruin/powered)
 "Fz" = (
-/obj/item/clothing/head/bearpelt,
 /obj/structure/table/wood,
 /obj/item/food/burger/fish,
 /obj/item/reagent_containers/cup/glass/bottle/beer{

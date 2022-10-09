@@ -21,7 +21,7 @@
 			"What do snowmen wear on their heads?\n\n<i>Ice caps!</i>",
 			"Why doesn't Santa have any children?\n\n<i>Because he only comes down the chimney.</i>"))
 		joke_paper.update_appearance()
-		new /obj/item/clothing/head/festive(target.loc)
+		new /obj/item/clothing/head/costume/festive(target.loc)
 		user.update_icons()
 		cracked = TRUE
 		icon_state = "cracker1"
@@ -33,7 +33,7 @@
 		return TRUE
 	return ..()
 
-/obj/item/clothing/head/festive
+/obj/item/clothing/head/costume/festive
 	name = "festive paper hat"
 	icon_state = "xmashat"
 	desc = "A crappy paper hat that you are REQUIRED to wear."

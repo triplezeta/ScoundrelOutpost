@@ -38,6 +38,7 @@
 			"icon" = initial(quirk.icon),
 			"name" = quirk_name,
 			"value" = initial(quirk.value),
+			"xcard" = initial(quirk.xcard_quirk),
 		)
 
 	return list(
