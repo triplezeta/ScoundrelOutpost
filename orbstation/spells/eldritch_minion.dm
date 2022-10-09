@@ -123,14 +123,14 @@
 /// Try to make a minion, if ghosts are up for it
 /obj/effect/demonology_rune/proc/summon_minion(mob/living/user)
 	is_in_use = TRUE
-	var/summoned = chosen_minion.summon(user, get_turf(src))
+	var/mob/summoned = chosen_minion.summon(user, get_turf(src))
 	is_in_use = FALSE
 
 	if (!summoned)
 		user.balloon_alert(user, "ritual failed, no ghosts!")
 		return
 
-	user.visible_message(span_notice("[src] burns away in a flash as the [chosen_minion.name] corporealises!"))
+	user.visible_message(span_notice("[src] burns away in a flash as the [summoned.name] corporealises!"))
 	new /obj/effect/decal/cleanable/ash(get_turf(user))
 	qdel(src)
 
@@ -188,7 +188,7 @@
 	var/datum/antagonist/heretic_monster/heretic_monster = summoned.mind.add_antag_datum(/datum/antagonist/heretic_monster)
 	heretic_monster.set_owner(user.mind)
 
-	return TRUE
+	return summoned
 
 // Not sure why you'd pick this but I think it should be on the list anyway
 /datum/demonological_summon/shade
