@@ -76,8 +76,9 @@ GLOBAL_LIST_EMPTY(journeymanstart)
 
 /// Generate objectives
 /datum/antagonist/wizard_journeyman/proc/create_objectives()
-	add_theft_objective()
-	switch(rand(1,100))
+	var/can_steal = add_theft_objective()
+	// If the first theft objective failed then don't try and add a second
+	switch(rand((can_steal) ? 1 : 41, 100))
 		if (1 to 40)
 			add_theft_objective()
 		if (41 to 90)
@@ -86,12 +87,17 @@ GLOBAL_LIST_EMPTY(journeymanstart)
 			add_diskie_objective()
 	add_roundend_objective()
 
-/// Steal something
+/**
+ * Steal something
+ * Returns true if we managed to generate an objective
+ */
 /datum/antagonist/wizard_journeyman/proc/add_theft_objective()
 	var/datum/objective/steal/owned/theft = new
 	theft.owner = owner
 	theft.find_target(list(owner))
 	objectives += theft
+
+	return theft.explanation_text != "Free objective"
 
 /// Trap someone alive and well on the station
 /datum/antagonist/wizard_journeyman/proc/add_maroon_objective()

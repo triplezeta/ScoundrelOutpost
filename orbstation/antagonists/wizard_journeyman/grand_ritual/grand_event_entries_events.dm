@@ -313,7 +313,7 @@
 	wizard_message = "You summon a powerful artifact!"
 	once_only = TRUE
 
-/datum/grand_event/event/ghost/impostor
+/datum/grand_event/event/ghost/imposter
 	min_escalation = 2
 	max_escalation = 7
 	event_control_path = /datum/round_event_control/wizard/imposter

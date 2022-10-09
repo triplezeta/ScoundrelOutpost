@@ -123,13 +123,14 @@
 /// Try to make a minion, if ghosts are up for it
 /obj/effect/demonology_rune/proc/summon_minion(mob/living/user)
 	is_in_use = TRUE
-	var/mob/summoned = chosen_minion.summon(user, get_turf(src))
+	var/summoned = chosen_minion.summon(user, get_turf(src))
 	is_in_use = FALSE
 
 	if (!summoned)
+		user.balloon_alert(user, "ritual failed, no ghosts!")
 		return
 
-	user.visible_message(span_notice("[src] burns away in a flash as the [summoned.name] corporealises!"))
+	user.visible_message(span_notice("[src] burns away in a flash as the [chosen_minion.name] corporealises!"))
 	new /obj/effect/decal/cleanable/ash(get_turf(user))
 	qdel(src)
 
@@ -166,9 +167,8 @@
 	animate(summoned, 10 SECONDS, alpha = 155)
 
 	message_admins("A [summoned.name] is being summoned by [ADMIN_LOOKUPFLW(user)] in [ADMIN_COORDJMP(summoned)].")
-	var/list/mob/dead/observer/candidates = poll_candidates_for_mob("Do you want to play as a [summoned.real_name]?", ROLE_HERETIC, FALSE, 10 SECONDS, summoned)
+	var/list/mob/dead/observer/candidates = poll_candidates_for_mob("Do you want to play as [user.real_name]'s [summoned.real_name] minion?", ROLE_SENTIENCE, FALSE, 10 SECONDS, summoned)
 	if(!LAZYLEN(candidates))
-		summon_location.balloon_alert(user, "ritual failed, no ghosts!")
 		animate(summoned, 0.5 SECONDS, alpha = 0)
 		QDEL_IN(summoned, 0.6 SECONDS)
 		return FALSE

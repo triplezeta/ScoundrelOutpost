@@ -107,7 +107,8 @@
 			the stars rush back to greet each other at the beginning of things and then... you snap back to the present. \n\
 			Everything is just as it was and always has been. \n\n\
 			A stray thought sticks in the forefront of your mind. \n\
-			[span_hypnophrase("I'm so glad that [invoker.real_name] is our legally appointed Captain!")]"))
+			[span_hypnophrase("I'm so glad that [invoker.real_name] is our legally appointed Captain!")] \n\
+			Is... that right?"))
 
 	dress_candidate(invoker)
 	GLOB.data_core.manifest_modify(invoker.real_name, JOB_CAPTAIN, JOB_CAPTAIN)
@@ -208,7 +209,8 @@
 			the stars rush back to greet each other at the beginning of things and then... you snap back to the present. \n\
 			Everything is just as it was and always has been. \n\n\
 			A stray thought sticks in the forefront of your mind. \n\
-			[span_hypnophrase("I'm so glad that I work at Clown Research Station [station_name()]!")]"))
+			[span_hypnophrase("I'm so glad that I work at Clown Research Station [station_name()]!")] \n\
+			Is... that right?"))
 		if (ismonkey(victim))
 			continue
 		if (victim == invoker)
@@ -362,6 +364,11 @@
 	var/static/list/possible_last_words = list(
 		"Flames and ruin!",
 		"Dooooooooom!!",
+		"HAHAHAHAHAHA!! AHAHAHAHAHAHAHAHAA!!",
+		"Cower in fear, puny mortals!",
+		"Tremble before my glory!",
+		"Destruction of nature, gather in flame!",
+		"Scurry and scatter!",
 		"The hearts of men are black with corruption and must needs be cleansed!",
 		"Death, and death alone!",
 		"Ruination is come!",
@@ -373,7 +380,13 @@
 		"Even the strongest of shields cannot defend the weakest of wills!",
 		"You shall rue the day you raised your eyes to the heavens.",
 		"Denizens of the abyss! From ink of blackest night, I summon you! Darkness to me!",
-		"Your very soul shall not escape my wrath!", )
+		"Your very soul shall not escape my wrath!",
+		"All of creation, bend to my will!",
+		"From broken skies fall tears of flame!",
+		"My life's work! My masterpiece!",
+		"Rejoice and partake of my gift!",
+		"Leave naught but ash in your wake!",
+		"Let seep sorrow into your hearts!")
 
 /datum/grand_finale/armageddon/trigger(mob/living/carbon/human/invoker)
 	priority_announce(pick(possible_last_words), null, 'sound/magic/voidblink.ogg', sender_override = "[invoker.real_name]")
@@ -395,7 +408,7 @@
 			 */
 			new /obj/narsie(current_location)
 		if (4)
-			var/datum/round_event_control/event = locate(/datum/round_event_control/meteor_wave/threatening) in SSevents.control
-			if (!event)
-				return
-			event.runEvent()
+			var/datum/dynamic_ruleset/roundstart/meteor/meteors = new()
+			meteors.meteordelay = 0
+			var/datum/game_mode/dynamic/mode = SSticker.mode
+			mode.execute_roundstart_rule(meteors) // Meteors will continue until crew leaves.

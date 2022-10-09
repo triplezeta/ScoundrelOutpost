@@ -90,6 +90,60 @@ GLOBAL_LIST_EMPTY(owned_theft_items)
 	excludefromjob = list(JOB_CLOWN, JOB_CARGO_TECHNICIAN, JOB_QUARTERMASTER)
 	owner = list(JOB_CLOWN)
 
+/datum/objective_item/steal/owned/curator_key
+	name = "the curator's display case key"
+	targetitem = /obj/item/key/displaycase
+	excludefromjob = list(JOB_CURATOR)
+	owner = list(JOB_CURATOR)
+
+/datum/objective_item/steal/owned/captain_suit
+	name = "the captain's modular suit"
+	targetitem = /obj/item/mod/control/pre_equipped/magnate
+	difficulty = 5
+	excludefromjob = list(JOB_CAPTAIN)
+	exists_on_map = TRUE
+	owner = list(JOB_CAPTAIN)
+
+/datum/objective_item/steal/owned/ce_suit
+	name = "the chief engineer's modular suit"
+	targetitem = /obj/item/mod/control/pre_equipped/advanced
+	difficulty = 5
+	excludefromjob = list(JOB_CHIEF_ENGINEER)
+	exists_on_map = TRUE
+	owner = list(JOB_CHIEF_ENGINEER)
+
+/datum/objective_item/steal/owned/hos_suit
+	name = "the head of security's modular suit"
+	targetitem = /obj/item/mod/control/pre_equipped/safeguard
+	difficulty = 5
+	excludefromjob = list(JOB_HEAD_OF_SECURITY)
+	exists_on_map = TRUE
+	owner = list(JOB_HEAD_OF_SECURITY)
+
+/datum/objective_item/steal/owned/rd_suit
+	name = "the research director's modular suit"
+	targetitem = /obj/item/mod/control/pre_equipped/research
+	difficulty = 5
+	excludefromjob = list(JOB_RESEARCH_DIRECTOR)
+	exists_on_map = TRUE
+	owner = list(JOB_RESEARCH_DIRECTOR)
+
+/datum/objective_item/steal/owned/cmo_suit
+	name = "the chief medical officer's modular suit"
+	targetitem = /obj/item/mod/control/pre_equipped/rescue
+	difficulty = 5
+	excludefromjob = list(JOB_CHIEF_MEDICAL_OFFICER)
+	exists_on_map = TRUE
+	owner = list(JOB_CHIEF_MEDICAL_OFFICER)
+
+/datum/objective_item/steal/owned/loader
+	name = "the cargo loader suit"
+	targetitem = /obj/item/mod/control/pre_equipped/loader
+	difficulty = 5
+	excludefromjob = list(JOB_QUARTERMASTER, JOB_CARGO_TECHNICIAN, JOB_SHAFT_MINER)
+	exists_on_map = TRUE
+	owner = list(JOB_QUARTERMASTER, JOB_CARGO_TECHNICIAN)
+
 /datum/objective_item/steal/owned/caplaser
 	name = "the captain's antique laser gun"
 	targetitem = /obj/item/gun/energy/laser/captain
@@ -106,6 +160,14 @@ GLOBAL_LIST_EMPTY(owned_theft_items)
 	exists_on_map = TRUE
 	owner = list(JOB_CAPTAIN)
 
+/datum/objective_item/steal/owned/chain_command
+	name = "the chain of command"
+	targetitem = /obj/item/melee/chainofcommand
+	difficulty = 5
+	excludefromjob = list(JOB_CAPTAIN)
+	exists_on_map = TRUE
+	owner = list(JOB_CAPTAIN)
+
 /datum/objective_item/steal/owned/hoslaser
 	name = "the head of security's personal laser gun"
 	targetitem = /obj/item/gun/energy/e_gun/hos
@@ -117,6 +179,14 @@ GLOBAL_LIST_EMPTY(owned_theft_items)
 /datum/objective_item/steal/owned/magboots
 	name = "the chief engineer's advanced magnetic boots"
 	targetitem = /obj/item/clothing/shoes/magboots/advance
+	difficulty = 5
+	excludefromjob = list(JOB_CHIEF_ENGINEER)
+	exists_on_map = TRUE
+	owner = list(JOB_CHIEF_ENGINEER)
+
+/datum/objective_item/steal/owned/blueprints
+	name = "the original station blueprints" // Wizards aren't satisfied with a photograph
+	targetitem = /obj/item/areaeditor/blueprints
 	difficulty = 5
 	excludefromjob = list(JOB_CHIEF_ENGINEER)
 	exists_on_map = TRUE
@@ -191,3 +261,11 @@ GLOBAL_LIST_EMPTY(owned_theft_items)
 	pet_type = list(/mob/living/simple_animal/pet/cat/runtime)
 	excludefromjob = list(JOB_CHIEF_MEDICAL_OFFICER)
 	owner = list(JOB_CHIEF_MEDICAL_OFFICER)
+
+/datum/objective_item/steal/owned/lamarr
+	name = "the research director's pet facehugger"
+	targetitem = /obj/item/clothing/mask/facehugger/lamarr
+	difficulty = 5
+	excludefromjob = list(JOB_RESEARCH_DIRECTOR)
+	exists_on_map = TRUE
+	owner = list(JOB_RESEARCH_DIRECTOR)
