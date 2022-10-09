@@ -10,11 +10,6 @@
  * The only way journeymen can have access to this is via a random event, but it should affect these too.
  */
 
-/datum/action/cooldown/spell/jaunt/mirror_walk/wizard
-	name = "Enter Mirrors"
-	spell_requirements = SPELL_REQUIRES_WIZARD_GARB|SPELL_REQUIRES_NO_ANTIMAGIC
-	cooldown_reduction_per_rank = 1 SECONDS
-
 /datum/action/cooldown/spell/jaunt/bloodcrawl/wizard
 	name = "Autotransfusion"
 	spell_requirements = SPELL_REQUIRES_WIZARD_GARB|SPELL_REQUIRES_NO_ANTIMAGIC

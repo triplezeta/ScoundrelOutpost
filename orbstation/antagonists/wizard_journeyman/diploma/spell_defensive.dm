@@ -72,7 +72,8 @@
 
 /datum/diploma_spell/mirror_walk
 	name = "Enter Mirrors"
-	desc = "Travel freely through various reflective surfaces such as mirrors and windows."
+	desc = "Travel freely through various reflective surfaces such as mirrors and windows. \
+		The realm of the mirror is not friendly to mortal flesh, so don't stay too long."
 	spell_type = /datum/action/cooldown/spell/jaunt/mirror_walk/wizard
 	category = DIPLOMA_SPELL_DEFENSIVE
 	weight = DIPLOMA_SPELL_UNCOMMON
