@@ -367,6 +367,7 @@
 		"HAHAHAHAHAHA!! AHAHAHAHAHAHAHAHAA!!",
 		"Cower in fear, puny mortals!",
 		"Tremble before my glory!",
+		"Pick a god and pray!",
 		"Destruction of nature, gather in flame!",
 		"Scurry and scatter!",
 		"The hearts of men are black with corruption and must needs be cleansed!",

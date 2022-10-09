@@ -67,7 +67,8 @@
 		JOB_HEAD_OF_SECURITY,
 		JOB_SECURITY_OFFICER,
 	)
-	required_enemies = list(2,2,1,1,1,1,1,0,0,0)
+	required_enemies = list(2,2,2,2,1,1,1,0,0,0)
+	requirements = list(101,101,60,50,40,30,20,10,10,10)
 	required_candidates = 1
 	weight = 5
 	cost = 12
