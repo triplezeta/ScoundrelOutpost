@@ -44,7 +44,7 @@
 /datum/diploma_spell/item/soulstones
 	name = "Soulstone Shard Kit"
 	desc = "Soul Stone Shards are ancient tools capable of capturing and harnessing the spirits of the dead and dying. \
-		The spell Artificer allows you to create arcane machines for the captured souls to pilot."
+		The spell 'Summon Construct Shell' allows you to create arcane machines for the captured souls to pilot."
 	item_path = /obj/item/storage/belt/soulstone/full
 	category = DIPLOMA_SPELL_OTHER
 	weight = DIPLOMA_SPELL_UNCOMMON

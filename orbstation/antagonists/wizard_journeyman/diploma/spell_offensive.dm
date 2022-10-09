@@ -121,32 +121,6 @@
 	spell_type = /datum/action/cooldown/spell/aoe/sacred_flame
 	category = DIPLOMA_SPELL_OFFENSIVE
 
-/datum/diploma_spell/steel
-	name = "Mystic Steel"
-	desc = "Conjures knives which protect you from attack and can be throw at victims."
-	spell_type = /datum/action/cooldown/spell/pointed/projectile/furious_steel/wizard
-	category = DIPLOMA_SPELL_OFFENSIVE
-
-/datum/diploma_spell/entropic_plume
-	name = "Enervating Spray"
-	desc = "Hurls a cone of enervating rust, blinding those far from you and poisoning those close. Those who are coated \
-		with rust will be disoriented and will wildly attack those near themselves for a short time."
-	spell_type = /datum/action/cooldown/spell/cone/staggered/entropic_plume/wizard
-	category = DIPLOMA_SPELL_OFFENSIVE
-
-/datum/diploma_spell/void_phase
-	name = "Tear Passage"
-	desc = "Opens a void rift to transport yourself to a nearby location. The void tears at and damages people at either \
-		end of your teleportation, making this a potent offensive tool as well as a means of escape."
-	spell_type = /datum/action/cooldown/spell/pointed/void_phase/wizard
-	category = DIPLOMA_SPELL_OFFENSIVE
-
-/datum/diploma_spell/void_pull
-	name = "Gravitation"
-	desc = "Pulls everything around you closer with the power of void. Knocks down people at medium range and harms them at close range."
-	spell_type = /datum/action/cooldown/spell/aoe/void_pull/wizard
-	category = DIPLOMA_SPELL_OFFENSIVE
-
 /datum/diploma_spell/tentacles
 	name = "Tentacle Burst"
 	desc = "Summon waves of tentacles to ensnare everyone around you."

@@ -282,12 +282,9 @@
 	var/list/picks_to_instances = list()
 	for (var/typepath as anything in subtypesof(/datum/grand_finale))
 		var/datum/grand_finale/finale_type = new typepath()
-		if (finale_type.minimum_time >= world.time - SSticker.round_start_time)
+		var/datum/radial_menu_choice/choice = finale_type.get_radial_choice()
+		if (!choice)
 			continue
-		var/datum/radial_menu_choice/choice = new()
-		choice.name = finale_type.name
-		choice.image = image(icon = finale_type.icon, icon_state = finale_type.icon_state)
-		choice.info = finale_type.desc
 		options += list("[choice.name]" = choice)
 		picks_to_instances[choice.name] = finale_type
 

@@ -100,13 +100,6 @@
 	category = DIPLOMA_SPELL_DEFENSIVE
 	weight = DIPLOMA_SPELL_UNCOMMON
 
-/datum/diploma_spell/passage
-	name = "Ash Form"
-	desc = "Turn your body to ash for just long enough to pass through nearby walls."
-	spell_type = /datum/action/cooldown/spell/jaunt/ethereal_jaunt/ash/wizard
-	category = DIPLOMA_SPELL_DEFENSIVE
-	weight = DIPLOMA_SPELL_UNCOMMON
-
 /datum/diploma_spell/swap
 	name = "Swap"
 	desc = "Switch places with any living target within nine tiles. Right click to mark a secondary target. You will always swap to your primary target."

@@ -210,13 +210,13 @@
 	var/our_z = our_turf?.z
 	var/balloon_message = "something went wrong!"
 
-	// One of us is in somewhere we shouldn't be
+	// Either us or the location is somewhere it shouldn't be
 	if (!our_z || !area_z)
 		// "Hell if I know"
 		balloon_message = "on another plane!"
-	// They're not on the same z-level as us
+	// It's not on the same z-level as us
 	else if (our_z != area_z)
-		// They're on the station
+		// It's on the station
 		if (is_station_level(area_z))
 			// We're on a multi-z station
 			if (is_station_level(our_z))
@@ -224,10 +224,10 @@
 					balloon_message = "below you!"
 				else
 					balloon_message = "above you!"
-			// We're off station, they're not
+			// We're off station, it's not
 			else
 				balloon_message = "on station!"
-	// They're on the same z-level as us!
+	// It's on the same z-level as us!
 	else
 		var/dist = get_dist(our_turf, area_turf)
 		var/dir = get_dir(our_turf, area_turf)

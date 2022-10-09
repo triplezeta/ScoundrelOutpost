@@ -12,7 +12,7 @@
 	min_escalation = 0
 	max_escalation = 2
 	event_control_path = /datum/round_event_control/anomaly/anomaly_bluespace
-	wizard_message = "You sense chaotic energies coalesce elsewhere."
+	wizard_message = "You sense azure energies coalesce elsewhere."
 
 /datum/grand_event/event/anomaly/anomaly_dimensional
 	min_escalation = 0
@@ -132,7 +132,7 @@
 	min_escalation = 3
 	max_escalation = 7
 	event_control_path = /datum/round_event_control/ion_storm
-	wizard_message = "Your released energies discharge into the station's power net!"
+	wizard_message = "The ritual unleashes ionic fallout!"
 
 /// Don't make an Ion law if there's no silicons
 /datum/grand_event/event/ion_storm/is_valid_event(escalation)

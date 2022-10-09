@@ -20,12 +20,34 @@
 	var/glow_colour
 
 /**
+ * Returns an entry for a radial menu for this choice.
+ * Returns null if entry is abstract or invalid for current circumstances.
+ */
+/datum/grand_finale/proc/get_radial_choice()
+	if (!name || !desc || !icon || !icon_state)
+		return
+	if (minimum_time >= world.time - SSticker.round_start_time)
+		return
+	var/datum/radial_menu_choice/choice = new()
+	choice.name = name
+	choice.image = image(icon = icon, icon_state = icon_state)
+	choice.info = desc
+	return choice
+
+/**
  * Actually do the thing.
  * Arguments
  * * invoker - The wizard casting this.
  */
 /datum/grand_finale/proc/trigger(mob/living/invoker)
 	// Do something cool.
+
+/// Tries to equip something into an inventory slot, then hands, then the floor.
+/datum/grand_finale/proc/equip_to_slot_then_hands(mob/living/carbon/human/invoker, slot, obj/item/item)
+	if(!item)
+		return
+	if(!invoker.equip_to_slot_if_possible(item, slot, disable_warning = TRUE))
+		invoker.put_in_hands(item)
 
 /// They are not going to take this lying down.
 /datum/grand_finale/proc/create_vendetta(datum/mind/aggrieved_crewmate, datum/mind/wizard)
@@ -72,7 +94,7 @@
 		var/job_title = crewmate.mind.assigned_role.title
 		if (job_title == JOB_CAPTAIN)
 			former_captains += crewmate
-			demote_to_prison(crewmate)
+			demote_to_assistant(crewmate)
 			continue
 		if (crewmate.stat != DEAD)
 			other_crew += crewmate
@@ -101,7 +123,7 @@
 /**
  * Anyone who thought they were Captain is in for a nasty surprise, and won't be very happy about it
  */
-/datum/grand_finale/usurp/proc/demote_to_prison(mob/living/carbon/human/former_captain)
+/datum/grand_finale/usurp/proc/demote_to_assistant(mob/living/carbon/human/former_captain)
 	var/obj/effect/particle_effect/fluid/smoke/exit_poof = new(get_turf(former_captain))
 	exit_poof.lifetime = 2 SECONDS
 
@@ -151,13 +173,6 @@
 	equip_to_slot_then_hands(invoker, ITEM_SLOT_LPOCKET, pocket_L)
 	equip_to_slot_then_hands(invoker, ITEM_SLOT_RPOCKET, pocket_R)
 
-/// Tries to equip something into an inventory slot, then hands, then the floor.
-/datum/grand_finale/usurp/proc/equip_to_slot_then_hands(mob/living/carbon/human/invoker, slot, obj/item/item)
-	if(!item)
-		return
-	if(!invoker.equip_to_slot_if_possible(item, slot, disable_warning = TRUE))
-		invoker.put_in_hands(item)
-
 /// An outfit which replaces parts of a wizard's clothes with captain's clothes but keeps the robes
 /datum/outfit/job/wizard_captain
 	name = "Captain (Wizard Transformation)"
@@ -199,6 +214,8 @@
 		if (victim == invoker)
 			continue
 		var/job_title = victim.mind.assigned_role.title
+		if (HAS_TRAIT(victim, TRAIT_CLOWN_ENJOYER))
+			victim.add_mood_event("clown_world", /datum/mood_event/clown_world)
 		if (job_title == JOB_CLOWN)
 			var/datum/action/cooldown/spell/clown_pockets/new_spell = new(victim)
 			new_spell.Grant(victim)
@@ -206,6 +223,16 @@
 		dress_as_magic_clown(victim)
 		if (prob(15))
 			create_vendetta(victim.mind, invoker.mind)
+
+/**
+ * Clown enjoyers who are effected by this become ecstatic, they have achieved their life's dream.
+ * This moodlet is equivalent to the one for simply being a traitor.
+ */
+/datum/mood_event/clown_world
+	mood_change = 4
+
+/datum/mood_event/clown_world/add_effects(param)
+	description = "I LOVE working at Clown Research Station [station_name()]!!"
 
 /// Dress the passed mob as a magical clown, self-explanatory
 /datum/grand_finale/clown/proc/dress_as_magic_clown(mob/living/carbon/human/victim)
@@ -248,13 +275,6 @@
 	equip_to_slot_then_hands(victim, ITEM_SLOT_BELT, belt)
 	victim.internal = internal
 
-/// Tries to equip something into an inventory slot, then hands, then the floor.
-/datum/grand_finale/clown/proc/equip_to_slot_then_hands(mob/living/carbon/human/invoker, slot, obj/item/item)
-	if(!item)
-		return
-	if(!invoker.equip_to_slot_if_possible(item, slot, disable_warning = TRUE))
-		invoker.put_in_hands(item)
-
 /// Give everyone magic items
 /datum/grand_finale/magic
 	name = "Evolution"
@@ -277,6 +297,7 @@
 	message_admins("[key_name(invoker)] removed all door access requirements")
 	for(var/obj/machinery/door/target_door in GLOB.machines)
 		if(is_station_level(target_door.z))
+			target_door.unlock()
 			target_door.req_access = list()
 			INVOKE_ASYNC(target_door, /obj/machinery/door/airlock.proc/open)
 	priority_announce("AULIE OXIN FIERA!!", null, 'sound/magic/knock.ogg', sender_override = "[invoker.real_name]")

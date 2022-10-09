@@ -123,13 +123,13 @@
 /// Try to make a minion, if ghosts are up for it
 /obj/effect/demonology_rune/proc/summon_minion(mob/living/user)
 	is_in_use = TRUE
-	var/summoned = chosen_minion.summon(user, get_turf(src))
+	var/mob/summoned = chosen_minion.summon(user, get_turf(src))
 	is_in_use = FALSE
 
 	if (!summoned)
 		return
 
-	user.visible_message(span_notice("[src] burns away in a flash as the [chosen_minion.name] corporealises!"))
+	user.visible_message(span_notice("[src] burns away in a flash as the [summoned.name] corporealises!"))
 	new /obj/effect/decal/cleanable/ash(get_turf(user))
 	qdel(src)
 
@@ -139,14 +139,8 @@
  * Unfortunately I think the tooltips are important.
  */
 /datum/demonological_summon
-	/// Name of the beast
-	var/name
 	/// Description of the beast
 	var/desc
-	/// Icon of the beast
-	var/icon = 'icons/mob/nonhuman-player/eldritch_mobs.dmi'
-	/// Icon state of the beast
-	var/icon_state
 	/// Path of the beast
 	var/mob_path
 
@@ -154,8 +148,9 @@
 	if (!mob_path)
 		return
 	var/datum/radial_menu_choice/choice = new()
-	choice.name = name
-	choice.image = image(icon = icon, icon_state = icon_state)
+	var/mob/demon_type = mob_path
+	choice.name = initial(demon_type.name)
+	choice.image = image(icon = initial(demon_type.icon), icon_state = initial(demon_type.icon_state))
 	choice.info = desc
 	return choice
 
@@ -197,56 +192,39 @@
 
 // Not sure why you'd pick this but I think it should be on the list anyway
 /datum/demonological_summon/shade
-	name = "Shade"
 	desc = "A corporeal spirit which moves very quickly and can travel gaseously through vents. A fragile scout. \
 		Its fickle loyalty can be borrowed by anyone bearing a Soul Shard."
-	icon = 'icons/mob/nonhuman-player/cult.dmi'
-	icon_state = "shade_cult"
 	mob_path = /mob/living/simple_animal/shade
 
 // I'm not including juggernaut or artificer frankly because they're just a bit boring
 /datum/demonological_summon/wraith
-	name = "Wraith"
 	desc = "A shell of mystic metal animated by a bound spirit. It can move quickly and travel through walls. \
 		A fragile assassin."
-	icon = 'icons/mob/nonhuman-player/cult.dmi'
-	icon_state = "wraith"
 	mob_path = /mob/living/simple_animal/hostile/construct/wraith/mystic
 
 /// I suspect the most popular one
 /datum/demonological_summon/prophet
-	name = "Raw Prophet"
 	desc = "A constructed of stitched-together limbs which tumbles end-over-end. It can see and travel through walls and \
 		link people together in a psychic web. A fragile scout."
-	icon_state = "raw_prophet"
 	mob_path = /mob/living/simple_animal/hostile/heretic_summon/raw_prophet
 
 /datum/demonological_summon/rust_spirit
-	name = "Rust Spirit"
 	desc = "A mechanical beast animated by a bound spirit. It spreads rust to destroy structures and machines, and can expel rust at its enemies \
 		to poison and disorient them. Heals while in rusted areas. A brawler, and not a creature of subtlety."
-	icon_state = "raw_prophet"
-	mob_path = /mob/living/simple_animal/hostile/heretic_summon/raw_prophet
+	mob_path = /mob/living/simple_animal/hostile/heretic_summon/rust_spirit
 
 /datum/demonological_summon/ash_spirit
-	name = "Ash Spirit"
 	desc = "A spirit bound in the corpses of flames. It can inflict horrible wounds and wreathe itself in flames. \
 		A brawler, and not a creature of subtlety."
-	icon_state = "ash_walker"
-	mob_path = /mob/living/simple_animal/hostile/heretic_summon/raw_prophet
+	mob_path = /mob/living/simple_animal/hostile/heretic_summon/ash_spirit
 
 /datum/demonological_summon/stalker
-	name = "Flesh Stalker"
 	desc = "A constructed of stitched-together limbs which can reshape its flesh into a disguise. It can emit energy \
 		which destroys machines, and teleport a short distance. A durable ambusher. One of few summoned creatures \
 		which can accompany you unobtrusively, while it takes on another form."
-	icon_state = "stalker"
 	mob_path = /mob/living/simple_animal/hostile/heretic_summon/stalker
 
 /datum/demonological_summon/maid
-	name = "Maid in the Mirror"
 	desc = "A barely-tangible spirit which can see through walls and vanish into reflective surfaces. A durable scout. \
 		One of few summoned creatures which can accompany you unobtrusively, while it is invisible inside the mirror world."
-	icon = 'icons/mob/simple/mob.dmi'
-	icon_state = "stand"
 	mob_path = /mob/living/simple_animal/hostile/heretic_summon/maid_in_the_mirror
