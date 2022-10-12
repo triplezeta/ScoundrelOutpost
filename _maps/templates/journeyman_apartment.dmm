@@ -1,0 +1,539 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/closed/indestructible/riveted/uranium,
+/area/wizard_apartment)
+"b" = (
+/obj/effect/spawner/random/trash/food_packaging,
+/turf/open/floor/carpet,
+/area/wizard_apartment)
+"c" = (
+/obj/effect/spawner/random/trash/garbage,
+/turf/open/floor/engine/cult,
+/area/wizard_apartment)
+"d" = (
+/turf/closed/indestructible/fakeglass{
+	color = "#008000"
+	},
+/area/wizard_apartment)
+"e" = (
+/obj/item/reagent_containers/cup/glass/bottle/beer/almost_empty{
+	pixel_y = 10;
+	pixel_x = 12
+	},
+/obj/item/reagent_containers/cup/glass/bottle/beer/almost_empty{
+	pixel_y = 6;
+	pixel_x = 15
+	},
+/turf/open/floor/carpet,
+/area/wizard_apartment)
+"g" = (
+/obj/structure/table/wood/fancy,
+/obj/item/toy/cards/deck/tarot{
+	pixel_x = 6;
+	pixel_y = 4
+	},
+/obj/item/coin/antagtoken{
+	pixel_x = -5
+	},
+/turf/open/floor/engine/cult,
+/area/wizard_apartment)
+"h" = (
+/obj/machinery/vending/magivend,
+/turf/open/floor/engine/cult,
+/area/wizard_apartment)
+"i" = (
+/obj/effect/spawner/random/trash/cigbutt,
+/turf/open/floor/engine/cult,
+/area/wizard_apartment)
+"j" = (
+/obj/machinery/light/directional/north,
+/turf/open/floor/engine/cult,
+/area/wizard_apartment)
+"k" = (
+/obj/effect/spawner/random/trash/food_packaging,
+/turf/open/floor/carpet/donk,
+/area/wizard_apartment)
+"l" = (
+/obj/structure/toiletbong{
+	dir = 4
+	},
+/turf/open/floor/iron/white,
+/area/wizard_apartment)
+"n" = (
+/obj/structure/table/wood/fancy,
+/obj/item/gun/magic/wand{
+	desc = "Used in emergencies to reignite magma engines.";
+	max_charges = 0;
+	name = "wand of emergency engine ignition";
+	pixel_x = 2;
+	pixel_y = 4
+	},
+/obj/item/bikehorn/golden{
+	pixel_x = -6;
+	pixel_y = 10
+	},
+/turf/open/floor/carpet,
+/area/wizard_apartment)
+"o" = (
+/obj/machinery/shower/directional/south,
+/obj/item/soap/homemade,
+/obj/structure/curtain,
+/turf/open/floor/iron/white,
+/area/wizard_apartment)
+"p" = (
+/obj/effect/spawner/random/trash/food_packaging,
+/obj/machinery/light/directional/east,
+/turf/open/floor/engine/cult,
+/area/wizard_apartment)
+"q" = (
+/obj/machinery/vending/snack,
+/obj/machinery/light/directional/west,
+/turf/open/floor/engine/cult,
+/area/wizard_apartment)
+"r" = (
+/obj/structure/table/wood/poker,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
+/turf/open/floor/engine/cult,
+/area/wizard_apartment)
+"s" = (
+/obj/item/staff/broom,
+/obj/item/staff,
+/obj/item/radio/headset,
+/obj/item/storage/backpack/satchel,
+/obj/structure/closet/cabinet,
+/turf/open/floor/engine/cult,
+/area/wizard_apartment)
+"t" = (
+/obj/structure/aquarium/prefilled,
+/obj/machinery/light/directional/west,
+/turf/open/floor/carpet,
+/area/wizard_apartment)
+"u" = (
+/obj/structure/table/wood/fancy,
+/turf/open/floor/engine/cult,
+/area/wizard_apartment)
+"v" = (
+/obj/effect/spawner/random/trash/bin,
+/turf/open/floor/engine/cult,
+/area/wizard_apartment)
+"w" = (
+/obj/machinery/door/airlock{
+	icon = 'icons/obj/doors/airlocks/station/uranium.dmi';
+	name = "Observation Deck"
+	},
+/turf/open/floor/engine/cult,
+/area/wizard_apartment)
+"x" = (
+/obj/structure/table/wood/fancy,
+/obj/item/food/grown/cannabis{
+	pixel_y = 10;
+	pixel_x = -2
+	},
+/obj/item/cigbutt/roach{
+	pixel_x = -4;
+	pixel_y = 5
+	},
+/obj/item/cigbutt/roach{
+	pixel_y = 8;
+	pixel_x = 4
+	},
+/obj/item/cigbutt/roach{
+	pixel_y = 3;
+	pixel_x = 2
+	},
+/turf/open/floor/carpet,
+/area/wizard_apartment)
+"y" = (
+/obj/structure/table/wood/fancy,
+/obj/item/storage/dice{
+	icon_state = "magicdicebag";
+	pixel_y = 4
+	},
+/turf/open/floor/engine/cult,
+/area/wizard_apartment)
+"z" = (
+/obj/item/clothing/suit/wizrobe/marisa,
+/obj/item/clothing/head/wizard/marisa,
+/obj/item/clothing/suit/wizrobe/red,
+/obj/item/clothing/head/wizard/red,
+/obj/item/radio/headset,
+/obj/item/clothing/head/wizard/black,
+/obj/item/clothing/suit/wizrobe/black,
+/obj/machinery/light/directional/west,
+/obj/structure/closet/cabinet,
+/turf/open/floor/carpet,
+/area/wizard_apartment)
+"A" = (
+/obj/structure/bookcase/random/reference,
+/turf/open/floor/engine/cult,
+/area/wizard_apartment)
+"B" = (
+/obj/structure/chair/wood/wings{
+	dir = 8
+	},
+/obj/machinery/light/directional/north,
+/turf/open/floor/carpet/donk,
+/area/wizard_apartment)
+"C" = (
+/obj/structure/table/wood/poker,
+/obj/machinery/chem_dispenser/drinks/beer/fullupgrade{
+	dir = 4;
+	pixel_x = -5
+	},
+/obj/item/reagent_containers/cup/glass/drinkingglass{
+	pixel_x = 8;
+	pixel_y = 12
+	},
+/obj/item/reagent_containers/cup/glass/drinkingglass{
+	pixel_x = 7;
+	pixel_y = 3
+	},
+/turf/open/floor/engine/cult,
+/area/wizard_apartment)
+"D" = (
+/obj/structure/table/wood/fancy,
+/obj/item/food/drug/moon_rock{
+	pixel_x = 6;
+	pixel_y = 4
+	},
+/obj/item/food/drug/moon_rock{
+	pixel_x = -2
+	},
+/turf/open/floor/engine/cult,
+/area/wizard_apartment)
+"E" = (
+/obj/structure/showcase/wizard,
+/obj/machinery/light/directional/south,
+/turf/open/floor/engine/cult,
+/area/wizard_apartment)
+"F" = (
+/obj/structure/destructible/cult/item_dispenser/altar{
+	desc = "An altar dedicated to the Wizard Federation."
+	},
+/obj/item/food/deadmouse{
+	pixel_x = -2;
+	pixel_y = 8
+	},
+/turf/open/floor/engine/cult,
+/area/wizard_apartment)
+"H" = (
+/turf/open/floor/engine/cult,
+/area/wizard_apartment)
+"I" = (
+/obj/structure/table/wood/poker,
+/obj/machinery/microwave{
+	pixel_y = 6
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/engine/cult,
+/area/wizard_apartment)
+"J" = (
+/obj/structure/table/wood/fancy,
+/obj/item/plate{
+	pixel_y = 3
+	},
+/obj/item/food/burger/spell{
+	pixel_y = 5
+	},
+/turf/open/floor/carpet/donk,
+/area/wizard_apartment)
+"K" = (
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/iron/white,
+/area/wizard_apartment)
+"L" = (
+/obj/item/reagent_containers/cup/glass/bottle/beer/almost_empty{
+	pixel_x = 10;
+	pixel_y = 12
+	},
+/turf/open/floor/carpet,
+/area/wizard_apartment)
+"M" = (
+/obj/machinery/light/directional/east,
+/turf/open/floor/carpet,
+/area/wizard_apartment)
+"N" = (
+/turf/open/space/basic,
+/area/space)
+"O" = (
+/turf/open/floor/iron/white,
+/area/wizard_apartment)
+"P" = (
+/obj/structure/destructible/cult/item_dispenser/archives/library,
+/obj/machinery/light/directional/east,
+/turf/open/floor/engine/cult,
+/area/wizard_apartment)
+"Q" = (
+/obj/effect/rune/teleport,
+/turf/open/floor/engine/cult,
+/area/wizard_apartment)
+"R" = (
+/obj/structure/chair/wood/wings{
+	dir = 8
+	},
+/turf/open/floor/engine/cult,
+/area/wizard_apartment)
+"S" = (
+/turf/open/floor/carpet,
+/area/wizard_apartment)
+"T" = (
+/obj/structure/mirror/magic{
+	pixel_y = 28
+	},
+/obj/structure/sink/directional/south,
+/turf/open/floor/iron/white,
+/area/wizard_apartment)
+"U" = (
+/obj/structure/chair/wood/wings{
+	dir = 4
+	},
+/turf/open/floor/engine/cult,
+/area/wizard_apartment)
+"V" = (
+/turf/open/floor/carpet/donk,
+/area/wizard_apartment)
+"W" = (
+/obj/structure/bed,
+/obj/item/bedsheet/wiz,
+/obj/effect/landmark/start/wizard_journeyman,
+/turf/open/floor/carpet,
+/area/wizard_apartment)
+"X" = (
+/obj/effect/spawner/random/trash/food_packaging,
+/turf/open/floor/engine/cult,
+/area/wizard_apartment)
+"Y" = (
+/obj/structure/bookcase/random/reference,
+/obj/machinery/light/directional/south,
+/turf/open/floor/engine/cult,
+/area/wizard_apartment)
+"Z" = (
+/obj/structure/bookcase/random/adult,
+/obj/machinery/light/directional/east,
+/turf/open/floor/carpet,
+/area/wizard_apartment)
+
+(1,1,1) = {"
+N
+N
+N
+N
+N
+N
+N
+N
+N
+N
+N
+N
+N
+N
+"}
+(2,1,1) = {"
+N
+a
+a
+d
+d
+a
+a
+a
+d
+d
+a
+a
+N
+N
+"}
+(3,1,1) = {"
+N
+d
+z
+e
+x
+t
+a
+J
+k
+C
+I
+a
+N
+N
+"}
+(4,1,1) = {"
+N
+d
+W
+L
+S
+n
+a
+B
+V
+H
+X
+d
+N
+N
+"}
+(5,1,1) = {"
+N
+d
+Z
+b
+S
+M
+w
+V
+V
+p
+r
+d
+N
+N
+"}
+(6,1,1) = {"
+N
+a
+a
+w
+a
+a
+a
+a
+w
+a
+a
+a
+N
+N
+"}
+(7,1,1) = {"
+N
+N
+a
+O
+l
+a
+h
+q
+i
+v
+A
+a
+N
+N
+"}
+(8,1,1) = {"
+N
+N
+a
+T
+K
+a
+j
+H
+H
+c
+Y
+a
+N
+N
+"}
+(9,1,1) = {"
+N
+N
+a
+o
+O
+w
+H
+U
+U
+H
+A
+a
+a
+N
+"}
+(10,1,1) = {"
+N
+N
+a
+a
+a
+a
+X
+D
+u
+H
+H
+s
+a
+N
+"}
+(11,1,1) = {"
+N
+N
+N
+N
+N
+d
+F
+y
+g
+H
+H
+Q
+a
+N
+"}
+(12,1,1) = {"
+N
+N
+N
+N
+N
+d
+P
+R
+R
+H
+E
+a
+a
+N
+"}
+(13,1,1) = {"
+N
+N
+N
+N
+N
+a
+a
+d
+d
+d
+d
+a
+N
+N
+"}
+(14,1,1) = {"
+N
+N
+N
+N
+N
+N
+N
+N
+N
+N
+N
+N
+N
+N
+"}

@@ -51,6 +51,40 @@
 
 //////////////////////////////////////////////
 //                                          //
+//            WIZARD JOURNEYMAN             //
+//                                          //
+//////////////////////////////////////////////
+
+/datum/dynamic_ruleset/midround/from_ghosts/wizard_journeyman
+	name = "Wizard Journeyman"
+	midround_ruleset_style = MIDROUND_RULESET_STYLE_HEAVY
+	antag_datum = /datum/antagonist/wizard_journeyman
+	antag_flag = ROLE_WIZARD_JOURNEYMAN
+	antag_flag_override = ROLE_WIZARD
+	enemy_roles = list(
+		JOB_CAPTAIN,
+		JOB_DETECTIVE,
+		JOB_HEAD_OF_SECURITY,
+		JOB_SECURITY_OFFICER,
+	)
+	required_enemies = list(2,2,2,2,1,1,1,0,0,0)
+	requirements = list(101,101,60,50,40,30,20,10,10,10)
+	required_candidates = 1
+	weight = 5
+	cost = 12
+
+/datum/dynamic_ruleset/midround/from_ghosts/wizard_journeyman/ready(forced = FALSE)
+	if (!check_candidates())
+		return FALSE
+	return ..()
+
+/datum/dynamic_ruleset/midround/from_ghosts/wizard_journeyman/finish_setup(mob/new_character, index)
+	..()
+	if (GLOB.journeymanstart.len)
+		new_character.forceMove(pick(GLOB.journeymanstart))
+
+//////////////////////////////////////////////
+//                                          //
 //            HERETIC (MIDROUND)            //
 //                                          //
 //////////////////////////////////////////////
