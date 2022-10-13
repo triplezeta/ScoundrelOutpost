@@ -563,8 +563,10 @@ GLOBAL_LIST_INIT(english_to_zombie, list())
 /obj/item/organ/internal/tongue/tied/proc/on_treat_message(mob/living/source, list/message_args)
 	SIGNAL_HANDLER
 
-	if(check_signables_state() == SIGN_ONE_HAND)
-		message_args[TREAT_MESSAGE_MESSAGE] = stars(message_args[TREAT_MESSAGE_MESSAGE])
+	/*if(check_signables_state() == SIGN_ONE_HAND)
+		message_args[TREAT_MESSAGE_MESSAGE] = stars(message_args[TREAT_MESSAGE_MESSAGE])*/
+
+	return //ORBSTATION: You can sign with one hand.
 
 /// Signal proc for [COMSIG_MOVABLE_USING_RADIO] that disallows us from speaking on comms if we don't have the special trait
 /// Being unable to sign, or having our message be starred out, is handled by the above two signal procs.
@@ -653,6 +655,11 @@ GLOBAL_LIST_INIT(english_to_zombie, list())
 		return
 	owner.cut_overlay(tonal_indicator)
 	tonal_indicator = null
+
+//ORBSTATION: Check one-handed status specifically. Separate proc for use outside this file.
+/obj/item/organ/internal/tongue/tied/proc/check_one_handed()
+	return check_signables_state() == SIGN_ONE_HAND
+//END ORBSTATION
 
 #undef SIGN_OKAY
 #undef SIGN_ONE_HAND
