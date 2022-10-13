@@ -21,8 +21,9 @@
 //For simplicity, and because it mostly just sucks, radio gloves will no longer garble speech when you only have one hand free.
 /obj/item/radio/talk_into(atom/movable/talking_movable, message, channel, list/spans, datum/language/language, list/message_mods)
 	var/mob/living/carbon/mute = talking_movable
-	var/obj/item/organ/internal/tongue/tied/T = locate(/obj/item/organ/internal/tongue/tied) in mute.internal_organs
-	if(istype(mute) && T) //check for the "tied tongue" and modify text if present
-		message = punctuation_to_periods(message) //signing doesn't communicate tone over radio
+	if(istype(mute)) //check for the "tied tongue" and modify text if present
+		var/obj/item/organ/internal/tongue/tied/T = locate(/obj/item/organ/internal/tongue/tied) in mute.internal_organs
+		if(T)
+			message = punctuation_to_periods(message) //signing doesn't communicate tone over radio
 
 	return ..()
