@@ -5,25 +5,25 @@
 import { Feature, FeatureTextInput, FeatureShortTextInput } from '../../base';
 
 export const flavor_text: Feature<string> = {
-  name: 'Flavor Text',
+  name: 'Character Description',
   description: 'Describe your character!',
   component: FeatureTextInput,
 };
 
 export const silicon_flavor_text: Feature<string> = {
-  name: 'Flavor Text (Silicon)',
+  name: 'Character Description (Silicon)',
   description: 'Describe your cyborg!',
   component: FeatureTextInput,
 };
 
 export const flavor_text_short: Feature<string> = {
-  name: 'Flavor Text (Short)',
+  name: 'Desc. (Short)',
   description: 'Describe your character, briefly!',
   component: FeatureShortTextInput,
 };
 
 export const silicon_flavor_text_short: Feature<string> = {
-  name: 'Flavor Text (Silicon; Short)',
+  name: 'Desc. (Silicon; Short)',
   description: 'Describe your cyborg, briefly!',
   component: FeatureShortTextInput,
 };
