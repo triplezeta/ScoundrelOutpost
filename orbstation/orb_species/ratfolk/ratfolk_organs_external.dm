@@ -39,3 +39,7 @@
 	desc = "A severed rat tail."
 	feature_key = "rat_tail"
 	preference = "feature_rat_tail"
+	dna_block = DNA_RAT_TAIL_BLOCK
+
+/obj/item/organ/external/tail/ratfolk/get_global_feature_list()
+	return GLOB.rat_tails_list
