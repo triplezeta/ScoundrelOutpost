@@ -4789,6 +4789,7 @@
 #include "orbstation\medical\surgery\lobotomy.dm"
 #include "orbstation\medical\surgery\pacification.dm"
 #include "orbstation\mob\living.dm"
+#include "orbstation\mob\dead\new_player\sprite_accessories.dm"
 #include "orbstation\mob\simple_animal\friendly\amoung.dm"
 #include "orbstation\modules\client\looc.dm"
 #include "orbstation\modules\mining\voucher_sets.dm"
