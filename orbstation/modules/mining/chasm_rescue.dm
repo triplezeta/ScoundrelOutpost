@@ -34,9 +34,7 @@
 
 /// Retrieves a corpse if there is one
 /obj/item/chasm_detritus/proc/retrieve_player_body()
-	to_chat(world, "trying to rescue corpse")
 	if (!GLOB.chasm_storage.len)
-		to_chat(world, "no chasms")
 		return FALSE
 
 	var/list/chasm_contents = list()
@@ -46,7 +44,6 @@
 			chasm_contents += thing
 
 	if (!length(chasm_contents))
-		to_chat(world, "no bodies")
 		return FALSE
 
 	var/atom/movable/body = pick(chasm_contents)
