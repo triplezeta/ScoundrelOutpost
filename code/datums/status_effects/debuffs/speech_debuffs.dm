@@ -24,15 +24,13 @@
 /**
  * Signal proc for [COMSIG_LIVING_TREAT_MESSAGE]
  *
- * Iterates over all of the characters in the past message
+ * Iterates over all of the characters in the passed message
  * and calls apply_speech() on each.
- *
- * message_args[1] is the original message passed into the signal.
  */
 /datum/status_effect/speech/proc/handle_message(datum/source, list/message_args)
 	SIGNAL_HANDLER
 
-	var/phrase = html_decode(message_args[1])
+	var/phrase = html_decode(message_args[TREAT_MESSAGE_MESSAGE])
 	if(!length(phrase))
 		return
 
@@ -44,7 +42,7 @@
 
 		final_phrase += apply_speech(original_char, original_char)
 
-	message_args[1] = sanitize(final_phrase)
+	message_args[TREAT_MESSAGE_MESSAGE] = sanitize(final_phrase)
 
 /**
  * Applies the speech effects on the past character, changing
@@ -82,6 +80,45 @@
 			modified_char = ""
 
 	return modified_char
+
+/datum/status_effect/speech/stutter/derpspeech
+	id = "derp_stutter"
+	/// The probability of making our message entirely uppercase + adding exclamations
+	var/capitalize_prob = 50
+	/// The probability of adding a stutter to the entire message, if we're not already stuttering
+	var/message_stutter_prob = 15
+
+/datum/status_effect/speech/stutter/derpspeech/handle_message(datum/source, list/message_args)
+
+	var/message = html_decode(message_args[TREAT_MESSAGE_MESSAGE])
+
+	message = replacetext(message, " am ", " ")
+	message = replacetext(message, " is ", " ")
+	message = replacetext(message, " are ", " ")
+	message = replacetext(message, "you", "u")
+	message = replacetext(message, "help", "halp")
+	message = replacetext(message, "grief", "grife")
+	message = replacetext(message, "space", "spess")
+	message = replacetext(message, "carp", "crap")
+	message = replacetext(message, "reason", "raisin")
+
+	if(prob(capitalize_prob))
+		var/exclamation = pick("!", "!!", "!!!")
+		message = uppertext(message)
+		message += "[apply_speech(exclamation, exclamation)]"
+
+	message_args[1] = message
+
+	var/mob/living/living_source = source
+	if(!isliving(source) || living_source.has_status_effect(/datum/status_effect/speech/stutter))
+		return
+
+	// If we're not stuttering, we have a chance of calling parent here, adding stutter effects
+	if(prob(message_stutter_prob))
+		return ..()
+
+	// Otherwise just return and don't call parent, we already modified our speech
+	return
 
 /datum/status_effect/speech/slurring
 	/// The chance that any given character in a message will be replaced with a common character

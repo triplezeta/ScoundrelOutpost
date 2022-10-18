@@ -8,15 +8,28 @@
 	var/t_is = p_are()
 	var/t_es = p_es()
 	var/obscure_name
+	var/obscure_examine
 
 	if(isliving(user))
 		var/mob/living/L = user
 		if(HAS_TRAIT(L, TRAIT_PROSOPAGNOSIA) || HAS_TRAIT(L, TRAIT_INVISIBLE_MAN))
 			obscure_name = TRUE
+		if(HAS_TRAIT(src, TRAIT_UNKNOWN))
+			obscure_name = TRUE
+			obscure_examine = TRUE
 
 	. = list("<span class='info'>This is <EM>[!obscure_name ? name : "Unknown"]</EM>!")
 
+	if(obscure_examine)
+		return list("<span class='warning'>You're struggling to make out any details...")
+
 	var/obscured = check_obscured_slots()
+
+	//ORBSTATION: Display "short flavor text" before inventory
+	if(!obscured)
+		. += "</span>"
+		. +=  dna.features["flavor_text_short"]
+		. += "<span class='info'>"
 
 	//uniform
 	if(w_uniform && !(obscured & ITEM_SLOT_ICLOTHING) && !(w_uniform.item_flags & EXAMINE_SKIP))
@@ -331,7 +344,8 @@
 			else if(!client)
 				msg += "[t_He] [t_has] a blank, absent-minded stare and appears completely unresponsive to anything. [t_He] may snap out of it soon.\n"
 
-	var/scar_severity = 0
+	//ORBSTATION REMOVAL: COMMENTED OUT SCAR PREVIEW
+	/*var/scar_severity = 0
 	for(var/i in all_scars)
 		var/datum/scar/S = i
 		if(S.is_visible(user))
@@ -345,8 +359,15 @@
 		if(9 to 11)
 			msg += "[span_notice("<i>[t_He] [t_has] significantly disfiguring scarring, you can look again to take a closer look...</i>")]\n"
 		if(12 to INFINITY)
-			msg += "[span_notice("<b><i>[t_He] [t_is] just absolutely fucked up, you can look again to take a closer look...</i></b>")]\n"
+			msg += "[span_notice("<b><i>[t_He] [t_is] just absolutely fucked up, you can look again to take a closer look...</i></b>")]\n"*/
+	//END ORBSTATION REMOVAL
 
+	//ORBSTATION: display x-cards on examine; display link for examining closer
+	msg += "\n"
+	msg += examine_xcards()
+	msg += "\n"
+	msg += span_bold("<a href='?src=[REF(src)];show_flavor_text=[REF(src)]'>Look closer?</a>")
+	//END ORBSTATION
 
 	if (length(msg))
 		. += span_warning("[msg.Join("")]")

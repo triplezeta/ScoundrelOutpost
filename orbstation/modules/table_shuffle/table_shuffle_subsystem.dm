@@ -80,7 +80,14 @@ SUBSYSTEM_DEF(table_shuffle)
 	// note that "affected areas" only counts areas where events happened.
 	// There are going to be several areas either immediately skipped or which
 	// have nothing happen.
-	var/msg = "Table shuffle averaged [round(event_total / affected_area_amt)] events among [affected_area_amt] affected areas, [high_rollers.len] being high rollers."
+	var/msg
+	if(affected_area_amt > 0)
+		msg = "Table shuffle averaged [round(event_total / affected_area_amt)] events among [affected_area_amt] affected areas, [high_rollers.len] being high rollers."
+	else
+		if(event_total > 0) // shouldn't happen if the above doesn't
+			msg = "Table shuffle had [event_total] phantom events this round."
+		else
+			msg = "Table shuffle had no events this round."
 	to_chat(world, span_boldannounce("[msg]"))
 	log_world(msg)
 

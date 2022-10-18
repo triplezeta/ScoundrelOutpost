@@ -124,7 +124,7 @@ GLOBAL_LIST_INIT(phobia_objs, list(
 
 	"clowns" = typecacheof(list(
 		/obj/item/bedsheet/clown,
-		/obj/item/clothing/head/clownmitre,
+		/obj/item/clothing/head/chaplain/clownmitre,
 		/obj/item/clothing/mask/gas/clown_hat,
 		/obj/item/clothing/shoes/clown_shoes,
 		/obj/item/clothing/suit/chaplainsuit/clownpriest,
@@ -237,7 +237,7 @@ GLOBAL_LIST_INIT(phobia_objs, list(
 	"doctors" = typecacheof(list(
 		/obj/item/cautery,
 		/obj/item/circular_saw,
-		/obj/item/clothing/head/plaguedoctorhat,
+		/obj/item/clothing/head/bio_hood/plague,
 		/obj/item/clothing/mask/gas/plaguedoctor,
 		/obj/item/clothing/suit/bio_suit/plaguedoctorsuit,
 		/obj/item/clothing/under/rank/medical,
@@ -389,7 +389,7 @@ GLOBAL_LIST_INIT(phobia_objs, list(
 	)),
 
 	"anime" = typecacheof(list(
-		/obj/item/clothing/head/kitty/genuine,
+		/obj/item/clothing/head/costume/kitty/genuine,
 		/obj/item/clothing/mask/gas/ninja,
 		/obj/item/clothing/under/syndicate/ninja,
 		/obj/item/clothing/under/costume/schoolgirl,
@@ -408,8 +408,8 @@ GLOBAL_LIST_INIT(phobia_objs, list(
 	)),
 
 	"birds" = typecacheof(list(
-		/obj/item/clothing/head/chicken,
-		/obj/item/clothing/head/griffin,
+		/obj/item/clothing/head/costume/chicken,
+		/obj/item/clothing/head/costume/griffin,
 		/obj/item/clothing/head/helmet/space/freedom,
 		/obj/item/clothing/mask/gas/owl_mask,
 		/obj/item/clothing/mask/gas/plaguedoctor,

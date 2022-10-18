@@ -4,8 +4,10 @@ import { PreferencesMenuData, Quirk } from './data';
 import { useBackend, useLocalState } from '../../backend';
 import { ServerPreferencesFetcher } from './ServerPreferencesFetcher';
 
-const getValueClass = (value: number): string => {
-  if (value > 0) {
+const getValueClass = (value: number, xcard: boolean): string => {
+  if (xcard) {
+    return 'xcard';
+  } else if (value > 0) {
     return 'positive';
   } else if (value < 0) {
     return 'negative';
@@ -67,7 +69,10 @@ const QuirkList = (props: {
                 }}>
                 <Stack vertical fill>
                   <Stack.Item
-                    className={`${className}--${getValueClass(quirk.value)}`}
+                    className={`${className}--${getValueClass(
+                      quirk.value,
+                      quirk.xcard
+                    )}`}
                     style={{
                       'border-bottom': '1px solid black',
                       'padding': '2px',
@@ -104,6 +109,12 @@ const QuirkList = (props: {
 
         if (quirk.failTooltip) {
           return <Tooltip content={quirk.failTooltip}>{child}</Tooltip>;
+        } else if (quirk.xcard) {
+          return (
+            <Tooltip content="Please note that X-card quirks are intended only for those who find certain content uncomfortable. They are NOT intended for roleplay purposes, or to give mechanical advantages.">
+              {child}
+            </Tooltip>
+          );
         } else {
           return child;
         }
@@ -150,6 +161,11 @@ export const QuirksPage = (props, context) => {
 
         const quirks = Object.entries(quirkInfo);
         quirks.sort(([_, quirkA], [__, quirkB]) => {
+          if (quirkA.xcard && !quirkB.xcard) {
+            return -1;
+          } else if (!quirkA.xcard && quirkB.xcard) {
+            return 1;
+          }
           if (quirkA.value === quirkB.value) {
             return quirkA.name > quirkB.name ? 1 : -1;
           } else {

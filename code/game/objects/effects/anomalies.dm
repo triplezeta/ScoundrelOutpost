@@ -141,6 +141,12 @@
 	warp = null
 	return ..()
 
+/obj/effect/anomaly/grav/on_changed_z_level(turf/old_turf, turf/new_turf, same_z_layer, notify_contents)
+	. = ..()
+	if(same_z_layer)
+		return
+	SET_PLANE(warp, PLANE_TO_TRUE(warp.plane), new_turf)
+
 /obj/effect/anomaly/grav/anomalyEffect(delta_time)
 	..()
 	boing = 1
@@ -229,7 +235,7 @@
 
 /obj/effect/anomaly/flux/update_overlays()
 	. = ..()
-	. += emissive_appearance(icon, icon_state, alpha=src.alpha)
+	. += emissive_appearance(icon, icon_state, src, alpha=src.alpha)
 
 /obj/effect/anomaly/flux/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
@@ -486,6 +492,9 @@
 	for(var/mob/living/carbon/nearby in range(swap_range, src))
 		if(nearby.run_armor_check(attack_flag = BIO, absorb_text = "Your armor protects you from [src]!") >= 100)
 			continue //We are protected
+		if(HAS_TRAIT(nearby, TRAIT_BIOSCRAMBLER_IMMUNE)) //ORBSTATION: bioscrambler has alternate effects
+			alt_swap(nearby)
+			continue
 		var/picked_zone = pick(zones)
 		var/obj/item/bodypart/picked_user_part = nearby.get_bodypart(picked_zone)
 		var/obj/item/bodypart/picked_part
