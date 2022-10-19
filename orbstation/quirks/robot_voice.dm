@@ -9,12 +9,12 @@
 
 /datum/quirk/robot_voice/add_unique()
 	var/mob/living/carbon/human/human_holder = quirk_holder
-	var/obj/item/organ/internal/tongue/old_tongue = human_holder.getorganslot(ORGAN_SLOT_TONGUE)
+	/*var/obj/item/organ/internal/tongue/old_tongue = human_holder.getorganslot(ORGAN_SLOT_TONGUE)
 	old_tongue.Remove(human_holder)
-	qdel(old_tongue)
+	qdel(old_tongue)*/
 
 	var/obj/item/organ/internal/tongue/robot/new_tongue = new(get_turf(human_holder))
-	new_tongue.Insert(human_holder)
+	new_tongue.Insert(human_holder, drop_if_replaced = FALSE)
 	// Only tongues of people with this quirk can't be removed. Manually spawned or found tongues can be.
 	new_tongue.organ_flags |= ORGAN_UNREMOVABLE
 
@@ -31,6 +31,6 @@
 		return
 
 	var/obj/item/organ/internal/tongue/new_tongue = new new_tongue_type()
-	quirk_tongue.Remove(quirk_holder, TRUE)
-	new_tongue.Insert(quirk_holder, TRUE)
-	qdel(quirk_tongue)
+	//quirk_tongue.Remove(quirk_holder, TRUE)
+	new_tongue.Insert(quirk_holder, TRUE, drop_if_replaced = TRUE)
+	//qdel(quirk_tongue)
