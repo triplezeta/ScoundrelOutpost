@@ -18,7 +18,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 
 	/// A list of quirks that can not be used with each other. Format: list(quirk1,quirk2),list(quirk3,quirk4)
 	var/static/list/quirk_blacklist = list(
-		list("Blind", "Nearsighted"),
+		list("Blind", "Nearsighted", "Farsighted"), //ORBSTATION: added "Farsighted" to this list
 		list("Jolly", "Depression", "Apathetic", "Hypersensitive"),
 		list("Ageusia", "Vegetarian", "Deviant Tastes", "Gamer"),
 		list("Ananas Affinity", "Ananas Aversion", "Gamer"),
@@ -29,6 +29,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		list("Prosthetic Limb", "Quadruple Amputee"),
 		list("Quadruple Amputee", "Paraplegic","Frail"),
 		list("Tongue Tied", "Artificial Voice Box"), //ORBSTATION
+		list("Farsighted", "Illiterate"), //ORBSTATION
 	)
 
 /datum/controller/subsystem/processing/quirks/Initialize()
