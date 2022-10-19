@@ -45,7 +45,7 @@
 		to_chat(user, span_warning("You get the feeling you shouldn't mess with this."))
 		return
 	if(!user.can_read(src, reading_check_flags = READING_CHECK_LITERACY)) //Illiterate mobs which aren't otherwise blocked from using computers will send the shuttle to a random valid destination
-		var/farsighted = (HAS_TRAIT(user, TRAIT_FARSIGHT) && HAS_TRAIT_FROM(user, TRAIT_ILLITERATE, QUIRK_TRAIT)) //ORBSTATION: alternate messages if you're farsighted
+		var/farsighted = (HAS_TRAIT_FROM(user, TRAIT_ILLITERATE, FARSIGHT_TRAIT)) //ORBSTATION: alternate messages if you're farsighted
 		if(farsighted)
 			to_chat(user, span_warning("You can't make out the words on the screen, so you start mashing buttons at random!"))
 		else

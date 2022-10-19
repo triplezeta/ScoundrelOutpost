@@ -32,11 +32,11 @@
 /mob/living/proc/cure_farsighted(source)
 	REMOVE_TRAIT(src, TRAIT_FARSIGHT, source)
 	if(!HAS_TRAIT(src, TRAIT_FARSIGHT))
-		REMOVE_TRAIT(src, TRAIT_ILLITERATE, source)
+		REMOVE_TRAIT(src, TRAIT_ILLITERATE, FARSIGHT_TRAIT)
 
 /mob/living/proc/become_farsighted(source)
 	if(!HAS_TRAIT(src, TRAIT_FARSIGHT))
-		ADD_TRAIT(src, TRAIT_ILLITERATE, source)
+		ADD_TRAIT(src, TRAIT_ILLITERATE, FARSIGHT_TRAIT)
 	ADD_TRAIT(src, TRAIT_FARSIGHT, source)
 
 /datum/mutation/human/farsighted

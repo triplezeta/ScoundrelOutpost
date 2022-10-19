@@ -45,7 +45,7 @@
 
 /obj/item/circuit_component/keyboard_shell/proc/use_keyboard(mob/user)
 	if(HAS_TRAIT(user, TRAIT_ILLITERATE))
-		if (HAS_TRAIT(user, TRAIT_FARSIGHT) && HAS_TRAIT_FROM(user, TRAIT_ILLITERATE, QUIRK_TRAIT)) // ORBSTATION: alternate message for farsighted quirk
+		if (HAS_TRAIT_FROM(user, TRAIT_ILLITERATE, FARSIGHT_TRAIT)) // ORBSTATION: alternate message for farsighted quirk
 			to_chat(user, span_warning("You can't make out the words on the screen, so you start mashing keys at random!"))
 		else
 			to_chat(user, span_warning("You start mashing keys at random!"))

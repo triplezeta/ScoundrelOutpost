@@ -13,3 +13,7 @@
 #define FAST_CRAFTER_MOD 0.5
 // Makes you illiterate while not wearing glasses
 #define TRAIT_FARSIGHT "farsighted"
+
+//Trait sources
+// Special trait source for illiteracy granted by farsightedness
+#define FARSIGHT_TRAIT "farsighted_trait"
