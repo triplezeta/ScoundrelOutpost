@@ -4839,6 +4839,7 @@
 #include "orbstation\mob\simple_animal\friendly\amoung.dm"
 #include "orbstation\modules\client\looc.dm"
 #include "orbstation\modules\client\preferences\_preference.dm"
+#include "orbstation\modules\mining\chasm_rescue.dm"
 #include "orbstation\modules\mining\voucher_sets.dm"
 #include "orbstation\modules\research\designs\mechfabricator_designs.dm"
 #include "orbstation\modules\research\techweb\all_nodes.dm"
