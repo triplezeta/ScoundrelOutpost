@@ -2,7 +2,7 @@
  * ORBSTATION: CHARACTER HEADSHOT
  * COPIED FROM SKYRAT
  */
-import { Feature, FeatureTextInput, FeatureShortTextInput } from '../../base';
+import { Feature, FeatureTextInput, FeatureShortFlavorTextInput } from '../../base';
 
 export const flavor_text: Feature<string> = {
   name: 'Character Description',
@@ -19,11 +19,11 @@ export const silicon_flavor_text: Feature<string> = {
 export const flavor_text_short: Feature<string> = {
   name: 'Desc. (Short)',
   description: 'Describe your character, briefly!',
-  component: FeatureShortTextInput,
+  component: FeatureShortFlavorTextInput,
 };
 
 export const silicon_flavor_text_short: Feature<string> = {
   name: 'Desc. (Silicon; Short)',
   description: 'Describe your cyborg, briefly!',
-  component: FeatureShortTextInput,
+  component: FeatureShortFlavorTextInput,
 };
