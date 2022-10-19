@@ -4868,6 +4868,7 @@
 #include "orbstation\orb_species\ratfolk\ratfolk_language.dm"
 #include "orbstation\orb_species\ratfolk\ratfolk_organs_external.dm"
 #include "orbstation\orb_species\ratfolk\ratfolk_organs_internal.dm"
+#include "orbstation\quirks\farsighted.dm"
 #include "orbstation\quirks\plurality.dm"
 #include "orbstation\quirks\tongue_tied.dm"
 #include "orbstation\quirks\xcard\bioscrambler_immune.dm"

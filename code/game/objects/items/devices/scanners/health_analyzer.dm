@@ -214,6 +214,8 @@
 				render_list += "<span class='alert ml-2'>Subject is blind.\n</span>"
 			else if(HAS_TRAIT(carbontarget, TRAIT_NEARSIGHT))
 				render_list += "<span class='alert ml-2'>Subject is nearsighted.\n</span>"
+			else if(HAS_TRAIT(carbontarget, TRAIT_FARSIGHT)) //ORBSTATION: Farsighted quirk
+				render_list += "<span class='alert ml-2'>Subject is farsighted.\n</span>"
 
 	// Body part damage report
 	if(iscarbon(target))
