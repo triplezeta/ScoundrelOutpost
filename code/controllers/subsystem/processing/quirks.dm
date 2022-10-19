@@ -28,6 +28,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		list("Extrovert", "Introvert"),
 		list("Prosthetic Limb", "Quadruple Amputee"),
 		list("Quadruple Amputee", "Paraplegic","Frail"),
+		list("Tongue Tied", "Artificial Voice Box"), //ORBSTATION
 	)
 
 /datum/controller/subsystem/processing/quirks/Initialize()
