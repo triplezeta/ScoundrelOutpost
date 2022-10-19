@@ -139,8 +139,7 @@
 				update_tint()
 			if(G.vision_correction)
 				clear_fullscreen("nearsighted")
-				if(HAS_TRAIT_FROM_ONLY(src, TRAIT_ILLITERATE, FARSIGHT_TRAIT)) //ORBSTATION: remove illiteracy iff it's from the Farsighted quirk
-					REMOVE_TRAIT(src, TRAIT_ILLITERATE, FARSIGHT_TRAIT)
+				REMOVE_TRAIT(src, TRAIT_ILLITERATE, FARSIGHT_TRAIT) //ORBSTATION: remove illiteracy iff it's from the Farsighted quirk
 			if(G.vision_flags || G.darkness_view || G.invis_override || G.invis_view || !isnull(G.lighting_alpha))
 				update_sight()
 			update_worn_glasses()
@@ -250,7 +249,7 @@
 		if(G.vision_correction)
 			if(HAS_TRAIT(src, TRAIT_NEARSIGHT))
 				overlay_fullscreen("nearsighted", /atom/movable/screen/fullscreen/impaired, 1)
-			if(HAS_TRAIT(src, TRAIT_FARSIGHT) && !HAS_TRAIT(src, TRAIT_ILLITERATE)) //ORBSTATION: Farsighted quirk handling
+			if(HAS_TRAIT(src, TRAIT_FARSIGHT)) //ORBSTATION: Farsighted quirk handling
 				ADD_TRAIT(src, TRAIT_ILLITERATE, FARSIGHT_TRAIT)
 		if(G.vision_flags || G.darkness_view || G.invis_override || G.invis_view || !isnull(G.lighting_alpha))
 			update_sight()
