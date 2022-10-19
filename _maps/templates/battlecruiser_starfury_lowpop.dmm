@@ -872,7 +872,7 @@
 /obj/structure/rack,
 /obj/item/stack/sheet/iron/fifty,
 /obj/item/stack/sheet/glass/fifty,
-/obj/item/clothing/head/welding,
+/obj/item/clothing/head/utility/welding,
 /turf/open/floor/plating,
 /area/shuttle/sbc_starfury)
 "mO" = (
