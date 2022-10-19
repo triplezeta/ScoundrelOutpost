@@ -28,7 +28,8 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		list("Extrovert", "Introvert"),
 		list("Prosthetic Limb", "Quadruple Amputee"),
 		list("Quadruple Amputee", "Paraplegic","Frail"),
-		list("Farsighted", "Illiterate"), //ORBSTATION: if you're illiterate, farsighted would just be free points
+		list("Tongue Tied", "Artificial Voice Box"), //ORBSTATION
+		list("Farsighted", "Illiterate"), //ORBSTATION
 	)
 
 /datum/controller/subsystem/processing/quirks/Initialize()
