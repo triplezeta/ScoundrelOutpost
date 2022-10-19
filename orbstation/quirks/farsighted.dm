@@ -38,3 +38,28 @@
 	if(!HAS_TRAIT(src, TRAIT_FARSIGHT))
 		ADD_TRAIT(src, TRAIT_ILLITERATE, source)
 	ADD_TRAIT(src, TRAIT_FARSIGHT, source)
+
+/datum/mutation/human/farsighted
+	name = "Far Sightedness"
+	desc = "The holder of this mutation can't read without glasses."
+	quality = MINOR_NEGATIVE
+	text_gain_indication = "<span class='danger'>Things close to you start looking blurry.</span>"
+	text_lose_indication = "<span class='notice'>You start seeing nearby things normally again.</span>"
+
+/datum/mutation/human/farsighted/on_acquiring(mob/living/carbon/human/owner)
+	if(..())
+		return
+	owner.become_farsighted(GENETIC_MUTATION)
+
+/datum/mutation/human/farsighted/on_losing(mob/living/carbon/human/owner)
+	if(..())
+		return
+	owner.cure_farsighted(GENETIC_MUTATION)
+
+/obj/item/dnainjector/farsighted
+	name = "\improper DNA injector (Farsighted)"
+	add_mutations = list(/datum/mutation/human/farsighted)
+
+/obj/item/dnainjector/antifarsighted
+	name = "\improper DNA injector (Anti-Farsighted)"
+	remove_mutations = list(/datum/mutation/human/farsighted)
