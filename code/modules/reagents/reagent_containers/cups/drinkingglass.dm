@@ -41,6 +41,12 @@
 		return ..()
 
 	var/glass_icon = get_glass_icon(reagents.get_master_reagent())
+
+	// ORBSTATION: add support for custom reagent glasses in alternative files
+	var/glass_icon_path = get_glass_icon_path(reagents.get_master_reagent())
+	if(glass_icon_path && glass_icon)
+		icon = glass_icon_path
+
 	if(glass_icon)
 		icon_state = glass_icon
 		fill_icon_thresholds = null
@@ -54,6 +60,12 @@
 	if(!largest_reagent)
 		return FALSE
 	return largest_reagent.glass_icon_state
+
+// ORBSTATION: add support for custom reagent glasses in alternative files
+/obj/item/reagent_containers/cup/glass/drinkingglass/proc/get_glass_icon_path(datum/reagent/largest_reagent)
+	if(!largest_reagent)
+		return FALSE
+	return largest_reagent.glass_icon_path
 
 //Shot glasses!//
 //  This lets us add shots in here instead of lumping them in with drinks because >logic  //

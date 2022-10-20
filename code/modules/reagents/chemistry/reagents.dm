@@ -36,6 +36,8 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	var/shot_glass_icon_state = null
 	/// fallback icon if  the reagent has no glass or shot glass icon state. Used for restaurants.
 	var/fallback_icon_state = null
+	/// ORBSTATION: alternative path for custom glass icons. Set this to override the default value of icons/obj/drinks.dmi
+	var/glass_icon_path = null
 	/// reagent holder this belongs to
 	var/datum/reagents/holder = null
 	/// LIQUID, SOLID, GAS
