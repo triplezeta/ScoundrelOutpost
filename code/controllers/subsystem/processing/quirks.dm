@@ -26,7 +26,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		list("Clown Enjoyer", "Mime Fan"),
 		list("Bad Touch", "Friendly"),
 		list("Extrovert", "Introvert"),
-		list("Prosthetic Limb", "Quadruple Amputee"),
+		list("Prosthetic Limb", "Quadruple Amputee", "Alien Prosthesis"), //ORBSTATION EDIT
 		list("Quadruple Amputee", "Paraplegic","Frail"),
 	)
 
