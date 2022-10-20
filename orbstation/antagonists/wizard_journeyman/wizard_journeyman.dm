@@ -2,7 +2,7 @@ GLOBAL_LIST_EMPTY(journeymanstart)
 
 /datum/antagonist/wizard_journeyman
 	name = "\improper Space Wizard Journeyman"
-	roundend_category = "wizards/witches"
+	roundend_category = "wizards"
 	antagpanel_category = "Wizard"
 	job_rank = ROLE_WIZARD
 	antag_hud_name = "wizard"

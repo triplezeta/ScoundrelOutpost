@@ -3,7 +3,7 @@ GLOBAL_LIST_EMPTY(wizard_spellbook_purchases_by_key)
 
 /datum/antagonist/wizard
 	name = "\improper Space Wizard"
-	roundend_category = "wizards/witches"
+	roundend_category = "wizards"
 	antagpanel_category = "Wizard"
 	job_rank = ROLE_WIZARD
 	antag_hud_name = "wizard"
@@ -388,7 +388,7 @@ GLOBAL_LIST_EMPTY(wizard_spellbook_purchases_by_key)
 /datum/team/wizard/roundend_report()
 	var/list/parts = list()
 
-	parts += "<span class='header'>Wizards/witches of [master_wizard.owner.name] team were:</span>"
+	parts += "<span class='header'>Wizards of [master_wizard.owner.name] team were:</span>"
 	parts += master_wizard.roundend_report()
 	parts += " "
 	parts += "<span class='header'>[master_wizard.owner.name] apprentices and minions were:</span>"

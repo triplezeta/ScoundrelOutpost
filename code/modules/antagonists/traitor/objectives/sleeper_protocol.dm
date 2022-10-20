@@ -66,7 +66,7 @@
 
 /obj/item/disk/surgery/sleeper_protocol
 	name = "Suspicious Surgery Disk"
-	desc = "The disk provides instructions on how to turn someone into a sleeper agent for the Syndicate"
+	desc = "The disk provides instructions on how to turn someone into a sleeper agent for the Syndicate."
 	surgeries = list(/datum/surgery/advanced/brainwashing_sleeper)
 
 /datum/surgery/advanced/brainwashing_sleeper
