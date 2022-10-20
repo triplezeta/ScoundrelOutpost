@@ -20,7 +20,7 @@
 /obj/structure/dancing_pole/Initialize(mapload)
 	. = ..()
 	register_context()
-	overlays += mutable_appearance(icon, "pole", layer, GAME_PLANE_UPPER)
+	overlays += mutable_appearance(icon, "pole", layer, plane = GAME_PLANE_UPPER)
 
 /obj/structure/dancing_pole/AltClick(mob/living/carbon/human/user)
 	. = ..()
