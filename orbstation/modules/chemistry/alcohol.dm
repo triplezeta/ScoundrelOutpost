@@ -5,7 +5,7 @@
 	boozepwr = 15
 	quality = DRINK_NICE
 	taste_description = "mischief"
-	glass_icon_path = "orbstation/icons/obj/drinks.dmi"
+	glass_icon_path = 'orbstation/icons/obj/drinks.dmi'
 	glass_icon_state = "goblin_juice"
 	glass_name = "Goblin Juice"
 	glass_desc = "A multicolored concoction of unknown origin. It sparks and fizzles unnervingly."
