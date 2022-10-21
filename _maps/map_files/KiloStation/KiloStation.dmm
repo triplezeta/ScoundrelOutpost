@@ -29928,7 +29928,7 @@
 "ivT" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/mapping_helpers/broken_floor,
-/mob/living/simple_animal/hostile/amoung/surgeon,
+/mob/living/basic/amoung/surgeon,
 /turf/open/floor/plating,
 /area/station/maintenance/fore)
 "ivU" = (

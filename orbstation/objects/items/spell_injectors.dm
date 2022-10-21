@@ -36,19 +36,20 @@ ADD_IMPLANTER(/datum/action/cooldown/spell/pointed/projectile/lightningbolt,ligh
 // This block is for fun and should not appear in real rounds.
 // If it were to be made real-round ready, a less overpowered chemical should be used
 // and possibly some other changes should be made.
-/mob/living/simple_animal/hostile/bee/admin
-	harm_intent_damage = 0
-	melee_damage_lower = 0
-
-/mob/living/simple_animal/hostile/bee/admin/Initialize(mapload)
-	. = ..()
-	assign_reagent(GLOB.chemical_reagents_list[/datum/reagent/medicine/adminordrazine])
-
 /datum/action/cooldown/spell/conjure/bee/admin
 	name = "Better Summon Bees"
 	desc = "Been in an accident?  Need help fast?  Better call bees."
 	invocation = "YES THE BEES"
-	summon_type = list(/mob/living/simple_animal/hostile/bee/admin)
+
+// This is pretty gross but I don't want to edit the simplemob unit test
+/datum/action/cooldown/spell/conjure/bee/admin/post_summon(atom/summoned_object, atom/cast_on)
+	. = ..()
+	var/mob/living/simple_animal/hostile/bee/newbee = summoned_object
+	if (!istype(newbee))
+		return
+	newbee.harm_intent_damage = 0
+	newbee.melee_damage_lower = 0
+	newbee.assign_reagent(GLOB.chemical_reagents_list[/datum/reagent/medicine/adminordrazine])
 
 ADD_IMPLANTER(/datum/action/cooldown/spell/conjure/bee/admin,beedrest,"spell implanter (Better Summon Bees)","Been in an accident?  Need help fast?  Better call bees.")
 
