@@ -372,3 +372,6 @@
 /mob/living/simple_animal/hostile/retaliate/clown/mutant/slow
 	speed = 20
 	move_to_delay = 60
+
+// Orbstation: restores typepath so it doesn't complain about it not existing
+/mob/living/simple_animal/hostile/retaliate/clown/mutant/glutton
