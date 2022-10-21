@@ -173,7 +173,6 @@
 		return
 	if (!prob(35))
 		return
-	var/mob/surgeon = controller.pawn
 	surgeon.say(pick(list("Meow!", "Esp!", "Purr!", "HSSSSS")))
 
 	return ..()
