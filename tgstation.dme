@@ -4847,6 +4847,7 @@
 #include "orbstation\mob\living.dm"
 #include "orbstation\mob\dead\new_player\sprite_accessories.dm"
 #include "orbstation\mob\simple_animal\friendly\amoung.dm"
+#include "orbstation\modules\chemistry\alcohol.dm"
 #include "orbstation\modules\client\looc.dm"
 #include "orbstation\modules\client\preferences\_preference.dm"
 #include "orbstation\modules\mining\chasm_rescue.dm"

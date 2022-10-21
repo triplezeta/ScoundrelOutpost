@@ -1,6 +1,8 @@
 /obj/item/reagent_containers/cup/glass/drinkingglass
 	name = "drinking glass"
 	desc = "Your standard drinking glass."
+	/// ORBSTATION: reference to the original file that this glass's icon comes from. this will need to be changed if ../icon changes
+	var/base_icon_path = 'icons/obj/drinks.dmi' 
 	icon_state = "glass_empty"
 	base_icon_state = "glass_empty"
 	amount_per_transfer_from_this = 10
@@ -37,23 +39,42 @@
 
 /obj/item/reagent_containers/cup/glass/drinkingglass/update_icon_state()
 	if(!reagents.total_volume)
+		icon = base_icon_path
 		icon_state = base_icon_state
 		return ..()
 
 	var/glass_icon = get_glass_icon(reagents.get_master_reagent())
+
+	// ORBSTATION: add support for custom reagent glasses in alternative files
+	var/glass_icon_path = get_glass_icon_path(reagents.get_master_reagent())
+
 	if(glass_icon)
+		if(glass_icon_path)
+			icon = glass_icon_path
+		else
+			icon = base_icon_path
+		
 		icon_state = glass_icon
 		fill_icon_thresholds = null
+
 	else
 		//Make sure the fill_icon_thresholds and the icon_state are reset. We'll use reagent overlays.
 		fill_icon_thresholds = fill_icon_thresholds || list(1)
 		icon_state = base_icon_state
+		icon = base_icon_path
+
 	return ..()
 
 /obj/item/reagent_containers/cup/glass/drinkingglass/proc/get_glass_icon(datum/reagent/largest_reagent)
 	if(!largest_reagent)
 		return FALSE
 	return largest_reagent.glass_icon_state
+
+// ORBSTATION: add support for custom reagent glasses in alternative files
+/obj/item/reagent_containers/cup/glass/drinkingglass/proc/get_glass_icon_path(datum/reagent/largest_reagent)
+	if(!largest_reagent)
+		return FALSE
+	return largest_reagent.glass_icon_path
 
 //Shot glasses!//
 //  This lets us add shots in here instead of lumping them in with drinks because >logic  //
