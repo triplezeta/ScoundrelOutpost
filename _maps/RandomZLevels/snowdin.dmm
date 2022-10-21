@@ -650,7 +650,7 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/kitchen)
 "cf" = (
-/mob/living/simple_animal/hostile/skeleton/survivor,
+/mob/living/simple_animal/hostile/skeleton/eskimo,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/mining_main)
 "ch" = (
@@ -2351,7 +2351,7 @@
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/garage)
 "gR" = (
-/mob/living/simple_animal/hostile/skeleton/survivor,
+/mob/living/simple_animal/hostile/skeleton/eskimo,
 /turf/open/misc/asteroid/snow,
 /area/awaymission/snowdin/outside)
 "gS" = (
@@ -7614,7 +7614,7 @@
 	},
 /area/awaymission/snowdin/post/mining_dock)
 "xR" = (
-/mob/living/simple_animal/hostile/skeleton/survivor,
+/mob/living/simple_animal/hostile/skeleton/eskimo,
 /turf/open/misc/asteroid/snow{
 	floor_variance = 0;
 	icon_state = "snow_dug";
@@ -9009,7 +9009,7 @@
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/skeleton/survivor,
+/mob/living/simple_animal/hostile/skeleton/eskimo,
 /turf/open/misc/asteroid/snow{
 	floor_variance = 0;
 	icon_state = "snow_dug";
@@ -11141,7 +11141,7 @@
 /area/awaymission/snowdin/post/minipost)
 "LC" = (
 /obj/effect/turf_decal/weather/snow/corner,
-/mob/living/simple_animal/hostile/skeleton/survivor,
+/mob/living/simple_animal/hostile/skeleton/eskimo,
 /turf/open/misc/asteroid/snow{
 	floor_variance = 0;
 	icon_state = "snow_dug";
@@ -11245,7 +11245,7 @@
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/skeleton/survivor,
+/mob/living/simple_animal/hostile/skeleton/eskimo,
 /turf/open/misc/asteroid/snow{
 	floor_variance = 0;
 	icon_state = "snow_dug";
@@ -12420,7 +12420,7 @@
 /turf/open/misc/asteroid/snow,
 /area/awaymission/snowdin/outside)
 "SB" = (
-/mob/living/simple_animal/hostile/skeleton/survivor,
+/mob/living/simple_animal/hostile/skeleton/eskimo,
 /turf/open/floor/wood,
 /area/awaymission/snowdin/igloo)
 "SC" = (

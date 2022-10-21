@@ -275,7 +275,7 @@
 "Aw" = (
 /obj/effect/decal/cleanable/blood/gibs/up,
 /obj/effect/mob_spawn/corpse/human/assistant,
-/mob/living/simple_animal/hostile/skeleton/survivor,
+/mob/living/simple_animal/hostile/skeleton/eskimo,
 /turf/open/misc/asteroid/snow/icemoon,
 /area/icemoon/underground/explored)
 "AG" = (
