@@ -4847,6 +4847,7 @@
 #include "orbstation\medical\surgery\pacification.dm"
 #include "orbstation\mob\amoung.dm"
 #include "orbstation\mob\living.dm"
+#include "orbstation\mob\magicarp.dm"
 #include "orbstation\mob\dead\new_player\sprite_accessories.dm"
 #include "orbstation\modules\chemistry\alcohol.dm"
 #include "orbstation\modules\client\looc.dm"
