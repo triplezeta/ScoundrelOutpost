@@ -141,6 +141,11 @@
 		/obj/projectile/magic/spellblade,
 		/obj/projectile/magic/teleport,
 		/obj/projectile/temp/chill,
+		/obj/projectile/magic/animate, // Orbstation
+		/obj/projectile/magic/wound, // Orbstation
+		/obj/projectile/magic/prank, // Orbstation
+		/obj/projectile/magic/freeze, // Orbstation
+		/obj/projectile/magic/hallucination, // Orbstation
 	)
 
 /obj/item/gun/magic/staff/chaos/unrestricted
