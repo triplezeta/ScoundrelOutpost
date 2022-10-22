@@ -4893,6 +4893,7 @@
 #include "orbstation\species\zombie\zombies.dm"
 #include "orbstation\spells\_aoe_staggered.dm"
 #include "orbstation\spells\animate_limb.dm"
+#include "orbstation\spells\discount_wands.dm"
 #include "orbstation\spells\eldritch_minion.dm"
 #include "orbstation\spells\eldritch_transform.dm"
 #include "orbstation\spells\enchanted_clown_suit.dm"
