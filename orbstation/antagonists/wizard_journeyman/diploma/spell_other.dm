@@ -3,10 +3,10 @@
  */
 
 /datum/diploma_spell/item/wands
-	name = "Wand Assortment"
-	desc = "A collection of wands that allow for a wide variety of utility. \
-		Wands have a limited number of charges, so be conservative with their use. Comes in a handy belt."
-	item_path = /obj/item/storage/belt/wands/full
+	name = "Bargain Wand Assortment"
+	desc = "A random collection of wands picked from the bargain bin which allow for a wide variety of utility. \
+		Wands have a limited number of charges, so be conservative with their use. Comes in a handy belt!"
+	item_path = /obj/item/storage/belt/wands/discount
 	category = DIPLOMA_SPELL_OTHER
 	weight = DIPLOMA_SPELL_UNCOMMON
 
