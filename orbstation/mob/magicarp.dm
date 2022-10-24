@@ -9,7 +9,9 @@
 		/obj/projectile/magic/spellblade,
 		/obj/projectile/magic/teleport,
 		/obj/projectile/magic/babel,
-		/obj/item/gun/magic/wand/wound,
-		/obj/item/gun/magic/wand/freeze,
-		/obj/item/gun/magic/wand/hallucination,
+		/obj/projectile/magic/wound,
+		/obj/projectile/magic/freeze,
+		/obj/projectile/magic/hallucination,
+		/obj/projectile/magic/repulse,
+		/obj/projectile/magic/swap,
 	)

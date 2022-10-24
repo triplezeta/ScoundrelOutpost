@@ -14,6 +14,13 @@
 	var/was_equipped = user.equip_to_slot_if_possible(to_equip, ITEM_SLOT_BELT, disable_warning = TRUE)
 	to_chat(user, span_notice("\A [to_equip.name] has been summoned [was_equipped ? "on your waist" : "at your feet"]."))
 
+/datum/diploma_spell/item/chaos
+	name = "Staff of Chaos"
+	desc = "An artifact of intense chaotic power, you never have any idea what this is going to do next."
+	item_path = /obj/item/gun/magic/staff/chaos
+	category = DIPLOMA_SPELL_OTHER
+	weight = DIPLOMA_SPELL_RARE
+
 /datum/diploma_spell/item/staffhealing
 	name = "Staff of Healing"
 	desc = "An altruistic staff that can heal the sick and raise the dead. Not much use to you unless you can make a friend, or use it as a bribe."

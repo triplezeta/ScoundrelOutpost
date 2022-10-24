@@ -146,6 +146,9 @@
 		/obj/projectile/magic/prank, // Orbstation
 		/obj/projectile/magic/freeze, // Orbstation
 		/obj/projectile/magic/hallucination, // Orbstation
+		/obj/projectile/magic/pax, // Orbstation
+		/obj/projectile/magic/repulse, // Orbstation
+		/obj/projectile/magic/swap, // Orbstation
 	)
 
 /obj/item/gun/magic/staff/chaos/unrestricted
