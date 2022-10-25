@@ -4922,4 +4922,5 @@
 #include "orbstation\spells\wands\wand_teleport_rune.dm"
 #include "orbstation\spells\wands\wand_wound.dm"
 #include "orbstation\spells\wands\wand_zap.dm"
+#include "orbstation\status\readied_players.dm"
 // END_INCLUDE
