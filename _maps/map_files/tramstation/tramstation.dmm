@@ -8565,16 +8565,6 @@
 /obj/item/radio/intercom/directional/west,
 /turf/open/floor/iron,
 /area/station/hallway/secondary/command)
-"dch" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
-	dir = 8
-	},
-/obj/machinery/airalarm/directional/east,
-/obj/machinery/camera/directional/east{
-	c_tag = "Command - Captain's Office"
-	},
-/turf/open/floor/carpet,
-/area/station/command/heads_quarters/captain)
 "ddh" = (
 /obj/structure/railing/corner,
 /turf/open/floor/glass,
@@ -157395,7 +157385,7 @@ ltw
 sWY
 pbf
 wTD
-dch
+maH
 llC
 qzP
 xEo
