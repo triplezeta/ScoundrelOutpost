@@ -6,7 +6,7 @@
 	worn_icon = 'orbstation/icons/obj/helmet.dmi'
 	icon_state = "hamhelmeticon"
 	worn_icon_state = "hamhelmetworn"
-	armor = list(MELEE = 35, BULLET = 30, LASER = 30,ENERGY = 40, BOMB = 25, BIO = 0, FIRE = 50, ACID = 50, WOUND = 10)
+	armor = list(MELEE = 25, BULLET = 15, LASER = 35,ENERGY = 35, BOMB = 25, BIO = 0, FIRE = 50, ACID = 50, WOUND = 10)
 	flags_cover = NONE
 	flags_inv = HIDEHAIR
 
