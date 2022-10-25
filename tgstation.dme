@@ -4903,4 +4903,5 @@
 #include "orbstation\spells\spellbook.dm"
 #include "orbstation\spells\staff.dm"
 #include "orbstation\spells\tentacle_burst.dm"
+#include "orbstation\status\readied_players.dm"
 // END_INCLUDE
