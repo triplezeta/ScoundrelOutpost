@@ -218,10 +218,13 @@
 		to_chat(user, span_warning("The rift already summoned enough carp!"))
 		return FALSE
 
+	var/mob/living/newcarp
 	if(!dragon)
-		return
-	var/mob/living/newcarp = new dragon.minion_to_spawn(loc)
-	newcarp.faction = dragon.owner.current.faction
+		newcarp = new /mob/living/simple_animal/hostile/carp(loc)
+	if (dragon)
+		newcarp = new dragon.minion_to_spawn(loc)
+		newcarp.faction = dragon.owner.current.faction
+
 	newcarp.AddElement(/datum/element/nerfed_pulling, GLOB.typecache_general_bad_things_to_easily_move)
 	newcarp.AddElement(/datum/element/prevent_attacking_of_types, GLOB.typecache_general_bad_hostile_attack_targets, "this tastes awful!")
 
@@ -229,7 +232,7 @@
 		ckey_list += user.ckey
 	newcarp.key = user.key
 	newcarp.set_name()
-	dragon.carp += newcarp.mind
+	dragon?.carp += newcarp.mind
 	to_chat(newcarp, span_boldwarning("You have arrived in order to assist the space dragon with securing the rifts. Do not jeopardize the mission, and protect the rifts at all costs!"))
 	carp_stored--
 	if(carp_stored <= 0 && charge_state < CHARGE_COMPLETED)
