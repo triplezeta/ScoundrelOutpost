@@ -18,13 +18,12 @@
 	if (!jaunt_mover)
 		return FALSE
 	RegisterSignal(jaunter, COMSIG_MOB_STATCHANGE, .proc/check_health)
-	RegisterSignal(jaunt_mover, COMSIG_PARENT_QDELETING, .proc/jaunt_ended, jaunter)
 	jaunter.apply_status_effect(/datum/status_effect/mirror_fracture)
 	return jaunt_mover
 
 /// Called when the jaunt mover effect is destroyed, this proc should exist on base class but doesn't, will refactor upstream
-/datum/action/cooldown/spell/jaunt/mirror_walk/wizard/proc/jaunt_ended()
-	SIGNAL_HANDLER
+/datum/action/cooldown/spell/jaunt/mirror_walk/wizard/on_jaunt_exited(obj/effect/dummy/phased_mob/jaunt, mob/living/unjaunter)
+	. = ..()
 	UnregisterSignal(owner, COMSIG_MOB_STATCHANGE)
 	var/mob/living/living_owner = owner
 	if (!istype(living_owner))

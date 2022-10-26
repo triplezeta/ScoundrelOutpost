@@ -59,6 +59,7 @@
 		JOB_DETECTIVE,
 		JOB_HEAD_OF_SECURITY,
 		JOB_SECURITY_OFFICER,
+		JOB_WARDEN,
 	)
 	required_enemies = list(2,2,2,2,1,1,1,0,0,0)
 	requirements = list(101,101,60,50,40,30,20,10,10,10)
