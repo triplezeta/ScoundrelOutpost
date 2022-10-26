@@ -1045,18 +1045,6 @@
 	},
 /turf/open/floor/plating/snowed/snow_cabin,
 /area/awaymission/cabin/snowforest/sovietsurface)
-"dL" = (
-/obj/effect/turf_decal/weather/snow,
-/obj/item/modular_computer/tablet/pda/syndicate{
-	loaded_cartridge = /obj/item/computer_hardware/hard_drive/portable/virus/clown;
-	desc = "A portable microcomputer by Thinktronic Systems, LTD.";
-	name = "soviet tablet"
-	},
-/obj/effect/decal/remains/human{
-	color = "#72e4fa"
-	},
-/turf/open/floor/iron/dark/snowdin,
-/area/awaymission/cabin/caves)
 "dM" = (
 /obj/structure/chair{
 	dir = 8
@@ -3861,6 +3849,18 @@
 	},
 /turf/open/misc/asteroid/snow/snow_cabin,
 /area/awaymission/cabin/caves)
+"vD" = (
+/obj/effect/turf_decal/weather/snow,
+/obj/item/modular_computer/tablet/pda/syndicate{
+	inserted_disk = /obj/item/computer_disk/virus/clown;
+	desc = "A portable microcomputer by Thinktronic Systems, LTD.";
+	name = "soviet tablet"
+	},
+/obj/effect/decal/remains/human{
+	color = "#72e4fa"
+	},
+/turf/open/floor/iron/dark/snowdin,
+/area/awaymission/cabin/caves)
 "vG" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/item/grenade/chem_grenade/large,
@@ -3978,6 +3978,17 @@
 /obj/structure/table,
 /turf/open/floor/iron/dark,
 /area/awaymission/cabin/caves/mountain)
+"yy" = (
+/obj/item/shovel{
+	desc = "A large tool for digging and moving snow.";
+	force = 10;
+	name = "eskimo shovel"
+	},
+/obj/effect/decal/remains/human{
+	color = "#72e4fa"
+	},
+/turf/open/misc/asteroid/snow/snow_cabin,
+/area/awaymission/cabin/caves)
 "yJ" = (
 /obj/structure/sign/poster/contraband/free_drone{
 	desc = "This poster seems to be meant for a bunch of machines that used to be deployed on space stations."
@@ -3985,6 +3996,15 @@
 /obj/effect/turf_decal/tile/blue/fourcorners,
 /turf/open/indestructible,
 /area/awaymission/cabin/caves/mountain)
+"yR" = (
+/obj/structure/table/reinforced,
+/obj/item/modular_computer/tablet/pda/syndicate{
+	inserted_disk = /obj/item/computer_disk/virus/mime;
+	desc = "A portable microcomputer by Thinktronic Systems, LTD.";
+	name = "soviet tablet"
+	},
+/turf/open/floor/plating/snowed/snow_cabin,
+/area/awaymission/cabin/snowforest/sovietsurface)
 "yY" = (
 /obj/vehicle/ridden/atv{
 	dir = 4
@@ -4128,17 +4148,6 @@
 /obj/machinery/icecream_vat,
 /turf/open/misc/asteroid/snow/snow_cabin,
 /area/awaymission/cabin/snowforest)
-"CB" = (
-/obj/item/shovel{
-	desc = "A large tool for digging and moving snow.";
-	force = 10;
-	name = "snow shovel"
-	},
-/obj/effect/decal/remains/human{
-	color = "#72e4fa"
-	},
-/turf/open/misc/asteroid/snow/snow_cabin,
-/area/awaymission/cabin/caves)
 "Dc" = (
 /obj/structure/fence/door{
 	dir = 4
@@ -4454,15 +4463,6 @@
 	},
 /turf/open/indestructible,
 /area/awaymission/cabin/caves/mountain)
-"Ou" = (
-/obj/structure/table/reinforced,
-/obj/item/modular_computer/tablet/pda/syndicate{
-	loaded_cartridge = /obj/item/computer_hardware/hard_drive/portable/virus/mime;
-	desc = "A portable microcomputer by Thinktronic Systems, LTD.";
-	name = "soviet tablet"
-	},
-/turf/open/floor/plating/snowed/snow_cabin,
-/area/awaymission/cabin/snowforest/sovietsurface)
 "Ow" = (
 /obj/structure/flora{
 	desc = "Looks frozen.";
@@ -18263,7 +18263,7 @@ mU
 mU
 mU
 mJ
-dL
+vD
 mW
 mW
 ab
@@ -42380,7 +42380,7 @@ Xa
 Xa
 Xa
 dc
-Ou
+yR
 di
 dG
 dP
@@ -45067,7 +45067,7 @@ gx
 PV
 Oe
 Oe
-CB
+yy
 Oe
 Oe
 Oe
