@@ -135,6 +135,9 @@
 	if(!to_buy.buy_spell(user, src))
 		return FALSE
 
+	var/datum/antagonist/wizard_journeyman/wizard = owner.has_antag_datum(/datum/antagonist/wizard_journeyman)
+	if (wizard)
+		wizard.learned_spells += to_buy.name
 	owned_spells += REF(to_buy)
 	picks_remaining--
 	return TRUE

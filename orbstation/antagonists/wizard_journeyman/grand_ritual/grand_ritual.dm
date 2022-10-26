@@ -94,7 +94,8 @@
 
 /datum/action/grand_ritual/Grant(mob/grant_to)
 	. = ..()
-	set_new_area()
+	if (!target_area)
+		set_new_area()
 	RegisterSignal(owner, list(
 			COMSIG_MOB_ENTER_JAUNT,
 			COMSIG_MOB_AFTER_EXIT_JAUNT,
@@ -181,8 +182,7 @@
 	SIGNAL_HANDLER
 	UnregisterSignal(source, COMSIG_GRAND_RUNE_COMPLETE)
 	rune = null
-	if (times_completed < GRAND_RITUAL_FINALE_COUNT)
-		times_completed++
+	times_completed++
 	set_new_area()
 	switch (times_completed)
 		if (GRAND_RITUAL_RUNES_WARNING_POTENCY)
