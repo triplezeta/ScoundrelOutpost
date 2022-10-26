@@ -4864,6 +4864,7 @@
 #include "orbstation\modules\table_shuffle\table_shuffle_config.dm"
 #include "orbstation\modules\table_shuffle\table_shuffle_subsystem.dm"
 #include "orbstation\modules\table_shuffle\table_shuffle_verbs.dm"
+#include "orbstation\objects\items\cucumbers.dm"
 #include "orbstation\objects\items\dancing_pole.dm"
 #include "orbstation\objects\items\spell_injectors.dm"
 #include "orbstation\objects\items\storage.dm"
