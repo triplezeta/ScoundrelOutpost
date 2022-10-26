@@ -145,8 +145,6 @@
 		for(var/datum/mind/M in team.members)
 			M.add_antag_datum(/datum/antagonist/brother, team)
 			GLOB.pre_setup_antags -= M
-			// ORBSTATION: Each brother counts toward the midround/latejoin traitor limit.
-			mode.traitor_limit_antag_count ++
 		team.update_name()
 	return TRUE
 
@@ -197,8 +195,6 @@
 		var/datum/antagonist/changeling/new_antag = new antag_datum()
 		changeling.add_antag_datum(new_antag)
 		GLOB.pre_setup_antags -= changeling
-		// ORBSTATION: Changelings count toward the midround/latejoin traitor limit.
-		mode.traitor_limit_antag_count ++
 	return TRUE
 
 //////////////////////////////////////////////

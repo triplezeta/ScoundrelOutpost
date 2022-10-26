@@ -160,9 +160,6 @@
 	for(var/datum/mind/M in assigned)
 		M.add_antag_datum(antag_datum)
 		GLOB.pre_setup_antags -= M
-		// ORBSTATION: Some rulesets count toward limiting how many midround/latejoin traitors can spawn.
-		if(counts_toward_traitor_limit)
-			mode.traitor_limit_antag_count ++
 	return TRUE
 
 /// Here you can perform any additional checks you want. (such as checking the map etc)

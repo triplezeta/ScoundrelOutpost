@@ -4806,7 +4806,6 @@
 #include "orbstation\antagonists\dynamic.dm"
 #include "orbstation\antagonists\rulesets_latejoin.dm"
 #include "orbstation\antagonists\rulesets_midround.dm"
-#include "orbstation\antagonists\rulesets_roundstart.dm"
 #include "orbstation\antagonists\steal_owned_items.dm"
 #include "orbstation\antagonists\changeling_infiltrator\changeling_infiltrator.dm"
 #include "orbstation\antagonists\heretic\heretic_items.dm"
