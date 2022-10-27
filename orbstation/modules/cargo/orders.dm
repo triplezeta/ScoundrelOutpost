@@ -6,7 +6,7 @@
 
 /datum/supply_pack/organic/flatbread
 	name = "Flatbread Crate"
-	desc = "Gluten-Free! A taste of home for Tizarian's everywhere. \
+	desc = "Gay Lizard Medbay Rejoice! A taste of home for Tizirans everywhere. \
 			Best prices this side of the galaxy! All deliveries are guaranteed to be 99% anomaly-free."
 	cost = CARGO_CRATE_VALUE * 10 // Best prices this side of the galaxy.
 	contains = list(/obj/item/pizzabox/imperial_flatbread,
@@ -19,7 +19,7 @@
 
 /datum/supply_pack/organic/mothicpizza
 	name = "Mothic Pizza Crate"
-	desc = "You'll be drawn to these Pizzas as if they were a flame! \
+	desc = "Containing so much cheese that even a Ratfolk might have second thoughts. Not you though. \
 			Best prices this side of the galaxy! All deliveries are guaranteed to be 99% anomaly-free."
 	cost = CARGO_CRATE_VALUE * 10 // Best prices this side of the galaxy.
 	contains = list(/obj/item/pizzabox/mothic_margherita,
