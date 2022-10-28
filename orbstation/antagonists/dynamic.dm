@@ -54,3 +54,11 @@ GLOBAL_VAR_INIT(traitor_limit_antag_count, 0)
 	if (GLOB.traitor_limit_antag_count > 0)
 		GLOB.traitor_limit_antag_count--
 	return ..()
+
+/// Midround antagonists will not select mindshielded players.
+/datum/dynamic_ruleset/midround/trim_list(list/L = list())
+	. = ..()
+	for (var/mob/candidate as anything in .)
+		if (!HAS_TRAIT(candidate, TRAIT_MINDSHIELD))
+			continue
+		. -= candidate
