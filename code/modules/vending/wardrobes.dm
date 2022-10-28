@@ -30,7 +30,7 @@
 		/obj/item/clothing/under/rank/security/officer/grey = 3,
 		/obj/item/clothing/under/pants/slacks = 3,
 		/obj/item/clothing/under/rank/security/officer/blueshirt = 3,
-		/obj/item/clothing/suit/toggle/jacket/sec = 3, //ORBSTATIOn
+		/obj/item/clothing/suit/toggle/jacket/sec = 3, //ORBSTATION
 		)
 	premium = list(
 		/obj/item/clothing/under/rank/security/officer/formal = 3,
@@ -78,7 +78,7 @@
 		/obj/item/clothing/shoes/sneakers/blue = 4,
 		/obj/item/clothing/suit/apron/surgical = 4,
 		/obj/item/clothing/mask/surgical = 4,
-		/obj/item/clothing/suit/toggle/jacket/med = 4,
+		/obj/item/clothing/suit/toggle/jacket/med = 4, //ORBSTATION
 		)
 	refill_canister = /obj/item/vending_refill/wardrobe/medi_wardrobe
 	payment_department = ACCOUNT_MED
@@ -220,7 +220,7 @@
 		/obj/item/clothing/shoes/sneakers/white = 3,
 		/obj/item/radio/headset/headset_sci = 3,
 		/obj/item/clothing/mask/gas = 3,
-		/obj/item/clothing/suit/toggle/jacket/sci = 3,
+		/obj/item/clothing/suit/toggle/jacket/sci = 3, //ORBSTATION
 		)
 	refill_canister = /obj/item/vending_refill/wardrobe/science_wardrobe
 	payment_department = ACCOUNT_SCI
