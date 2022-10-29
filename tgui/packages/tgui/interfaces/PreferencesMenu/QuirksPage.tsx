@@ -85,10 +85,6 @@ const QuirkList = (props: {
                       <Stack.Item grow basis="content">
                         <b>{quirk.name}</b>
                       </Stack.Item>
-
-                      <Stack.Item>
-                        <b>{quirk.value}</b>
-                      </Stack.Item>
                     </Stack>
                   </Stack.Item>
 
@@ -185,19 +181,14 @@ export const QuirksPage = (props, context) => {
           if (selectedQuirk.value > 0) {
             positiveQuirks += 1;
           }
-
-          balance += selectedQuirk.value;
         }
 
         const getReasonToNotAdd = (quirkName: string) => {
           const quirk = quirkInfo[quirkName];
 
-          if (quirk.value > 0) {
-            if (positiveQuirks >= maxPositiveQuirks) {
-              return "You can't have any more positive quirks!";
-            } else if (balance + quirk.value > 0) {
-              return 'You need a negative quirk to balance this out!';
-            }
+          // Remove accounting for quirk value
+          if (quirk.value > 0 && positiveQuirks >= maxPositiveQuirks) {
+            return "You can't have any more positive quirks!";
           }
 
           const selectedQuirkNames = selectedQuirks.map((quirkKey) => {
@@ -224,10 +215,6 @@ export const QuirksPage = (props, context) => {
 
         const getReasonToNotRemove = (quirkName: string) => {
           const quirk = quirkInfo[quirkName];
-
-          if (balance - quirk.value > 0) {
-            return 'You need to remove a positive quirk first!';
-          }
 
           return undefined;
         };
@@ -287,14 +274,6 @@ export const QuirksPage = (props, context) => {
 
             <Stack.Item basis="50%">
               <Stack vertical fill align="center">
-                <Stack.Item>
-                  <Box fontSize="1.3em">Quirk Balance</Box>
-                </Stack.Item>
-
-                <Stack.Item>
-                  <StatDisplay>{balance}</StatDisplay>
-                </Stack.Item>
-
                 <Stack.Item>
                   <Box as="b" fontSize="1.6em">
                     Current Quirks
