@@ -19,6 +19,8 @@
 #define BUGS (1<<18)
 #define GORE (1<<19)
 
+#define CUCUMBER (1<<20)
+
 /// A list of food type names, in order of their flags
 #define FOOD_FLAGS list( \
 	"MEAT", \
@@ -41,6 +43,7 @@
 	"ORANGES", \
 	"BUGS", \
 	"GORE", \
+	"CUCUMBER", \
 )
 
 /// IC meaning (more or less) for food flags
@@ -65,6 +68,7 @@
 	"Oranges", \
 	"Bugs", \
 	"Gore", \
+	"Cucumbers", \
 )
 
 #define DRINK_NICE 1

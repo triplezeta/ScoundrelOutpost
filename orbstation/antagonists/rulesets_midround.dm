@@ -4,19 +4,12 @@
 //                                          //
 //////////////////////////////////////////////
 
-/datum/dynamic_ruleset/midround/from_living/autotraitor
-	counts_toward_traitor_limit = TRUE
-
 // Don't create more traitors if it exceeds the limit for the current population & threat level.
 /datum/dynamic_ruleset/midround/from_living/autotraitor/ready(forced = FALSE)
 	if(!forced)
 		if(!mode.calculate_traitor_limit())
 			message_admins("Midround ruleset [name] could not be executed due to the traitor limit.")
 			return FALSE
-	return ..()
-
-/datum/dynamic_ruleset/midround/from_living/autotraitor/execute()
-	mode.traitor_limit_antag_count ++
 	return ..()
 
 //////////////////////////////////////////////
@@ -66,6 +59,7 @@
 		JOB_DETECTIVE,
 		JOB_HEAD_OF_SECURITY,
 		JOB_SECURITY_OFFICER,
+		JOB_WARDEN,
 	)
 	required_enemies = list(2,2,2,2,1,1,1,0,0,0)
 	requirements = list(101,101,60,50,40,30,20,10,10,10)

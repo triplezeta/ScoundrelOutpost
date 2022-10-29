@@ -20,6 +20,8 @@ GLOBAL_LIST_EMPTY(journeymanstart)
 	var/outfit_type = /datum/outfit/journeyman_wizard
 	/// This mob's Grand Ritual ability
 	var/datum/action/grand_ritual/ritual = new
+	/// List of names of spells for the round end report
+	var/list/learned_spells = list()
 
 /datum/antagonist/wizard_journeyman/ui_data(mob/user)
 	var/list/data = list()
@@ -182,3 +184,28 @@ GLOBAL_LIST_EMPTY(journeymanstart)
 	if (!newname)
 		newname = randomname
 	wiz_mob.fully_replace_character_name(wiz_mob.real_name, newname)
+
+/datum/antagonist/wizard_journeyman/roundend_report()
+	var/list/report = list()
+
+	report += printplayer(owner)
+	report += "<br><B>Grand Rituals completed:</B> [ritual.times_completed]<br>"
+
+	var/objectives_complete = TRUE
+	if(objectives.len)
+		report += printobjectives(objectives)
+		for(var/datum/objective/objective in objectives)
+			if(!objective.check_completion())
+				objectives_complete = FALSE
+				break
+
+	if(objectives.len == 0 || objectives_complete)
+		report += "<br><span class='greentext big'>The [name] was successful!</span>"
+	else
+		report += "<br><span class='redtext big'>The [name] has failed!</span>"
+
+	report += "<br><B>Spells chosen:</B> "
+	for (var/spell in learned_spells)
+		report += "- [spell]"
+
+	return report.Join("<br>")

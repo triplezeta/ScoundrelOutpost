@@ -1,7 +1,7 @@
+/// Current count of traitors & blood brothers
+GLOBAL_VAR_INIT(traitor_limit_antag_count, 0)
+
 /datum/game_mode/dynamic
-	/// Number of antagonists that count towards the traitor limit.
-	/// (Generally, antagonists that spawn as members of the crew, aside from thieves.)
-	var/traitor_limit_antag_count = 0
 	/// Theoretical percentage of crew that can become traitors at 100 threat.
 	/// Used to calculate maximum traitor count for current population and threat level.
 	/// Remember that threat level generally falls somewhere around 50.
@@ -20,8 +20,7 @@
 /// Returns TRUE or FALSE depending on if more traitors can spawn or not.
 /datum/game_mode/dynamic/proc/calculate_traitor_limit()
 	var/traitor_limit = round(((threat_level / 100) * max_threat_traitor_percent) * GLOB.alive_player_list.len, 1)
-
-	if(traitor_limit_antag_count >= traitor_limit)
+	if(GLOB.traitor_limit_antag_count >= traitor_limit)
 		return FALSE
 
 	return TRUE
@@ -38,6 +37,28 @@
 	else
 		shown_threat = clamp(threat_level + rand(neg_shown_threat_deviance, pos_shown_threat_deviance), 0, 100)
 
-/datum/dynamic_ruleset
-	/// If set to TRUE, the game will count antags spawned by this ruleset when limiting how many midround/latejoin traitors can spawn.
-	var/counts_toward_traitor_limit = FALSE
+/datum/antagonist/traitor/on_gain()
+	GLOB.traitor_limit_antag_count++
+	return ..()
+
+/datum/antagonist/traitor/on_removal()
+	if (GLOB.traitor_limit_antag_count > 0)
+		GLOB.traitor_limit_antag_count--
+	return ..()
+
+/datum/antagonist/brother/on_gain()
+	GLOB.traitor_limit_antag_count++
+	return ..()
+
+/datum/antagonist/brother/on_removal()
+	if (GLOB.traitor_limit_antag_count > 0)
+		GLOB.traitor_limit_antag_count--
+	return ..()
+
+/// Midround antagonists will not select mindshielded players.
+/datum/dynamic_ruleset/midround/trim_list(list/L = list())
+	. = ..()
+	for (var/mob/candidate as anything in .)
+		if (!HAS_TRAIT(candidate, TRAIT_MINDSHIELD))
+			continue
+		. -= candidate

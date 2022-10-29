@@ -1,0 +1,82 @@
+/// Allows deaf characters to hear as long as they are wearing an attached headset.
+/obj/item/hearing_aid
+	name = "headset hearing aid"
+	icon = 'orbstation/icons/obj/accessibility.dmi'
+	icon_state = "hearing_aid"
+	desc = "Attach to a headset to provide auditory support for the hard of hearing."
+	w_class = WEIGHT_CLASS_TINY
+
+/obj/item/hearing_aid/afterattack(obj/item/radio/headset/target_headset, mob/user, proximity)
+	. = ..()
+	if (!proximity)
+		return
+	if (!istype(target_headset))
+		return
+	if (!isturf(target_headset.loc))
+		user.balloon_alert(user, "put headset down") //They need to be outside your inventory or the trait won't apply
+		return
+	if (target_headset.hearing_aid)
+		user.balloon_alert(user, "already upgraded")
+		return
+	user.visible_message(span_notice("[user] starts attaching [src] to [target_headset]."))
+	if (!do_after(user, 5 SECONDS, target = target_headset))
+		user.balloon_alert(user, "interrupted")
+		return
+	target_headset.hearing_aid = TRUE
+	target_headset.update_appearance()
+	user.balloon_alert(user, "success")
+	qdel(src)
+
+// Start with one if you are deaf
+/datum/quirk/deafness/add_unique()
+	var/mob/living/carbon/human/human_holder = quirk_holder
+	human_holder.equip_in_one_of_slots(new /obj/item/hearing_aid(), list("backpack" = ITEM_SLOT_BACKPACK, "hands" = ITEM_SLOT_HANDS), qdel_on_fail = FALSE)
+
+// You can order more through cargo
+/datum/supply_pack/goody/hearing_aid
+	name = "Hearing Aid"
+	desc = "Contains a single hearing aid attachment for a headset, for those hard of hearing."
+	cost = PAYCHECK_CREW * 4
+	contains = list(/obj/item/hearing_aid)
+
+/obj/item/radio/headset
+	///Set to true if this functions as a hearing aid
+	var/hearing_aid = FALSE
+
+// Apply a sound filter if this is helping with your deafness
+/obj/item/radio/headset/equipped(mob/user, slot, initial)
+	. = ..()
+	if(!(slot_flags & slot))
+		return
+	if (!hearing_aid)
+		return
+	ADD_CLOTHING_TRAIT(user, TRAIT_DEAF_HEARING)
+	user.sound_environment_override = SOUND_ENVIRONMENT_SEWER_PIPE
+
+/obj/item/radio/headset/dropped(mob/user, silent)
+	. = ..()
+	if (!hearing_aid)
+		return
+	REMOVE_CLOTHING_TRAIT(user, TRAIT_DEAF_HEARING)
+	if (user.sound_environment_override == SOUND_ENVIRONMENT_SEWER_PIPE)
+		user.sound_environment_override = SOUND_ENVIRONMENT_NONE
+
+/obj/item/radio/headset/update_desc(updates)
+	. = ..()
+	if (!hearing_aid)
+		return
+	desc += "<br>It has a hearing aid attached."
+
+/mob/living/carbon/can_hear()
+	. = ..()
+	if (.)
+		return
+	if (!HAS_TRAIT(src, TRAIT_DEAF_HEARING))
+		return FALSE
+	if (health <= hardcrit_threshold) // I can't think of a more elegant solution than repeating this
+		return FALSE
+	if (!getorganslot(ORGAN_SLOT_EARS))
+		return FALSE
+	if (HAS_TRAIT_FROM(src, TRAIT_DEAF, EAR_DAMAGE)) // Just get it healed
+		return FALSE
+	return TRUE

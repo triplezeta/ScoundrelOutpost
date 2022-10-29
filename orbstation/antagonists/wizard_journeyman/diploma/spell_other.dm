@@ -3,16 +3,23 @@
  */
 
 /datum/diploma_spell/item/wands
-	name = "Wand Assortment"
-	desc = "A collection of wands that allow for a wide variety of utility. \
-		Wands have a limited number of charges, so be conservative with their use. Comes in a handy belt."
-	item_path = /obj/item/storage/belt/wands/full
+	name = "Bargain Wand Assortment"
+	desc = "A random collection of wands picked from the bargain bin which allow for a wide variety of utility. \
+		Wands have a limited number of charges, so be conservative with their use. Comes in a handy belt!"
+	item_path = /obj/item/storage/belt/wands/discount
 	category = DIPLOMA_SPELL_OTHER
 	weight = DIPLOMA_SPELL_UNCOMMON
 
 /datum/diploma_spell/item/wands/try_equip_item(mob/living/carbon/human/user, obj/item/to_equip)
 	var/was_equipped = user.equip_to_slot_if_possible(to_equip, ITEM_SLOT_BELT, disable_warning = TRUE)
 	to_chat(user, span_notice("\A [to_equip.name] has been summoned [was_equipped ? "on your waist" : "at your feet"]."))
+
+/datum/diploma_spell/item/chaos
+	name = "Staff of Chaos"
+	desc = "An artifact of intense chaotic power, you never have any idea what this is going to do next."
+	item_path = /obj/item/gun/magic/staff/chaos
+	category = DIPLOMA_SPELL_OTHER
+	weight = DIPLOMA_SPELL_RARE
 
 /datum/diploma_spell/item/staffhealing
 	name = "Staff of Healing"
