@@ -33,6 +33,14 @@
 	desc = "Facehuggers are unable to infect you, and will instead bite your face, injecting a unique venom."
 	mob_trait = TRAIT_XCARD_XENO_IMMUNE
 	examine_text = "immune to facehugger implantation, and will be injected with deadly xenotoxin instead."
+
+/datum/quirk/xcard/eyesnatch_immune
+	name = "X-CARD: Eyesnatching"
+	desc = "The traitor objective to steal someone's eyes will never select you as its target, and eyesnatching \
+			devices will not work on you."
+	mob_trait = TRAIT_XCARD_EYESNATCH_IMMUNE
+	//no need for examine text - if someone tries using an eyesnatch device on someone that isn't their target I don't know what to tell them
+
 /*
 /datum/quirk/xcard/uncyborgable
 	name = "Cyborg Incompatibility"

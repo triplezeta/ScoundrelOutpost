@@ -64,6 +64,9 @@
 		if(possible_target.has_antag_datum(/datum/antagonist/traitor))
 			continue
 
+		if(HAS_TRAIT(possible_target, TRAIT_XCARD_EYESNATCH_IMMUNE)) //ORBSTATION
+			continue
+
 		if(heads_of_staff)
 			if(!(possible_target.assigned_role.departments_bitflags & DEPARTMENT_BITFLAG_COMMAND))
 				continue
@@ -159,6 +162,10 @@
 		return ..()
 
 	if(!head || !istype(head))
+		return ..()
+
+	if(HAS_TRAIT(victim, TRAIT_XCARD_EYESNATCH_IMMUNE))
+		to_chat(user, span_warning("You get the feeling that you shouldn't use [src] on [victim]."))
 		return ..()
 
 	user.do_attack_animation(victim, used_item = src)
