@@ -94,10 +94,21 @@
 				/obj/item/clothing/under/suit/white = 1,
 				/obj/item/clothing/under/suit/sl = 1,
 				/obj/item/clothing/suit/jacket/bomber = 2,
+				/obj/item/clothing/suit/toggle/jacket = 2, //ORBSTATION
 				/obj/item/clothing/suit/jacket/puffer/vest = 2,
 				/obj/item/clothing/suit/jacket/puffer = 2,
 				/obj/item/clothing/suit/jacket/letterman = 2,
 				/obj/item/clothing/suit/jacket/letterman_red = 2,
+
+				/obj/item/clothing/suit/toggle/jacket/flannel = 2, //ORBSTATION START
+				/obj/item/clothing/suit/toggle/jacket/flannel/red = 2,
+				/obj/item/clothing/suit/toggle/jacket/flannel/aqua = 2,
+				/obj/item/clothing/suit/toggle/jacket/flannel/brown = 2,
+				/obj/item/clothing/suit/hawaiian/blue = 2,
+				/obj/item/clothing/suit/hawaiian/orange = 2,
+				/obj/item/clothing/suit/hawaiian/purple = 2,
+				/obj/item/clothing/suit/hawaiian/green = 2, //ORBSTATION END
+
 				/obj/item/clothing/suit/costume/poncho = 1,
 				/obj/item/clothing/under/dress/skirt = 2,
 				/obj/item/clothing/under/suit/white/skirt = 2,

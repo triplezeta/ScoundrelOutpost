@@ -30,6 +30,7 @@
 		/obj/item/clothing/under/rank/security/officer/grey = 3,
 		/obj/item/clothing/under/pants/slacks = 3,
 		/obj/item/clothing/under/rank/security/officer/blueshirt = 3,
+		/obj/item/clothing/suit/toggle/jacket/sec = 3, //ORBSTATION
 		)
 	premium = list(
 		/obj/item/clothing/under/rank/security/officer/formal = 3,
@@ -77,6 +78,7 @@
 		/obj/item/clothing/shoes/sneakers/blue = 4,
 		/obj/item/clothing/suit/apron/surgical = 4,
 		/obj/item/clothing/mask/surgical = 4,
+		/obj/item/clothing/suit/toggle/jacket/med = 4, //ORBSTATION
 		)
 	refill_canister = /obj/item/vending_refill/wardrobe/medi_wardrobe
 	payment_department = ACCOUNT_MED
@@ -105,6 +107,7 @@
 		/obj/item/clothing/mask/bandana/striped/engineering = 3,
 		/obj/item/clothing/head/utility/hardhat = 3,
 		/obj/item/clothing/head/utility/hardhat/weldhat = 3,
+		/obj/item/clothing/suit/toggle/jacket/engi = 3, //ORBSTATION
 		)
 	refill_canister = /obj/item/vending_refill/wardrobe/engi_wardrobe
 	payment_department = ACCOUNT_ENG
@@ -129,6 +132,7 @@
 		/obj/item/clothing/under/rank/engineering/atmospheric_technician/skirt = 3,
 		/obj/item/clothing/head/beret/atmos = 3,
 		/obj/item/clothing/shoes/sneakers/black = 3,
+		/obj/item/clothing/suit/toggle/jacket/engi = 2, //ORBSTATION
 		)
 	refill_canister = /obj/item/vending_refill/wardrobe/atmos_wardrobe
 	payment_department = ACCOUNT_ENG
@@ -154,6 +158,7 @@
 		/obj/item/clothing/mask/bandana/striped/cargo = 3,
 		/obj/item/clothing/head/soft = 3,
 		/obj/item/radio/headset/headset_cargo = 3,
+		/obj/item/clothing/suit/toggle/jacket/supply = 3, //ORBSTATION
 	)
 	premium = list(
 		/obj/item/clothing/under/rank/cargo/miner = 3,
@@ -215,6 +220,7 @@
 		/obj/item/clothing/shoes/sneakers/white = 3,
 		/obj/item/radio/headset/headset_sci = 3,
 		/obj/item/clothing/mask/gas = 3,
+		/obj/item/clothing/suit/toggle/jacket/sci = 3, //ORBSTATION
 		)
 	refill_canister = /obj/item/vending_refill/wardrobe/science_wardrobe
 	payment_department = ACCOUNT_SCI
@@ -302,6 +308,7 @@
 		/obj/item/storage/belt/bandolier = 1,
 		/obj/item/storage/dice/hazard = 1,
 		/obj/item/storage/bag/money = 2,
+		/obj/item/clothing/suit/hooded/wintercoat/bartender = 2, //ORBSTATION
 		)
 	premium = list(
 		/obj/item/storage/box/dishdrive = 1,
