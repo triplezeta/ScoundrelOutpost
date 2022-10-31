@@ -361,6 +361,8 @@
 			msg += "[span_notice("<b><i>[t_He] [t_is] just absolutely fucked up, you can look again to take a closer look...</i></b>")]\n"*/
 	//END ORBSTATION REMOVAL
 
+	msg += "</span>" // closes info class
+
 	//ORBSTATION: display x-cards on examine; display link for examining closer
 	msg += "\n"
 	msg += examine_xcards()

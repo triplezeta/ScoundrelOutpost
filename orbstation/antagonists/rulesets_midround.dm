@@ -54,13 +54,6 @@
 	antag_datum = /datum/antagonist/wizard_journeyman
 	antag_flag = ROLE_WIZARD_JOURNEYMAN
 	antag_flag_override = ROLE_WIZARD
-	enemy_roles = list(
-		JOB_CAPTAIN,
-		JOB_DETECTIVE,
-		JOB_HEAD_OF_SECURITY,
-		JOB_SECURITY_OFFICER,
-		JOB_WARDEN,
-	)
 	required_enemies = list(2,2,2,2,1,1,1,0,0,0)
 	requirements = list(101,101,60,50,40,30,20,10,10,10)
 	required_candidates = 1
