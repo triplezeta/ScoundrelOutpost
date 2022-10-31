@@ -46,6 +46,9 @@
 	heads_of_staff = TRUE
 
 /datum/traitor_objective/eyesnatching/generate_objective(datum/mind/generating_for, list/possible_duplicates)
+	if(HAS_TRAIT(generating_for.current, TRAIT_XCARD_EYE_TRAUMA)) //ORBSTATION
+		return FALSE
+
 	var/list/possible_targets = list()
 	var/try_target_late_joiners = FALSE
 	if(generating_for.late_joiner)
@@ -64,7 +67,7 @@
 		if(possible_target.has_antag_datum(/datum/antagonist/traitor))
 			continue
 
-		if(HAS_TRAIT(possible_target, TRAIT_XCARD_EYESNATCH_IMMUNE)) //ORBSTATION
+		if(HAS_TRAIT(possible_target, TRAIT_XCARD_EYE_TRAUMA)) //ORBSTATION
 			continue
 
 		if(heads_of_staff)
@@ -164,7 +167,7 @@
 	if(!head || !istype(head))
 		return ..()
 
-	if(HAS_TRAIT(victim, TRAIT_XCARD_EYESNATCH_IMMUNE))
+	if(HAS_TRAIT(victim, TRAIT_XCARD_EYE_TRAUMA)) //ORBSTATION
 		to_chat(user, span_warning("You get the feeling that you shouldn't use [src] on [victim]."))
 		return ..()
 
