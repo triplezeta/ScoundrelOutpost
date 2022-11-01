@@ -320,12 +320,6 @@
 	wizard_message = "You tear open a hole in reality!"
 	once_only = TRUE
 
-/datum/grand_event/event/invincible
-	min_escalation = 0
-	max_escalation = 7
-	event_control_path = /datum/round_event_control/wizard/invincible
-	wizard_message = "You cast a powerful enchantment!"
-
 /datum/grand_event/event/floor_lava
 	min_escalation = 5
 	max_escalation = 7
