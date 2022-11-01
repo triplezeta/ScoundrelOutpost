@@ -33,6 +33,15 @@
 	desc = "Facehuggers are unable to infect you, and will instead bite your face, injecting a unique venom."
 	mob_trait = TRAIT_XCARD_XENO_IMMUNE
 	examine_text = "immune to facehugger implantation, and will be injected with deadly xenotoxin instead."
+
+/datum/quirk/xcard/eye_trauma
+	name = "X-CARD: Eye Trauma"
+	desc = "Various sources of eye trauma will not be applied to you. Particularly, the traitor objective to steal someone's \
+	 eyes will never select you as its target, eyesnatching devices will not work on you, and the objective will \
+	 not be offered to you."
+	mob_trait = TRAIT_XCARD_EYE_TRAUMA
+	//no need for examine text - if someone tries using an eyesnatch device on someone that isn't their target I don't know what to tell them
+
 /*
 /datum/quirk/xcard/uncyborgable
 	name = "Cyborg Incompatibility"
@@ -57,3 +66,8 @@
 
 	return msg
 
+//alternate mood event for the eyestab x-card
+/datum/mood_event/face_stab
+	description = "I just got stabbed in the face!"
+	mood_change = -4
+	timeout = 3 MINUTES
