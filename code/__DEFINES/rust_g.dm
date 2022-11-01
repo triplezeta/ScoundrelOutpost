@@ -163,29 +163,12 @@
 
 #define rustg_noise_get_at_coordinates(seed, x, y) RUSTG_CALL(RUST_G, "noise_get_at_coordinates")(seed, x, y)
 
-<<<<<<< HEAD
-#define RUSTG_REDIS_ERROR_CHANNEL "RUSTG_REDIS_ERROR_CHANNEL"
-
-#define rustg_redis_connect(addr) call(RUST_G, "redis_connect")(addr)
-/proc/rustg_redis_disconnect() return call(RUST_G, "redis_disconnect")()
-#define rustg_redis_subscribe(channel) call(RUST_G, "redis_subscribe")(channel)
-/proc/rustg_redis_get_messages() return call(RUST_G, "redis_get_messages")()
-#define rustg_redis_publish(channel, message) call(RUST_G, "redis_publish")(channel, message)
-
-#define rustg_sql_connect_pool(options) call(RUST_G, "sql_connect_pool")(options)
-#define rustg_sql_query_async(handle, query, params) call(RUST_G, "sql_query_async")(handle, query, params)
-#define rustg_sql_query_blocking(handle, query, params) call(RUST_G, "sql_query_blocking")(handle, query, params)
-#define rustg_sql_connected(handle) call(RUST_G, "sql_connected")(handle)
-#define rustg_sql_disconnect_pool(handle) call(RUST_G, "sql_disconnect_pool")(handle)
-#define rustg_sql_check_query(job_id) call(RUST_G, "sql_check_query")("[job_id]")
-=======
 #define rustg_sql_connect_pool(options) RUSTG_CALL(RUST_G, "sql_connect_pool")(options)
 #define rustg_sql_query_async(handle, query, params) RUSTG_CALL(RUST_G, "sql_query_async")(handle, query, params)
 #define rustg_sql_query_blocking(handle, query, params) RUSTG_CALL(RUST_G, "sql_query_blocking")(handle, query, params)
 #define rustg_sql_connected(handle) RUSTG_CALL(RUST_G, "sql_connected")(handle)
 #define rustg_sql_disconnect_pool(handle) RUSTG_CALL(RUST_G, "sql_disconnect_pool")(handle)
 #define rustg_sql_check_query(job_id) RUSTG_CALL(RUST_G, "sql_check_query")("[job_id]")
->>>>>>> master
 
 #define rustg_time_microseconds(id) text2num(RUSTG_CALL(RUST_G, "time_microseconds")(id))
 #define rustg_time_milliseconds(id) text2num(RUSTG_CALL(RUST_G, "time_milliseconds")(id))
@@ -203,13 +186,7 @@
 	else
 		CRASH(output["content"])
 
-<<<<<<< HEAD
-#define rustg_unzip_download_async(url, unzip_directory) call(RUST_G, "unzip_download_async")(url, unzip_directory)
-#define rustg_unzip_check(job_id) call(RUST_G, "unzip_check")("[job_id]")
-#define rustg_raw_toml_encode(value) json_decode(call(RUST_G, "toml_encode")(json_encode(value)))
-=======
 #define rustg_raw_toml_encode(value) json_decode(RUSTG_CALL(RUST_G, "toml_encode")(json_encode(value)))
->>>>>>> master
 
 /proc/rustg_toml_encode(value)
 	var/list/output = rustg_raw_toml_encode(value)
