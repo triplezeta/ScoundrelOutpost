@@ -76,8 +76,8 @@
 		balloon_alert(user, "[part.name] already deployed!")
 		playsound(src, 'sound/machines/scanbuzz.ogg', 25, TRUE, SILENCED_SOUND_EXTRARANGE)
 	if(part in overslotting_parts)
-		var/obj/item/overslot = wearer.get_item_by_slot(part.slot_flags)
-		if(overslot)
+		var/obj/item/clothing/overslot = wearer.get_item_by_slot(part.slot_flags)
+		if(overslot && (part.slot_flags != ITEM_SLOT_OCLOTHING || !(overslot.clothing_flags & THICKMATERIAL))) //ORBSTATION EDIT - non-THICKMATERIAL suits can be overslotted
 			overslotting_parts[part] = overslot
 			wearer.transferItemToLoc(overslot, part, force = TRUE)
 			RegisterSignal(part, COMSIG_ATOM_EXITED, .proc/on_overslot_exit)
