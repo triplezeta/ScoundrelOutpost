@@ -1,7 +1,7 @@
 /*
 	Orbstation Department Assistants
 */
-/// Servicer
+/// Waiter
 /datum/job/assistant/srv
 	title = JOB_ASSISTANT_SRV
 	description = "Bust tables, work for tips"

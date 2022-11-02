@@ -1,5 +1,5 @@
 // Department assistants
-#define JOB_ASSISTANT_SRV "Servicer"
+#define JOB_ASSISTANT_SRV "Waiter"
 #define JOB_ASSISTANT_ENG "Tech Support"
 #define JOB_ASSISTANT_MED "Medical Assistant"
 #define JOB_ASSISTANT_SCI "Lab Assistant"
