@@ -65,7 +65,7 @@
 		/datum/job_department/engineering,
 		)
 
-	config_tag = "TECH SUPPORT"
+	config_tag = "TECH_SUPPORT"
 
 /datum/outfit/job/assistant_eng
 	name = JOB_ASSISTANT_ENG
@@ -116,7 +116,7 @@
 		/datum/job_department/medical,
 		)
 
-	config_tag = "MEDICAL ASSISTANT"
+	config_tag = "MEDICAL_ASSISTANT"
 
 /datum/outfit/job/assistant_med
 	name = JOB_ASSISTANT_MED
@@ -164,7 +164,7 @@
 		/datum/job_department/science,
 		)
 
-	config_tag = "LAB ASSISTANT"
+	config_tag = "LAB_ASSISTANT"
 
 /datum/outfit/job/assistant_sci
 	name = JOB_ASSISTANT_SCI
@@ -213,7 +213,7 @@
 		/datum/job_department/security,
 		)
 
-	config_tag = "BRIG CLERK"
+	config_tag = "BRIG_CLERK"
 
 /datum/outfit/job/assistant_sec
 	name = JOB_ASSISTANT_SEC
