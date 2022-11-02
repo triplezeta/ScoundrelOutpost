@@ -21,7 +21,7 @@
 		/datum/job_department/service,
 		)
 
-	config_tag = "SERVICER"
+	config_tag = "WAITER"
 
 /datum/outfit/job/assistant_srv
 	name = JOB_ASSISTANT_SRV
@@ -31,7 +31,7 @@
 	ears = /obj/item/radio/headset/headset_srv
 
 /datum/id_trim/job/assistant/srv
-	assignment = "Servicer"
+	assignment = "Waiter"
 	subdepartment_color = COLOR_SERVICE_LIME
 	minimal_access = list(
 		ACCESS_SERVICE,
