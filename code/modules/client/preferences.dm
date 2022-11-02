@@ -427,8 +427,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			.++
 
 /datum/preferences/proc/validate_quirks()
-	if(GetQuirkBalance() < 0)
-		all_quirks = list()
+	//if(GetQuirkBalance() < 0)
+		//all_quirks = list()
+	return //ORBSTATION: we do not want to check the quirk balance, actually
 
 /// Sanitizes the preferences, applies the randomization prefs, and then applies the preference to the human mob.
 /datum/preferences/proc/safe_transfer_prefs_to(mob/living/carbon/human/character, icon_updates = TRUE, is_antag = FALSE)
