@@ -3,7 +3,7 @@
 	name = "\improper Podperson"
 	plural_form = "Podpeople"
 	id = SPECIES_PODPERSON
-	species_traits = list(MUTCOLORS, EYECOLOR, HAS_FLESH, HAS_BONE)
+	species_traits = list(MUTCOLORS, EYECOLOR, HAS_FLESH, HAS_BONE, POD_BLOOD)
 	inherent_traits = list(
 		TRAIT_PLANT_SAFE,
 	)
@@ -114,8 +114,8 @@
 		list(
 			SPECIES_PERK_TYPE = SPECIES_NEUTRAL_PERK,
 			SPECIES_PERK_ICON = "tint",
-			SPECIES_PERK_NAME = initial(exotic_blood.name),
-			SPECIES_PERK_DESC = "Podpeople blood is Water or a random fruit juice, which can make recieving medical treatment harder.",
+			SPECIES_PERK_NAME = "Unique Blood",
+			SPECIES_PERK_DESC = "Podpeople blood can be either water, or a random easily sourcable fruit juice",
 		),
 		list(
 			SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,

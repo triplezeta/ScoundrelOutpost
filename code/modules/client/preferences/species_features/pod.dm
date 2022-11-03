@@ -38,3 +38,25 @@
 	data[SUPPLEMENTAL_FEATURE_KEY] = "hair_color"
 
 	return data
+
+/datum/preference/choiced/pod_blood
+	savefile_key = "feature_pod_blood"
+	savefile_identifier = PREFERENCE_CHARACTER
+	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
+	main_feature_name = "Bloodtype"
+	relevant_species_trait = POD_BLOOD
+
+/datum/preference/choiced/pod_blood/create_default_value()
+	return "Juices" // The juices are a fun and unique thing we have! lets make them a character default
+
+/datum/preference/choiced/pod_blood/init_possible_values()
+	var/list/values = list()
+
+	values["Water"] = "Water"
+	values["Juices"] = "Juices"
+
+	return values
+
+/datum/preference/choiced/pod_blood/apply_to_human(mob/living/carbon/human/target, value)
+	target.dna.features["pod_blood"] = value
+
