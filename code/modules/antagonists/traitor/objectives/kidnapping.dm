@@ -22,8 +22,13 @@
 	//this is a prototype so this progression is for all basic level kill objectives
 	progression_reward = KIDNAP_BASE_PROG_REWARD
 	telecrystal_reward = list(2, 3)
-	
+
 	progression_minimum = 30 MINUTES
+
+	/// The period of time until you can take another objective after taking 3 objectives.
+	var/objective_period = 15 MINUTES
+	/// The maximum number of objectives we can get within this period.
+	var/maximum_objectives_in_period = 3
 
 	/// The jobs that this objective is targetting.
 	var/list/target_jobs
@@ -38,7 +43,22 @@
 	/// All stripped victims belongings
 	var/list/victim_belogings = list()
 
+/datum/traitor_objective/kidnapping/supported_configuration_changes()
+	. = ..()
+	. += NAMEOF(src, objective_period)
+	. += NAMEOF(src, maximum_objectives_in_period)
+
+/datum/traitor_objective/kidnapping/New(datum/uplink_handler/handler)
+	. = ..()
+	AddComponent(/datum/component/traitor_objective_limit_per_time, \
+		/datum/traitor_objective/assassinate, \
+		time_period = objective_period, \
+		maximum_objectives = maximum_objectives_in_period \
+	)
+
 /datum/traitor_objective/kidnapping/common
+	progression_minimum = 0 MINUTES
+	progression_maximum = 30 MINUTES
 	target_jobs = list(
 		// Medical
 		/datum/job/doctor,
@@ -65,11 +85,15 @@
 	)
 
 /datum/traitor_objective/kidnapping/less_common
+	progression_minimum = 0 MINUTES
+	progression_maximum = 15 MINUTES
 	target_jobs = list(
 		/datum/job/assistant
 	)
 
 /datum/traitor_objective/kidnapping/uncommon //Hard to fish out victims
+	progression_minimum = 0 MINUTES
+	progression_maximum = 45 MINUTES
 	target_jobs = list(
 		// Medical
 		/datum/job/virologist,

@@ -14,8 +14,8 @@
 	if (ishuman(target))
 		return FALSE
 
-	if (israt(target) || ismouse(target))
-		var/mob/living/simple_animal/hostile/rat/blessedR = target
+	if (ismouse(target))
+		var/mob/living/basic/mouse/blessedR = target
 		if(blessedR.health < blessedR.maxHealth)
 			blessedR.heal_bodypart_damage(blessedR.maxHealth)
 			blessedR.visible_message(span_notice("[chap] heals [blessedR] with the power of [GLOB.deity]!"))
@@ -149,10 +149,10 @@
 
 /datum/round_event/scrubber_clog/rats/get_mob()
 	var/static/list/mob_list = list(
-		/mob/living/simple_animal/mouse,
-		/mob/living/simple_animal/mouse,
-		/mob/living/simple_animal/mouse,
-		/mob/living/simple_animal/hostile/rat,
+		/mob/living/basic/mouse,
+		/mob/living/basic/mouse,
+		/mob/living/basic/mouse,
+		/mob/living/basic/mouse/rat,
 	)
 	return pick(mob_list)
 

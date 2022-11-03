@@ -1899,6 +1899,18 @@
 "aAg" = (
 /turf/closed/wall/r_wall/rust,
 /area/station/ai_monitored/turret_protected/ai)
+"aAo" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/sink/directional/south,
+/obj/machinery/camera/directional/west{
+	c_tag = "Prison Maintenance";
+	network = list("ss13","prison")
+	},
+/mob/living/basic/mouse/brown/tom{
+	name = "Jerm"
+	},
+/turf/open/floor/iron/grimy,
+/area/station/security/prison/safe)
 "aAq" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -5242,6 +5254,31 @@
 	dir = 8
 	},
 /turf/open/floor/iron/dark,
+/area/station/engineering/atmos)
+"bDQ" = (
+/obj/effect/turf_decal/tile/yellow{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/structure/fireaxecabinet/directional/north,
+/obj/machinery/camera/directional/north{
+	c_tag = "Atmospherics Scrubbers";
+	name = "atmospherics camera";
+	network = list("ss13","engine")
+	},
+/obj/effect/turf_decal/bot,
+/obj/machinery/atmospherics/pipe/smart/simple/scrubbers/visible{
+	dir = 4
+	},
+/turf/open/floor/iron,
 /area/station/engineering/atmos)
 "bDV" = (
 /obj/structure/sink/directional/south,
@@ -9630,6 +9667,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/dark,
 /area/station/service/hydroponics/garden)
+"cWK" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/mapping_helpers/broken_floor,
+/mob/living/basic/amoung/surgeon,
+/turf/open/floor/plating,
+/area/station/maintenance/fore)
 "cWQ" = (
 /obj/effect/turf_decal/tile/red{
 	dir = 1
@@ -12547,29 +12590,6 @@
 /obj/effect/mapping_helpers/airlock/access/all/engineering/general,
 /turf/open/floor/iron/dark,
 /area/station/engineering/supermatter/room)
-"dMb" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/delivery,
-/obj/machinery/light/small/directional/east,
-/obj/structure/closet/crate/freezer{
-	name = "organ storage"
-	},
-/obj/structure/sign/poster/contraband/random/directional/east,
-/obj/item/stock_parts/manipulator,
-/obj/item/stock_parts/manipulator,
-/obj/item/stack/cable_coil,
-/obj/item/stack/sheet/cloth/five,
-/obj/effect/mob_spawn/corpse/amoung/pequeno,
-/obj/effect/mob_spawn/corpse/amoung/pequeno,
-/turf/open/floor/iron/dark,
-/area/station/maintenance/fore)
 "dMd" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -17894,6 +17914,22 @@
 /obj/effect/mapping_helpers/airlock/access/all/service/hydroponics,
 /turf/open/floor/iron/dark,
 /area/station/service/hydroponics)
+"fna" = (
+/obj/structure/table/optable,
+/obj/effect/decal/cleanable/blood/old,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/item/surgical_drapes,
+/obj/item/clothing/mask/surgical,
+/obj/effect/mob_spawn/corpse/amoung,
+/turf/open/floor/iron/dark,
+/area/station/maintenance/fore)
 "fne" = (
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
@@ -29925,12 +29961,6 @@
 /obj/effect/mapping_helpers/burnt_floor,
 /turf/open/floor/plating,
 /area/station/maintenance/port/greater)
-"ivT" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/broken_floor,
-/mob/living/basic/amoung/surgeon,
-/turf/open/floor/plating,
-/area/station/maintenance/fore)
 "ivU" = (
 /obj/structure/closet/emcloset,
 /turf/open/floor/plating,
@@ -64696,6 +64726,29 @@
 /obj/effect/mapping_helpers/airlock/access/all/security/armory,
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/security/armory)
+"sxe" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/delivery,
+/obj/machinery/light/small/directional/east,
+/obj/structure/closet/crate/freezer{
+	name = "organ storage"
+	},
+/obj/structure/sign/poster/contraband/random/directional/east,
+/obj/item/stock_parts/manipulator,
+/obj/item/stock_parts/manipulator,
+/obj/item/stack/cable_coil,
+/obj/item/stack/sheet/cloth/five,
+/obj/effect/mob_spawn/corpse/amoung/pequeno,
+/obj/effect/mob_spawn/corpse/amoung/pequeno,
+/turf/open/floor/iron/dark,
+/area/station/maintenance/fore)
 "sxi" = (
 /turf/closed/wall/r_wall,
 /area/station/service/chapel/office)
@@ -64797,22 +64850,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/dark,
 /area/station/tcommsat/computer)
-"szq" = (
-/obj/structure/table/optable,
-/obj/effect/decal/cleanable/blood/old,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/bot,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/item/surgical_drapes,
-/obj/item/clothing/mask/surgical,
-/obj/effect/mob_spawn/corpse/amoung,
-/turf/open/floor/iron/dark,
-/area/station/maintenance/fore)
 "szK" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -79760,18 +79797,6 @@
 	},
 /turf/open/floor/iron/showroomfloor,
 /area/station/medical/virology)
-"wEy" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/sink/directional/south,
-/obj/machinery/camera/directional/west{
-	c_tag = "Prison Maintenance";
-	network = list("ss13","prison")
-	},
-/mob/living/simple_animal/mouse/brown/tom{
-	name = "Jerm"
-	},
-/turf/open/floor/iron/grimy,
-/area/station/security/prison/safe)
 "wEI" = (
 /obj/effect/turf_decal/tile/red,
 /obj/effect/turf_decal/tile/red{
@@ -82179,31 +82204,6 @@
 /obj/effect/mapping_helpers/broken_floor,
 /turf/open/floor/plating,
 /area/station/maintenance/disposal)
-"xnb" = (
-/obj/effect/turf_decal/tile/yellow{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/yellow{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/blue{
-	dir = 1
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/obj/structure/fireaxecabinet/directional/north,
-/obj/machinery/camera/directional/north{
-	c_tag = "Atmospherics Scrubbers";
-	name = "atmospherics camera";
-	network = list("ss13","engine")
-	},
-/obj/effect/turf_decal/bot,
-/obj/machinery/atmospherics/pipe/smart/simple/scrubbers/visible{
-	dir = 4
-	},
-/turf/open/floor/iron,
-/area/station/engineering/atmos)
 "xnm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/tile/neutral,
@@ -95909,7 +95909,7 @@ aaa
 aaa
 aaa
 dWG
-wEy
+aAo
 mbh
 xZn
 eJN
@@ -114173,7 +114173,7 @@ biP
 cfL
 cfL
 jwV
-xnb
+bDQ
 ouC
 kHQ
 wRU
@@ -116155,7 +116155,7 @@ aeu
 qlC
 rtx
 aIv
-ivT
+cWK
 tlb
 bSA
 kFG
@@ -116412,7 +116412,7 @@ aeu
 efG
 kWK
 cvT
-szq
+fna
 rDO
 leF
 vUo
@@ -116927,7 +116927,7 @@ efG
 qlC
 iMG
 izL
-dMb
+sxe
 tRO
 lRk
 fvU
