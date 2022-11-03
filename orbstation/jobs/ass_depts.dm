@@ -6,7 +6,7 @@
 /datum/job/assistant/dept/
 	config_tag = "DEPT_ASSISTANT"
 
-/// Override of the proc that determines where these jobs spawn, just to use the normal assistant spawns
+// Override of the proc that determines where these jobs spawn, just to use the normal assistant spawns
 /datum/job/assistant/dept/get_default_roundstart_spawn_point()
 	for(var/obj/effect/landmark/start/spawn_point as anything in GLOB.start_landmarks_list)
 		if(spawn_point.name != JOB_ASSISTANT)
@@ -199,45 +199,3 @@
 		ACCESS_RD,
 		)
 	job = /datum/job/assistant/dept/sci
-
-/// Brig Clerk
-/datum/job/assistant/dept/sec
-	title = JOB_ASSISTANT_SEC
-	description = "Make donuts while the rest of security is killed by alien invaders."
-	department_head = list(JOB_HEAD_OF_SECURITY)
-	total_positions = 1
-	spawn_positions = 1
-	supervisors = SUPERVISOR_HOS
-
-	outfit = /datum/outfit/job/assistant_sec
-	plasmaman_outfit = /datum/outfit/plasmaman/security
-
-	paycheck_department = ACCOUNT_SEC
-	display_order = JOB_DISPLAY_ORDER_ASSISTANT_SEC
-
-	departments_list = list(
-		/datum/job_department/security,
-		)
-
-	config_tag = "BRIG_CLERK"
-
-/datum/outfit/job/assistant_sec
-	name = JOB_ASSISTANT_SEC
-	jobtype = /datum/job/assistant/dept/sec
-	id_trim = /datum/id_trim/job/assistant/sec
-	uniform = /obj/item/clothing/under/color/red
-	belt = /obj/item/modular_computer/tablet/pda/security
-	ears = /obj/item/radio/headset/headset_sec
-
-/datum/id_trim/job/assistant/sec
-	assignment = "Brig Clerk"
-	subdepartment_color = COLOR_SECURITY_RED
-	minimal_access = list(
-		ACCESS_BRIG_ENTRANCE,
-	)
-	template_access = list(
-		ACCESS_CAPTAIN,
-		ACCESS_CHANGE_IDS,
-		ACCESS_HOS,
-		)
-	job = /datum/job/assistant/dept/sec
