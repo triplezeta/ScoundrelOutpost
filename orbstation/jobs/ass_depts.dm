@@ -4,6 +4,7 @@
 
 /// Abstract datum for holding the rest of the assistant departments
 /datum/job/assistant/dept/
+	config_tag = "DEPT_ASSISTANT"
 
 /// Override of the proc that determines where these jobs spawn, just to use the normal assistant spawns
 /datum/job/assistant/dept/get_default_roundstart_spawn_point()
