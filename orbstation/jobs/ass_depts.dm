@@ -1,8 +1,25 @@
 /*
 	Orbstation Department Assistants
 */
+
+/// Abstract datum for holding the rest of the assistant departments
+/datum/job/assistant/dept/
+
+/// Override of the proc that determines where these jobs spawn, just to use the normal assistant spawns
+/datum/job/assistant/dept/get_default_roundstart_spawn_point()
+	for(var/obj/effect/landmark/start/spawn_point as anything in GLOB.start_landmarks_list)
+		if(spawn_point.name != JOB_ASSISTANT)
+			continue
+		. = spawn_point
+		if(spawn_point.used) //so we can revert to spawning them on top of eachother if something goes wrong
+			continue
+		spawn_point.used = TRUE
+		break
+	if(!.)
+		log_world("Couldn't find a round start spawn point for [title]")
+
 /// Waiter
-/datum/job/assistant/srv
+/datum/job/assistant/dept/srv
 	title = JOB_ASSISTANT_SRV
 	description = "Bus tables, work for tips."
 	department_head = list(JOB_HEAD_OF_PERSONNEL)
@@ -23,7 +40,7 @@
 
 /datum/outfit/job/assistant_srv
 	name = JOB_ASSISTANT_SRV
-	jobtype = /datum/job/assistant/srv
+	jobtype = /datum/job/assistant/dept/srv
 	id_trim = /datum/id_trim/job/assistant/srv
 	uniform = /obj/item/clothing/under/suit/waiter
 	ears = /obj/item/radio/headset/headset_srv
@@ -40,10 +57,10 @@
 		ACCESS_KITCHEN,
 		ACCESS_THEATRE,
 		)
-	job = /datum/job/assistant/srv
+	job = /datum/job/assistant/dept/srv
 
 /// Tech Support
-/datum/job/assistant/eng
+/datum/job/assistant/dept/eng
 	title = JOB_ASSISTANT_ENG
 	description = "Make your own pet projects, get called away to fix every little thing."
 	department_head = list(JOB_CHIEF_ENGINEER)
@@ -65,7 +82,7 @@
 
 /datum/outfit/job/assistant_eng
 	name = JOB_ASSISTANT_ENG
-	jobtype = /datum/job/assistant/eng
+	jobtype = /datum/job/assistant/dept/eng
 	id_trim = /datum/id_trim/job/assistant/eng
 	uniform = /obj/item/clothing/under/color/yellow
 	belt = /obj/item/modular_computer/tablet/pda/engineering
@@ -88,12 +105,12 @@
 		ACCESS_CHANGE_IDS,
 		ACCESS_CE,
 		)
-	job = /datum/job/assistant/eng
+	job = /datum/job/assistant/dept/eng
 
 /// Medical Assistant
-/datum/job/assistant/med
+/datum/job/assistant/dept/med
 	title = JOB_ASSISTANT_MED
-	description = "Handle patients coming in and out of medbay, lack a medical liscense."
+	description = "Handle patients coming in and out of medbay, lack a medical license."
 	department_head = list(JOB_CHIEF_MEDICAL_OFFICER)
 	total_positions = 2
 	spawn_positions = 2
@@ -113,7 +130,7 @@
 
 /datum/outfit/job/assistant_med
 	name = JOB_ASSISTANT_MED
-	jobtype = /datum/job/assistant/med
+	jobtype = /datum/job/assistant/dept/med
 	id_trim = /datum/id_trim/job/assistant/med
 	uniform = /obj/item/clothing/under/color/blue
 	belt = /obj/item/modular_computer/tablet/pda/medical
@@ -134,10 +151,10 @@
 		ACCESS_CHANGE_IDS,
 		ACCESS_CMO,
 		)
-	job = /datum/job/assistant/med
+	job = /datum/job/assistant/dept/med
 
 /// Lab Assistant
-/datum/job/assistant/sci
+/datum/job/assistant/dept/sci
 	title = JOB_ASSISTANT_SCI
 	description = "Witness the marvels of modern age technology, and be a test subject for them."
 	department_head = list(JOB_RESEARCH_DIRECTOR)
@@ -159,7 +176,7 @@
 
 /datum/outfit/job/assistant_sci
 	name = JOB_ASSISTANT_SCI
-	jobtype = /datum/job/assistant/sci
+	jobtype = /datum/job/assistant/dept/sci
 	id_trim = /datum/id_trim/job/assistant/sci
 	uniform = /obj/item/clothing/under/color/lightpurple
 	belt = /obj/item/modular_computer/tablet/pda/science
@@ -180,10 +197,10 @@
 		ACCESS_CHANGE_IDS,
 		ACCESS_RD,
 		)
-	job = /datum/job/assistant/sci
+	job = /datum/job/assistant/dept/sci
 
 /// Brig Clerk
-/datum/job/assistant/sec
+/datum/job/assistant/dept/sec
 	title = JOB_ASSISTANT_SEC
 	description = "Make donuts while the rest of security is killed by alien invaders."
 	department_head = list(JOB_HEAD_OF_SECURITY)
@@ -205,7 +222,7 @@
 
 /datum/outfit/job/assistant_sec
 	name = JOB_ASSISTANT_SEC
-	jobtype = /datum/job/assistant/sec
+	jobtype = /datum/job/assistant/dept/sec
 	id_trim = /datum/id_trim/job/assistant/sec
 	uniform = /obj/item/clothing/under/color/red
 	belt = /obj/item/modular_computer/tablet/pda/security
@@ -222,4 +239,4 @@
 		ACCESS_CHANGE_IDS,
 		ACCESS_HOS,
 		)
-	job = /datum/job/assistant/sec
+	job = /datum/job/assistant/dept/sec
