@@ -4,7 +4,7 @@
 /// Waiter
 /datum/job/assistant/srv
 	title = JOB_ASSISTANT_SRV
-	description = "Bust tables, work for tips"
+	description = "Bus tables, work for tips."
 	department_head = list(JOB_HEAD_OF_PERSONNEL)
 	total_positions = 2
 	spawn_positions = 2
@@ -14,8 +14,6 @@
 
 	paycheck_department = ACCOUNT_SRV
 	display_order = JOB_DISPLAY_ORDER_ASSISTANT_SRV
-
-	department_for_prefs = /datum/job_department/service
 
 	departments_list = list(
 		/datum/job_department/service,
@@ -31,7 +29,7 @@
 	ears = /obj/item/radio/headset/headset_srv
 
 /datum/id_trim/job/assistant/srv
-	assignment = "Waitrom"
+	assignment = "Waitron"
 	subdepartment_color = COLOR_SERVICE_LIME
 	minimal_access = list(
 		ACCESS_SERVICE,
@@ -59,8 +57,6 @@
 	paycheck_department = ACCOUNT_ENG
 	display_order = JOB_DISPLAY_ORDER_ASSISTANT_ENG
 
-	department_for_prefs = /datum/job_department/engineering
-
 	departments_list = list(
 		/datum/job_department/engineering,
 		)
@@ -86,7 +82,6 @@
 		ACCESS_CONSTRUCTION,
 		ACCESS_ENGINE_EQUIP,
 		ACCESS_EXTERNAL_AIRLOCKS,
-		ACCESS_MINERAL_STOREROOM,
 		)
 	template_access = list(
 		ACCESS_CAPTAIN,
@@ -98,7 +93,7 @@
 /// Medical Assistant
 /datum/job/assistant/med
 	title = JOB_ASSISTANT_MED
-	description = "Handle patients coming in and out of medbay,."
+	description = "Handle patients coming in and out of medbay, lack a medical liscense."
 	department_head = list(JOB_CHIEF_MEDICAL_OFFICER)
 	total_positions = 2
 	spawn_positions = 2
@@ -109,8 +104,6 @@
 
 	paycheck_department = ACCOUNT_MED
 	display_order = JOB_DISPLAY_ORDER_ASSISTANT_MED
-
-	department_for_prefs = /datum/job_department/medical
 
 	departments_list = list(
 		/datum/job_department/medical,
@@ -158,8 +151,6 @@
 	paycheck_department = ACCOUNT_SCI
 	display_order = JOB_DISPLAY_ORDER_ASSISTANT_SCI
 
-	department_for_prefs = /datum/job_department/science
-
 	departments_list = list(
 		/datum/job_department/science,
 		)
@@ -181,7 +172,6 @@
 		ACCESS_SCIENCE,
 	)
 	extra_access = list(
-		ACCESS_MINERAL_STOREROOM,
 		ACCESS_RESEARCH,
 		ACCESS_XENOBIOLOGY,
 		)
@@ -195,7 +185,7 @@
 /// Brig Clerk
 /datum/job/assistant/sec
 	title = JOB_ASSISTANT_SEC
-	description = "."
+	description = "Make donuts while the rest of security is killed by alien invaders."
 	department_head = list(JOB_HEAD_OF_SECURITY)
 	total_positions = 1
 	spawn_positions = 1
@@ -206,8 +196,6 @@
 
 	paycheck_department = ACCOUNT_SEC
 	display_order = JOB_DISPLAY_ORDER_ASSISTANT_SEC
-
-	department_for_prefs = /datum/job_department/security
 
 	departments_list = list(
 		/datum/job_department/security,
