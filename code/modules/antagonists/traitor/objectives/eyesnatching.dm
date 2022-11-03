@@ -72,7 +72,7 @@
 			continue
 
 		if(!possible_target.assigned_role)
-      continue
+			continue
 
 		if(HAS_TRAIT(possible_target, TRAIT_XCARD_EYE_TRAUMA)) //ORBSTATION
 			continue
