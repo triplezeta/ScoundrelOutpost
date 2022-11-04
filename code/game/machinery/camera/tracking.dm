@@ -46,6 +46,14 @@
 			continue
 
 		var/name = L.name
+
+		// Orbstation: making tracking work with plural system chips
+		if(ishuman(L))
+			var/mob/living/carbon/human/human_mob = L
+			var/obj/item/card/id/id_card = human_mob.get_idcard(hand_first = FALSE)
+			if(id_card?.plural_system)
+				name = id_card.registered_name
+
 		while(name in track.names)
 			track.namecounts[name]++
 			name = text("[] ([])", name, track.namecounts[name])
