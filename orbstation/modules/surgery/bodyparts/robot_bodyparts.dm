@@ -1,6 +1,6 @@
 //Robotic body parts for Orbstation
 
-/obj/item/bodypart/r_leg/robot/digitigrade
+/obj/item/bodypart/leg/right/robot/digitigrade
 	name = "digitigrade robotic right leg"
 	desc = "A skeletal limb wrapped in pseudomuscles, with a low-conductivity case. This one is shaped like a digitigrade Tiziran leg."
 	icon_static =  'orbstation/icons/mob/augmentation/augments.dmi'
@@ -9,7 +9,7 @@
 	limb_id = BODYPART_ID_DIGITIGRADE
 	icon_state = "digitigrade_r_leg"
 
-/obj/item/bodypart/r_leg/robot/digitigrade/update_limb(dropping_limb = FALSE, is_creating = FALSE)
+/obj/item/bodypart/leg/right/robot/digitigrade/update_limb(dropping_limb = FALSE, is_creating = FALSE)
 	. = ..()
 	if(ishuman(owner))
 		var/mob/living/carbon/human/human_owner = owner
@@ -30,7 +30,7 @@
 		else
 			limb_id = BODYPART_ID_ROBOTIC
 
-/obj/item/bodypart/l_leg/robot/digitigrade
+/obj/item/bodypart/leg/left/robot/digitigrade
 	name = "digitigrade robotic left leg"
 	desc = "A skeletal limb wrapped in pseudomuscles, with a low-conductivity case. This one is shaped like a digitigrade Tiziran leg."
 	icon_static =  'orbstation/icons/mob/augmentation/augments.dmi'
@@ -39,7 +39,7 @@
 	limb_id = BODYPART_ID_DIGITIGRADE
 	icon_state = "digitigrade_l_leg"
 
-/obj/item/bodypart/l_leg/robot/digitigrade/update_limb(dropping_limb = FALSE, is_creating = FALSE)
+/obj/item/bodypart/leg/left/robot/digitigrade/update_limb(dropping_limb = FALSE, is_creating = FALSE)
 	. = ..()
 	if(ishuman(owner))
 		var/mob/living/carbon/human/human_owner = owner

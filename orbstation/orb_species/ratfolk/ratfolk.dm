@@ -18,11 +18,6 @@
 	//meat = /obj/item/food/meat/slab/human/mutant/rat
 	//skinned_type = /obj/item/stack/sheet/animalhide/rat
 
-	attack_verb = "slash"
-	attack_effect = ATTACK_EFFECT_CLAW
-	attack_sound = 'sound/weapons/slash.ogg'
-	miss_sound = 'sound/weapons/slashmiss.ogg'
-
 	liked_food = FRUIT | NUTS | DAIRY
 	disliked_food = CLOTH | BUGS
 
@@ -41,10 +36,10 @@
 	bodypart_overrides = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/ratfolk,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/ratfolk,
-		BODY_ZONE_L_ARM = /obj/item/bodypart/l_arm/ratfolk,
-		BODY_ZONE_R_ARM = /obj/item/bodypart/r_arm/ratfolk,
-		BODY_ZONE_L_LEG = /obj/item/bodypart/l_leg/ratfolk,
-		BODY_ZONE_R_LEG = /obj/item/bodypart/r_leg/ratfolk,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/ratfolk,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/arm/right/ratfolk,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/ratfolk,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/ratfolk,
 	)
 
 /datum/species/ratfolk/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
