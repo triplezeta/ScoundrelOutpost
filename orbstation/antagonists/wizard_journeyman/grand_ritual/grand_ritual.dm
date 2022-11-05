@@ -53,6 +53,7 @@
 		/area/station/science, ))
 	/// Areas where you can't be tasked to draw a rune, either because they're too mean or too small
 	var/static/list/area_blacklist = typecacheof(list( \
+		/area/station/command/heads_quarters/captain/private,
 		/area/station/service/library/private, \
 		/area/station/service/library/printer, \
 		/area/station/engineering/supermatter,\
