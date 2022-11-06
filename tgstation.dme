@@ -4879,6 +4879,7 @@
 #include "orbstation\modules\client\preferences\_preference.dm"
 #include "orbstation\modules\mining\chasm_rescue.dm"
 #include "orbstation\modules\mining\demonic_portal.dm"
+#include "orbstation\modules\mining\megafauna.dm"
 #include "orbstation\modules\mining\tendril.dm"
 #include "orbstation\modules\mining\voucher_sets.dm"
 #include "orbstation\modules\organic\pizzabox.dm"
