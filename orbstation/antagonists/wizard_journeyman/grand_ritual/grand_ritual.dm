@@ -68,16 +68,20 @@
 		/area/station/science/ordnance/bomb, \
 		/area/station/science/server, ))
 
-/datum/action/grand_ritual/IsAvailable()
+/datum/action/grand_ritual/IsAvailable(feedback)
 	. = ..()
 	if (!.)
 		return
 
 	// Cannot use while inside a vent.
 	if ((owner.movement_type & VENTCRAWLING))
+		if (feedback)
+			owner.balloon_alert(owner, "exit the vent!")
 		return FALSE
 	// Cannot use while phased
 	if (HAS_TRAIT(owner, TRAIT_MAGICALLY_PHASED))
+		if (feedback)
+			owner.balloon_alert(owner, "become tangible first!")
 		return FALSE
 	return TRUE
 
