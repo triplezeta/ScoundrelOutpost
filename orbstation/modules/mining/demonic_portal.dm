@@ -73,4 +73,4 @@
 				/obj/item/gun/magic/wand/pizza,
 				/obj/item/gun/magic/wand/babel,)
 			var/picked_type = pick(funny_wands)
-			new funny_wand(loc)
+			new picked_type(loc)
