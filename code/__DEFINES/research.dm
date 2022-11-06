@@ -49,6 +49,7 @@
 #define CELL_LINE_TABLE_SNAKE "cell_line_snake_table"
 #define CELL_LINE_TABLE_VATBEAST "cell_line_vatbeast_table"
 #define CELL_LINE_TABLE_NETHER "cell_line_nether_table"
+#define CELL_LINE_TABLE_GLUTTON "cell_line_glutton_table"
 #define CELL_LINE_TABLE_FROG	"cell_line_frog_table"
 #define CELL_LINE_TABLE_WALKING_MUSHROOM "cell_line_walking_mushroom_table"
 #define CELL_LINE_TABLE_QUEEN_BEE "cell_line_bee_queen_table"
