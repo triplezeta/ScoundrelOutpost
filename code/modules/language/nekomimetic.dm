@@ -1,14 +1,19 @@
+/// Orb modified nekomimetic to felimimetic, all flavourtext is replaced with felimetic except for the datum name
 /datum/language/nekomimetic
-	name = "Nekomimetic"
-	desc = "To the casual observer, this langauge is an incomprehensible mess of broken Japanese. To the felinids, it's somehow comprehensible."
+	name = "Felimimetic"
+	desc = "The common language of felinds. To a casual observer, it sounds like cat noises."
 	key = "f"
 	space_chance = 70
 	syllables = list(
-		"neko", "nyan", "mimi", "moe", "mofu", "fuwa", "kyaa", "kawaii", "poka", "munya",
-		"puni", "munyu", "ufufu", "uhuhu", "icha", "doki", "kyun", "kusu", "nya", "nyaa",
-		"desu", "kis", "ama", "chuu", "baka", "hewo", "boop", "gato", "kit", "sune", "yori",
-		"sou", "baka", "chan", "san", "kun", "mahou", "yatta", "suki", "usagi", "domo", "ori",
-		"uwa", "zaazaa", "shiku", "puru", "ira", "heto", "etto"
+		"a", "e", "i", "o", "u",
+		"ao", "eow", "wa",
+		"ma", "me", "mi", "mo", "mu",
+		"na", "ne", "ni", "no", "nu",
+		"nya", "nye", "nyo", "nyu",
+		"pa", "pe", "pi", "po", "pu",
+		"ka", "ke", "ki", "ko", "ku",
+		"ra", "re", "ri", "ro", "ru",
+		"nyan", "nya", "nyaa", "uwa", "meow", "mew", "mow", "mrrr", "mrrp", "purr", "hiss", "miao",
 	)
 	icon_state = "neko"
 	default_priority = 90
