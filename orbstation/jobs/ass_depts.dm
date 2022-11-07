@@ -3,7 +3,8 @@
 */
 
 /// Abstract datum for holding the rest of the assistant departments
-/datum/job/assistant/dept/
+/datum/job/assistant/dept
+	job_flags = 0 //should not be used in any capacity in-game
 	config_tag = "DEPT_ASSISTANT"
 
 // Override of the proc that determines where these jobs spawn, just to use the normal assistant spawns
@@ -18,95 +19,6 @@
 		break
 	if(!.)
 		log_world("Couldn't find a round start spawn point for [title]")
-
-/// Waiter
-/datum/job/assistant/dept/srv
-	title = JOB_ASSISTANT_SRV
-	description = "Bus tables, work for tips."
-	department_head = list(JOB_HEAD_OF_PERSONNEL)
-	total_positions = 2
-	spawn_positions = 2
-	supervisors = SUPERVISOR_HOP
-
-	outfit = /datum/outfit/job/assistant_srv
-
-	paycheck_department = ACCOUNT_SRV
-	display_order = JOB_DISPLAY_ORDER_ASSISTANT_SRV
-
-	departments_list = list(
-		/datum/job_department/service,
-		)
-
-	config_tag = "WAITRON"
-
-/datum/outfit/job/assistant_srv
-	name = JOB_ASSISTANT_SRV
-	jobtype = /datum/job/assistant/dept/srv
-	id_trim = /datum/id_trim/job/assistant/srv
-	uniform = /obj/item/clothing/under/suit/waiter
-	ears = /obj/item/radio/headset/headset_srv
-
-/datum/id_trim/job/assistant/srv
-	assignment = "Waitron"
-	subdepartment_color = COLOR_SERVICE_LIME
-	minimal_access = list(
-		ACCESS_SERVICE,
-	)
-	extra_access = list(
-		ACCESS_BAR,
-		ACCESS_HYDROPONICS,
-		ACCESS_KITCHEN,
-		ACCESS_THEATRE,
-		)
-	job = /datum/job/assistant/dept/srv
-
-/// Tech Support
-/datum/job/assistant/dept/eng
-	title = JOB_ASSISTANT_ENG
-	description = "Make your own pet projects, get called away to fix every little thing."
-	department_head = list(JOB_CHIEF_ENGINEER)
-	total_positions = 2
-	spawn_positions = 2
-	supervisors = SUPERVISOR_CE
-
-	outfit = /datum/outfit/job/assistant_eng
-	plasmaman_outfit = /datum/outfit/plasmaman/engineering
-
-	paycheck_department = ACCOUNT_ENG
-	display_order = JOB_DISPLAY_ORDER_ASSISTANT_ENG
-
-	departments_list = list(
-		/datum/job_department/engineering,
-		)
-
-	config_tag = "TECH_SUPPORT"
-
-/datum/outfit/job/assistant_eng
-	name = JOB_ASSISTANT_ENG
-	jobtype = /datum/job/assistant/dept/eng
-	id_trim = /datum/id_trim/job/assistant/eng
-	uniform = /obj/item/clothing/under/color/yellow
-	belt = /obj/item/modular_computer/tablet/pda/engineering
-	ears = /obj/item/radio/headset/headset_eng
-
-/datum/id_trim/job/assistant/eng
-	assignment = "Tech Support"
-	subdepartment_color = COLOR_ENGINEERING_ORANGE
-	minimal_access = list(
-		ACCESS_ENGINEERING,
-		ACCESS_MAINT_TUNNELS,
-	)
-	extra_access = list(
-		ACCESS_CONSTRUCTION,
-		ACCESS_ENGINE_EQUIP,
-		ACCESS_EXTERNAL_AIRLOCKS,
-		)
-	template_access = list(
-		ACCESS_CAPTAIN,
-		ACCESS_CHANGE_IDS,
-		ACCESS_CE,
-		)
-	job = /datum/job/assistant/dept/eng
 
 /// Medical Assistant
 /datum/job/assistant/dept/med
@@ -127,6 +39,7 @@
 		/datum/job_department/medical,
 		)
 
+	job_flags = JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS | JOB_CAN_BE_INTERN
 	config_tag = "MEDICAL_ASSISTANT"
 
 /datum/outfit/job/assistant_med
@@ -173,6 +86,7 @@
 		/datum/job_department/science,
 		)
 
+	job_flags = JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS | JOB_CAN_BE_INTERN
 	config_tag = "LAB_ASSISTANT"
 
 /datum/outfit/job/assistant_sci
@@ -199,3 +113,94 @@
 		ACCESS_RD,
 		)
 	job = /datum/job/assistant/dept/sci
+
+/// Tech Support
+/datum/job/assistant/dept/eng
+	title = JOB_ASSISTANT_ENG
+	description = "Make your own pet projects, get called away to fix every little thing."
+	department_head = list(JOB_CHIEF_ENGINEER)
+	total_positions = 2
+	spawn_positions = 2
+	supervisors = SUPERVISOR_CE
+
+	outfit = /datum/outfit/job/assistant_eng
+	plasmaman_outfit = /datum/outfit/plasmaman/engineering
+
+	paycheck_department = ACCOUNT_ENG
+	display_order = JOB_DISPLAY_ORDER_ASSISTANT_ENG
+
+	departments_list = list(
+		/datum/job_department/engineering,
+		)
+
+	job_flags = JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS | JOB_CAN_BE_INTERN
+	config_tag = "TECH_SUPPORT"
+
+/datum/outfit/job/assistant_eng
+	name = JOB_ASSISTANT_ENG
+	jobtype = /datum/job/assistant/dept/eng
+	id_trim = /datum/id_trim/job/assistant/eng
+	uniform = /obj/item/clothing/under/color/yellow
+	belt = /obj/item/modular_computer/tablet/pda/engineering
+	ears = /obj/item/radio/headset/headset_eng
+
+/datum/id_trim/job/assistant/eng
+	assignment = "Tech Support"
+	subdepartment_color = COLOR_ENGINEERING_ORANGE
+	minimal_access = list(
+		ACCESS_ENGINEERING,
+		ACCESS_MAINT_TUNNELS,
+	)
+	extra_access = list(
+		ACCESS_CONSTRUCTION,
+		ACCESS_ENGINE_EQUIP,
+		ACCESS_EXTERNAL_AIRLOCKS,
+		)
+	template_access = list(
+		ACCESS_CAPTAIN,
+		ACCESS_CHANGE_IDS,
+		ACCESS_CE,
+		)
+	job = /datum/job/assistant/dept/eng
+
+/// Waitron
+/datum/job/assistant/dept/srv
+	title = JOB_ASSISTANT_SRV
+	description = "Bus tables, work for tips."
+	department_head = list(JOB_HEAD_OF_PERSONNEL)
+	total_positions = 2
+	spawn_positions = 2
+	supervisors = SUPERVISOR_HOP
+
+	outfit = /datum/outfit/job/assistant_srv
+
+	paycheck_department = ACCOUNT_SRV
+	display_order = JOB_DISPLAY_ORDER_ASSISTANT_SRV
+
+	departments_list = list(
+		/datum/job_department/service,
+		)
+
+	job_flags = JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS | JOB_CAN_BE_INTERN
+	config_tag = "WAITRON"
+
+/datum/outfit/job/assistant_srv
+	name = JOB_ASSISTANT_SRV
+	jobtype = /datum/job/assistant/dept/srv
+	id_trim = /datum/id_trim/job/assistant/srv
+	uniform = /obj/item/clothing/under/suit/waiter
+	ears = /obj/item/radio/headset/headset_srv
+
+/datum/id_trim/job/assistant/srv
+	assignment = "Waitron"
+	subdepartment_color = COLOR_SERVICE_LIME
+	minimal_access = list(
+		ACCESS_SERVICE,
+	)
+	extra_access = list(
+		ACCESS_BAR,
+		ACCESS_HYDROPONICS,
+		ACCESS_KITCHEN,
+		ACCESS_THEATRE,
+		)
+	job = /datum/job/assistant/dept/srv
