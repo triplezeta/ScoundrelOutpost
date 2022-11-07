@@ -20,53 +20,6 @@
 	if(!.)
 		log_world("Couldn't find a round start spawn point for [title]")
 
-/// Medical Assistant
-/datum/job/assistant/dept/med
-	title = JOB_ASSISTANT_MED
-	description = "Handle patients coming in and out of medbay, lack a medical license."
-	department_head = list(JOB_CHIEF_MEDICAL_OFFICER)
-	total_positions = 2
-	spawn_positions = 2
-	supervisors = SUPERVISOR_CMO
-
-	outfit = /datum/outfit/job/assistant_med
-	plasmaman_outfit = /datum/outfit/plasmaman/medical
-
-	paycheck_department = ACCOUNT_MED
-	display_order = JOB_DISPLAY_ORDER_ASSISTANT_MED
-
-	departments_list = list(
-		/datum/job_department/medical,
-		)
-
-	job_flags = JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS | JOB_CAN_BE_INTERN
-	config_tag = "MEDICAL_ASSISTANT"
-
-/datum/outfit/job/assistant_med
-	name = JOB_ASSISTANT_MED
-	jobtype = /datum/job/assistant/dept/med
-	id_trim = /datum/id_trim/job/assistant/med
-	uniform = /obj/item/clothing/under/color/blue
-	belt = /obj/item/modular_computer/tablet/pda/medical
-	ears = /obj/item/radio/headset/headset_med
-
-/datum/id_trim/job/assistant/med
-	assignment = "Medical Assistant"
-	subdepartment_color = COLOR_MEDICAL_BLUE
-	minimal_access = list(
-		ACCESS_MEDICAL,
-	)
-	extra_access = list(
-		ACCESS_MORGUE,
-		ACCESS_SURGERY,
-		)
-	template_access = list(
-		ACCESS_CAPTAIN,
-		ACCESS_CHANGE_IDS,
-		ACCESS_CMO,
-		)
-	job = /datum/job/assistant/dept/med
-
 /// Lab Assistant
 /datum/job/assistant/dept/sci
 	title = JOB_ASSISTANT_SCI
@@ -113,6 +66,53 @@
 		ACCESS_RD,
 		)
 	job = /datum/job/assistant/dept/sci
+
+/// Medical Assistant
+/datum/job/assistant/dept/med
+	title = JOB_ASSISTANT_MED
+	description = "Handle patients coming in and out of medbay, lack a medical license."
+	department_head = list(JOB_CHIEF_MEDICAL_OFFICER)
+	total_positions = 2
+	spawn_positions = 2
+	supervisors = SUPERVISOR_CMO
+
+	outfit = /datum/outfit/job/assistant_med
+	plasmaman_outfit = /datum/outfit/plasmaman/medical
+
+	paycheck_department = ACCOUNT_MED
+	display_order = JOB_DISPLAY_ORDER_ASSISTANT_MED
+
+	departments_list = list(
+		/datum/job_department/medical,
+		)
+
+	job_flags = JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS | JOB_CAN_BE_INTERN
+	config_tag = "MEDICAL_ASSISTANT"
+
+/datum/outfit/job/assistant_med
+	name = JOB_ASSISTANT_MED
+	jobtype = /datum/job/assistant/dept/med
+	id_trim = /datum/id_trim/job/assistant/med
+	uniform = /obj/item/clothing/under/color/blue
+	belt = /obj/item/modular_computer/tablet/pda/medical
+	ears = /obj/item/radio/headset/headset_med
+
+/datum/id_trim/job/assistant/med
+	assignment = "Medical Assistant"
+	subdepartment_color = COLOR_MEDICAL_BLUE
+	minimal_access = list(
+		ACCESS_MEDICAL,
+	)
+	extra_access = list(
+		ACCESS_MORGUE,
+		ACCESS_SURGERY,
+		)
+	template_access = list(
+		ACCESS_CAPTAIN,
+		ACCESS_CHANGE_IDS,
+		ACCESS_CMO,
+		)
+	job = /datum/job/assistant/dept/med
 
 /// Tech Support
 /datum/job/assistant/dept/eng
