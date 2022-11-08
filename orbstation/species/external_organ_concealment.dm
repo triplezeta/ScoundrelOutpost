@@ -45,6 +45,8 @@
 	var/icon_state_hidden = ""
 	/// A nice name for the organ in question
 	var/organ_name = "organ"
+	/// Just to make sure you're not spamming the button
+	var/rummaging = FALSE
 
 /datum/action/conceal_organ/Grant(mob/grant_to)
 	. = ..()
@@ -92,9 +94,14 @@
 	. = ..()
 	if (!.)
 		return
+	if (rummaging) // Here rather than in isAvailable because I don't care about changing the button tint
+		return
+	rummaging = TRUE
 	if (!do_after(owner, 3 SECONDS))
 		owner.balloon_alert(owner, "interrupted!")
+		rummaging = FALSE
 		return
+	rummaging = FALSE
 	playsound(owner, SFX_RUSTLE, 50, TRUE, -5)
 	toggle_concealement()
 	update_display()
