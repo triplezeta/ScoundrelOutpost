@@ -4921,6 +4921,7 @@
 #include "orbstation\quirks\xcard\xcard-quirks.dm"
 #include "orbstation\quirks\xcard\xenotoxin.dm"
 #include "orbstation\shuttles\shuttles.dm"
+#include "orbstation\species\external_organ_concealment.dm"
 #include "orbstation\species\felinid.dm"
 #include "orbstation\species\jellypeople.dm"
 #include "orbstation\species\lizardpeople.dm"
