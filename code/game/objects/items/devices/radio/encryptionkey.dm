@@ -228,10 +228,9 @@
 	greyscale_config = null
 	greyscale_colors = null
 
-// ORB FLAVOURTEXT MODIFICATION
 /obj/item/encryptionkey/felinid
 	name = "\improper Felinid translation key"
-	desc = "An encryption key that automatically encodes felimimetic heard through the radio into common. The signal's rather scratchy."
+	desc = "An encryption key that automatically encodes nekomimetic heard through the radio into common. The signal's rather scratchy."
 	icon_state = "translation_cypherkey"
 	translated_language = /datum/language/nekomimetic
 	greyscale_config = null
