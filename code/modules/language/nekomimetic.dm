@@ -1,4 +1,3 @@
-/// Orb modified nekomimetic to felimimetic, all flavourtext is replaced with felimetic except for the datum name
 /datum/language/nekomimetic
 	name = "Nekomimetic"
 	desc = "To the casual observer, this langauge is an incomprehensible mess of broken Japanese. To the felinids, it's somehow comprehensible."
