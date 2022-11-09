@@ -4,6 +4,7 @@
 
 /// Abstract datum for holding the rest of the assistant departments
 /datum/job/assistant/dept
+	title = "Abstract Departmental Assistant"
 	job_flags = 0 //should not be used in any capacity in-game
 	config_tag = "DEPT_ASSISTANT"
 
@@ -20,6 +21,16 @@
 	if(!.)
 		log_world("Couldn't find a round start spawn point for [title]")
 
+/// Abstract datum for assistant departments
+/datum/outfit/job/assistant/dept
+	name = "Abstract Departmental Assistant"
+	var/skirt = null
+
+/datum/outfit/job/assistant/dept/give_jumpsuit(mob/living/carbon/human/target)
+	// gives you a jumpskirt based on your preferences if possible
+	if(target.jumpsuit_style == PREF_SKIRT && skirt != null)
+		uniform = skirt
+
 /// Lab Assistant
 /datum/job/assistant/dept/sci
 	title = JOB_ASSISTANT_SCI
@@ -29,7 +40,7 @@
 	spawn_positions = 2
 	supervisors = SUPERVISOR_RD
 
-	outfit = /datum/outfit/job/assistant_sci
+	outfit = /datum/outfit/job/assistant/dept/sci
 	plasmaman_outfit = /datum/outfit/plasmaman/science
 
 	paycheck_department = ACCOUNT_SCI
@@ -42,11 +53,12 @@
 	job_flags = JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS | JOB_CAN_BE_INTERN
 	config_tag = "LAB_ASSISTANT"
 
-/datum/outfit/job/assistant_sci
+/datum/outfit/job/assistant/dept/sci
 	name = JOB_ASSISTANT_SCI
 	jobtype = /datum/job/assistant/dept/sci
 	id_trim = /datum/id_trim/job/assistant/sci
 	uniform = /obj/item/clothing/under/color/lightpurple
+	skirt = /obj/item/clothing/under/color/jumpskirt/lightpurple
 	belt = /obj/item/modular_computer/tablet/pda/science
 	ears = /obj/item/radio/headset/headset_sci
 
@@ -76,7 +88,7 @@
 	spawn_positions = 2
 	supervisors = SUPERVISOR_CMO
 
-	outfit = /datum/outfit/job/assistant_med
+	outfit = /datum/outfit/job/assistant/dept/med
 	plasmaman_outfit = /datum/outfit/plasmaman/medical
 
 	paycheck_department = ACCOUNT_MED
@@ -89,11 +101,12 @@
 	job_flags = JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS | JOB_CAN_BE_INTERN
 	config_tag = "MEDICAL_ASSISTANT"
 
-/datum/outfit/job/assistant_med
+/datum/outfit/job/assistant/dept/med
 	name = JOB_ASSISTANT_MED
 	jobtype = /datum/job/assistant/dept/med
 	id_trim = /datum/id_trim/job/assistant/med
 	uniform = /obj/item/clothing/under/color/blue
+	skirt = /obj/item/clothing/under/color/jumpskirt/blue
 	belt = /obj/item/modular_computer/tablet/pda/medical
 	ears = /obj/item/radio/headset/headset_med
 
@@ -123,7 +136,7 @@
 	spawn_positions = 2
 	supervisors = SUPERVISOR_CE
 
-	outfit = /datum/outfit/job/assistant_eng
+	outfit = /datum/outfit/job/assistant/dept/eng
 	plasmaman_outfit = /datum/outfit/plasmaman/engineering
 
 	paycheck_department = ACCOUNT_ENG
@@ -136,11 +149,12 @@
 	job_flags = JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS | JOB_CAN_BE_INTERN
 	config_tag = "TECH_SUPPORT"
 
-/datum/outfit/job/assistant_eng
+/datum/outfit/job/assistant/dept/eng
 	name = JOB_ASSISTANT_ENG
 	jobtype = /datum/job/assistant/dept/eng
 	id_trim = /datum/id_trim/job/assistant/eng
 	uniform = /obj/item/clothing/under/color/yellow
+	skirt = /obj/item/clothing/under/color/jumpskirt/yellow
 	belt = /obj/item/modular_computer/tablet/pda/engineering
 	ears = /obj/item/radio/headset/headset_eng
 
@@ -172,7 +186,7 @@
 	spawn_positions = 2
 	supervisors = SUPERVISOR_HOP
 
-	outfit = /datum/outfit/job/assistant_srv
+	outfit = /datum/outfit/job/assistant/dept/srv
 
 	paycheck_department = ACCOUNT_SRV
 	display_order = JOB_DISPLAY_ORDER_ASSISTANT_SRV
@@ -184,7 +198,7 @@
 	job_flags = JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS | JOB_CAN_BE_INTERN
 	config_tag = "WAITRON"
 
-/datum/outfit/job/assistant_srv
+/datum/outfit/job/assistant/dept/srv
 	name = JOB_ASSISTANT_SRV
 	jobtype = /datum/job/assistant/dept/srv
 	id_trim = /datum/id_trim/job/assistant/srv
