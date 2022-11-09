@@ -57,7 +57,7 @@
 
 /datum/action/conceal_organ/Remove(mob/remove_from)
 	. = ..()
-	UnregisterSignal(owner, list(COMSIG_MOB_EQUIPPED_ITEM, COMSIG_MOB_UNEQUIPPED_ITEM, COMSIG_CARBON_GAIN_ORGAN))
+	UnregisterSignal(remove_from, list(COMSIG_MOB_EQUIPPED_ITEM, COMSIG_MOB_UNEQUIPPED_ITEM, COMSIG_CARBON_GAIN_ORGAN))
 
 /datum/action/conceal_organ/IsAvailable(feedback)
 	. = ..()
