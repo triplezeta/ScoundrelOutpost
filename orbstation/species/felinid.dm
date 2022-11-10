@@ -7,3 +7,11 @@
 		'orbstation/sound/voice/felinid/scream1.ogg',
 		'orbstation/sound/voice/felinid/scream2.ogg',
 	)
+
+/datum/sprite_accessory/tails/human/cat
+	name = "Long Cat"
+
+/datum/sprite_accessory/tails/human/cat/short
+	name = "Short Cat"
+	icon = 'orbstation/icons/mob/species/felind/bodyparts.dmi'
+	icon_state = "cat_short"
