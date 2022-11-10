@@ -4888,6 +4888,7 @@
 #include "orbstation\modules\organic\pizzabox.dm"
 #include "orbstation\modules\research\designs\mechfabricator_designs.dm"
 #include "orbstation\modules\research\techweb\all_nodes.dm"
+#include "orbstation\modules\spells\spell_types\shapeshift\shapechange.dm"
 #include "orbstation\modules\surgery\bodyparts\robot_bodyparts.dm"
 #include "orbstation\modules\table_shuffle\report_item.dm"
 #include "orbstation\modules\table_shuffle\table_shuffle_areas.dm"
