@@ -236,6 +236,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			if (istype(requested_preference, /datum/preference/name))
 				tainted_character_profiles = TRUE
 
+			//ORBSTATION
+			for (var/datum/preference_middleware/preference_middleware as anything in middleware)
+				if (preference_middleware.post_set_preference(usr, requested_preference_key, value))
+					return TRUE
+			//END ORBSTATION
+
 			return TRUE
 		if ("set_color_preference")
 			var/requested_preference_key = params["preference"]
@@ -444,7 +450,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		if (preference.savefile_identifier != PREFERENCE_CHARACTER)
 			continue
 
-		preference.apply_to_human(character, read_preference(preference.type))
+		preference.apply_to_human(character, read_preference(preference.type), src)
+
+	//ORBSTATION
+	for (var/datum/preference_middleware/preference_middleware as anything in middleware)
+		preference_middleware.apply_to_human(character, src)
+	//END ORBSTATION
 
 	character.dna.real_name = character.real_name
 
