@@ -40,3 +40,11 @@
 	for(var/mob/dead/observer/ghost_player in GLOB.player_list)
 		return TRUE
 	return FALSE
+
+/datum/round_event/anomaly/brain_trauma/announce(fake)
+	if (prob(10))
+		priority_announce("Negotiation over cessation of hostilities with the Wizard Federation have broken down. \
+			Our negotiators believe it is possible that one of your staff may have been 'cursed' as retaliation.", "Political Update")
+		return
+	priority_announce("Unusual spikes of psychoactive cosmic radiation have been detected near the station. \
+		Please report any unusual perceptive effects to your resident psychologist.", "Meteorological Update")
