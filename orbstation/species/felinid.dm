@@ -1,4 +1,7 @@
 /datum/species/human/felinid
+	external_organs = list(
+		/obj/item/organ/external/tail/cat = "Long Cat",
+	)
 	disliked_food = GROSS | CLOTH | CUCUMBER
 	liked_food = SEAFOOD | ORANGES | BUGS | GORE
 
