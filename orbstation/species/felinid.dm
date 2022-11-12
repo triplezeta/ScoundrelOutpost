@@ -1,7 +1,4 @@
 /datum/species/human/felinid
-	external_organs = list(
-		/obj/item/organ/external/tail/cat = "Long Cat",
-	)
 	disliked_food = GROSS | CLOTH | CUCUMBER
 	liked_food = SEAFOOD | ORANGES | BUGS | GORE
 
@@ -10,9 +7,6 @@
 		'orbstation/sound/voice/felinid/scream1.ogg',
 		'orbstation/sound/voice/felinid/scream2.ogg',
 	)
-
-/datum/sprite_accessory/tails/human/cat
-	name = "Long Cat"
 
 /datum/sprite_accessory/tails/human/cat/short
 	name = "Short Cat"
