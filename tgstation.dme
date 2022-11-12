@@ -4864,6 +4864,7 @@
 #include "orbstation\datums\greyscale\config_types\greyscale_configs.dm"
 #include "orbstation\datums\station_traits\ytp_announcer.dm"
 #include "orbstation\events\anomalies.dm"
+#include "orbstation\events\brain_trauma.dm"
 #include "orbstation\events\carp_rift.dm"
 #include "orbstation\events\indoor_weather.dm"
 #include "orbstation\events\portal_storm.dm"
