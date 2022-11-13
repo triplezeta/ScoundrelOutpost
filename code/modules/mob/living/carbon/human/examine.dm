@@ -22,7 +22,7 @@
 	if(obscure_examine)
 		return list("<span class='warning'>You're struggling to make out any details...")
 
-	var/obscured = check_obscured_slots()
+	var/obscured = ((wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE)))
 
 	//ORBSTATION: Display "short flavor text" before inventory
 	if(!obscured)
