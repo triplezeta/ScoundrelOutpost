@@ -28,9 +28,9 @@
 	qdel(src)
 
 // Start with one if you are deaf
-/datum/quirk/deafness/add_unique()
-	var/mob/living/carbon/human/human_holder = quirk_holder
-	human_holder.equip_in_one_of_slots(new /obj/item/hearing_aid(), list("backpack" = ITEM_SLOT_BACKPACK, "hands" = ITEM_SLOT_HANDS), qdel_on_fail = FALSE)
+/datum/quirk/item_quirk/deafness/add_unique()
+	..()
+	give_item_to_holder(/obj/item/hearing_aid, list(LOCATION_BACKPACK = ITEM_SLOT_BACKPACK, LOCATION_HANDS = ITEM_SLOT_HANDS))
 
 // You can order more through cargo
 /datum/supply_pack/goody/hearing_aid
