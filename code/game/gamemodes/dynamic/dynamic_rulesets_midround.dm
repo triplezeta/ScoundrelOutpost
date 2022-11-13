@@ -734,9 +734,12 @@
 	var/dead_mobs_required = 20
 	var/need_extra_spawns_value = 15
 	var/list/spawn_locs = list()
+	var/dead_players_required = 3 //ORBSTATION
 
 /datum/dynamic_ruleset/midround/from_ghosts/revenant/acceptable(population=0, threat=0)
-	if(GLOB.dead_mob_list.len < dead_mobs_required)
+	//ORBSTATION EDIT
+	//if(GLOB.dead_mob_list.len < dead_mobs_required)
+	if(GLOB.dead_player_list < dead_players_required)
 		return FALSE
 	return ..()
 
