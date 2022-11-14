@@ -45,7 +45,7 @@ export const LanguagesPage = (props, context) => {
   const { data } = useBackend<PreferencesMenuData>(context);
   return (
     <Stack>
-      <Stack.Item minWidth="33%">
+      <Stack.Item minWidth="50%">
         <Section title="Available Languages">
           <Stack vertical>
             {data.unselected_languages.map((val) => (
@@ -54,19 +54,15 @@ export const LanguagesPage = (props, context) => {
           </Stack>
         </Section>
       </Stack.Item>
-      <Stack.Item minWidth="33%">
+      <Stack.Item minWidth="50%">
         <Section
           title={
             'Points: ' +
             data.selected_languages.length +
             '/' +
             data.total_language_points
-          }>
-          Here, you can purchase languages using a point buy system. Each
-          Language is worth 1 point.
-        </Section>
-      </Stack.Item>
-      <Stack.Item minWidth="33%">
+          }
+        />
         <Section title="Known Languages">
           <Stack vertical>
             {data.selected_languages.map((val) => (
