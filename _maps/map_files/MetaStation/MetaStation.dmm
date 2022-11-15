@@ -3657,6 +3657,12 @@
 /obj/effect/mapping_helpers/airlock/access/any/command/captain,
 /turf/open/floor/plating,
 /area/station/maintenance/central)
+"bmX" = (
+/obj/machinery/light/small/directional/west,
+/obj/structure/sink/directional/south,
+/mob/living/basic/mouse/brown/tom,
+/turf/open/floor/plating,
+/area/station/security/prison/safe)
 "bno" = (
 /obj/structure/transit_tube/diagonal,
 /turf/open/space,
@@ -29815,6 +29821,12 @@
 	},
 /turf/open/floor/plating,
 /area/station/maintenance/port/fore)
+"kIe" = (
+/obj/machinery/firealarm/directional/east,
+/turf/open/floor/iron/chapel{
+	dir = 1
+	},
+/area/station/service/chapel)
 "kIG" = (
 /obj/structure/rack,
 /obj/effect/spawner/random/maintenance/two,
@@ -55643,12 +55655,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/security/office)
-"tCP" = (
-/obj/machinery/light/small/directional/west,
-/obj/structure/sink/directional/south,
-/mob/living/basic/mouse/brown/tom,
-/turf/open/floor/plating,
-/area/station/security/prison/safe)
 "tCS" = (
 /turf/closed/wall/r_wall,
 /area/station/maintenance/starboard/fore)
@@ -64473,6 +64479,12 @@
 /obj/machinery/newscaster/directional/east,
 /turf/open/floor/iron/white/corner,
 /area/station/hallway/secondary/entry)
+"wHM" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/firealarm/directional/south,
+/turf/open/floor/iron/dark,
+/area/station/service/chapel/funeral)
 "wHW" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -90858,7 +90870,7 @@ nyf
 uZa
 nEZ
 wZz
-tCP
+bmX
 qOT
 swR
 tGX
@@ -90983,7 +90995,7 @@ vQg
 gzm
 vQg
 iez
-hto
+wHM
 gYU
 gYU
 gYU
@@ -93293,7 +93305,7 @@ tSw
 oBN
 iZi
 kVN
-qri
+kIe
 mKv
 qri
 iIq

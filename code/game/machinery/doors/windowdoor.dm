@@ -22,7 +22,6 @@
 	var/shards = 2
 	var/rods = 2
 	var/cable = 1
-	var/list/debris = list()
 	var/associated_lift = null
 	/// ORBSTATION: Time it takes to pry open the windoor with the jaws of life. Time to disassemble is this * 1.5.
 	var/pry_time = 4 SECONDS
@@ -38,12 +37,6 @@
 	if(LAZYLEN(req_access))
 		icon_state = "[icon_state]"
 		base_state = icon_state
-	for(var/i in 1 to shards)
-		debris += new /obj/item/shard(src)
-	if(rods)
-		debris += new /obj/item/stack/rods(src, rods)
-	if(cable)
-		debris += new /obj/item/stack/cable_coil(src, cable)
 
 	if(unres_sides)
 		//remove unres_sides from directions it can't be bumped from
@@ -70,7 +63,6 @@
 
 /obj/machinery/door/window/Destroy()
 	set_density(FALSE)
-	QDEL_LIST(debris)
 	if(atom_integrity == 0)
 		playsound(src, SFX_SHATTER, 70, TRUE)
 	electronics = null
@@ -255,12 +247,17 @@
 
 /obj/machinery/door/window/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1) && !disassembled)
-		playsound(src, SFX_SHATTER, 70, TRUE)
-		for(var/obj/fragment in debris)
-			fragment.forceMove(get_turf(src))
-			transfer_fingerprints_to(fragment)
-			debris -= fragment
+		for(var/i in 1 to shards)
+			drop_debris(new /obj/item/shard(src))
+		if(rods)
+			drop_debris(new /obj/item/stack/rods(src, rods))
+		if(cable)
+			drop_debris(new /obj/item/stack/cable_coil(src, cable))
 	qdel(src)
+
+/obj/machinery/door/window/proc/drop_debris(obj/item/debris)
+	debris.forceMove(loc)
+	transfer_fingerprints_to(debris)
 
 /obj/machinery/door/window/narsie_act()
 	add_atom_colour("#7D1919", FIXED_COLOUR_PRIORITY)
