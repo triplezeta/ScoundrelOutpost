@@ -738,7 +738,7 @@
 
 /datum/dynamic_ruleset/midround/from_ghosts/revenant/acceptable(population=0, threat=0)
 	//ORBSTATION EDIT
-	if(GLOB.dead_player_list < dead_players_required)
+	if(GLOB.dead_player_list.len < dead_players_required)
 		return FALSE
 	return ..()
 
