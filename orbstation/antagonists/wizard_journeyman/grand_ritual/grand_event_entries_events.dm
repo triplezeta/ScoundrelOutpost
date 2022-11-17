@@ -116,6 +116,12 @@
 	event_control_path = /datum/round_event_control/grid_check
 	wizard_message = "Your released energies discharge into the station's power net!"
 
+/datum/grand_event/event/weird_trauma
+	min_escalation = 2
+	max_escalation = 7
+	event_control_path = /datum/round_event_control/brain_trauma
+	wizard_message = "You unleash a terrible curse!"
+
 /datum/grand_event/event/heart_attack
 	min_escalation = 6
 	max_escalation = 7
