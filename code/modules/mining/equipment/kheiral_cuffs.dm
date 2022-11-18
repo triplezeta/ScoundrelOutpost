@@ -72,7 +72,7 @@
 	balloon_alert(user, "GPS activated")
 	ADD_TRAIT(user, TRAIT_MULTIZ_SUIT_SENSORS, REF(src))
 	gps_enabled = TRUE
-	RegisterSignal(user, COMSIG_LIVING_DEATH, .proc/send_death_alert) // Orbstation
+	RegisterSignal(user, COMSIG_LIVING_DEATH, PROC_REF(send_death_alert)) // Orbstation
 
 /// Disables the GPS and removes the multiz trait
 /obj/item/kheiral_cuffs/proc/remove_kheiral_network(mob/user)

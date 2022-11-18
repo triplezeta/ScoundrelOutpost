@@ -298,7 +298,7 @@
 // ORBSTATION CODE: FACEHUGGER XCARD //
 
 /// Injects some nasty toxins into our victim -- used when the target has the xeno immunity x card option
-/// target -- the target of the bite	
+/// target -- the target of the bite
 /obj/item/clothing/mask/facehugger/proc/VenomousBite(mob/living/carbon/target)
 	target.visible_message(span_danger("[src] bites [target]'s face, injecting acidic venom!"), \
 		span_userdanger("[src] bites your face, injecting acidic venom!"), \
@@ -318,7 +318,7 @@
 	target.Unconscious(MAX_IMPREGNATION_TIME * 0.2) // go unconscious for a short amount of time
 	detach()
 	addtimer(CALLBACK(target, /mob/proc/dropItemToGround, src, TRUE), rand(MIN_IMPREGNATION_TIME, MAX_IMPREGNATION_TIME) * 0.125) // drop off the face after some amount of time
-	addtimer(CALLBACK(src, .proc/GoIdle), rand(MIN_IMPREGNATION_TIME, MAX_IMPREGNATION_TIME) * 0.125) // go idle immediately after that
+	addtimer(CALLBACK(src, PROC_REF(GoIdle)), rand(MIN_IMPREGNATION_TIME, MAX_IMPREGNATION_TIME) * 0.125) // go idle immediately after that
 
 #undef MIN_ACTIVE_TIME
 #undef MAX_ACTIVE_TIME
