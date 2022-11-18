@@ -3724,12 +3724,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/central/fore)
-"bfy" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/broken_floor,
-/mob/living/basic/amoung/surgeon,
-/turf/open/floor/plating,
-/area/station/maintenance/fore)
 "bfA" = (
 /obj/effect/turf_decal/tile/yellow,
 /obj/effect/turf_decal/tile/yellow{
@@ -13193,10 +13187,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/dark,
 /area/station/service/chapel/storage)
-"dVy" = (
-/obj/structure/sign/xenobio_guide,
-/turf/closed/wall/rust,
-/area/station/science/xenobiology)
 "dVB" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/effect/landmark/start/shaft_miner,
@@ -14361,19 +14351,6 @@
 	},
 /turf/open/floor/iron/showroomfloor,
 /area/station/science/research)
-"eoi" = (
-/obj/effect/turf_decal/bot,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/structure/window/reinforced,
-/obj/machinery/monkey_recycler,
-/obj/item/radio/intercom/directional/north,
-/turf/open/floor/iron/dark,
-/area/station/science/xenobiology)
 "eon" = (
 /obj/machinery/door/poddoor/shutters{
 	id = "teleshutter";
@@ -21295,6 +21272,12 @@
 /obj/effect/mapping_helpers/broken_floor,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard)
+"gfh" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/mapping_helpers/broken_floor,
+/mob/living/basic/amoung/surgeon,
+/turf/open/floor/plating,
+/area/station/maintenance/fore)
 "gfi" = (
 /obj/effect/turf_decal/tile/yellow{
 	dir = 1
@@ -21783,6 +21766,27 @@
 /obj/structure/sign/warning/pods,
 /turf/closed/wall/rust,
 /area/station/maintenance/starboard)
+"gnd" = (
+/obj/structure/table,
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/item/stack/sheet/plasteel{
+	amount = 10;
+	pixel_x = -2;
+	pixel_y = 2
+	},
+/obj/item/book/manual/wiki/robotics_cyborgs,
+/obj/item/assembly/flash/handheld,
+/obj/item/assembly/flash/handheld,
+/obj/item/assembly/flash/handheld,
+/obj/item/assembly/flash/handheld,
+/obj/item/assembly/flash/handheld,
+/obj/item/assembly/flash/handheld,
+/obj/structure/fireaxecabinet/mechremoval/directional/west,
+/turf/open/floor/iron/dark,
+/area/station/science/robotics/lab)
 "gne" = (
 /obj/machinery/door/airlock/public/glass{
 	name = "Docking Hallway"
@@ -35446,6 +35450,29 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/dark,
 /area/station/maintenance/port/greater)
+"jZL" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/delivery,
+/obj/machinery/light/small/directional/east,
+/obj/structure/closet/crate/freezer{
+	name = "organ storage"
+	},
+/obj/structure/sign/poster/contraband/random/directional/east,
+/obj/item/stock_parts/manipulator,
+/obj/item/stock_parts/manipulator,
+/obj/item/stack/cable_coil,
+/obj/item/stack/sheet/cloth/five,
+/obj/effect/mob_spawn/corpse/amoung/pequeno,
+/obj/effect/mob_spawn/corpse/amoung/pequeno,
+/turf/open/floor/iron/dark,
+/area/station/maintenance/fore)
 "kac" = (
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment{
@@ -36800,6 +36827,10 @@
 /obj/structure/closet/firecloset/full,
 /turf/open/floor/iron,
 /area/station/service/chapel/dock)
+"kwx" = (
+/obj/structure/sign/xenobio_guide,
+/turf/closed/wall/rust,
+/area/station/science/xenobiology)
 "kwK" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/random/decoration/glowstick,
@@ -39712,6 +39743,22 @@
 /obj/effect/mapping_helpers/airlock/access/all/medical/virology,
 /turf/open/floor/iron/dark,
 /area/station/medical/virology)
+"lma" = (
+/obj/structure/table/optable,
+/obj/effect/decal/cleanable/blood/old,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/item/surgical_drapes,
+/obj/item/clothing/mask/surgical,
+/obj/effect/mob_spawn/corpse/amoung,
+/turf/open/floor/iron/dark,
+/area/station/maintenance/fore)
 "lmb" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -42898,16 +42945,6 @@
 	},
 /turf/open/floor/iron/showroomfloor,
 /area/station/science/lab)
-"mhU" = (
-/obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/door/airlock/research/glass{
-	name = "Xenobiology Closet"
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/effect/mapping_helpers/airlock/access/all/science/xenobio,
-/turf/open/floor/iron/dark,
-/area/station/science/xenobiology)
 "mid" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/tile/neutral,
@@ -44001,29 +44038,6 @@
 	},
 /turf/open/floor/iron/showroomfloor,
 /area/station/medical/storage)
-"myE" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/delivery,
-/obj/machinery/light/small/directional/east,
-/obj/structure/closet/crate/freezer{
-	name = "organ storage"
-	},
-/obj/structure/sign/poster/contraband/random/directional/east,
-/obj/item/stock_parts/manipulator,
-/obj/item/stock_parts/manipulator,
-/obj/item/stack/cable_coil,
-/obj/item/stack/sheet/cloth/five,
-/obj/effect/mob_spawn/corpse/amoung/pequeno,
-/obj/effect/mob_spawn/corpse/amoung/pequeno,
-/turf/open/floor/iron/dark,
-/area/station/maintenance/fore)
 "myS" = (
 /obj/effect/turf_decal/box,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
@@ -49395,6 +49409,17 @@
 /obj/machinery/door/firedoor,
 /turf/open/floor/iron/dark,
 /area/station/security/brig)
+"odd" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible,
+/obj/machinery/door/airlock/research/glass{
+	name = "Slime Euthanization Chamber"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/airlock/access/all/science/xenobio,
+/turf/open/floor/iron/dark,
+/area/station/science/xenobiology)
 "odA" = (
 /obj/effect/turf_decal/stripes/corner{
 	dir = 8
@@ -55981,17 +56006,6 @@
 /obj/effect/mapping_helpers/broken_floor,
 /turf/open/floor/wood,
 /area/station/commons/locker)
-"pXP" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible,
-/obj/machinery/door/airlock/research/glass{
-	name = "Slime Euthanization Chamber"
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/effect/mapping_helpers/airlock/access/all/science/xenobio,
-/turf/open/floor/iron/dark,
-/area/station/science/xenobiology)
 "pXU" = (
 /obj/effect/turf_decal/tile/red{
 	dir = 1
@@ -56759,26 +56773,6 @@
 /mob/living/carbon/human/species/monkey,
 /turf/open/floor/grass,
 /area/station/medical/virology)
-"qiq" = (
-/obj/structure/table,
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/item/stack/sheet/plasteel{
-	amount = 10;
-	pixel_x = -2;
-	pixel_y = 2
-	},
-/obj/item/book/manual/wiki/robotics_cyborgs,
-/obj/item/assembly/flash/handheld,
-/obj/item/assembly/flash/handheld,
-/obj/item/assembly/flash/handheld,
-/obj/item/assembly/flash/handheld,
-/obj/item/assembly/flash/handheld,
-/obj/item/assembly/flash/handheld,
-/turf/open/floor/iron/dark,
-/area/station/science/robotics/lab)
 "qiB" = (
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/stripes/corner,
@@ -74381,22 +74375,6 @@
 /obj/effect/mapping_helpers/airlock/access/all/engineering/atmos,
 /turf/open/floor/iron/dark,
 /area/station/engineering/atmos)
-"vhu" = (
-/obj/structure/table/optable,
-/obj/effect/decal/cleanable/blood/old,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/bot,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/item/surgical_drapes,
-/obj/item/clothing/mask/surgical,
-/obj/effect/mob_spawn/corpse/amoung,
-/turf/open/floor/iron/dark,
-/area/station/maintenance/fore)
 "vhx" = (
 /mob/living/simple_animal/slime,
 /turf/open/floor/engine,
@@ -78991,6 +78969,19 @@
 /obj/effect/turf_decal/siding/purple,
 /turf/open/floor/iron/showroomfloor,
 /area/station/science/lab)
+"wqR" = (
+/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/structure/window/reinforced,
+/obj/machinery/monkey_recycler,
+/obj/item/radio/intercom/directional/north,
+/turf/open/floor/iron/dark,
+/area/station/science/xenobiology)
 "wqZ" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -84008,6 +83999,16 @@
 /obj/effect/mapping_helpers/broken_floor,
 /turf/open/floor/plating,
 /area/station/maintenance/port/lesser)
+"xNu" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/door/airlock/research/glass{
+	name = "Xenobiology Closet"
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/airlock/access/all/science/xenobio,
+/turf/open/floor/iron/dark,
+/area/station/science/xenobiology)
 "xNJ" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -116174,7 +116175,7 @@ aeu
 qlC
 rtx
 aIv
-bfy
+gfh
 tlb
 bSA
 kFG
@@ -116431,7 +116432,7 @@ aeu
 efG
 kWK
 cvT
-vhu
+lma
 rDO
 leF
 vUo
@@ -116946,7 +116947,7 @@ efG
 qlC
 iMG
 izL
-myE
+jZL
 tRO
 lRk
 fvU
@@ -120813,7 +120814,7 @@ lRk
 enP
 lZi
 xSO
-qiq
+gnd
 dRR
 tmf
 xvh
@@ -122594,7 +122595,7 @@ mwp
 lth
 wpw
 iPY
-pXP
+odd
 wpw
 ffN
 hnw
@@ -123881,7 +123882,7 @@ dmA
 hvl
 mOt
 wpw
-eoi
+wqR
 puJ
 iKn
 ndz
@@ -124136,8 +124137,8 @@ iSS
 uLt
 wpw
 aQl
-mhU
-dVy
+xNu
+kwx
 doy
 hbe
 doy

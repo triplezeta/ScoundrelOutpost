@@ -9,12 +9,6 @@
 	},
 /turf/open/floor/plating/abductor,
 /area/shuttle/escape)
-"bm" = (
-/obj/machinery/shower/directional/west{
-	name = "emergency shower"
-	},
-/turf/open/floor/plating/abductor,
-/area/shuttle/escape)
 "eD" = (
 /obj/item/kirbyplants/photosynthetic,
 /obj/machinery/light/directional/north,
@@ -81,6 +75,15 @@
 "oa" = (
 /obj/machinery/abductor/gland_dispenser{
 	desc = "A tank filled with grotesque bits of flesh."
+	},
+/turf/open/floor/plating/abductor,
+/area/shuttle/escape)
+"qb" = (
+/obj/machinery/door/airlock/abductor{
+	name = "Transport Ship Zeta"
+	},
+/obj/docking_port/mobile/emergency{
+	name = "Zeta emergency shuttle"
 	},
 /turf/open/floor/plating/abductor,
 /area/shuttle/escape)
@@ -235,6 +238,12 @@
 	},
 /turf/open/floor/plating/abductor,
 /area/shuttle/escape)
+"Qf" = (
+/obj/machinery/shower/directional/west{
+	name = "emergency shower"
+	},
+/turf/open/floor/plating/abductor,
+/area/shuttle/escape)
 "Ro" = (
 /obj/structure/bed/abductor,
 /obj/machinery/iv_drip,
@@ -280,17 +289,6 @@
 	},
 /turf/open/floor/plating/abductor,
 /area/shuttle/escape)
-"XI" = (
-/obj/machinery/door/airlock/abductor{
-	name = "Transport Ship Zeta"
-	},
-/obj/docking_port/mobile/emergency{
-	height = 21;
-	name = "Zeta emergency shuttle";
-	width = 21
-	},
-/turf/open/floor/plating/abductor,
-/area/shuttle/escape)
 "XW" = (
 /obj/machinery/recharge_station,
 /turf/open/floor/plating/abductor,
@@ -324,7 +322,7 @@ Cv
 Cv
 nH
 nH
-XI
+qb
 jj
 nH
 jj
@@ -633,7 +631,7 @@ sG
 vw
 nH
 yR
-bm
+Qf
 JK
 Ro
 nH

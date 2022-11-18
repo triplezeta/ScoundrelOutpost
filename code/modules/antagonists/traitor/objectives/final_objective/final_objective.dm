@@ -1,16 +1,16 @@
 /datum/traitor_objective_category/final_objective
 	name = "Final Objective"
 	objectives = list(
-		/datum/traitor_objective/final/romerol = 1,
-		/datum/traitor_objective/final/battlecruiser = 1,
-		/datum/traitor_objective/final/space_dragon = 1,
-		/datum/traitor_objective/final/supermatter_cascade = 1,
-		/datum/traitor_objective/final/malware_injection = 1,
+		/datum/traitor_objective/ultimate/romerol = 1,
+		/datum/traitor_objective/ultimate/battlecruiser = 1,
+		/datum/traitor_objective/ultimate/space_dragon = 1,
+		/datum/traitor_objective/ultimate/supermatter_cascade = 1,
+		/datum/traitor_objective/ultimate/malware_injection = 1,
 	)
 	weight = 100
 
-/datum/traitor_objective/final
-	abstract_type = /datum/traitor_objective/final
+/datum/traitor_objective/ultimate
+	abstract_type = /datum/traitor_objective/ultimate
 	// to get a final objective, you must have 900 total reputation points,
 	// and have completed objectives worth a cumulative total of 400 reputation points
 	// basically, you need to do high-risk high-reward objectives like assassination and sabotage
@@ -19,7 +19,7 @@
 	var/progression_points_in_objectives = 40 MINUTES
 
 /// Determines if this final objective can be taken. Should be put into every final objective's generate function.
-/datum/traitor_objective/final/can_generate_objective(generating_for, list/possible_duplicates)
+/datum/traitor_objective/ultimate/can_generate_objective(generating_for, list/possible_duplicates)
 	if(handler.get_completion_progression(/datum/traitor_objective) < progression_points_in_objectives)
 		return FALSE
 	if(SStraitor.get_taken_count(type) > 0) // Prevents multiple people from ever getting the same final objective.
@@ -28,7 +28,7 @@
 		return FALSE
 	return TRUE
 
-/datum/traitor_objective/final/on_objective_taken(mob/user)
+/datum/traitor_objective/ultimate/on_objective_taken(mob/user)
 	. = ..()
 	handler.maximum_potential_objectives = 0
 	for(var/datum/traitor_objective/objective as anything in handler.potential_objectives)
@@ -56,6 +56,6 @@
 /datum/objective/traitor_final/check_completion()
 	return TRUE // no way of checking completion; this objective is just here for flavor
 
-/datum/traitor_objective/final/uplink_ui_data(mob/user)
+/datum/traitor_objective/ultimate/uplink_ui_data(mob/user)
 	. = ..()
 	.["final_objective"] = TRUE
