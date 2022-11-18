@@ -22,7 +22,7 @@
 	var/shards = 2
 	var/rods = 2
 	var/cable = 1
-	var/associated_lift = null
+	var/list/debris = list()
 	/// ORBSTATION: Time it takes to pry open the windoor with the jaws of life. Time to disassemble is this * 1.5.
 	var/pry_time = 4 SECONDS
 	/// ORBSTATION: Percent chance for the windoor to break when pried open with the jaws of life.
@@ -51,10 +51,10 @@
 	src.unres_sides = unres_sides
 	update_appearance(UPDATE_ICON)
 
-	RegisterSignal(src, COMSIG_COMPONENT_NTNET_RECEIVE, .proc/ntnet_receive)
+	RegisterSignal(src, COMSIG_COMPONENT_NTNET_RECEIVE, PROC_REF(ntnet_receive))
 
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_EXIT = .proc/on_exit,
+		COMSIG_ATOM_EXIT = PROC_REF(on_exit),
 	)
 
 	AddElement(/datum/element/connect_loc, loc_connections)
@@ -237,6 +237,13 @@
 	operating = FALSE
 	return 1
 
+///When the tram is in station, the doors are locked to engineering only.
+/obj/machinery/door/window/lock()
+	req_access = list("engineering")
+
+/obj/machinery/door/window/unlock()
+	req_access = null
+
 /obj/machinery/door/window/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
 	switch(damage_type)
 		if(BRUTE)
@@ -409,11 +416,11 @@
 				return
 
 			if(density)
-				INVOKE_ASYNC(src, .proc/open)
+				INVOKE_ASYNC(src, PROC_REF(open))
 			else
-				INVOKE_ASYNC(src, .proc/close)
+				INVOKE_ASYNC(src, PROC_REF(close))
 		if("touch")
-			INVOKE_ASYNC(src, .proc/open_and_close)
+			INVOKE_ASYNC(src, PROC_REF(open_and_close))
 
 /obj/machinery/door/window/rcd_vals(mob/user, obj/item/construction/rcd/the_rcd)
 	switch(the_rcd.mode)

@@ -519,6 +519,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/stool/bar, 0)
 /obj/structure/chair/plastic/post_buckle_mob(mob/living/Mob)
 	Mob.pixel_y += 2
 	.=..()
+	//ORBSTATION DELETION: removed "snap_check" proc (interacted with "fat" mechanics)
 
 /obj/structure/chair/plastic/post_unbuckle_mob(mob/living/Mob)
 	Mob.pixel_y -= 2

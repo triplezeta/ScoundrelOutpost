@@ -866,6 +866,38 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/shuttle/pirate)
+"se" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table,
+/obj/item/storage/fancy/cigarettes{
+	pixel_x = 2;
+	pixel_y = 6
+	},
+/obj/item/storage/fancy/cigarettes/cigpack_carp{
+	pixel_x = 10;
+	pixel_y = 6
+	},
+/obj/item/storage/fancy/cigarettes/cigpack_robust{
+	pixel_x = 2
+	},
+/obj/item/storage/fancy/cigarettes/cigpack_midori{
+	pixel_x = 10
+	},
+/obj/item/storage/fancy/cigarettes/cigpack_uplift{
+	pixel_x = 10;
+	pixel_y = -6
+	},
+/obj/item/lighter{
+	pixel_x = -10;
+	pixel_y = -2
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/turf/open/floor/iron,
+/area/shuttle/pirate)
 "sP" = (
 /obj/machinery/light/small/directional/east,
 /obj/machinery/computer/monitor{
@@ -883,6 +915,30 @@
 	dir = 8
 	},
 /turf/open/floor/iron/dark,
+/area/shuttle/pirate)
+"sX" = (
+/obj/machinery/door/airlock/external/glass/ruin{
+	id_tag = "piratestarboardexternal"
+	},
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 1
+	},
+/obj/docking_port/mobile/pirate{
+	launch_status = 0;
+	movement_force = list("KNOCKDOWN" = 0, "THROW" = 0);
+	name = "Pirate Ship";
+	port_direction = 2
+	},
+/obj/docking_port/stationary{
+	dwidth = 11;
+	height = 16;
+	shuttle_id = "pirate_home";
+	name = "Deep Space";
+	width = 17
+	},
+/obj/effect/mapping_helpers/airlock/cutaiwire,
+/turf/open/floor/plating,
 /area/shuttle/pirate)
 "vB" = (
 /obj/effect/turf_decal/stripes/line{
@@ -938,38 +994,6 @@
 /obj/effect/mapping_helpers/airlock/cutaiwire,
 /turf/open/floor/wood,
 /area/shuttle/pirate)
-"Dz" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/table,
-/obj/item/storage/fancy/cigarettes{
-	pixel_x = 2;
-	pixel_y = 6
-	},
-/obj/item/storage/fancy/cigarettes/cigpack_carp{
-	pixel_x = 10;
-	pixel_y = 6
-	},
-/obj/item/storage/fancy/cigarettes/cigpack_robust{
-	pixel_x = 2
-	},
-/obj/item/storage/fancy/cigarettes/cigpack_midori{
-	pixel_x = 10
-	},
-/obj/item/storage/fancy/cigarettes/cigpack_uplift{
-	pixel_x = 10;
-	pixel_y = -6
-	},
-/obj/item/lighter{
-	pixel_x = -10;
-	pixel_y = -2
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
-	dir = 1
-	},
-/turf/open/floor/iron,
-/area/shuttle/pirate)
 "ED" = (
 /obj/effect/turf_decal/delivery,
 /obj/effect/decal/cleanable/dirt,
@@ -988,33 +1012,6 @@
 /obj/machinery/door/window{
 	name = "Decontamination"
 	},
-/turf/open/floor/plating,
-/area/shuttle/pirate)
-"It" = (
-/obj/machinery/door/airlock/external/glass/ruin{
-	id_tag = "piratestarboardexternal"
-	},
-/obj/effect/mapping_helpers/airlock/locked,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 1
-	},
-/obj/docking_port/mobile/pirate{
-	dwidth = 11;
-	height = 16;
-	launch_status = 0;
-	movement_force = list("KNOCKDOWN" = 0, "THROW" = 0);
-	name = "Pirate Ship";
-	port_direction = 2;
-	width = 17
-	},
-/obj/docking_port/stationary{
-	dwidth = 11;
-	height = 16;
-	shuttle_id = "pirate_home";
-	name = "Deep Space";
-	width = 17
-	},
-/obj/effect/mapping_helpers/airlock/cutaiwire,
 /turf/open/floor/plating,
 /area/shuttle/pirate)
 "JT" = (
@@ -1142,7 +1139,7 @@ aj
 aj
 ax
 aq
-Dz
+se
 aj
 RY
 aM
@@ -1310,7 +1307,7 @@ ED
 aS
 bZ
 bo
-It
+sX
 "}
 (13,1,1) = {"
 af
