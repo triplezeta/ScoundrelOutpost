@@ -68,3 +68,7 @@
 	icon_state = "hair_thresh"
 	icon = 'orbstation/icons/mob/species/human/hair.dmi'
 
+/datum/sprite_accessory/hair/shorthimecover
+	name = "Hime Cut Over Eye (Short)"
+	icon_state = "hair_shorthimecover"
+	icon = 'orbstation/icons/mob/species/human/hair.dmi'
