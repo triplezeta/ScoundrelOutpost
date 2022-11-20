@@ -64,7 +64,7 @@
 	var/to_spawn = rand(0, max_things_per_second)
 	while (to_spawn > 0)
 		to_spawn--
-		addtimer(CALLBACK(src, .proc/drop_item), rand(0, (1 SECONDS)))
+		addtimer(CALLBACK(src, PROC_REF(drop_item)), rand(0, (1 SECONDS)))
 
 /// Make something descend from above.
 /datum/round_event/wizard/indoor_weather/proc/drop_item()

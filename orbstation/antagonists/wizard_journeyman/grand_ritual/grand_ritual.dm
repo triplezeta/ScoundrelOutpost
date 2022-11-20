@@ -104,7 +104,7 @@
 	RegisterSignal(owner, list(
 			COMSIG_MOB_ENTER_JAUNT,
 			COMSIG_MOB_AFTER_EXIT_JAUNT,
-		), .proc/update_icon_on_signal)
+		), PROC_REF(update_icon_on_signal))
 
 /datum/action/grand_ritual/Remove(mob/remove_from)
 	. = ..()
@@ -153,7 +153,7 @@
 		owner.balloon_alert(owner, "already drawing a rune!")
 		return
 
-	INVOKE_ASYNC(src, .proc/draw_rune, target_turf)
+	INVOKE_ASYNC(src, PROC_REF(draw_rune), target_turf)
 
 /// Draws the ritual rune
 /datum/action/grand_ritual/proc/draw_rune(turf/target_turf)
@@ -170,7 +170,7 @@
 	target_turf.balloon_alert(owner, "rune created")
 	var/obj/effect/grand_rune/new_rune = create_appropriate_rune(target_turf)
 	rune = WEAKREF(new_rune)
-	RegisterSignal(new_rune, COMSIG_GRAND_RUNE_COMPLETE, .proc/on_rune_complete)
+	RegisterSignal(new_rune, COMSIG_GRAND_RUNE_COMPLETE, PROC_REF(on_rune_complete))
 	drawing_rune = FALSE
 
 /// The seventh rune we spawn is special

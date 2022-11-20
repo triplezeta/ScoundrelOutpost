@@ -56,7 +56,7 @@ GLOBAL_LIST_INIT(connected_wards, list())
 /obj/effect/connective_ward/Initialize(mapload)
 	. = ..()
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered)
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered))
 	AddElement(/datum/element/connect_loc, loc_connections)
 	GLOB.connected_wards += src
 

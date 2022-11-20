@@ -17,7 +17,7 @@
 	var/obj/effect/dummy/phased_mob/jaunt_mover = ..()
 	if (!jaunt_mover)
 		return FALSE
-	RegisterSignal(jaunter, COMSIG_MOB_STATCHANGE, .proc/check_health)
+	RegisterSignal(jaunter, COMSIG_MOB_STATCHANGE, PROC_REF(check_health))
 	jaunter.apply_status_effect(/datum/status_effect/mirror_fracture)
 	return jaunt_mover
 
@@ -35,7 +35,7 @@
 	if (source.stat == CONSCIOUS)
 		return
 	//async this because it has a do_after in it
-	INVOKE_ASYNC(src, .proc/exit_jaunt_involuntarily, source)
+	INVOKE_ASYNC(src, PROC_REF(exit_jaunt_involuntarily), source)
 
 /**
  * Drops you out of the mirror realm near a reflective surface
