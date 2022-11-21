@@ -6,7 +6,7 @@
 	mob_trait = TRAIT_DOOR_CLOSER
 	gain_text = "<span class='danger'>You feel very strongly about passing through doorways.</span>"
 	lose_text = "<span class='notice'>You no longer feel very strongly about doorways.</span>"
-	medical_record_text = "Patient seems to have supersitions involving doorways."
+	medical_record_text = "Patient seems to have superstitions involving doorways."
 	mail_goodies = list(/obj/item/clothing/gloves/color/white)
 
 /obj/machinery/door/Initialize(mapload)
