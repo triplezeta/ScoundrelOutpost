@@ -4926,6 +4926,7 @@
 #include "orbstation\quirks\good_to_neutral_quirks.dm"
 #include "orbstation\quirks\plurality.dm"
 #include "orbstation\quirks\robot_voice.dm"
+#include "orbstation\quirks\throwing_arm.dm"
 #include "orbstation\quirks\tongue_tied.dm"
 #include "orbstation\quirks\xcard\bioscrambler_immune.dm"
 #include "orbstation\quirks\xcard\revolution.dm"

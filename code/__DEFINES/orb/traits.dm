@@ -15,6 +15,8 @@
 #define FAST_CRAFTER_MOD 0.5
 // Makes you illiterate while not wearing glasses
 #define TRAIT_FARSIGHT "farsighted"
+// Increases the speed and range of thrown objects
+#define TRAIT_THROWINGARM "throwing_arm"
 
 //Trait sources
 // Special trait source for illiteracy granted by farsightedness
