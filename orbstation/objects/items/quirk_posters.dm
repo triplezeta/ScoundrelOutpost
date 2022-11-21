@@ -15,6 +15,8 @@
 /obj/item/poster/quirk/attackby(obj/item/postertool, mob/user, params)
 	if(!is_special_character(user))
 		return ..()
+	if(!HAS_TRAIT(user, TRAIT_POSTERBOY))
+		return ..()
 	if(!istype(postertool, /obj/item/toy/crayon))
 		return ..()
 	balloon_alert(user, "converting poster...")
