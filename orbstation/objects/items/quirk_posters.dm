@@ -7,6 +7,9 @@
 
 /obj/item/poster/quirk/Initialize(mapload, obj/structure/sign/poster/new_poster_structure)
 	. = ..()
+
+	register_context()
+
 	if(poster_structure)
 		var/obj/structure/sign/poster/quirk/department_grab = poster_structure
 		department_grab.quirk_poster_department = quirk_poster_department
@@ -20,7 +23,7 @@
 	if(!istype(postertool, /obj/item/toy/crayon))
 		return ..()
 	balloon_alert(user, "converting poster...")
-	if(!do_after(user, 5 SECONDS, src))
+	if(!do_after(user, 5 SECONDS, user))
 		balloon_alert(user, "interrupted!")
 		return
 	var/obj/item/poster/traitor/quirkspawn = new(get_turf(src))
@@ -28,6 +31,18 @@
 	user.put_in_hands(quirkspawn)
 	to_chat(user, span_notice("You have converted one of your posters!"))
 	qdel(src)
+
+///screentip for the above
+
+/obj/item/poster/quirk/add_context(atom/source, list/context, obj/item/held_item, mob/user)
+	if(!is_special_character(user))
+		return NONE
+	if(!HAS_TRAIT(user, TRAIT_POSTERBOY))
+		return NONE
+	if(!istype(held_item, /obj/item/toy/crayon))
+		return NONE
+	context[SCREENTIP_CONTEXT_LMB] = "Turn into Demoralizing Poster"
+	return CONTEXTUAL_SCREENTIP_SET
 
 /obj/structure/sign/poster/quirk
 	name = "quirk poster"
