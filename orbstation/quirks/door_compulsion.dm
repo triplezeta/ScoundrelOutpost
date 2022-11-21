@@ -22,6 +22,8 @@
 		return
 	if(istype(src, /obj/machinery/door/firedoor))
 		return
+	if(entered.stat != CONSCIOUS)
+		return
 	if(!isliving(entered))
 		return
 	if(!HAS_TRAIT(entered, TRAIT_DOOR_CLOSER))
