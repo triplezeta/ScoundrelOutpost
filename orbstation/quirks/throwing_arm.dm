@@ -17,3 +17,11 @@
 		update_appearance()
 	else
 		return ..()
+
+/obj/structure/holohoop/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
+	if (isitem(AM) && !istype(AM,/obj/projectile) && throwingdatum.thrower && HAS_TRAIT(throwingdatum.thrower, TRAIT_THROWINGARM))
+		AM.forceMove(get_turf(src))
+		visible_message(span_warning("Swish! [AM] lands in [src]."))
+		return
+	else
+		return ..()
