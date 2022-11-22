@@ -14,7 +14,7 @@
 	display_results(user, target, span_notice("You succeed in reorganising [target]'s brain."),
 		span_notice("[user] has reorganised [target]'s brain!"),
 		span_notice("[user] completes the surgery on [target]'s brain."))
-	display_pain(target, "Your head goes totally numb for a moment, something has changed!")
+	display_pain(target, "Your head goes totally numb for a moment, the pain is overwhelming!")
 
 /datum/surgery_step/lobotomize/fail_output(mob/user, mob/living/carbon/target)
 	display_results(user, target, span_warning("You make a mistake, causing more damage!"),

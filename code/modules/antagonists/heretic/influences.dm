@@ -65,10 +65,6 @@
  * and the number of minds we're tracking.
  */
 /datum/reality_smash_tracker/proc/generate_new_influences()
-	// 1 heretic = 5 influences
-	// 2 heretics = 9 influences
-	// 3 heretics = 12 influences
-	// 4 heretics = 14 influences, +1 for each onwards.
 	var/how_many_can_we_make = 0
 	for(var/heretic_number in 1 to length(tracked_heretics))
 		how_many_can_we_make += max(NUM_INFLUENCES_PER_HERETIC - heretic_number + 1, 1)

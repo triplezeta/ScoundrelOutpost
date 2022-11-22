@@ -267,14 +267,14 @@
 		else
 			name_to_return = id.registered_name
 	else if(istype(pda))
-		var/obj/item/computer_hardware/card_slot/card_slot = pda.all_components[MC_CARD]
-		if(card_slot?.stored_card)
-			if(check_plurality && card_slot.stored_card.plural_system?.fronter_name)
-				name_to_return = card_slot.stored_card.plural_system.fronter_name
-				if(append_system_name && card_slot.stored_card.plural_system.system_name != get_face_name(""))
-					name_to_return = "[name_to_return] {[card_slot.stored_card.plural_system.system_name]}"
+		var/obj/item/card/id/stored_card = pda.computer_id_slot?.GetID()
+		if(stored_card)
+			if(check_plurality && stored_card.plural_system?.fronter_name)
+				name_to_return = stored_card.plural_system.fronter_name
+				if(append_system_name && stored_card.plural_system.system_name != get_face_name(""))
+					name_to_return = "[name_to_return] {[stored_card.plural_system.system_name]}"
 			else
-				name_to_return = card_slot.stored_card.registered_name
+				name_to_return = stored_card.registered_name
 	return name_to_return
 
 // Copypasta, but with check_plurality set to TRUE on get_id_name(), for use with the above code.
