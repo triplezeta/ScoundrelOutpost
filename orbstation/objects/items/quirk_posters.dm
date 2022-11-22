@@ -32,11 +32,11 @@
 	to_chat(user, span_notice("You have converted one of your posters!"))
 	qdel(src)
 
-///screentip for the above
+/// Screentip for the above
 
 /obj/item/poster/quirk/add_context(atom/source, list/context, obj/item/held_item, mob/user)
 	if(!is_special_character(user))
-		return NONE
+	return NONE
 	if(!HAS_TRAIT(user, TRAIT_POSTERBOY))
 		return NONE
 	if(!istype(held_item, /obj/item/toy/crayon))
@@ -49,6 +49,56 @@
 	desc = "A large piece of homemade space-resistant printed paper."
 	icon = 'orbstation/icons/obj/quirk_posters.dmi'
 	var/quirk_poster_department = NONE
+
+/// Code that actually makes the posters unique and worth existing, edited from evil posters
+
+/*
+ * Applies a role-based mood if you can see the parent.
+ *
+ * - Applies a mood to people who are in visible range of the item.
+ * - Does not re-apply mood to people who already have it.
+ * - Sends a signal if a mood is successfully applied.
+ */
+/datum/proximity_monitor/advanced/quirk_posters
+	var/datum/quirk_posters/moods
+
+/datum/proximity_monitor/advanced/quirk_posters/New(atom/_host, range, _ignore_if_not_on_turf = TRUE, datum/demoralise_moods/moods)
+	. = ..()
+	src.moods = moods
+	RegisterSignal(host, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine))
+
+/datum/proximity_monitor/advanced/quirk_posters/field_turf_crossed(atom/movable/crossed, turf/location)
+	if (!isliving(crossed))
+		return
+	if (!can_see(crossed, host, current_range))
+		return
+	on_seen(crossed)
+
+/*
+ * Signal proc for [COMSIG_PARENT_EXAMINE].
+ * Immediately tries to apply a mood to the examiner, ignoring the proximity check.
+ */
+/datum/proximity_monitor/advanced/quirk_posters/proc/on_examine(datum/source, mob/examiner)
+	SIGNAL_HANDLER
+	if (isliving(examiner))
+		on_seen(examiner)
+
+/datum/proximity_monitor/advanced/quirk_posters/proc/on_seen(mob/living/viewer)
+	var/department = viewer.assigned_role.paycheck_department
+	if (!viewer.mind)
+		return
+	if (viewer.stat != CONSCIOUS)
+		return
+	if(viewer.is_blind())
+		return
+	if (!should_demoralise(viewer))
+		return
+	if(!viewer.can_read(host, moods.reading_requirements, TRUE))
+		return
+	if(department == )
+
+
+/obj/structure/sign/poster/quirk/proc/mood_booster
 
 
 /// All new poster items are below, starting with the two random posters types
