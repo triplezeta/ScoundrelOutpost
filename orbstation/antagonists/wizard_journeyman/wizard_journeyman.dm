@@ -35,7 +35,7 @@ GLOBAL_LIST_EMPTY(journeymanstart)
 	var/mob/living/current = owner.current
 	ritual.Grant(current)
 	current.faction |= ROLE_WIZARD
-	RegisterSignal(ritual, COMSIG_GRAND_RITUAL_FINAL_COMPLETE, .proc/on_ritual_complete)
+	RegisterSignal(ritual, COMSIG_GRAND_RITUAL_FINAL_COMPLETE, PROC_REF(on_ritual_complete))
 
 /datum/antagonist/wizard_journeyman/remove_innate_effects(mob/living/mob_override)
 	. = ..()

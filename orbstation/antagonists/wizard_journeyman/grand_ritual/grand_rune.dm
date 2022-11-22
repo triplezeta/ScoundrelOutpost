@@ -115,7 +115,7 @@
 
 /obj/effect/grand_rune/interact(mob/living/user)
 	. = ..()
-	INVOKE_ASYNC(src, .proc/invoke_rune, user)
+	INVOKE_ASYNC(src, PROC_REF(invoke_rune), user)
 	return TRUE
 
 /// Actually does the whole invoking thing
@@ -141,7 +141,7 @@
 		return
 	flick("flash", src)
 	playsound(src,'sound/magic/staff_animation.ogg', 75, TRUE)
-	INVOKE_ASYNC(src, .proc/invoke_rune, user)
+	INVOKE_ASYNC(src, PROC_REF(invoke_rune), user)
 
 /// Add special effects for casting a spell, basically you glow and hover in the air.
 /obj/effect/grand_rune/proc/add_channel_effect(mob/living/user)
@@ -160,12 +160,12 @@
 /obj/effect/grand_rune/proc/on_invocation_complete(mob/living/user)
 	is_in_use = FALSE
 	playsound(src,'sound/magic/staff_change.ogg', 75, TRUE)
-	INVOKE_ASYNC(src, .proc/summon_round_event, user) // Running the event sleeps
+	INVOKE_ASYNC(src, PROC_REF(summon_round_event), user) // Running the event sleeps
 	trigger_side_effects()
 	tear_reality()
 	SEND_SIGNAL(src, COMSIG_GRAND_RUNE_COMPLETE)
 	flick("activate", src)
-	addtimer(CALLBACK(src, .proc/remove_rune), 6)
+	addtimer(CALLBACK(src, PROC_REF(remove_rune)), 6)
 
 /obj/effect/grand_rune/proc/remove_rune()
 	new /obj/effect/decal/cleanable/grand_remains(get_turf(src))
