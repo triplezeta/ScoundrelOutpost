@@ -64,7 +64,7 @@
 	var/prev_y = user.pixel_y
 	var/prev_x = user.pixel_x
 	apply_dir(user, user.dir)
-	RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE, .proc/on_rotated)
+	RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE, PROC_REF(on_rotated))
 	spin_dancer(user)
 
 	dancer = WEAKREF(user)
@@ -74,7 +74,7 @@
 	user.visible_message("<B>[user] is [get_brag_message()]!</B>")
 
 	if (emagged)
-		addtimer(CALLBACK(src, .proc/overdrive, user), 5 SECONDS)
+		addtimer(CALLBACK(src, PROC_REF(overdrive), user), 5 SECONDS)
 
 	if (!do_after(user, 10 SECONDS, src))
 		if (!user)
