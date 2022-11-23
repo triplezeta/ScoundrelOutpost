@@ -20,6 +20,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	var/static/list/quirk_blacklist = list(
 		list("Tongue Tied", "Artificial Voice Box"), //ORBSTATION
 		list("Farsighted", "Illiterate"), //ORBSTATION
+		list("Prosthetic Limb", "Quadruple Amputee", "Alien Prosthesis"), //ORBSTATION
 		list("Blind", "Nearsighted", "Farsighted"), //ORBSTATION: added "Farsighted" to this list
 		list("Jolly", "Depression", "Apathetic", "Hypersensitive"),
 		list("Ageusia", "Vegetarian", "Deviant Tastes", "Gamer"),
@@ -28,9 +29,8 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		list("Clown Enjoyer", "Mime Fan"),
 		list("Bad Touch", "Friendly"),
 		list("Extrovert", "Introvert"),
-		list("Prosthetic Limb", "Quadruple Amputee", "Alien Prosthesis"), //ORBSTATION EDIT
-		list("Quadruple Amputee", "Paraplegic","Frail"),
-		list("Prosthetic Limb", "Body Purist"),
+		list("Prosthetic Limb", "Quadruple Amputee", "Body Purist"),
+		list("Quadruple Amputee", "Paraplegic", "Frail"),
 	)
 
 /datum/controller/subsystem/processing/quirks/Initialize()
