@@ -46,6 +46,7 @@ GLOBAL_LIST_INIT(phobia_regexes, list(
 	"strangers" = construct_phobia_regex("strangers"),
 	"the supernatural" = construct_phobia_regex("the supernatural"),
 	"blood" = construct_phobia_regex("blood"),
+	"the mansus" = construct_phobia_regex("the mansus"), //ORBSTATION ADDITION
 ))
 
 GLOBAL_LIST_INIT(phobia_mobs, list(
@@ -96,6 +97,9 @@ GLOBAL_LIST_INIT(phobia_mobs, list(
 		/mob/living/basic/cockroach,
 		/mob/living/simple_animal/hostile/bee,
 	)),
+	"the mansus" = typecacheof(list(
+		/mob/living/simple_animal/hostile/heretic_summon,
+	))
 ))
 
 GLOBAL_LIST_INIT(phobia_objs, list(
@@ -465,6 +469,29 @@ GLOBAL_LIST_INIT(phobia_objs, list(
 		/obj/item/reagent_containers/blood,
 		/obj/item/reagent_containers/syringe,
 		/obj/machinery/iv_drip,
+	)),
+
+	"the mansus" = typecacheof(list(
+		/obj/effect/floating_blade,
+		/obj/effect/heretic_influence,
+		/obj/effect/heretic_rune,
+		/obj/effect/rune,
+		/obj/effect/visible_heretic_influence,
+		/obj/item/clothing/head/hooded/cult_hoodie,
+		/obj/item/clothing/mask/madness_mask,
+		/obj/item/clothing/neck/heretic_focus,
+		/obj/item/clothing/neck/eldritch_amulet,
+		/obj/item/clothing/suit/hooded/cultrobes,
+		/obj/item/codex_cicatrix,
+		/obj/item/cult_bastard,
+		/obj/item/melee/cultblade,
+		/obj/item/melee/rune_carver,
+		/obj/item/melee/sickly_blade,
+		/obj/item/toy/eldritch_book,
+		/obj/item/toy/reality_pierce,
+		/obj/item/reagent_containers/cup/beaker/eldritch,
+		/obj/item/gun/ballistic/rifle/lionhunter,
+		/obj/item/melee/touch_attack/mansus_fist,
 	)),
 ))
 
