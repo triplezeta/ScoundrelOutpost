@@ -9,25 +9,40 @@
 	medical_record_text = "Patient seems to have superstitions involving doorways."
 	mail_goodies = list(/obj/item/clothing/gloves/color/white)
 
-/obj/machinery/door/Initialize(mapload)
-	.  = ..()
-	var/static/list/loc_connections = list(
-		COMSIG_ATOM_EXITED = PROC_REF(on_exited))
-	AddElement(/datum/element/connect_loc, loc_connections)
+/datum/quirk/door_closer/add()
+	. = ..()
+	quirk_holder.AddElement(/datum/element/door_closer_quirk)
 
-/obj/machinery/door/proc/on_exited(datum/source, atom/movable/entered)
+/datum/quirk/door_closer/remove()
+	. = ..()
+	quirk_holder.RemoveElement(/datum/element/door_closer_quirk)
+
+/// element that is attached to people with the trait door closer that checks if the mob has left a tile with a door on it so that it can close it
+/datum/element/door_closer_quirk
+	/// list of doors that should not be closed automatically, blast doors, shutters, and firelocks mostly
+	var/static/list/secure_doors = list(/obj/machinery/door/poddoor, /obj/machinery/door/firedoor)
+
+/datum/element/door_closer_quirk/Attach(datum/target)
+	. = ..()
+
+	if(!isliving(target))
+		return ELEMENT_INCOMPATIBLE
+	secure_doors = typecacheof(secure_doors)
+	RegisterSignal(target, COMSIG_MOVABLE_MOVED, PROC_REF(close_door))
+
+/datum/element/door_closer_quirk/Detach(datum/target, ...)
+	. = ..()
+
+	UnregisterSignal(target, COMSIG_MOVABLE_MOVED)
+
+/datum/element/door_closer_quirk/proc/close_door(mob/living/leaver, turf/old_turf)
 	SIGNAL_HANDLER
 
-	if(istype(src, /obj/machinery/door/poddoor))
+	if(leaver.stat != CONSCIOUS)
 		return
-	if(istype(src, /obj/machinery/door/firedoor))
+	if(HAS_TRAIT(leaver, TRAIT_HANDS_BLOCKED))
 		return
-	if(entered.stat != CONSCIOUS)
-		return
-	if(!isliving(entered))
-		return
-	if(!HAS_TRAIT(entered, TRAIT_DOOR_CLOSER))
-		return
-	INVOKE_ASYNC(src, PROC_REF(close))
-
-
+	for(var/obj/machinery/door/to_close in old_turf.contents)
+		if(is_type_in_typecache(to_close, secure_doors))
+			continue
+		INVOKE_ASYNC(to_close, TYPE_PROC_REF(/obj/machinery/door, close))
