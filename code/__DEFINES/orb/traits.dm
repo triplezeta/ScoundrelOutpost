@@ -15,7 +15,8 @@
 #define FAST_CRAFTER_MOD 0.5
 // Makes you illiterate while not wearing glasses
 #define TRAIT_FARSIGHT "farsighted"
-
+// Makes you close doors behind you automatically
+#define TRAIT_DOOR_CLOSER "compulsive_door_closer"
 //Trait sources
 // Special trait source for illiteracy granted by farsightedness
 #define FARSIGHT_TRAIT "farsighted_trait"
