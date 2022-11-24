@@ -301,7 +301,7 @@
 		if(is_station_level(target_door.z))
 			target_door.unlock()
 			target_door.req_access = list()
-			INVOKE_ASYNC(target_door, /obj/machinery/door/airlock.proc/open)
+			INVOKE_ASYNC(target_door, TYPE_PROC_REF(/obj/machinery/door/airlock, open))
 	priority_announce("AULIE OXIN FIERA!!", null, 'sound/magic/knock.ogg', sender_override = "[invoker.real_name]")
 
 /// Completely transform the station
@@ -341,7 +341,7 @@
 	for (var/iterator in 1 to greatest_dist)
 		if(!turfs_to_transform["[iterator]"])
 			continue
-		addtimer(CALLBACK(src, .proc/transform_area, turfs_to_transform["[iterator]"]), (5 SECONDS) * iterator)
+		addtimer(CALLBACK(src, PROC_REF(transform_area), turfs_to_transform["[iterator]"]), (5 SECONDS) * iterator)
 
 /datum/grand_finale/midas/proc/transform_area(list/turfs)
 	for (var/turf/transform_turf as anything in turfs)

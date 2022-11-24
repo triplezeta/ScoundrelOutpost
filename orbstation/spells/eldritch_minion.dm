@@ -98,7 +98,7 @@
 		choose_minion(user)
 		return
 
-	INVOKE_ASYNC(src, .proc/summon_minion, user)
+	INVOKE_ASYNC(src, PROC_REF(summon_minion), user)
 	return TRUE
 
 /// Pick a minion

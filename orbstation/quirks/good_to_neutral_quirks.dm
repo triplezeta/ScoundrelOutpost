@@ -19,3 +19,7 @@
 // I don't know that anyone takes this for the moodlet or increased efficiency, it's essentially just "I want a spray can"
 /datum/quirk/item_quirk/tagger
 	value = 0
+
+// It's not fair to mute characters to force them to spend a positive quirk on being able to sign. I think it's fine if anyone can sign if they want to.
+/datum/quirk/item_quirk/signer
+	value = 0
