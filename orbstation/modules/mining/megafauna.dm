@@ -22,7 +22,7 @@
 	dormant = FALSE
 	src.visible_message(span_bolddanger("[src] is about to awaken!"))
 	playsound(loc,'sound/creatures/narsie_rises.ogg', 100, FALSE, 50, TRUE, TRUE)
-	addtimer(CALLBACK(src, .proc/awaken), 5 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(awaken)), 5 SECONDS)
 
 /// Make it not invulnerable and also angry
 /mob/living/simple_animal/hostile/megafauna/proc/awaken(mob/living/future_corpse)

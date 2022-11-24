@@ -17,7 +17,8 @@
 #define TRAIT_FARSIGHT "farsighted"
 // Increases the speed and range of thrown objects
 #define TRAIT_THROWINGARM "throwing_arm"
-
+// Makes you close doors behind you automatically
+#define TRAIT_DOOR_CLOSER "compulsive_door_closer"
 //Trait sources
 // Special trait source for illiteracy granted by farsightedness
 #define FARSIGHT_TRAIT "farsighted_trait"

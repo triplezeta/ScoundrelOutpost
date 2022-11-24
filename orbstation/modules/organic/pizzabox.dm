@@ -14,12 +14,12 @@
 	pizza = /obj/item/food/pizza/mothic_white_pie
 
 /obj/item/pizzabox/italic_flatbread
-	pizza = /obj/item/food/pizza/italic_flatbread
+	pizza = /obj/item/food/pizza/flatbread/italic
 
 /obj/item/pizzabox/rustic_flatbread
-	pizza = /obj/item/food/pizza/rustic_flatbread
+	pizza = /obj/item/food/pizza/flatbread/rustic
 
 /obj/item/pizzabox/imperial_flatbread
-	pizza = /obj/item/food/pizza/imperial_flatbread
+	pizza = /obj/item/food/pizza/flatbread/imperial
 
 

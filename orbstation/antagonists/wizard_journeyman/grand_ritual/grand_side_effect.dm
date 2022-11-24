@@ -38,7 +38,7 @@
 		playsound(ritual_location, sound, 60, TRUE)
 	var/datum/action/cooldown/spell/spell = new spell_path()
 	spell.cast(ritual_location)
-	addtimer(CALLBACK(src, .proc/cleanup_spell, spell), duration)
+	addtimer(CALLBACK(src, PROC_REF(cleanup_spell), spell), duration)
 
 /// Deletes the spell reference
 /datum/grand_side_effect/spell/proc/cleanup_spell(datum/spell)
@@ -90,7 +90,7 @@
 			if (dist_between != iterator)
 				continue
 			range_turfs += turf
-		addtimer(CALLBACK(src, .proc/staggered_transform, theme, range_turfs), (0.5 SECONDS) * iterator)
+		addtimer(CALLBACK(src, PROC_REF(staggered_transform), theme, range_turfs), (0.5 SECONDS) * iterator)
 
 /datum/grand_side_effect/transmogrify_area/proc/staggered_transform(datum/dimension_theme/theme, list/transform_turfs)
 	for (var/turf/target_turf as anything in transform_turfs)
@@ -243,7 +243,7 @@
 	victim.AddElement(/datum/element/forced_gravity, 0)
 	victim.add_filter("teleport_glow", 2, list("type" = "outline", "color" = "#de3aff48", "size" = 2))
 	victim.visible_message(span_warning("[victim] suddenly floats up into the air!"), span_warning("You feel a tug in your chest, and are lifted upwards into the air!"))
-	addtimer(CALLBACK(src, .proc/summon_crewmate, victim, landing_pos), CREWMATE_SUMMON_TELEPORT_DELAY)
+	addtimer(CALLBACK(src, PROC_REF(summon_crewmate), victim, landing_pos), CREWMATE_SUMMON_TELEPORT_DELAY)
 
 /datum/grand_side_effect/summon_crewmate/proc/summon_crewmate(mob/victim, turf/destination)
 	var/turf/was_position = victim.loc
@@ -325,7 +325,7 @@
 	. = ..()
 	src.max_foods_per_second = max_foods_per_second
 	src.range = range
-	addtimer(CALLBACK(src, .proc/end_rain), duration)
+	addtimer(CALLBACK(src, PROC_REF(end_rain)), duration)
 	create_food(2 SECONDS)
 	START_PROCESSING(SSprocessing, src)
 
@@ -349,7 +349,7 @@
 
 	while(to_create > 0 && length(valid_turfs) > 0)
 		to_create--
-		addtimer(CALLBACK(src, .proc/drop_food, pick_n_take(valid_turfs)), rand(0, (1 SECONDS) * delta_time))
+		addtimer(CALLBACK(src, PROC_REF(drop_food), pick_n_take(valid_turfs)), rand(0, (1 SECONDS) * delta_time))
 
 /obj/effect/abstract/local_food_rain/proc/drop_food(turf/landing_zone)
 	podspawn(list(
@@ -387,12 +387,12 @@
 	while(count > 0 && length(valid_turfs) > 0)
 		count--
 		var/turf/spawn_loc = pick_n_take(valid_turfs)
-		addtimer(CALLBACK(src, .proc/create_portal, mob_type, spawn_loc), rand(0, 1 SECONDS))
+		addtimer(CALLBACK(src, PROC_REF(create_portal), mob_type, spawn_loc), rand(0, 1 SECONDS))
 
 /datum/grand_side_effect/spawn_delayed_mobs/proc/create_portal(mob_type, turf/spawn_loc)
 	var/spawn_delay = rand(10 SECONDS, 15 SECONDS)
 	new /obj/effect/temp_visual/delayed_mob_portal(spawn_loc, spawn_delay)
-	addtimer(CALLBACK(src, .proc/create_mob, mob_type, spawn_loc), spawn_delay)
+	addtimer(CALLBACK(src, PROC_REF(create_mob), mob_type, spawn_loc), spawn_delay)
 
 /datum/grand_side_effect/spawn_delayed_mobs/proc/create_mob(mob_path, loc)
 	if (!loc)

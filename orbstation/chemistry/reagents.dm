@@ -32,7 +32,7 @@
 		var/datum/component/edible/e = GetComponent(/datum/component/edible)
 		if(e)
 			if(!e.after_eat) // we want to allow this to be overridden if necessary
-				e.after_eat = CALLBACK(src, .proc/add_cheese)
+				e.after_eat = CALLBACK(src, PROC_REF(add_cheese))
 
 ///Adds the cheese reagent to cheese based on its cheesiness value.
 /obj/item/food/cheese/proc/add_cheese(mob/living/eater)
