@@ -21,6 +21,11 @@
 	var/icon = 'icons/misc/language.dmi'
 	var/icon_state = "popcorn"
 
+	//ORBSTATION
+	/// Should this be hidden on the language buy menu?
+	var/secret = FALSE
+	//END ORBSTATION
+
 /datum/language/proc/display_icon(atom/movable/hearer)
 	var/understands = hearer.has_language(src.type)
 	if(flags & LANGUAGE_HIDE_ICON_IF_UNDERSTOOD && understands)
