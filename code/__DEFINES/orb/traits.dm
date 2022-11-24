@@ -15,6 +15,8 @@
 #define FAST_CRAFTER_MOD 0.5
 // Makes you illiterate while not wearing glasses
 #define TRAIT_FARSIGHT "farsighted"
+// Means you can spraycan one of your roundstart posters into a traitor poster
+#define TRAIT_POSTERBOY "poster_boy"
 // Makes you close doors behind you automatically
 #define TRAIT_DOOR_CLOSER "compulsive_door_closer"
 //Trait sources
