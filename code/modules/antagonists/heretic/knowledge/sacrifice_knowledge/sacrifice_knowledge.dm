@@ -397,7 +397,7 @@
 	sac_target.remove_status_effect(/datum/status_effect/unholy_determination)
 	sac_target.reagents?.del_reagent(/datum/reagent/inverse/helgrasp/heretic)
 	sac_target.clear_mood_event("shadow_realm")
-	sac_target.gain_trauma(/datum/brain_trauma/mild/phobia/supernatural, TRAUMA_RESILIENCE_MAGIC)
+	sac_target.gain_trauma(/datum/brain_trauma/mild/phobia/mansus, TRAUMA_RESILIENCE_MAGIC) //ORBSTATION EDIT: different phobia
 
 	// Orbstation: Gives the target their paraplegia back if it was removed when they got sacrificed.
 	if(sac_target.has_quirk(/datum/quirk/paraplegic))
