@@ -90,3 +90,19 @@
 	new_pizza_box.boxtag = new_pizza_box.pizza.boxtag
 	new_pizza_box.boxtag_set = TRUE
 	new_pizza_box.update_appearance(UPDATE_ICON | UPDATE_DESC)
+
+/datum/supply_pack/organic/randomized/dough
+	name = "Bakery Crate"
+	desc = "Contains a randomized collection of dough from all over the universe, for all of your baking needs."
+	cost = CARGO_CRATE_VALUE * 3
+	contains = list(
+		/obj/item/food/dough = 10,
+		/obj/item/food/cakebatter = 7,
+		/obj/item/food/rootdough = 10,
+		/obj/item/food/mothic_pizza_dough = 4,
+		)
+
+/datum/supply_pack/organic/randomized/dough/fill(obj/structure/closet/crate/newcrate)
+	for(var/i in 1 to 10)
+		var/item = pick(contains)
+		new item(newcrate)
