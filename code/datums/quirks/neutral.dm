@@ -34,8 +34,7 @@
 	medical_record_text = "Patient suffers from ageusia and is incapable of tasting food or reagents."
 	mail_goodies = list(/obj/effect/spawner/random/food_or_drink/condiment) // but can you taste the salt? CAN YOU?!
 
-//ORBSTATION REMOVAL
-/*/datum/quirk/foreigner
+/datum/quirk/foreigner
 	name = "Foreigner"
 	desc = "You're not from around here. You don't know Galactic Common!"
 	icon = "language"
@@ -55,7 +54,7 @@
 	var/mob/living/carbon/human/human_holder = quirk_holder
 	human_holder.remove_blocked_language(/datum/language/common)
 	if(ishumanbasic(human_holder))
-		human_holder.remove_language(/datum/language/uncommon)*/
+		human_holder.remove_language(/datum/language/uncommon)
 
 /datum/quirk/vegetarian
 	name = "Vegetarian"

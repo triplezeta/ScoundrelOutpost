@@ -210,7 +210,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	be_special = sanitize_be_special(SANITIZE_LIST(be_special))
 	key_bindings = sanitize_keybindings(key_bindings)
 	favorite_outfits = SANITIZE_LIST(favorite_outfits)
-	languages = SANITIZE_LIST(languages) //ORBSTATION
 
 	if(needs_update >= 0) //save the updated version
 		var/old_default_slot = default_slot
@@ -296,9 +295,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	//Quirks
 	all_quirks = save_data?["all_quirks"]
 
-	//ORBSTATION: Languages
-	READ_FILE(S["languages"], languages)
-
 	//try to fix any outdated data if necessary
 	//preference updating will handle saving the updated data for us.
 	if(needs_update >= 0)
@@ -357,9 +353,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	//Quirks
 	save_data["all_quirks"] = all_quirks
-
-	//ORBSTATION: Languages
-	WRITE_FILE(S["languages"] , languages)
 
 	return TRUE
 
