@@ -91,14 +91,6 @@ export type QuirkInfo = {
   quirk_blacklist: string[][];
 };
 
-// ORBSTATION
-export type Language = {
-  description: string;
-  name: string;
-  icon: string;
-};
-// END ORBSTATION
-
 export enum RandomSetting {
   AntagOnly = 1,
   Disabled = 2,
@@ -168,12 +160,6 @@ export type PreferencesMenuData = {
     }
   >;
   job_preferences: Record<string, JobPriority>;
-
-  // ORBSTATION
-  selected_languages: Language[];
-  unselected_languages: Language[];
-  total_language_points: number;
-  // END ORBSTATION
 
   keybindings: Record<string, string[]>;
   overflow_role: string;
