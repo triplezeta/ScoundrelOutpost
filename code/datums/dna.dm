@@ -746,15 +746,17 @@ GLOBAL_LIST_INIT(total_uf_len_by_block, populate_total_uf_len_by_block())
 /mob/living/carbon/proc/random_mutate_unique_identity()
 	if(!has_dna())
 		CRASH("[src] does not have DNA")
-	var/num = rand(1, DNA_UNI_IDENTITY_BLOCKS)
-	dna.set_uni_feature_block(num, random_string(GET_UI_BLOCK_LEN(num), GLOB.hex_characters))
+	//ORBSTATION REMOVAL
+	//var/num = rand(1, DNA_UNI_IDENTITY_BLOCKS)
+	//dna.set_uni_feature_block(num, random_string(GET_UI_BLOCK_LEN(num), GLOB.hex_characters))
 	updateappearance(mutations_overlay_update=1)
 
 /mob/living/carbon/proc/random_mutate_unique_features()
 	if(!has_dna())
 		CRASH("[src] does not have DNA")
-	var/num = rand(1, DNA_FEATURE_BLOCKS)
-	dna.set_uni_feature_block(num, random_string(GET_UF_BLOCK_LEN(num), GLOB.hex_characters))
+	//ORBSTATION REMOVAL
+	//var/num = rand(1, DNA_FEATURE_BLOCKS)
+	//dna.set_uni_feature_block(num, random_string(GET_UF_BLOCK_LEN(num), GLOB.hex_characters))
 	updateappearance(mutcolor_update = TRUE, mutations_overlay_update = TRUE)
 
 /mob/living/carbon/proc/clean_dna()
