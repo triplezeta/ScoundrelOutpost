@@ -36,6 +36,7 @@ GLOBAL_LIST_INIT(phobia_regexes, list(
 	"greytide" = construct_phobia_regex("greytide"),
 	"guns" = construct_phobia_regex("guns"),
 	"insects" = construct_phobia_regex("insects"),
+	"lizards" = construct_phobia_regex("lizards"),
 	"ocky icky" = construct_phobia_regex("ocky icky"),
 	"robots" = construct_phobia_regex("robots"),
 	"security" = construct_phobia_regex("security"),
@@ -52,6 +53,7 @@ GLOBAL_LIST_INIT(phobia_regexes, list(
 GLOBAL_LIST_INIT(phobia_mobs, list(
 	"spiders" = typecacheof(list(/mob/living/simple_animal/hostile/giant_spider)),
 	"security" = typecacheof(list(/mob/living/simple_animal/bot/secbot)),
+	"lizards" = typecacheof(list(/mob/living/simple_animal/hostile/lizard)),
 	"skeletons" = typecacheof(list(/mob/living/simple_animal/hostile/skeleton)),
 	"snakes" = typecacheof(list(/mob/living/simple_animal/hostile/retaliate/snake)),
 	"robots" = typecacheof(list(
