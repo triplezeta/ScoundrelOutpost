@@ -124,13 +124,12 @@
 
 	/// Static list of all projectiles we can fire from our staff.
 	/// Doesn't contain all subtypes of magic projectiles, unlike what it looks like
+	// ORBSTATION: Removed Death, Change, and Wipe from this list, can't do it modularly because this is static
 	var/static/list/allowed_projectile_types = list(
 		/obj/projectile/magic/animate,
 		/obj/projectile/magic/antimagic,
 		/obj/projectile/magic/arcane_barrage,
 		/obj/projectile/magic/bounty,
-		/obj/projectile/magic/change,
-		/obj/projectile/magic/death,
 		/obj/projectile/magic/door,
 		/obj/projectile/magic/fetch,
 		/obj/projectile/magic/fireball,
@@ -141,8 +140,15 @@
 		/obj/projectile/magic/babel,
 		/obj/projectile/magic/spellblade,
 		/obj/projectile/magic/teleport,
-		/obj/projectile/magic/wipe,
 		/obj/projectile/temp/chill,
+		/obj/projectile/magic/animate, // Orbstation
+		/obj/projectile/magic/wound, // Orbstation
+		/obj/projectile/magic/prank, // Orbstation
+		/obj/projectile/magic/freeze, // Orbstation
+		/obj/projectile/magic/hallucination, // Orbstation
+		/obj/projectile/magic/pax, // Orbstation
+		/obj/projectile/magic/repulse, // Orbstation
+		/obj/projectile/magic/swap, // Orbstation
 	)
 
 /obj/item/gun/magic/staff/chaos/unrestricted

@@ -3,7 +3,7 @@
 /// How long we put the target so sleep for (during sacrifice).
 #define SACRIFICE_SLEEP_DURATION (12 SECONDS)
 /// How long sacrifices must stay in the shadow realm to survive.
-#define SACRIFICE_REALM_DURATION (2.5 MINUTES)
+#define SACRIFICE_REALM_DURATION (1.5 MINUTES)
 
 /**
  * Allows the heretic to sacrifice living heart targets.
@@ -126,19 +126,40 @@
 	// - One from heads of staff ("high value")
 	var/list/datum/mind/final_targets = list()
 
+	// ORBSTATION: Whether a head of staff has been selected yet.
+	var/head_selected = FALSE
+	// ORBSTATION: Whether a security member has been selected yet.
+	var/sec_selected = FALSE
+
+	// ORBSTATION: List of fallback targets in case there aren't enough valid targets left (see below).
+	var/list/datum/mind/fallback_targets = list()
+
 	// First target, any command.
 	for(var/datum/mind/head_mind as anything in shuffle(valid_targets))
 		if(head_mind.assigned_role?.departments_bitflags & DEPARTMENT_BITFLAG_COMMAND)
-			final_targets += head_mind
+			if(!head_selected)
+				head_selected = TRUE
+				final_targets += head_mind
+				valid_targets -= head_mind
+				// ORBSTATION: Head of Security is (obviously) a head AND security
+				if(head_mind.assigned_role?.departments_bitflags & DEPARTMENT_BITFLAG_SECURITY)
+					sec_selected = TRUE
+				continue
+			// ORBSTATION: Remove the other heads from the list so they can't be picked unless there's no other options.
+			fallback_targets += head_mind
 			valid_targets -= head_mind
-			break
 
 	// Second target, any security
 	for(var/datum/mind/sec_mind as anything in shuffle(valid_targets))
 		if(sec_mind.assigned_role?.departments_bitflags & DEPARTMENT_BITFLAG_SECURITY)
-			final_targets += sec_mind
+			if(!sec_selected)
+				sec_selected = TRUE
+				final_targets += sec_mind
+				valid_targets -= sec_mind
+				continue
+			// ORBSTATION: Remove the other security members from the list so they can't be picked unless there's no other options.
+			fallback_targets += sec_mind
 			valid_targets -= sec_mind
-			break
 
 	// Third target, someone in their department.
 	for(var/datum/mind/department_mind as anything in shuffle(valid_targets))
@@ -151,6 +172,12 @@
 	var/target_sanity = 0
 	while(length(final_targets) < num_targets_to_generate && length(valid_targets) > num_targets_to_generate && target_sanity < 25)
 		final_targets += pick_n_take(valid_targets)
+		target_sanity++
+
+	// ORBSTATION: If there STILL aren't enough targets, then select from the fallback list.
+	target_sanity = 0
+	while(length(final_targets) < 4 && length(fallback_targets) > 0 && target_sanity < 25)
+		final_targets += pick_n_take(fallback_targets)
 		target_sanity++
 
 	if(!silent)
@@ -230,7 +257,6 @@
 		sac_target.legcuffed = null
 		sac_target.update_worn_legcuffs()
 
-	sac_target.adjustOrganLoss(ORGAN_SLOT_BRAIN, 85, 150)
 	sac_target.do_jitter_animation()
 	log_combat(heretic_mind.current, sac_target, "sacrificed")
 
@@ -329,6 +355,9 @@
 	addtimer(CALLBACK(src, PROC_REF(after_helgrasp_ends), sac_target), helgrasp_time)
 	// Win condition
 	var/win_timer = addtimer(CALLBACK(src, PROC_REF(return_target), sac_target), SACRIFICE_REALM_DURATION, TIMER_STOPPABLE)
+	// Orbstation: If the sacrifice target has the paraplegic quirk, temporarily heal their trauma so they can move until the minigame ends.
+	if(sac_target.has_quirk(/datum/quirk/paraplegic))
+		sac_target.cure_trauma_type(/datum/brain_trauma/severe/paralysis/paraplegic, TRAUMA_RESILIENCE_ABSOLUTE)
 	LAZYSET(return_timers, REF(sac_target), win_timer)
 
 /**
@@ -368,11 +397,15 @@
 	sac_target.remove_status_effect(/datum/status_effect/unholy_determination)
 	sac_target.reagents?.del_reagent(/datum/reagent/inverse/helgrasp/heretic)
 	sac_target.clear_mood_event("shadow_realm")
-	sac_target.gain_trauma(/datum/brain_trauma/mild/phobia/supernatural, TRAUMA_RESILIENCE_MAGIC)
+	sac_target.gain_trauma(/datum/brain_trauma/mild/phobia/mansus, TRAUMA_RESILIENCE_MAGIC) //ORBSTATION EDIT: different phobia
+
+	// Orbstation: Gives the target their paraplegia back if it was removed when they got sacrificed.
+	if(sac_target.has_quirk(/datum/quirk/paraplegic))
+		sac_target.gain_trauma(/datum/brain_trauma/severe/paralysis/paraplegic, TRAUMA_RESILIENCE_ABSOLUTE)
 
 	// Wherever we end up, we sure as hell won't be able to explain
-	sac_target.adjust_timed_status_effect(40 SECONDS, /datum/status_effect/speech/slurring/heretic)
-	sac_target.adjust_stutter(40 SECONDS)
+	sac_target.adjust_timed_status_effect(30 SECONDS, /datum/status_effect/speech/slurring/heretic)
+	sac_target.adjust_stutter(30 SECONDS)
 
 	// They're already back on the station for some reason, don't bother teleporting
 	var/turf/below_target = get_turf(sac_target)

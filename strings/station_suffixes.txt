@@ -19,7 +19,6 @@ Edition
 Environment
 Facility
 Factory
-Fat Camp
 Fishery
 Fortification
 Fortress
@@ -51,7 +50,6 @@ Relay
 Roost
 Space Junk
 Space-hulk
-Spess Junk
 Station
 Stopover
 Suffix

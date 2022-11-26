@@ -4033,16 +4033,6 @@
 "ll" = (
 /turf/open/floor/iron/dark,
 /area/awaymission/snowdin/post/custodials)
-"lm" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
-	piping_layer = 4;
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/structure/mop_bucket/janitorialcart,
-/obj/item/mop,
-/turf/open/floor/iron/dark,
-/area/awaymission/snowdin/post/custodials)
 "ln" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/tile/neutral{
@@ -9181,6 +9171,16 @@
 /obj/item/shard,
 /turf/open/floor/mineral/plastitanium/red,
 /area/awaymission/snowdin/cave)
+"Et" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	piping_layer = 4;
+	pixel_x = 5;
+	pixel_y = 5
+	},
+/obj/structure/mop_bucket/janitorialcart,
+/obj/item/mop,
+/turf/open/floor/iron/dark,
+/area/awaymission/snowdin/post/custodials)
 "Eu" = (
 /obj/structure/table/reinforced,
 /obj/item/reagent_containers/cup/glass/bottle/beer{
@@ -21928,7 +21928,7 @@ it
 jm
 jR
 jR
-lm
+Et
 mb
 mG
 mG

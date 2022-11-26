@@ -22,7 +22,13 @@
 	if(obscure_examine)
 		return list("<span class='warning'>You're struggling to make out any details...")
 
-	var/obscured = check_obscured_slots()
+	var/obscured = ((wear_mask && !istype(wear_mask, /obj/item/clothing/mask/gas/mime) && !istype(wear_mask, /obj/item/clothing/mask/gas/clown_hat) && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE)))
+
+	//ORBSTATION: Display "short flavor text" before inventory
+	if(!obscured)
+		. += "</span>"
+		. +=  dna.features["flavor_text_short"]
+		. += "<span class='info'>"
 
 	//uniform
 	if(w_uniform && !(obscured & ITEM_SLOT_ICLOTHING) && !(w_uniform.item_flags & EXAMINE_SKIP))
@@ -221,11 +227,6 @@
 
 	if(nutrition < NUTRITION_LEVEL_STARVING - 50)
 		msg += "[t_He] [t_is] severely malnourished.\n"
-	else if(nutrition >= NUTRITION_LEVEL_FAT)
-		if(user.nutrition < NUTRITION_LEVEL_STARVING - 50)
-			msg += "[t_He] [t_is] plump and delicious looking - Like a fat little piggy. A tasty piggy.\n"
-		else
-			msg += "[t_He] [t_is] quite chubby.\n"
 	switch(disgust)
 		if(DISGUST_LEVEL_GROSS to DISGUST_LEVEL_VERYGROSS)
 			msg += "[t_He] look[p_s()] a bit grossed out.\n"
@@ -342,7 +343,8 @@
 			else if(!client)
 				msg += "[t_He] [t_has] a blank, absent-minded stare and appears completely unresponsive to anything. [t_He] may snap out of it soon.\n"
 
-	var/scar_severity = 0
+	//ORBSTATION REMOVAL: COMMENTED OUT SCAR PREVIEW
+	/*var/scar_severity = 0
 	for(var/i in all_scars)
 		var/datum/scar/S = i
 		if(S.is_visible(user))
@@ -356,8 +358,17 @@
 		if(9 to 11)
 			msg += "[span_notice("<i>[t_He] [t_has] significantly disfiguring scarring, you can look again to take a closer look...</i>")]\n"
 		if(12 to INFINITY)
-			msg += "[span_notice("<b><i>[t_He] [t_is] just absolutely fucked up, you can look again to take a closer look...</i></b>")]\n"
+			msg += "[span_notice("<b><i>[t_He] [t_is] just absolutely fucked up, you can look again to take a closer look...</i></b>")]\n"*/
+	//END ORBSTATION REMOVAL
+
 	msg += "</span>" // closes info class
+
+	//ORBSTATION: display x-cards on examine; display link for examining closer
+	msg += "\n"
+	msg += examine_xcards()
+	msg += "\n"
+	msg += span_bold("<a href='?src=[REF(src)];show_flavor_text=[REF(src)]'>Look closer?</a>")
+	//END ORBSTATION
 
 	if (length(msg))
 		. += span_warning("[msg.Join("")]")

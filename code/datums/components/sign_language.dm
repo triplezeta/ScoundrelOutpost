@@ -80,7 +80,7 @@
 	RegisterSignal(carbon_parent, COMSIG_MOVABLE_TREAT_MESSAGE, PROC_REF(on_treat_message))
 	RegisterSignal(carbon_parent, COMSIG_MOVABLE_USING_RADIO, PROC_REF(on_using_radio))
 	RegisterSignal(carbon_parent, COMSIG_MOVABLE_SAY_QUOTE, PROC_REF(on_say_quote))
-	RegisterSignal(carbon_parent, COMSIG_MOB_SAY, PROC_REF(on_say))
+	//RegisterSignal(carbon_parent, COMSIG_MOB_SAY, PROC_REF(on_say)) //ORBSTATION REMOVAL
 	return TRUE
 
 /// Signal handler for [COMSIG_SIGNLANGUAGE_DISABLE]
@@ -103,7 +103,7 @@
 		COMSIG_MOVABLE_TREAT_MESSAGE,
 		COMSIG_MOVABLE_USING_RADIO,
 		COMSIG_MOVABLE_SAY_QUOTE,
-		COMSIG_MOB_SAY
+		//COMSIG_MOB_SAY //ORBSTATION REMOVAL
 	))
 	return TRUE
 
@@ -185,13 +185,20 @@
 /datum/component/sign_language/proc/on_treat_living_message(atom/movable/source, list/message_args)
 	SIGNAL_HANDLER
 
-	if(check_signables_state() == SIGN_ONE_HAND)
-		message_args[TREAT_MESSAGE_MESSAGE] = stars(message_args[TREAT_MESSAGE_MESSAGE])
+	/*if(check_signables_state() == SIGN_ONE_HAND)
+		message_args[TREAT_MESSAGE_MESSAGE] = stars(message_args[TREAT_MESSAGE_MESSAGE])*/
+
+	//ORBSTATION: you can sign with one hand just fine
 
 /// Signal proc for [COMSIG_MOVABLE_SAY_QUOTE]
 /// Removes exclamation/question marks.
 /datum/component/sign_language/proc/on_say_quote(atom/movable/source, list/message_args)
 	SIGNAL_HANDLER
+
+	if(istype(source, /mob/living/carbon/human))
+		var/mob/living/carbon/human/signer = source
+		if(signer.get_face_name() != "Unknown") // if your face is visible, your punctuation is still communicated
+			return
 
 	message_args[MOVABLE_SAY_QUOTE_MESSAGE] = sanitize_message(message_args[MOVABLE_SAY_QUOTE_MESSAGE])
 
@@ -199,6 +206,11 @@
 /// Removes exclamation/question marks only if /atom/movable/proc/say_quote() isn't going to run.
 /datum/component/sign_language/proc/on_treat_message(atom/movable/source, list/message_args)
 	SIGNAL_HANDLER
+
+	if(istype(source, /mob/living/carbon/human))
+		var/mob/living/carbon/human/signer = source
+		if(signer.get_face_name() != "Unknown") // if your face is visible, your punctuation is still communicated
+			return
 
 	if (message_args[MOVABLE_TREAT_MESSAGE_NOQUOTE])
 		message_args[MOVABLE_TREAT_MESSAGE_MESSAGE] = sanitize_message(message_args[MOVABLE_TREAT_MESSAGE_MESSAGE])

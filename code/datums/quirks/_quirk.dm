@@ -25,6 +25,8 @@
 	/// then the item selected is determined by pick(selected_quirk.mail_goodies)
 	var/mail_goodies = list()
 
+	var/xcard_quirk = FALSE //ORBSTATION: if true, this quirk will be displayed in the x-card section of the quirk list
+
 /datum/quirk/Destroy()
 	if(quirk_holder)
 		remove_from_current_holder()

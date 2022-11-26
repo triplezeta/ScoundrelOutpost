@@ -1,0 +1,9 @@
+// Department assistants
+#define JOB_ASSISTANT_SCI "Lab Assistant"
+#define JOB_ASSISTANT_MED "Medical Assistant"
+#define JOB_ASSISTANT_ENG "Tech Support"
+#define JOB_ASSISTANT_SRV "Waitron"
+#define JOB_DISPLAY_ORDER_ASSISTANT_SCI 36
+#define JOB_DISPLAY_ORDER_ASSISTANT_MED 37
+#define JOB_DISPLAY_ORDER_ASSISTANT_ENG 38
+#define JOB_DISPLAY_ORDER_ASSISTANT_SRV 39

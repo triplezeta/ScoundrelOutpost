@@ -734,9 +734,11 @@
 	var/dead_mobs_required = 20
 	var/need_extra_spawns_value = 15
 	var/list/spawn_locs = list()
+	var/dead_players_required = 3 //ORBSTATION
 
 /datum/dynamic_ruleset/midround/from_ghosts/revenant/acceptable(population=0, threat=0)
-	if(GLOB.dead_mob_list.len < dead_mobs_required)
+	//ORBSTATION EDIT
+	if(GLOB.dead_player_list.len < dead_players_required)
 		return FALSE
 	return ..()
 
@@ -819,9 +821,9 @@
 		ROLE_POSITRONIC_BRAIN,
 	)
 	required_enemies = list(2,2,1,1,1,1,1,0,0,0)
-	required_candidates = 1
+	required_candidates = 101
 	weight = 4
-	cost = 3 // Doesn't have the same impact on rounds as revenants, dragons, sentient disease (10) or syndicate infiltrators (5).
+	cost = 3000 // Doesn't have the same impact on rounds as revenants, dragons, sentient disease (10) or syndicate infiltrators (5).
 	repeatable = TRUE
 
 /datum/dynamic_ruleset/midround/from_living/obsessed/trim_candidates()

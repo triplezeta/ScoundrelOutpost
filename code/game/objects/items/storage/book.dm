@@ -33,7 +33,7 @@ GLOBAL_LIST_INIT(bibleitemstates, list("bible", "koran", "scrapbook", "burning",
 	lefthand_file = 'icons/mob/inhands/items/books_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/items/books_righthand.dmi'
 	var/mob/affecting = null
-	var/deity_name = "Christ"
+	var/deity_name = "Space God"
 	force_string = "holy"
 
 /obj/item/storage/book/bible/examine(mob/user)

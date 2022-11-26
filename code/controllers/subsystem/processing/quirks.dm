@@ -18,7 +18,10 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 
 	/// A list of quirks that can not be used with each other. Format: list(quirk1,quirk2),list(quirk3,quirk4)
 	var/static/list/quirk_blacklist = list(
-		list("Blind", "Nearsighted"),
+		list("Tongue Tied", "Artificial Voice Box"), //ORBSTATION
+		list("Farsighted", "Illiterate"), //ORBSTATION
+		list("Prosthetic Limb", "Quadruple Amputee", "Alien Prosthesis"), //ORBSTATION
+		list("Blind", "Nearsighted", "Farsighted"), //ORBSTATION: added "Farsighted" to this list
 		list("Jolly", "Depression", "Apathetic", "Hypersensitive"),
 		list("Ageusia", "Vegetarian", "Deviant Tastes", "Gamer"),
 		list("Ananas Affinity", "Ananas Aversion", "Gamer"),
@@ -184,7 +187,8 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		balance += value
 		new_quirks += quirk_name
 
-	if (balance > 0)
+	//ORBSTATION: Do not check balance, it isn't real.
+	/*if (balance > 0)
 		var/balance_left_to_remove = balance
 
 		for (var/positive_quirk in positive_quirks)
@@ -193,7 +197,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 			new_quirks -= positive_quirk
 
 			if (balance_left_to_remove <= 0)
-				break
+				break*/
 
 	// It is guaranteed that if no quirks are invalid, you can simply check through `==`
 	if (new_quirks.len == quirks.len)

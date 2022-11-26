@@ -120,12 +120,17 @@
 			pulse()
 			return FALSE
 		switch(type)
-			if("feet")
-				if(!victim.shoes)
-					affecting = victim.get_bodypart(pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG))
-					victim.Paralyze(60)
-				else
+			if("feet") //ORBSTATION: This whole block had to be changed to give digitigrade legs immunity to mousetraps.
+				if(victim.shoes)
 					to_chat(victim, span_notice("Your [victim.shoes] protects you from [src]."))
+				else
+					affecting = victim.get_bodypart(pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG))
+					if(IS_DIGITIGRADE_LIMB(affecting))
+						affecting = null
+						to_chat(victim, span_notice("Your digitigrade legs protect you from [src]."))
+					else
+						victim.Paralyze(60)
+			//END ORBSTATION
 			if(BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_PRECISE_R_HAND)
 				if(!victim.gloves)
 					affecting = victim.get_bodypart(type)
@@ -199,7 +204,7 @@
 					if(H.m_intent == MOVE_INTENT_RUN)
 						INVOKE_ASYNC(src, PROC_REF(triggered), H)
 						H.visible_message(span_warning("[H] accidentally steps on [src]."), \
-							span_warning("You accidentally step on [src]"))
+							span_warning("You accidentally step on [src]!"))
 				else if(ismouse(MM) || isregalrat(MM))
 					INVOKE_ASYNC(src, PROC_REF(triggered), MM)
 		else if(AM.density) // For mousetrap grenades, set off by anything heavy

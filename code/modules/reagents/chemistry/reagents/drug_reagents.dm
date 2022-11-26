@@ -185,7 +185,7 @@
 	M.adjustToxLoss(1 * REM * delta_time, 0)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, (rand(5, 10) / 10) * REM * delta_time)
 	. = TRUE
-
+/*
 /datum/reagent/drug/bath_salts
 	name = "Bath Salts"
 	description = "Makes you impervious to stuns and grants a stamina regeneration buff, but you will be a nearly uncontrollable tramp-bearded raving lunatic."
@@ -237,7 +237,7 @@
 		M.emote(pick("twitch","drool","moan"))
 	if(DT_PROB(28, delta_time))
 		M.drop_all_held_items()
-	..()
+	..()*/
 
 /datum/reagent/drug/aranesp
 	name = "Aranesp"

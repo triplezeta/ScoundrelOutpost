@@ -30,7 +30,8 @@
 		/datum/language/sylvan,
 		/datum/language/shadowtongue,
 		/datum/language/terrum,
-		/datum/language/nekomimetic
+		/datum/language/nekomimetic,
+		/datum/language/ratvaric
 	))
 
 /obj/item/organ/internal/tongue/Initialize(mapload)
@@ -85,7 +86,7 @@
 	icon_state = "tonguelizard"
 	say_mod = "hisses"
 	taste_sensitivity = 10 // combined nose + tongue, extra sensitive
-	modifies_speech = TRUE
+	modifies_speech = FALSE
 	languages_native = list(/datum/language/draconic)
 
 /obj/item/organ/internal/tongue/lizard/modify_speech(datum/source, list/speech_args)

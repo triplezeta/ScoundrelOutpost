@@ -47,10 +47,10 @@
 		Remove(owner)
 	if(owner.mob_biotypes & MOB_MINERAL)//does not process in inorganic things
 		return
-	if (causes_damage && !iszombie(owner) && owner.stat != DEAD)
-		owner.adjustToxLoss(0.5 * delta_time)
-		if (DT_PROB(5, delta_time))
-			to_chat(owner, span_danger("You feel sick..."))
+	// ORBSTATION: Zombie organ only damages you if you're in critical condition.
+	if(owner.health <= HEALTH_THRESHOLD_CRIT && owner.stat != DEAD)
+		if (causes_damage && !iszombie(owner))
+			owner.adjustToxLoss(0.5 * delta_time)
 	if(timer_id)
 		return
 	if(owner.suiciding)

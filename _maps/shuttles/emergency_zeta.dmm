@@ -78,6 +78,15 @@
 	},
 /turf/open/floor/plating/abductor,
 /area/shuttle/escape)
+"qb" = (
+/obj/machinery/door/airlock/abductor{
+	name = "Transport Ship Zeta"
+	},
+/obj/docking_port/mobile/emergency{
+	name = "Zeta emergency shuttle"
+	},
+/turf/open/floor/plating/abductor,
+/area/shuttle/escape)
 "qD" = (
 /obj/structure/table/abductor,
 /obj/machinery/recharger,
@@ -94,10 +103,6 @@
 /obj/structure/chair/comfy/shuttle,
 /turf/open/floor/plating/abductor,
 /area/shuttle/escape/brig)
-"ue" = (
-/obj/machinery/fat_sucker,
-/turf/open/floor/plating/abductor,
-/area/shuttle/escape)
 "ui" = (
 /turf/open/floor/plating/abductor,
 /area/shuttle/escape/brig)
@@ -284,15 +289,6 @@
 	},
 /turf/open/floor/plating/abductor,
 /area/shuttle/escape)
-"XI" = (
-/obj/machinery/door/airlock/abductor{
-	name = "Transport Ship Zeta"
-	},
-/obj/docking_port/mobile/emergency{
-	name = "Zeta emergency shuttle"
-	},
-/turf/open/floor/plating/abductor,
-/area/shuttle/escape)
 "XW" = (
 /obj/machinery/recharge_station,
 /turf/open/floor/plating/abductor,
@@ -326,7 +322,7 @@ Cv
 Cv
 nH
 nH
-XI
+qb
 jj
 nH
 jj
@@ -591,7 +587,7 @@ jj
 Um
 Um
 Um
-ue
+Um
 jj
 "}
 (13,1,1) = {"

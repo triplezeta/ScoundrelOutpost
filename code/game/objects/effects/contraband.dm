@@ -457,8 +457,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/contraband/random, 32)
 	icon_state = "the_griffin"
 
 /obj/structure/sign/poster/contraband/lizard
-	name = "Lizard"
-	desc = "This lewd poster depicts a lizard preparing to mate."
+	name = "Empire of Sin"
+	desc = "This lewd poster depicts an undressed Tiziran giving the viewer bedroom eyes."
 	icon_state = "lizard"
 
 /obj/structure/sign/poster/contraband/free_drone
@@ -522,11 +522,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/contraband/random, 32)
 	name = "Bounty Hunters"
 	desc = "A poster advertising bounty hunting services. \"I hear you got a problem.\""
 	icon_state = "bountyhunters"
-
-/obj/structure/sign/poster/contraband/the_big_gas_giant_truth
-	name = "The Big Gas Giant Truth"
-	desc = "Don't believe everything you see on a poster, patriots. All the lizards at central command don't want to answer this SIMPLE QUESTION: WHERE IS THE GAS MINER MINING FROM, CENTCOM?"
-	icon_state = "the_big_gas_giant_truth"
 
 /obj/structure/sign/poster/contraband/got_wood
 	name = "Got Wood?"
@@ -924,7 +919,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/official/random, 32)
 
 /obj/structure/sign/poster/official/no_erp
 	name = "No ERP"
-	desc = "This poster reminds the crew that Eroticism, Rape and Pornography are banned on Nanotrasen stations."
+	desc = "This poster reminds the crew that Eroticism, Raunchiness and Pornography are banned on Nanotrasen stations."
 	icon_state = "no_erp"
 
 /obj/structure/sign/poster/official/wtf_is_co2

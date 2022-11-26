@@ -512,33 +512,6 @@
 
 	resulting_atoms = list(/mob/living/simple_animal/hostile/retaliate/clown/banana = 1)
 
-/datum/micro_organism/cell_line/clown/glutton
-	desc = "hyperadipogenic clown stem cells"
-
-	required_reagents = list(
-		/datum/reagent/consumable/nutriment/protein,
-		/datum/reagent/consumable/banana,
-		/datum/reagent/medicine/c2/synthflesh)
-	//r/chonkers
-	supplementary_reagents = list(
-		/datum/reagent/consumable/vanillapudding = 8,
-		/datum/reagent/growthserum = 6,
-		/datum/reagent/consumable/nutriment/peptides = 4,
-		/datum/reagent/consumable/cornoil = 3,
-		/datum/reagent/consumable/cooking_oil = 1,
-		/datum/reagent/consumable/space_cola = 1)
-
-	suppressive_reagents = list(
-		/datum/reagent/consumable/clownstears = -8,
-		/datum/reagent/toxin/minttoxin = -6,
-		/datum/reagent/consumable/ethanol/silencer = -3,
-		/datum/reagent/consumable/ethanol/fernet = -3,
-		/datum/reagent/toxin/lipolicide = -3,
-		/datum/reagent/consumable/nothing = -2,
-		/datum/reagent/toxin/bad_food = -1)
-
-	resulting_atoms = list(/mob/living/simple_animal/hostile/retaliate/clown/mutant/glutton = 1)
-
 /datum/micro_organism/cell_line/clown/longclown
 	desc = "long clown bits"
 

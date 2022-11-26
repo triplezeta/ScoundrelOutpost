@@ -105,6 +105,7 @@
 	)
 	/// List of all possible chasises. TRUE means the pAI can be picked up in this chasis.
 	var/static/list/possible_chassis = list(
+		"amoung" = FALSE,
 		"bat" = FALSE,
 		"butterfly" = FALSE,
 		"cat" = TRUE,

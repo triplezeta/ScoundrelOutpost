@@ -1,8 +1,8 @@
 /datum/round_event_control/obsessed
 	name = "Obsession Awakening"
 	typepath = /datum/round_event/obsessed
-	max_occurrences = 1
-	min_players = 20
+	max_occurrences = 0
+	min_players = 200
 	category = EVENT_CATEGORY_HEALTH
 	description = "A random crewmember becomes obsessed with another."
 
@@ -21,6 +21,6 @@
 			continue
 		if(!H.getorgan(/obj/item/organ/internal/brain))
 			continue
-		H.gain_trauma(/datum/brain_trauma/special/obsessed)
-		announce_to_ghosts(H)
+		//H.gain_trauma(/datum/brain_trauma/special/obsessed)
+		//announce_to_ghosts(H)
 		break

@@ -14,7 +14,6 @@ GLOBAL_LIST_INIT(phobia_types, sort_list(list(
 	"greytide",
 	"guns",
 	"insects",
-	"lizards",
 	"robots",
 	"security",
 	"skeletons",
@@ -48,6 +47,7 @@ GLOBAL_LIST_INIT(phobia_regexes, list(
 	"strangers" = construct_phobia_regex("strangers"),
 	"the supernatural" = construct_phobia_regex("the supernatural"),
 	"blood" = construct_phobia_regex("blood"),
+	"the mansus" = construct_phobia_regex("the mansus"), //ORBSTATION ADDITION
 ))
 
 GLOBAL_LIST_INIT(phobia_mobs, list(
@@ -99,6 +99,9 @@ GLOBAL_LIST_INIT(phobia_mobs, list(
 		/mob/living/basic/cockroach,
 		/mob/living/simple_animal/hostile/bee,
 	)),
+	"the mansus" = typecacheof(list(
+		/mob/living/simple_animal/hostile/heretic_summon,
+	))
 ))
 
 GLOBAL_LIST_INIT(phobia_objs, list(
@@ -167,15 +170,6 @@ GLOBAL_LIST_INIT(phobia_objs, list(
 		/obj/item/toy/figure/assistant,
 		/obj/structure/statue/sandstone/assistant,
 	)) + typecacheof(list(/obj/item/clothing/mask/gas), ignore_root_path = FALSE, only_root_path = TRUE // to match only specific items in this phobia and not subtypes, use an additional typecacheof w/ ignore_root_path set FALSE and only_root_patch set TRUE
-	)),
-
-	"lizards" = typecacheof(list(
-		/obj/item/clothing/head/costume/lizard,
-		/obj/item/clothing/shoes/cowboy/lizard,
-		/obj/item/food/kebab/tail,
-		/obj/item/organ/external/tail/lizard,
-		/obj/item/reagent_containers/cup/glass/bottle/lizardwine,
-		/obj/item/toy/plush/lizard_plushie,
 	)),
 
 	"skeletons" = typecacheof(list(
@@ -469,7 +463,6 @@ GLOBAL_LIST_INIT(phobia_objs, list(
 		/obj/item/clothing/mask/animal/small/bee,
 		/obj/item/clothing/suit/hooded/bee_costume,
 		/obj/item/toy/plush/beeplushie,
-		/obj/item/toy/plush/moth,
 		/obj/structure/beebox,
 	)),
 
@@ -478,6 +471,29 @@ GLOBAL_LIST_INIT(phobia_objs, list(
 		/obj/item/reagent_containers/blood,
 		/obj/item/reagent_containers/syringe,
 		/obj/machinery/iv_drip,
+	)),
+
+	"the mansus" = typecacheof(list(
+		/obj/effect/floating_blade,
+		/obj/effect/heretic_influence,
+		/obj/effect/heretic_rune,
+		/obj/effect/rune,
+		/obj/effect/visible_heretic_influence,
+		/obj/item/clothing/head/hooded/cult_hoodie,
+		/obj/item/clothing/mask/madness_mask,
+		/obj/item/clothing/neck/heretic_focus,
+		/obj/item/clothing/neck/eldritch_amulet,
+		/obj/item/clothing/suit/hooded/cultrobes,
+		/obj/item/codex_cicatrix,
+		/obj/item/cult_bastard,
+		/obj/item/melee/cultblade,
+		/obj/item/melee/rune_carver,
+		/obj/item/melee/sickly_blade,
+		/obj/item/toy/eldritch_book,
+		/obj/item/toy/reality_pierce,
+		/obj/item/reagent_containers/cup/beaker/eldritch,
+		/obj/item/gun/ballistic/rifle/lionhunter,
+		/obj/item/melee/touch_attack/mansus_fist,
 	)),
 ))
 
@@ -511,16 +527,12 @@ GLOBAL_LIST_INIT(phobia_species, list(
 		/datum/species/pod,
 		/datum/species/shadow,
 	)),
-	"anime" = typecacheof(list(/datum/species/human/felinid)),
 	"conspiracies" = typecacheof(list(
 		/datum/species/abductor,
-		/datum/species/lizard,
 	)),
 	"insects" = typecacheof(list(
 		/datum/species/fly,
-		/datum/species/moth,
 	)),
-	"lizards" = typecacheof(list(/datum/species/lizard)),
 	"robots" = typecacheof(list(/datum/species/android)),
 	"skeletons" = typecacheof(list(
 		/datum/species/plasmaman,

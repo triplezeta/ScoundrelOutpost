@@ -5,7 +5,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	//doohickeys for savefiles
 	var/path
 	var/default_slot = 1 //Holder so it doesn't default to slot 1, rather the last one used
-	var/max_save_slots = 3
+	var/max_save_slots = 12
 
 	//non-preference stuff
 	var/muted = 0
@@ -101,7 +101,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				try_savefile_type_migration()
 			unlock_content = !!parent.IsByondMember()
 			if(unlock_content)
-				max_save_slots = 8
+				max_save_slots = 20
 	else
 		CRASH("attempted to create a preferences datum without a client or mock!")
 	load_savefile()
@@ -430,8 +430,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			.++
 
 /datum/preferences/proc/validate_quirks()
-	if(GetQuirkBalance() < 0)
-		all_quirks = list()
+	//if(GetQuirkBalance() < 0)
+		//all_quirks = list()
+	return //ORBSTATION: we do not want to check the quirk balance, actually
 
 /// Sanitizes the preferences, applies the randomization prefs, and then applies the preference to the human mob.
 /datum/preferences/proc/safe_transfer_prefs_to(mob/living/carbon/human/character, icon_updates = TRUE, is_antag = FALSE)

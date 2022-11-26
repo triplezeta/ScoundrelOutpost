@@ -7,6 +7,7 @@ export enum Food {
   Breakfast = 'BREAKFAST',
   Bugs = 'BUGS',
   Cloth = 'CLOTH',
+  Cucumber = 'CUCUMBER',
   Dairy = 'DAIRY',
   Fried = 'FRIED',
   Fruit = 'FRUIT',
@@ -51,6 +52,7 @@ export type Species = {
     positive: Perk[];
     negative: Perk[];
     neutral: Perk[];
+    xcard: Perk[];
   };
 
   diet?: {
@@ -80,6 +82,7 @@ export type Quirk = {
   icon: string;
   name: string;
   value: number;
+  xcard: boolean;
 };
 
 export type QuirkInfo = {

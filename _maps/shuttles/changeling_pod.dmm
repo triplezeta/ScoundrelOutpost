@@ -1,0 +1,122 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/changeling_pod)
+"f" = (
+/turf/open/floor/mineral/titanium/tiled,
+/area/shuttle/changeling_pod)
+"g" = (
+/obj/effect/spawner/structure/window/reinforced/shuttle,
+/turf/open/floor/plating,
+/area/shuttle/changeling_pod)
+"h" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/effect/mob_spawn/ghost_role/human/changeling_infiltrator,
+/turf/open/floor/mineral/titanium/tiled,
+/area/shuttle/changeling_pod)
+"k" = (
+/turf/template_noop,
+/area/template_noop)
+"n" = (
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/mineral/titanium/tiled,
+/area/shuttle/changeling_pod)
+"s" = (
+/obj/machinery/computer/shuttle/changeling_pod,
+/obj/machinery/light/red/directional/north,
+/turf/open/floor/mineral/titanium/tiled,
+/area/shuttle/changeling_pod)
+"x" = (
+/obj/machinery/door/airlock/titanium{
+	name = "Shuttle Airlock"
+	},
+/obj/effect/mapping_helpers/airlock/cutaiwire,
+/obj/docking_port/mobile/changeling_pod{
+	dwidth = 2;
+	width = 5;
+	height = 6
+	},
+/obj/docking_port/stationary{
+	dwidth = 2;
+	width = 5;
+	height = 6;
+	name = "abandoned pod"
+	},
+/turf/open/floor/mineral/titanium/tiled,
+/area/shuttle/changeling_pod)
+"A" = (
+/obj/machinery/power/shuttle_engine/propulsion/burst,
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/changeling_pod)
+"B" = (
+/obj/machinery/status_display/evac/directional/east,
+/obj/structure/frame/machine,
+/obj/item/stack/cable_coil/five,
+/turf/open/floor/mineral/titanium/tiled,
+/area/shuttle/changeling_pod)
+"E" = (
+/obj/structure/rack,
+/obj/item/storage/toolbox/syndicate/secret,
+/obj/item/clothing/suit/space/orange,
+/obj/item/clothing/head/helmet/space/orange,
+/obj/machinery/light/small/red/directional/west,
+/turf/open/floor/mineral/titanium/tiled,
+/area/shuttle/changeling_pod)
+"K" = (
+/obj/machinery/status_display/evac/directional/west,
+/obj/machinery/computer/camera_advanced/shuttle_docker/syndicate/changeling_pod,
+/turf/open/floor/mineral/titanium/tiled,
+/area/shuttle/changeling_pod)
+"Z" = (
+/obj/effect/decal/cleanable/blood/gibs/old{
+	pixel_y = 4
+	},
+/obj/structure/rack,
+/obj/item/clothing/suit/hooded/wintercoat,
+/obj/item/pickaxe/emergency,
+/obj/machinery/light/small/red/directional/east,
+/turf/open/floor/mineral/titanium/tiled,
+/area/shuttle/changeling_pod)
+
+(1,1,1) = {"
+k
+a
+a
+g
+a
+A
+"}
+(2,1,1) = {"
+a
+a
+K
+n
+E
+A
+"}
+(3,1,1) = {"
+g
+s
+h
+f
+f
+x
+"}
+(4,1,1) = {"
+a
+a
+B
+f
+Z
+A
+"}
+(5,1,1) = {"
+k
+a
+a
+g
+a
+A
+"}

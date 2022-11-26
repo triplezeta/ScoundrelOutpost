@@ -107,18 +107,6 @@
 /obj/item/radio/intercom/directional/south,
 /turf/open/floor/carpet,
 /area/shuttle/escape)
-"at" = (
-/obj/machinery/button/flasher{
-	id = "cockpit_flasher";
-	pixel_x = 6;
-	pixel_y = -24
-	},
-/obj/structure/table/wood/poker,
-/obj/item/storage/box/drinkingglasses,
-/obj/item/reagent_containers/cup/glass/bottle/whiskey,
-/obj/machinery/light/directional/south,
-/turf/open/floor/carpet,
-/area/shuttle/escape)
 "au" = (
 /obj/machinery/computer/communications{
 	dir = 8
@@ -212,14 +200,6 @@
 	},
 /turf/open/floor/mineral/plastitanium/red/brig,
 /area/shuttle/escape/brig)
-"aN" = (
-/obj/structure/chair/stool/bar/directional/north,
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
-	dir = 1
-	},
-/turf/open/floor/iron,
-/area/shuttle/escape)
 "aO" = (
 /obj/structure/table/wood/shuttle_bar{
 	boot_dir = 9
@@ -242,17 +222,6 @@
 /obj/structure/table/wood/shuttle_bar{
 	boot_dir = 8
 	},
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
-	dir = 1
-	},
-/turf/open/floor/iron,
-/area/shuttle/escape)
-"aS" = (
-/obj/structure/extinguisher_cabinet/directional/east,
-/obj/structure/table,
-/obj/item/storage/box/drinkingglasses,
-/obj/item/reagent_containers/cup/glass/bottle/lizardwine,
 /obj/effect/turf_decal/tile/bar,
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
@@ -489,17 +458,6 @@
 	},
 /turf/open/floor/iron/grimy,
 /area/shuttle/escape)
-"bN" = (
-/obj/structure/table,
-/obj/item/storage/box/drinkingglasses,
-/obj/item/reagent_containers/cup/glass/shaker,
-/obj/item/storage/fancy/cigarettes/cigars/havana,
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
-	dir = 1
-	},
-/turf/open/floor/iron,
-/area/shuttle/escape)
 "bO" = (
 /obj/structure/table/wood/shuttle_bar,
 /obj/item/folder/red,
@@ -612,11 +570,13 @@
 /obj/machinery/stasis,
 /turf/open/floor/mineral/titanium,
 /area/shuttle/escape)
-"en" = (
-/obj/structure/chair/stool/bar/directional/east{
-	can_buckle = 1;
-	name = "buckleable bar stool"
-	},
+"oh" = (
+)
+"sy" = (
+/obj/structure/table,
+/obj/item/storage/box/drinkingglasses,
+/obj/item/reagent_containers/cup/glass/shaker,
+/obj/item/storage/fancy/cigarettes/cigars/havana,
 /obj/effect/turf_decal/tile/bar,
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
@@ -629,6 +589,35 @@
 	dir = 1
 	},
 /obj/machinery/status_display/evac/directional/south,
+/turf/open/floor/iron,
+/area/shuttle/escape)
+"Fo" = (
+/obj/structure/chair/stool/bar/directional/east{
+	can_buckle = 1;
+	name = "buckleable bar stool"
+	},
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/turf/open/floor/iron,
+/area/shuttle/escape)
+"Mj" = (
+/obj/structure/chair/stool/bar/directional/north,
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/turf/open/floor/iron,
+/area/shuttle/escape)
+"Zp" = (
+/obj/structure/extinguisher_cabinet/directional/east,
+/obj/structure/table,
+/obj/item/storage/box/drinkingglasses,
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
 /turf/open/floor/iron,
 /area/shuttle/escape)
 
@@ -756,7 +745,6 @@ bE
 ac
 ah
 an
-at
 ab
 aD
 aE
@@ -775,6 +763,7 @@ bv
 by
 bC
 bE
+oh
 "}
 (7,1,1) = {"
 ac
@@ -784,13 +773,13 @@ an
 az
 aE
 aE
-en
-en
-en
-en
-en
-en
-en
+Fo
+Fo
+Fo
+Fo
+Fo
+Fo
+Fo
 aE
 ca
 ae
@@ -815,7 +804,7 @@ aR
 aR
 aR
 bd
-aN
+Mj
 aE
 bn
 bi
@@ -857,11 +846,11 @@ ab
 aG
 bW
 bI
-aS
+Zp
 ad
 aY
 aj
-bN
+sy
 be
 bT
 bk

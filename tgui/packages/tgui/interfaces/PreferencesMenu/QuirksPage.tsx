@@ -4,8 +4,10 @@ import { PreferencesMenuData, Quirk } from './data';
 import { useBackend, useLocalState } from '../../backend';
 import { ServerPreferencesFetcher } from './ServerPreferencesFetcher';
 
-const getValueClass = (value: number): string => {
-  if (value > 0) {
+const getValueClass = (value: number, xcard: boolean): string => {
+  if (xcard) {
+    return 'xcard';
+  } else if (value > 0) {
     return 'positive';
   } else if (value < 0) {
     return 'negative';
@@ -67,7 +69,10 @@ const QuirkList = (props: {
                 }}>
                 <Stack vertical fill>
                   <Stack.Item
-                    className={`${className}--${getValueClass(quirk.value)}`}
+                    className={`${className}--${getValueClass(
+                      quirk.value,
+                      quirk.xcard
+                    )}`}
                     style={{
                       'border-bottom': '1px solid black',
                       'padding': '2px',
@@ -79,10 +84,6 @@ const QuirkList = (props: {
                       }}>
                       <Stack.Item grow basis="content">
                         <b>{quirk.name}</b>
-                      </Stack.Item>
-
-                      <Stack.Item>
-                        <b>{quirk.value}</b>
                       </Stack.Item>
                     </Stack>
                   </Stack.Item>
@@ -104,6 +105,12 @@ const QuirkList = (props: {
 
         if (quirk.failTooltip) {
           return <Tooltip content={quirk.failTooltip}>{child}</Tooltip>;
+        } else if (quirk.xcard) {
+          return (
+            <Tooltip content="Please note that X-card quirks are intended only for those who find certain content uncomfortable. They are NOT intended for roleplay purposes, or to give mechanical advantages.">
+              {child}
+            </Tooltip>
+          );
         } else {
           return child;
         }
@@ -150,6 +157,11 @@ export const QuirksPage = (props, context) => {
 
         const quirks = Object.entries(quirkInfo);
         quirks.sort(([_, quirkA], [__, quirkB]) => {
+          if (quirkA.xcard && !quirkB.xcard) {
+            return -1;
+          } else if (!quirkA.xcard && quirkB.xcard) {
+            return 1;
+          }
           if (quirkA.value === quirkB.value) {
             return quirkA.name > quirkB.name ? 1 : -1;
           } else {
@@ -169,19 +181,14 @@ export const QuirksPage = (props, context) => {
           if (selectedQuirk.value > 0) {
             positiveQuirks += 1;
           }
-
-          balance += selectedQuirk.value;
         }
 
         const getReasonToNotAdd = (quirkName: string) => {
           const quirk = quirkInfo[quirkName];
 
-          if (quirk.value > 0) {
-            if (positiveQuirks >= maxPositiveQuirks) {
-              return "You can't have any more positive quirks!";
-            } else if (balance + quirk.value > 0) {
-              return 'You need a negative quirk to balance this out!';
-            }
+          // Remove accounting for quirk value
+          if (quirk.value > 0 && positiveQuirks >= maxPositiveQuirks) {
+            return "You can't have any more positive quirks!";
           }
 
           const selectedQuirkNames = selectedQuirks.map((quirkKey) => {
@@ -208,10 +215,6 @@ export const QuirksPage = (props, context) => {
 
         const getReasonToNotRemove = (quirkName: string) => {
           const quirk = quirkInfo[quirkName];
-
-          if (balance - quirk.value > 0) {
-            return 'You need to remove a positive quirk first!';
-          }
 
           return undefined;
         };
@@ -271,14 +274,6 @@ export const QuirksPage = (props, context) => {
 
             <Stack.Item basis="50%">
               <Stack vertical fill align="center">
-                <Stack.Item>
-                  <Box fontSize="1.3em">Quirk Balance</Box>
-                </Stack.Item>
-
-                <Stack.Item>
-                  <StatDisplay>{balance}</StatDisplay>
-                </Stack.Item>
-
                 <Stack.Item>
                   <Box as="b" fontSize="1.6em">
                     Current Quirks

@@ -202,6 +202,29 @@
 "bO" = (
 /turf/open/floor/carpet/royalblack/airless,
 /area/shuttle/pirate/flying_dutchman)
+"bU" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/obj/machinery/light/floor,
+/obj/docking_port/stationary{
+	dir = 8;
+	dwidth = 11;
+	height = 16;
+	shuttle_id = "pirate_home";
+	name = "Deep Space";
+	width = 17
+	},
+/obj/docking_port/mobile/pirate{
+	dir = 8;
+	launch_status = 0;
+	movement_force = list("KNOCKDOWN" = 0, "THROW" = 0);
+	name = "Pirate Ship";
+	port_direction = 4;
+	preferred_direction = 8
+	},
+/turf/open/floor/wood/airless,
+/area/shuttle/pirate/flying_dutchman)
 "co" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/turf_decal/siding/wood{
@@ -757,29 +780,6 @@
 /obj/structure/cable,
 /turf/open/space/basic,
 /area/shuttle/pirate/flying_dutchman)
-"Op" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 6
-	},
-/obj/machinery/light/floor,
-/obj/docking_port/stationary{
-	dir = 8;
-	dwidth = 11;
-	height = 16;
-	shuttle_id = "pirate_home";
-	name = "Deep Space";
-	width = 17
-	},
-/obj/docking_port/mobile/pirate{
-	dir = 8;
-	launch_status = 0;
-	movement_force = list("KNOCKDOWN" = 0, "THROW" = 0);
-	name = "Pirate Ship";
-	port_direction = 4;
-	preferred_direction = 8
-	},
-/turf/open/floor/wood/airless,
-/area/shuttle/pirate/flying_dutchman)
 "OL" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
@@ -918,21 +918,6 @@
 	},
 /turf/open/floor/wood/airless,
 /area/shuttle/pirate/flying_dutchman)
-"Yr" = (
-/obj/structure/closet/cabinet{
-	anchored = 1;
-	desc = "What kind of scary things could be here?";
-	name = "Davy Jones' Locker"
-	},
-/obj/item/restraints/legcuffs/bola,
-/obj/item/restraints/legcuffs/bola,
-/obj/item/restraints/legcuffs/bola,
-/obj/item/gun/energy/laser,
-/obj/item/megaphone,
-/obj/item/melee/chainofcommand/tailwhip/kitty,
-/obj/item/claymore/cutlass,
-/turf/open/floor/carpet/royalblack/airless,
-/area/shuttle/pirate/flying_dutchman)
 "Ys" = (
 /obj/effect/mob_spawn/ghost_role/human/pirate/skeleton,
 /turf/open/floor/wood/airless,
@@ -953,6 +938,20 @@
 	name = "wooden railing"
 	},
 /turf/open/floor/wood/airless,
+/area/shuttle/pirate/flying_dutchman)
+"ZO" = (
+/obj/structure/closet/cabinet{
+	anchored = 1;
+	desc = "What kind of scary things could be here?";
+	name = "Davy Jones' Locker"
+	},
+/obj/item/restraints/legcuffs/bola,
+/obj/item/restraints/legcuffs/bola,
+/obj/item/restraints/legcuffs/bola,
+/obj/item/gun/energy/laser,
+/obj/item/megaphone,
+/obj/item/claymore/cutlass,
+/turf/open/floor/carpet/royalblack/airless,
 /area/shuttle/pirate/flying_dutchman)
 "ZZ" = (
 /obj/effect/turf_decal/siding/wood{
@@ -1202,7 +1201,7 @@ WR
 WR
 Ms
 vt
-Yr
+ZO
 WR
 "}
 (10,1,1) = {"
@@ -1320,7 +1319,7 @@ af
 af
 af
 zO
-Op
+bU
 WR
 vi
 WR

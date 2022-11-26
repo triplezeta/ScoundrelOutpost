@@ -123,7 +123,7 @@
 
 /obj/item/clothing/head/helmet/chaplain
 	name = "crusader helmet"
-	desc = "Deus Vult."
+	desc = "Don't you think this is a bit embarrassing?"
 	icon = 'icons/obj/clothing/head/chaplain.dmi'
 	worn_icon = 'icons/mob/clothing/head/chaplain.dmi'
 	icon_state = "knight_templar"
@@ -136,7 +136,7 @@
 
 /obj/item/clothing/suit/chaplainsuit/armor/templar
 	name = "crusader armour"
-	desc = "God wills it!"
+	desc = "You like Paradox games, don't you?"
 	icon_state = "knight_templar"
 	inhand_icon_state = null
 	allowed = list(/obj/item/storage/book/bible, /obj/item/nullrod, /obj/item/reagent_containers/cup/glass/bottle/holywater, /obj/item/storage/fancy/candle_box, /obj/item/candle, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman)

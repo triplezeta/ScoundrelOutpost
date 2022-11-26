@@ -700,6 +700,10 @@ GLOBAL_LIST_EMPTY(features_by_species)
 		if(!source.dna.features["ears"] || source.dna.features["ears"] == "None" || source.head && (source.head.flags_inv & HIDEHAIR) || (source.wear_mask && (source.wear_mask.flags_inv & HIDEHAIR)) || !noggin || !IS_ORGANIC_LIMB(noggin))
 			bodyparts_to_add -= "ears"
 
+	if(mutant_bodyparts["rat_ears"]) // ORBSTATION
+		if(!source.dna.features["rat_ears"] || source.dna.features["rat_ears"] == "None" || source.head && (source.head.flags_inv & HIDEHAIR) || (source.wear_mask && (source.wear_mask.flags_inv & HIDEHAIR)) || !noggin || !IS_ORGANIC_LIMB(noggin))
+			bodyparts_to_add -= "rat_ears"
+
 	if(!bodyparts_to_add)
 		return
 
@@ -719,6 +723,8 @@ GLOBAL_LIST_EMPTY(features_by_species)
 					accessory = GLOB.legs_list[source.dna.features["legs"]]
 				if("caps")
 					accessory = GLOB.caps_list[source.dna.features["caps"]]
+				if("rat_ears") // ORBSTATION
+					accessory = GLOB.rat_ears_list[source.dna.features["rat_ears"]]
 
 			if(!accessory || accessory.icon_state == "none")
 				continue
@@ -765,6 +771,24 @@ GLOBAL_LIST_EMPTY(features_by_species)
 					inner_accessory_overlay.icon_state = "[g]_[bodypart]inner_[accessory.icon_state]_[layertext]"
 				else
 					inner_accessory_overlay.icon_state = "m_[bodypart]inner_[accessory.icon_state]_[layertext]"
+
+				switch(accessory.inner_color_src)
+					if(MUTCOLORS)
+						if(fixed_mut_color)
+							inner_accessory_overlay.color = fixed_mut_color
+						else
+							inner_accessory_overlay.color = source.dna.features["mcolor"]
+					if(HAIR)
+						if(hair_color == "mutcolor")
+							inner_accessory_overlay.color = source.dna.features["mcolor"]
+						else if(hair_color == "fixedmutcolor")
+							inner_accessory_overlay.color = fixed_mut_color
+						else
+							inner_accessory_overlay.color = source.hair_color
+					if(FACEHAIR)
+						inner_accessory_overlay.color = source.facial_hair_color
+					if(EYECOLOR)
+						inner_accessory_overlay.color = source.eye_color_left
 
 				if(accessory.center)
 					inner_accessory_overlay = center_image(inner_accessory_overlay, accessory.dimension_x, accessory.dimension_y)

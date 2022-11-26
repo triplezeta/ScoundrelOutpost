@@ -18,6 +18,7 @@
 #define ORANGES (1<<17)
 #define BUGS (1<<18)
 #define GORE (1<<19)
+#define CUCUMBER (1<<20)
 
 DEFINE_BITFIELD(foodtypes, list(
 	"MEAT" = MEAT,
@@ -64,6 +65,7 @@ DEFINE_BITFIELD(foodtypes, list(
 	"ORANGES", \
 	"BUGS", \
 	"GORE", \
+	"CUCUMBER", \
 )
 
 /// IC meaning (more or less) for food flags
@@ -88,6 +90,7 @@ DEFINE_BITFIELD(foodtypes, list(
 	"Oranges", \
 	"Bugs", \
 	"Gore", \
+	"Cucumbers", \
 )
 
 #define DRINK_NICE 1

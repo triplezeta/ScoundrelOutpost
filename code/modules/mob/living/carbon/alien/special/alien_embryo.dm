@@ -27,6 +27,8 @@
 
 /obj/item/organ/internal/body_egg/alien_embryo/on_life(delta_time, times_fired)
 	. = ..()
+	if(!owner) // ORBSTATION: once the organ is expelled, it no longer has an owner, so we need to do this to prevent potential runtime errors
+		return
 	switch(stage)
 		if(3, 4)
 			if(DT_PROB(1, delta_time))
@@ -78,6 +80,7 @@
 		attempt_grow()
 
 ///Attempt to burst an alien outside of the host, getting a ghost to play as the xeno.
+/// ORBSTATION: instead of gibbing the victim, we'll give them a critical chest wound and dismember it, spilling their organs
 /obj/item/organ/internal/body_egg/alien_embryo/proc/attempt_grow(gib_on_success = TRUE)
 	if(!owner || bursting)
 		return
@@ -96,6 +99,10 @@
 		return
 
 	var/mob/dead/observer/ghost = pick(candidates)
+
+	owner.apply_damage(50, BRUTE, BODY_ZONE_CHEST, forced = TRUE)
+	var/obj/item/bodypart/chest/chest_part = owner.get_bodypart(BODY_ZONE_CHEST)
+	chest_part.force_wound_upwards(/datum/wound/slash/critical)
 
 	var/mutable_appearance/overlay = mutable_appearance('icons/mob/nonhuman-player/alien.dmi', "burst_lie")
 	owner.add_overlay(overlay)
@@ -120,15 +127,13 @@
 		REMOVE_TRAIT(new_xeno, TRAIT_HANDS_BLOCKED, type)
 		new_xeno.notransform = 0
 		new_xeno.invisibility = 0
-
-	if(gib_on_success)
 		new_xeno.visible_message(span_danger("[new_xeno] bursts out of [owner] in a shower of gore!"), span_userdanger("You exit [owner], your previous host."), span_hear("You hear organic matter ripping and tearing!"))
-		owner.gib(TRUE)
-	else
-		new_xeno.visible_message(span_danger("[new_xeno] wriggles out of [owner]!"), span_userdanger("You exit [owner], your previous host."))
-		owner.adjustBruteLoss(40)
-		owner.cut_overlay(overlay)
-	owner.investigate_log("has been gibbed by an alien larva.", INVESTIGATE_DEATHS)
+
+	owner.cut_overlay(overlay)
+	owner.spawn_gibs() // we still want the gory visual effect
+	if(owner.blood_volume)
+		owner.spray_blood(owner.dir, WOUND_SEVERITY_LOSS)
+	chest_part.dismember(BRUTE)
 	qdel(src)
 
 

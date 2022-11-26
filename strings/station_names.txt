@@ -26,7 +26,6 @@ East
 Expensive
 Explosive
 Extraplanetary
-Fatguy
 Fist
 Gentleman
 Hats
@@ -42,8 +41,6 @@ Mime
 Mining
 Moon
 Muppet
-Neckbear
-Neckbeard
 Nettle
 North
 Orbital
@@ -55,7 +52,6 @@ Prefix
 Procreatory
 Production
 Pub
-Race
 Refactor
 Research
 Rimward
@@ -76,7 +72,6 @@ Supply
 System
 Taco
 Transport
-Ultrameens
 Unidentified
 West
 Widdershins

@@ -499,6 +499,8 @@
 		return FALSE
 	if(HAS_TRAIT(target, TRAIT_MINDSHIELD) || issilicon(target) || isbot(target) || isdrone(target) || !target.client)
 		return FALSE //can't convert machines, shielded, or braindead
+	if(HAS_TRAIT(target, TRAIT_XCARD_CULT_IMMUNE))
+		return FALSE
 	return TRUE
 
 /// Sets a blood target for the cult.

@@ -228,6 +228,8 @@
 /datum/antagonist/rev/proc/add_revolutionary(datum/mind/rev_mind,stun = TRUE)
 	if(!can_be_converted(rev_mind.current))
 		return FALSE
+	if(check_xcard_and_apply_if_necessary(rev_mind.current, owner.current))
+		return FALSE
 	if(stun)
 		rev_mind.current.set_silence_if_lower(10 SECONDS)
 		rev_mind.current.flash_act(1, 1)

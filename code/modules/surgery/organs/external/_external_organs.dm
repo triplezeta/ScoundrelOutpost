@@ -156,6 +156,42 @@
 
 	overlay_list += appearance
 
+	if(sprite_datum.hasinner)
+		var/list/inner_icon_state_builder = list()
+		inner_icon_state_builder += sprite_datum.gender_specific ? gender : "m"
+		inner_icon_state_builder += feature_key + "inner"
+		inner_icon_state_builder += sprite_datum.icon_state
+		inner_icon_state_builder += mutant_bodyparts_layertext(image_layer)
+
+		var/finished_inner_icon_state = inner_icon_state_builder.Join("_")
+
+		var/mutable_appearance/inner_appearance = mutable_appearance(sprite_datum.icon, finished_inner_icon_state, layer = -image_layer)
+
+		if(ishuman(owner))
+			var/mob/living/carbon/human/H = owner
+			switch(sprite_datum.inner_color_src)
+				if(MUTCOLORS)
+					if(H.dna.species.fixed_mut_color)
+						inner_appearance.color = H.dna.species.fixed_mut_color
+					else
+						inner_appearance.color = H.dna.features["mcolor"]
+				if(HAIR)
+					if(H.dna.species.hair_color == "mutcolor")
+						inner_appearance.color = H.dna.features["mcolor"]
+					else if(H.dna.species.hair_color == "fixedmutcolor")
+						inner_appearance.color = H.dna.species.fixed_mut_color
+					else
+						inner_appearance.color = H.hair_color
+				if(FACEHAIR)
+					inner_appearance.color = H.facial_hair_color
+				if(EYECOLOR)
+					inner_appearance.color = H.eye_color_left
+
+		if(sprite_datum.center)
+			inner_appearance = center_image(inner_appearance, sprite_datum.dimension_x, sprite_datum.dimension_y)
+
+		overlay_list += inner_appearance
+
 /obj/item/organ/external/proc/set_sprite(sprite_name)
 	stored_feature_id = sprite_name
 	sprite_datum = get_sprite_datum(sprite_name)
@@ -297,6 +333,8 @@
 	preference = "feature_lizard_snout"
 	external_bodytypes = BODYTYPE_SNOUTED
 
+	color_source = ORGAN_COLOR_OVERRIDE
+
 	dna_block = DNA_SNOUT_BLOCK
 
 /obj/item/organ/external/snout/can_draw_on_bodypart(mob/living/carbon/human/human)
@@ -306,6 +344,13 @@
 
 /obj/item/organ/external/snout/get_global_feature_list()
 	return GLOB.snouts_list
+
+/obj/item/organ/external/snout/override_color(rgb_value)
+	if(sprite_datum && sprite_datum.color_src == FACEHAIR && ishuman(owner))
+		var/mob/living/carbon/human/H = owner
+		return H.facial_hair_color
+
+	return rgb_value
 
 ///A moth's antennae
 /obj/item/organ/external/antennae
@@ -398,5 +443,8 @@
 	return GLOB.pod_hair_list
 
 /obj/item/organ/external/pod_hair/override_color(rgb_value)
-	var/list/rgb_list = rgb2num(rgb_value)
-	return rgb(255 - rgb_list[1], 255 - rgb_list[2], 255 - rgb_list[3])
+	var/mob/living/carbon/human/H = owner
+	return H.hair_color
+	//var/list/rgb_list = rgb2num(rgb_value)
+	//return rgb(255 - rgb_list[1], 255 - rgb_list[2], 255 - rgb_list[3])
+

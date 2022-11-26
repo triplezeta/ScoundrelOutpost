@@ -1,0 +1,3247 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aa" = (
+/turf/template_noop,
+/area/template_noop)
+"ac" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/sbc_starfury)
+"ae" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/shuttle/sbc_starfury)
+"af" = (
+/obj/structure/rack{
+	dir = 8;
+	layer = 2.9
+	},
+/obj/item/knife/combat/survival{
+	pixel_x = -4;
+	pixel_y = 9
+	},
+/obj/item/knife/combat/survival{
+	pixel_y = 3;
+	pixel_x = 1
+	},
+/obj/item/knife/combat/survival{
+	pixel_x = 6;
+	pixel_y = -3
+	},
+/turf/open/floor/pod/dark,
+/area/shuttle/sbc_starfury)
+"ai" = (
+/obj/structure/table/reinforced/plastitaniumglass,
+/obj/item/toy/balloon/syndicate,
+/obj/effect/turf_decal/tile/dark_red{
+	dir = 4
+	},
+/obj/item/stock_parts/cell/hyper,
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"an" = (
+/obj/structure/table,
+/obj/machinery/syndicatebomb{
+	pixel_x = -6;
+	pixel_y = 8
+	},
+/obj/machinery/syndicatebomb{
+	pixel_x = 6;
+	pixel_y = 8
+	},
+/obj/machinery/syndicatebomb{
+	pixel_y = -2
+	},
+/obj/item/syndicatedetonator,
+/obj/machinery/light/directional/south,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/sbc_starfury)
+"as" = (
+/turf/open/floor/iron/dark/smooth_large,
+/area/shuttle/sbc_starfury)
+"aw" = (
+/obj/machinery/door/airlock/highsecurity{
+	id_tag = "syndie_battlecruiser_armory";
+	name = "Starfury Armory"
+	},
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
+/obj/effect/mapping_helpers/airlock/cutaiwire,
+/turf/open/floor/iron/dark/smooth_large,
+/area/shuttle/sbc_starfury)
+"ay" = (
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"az" = (
+/obj/effect/turf_decal/plaque{
+	icon_state = "SBC1"
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/shuttle/sbc_starfury)
+"aA" = (
+/obj/effect/turf_decal/plaque{
+	icon_state = "SBC3"
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/shuttle/sbc_starfury)
+"aB" = (
+/obj/effect/turf_decal/plaque{
+	icon_state = "SBC5"
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/shuttle/sbc_starfury)
+"aC" = (
+/obj/effect/turf_decal/plaque{
+	icon_state = "SBC7"
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/shuttle/sbc_starfury)
+"aD" = (
+/obj/effect/turf_decal/plaque{
+	icon_state = "SBC9"
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/shuttle/sbc_starfury)
+"aF" = (
+/obj/structure/dresser,
+/obj/item/stack/spacecash/c1000{
+	pixel_y = 13
+	},
+/turf/open/floor/carpet/red,
+/area/shuttle/sbc_starfury)
+"aH" = (
+/turf/open/floor/plating,
+/area/shuttle/sbc_starfury)
+"aL" = (
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/red,
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"aQ" = (
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
+/obj/machinery/door/airlock{
+	name = "Crew Cabins"
+	},
+/turf/open/floor/wood,
+/area/shuttle/sbc_starfury)
+"aS" = (
+/obj/machinery/light/small/red/directional/east,
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/shuttle/sbc_starfury)
+"aV" = (
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"aW" = (
+/turf/open/floor/glass/reinforced,
+/area/shuttle/sbc_starfury)
+"bo" = (
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/leader,
+/obj/machinery/door/airlock/security{
+	name = "Captain's Quarters"
+	},
+/obj/effect/mapping_helpers/airlock/cutaiwire,
+/turf/open/floor/plating,
+/area/shuttle/sbc_starfury)
+"bB" = (
+/obj/effect/turf_decal/tile/red,
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"bF" = (
+/obj/docking_port/stationary/starfury_corvette{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/shuttle/sbc_starfury)
+"bM" = (
+/obj/effect/mapping_helpers/airlock/cutaiwire,
+/obj/machinery/door/airlock/engineering{
+	name = "SMES Room"
+	},
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
+/turf/open/floor/plating,
+/area/shuttle/sbc_starfury)
+"bR" = (
+/obj/machinery/computer/communications/syndicate,
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"bY" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 9
+	},
+/obj/effect/turf_decal/tile/blue,
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"cb" = (
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
+/obj/machinery/door/airlock/centcom{
+	name = "E.V.A. Equipment"
+	},
+/obj/effect/mapping_helpers/airlock/cutaiwire,
+/turf/open/floor/iron/dark/smooth_large,
+/area/shuttle/sbc_starfury)
+"cf" = (
+/obj/effect/turf_decal/plaque{
+	icon_state = "SBC4"
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/shuttle/sbc_starfury)
+"cu" = (
+/obj/machinery/light/directional/west,
+/turf/open/floor/iron/dark/smooth_large,
+/area/shuttle/sbc_starfury)
+"cz" = (
+/obj/machinery/turretid{
+	ailock = 1;
+	desc = "A specially designed set of turret controls. Looks to be covered in protective casing to prevent AI interfacing.";
+	icon_state = "control_stun";
+	name = "Ship Turret Control";
+	pixel_y = 2;
+	req_access = list("syndicate")
+	},
+/obj/structure/table/reinforced/plastitaniumglass,
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/dark_red{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"cM" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue,
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"cO" = (
+/obj/machinery/light/directional/east,
+/turf/open/floor/iron/dark/smooth_large,
+/area/shuttle/sbc_starfury)
+"cP" = (
+/obj/structure/table,
+/obj/item/grenade/syndieminibomb{
+	pixel_x = -5;
+	pixel_y = 8
+	},
+/obj/item/grenade/syndieminibomb{
+	pixel_x = 2;
+	pixel_y = 8
+	},
+/obj/item/grenade/syndieminibomb{
+	pixel_x = 9;
+	pixel_y = 8
+	},
+/obj/item/storage/backpack/duffelbag/syndie/c4{
+	pixel_x = -4;
+	pixel_y = 7
+	},
+/obj/item/storage/belt/grenade/full{
+	pixel_x = 5
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/sbc_starfury)
+"cU" = (
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
+/obj/machinery/door/airlock/hatch{
+	name = "Starfury Maintenance"
+	},
+/obj/effect/mapping_helpers/airlock/cutaiwire,
+/turf/open/floor/plating,
+/area/shuttle/sbc_starfury)
+"de" = (
+/obj/effect/turf_decal/plaque{
+	icon_state = "SBC2"
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/iron/dark/smooth_large,
+/area/shuttle/sbc_starfury)
+"df" = (
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/pod/dark,
+/area/shuttle/sbc_starfury)
+"dh" = (
+/obj/effect/turf_decal/plaque{
+	icon_state = "SBC8"
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/shuttle/sbc_starfury)
+"dl" = (
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/obj/machinery/light/directional/north,
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"dA" = (
+/obj/structure/table,
+/obj/item/storage/medkit/o2{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/storage/medkit/toxin,
+/obj/item/storage/medkit/regular{
+	pixel_x = -3;
+	pixel_y = -3
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/shuttle/sbc_starfury)
+"dB" = (
+/obj/structure/table,
+/obj/item/storage/medkit/brute{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/storage/medkit/fire,
+/obj/item/storage/medkit/regular{
+	pixel_x = -3;
+	pixel_y = -3
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/shuttle/sbc_starfury)
+"dI" = (
+/obj/structure/table,
+/obj/item/storage/backpack/duffelbag/syndie/surgery,
+/obj/item/defibrillator/compact/combat/loaded,
+/obj/item/storage/box/syringes,
+/obj/item/storage/belt/medical{
+	pixel_y = 2
+	},
+/obj/item/storage/box/syndie_kit/chemical,
+/obj/item/gun/syringe/rapidsyringe,
+/turf/open/floor/iron/dark/smooth_large,
+/area/shuttle/sbc_starfury)
+"dJ" = (
+/obj/structure/table/reinforced/plastitaniumglass,
+/obj/machinery/chem_dispenser/drinks{
+	dir = 4
+	},
+/obj/item/reagent_containers/cup/glass/shaker,
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"dN" = (
+/obj/structure/mirror/directional/north{
+	pixel_y = 32
+	},
+/obj/structure/sink/directional/south,
+/turf/open/floor/iron/showroomfloor,
+/area/shuttle/sbc_starfury)
+"dO" = (
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/wood,
+/area/shuttle/sbc_starfury)
+"dT" = (
+/obj/structure/table/wood,
+/obj/item/flashlight/lamp/green,
+/turf/open/floor/wood,
+/area/shuttle/sbc_starfury)
+"dU" = (
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
+/obj/machinery/door/airlock{
+	name = "Bar"
+	},
+/turf/open/floor/wood,
+/area/shuttle/sbc_starfury)
+"dW" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"ea" = (
+/obj/machinery/light/small/directional/west,
+/mob/living/simple_animal/bot/medbot/mysterious,
+/turf/open/floor/iron/showroomfloor,
+/area/shuttle/sbc_starfury)
+"ec" = (
+/turf/open/floor/pod/dark,
+/area/shuttle/sbc_starfury)
+"ee" = (
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
+/obj/machinery/door/airlock/centcom{
+	id_tag = "syndie_battlecruiser_bridge_bolt";
+	name = "Command Hallway"
+	},
+/obj/effect/mapping_helpers/airlock/cutaiwire,
+/turf/open/floor/iron/dark/smooth_large,
+/area/shuttle/sbc_starfury)
+"ep" = (
+/obj/vehicle/sealed/mecha/combat/marauder/mauler/loaded,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/sbc_starfury)
+"et" = (
+/obj/machinery/light/directional/south,
+/turf/open/floor/wood,
+/area/shuttle/sbc_starfury)
+"eA" = (
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/sbc_starfury)
+"eB" = (
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/pod/dark,
+/area/shuttle/sbc_starfury)
+"eE" = (
+/obj/structure/fans/tiny/shield,
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/shuttle/sbc_starfury)
+"eH" = (
+/obj/machinery/computer/camera_advanced/syndie,
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/blue,
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"eJ" = (
+/turf/open/floor/carpet/red,
+/area/shuttle/sbc_starfury)
+"eO" = (
+/obj/structure/table,
+/obj/item/clothing/gloves/combat{
+	pixel_x = -3;
+	pixel_y = 3
+	},
+/obj/item/clothing/gloves/combat{
+	pixel_y = -2;
+	pixel_x = 3
+	},
+/obj/item/storage/belt/utility{
+	pixel_y = 7;
+	pixel_x = -4
+	},
+/obj/item/storage/toolbox/syndicate{
+	pixel_x = 5
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/sbc_starfury)
+"eT" = (
+/obj/structure/window/reinforced/survival_pod,
+/obj/machinery/power/turbine/turbine_outlet,
+/obj/effect/turf_decal/siding/thinplating_new/dark,
+/turf/open/floor/plating/airless,
+/area/shuttle/sbc_starfury)
+"fj" = (
+/obj/structure/rack{
+	dir = 8;
+	layer = 2.9
+	},
+/obj/item/ammo_box/a357{
+	icon_state = "357-7";
+	pixel_y = 3
+	},
+/obj/item/gun/ballistic/revolver{
+	pixel_x = -1;
+	pixel_y = 2
+	},
+/turf/open/floor/pod/dark,
+/area/shuttle/sbc_starfury)
+"fk" = (
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/glass/reinforced,
+/area/shuttle/sbc_starfury)
+"fr" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/shuttle/sbc_starfury)
+"fw" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/shuttle/sbc_starfury)
+"fD" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/structure/reagent_dispensers/watertank,
+/turf/open/floor/plating,
+/area/shuttle/sbc_starfury)
+"gA" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/shuttle/sbc_starfury)
+"gD" = (
+/obj/machinery/shower/directional/south,
+/turf/open/floor/iron/showroomfloor,
+/area/shuttle/sbc_starfury)
+"gE" = (
+/obj/machinery/suit_storage_unit/syndicate,
+/turf/open/floor/pod/dark,
+/area/shuttle/sbc_starfury)
+"gF" = (
+/obj/machinery/vending/cigarette{
+	extended_inventory = 1
+	},
+/turf/open/floor/wood,
+/area/shuttle/sbc_starfury)
+"gO" = (
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"gS" = (
+/obj/machinery/door/airlock/hatch{
+	name = "Corvette Hanger"
+	},
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
+/obj/effect/mapping_helpers/airlock/cutaiwire,
+/turf/open/floor/plating,
+/area/shuttle/sbc_starfury)
+"gW" = (
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/red,
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"hh" = (
+/obj/structure/table,
+/obj/item/grenade/chem_grenade/pyro{
+	pixel_x = -4;
+	pixel_y = 12
+	},
+/obj/item/grenade/chem_grenade/pyro{
+	pixel_x = 1;
+	pixel_y = 12
+	},
+/obj/item/grenade/chem_grenade/pyro{
+	pixel_x = 6;
+	pixel_y = 12
+	},
+/obj/item/grenade/smokebomb{
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/obj/item/grenade/smokebomb{
+	pixel_y = 6;
+	pixel_x = 4
+	},
+/obj/item/grenade/smokebomb{
+	pixel_y = 6;
+	pixel_x = -1
+	},
+/obj/item/grenade/clusterbuster/emp{
+	pixel_y = -4
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/sbc_starfury)
+"hl" = (
+/obj/structure/tank_dispenser/oxygen,
+/turf/open/floor/pod/dark,
+/area/shuttle/sbc_starfury)
+"hm" = (
+/obj/structure/bed{
+	dir = 4
+	},
+/obj/item/bedsheet/syndie{
+	dir = 1
+	},
+/obj/effect/mob_spawn/ghost_role/human/syndicate/battlecruiser/captain/lowpop{
+	dir = 4
+	},
+/turf/open/floor/carpet/red,
+/area/shuttle/sbc_starfury)
+"hn" = (
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
+/obj/effect/mapping_helpers/airlock/cutaiwire,
+/obj/machinery/door/airlock/hatch{
+	name = "Crew Quarters"
+	},
+/turf/open/floor/wood,
+/area/shuttle/sbc_starfury)
+"hq" = (
+/obj/machinery/power/smes/magical{
+	name = "Starfury power storage unit";
+	desc = "A high-capacity superconducting magnetic energy storage (SMES) unit. Uses Syndicate technology to generate infinite power."
+	},
+/obj/structure/cable,
+/obj/machinery/power/terminal,
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/shuttle/sbc_starfury)
+"ht" = (
+/obj/machinery/vending/boozeomat/syndicate_access,
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"hw" = (
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/wood,
+/area/shuttle/sbc_starfury)
+"hx" = (
+/obj/machinery/light/small/directional/west,
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"hB" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/turf/open/floor/pod/dark,
+/area/shuttle/sbc_starfury)
+"hO" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/structure/rack,
+/obj/item/pickaxe/drill,
+/obj/item/extinguisher/advanced,
+/turf/open/floor/plating,
+/area/shuttle/sbc_starfury)
+"hP" = (
+/obj/machinery/chem_dispenser/drinks/beer{
+	dir = 4
+	},
+/obj/structure/table/reinforced/plastitaniumglass,
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"hU" = (
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"hX" = (
+/obj/machinery/space_heater,
+/turf/open/floor/plating,
+/area/shuttle/sbc_starfury)
+"ii" = (
+/obj/structure/table/reinforced/plastitaniumglass,
+/obj/item/aicard,
+/obj/item/restraints/handcuffs,
+/obj/effect/turf_decal/tile/green{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"im" = (
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/red,
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 10
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"iq" = (
+/obj/machinery/microwave,
+/obj/structure/table/wood,
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"iu" = (
+/obj/structure/closet/secure_closet{
+	anchored = 1;
+	icon_state = "hos";
+	name = "Captain's Locker";
+	req_access = list("syndicate_leader")
+	},
+/obj/item/storage/lockbox/medal{
+	req_access = list("syndicate_leader")
+	},
+/obj/item/ammo_box/a357{
+	icon_state = "357-7";
+	pixel_x = 2
+	},
+/obj/item/card/id/advanced/black/syndicate_command/captain_id/syndie_spare,
+/obj/item/clothing/head/hats/hos/syndicate,
+/obj/item/clothing/head/hos/beret/syndicate,
+/obj/item/clothing/under/syndicate/skirt,
+/obj/item/clothing/under/syndicate,
+/obj/item/storage/belt/military/assault,
+/obj/machinery/newscaster/directional/east,
+/turf/open/floor/carpet/red,
+/area/shuttle/sbc_starfury)
+"iD" = (
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
+/obj/machinery/light/directional/north,
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"iG" = (
+/obj/structure/table/reinforced/plastitaniumglass,
+/obj/item/book/manual/wiki/barman_recipes,
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"iO" = (
+/obj/machinery/power/turbine/core_rotor,
+/turf/open/floor/plating/airless,
+/area/shuttle/sbc_starfury)
+"jd" = (
+/obj/structure/toilet{
+	dir = 8
+	},
+/turf/open/floor/iron/showroomfloor,
+/area/shuttle/sbc_starfury)
+"jf" = (
+/turf/open/floor/iron/showroomfloor,
+/area/shuttle/sbc_starfury)
+"jz" = (
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/red,
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"jA" = (
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 6
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"jY" = (
+/obj/item/card/emag{
+	pixel_y = 6;
+	pixel_x = -2
+	},
+/obj/structure/table,
+/obj/item/card/emag/doorjack{
+	pixel_y = 3
+	},
+/obj/item/card/emag/doorjack{
+	pixel_x = 6;
+	pixel_y = -1
+	},
+/obj/item/flashlight/emp{
+	pixel_y = 12;
+	pixel_x = 6;
+	name = "EMP flashlight"
+	},
+/obj/item/clothing/glasses/thermal{
+	pixel_x = -2;
+	pixel_y = 3
+	},
+/obj/item/clothing/glasses/thermal{
+	pixel_x = 7;
+	pixel_y = -3
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/sbc_starfury)
+"kb" = (
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/pod/dark,
+/area/shuttle/sbc_starfury)
+"kd" = (
+/turf/open/floor/iron/dark/textured_large,
+/area/shuttle/sbc_starfury)
+"kx" = (
+/obj/effect/turf_decal/tile/bar/diagonal_centre,
+/turf/open/floor/iron/dark/diagonal,
+/area/shuttle/sbc_starfury)
+"kJ" = (
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/shuttle/sbc_starfury)
+"kR" = (
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"lb" = (
+/obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
+/obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
+/obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
+/turf/open/space/basic,
+/area/shuttle/sbc_starfury)
+"lj" = (
+/obj/effect/mapping_helpers/airlock/cutaiwire,
+/obj/machinery/door/airlock/engineering{
+	name = "Engineering Bay"
+	},
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
+/turf/open/floor/plating,
+/area/shuttle/sbc_starfury)
+"lw" = (
+/obj/machinery/light/small/red/directional/north,
+/turf/open/floor/plating,
+/area/shuttle/sbc_starfury)
+"lA" = (
+/obj/machinery/power/port_gen/pacman,
+/obj/structure/cable,
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/shuttle/sbc_starfury)
+"lB" = (
+/obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
+/turf/open/floor/plating,
+/area/shuttle/sbc_starfury)
+"lF" = (
+/obj/machinery/door/airlock{
+	name = "Bathroom"
+	},
+/obj/effect/mapping_helpers/airlock/cutaiwire,
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
+/turf/open/floor/iron/showroomfloor,
+/area/shuttle/sbc_starfury)
+"lJ" = (
+/obj/structure/rack{
+	dir = 8;
+	layer = 2.9
+	},
+/obj/item/ammo_box/magazine/sniper_rounds,
+/obj/item/gun/ballistic/automatic/sniper_rifle/syndicate,
+/turf/open/floor/pod/dark,
+/area/shuttle/sbc_starfury)
+"lN" = (
+/obj/effect/decal/cleanable/oil,
+/turf/open/floor/plating,
+/area/shuttle/sbc_starfury)
+"mB" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/structure/rack,
+/obj/item/stack/cable_coil{
+	pixel_x = -2;
+	pixel_y = 5
+	},
+/obj/item/pipe_dispenser{
+	pixel_y = -3
+	},
+/turf/open/floor/plating,
+/area/shuttle/sbc_starfury)
+"mH" = (
+/obj/structure/window/reinforced/survival_pod{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/shuttle/sbc_starfury)
+"mN" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/structure/rack,
+/obj/item/stack/sheet/iron/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/clothing/head/utility/welding,
+/turf/open/floor/plating,
+/area/shuttle/sbc_starfury)
+"mO" = (
+/obj/machinery/power/shuttle_engine/huge,
+/turf/open/floor/plating,
+/area/shuttle/sbc_starfury)
+"mP" = (
+/obj/machinery/power/shuttle_engine/large,
+/turf/open/floor/plating,
+/area/shuttle/sbc_starfury)
+"ng" = (
+/obj/machinery/computer/message_monitor,
+/obj/item/paper/monitorkey,
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"nZ" = (
+/obj/structure/rack,
+/obj/item/soap/syndie,
+/turf/open/floor/iron/showroomfloor,
+/area/shuttle/sbc_starfury)
+"pa" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 6
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/sbc_starfury)
+"pQ" = (
+/obj/machinery/light/small/red/directional/west,
+/turf/open/floor/plating,
+/area/shuttle/sbc_starfury)
+"pS" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/structure/reagent_dispensers/fueltank,
+/turf/open/floor/plating,
+/area/shuttle/sbc_starfury)
+"qm" = (
+/mob/living/simple_animal/bot/medbot{
+	desc = "A medical bot of syndicate origins. Probably plots about how to stab you full of toxins in its free time.";
+	faction = list("neutral","silicon","turret","Syndicate");
+	name = "Syndicate Medibot";
+	skin = "bezerk"
+	},
+/turf/open/floor/glass/reinforced,
+/area/shuttle/sbc_starfury)
+"qQ" = (
+/obj/effect/turf_decal/plaque{
+	icon_state = "SBC10"
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/iron/dark/smooth_large,
+/area/shuttle/sbc_starfury)
+"rr" = (
+/obj/structure/table,
+/obj/item/mod/module/magnetic_harness{
+	pixel_y = 7;
+	pixel_x = 2
+	},
+/obj/item/mod/module/injector{
+	pixel_x = -5;
+	pixel_y = 5
+	},
+/obj/item/mod/module/holster{
+	pixel_x = 3
+	},
+/obj/item/mod/module/energy_shield{
+	pixel_y = -2;
+	pixel_x = -5
+	},
+/obj/item/mod/module/drill{
+	pixel_y = -7;
+	pixel_x = 6
+	},
+/turf/open/floor/pod/dark,
+/area/shuttle/sbc_starfury)
+"ry" = (
+/obj/structure/chair/comfy/shuttle/tactical{
+	dir = 1
+	},
+/obj/structure/chair/comfy/shuttle/tactical{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/shuttle/sbc_starfury)
+"sq" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 5
+	},
+/obj/effect/turf_decal/tile/blue,
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"tT" = (
+/obj/effect/turf_decal/plaque{
+	icon_state = "SBC6"
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/shuttle/sbc_starfury)
+"vk" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/shuttle/sbc_starfury)
+"vK" = (
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/red,
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"vT" = (
+/obj/structure/lattice/catwalk,
+/turf/template_noop,
+/area/shuttle/sbc_starfury)
+"wg" = (
+/obj/structure/chair/office{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/dark_red{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/shuttle/sbc_starfury)
+"wq" = (
+/obj/structure/table,
+/obj/item/shield/energy{
+	pixel_x = -8;
+	pixel_y = 3
+	},
+/obj/machinery/light/directional/south,
+/obj/item/implanter/krav_maga{
+	pixel_x = 2
+	},
+/obj/item/implanter/storage{
+	pixel_x = 2;
+	pixel_y = 5
+	},
+/obj/item/implanter/explosive{
+	pixel_y = 10;
+	pixel_x = 2
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/sbc_starfury)
+"xc" = (
+/obj/machinery/light/small/red/directional/east,
+/turf/open/floor/plating,
+/area/shuttle/sbc_starfury)
+"xG" = (
+/obj/effect/turf_decal/tile/blue,
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"yn" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 10
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/sbc_starfury)
+"yC" = (
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
+/obj/machinery/door/airlock/hatch{
+	name = "Crew Quarters"
+	},
+/obj/effect/mapping_helpers/airlock/cutaiwire,
+/turf/open/floor/wood,
+/area/shuttle/sbc_starfury)
+"Ak" = (
+/obj/machinery/vending/medical/syndicate_access/cybersun,
+/turf/open/floor/iron/dark/smooth_large,
+/area/shuttle/sbc_starfury)
+"AJ" = (
+/obj/structure/bed{
+	dir = 4
+	},
+/obj/effect/mob_spawn/ghost_role/human/syndicate/battlecruiser/assault/lowpop{
+	dir = 4
+	},
+/turf/open/floor/carpet,
+/area/shuttle/sbc_starfury)
+"BK" = (
+/obj/machinery/light/directional/south,
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"Cz" = (
+/obj/structure/chair/stool/bar/directional/west,
+/obj/effect/turf_decal/tile/bar/diagonal_centre,
+/turf/open/floor/iron/dark/diagonal,
+/area/shuttle/sbc_starfury)
+"CO" = (
+/obj/machinery/power/turbine/inlet_compressor,
+/turf/template_noop,
+/area/shuttle/sbc_starfury)
+"Fc" = (
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/turf/open/floor/plating,
+/area/shuttle/sbc_starfury)
+"FH" = (
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/red,
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"IF" = (
+/obj/machinery/door/airlock/centcom{
+	name = "E.V.A. Equipment"
+	},
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
+/obj/effect/mapping_helpers/airlock/cutaiwire,
+/turf/open/floor/iron/dark/smooth_large,
+/area/shuttle/sbc_starfury)
+"IM" = (
+/obj/machinery/computer/med_data/syndie{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/green{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/green{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/green{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"Kf" = (
+/obj/item/storage/box/donkpockets{
+	pixel_x = 2
+	},
+/obj/item/storage/box/donkpockets{
+	pixel_y = 3
+	},
+/obj/item/storage/box/donkpockets{
+	pixel_x = -2;
+	pixel_y = 6
+	},
+/obj/structure/table/wood,
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"KC" = (
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/glass/reinforced,
+/area/shuttle/sbc_starfury)
+"KP" = (
+/obj/machinery/computer/security{
+	network = list("SBC_Corvette")
+	},
+/obj/effect/turf_decal/tile/dark_red{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/dark_red,
+/obj/effect/turf_decal/tile/dark_red{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"Nw" = (
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/shuttle/sbc_starfury)
+"ND" = (
+/obj/machinery/computer/secure_data/syndie{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/dark_red{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/dark_red,
+/obj/effect/turf_decal/tile/dark_red{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"Oh" = (
+/obj/structure/table/wood,
+/obj/item/flashlight/lamp/green,
+/obj/item/clothing/glasses/sunglasses,
+/obj/item/clothing/mask/cigarette/cigar/havana,
+/obj/item/lighter,
+/turf/open/floor/wood,
+/area/shuttle/sbc_starfury)
+"Ot" = (
+/obj/machinery/portable_atmospherics/pump,
+/turf/open/floor/plating,
+/area/shuttle/sbc_starfury)
+"Ou" = (
+/obj/structure/lattice,
+/turf/template_noop,
+/area/shuttle/sbc_starfury)
+"PP" = (
+/obj/machinery/power/apc/syndicate{
+	cell_type = /obj/item/stock_parts/cell/high;
+	dir = 1;
+	name = "Syndicate Battlecruiser APC";
+	pixel_y = 25
+	},
+/obj/structure/cable,
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/shuttle/sbc_starfury)
+"Qu" = (
+/obj/structure/dresser,
+/obj/item/stack/spacecash/c500{
+	pixel_y = 13
+	},
+/turf/open/floor/carpet,
+/area/shuttle/sbc_starfury)
+"Rv" = (
+/obj/machinery/door/airlock/centcom{
+	id_tag = "syndie_battlecruiser_bridge_bolt";
+	name = "Command Hallway"
+	},
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
+/obj/effect/mapping_helpers/airlock/cutaiwire,
+/turf/open/floor/plating,
+/area/shuttle/sbc_starfury)
+"RA" = (
+/obj/structure/rack{
+	dir = 8;
+	layer = 2.9
+	},
+/obj/item/ammo_box/magazine/m12g,
+/obj/item/gun/ballistic/shotgun/bulldog{
+	pixel_x = -3;
+	pixel_y = 3
+	},
+/turf/open/floor/pod/dark,
+/area/shuttle/sbc_starfury)
+"Sb" = (
+/obj/machinery/computer/crew/syndie,
+/obj/effect/turf_decal/tile/green{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/green{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/green{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"Sh" = (
+/turf/open/floor/wood,
+/area/shuttle/sbc_starfury)
+"Sy" = (
+/obj/machinery/vending/coffee{
+	extended_inventory = 1
+	},
+/turf/open/floor/wood,
+/area/shuttle/sbc_starfury)
+"Uy" = (
+/obj/machinery/light/small/directional/east,
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue,
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"VX" = (
+/obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
+/obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
+/turf/open/floor/plating,
+/area/shuttle/sbc_starfury)
+"Wu" = (
+/obj/structure/table,
+/obj/item/mod/module/visor/night{
+	pixel_y = 9;
+	pixel_x = -4
+	},
+/obj/item/mod/module/noslip{
+	pixel_y = -2;
+	pixel_x = -2
+	},
+/obj/item/mod/module/visor/medhud{
+	pixel_x = 8;
+	pixel_y = 5
+	},
+/obj/item/mod/module/welding/camera_vision{
+	pixel_y = -5;
+	pixel_x = -5
+	},
+/obj/item/mod/module/anomaly_locked/kinesis/plus{
+	pixel_x = 7;
+	pixel_y = -4
+	},
+/turf/open/floor/pod/dark,
+/area/shuttle/sbc_starfury)
+"Wz" = (
+/obj/structure/table/reinforced/plastitaniumglass,
+/obj/item/reagent_containers/cup/rag,
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"WA" = (
+/obj/structure/rack{
+	dir = 8;
+	layer = 2.9
+	},
+/obj/item/ammo_box/magazine/m556{
+	icon_state = "5.56m-30";
+	pixel_x = 2;
+	pixel_y = 4
+	},
+/obj/item/gun/ballistic/automatic/m90{
+	pixel_x = -3;
+	pixel_y = 3
+	},
+/turf/open/floor/pod/dark,
+/area/shuttle/sbc_starfury)
+"WW" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"Xo" = (
+/obj/machinery/light/directional/south,
+/obj/effect/turf_decal/tile/blue,
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"XI" = (
+/obj/structure/chair/office{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/shuttle/sbc_starfury)
+"Yg" = (
+/obj/structure/chair/office{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/green{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/shuttle/sbc_starfury)
+"YV" = (
+/obj/structure/table/reinforced/plastitaniumglass,
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/item/storage/fancy/donut_box,
+/obj/item/assembly/flash/handheld,
+/obj/effect/turf_decal/tile/green{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/sbc_starfury)
+"Za" = (
+/turf/open/floor/carpet,
+/area/shuttle/sbc_starfury)
+
+(1,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ac
+ae
+ae
+ac
+lB
+lB
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(2,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+lB
+lB
+hm
+eJ
+ae
+hP
+dJ
+ae
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(3,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+lB
+Oh
+eJ
+eJ
+bo
+aW
+aW
+ht
+ae
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(4,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+lB
+VX
+aF
+iu
+ae
+aW
+aW
+BK
+ae
+ae
+ae
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(5,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ac
+ae
+ae
+ae
+iG
+Wz
+ay
+ae
+dN
+ea
+lB
+lB
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(6,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+CO
+iO
+eT
+ae
+iq
+Cz
+Cz
+kx
+lF
+jf
+jf
+nZ
+lB
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(7,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+lB
+lB
+ae
+ae
+ae
+Kf
+kx
+kx
+kx
+ae
+gD
+jd
+lB
+lB
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(8,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+lB
+lB
+Sh
+Sh
+ae
+as
+as
+as
+as
+as
+ae
+ac
+ac
+ac
+Ou
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+Ou
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(9,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+lB
+Sh
+Sh
+Sh
+dU
+as
+aW
+aW
+aW
+as
+cU
+aH
+ae
+Ou
+Ou
+Ou
+Ou
+vT
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+Ou
+Ou
+ac
+lB
+lB
+ac
+aa
+aa
+aa
+aa
+aa
+"}
+(10,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+ae
+Sh
+Sh
+dO
+ae
+as
+cO
+as
+as
+as
+ae
+aH
+ae
+ae
+ac
+Ou
+aa
+aa
+aa
+aa
+aa
+aa
+Ou
+ac
+ae
+ae
+eE
+eE
+eE
+eE
+eE
+eE
+eE
+eE
+eE
+eE
+eE
+eE
+eE
+eE
+ae
+ae
+ac
+Ou
+ae
+Fc
+Fc
+ae
+Ou
+aa
+aa
+aa
+aa
+"}
+(11,1,1) = {"
+aa
+aa
+lB
+lB
+lB
+ae
+ae
+ae
+ee
+ae
+ae
+ae
+ae
+aw
+ae
+ae
+ae
+aH
+aH
+aH
+ae
+Ou
+Ou
+aa
+aa
+aa
+vT
+Ou
+Ou
+ae
+kb
+eB
+kd
+kd
+kd
+kd
+kd
+kd
+kd
+kd
+kd
+kd
+kd
+kd
+kd
+kd
+hB
+df
+ae
+lB
+ae
+lw
+aH
+ae
+ae
+ac
+aa
+aa
+aa
+"}
+(12,1,1) = {"
+aa
+lB
+lB
+IM
+ii
+ae
+dA
+hx
+dW
+sq
+ae
+pa
+eA
+eA
+eA
+hh
+ae
+ae
+ae
+cU
+ae
+ae
+ac
+aa
+aa
+aa
+aa
+aa
+Ou
+ae
+ec
+eB
+fr
+fr
+fr
+fr
+fr
+fr
+fr
+fr
+fr
+fr
+fr
+fr
+fr
+fr
+hB
+ec
+ae
+aH
+aH
+aH
+aH
+fD
+mH
+mP
+aa
+aa
+aa
+"}
+(13,1,1) = {"
+aa
+lB
+Sb
+Yg
+as
+ae
+dB
+WW
+ay
+xG
+aw
+eA
+ec
+ec
+ec
+an
+ae
+jA
+gO
+gO
+gO
+aL
+ae
+ac
+aa
+aa
+aa
+Ou
+Ou
+ae
+ec
+eB
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+hB
+ec
+lj
+aH
+aH
+aH
+lN
+pS
+mH
+aH
+aa
+aa
+aa
+"}
+(14,1,1) = {"
+lB
+lB
+YV
+az
+de
+ae
+ae
+WW
+aW
+xG
+ae
+eA
+ec
+WA
+ec
+cP
+ae
+iD
+ay
+ay
+ay
+hU
+gW
+ae
+ae
+lB
+lB
+lB
+ae
+ae
+kb
+eB
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+hB
+ec
+ae
+ae
+ae
+ae
+aH
+ae
+ae
+ae
+ae
+ae
+ac
+"}
+(15,1,1) = {"
+lB
+ng
+vk
+aA
+cf
+as
+ae
+WW
+aW
+xG
+ae
+eA
+ec
+fj
+ec
+eA
+ae
+aV
+ay
+gE
+rr
+ay
+hU
+ae
+KC
+aW
+aW
+aW
+aW
+ae
+ec
+eB
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+hB
+ec
+ae
+hq
+kJ
+ae
+aH
+aH
+pQ
+hO
+mH
+aH
+mO
+"}
+(16,1,1) = {"
+lB
+bR
+ry
+aB
+tT
+as
+Rv
+WW
+qm
+Xo
+ae
+ep
+ec
+lJ
+ec
+eA
+cb
+ay
+ay
+gE
+hl
+ay
+ay
+IF
+aW
+aW
+aW
+aW
+aW
+gS
+ec
+eB
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+hB
+df
+ae
+lA
+Nw
+bM
+aH
+aH
+aH
+mN
+mH
+aH
+aH
+"}
+(17,1,1) = {"
+lB
+eH
+fw
+aC
+dh
+as
+ae
+WW
+aW
+xG
+ae
+eA
+ec
+RA
+ec
+eA
+ae
+kR
+ay
+gE
+Wu
+ay
+bB
+ae
+aW
+aW
+aW
+aW
+fk
+ae
+ec
+eB
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+hB
+ec
+ae
+PP
+aS
+ae
+aH
+aH
+xc
+mB
+mH
+aH
+aH
+"}
+(18,1,1) = {"
+lB
+lB
+cz
+aD
+qQ
+ae
+ae
+WW
+aW
+xG
+ae
+eA
+ec
+af
+ec
+eO
+ae
+dl
+ay
+ay
+ay
+bB
+vK
+ae
+ae
+lB
+lB
+lB
+ae
+ae
+kb
+eB
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+hB
+ec
+ae
+ae
+ae
+ae
+aH
+ae
+ae
+ae
+ae
+ae
+ac
+"}
+(19,1,1) = {"
+aa
+lB
+KP
+wg
+as
+ae
+dI
+WW
+ay
+xG
+aw
+eA
+ec
+ec
+ec
+wq
+ae
+im
+jz
+jz
+jz
+FH
+ae
+ac
+aa
+aa
+aa
+Ou
+Ou
+ae
+ec
+eB
+aH
+aH
+aH
+aH
+aH
+aH
+bF
+aH
+aH
+aH
+aH
+aH
+aH
+aH
+hB
+ec
+lj
+aH
+aH
+aH
+aH
+fD
+mH
+mP
+aa
+aa
+aa
+"}
+(20,1,1) = {"
+aa
+lB
+VX
+ND
+ai
+ae
+Ak
+Uy
+cM
+bY
+ae
+yn
+eA
+eA
+eA
+jY
+ae
+ae
+ae
+cU
+ae
+ae
+ac
+aa
+aa
+aa
+aa
+aa
+Ou
+ae
+ec
+eB
+gA
+gA
+gA
+gA
+gA
+gA
+gA
+gA
+gA
+gA
+gA
+gA
+gA
+gA
+hB
+ec
+ae
+aH
+lN
+aH
+aH
+pS
+mH
+aH
+aa
+aa
+aa
+"}
+(21,1,1) = {"
+aa
+aa
+lB
+lB
+lB
+ae
+ae
+ae
+ee
+ae
+ae
+ae
+ae
+aw
+ae
+ae
+ae
+aH
+aH
+aH
+ae
+Ou
+Ou
+aa
+aa
+aa
+vT
+Ou
+Ou
+ae
+kb
+eB
+kd
+kd
+kd
+kd
+kd
+kd
+kd
+kd
+kd
+kd
+kd
+kd
+kd
+kd
+hB
+df
+ae
+lB
+ae
+lw
+aH
+ae
+ae
+ac
+aa
+aa
+aa
+"}
+(22,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+ae
+Sh
+Sh
+hw
+ae
+as
+cu
+as
+as
+as
+ae
+aH
+ae
+ae
+ac
+Ou
+aa
+aa
+aa
+aa
+aa
+aa
+Ou
+ac
+ae
+ae
+eE
+eE
+eE
+eE
+eE
+eE
+eE
+eE
+eE
+eE
+eE
+eE
+eE
+eE
+ae
+ae
+ac
+Ou
+ae
+Ot
+hX
+ae
+Ou
+aa
+aa
+aa
+aa
+"}
+(23,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+lB
+Sh
+Sh
+Sh
+aQ
+as
+aW
+aW
+aW
+as
+cU
+aH
+ae
+Ou
+Ou
+Ou
+Ou
+vT
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+Ou
+Ou
+ac
+lB
+lB
+ac
+aa
+aa
+aa
+aa
+aa
+"}
+(24,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+lB
+lB
+Sh
+Sh
+ae
+as
+as
+as
+as
+as
+ae
+ae
+ae
+ac
+Ou
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+Ou
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(25,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+lB
+lB
+ae
+ae
+ae
+Sy
+Sh
+Sh
+Sh
+ae
+Za
+AJ
+lB
+lB
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(26,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+CO
+iO
+eT
+ae
+gF
+Sh
+Sh
+Sh
+hn
+Za
+Za
+dT
+lB
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(27,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ae
+ae
+ae
+ae
+Sh
+Sh
+Sh
+ae
+Za
+Qu
+lB
+lB
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(28,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+lB
+lB
+AJ
+Za
+ae
+Sh
+Sh
+et
+ae
+ae
+ae
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(29,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+lB
+dT
+Za
+Za
+yC
+Sh
+Sh
+Sh
+ae
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(30,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+lB
+lb
+Qu
+Za
+ae
+XI
+XI
+ae
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(31,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ae
+ae
+ae
+ac
+lB
+lB
+ac
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}

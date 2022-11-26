@@ -6466,10 +6466,6 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/commons/storage/primary)
-"bVZ" = (
-/obj/structure/sign/poster/contraband/the_big_gas_giant_truth,
-/turf/closed/wall,
-/area/station/maintenance/department/medical/central)
 "bWe" = (
 /obj/structure/cable,
 /obj/effect/spawner/structure/window/hollow/reinforced/middle,
@@ -27470,6 +27466,15 @@
 	},
 /turf/open/floor/iron,
 /area/station/engineering/main)
+"itg" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/station/maintenance/starboard/fore)
 "iti" = (
 /obj/structure/extinguisher_cabinet/directional/south,
 /obj/effect/turf_decal/tile/red,
@@ -28029,15 +28034,6 @@
 	},
 /turf/open/floor/plating,
 /area/station/science/robotics/lab)
-"iCC" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/station/maintenance/starboard/fore)
 "iCD" = (
 /obj/machinery/door/airlock/external{
 	name = "External Access"
@@ -60181,6 +60177,10 @@
 	},
 /turf/open/floor/plating,
 /area/station/maintenance/department/crew_quarters/bar)
+"sAg" = (
+/obj/structure/sign/poster/contraband/random,
+/turf/closed/wall,
+/area/station/maintenance/department/medical/central)
 "sAu" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -247029,7 +247029,7 @@ lvG
 cvS
 cvS
 lvG
-bVZ
+sAg
 tYZ
 kRP
 wOn
@@ -249548,7 +249548,7 @@ mTk
 bZG
 kKL
 lli
-iCC
+itg
 kKL
 fbm
 gjh

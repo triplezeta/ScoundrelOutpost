@@ -16,14 +16,6 @@
 /obj/item/flashlight,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/thelizardsgas)
-"bo" = (
-/obj/structure/rack,
-/obj/item/clothing/shoes/cowboy/lizard{
-	desc = "You can hear a faint hissing from inside the boots."
-	},
-/obj/structure/cable,
-/turf/open/floor/iron/white/side,
-/area/ruin/space/has_grav/thelizardsgas)
 "bp" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 4
@@ -67,6 +59,12 @@
 	},
 /turf/template_noop,
 /area/ruin/space/has_grav/thelizardsgas)
+"dr" = (
+/obj/machinery/atmospherics/pipe/smart/simple/yellow/hidden,
+/obj/structure/sign/warning/vacuum/directional/east,
+/obj/effect/mapping_helpers/broken_floor,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/thelizardsgas)
 "gL" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -89,6 +87,14 @@
 "iA" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible{
 	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/thelizardsgas)
+"iC" = (
+/obj/structure/sign/warning/electric_shock/directional/north,
+/obj/machinery/suit_storage_unit/standard_unit,
+/obj/machinery/power/terminal{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/thelizardsgas)
@@ -120,6 +126,12 @@
 /turf/open/floor/engine/plasma{
 	initial_gas_mix = "plasma=35000;TEMP=293.15"
 	},
+/area/ruin/space/has_grav/thelizardsgas)
+"mh" = (
+/obj/structure/rack,
+/obj/item/clothing/shoes/cowboy,
+/obj/structure/cable,
+/turf/open/floor/iron/white/side,
 /area/ruin/space/has_grav/thelizardsgas)
 "mN" = (
 /obj/effect/spawner/random/food_or_drink/booze,
@@ -183,6 +195,11 @@
 /obj/machinery/atmospherics/pipe/smart/simple/yellow/hidden,
 /turf/open/floor/iron/white,
 /area/ruin/space/has_grav/thelizardsgas)
+"sO" = (
+/obj/structure/cable,
+/obj/structure/sign/warning/fire/directional/north,
+/turf/open/floor/iron/white/side,
+/area/ruin/space/has_grav/thelizardsgas)
 "ua" = (
 /obj/effect/spawner/random/structure/billboard/roadsigns,
 /turf/open/misc/asteroid/airless,
@@ -204,11 +221,6 @@
 "wb" = (
 /turf/open/misc/asteroid/airless,
 /area/ruin/space/has_grav/thelizardsgas)
-"xb" = (
-/obj/structure/cable,
-/obj/structure/sign/warning/fire/directional/north,
-/turf/open/floor/iron/white/side,
-/area/ruin/space/has_grav/thelizardsgas)
 "xy" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -217,12 +229,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/thelizardsgas)
-"yU" = (
-/obj/structure/sign/warning/no_smoking/directional/north{
-	desc = "An incredibly bad idea."
-	},
-/turf/template_noop,
-/area/template_noop)
 "zn" = (
 /obj/structure/rack,
 /obj/effect/spawner/random/food_or_drink/snack,
@@ -384,14 +390,6 @@
 "LA" = (
 /turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/thelizardsgas)
-"LT" = (
-/obj/structure/sign/warning/electric_shock/directional/north,
-/obj/machinery/suit_storage_unit/standard_unit,
-/obj/machinery/power/terminal{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/thelizardsgas)
 "Mw" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -418,12 +416,6 @@
 /turf/open/floor/engine/plasma{
 	initial_gas_mix = "plasma=35000;TEMP=293.15"
 	},
-/area/ruin/space/has_grav/thelizardsgas)
-"Pb" = (
-/obj/machinery/atmospherics/pipe/smart/simple/yellow/hidden,
-/obj/structure/sign/warning/vacuum/directional/east,
-/obj/effect/mapping_helpers/broken_floor,
-/turf/open/floor/plating,
 /area/ruin/space/has_grav/thelizardsgas)
 "Pi" = (
 /obj/effect/turf_decal/tile/dark{
@@ -529,6 +521,12 @@
 	dir = 1
 	},
 /area/ruin/space/has_grav/thelizardsgas)
+"Ww" = (
+/obj/structure/sign/warning/no_smoking/directional/north{
+	desc = "An incredibly bad idea."
+	},
+/turf/template_noop,
+/area/template_noop)
 "WP" = (
 /obj/structure/lattice/catwalk,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/yellow/hidden,
@@ -798,7 +796,7 @@ sN
 iO
 Ss
 GM
-Pb
+dr
 ss
 Bu
 Bu
@@ -827,7 +825,7 @@ Wh
 mR
 mR
 mR
-yU
+Ww
 CA
 MB
 CA
@@ -874,7 +872,7 @@ Ud
 LA
 LA
 LA
-xb
+sO
 Zs
 zn
 UO
@@ -951,11 +949,11 @@ CA
 CA
 Qg
 mR
-LT
+iC
 xy
 Kw
 mR
-bo
+mh
 Zs
 zn
 UO

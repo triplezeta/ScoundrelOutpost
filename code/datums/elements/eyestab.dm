@@ -60,25 +60,46 @@
 
 	user.do_attack_animation(target)
 
-	if (target == user)
-		user.visible_message(
-			span_danger("[user] stabs [user.p_them()]self in the eyes with [item]!"),
-			span_userdanger("You stab yourself in the eyes with [item]!"),
-		)
+	if(HAS_TRAIT(target, TRAIT_XCARD_EYE_TRAUMA)) //ORBSTATION
+		if (target == user)
+			user.visible_message(
+				span_danger("[user] stabs [user.p_them()]self in the face with [item]!"),
+				span_userdanger("You stab yourself in the face with [item]!"),
+			)
+		else
+			target.visible_message(
+				span_danger("[user] stabs [target] in the face with [item]!"),
+				span_userdanger("[user] stabs you in the face with [item]!"),
+			)
 	else
-		target.visible_message(
-			span_danger("[user] stabs [target] in the eye with [item]!"),
-			span_userdanger("[user] stabs you in the eye with [item]!"),
-		)
+		if (target == user)
+			user.visible_message(
+				span_danger("[user] stabs [user.p_them()]self in the eyes with [item]!"),
+				span_userdanger("You stab yourself in the eyes with [item]!"),
+			)
+		else
+			target.visible_message(
+				span_danger("[user] stabs [target] in the eye with [item]!"),
+				span_userdanger("[user] stabs you in the eye with [item]!"),
+			)
 
 	if (target_limb)
 		target.apply_damage(damage, BRUTE, target_limb)
 	else
 		target.take_bodypart_damage(damage)
 
-	target.add_mood_event("eye_stab", /datum/mood_event/eye_stab)
+	if(HAS_TRAIT(target, TRAIT_XCARD_EYE_TRAUMA)) //ORBSTATION
+		target.add_mood_event("face_stab", /datum/mood_event/face_stab)
+	else
+		target.add_mood_event("eye_stab", /datum/mood_event/eye_stab)
 
 	log_combat(user, target, "attacked", "[item.name]", "(Combat mode: [user.combat_mode ? "On" : "Off"])")
+
+	if(HAS_TRAIT(target, TRAIT_XCARD_EYE_TRAUMA)) //ORBSTATION
+		if(prob(30)) //30% chance that a piercing wound happens
+			var/type_wound = pick(list(/datum/wound/pierce/severe, /datum/wound/pierce/moderate))
+			target_limb.force_wound_upwards(type_wound)
+		return
 
 	var/obj/item/organ/internal/eyes/eyes = target.getorganslot(ORGAN_SLOT_EYES)
 	if (!eyes)

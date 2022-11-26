@@ -147,10 +147,6 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/powered/snow_biodome)
-"aH" = (
-/mob/living/simple_animal/hostile/skeleton/eskimo,
-/turf/open/floor/wood,
-/area/ruin/powered/snow_biodome)
 "aI" = (
 /obj/structure/flora/bush/snow/style_random,
 /turf/open/misc/asteroid/snow,
@@ -240,6 +236,15 @@
 /obj/machinery/light/directional/south,
 /turf/open/misc/ice,
 /area/ruin/powered/snow_biodome)
+"cn" = (
+/mob/living/simple_animal/hostile/skeleton/eskimo,
+/turf/open/floor/wood,
+/area/ruin/powered/snow_biodome)
+"cv" = (
+/obj/structure/chair/stool/directional/south,
+/mob/living/simple_animal/hostile/skeleton/eskimo,
+/turf/open/floor/pod/dark,
+/area/ruin/powered/snow_biodome)
 "dS" = (
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/pod/dark,
@@ -256,24 +261,18 @@
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/pod/dark,
 /area/ruin/powered/snow_biodome)
-"gz" = (
-/obj/structure/chair/stool/directional/south,
-/mob/living/simple_animal/hostile/skeleton/eskimo,
-/turf/open/floor/pod/dark,
-/area/ruin/powered/snow_biodome)
-"hr" = (
-/mob/living/simple_animal/hostile/skeleton/eskimo,
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/turf/open/floor/wood,
-/area/ruin/powered/snow_biodome)
 "hA" = (
 /obj/machinery/light/built/directional/north,
 /obj/effect/mapping_helpers/no_lava,
 /turf/open/floor/pod/dark{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
+/area/ruin/powered/snow_biodome)
+"lH" = (
+/obj/machinery/computer/monitor{
+	dir = 1
+	},
+/turf/open/floor/pod/dark,
 /area/ruin/powered/snow_biodome)
 "og" = (
 /turf/open/floor/iron/stairs{
@@ -344,6 +343,13 @@
 /obj/item/pen,
 /obj/item/paper,
 /turf/open/floor/pod/dark,
+/area/ruin/powered/snow_biodome)
+"Be" = (
+/mob/living/simple_animal/hostile/skeleton/eskimo,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/wood,
 /area/ruin/powered/snow_biodome)
 "BM" = (
 /obj/effect/turf_decal/siding/wood/corner{
@@ -448,12 +454,6 @@
 /obj/structure/filingcabinet,
 /turf/open/floor/pod/dark,
 /area/ruin/powered/snow_biodome)
-"UM" = (
-/obj/machinery/computer/monitor{
-	dir = 1
-	},
-/turf/open/floor/pod/dark,
-/area/ruin/powered/snow_biodome)
 "VE" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
@@ -551,8 +551,8 @@ HP
 HP
 tl
 PK
-gz
-UM
+cv
+lH
 Wg
 ak
 ak
@@ -894,7 +894,7 @@ aq
 aq
 aq
 aE
-aH
+cn
 at
 aq
 aq
@@ -923,7 +923,7 @@ Wg
 ah
 Wg
 Wg
-hr
+Be
 at
 at
 at
@@ -1053,7 +1053,7 @@ aj
 ay
 at
 at
-aH
+cn
 bx
 aN
 aq
@@ -1380,7 +1380,7 @@ Wg
 Wg
 HR
 eb
-gz
+cv
 Oj
 JZ
 KS

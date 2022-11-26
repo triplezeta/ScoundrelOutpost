@@ -183,14 +183,35 @@ GLOBAL_LIST_INIT(chasm_storage, list())
 		dropped_thing.throw_at(get_edge_target_turf(parent, pick(GLOB.alldirs)), rand(1, 10), rand(1, 10))
 
 	if (isliving(dropped_thing))
-		var/mob/living/fallen_mob = dropped_thing
-		if(fallen_mob.stat != DEAD)
-			fallen_mob.investigate_log("has died from falling into a chasm.", INVESTIGATE_DEATHS)
-			fallen_mob.death(TRUE)
-			fallen_mob.notransform = FALSE
-			fallen_mob.apply_damage(300)
+		on_living_fallen(dropped_thing) // ORBSTATION: it doesnt kill you any more
 
 	falling_atoms -= falling_ref
+
+// ORBSTATION: hurts you and then start climbing out
+/datum/component/chasm/proc/on_living_fallen(mob/living/fallen_mob)
+	fallen_mob.apply_damage(20)
+	fallen_mob.notransform = FALSE
+	var/mob/living/carbon/carbon_mob = fallen_mob
+	if (istype(carbon_mob))
+		var/obj/item/bodypart/wound_part = pick(carbon_mob.bodyparts)
+		if (IS_ORGANIC_LIMB(wound_part))
+			wound_part.force_wound_upwards(/datum/wound/blunt/moderate)
+	try_climb_out(fallen_mob)
+
+// ORBSTATION: start trying to climb out of this goddamn chasm
+/datum/component/chasm/proc/try_climb_out(mob/living/fallen_mob)
+	if (fallen_mob.stat == DEAD)
+		return
+	to_chat(fallen_mob, span_warning("You begin trying to climb out of the chasm!"))
+	if (!do_after(fallen_mob, 10 SECONDS, get_turf(fallen_mob),
+		IGNORE_HELD_ITEM | IGNORE_INCAPACITATED | IGNORE_SLOWDOWNS, extra_checks = CALLBACK(src, PROC_REF(is_alive), fallen_mob)))
+		try_climb_out(fallen_mob) // If you're not dead you're not giving in
+		return
+	on_revive(fallen_mob) // This seems silly but it does what we want it to do
+
+// ORBSTATION: returns false if you died
+/datum/component/chasm/proc/is_alive(mob/living/fallen_mob)
+	return fallen_mob.stat != DEAD
 
 /**
  * Called when something has left the chasm depths storage.
@@ -218,9 +239,9 @@ GLOBAL_LIST_INIT(chasm_storage, list())
 	parent.visible_message(span_boldwarning("After a long climb, [escapee] leaps out of [parent]!"))
 	ADD_TRAIT(escapee, TRAIT_MOVE_FLYING, CHASM_TRAIT) //Otherwise they instantly fall back in
 	escapee.forceMove(get_turf(parent))
-	escapee.throw_at(get_edge_target_turf(parent, pick(GLOB.alldirs)), rand(1, 10), rand(1, 10))
+	escapee.throw_at(get_edge_target_turf(parent, pick(GLOB.alldirs)), rand(1, 10), 4)
 	REMOVE_TRAIT(escapee, TRAIT_MOVE_FLYING, CHASM_TRAIT)
-	escapee.Paralyze(20 SECONDS, TRUE)
+	escapee.Paralyze(5 SECONDS, TRUE)
 	UnregisterSignal(escapee, COMSIG_LIVING_REVIVE)
 
 #undef CHASM_TRAIT

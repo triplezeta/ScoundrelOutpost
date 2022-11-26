@@ -63,11 +63,9 @@ GLOBAL_LIST_INIT_TYPED(cell_line_tables, /list, list(
 	CELL_LINE_TABLE_NETHER = list(/datum/micro_organism/cell_line/netherworld = 1),
 	CELL_LINE_TABLE_CLOWN = list(
 		/datum/micro_organism/cell_line/clown/bananaclown = 1,
-		/datum/micro_organism/cell_line/clown/glutton = 1,
 		/datum/micro_organism/cell_line/clown/longclown = 1,
 	),
 
-	CELL_LINE_TABLE_GLUTTON = list(/datum/micro_organism/cell_line/clown/glutton = 1),
 	CELL_LINE_TABLE_FROG = list(/datum/micro_organism/cell_line/frog = 1),
 	CELL_LINE_TABLE_WALKING_MUSHROOM = list(/datum/micro_organism/cell_line/walking_mushroom = 1),
 	CELL_LINE_TABLE_QUEEN_BEE = list(/datum/micro_organism/cell_line/queen_bee = 1),

@@ -1,0 +1,11 @@
+Vox and Kepori sounds made by Andrea 52, aka skylord-a52. 
+
+Licensed under CC BY-NC-SA 4.0, according to the license of the source material. This license is similar to the GNU license used by the rest of tgstation, with the restriction that the media or its derivatives not be used for commercial purposes.
+
+	https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+
+Made in FL Studio using samples from "World's Weirdest Bird Sounds" (parts one and two) by Youtube channel Bird Kind, also licensed under CC BY-NC-SA 4.0:
+
+	https://www.youtube.com/watch?v=Ray5GGBlZHk
+	https://www.youtube.com/watch?v=x3luv_nZDzY

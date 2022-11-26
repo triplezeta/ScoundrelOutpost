@@ -130,12 +130,20 @@
 	reqs = list(/obj/item/bedsheet = 1)
 	category = CAT_CLOTHING
 
-/datum/crafting_recipe/lizardboots
+/datum/crafting_recipe/cowboyboots
+	name = "Cowboy Boots"
+	result = /obj/item/clothing/shoes/cowboy
+	reqs = list(/obj/item/stack/sheet/leather = 2)
+	time = 4.5 SECONDS
+	category = CAT_CLOTHING
+
+//ORBSTATION REMOVAL
+/*/datum/crafting_recipe/lizardboots
 	name = "Lizard Skin Boots"
 	result = /obj/effect/spawner/random/clothing/lizardboots
 	reqs = list(/obj/item/stack/sheet/animalhide/lizard = 1, /obj/item/stack/sheet/leather = 1)
 	time = 6 SECONDS
-	category = CAT_CLOTHING
+	category = CAT_CLOTHING*/
 
 /datum/crafting_recipe/prisonsuit
 	name = "Prisoner Uniform (Suit)"
