@@ -47,8 +47,8 @@
 	if (SSradiation.wearing_rad_protected_clothing(H))
 		return
 
-	//H.random_mutate_unique_identity()
-	//H.random_mutate_unique_features()
+	H.random_mutate_unique_identity()
+	H.random_mutate_unique_features()
 
 	if(prob(50))
 		if(prob(90))
