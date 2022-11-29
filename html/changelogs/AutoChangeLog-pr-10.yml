@@ -1,0 +1,5 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscadd: "many new environmental textures"
+  - code_imp: "windows now smooth into walls"
