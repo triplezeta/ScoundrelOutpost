@@ -1,0 +1,5 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscdel: "climbing speed is no longer effected by what you're holding"
+  - balance: "climbing is faster"
