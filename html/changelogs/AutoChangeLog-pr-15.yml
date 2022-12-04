@@ -1,0 +1,7 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscadd: "new roles"
+  - rscadd: "role closets"
+  - rscadd: "map changes"
+  - rscdel: "old roles"
