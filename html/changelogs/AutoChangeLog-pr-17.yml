@@ -1,0 +1,6 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscdel: "lathe and techfab taxes. vendors are now free"
+  - rscdel: "commented out many custom_price and custom_premium_price instances"
+  - balance: "cargo listings for vendor restock units have had their prices adjusted"
