@@ -1,0 +1,6 @@
+author: "psytc"
+delete-after: True
+changes:
+  - balance: "reduced the effect of bleeding on slash and piercing wounds"
+  - balance: "reduced the slowdown on limping for bone wounds"
+  - soundadd: "new slash wound sound"
