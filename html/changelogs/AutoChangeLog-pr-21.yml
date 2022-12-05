@@ -1,0 +1,4 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscadd: "added defender pistol to many roles"
