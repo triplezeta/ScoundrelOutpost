@@ -7,11 +7,12 @@
 	righthand_file = 'icons/mob/inhands/equipment/jetpacks_righthand.dmi'
 	w_class = WEIGHT_CLASS_BULKY
 	distribute_pressure = ONE_ATMOSPHERE * O2STANDARD
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	actions_types = list(/datum/action/item_action/set_internals, /datum/action/item_action/toggle_jetpack, /datum/action/item_action/jetpack_stabilization)
 	var/gas_type = /datum/gas/oxygen
 	var/on = FALSE
 	var/stabilizers = FALSE
-	var/full_speed = TRUE // If the jetpack will have a speedboost in space/nograv or not
+	var/full_speed = FALSE // If the jetpack will have a speedboost in space/nograv or not
 	var/datum/callback/get_mover
 	var/datum/callback/check_on_move
 
@@ -134,37 +135,25 @@
 	desc = "A jetpack made from two air tanks, a fire extinguisher and some atmospherics equipment. It doesn't look like it can hold much."
 	icon_state = "jetpack-improvised"
 	inhand_icon_state = "jetpack-improvised"
-	worn_icon = null
 	worn_icon_state = "jetpack-improvised"
-	volume = 20 //normal jetpacks have 70 volume
+	volume = 35 //normal jetpacks have 70 volume
 	gas_type = null //it starts empty
-	full_speed = FALSE //moves at modsuit jetpack speeds
-
-/obj/item/tank/jetpack/improvised/allow_thrust(num)
-	var/mob/user = get_user()
-	if(!user)
-		return FALSE
-	if(rand(0,250) == 0)
-		to_chat(user, span_notice("You feel your jetpack's engines cut out."))
-		turn_off(user)
-		return
-	return ..()
 
 /obj/item/tank/jetpack/void
-	name = "void jetpack (oxygen)"
-	desc = "It works well in a void."
+	name = "void jetpack"
+	desc = "It works well in a void. It has an oxygen label on the tank."
 	icon_state = "jetpack-void"
 	inhand_icon_state = "jetpack-void"
 
 /obj/item/tank/jetpack/oxygen
-	name = "jetpack (oxygen)"
-	desc = "A tank of compressed oxygen for use as propulsion in zero-gravity areas. Use with caution."
+	name = "jetpack"
+	desc = "A tank of compressed gas for use as propulsion in zero-gravity areas. Use with caution. It has an oxygen label on the tank."
 	icon_state = "jetpack"
 	inhand_icon_state = "jetpack"
 
 /obj/item/tank/jetpack/oxygen/harness
-	name = "jet harness (oxygen)"
-	desc = "A lightweight tactical harness, used by those who don't want to be weighed down by traditional jetpacks."
+	name = "jet harness"
+	desc = "A lightweight tactical harness, used by those who don't want to be weighed down by traditional jetpacks. It has an oxygen label on the tank."
 	icon_state = "jetpack-mini"
 	inhand_icon_state = "jetpack-black"
 	volume = 40
@@ -173,26 +162,71 @@
 
 /obj/item/tank/jetpack/oxygen/captain
 	name = "captain's jetpack"
-	desc = "A compact, lightweight jetpack containing a high amount of compressed oxygen."
+	desc = "A compact, lightweight jetpack containing a high amount of compressed gas. It has an oxygen label on the tank."
 	icon_state = "jetpack-captain"
 	inhand_icon_state = "jetpack-captain"
 	w_class = WEIGHT_CLASS_NORMAL
 	volume = 90
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF //steal objective items are hard to destroy.
-	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 
 /obj/item/tank/jetpack/oxygen/security
-	name = "security jetpack (oxygen)"
-	desc = "A tank of compressed oxygen for use as propulsion in zero-gravity areas by security forces."
+	name = "red jetpack"
+	desc = "A tank of compressed gas for use as propulsion in zero-gravity areas. Use with caution. It has an oxygen label on the tank."
 	icon_state = "jetpack-sec"
 	inhand_icon_state = "jetpack-sec"
 
 
 
 /obj/item/tank/jetpack/carbondioxide
-	name = "jetpack (carbon dioxide)"
-	desc = "A tank of compressed carbon dioxide for use as propulsion in zero-gravity areas. Painted black to indicate that it should not be used as a source for internals."
+	name = "black jetpack"
+	desc = "A tank of compressed gas for use as propulsion in zero-gravity areas. Use with caution. It has a carbon dioxide label on the tank."
 	icon_state = "jetpack-black"
 	inhand_icon_state = "jetpack-black"
 	distribute_pressure = 0
 	gas_type = /datum/gas/carbon_dioxide
+
+
+
+// scoundrel content - advanced jetpacks
+/obj/item/tank/jetpack/advanced
+	name = "advanced jetpack"
+	desc = "A back-mounted propulsion system based on rapid expulsion of compressed gas. It's equipped with a recharging ion-propulsor for space travel. It has an oxygen label on the tank."
+	icon_state = "jetpack-mini"
+	inhand_icon_state = "jetpack-black"
+	actions_types = list(/datum/action/item_action/set_internals, /datum/action/item_action/toggle_jetpack, /datum/action/item_action/jetpack_stabilization, /datum/action/item_action/jetboost)
+// scoundrel content - jetpack boost
+	var/jumpdistance = 0 //-1 from to see the actual distance, e.g 4 goes over 3 tiles
+	var/jumpspeed = 1.5
+	var/recharging_rate = 60 //default 6 seconds between each dash
+	var/recharging_time = 0 //time until next dash
+
+/obj/item/tank/jetpack/advanced/ui_action_click(mob/user, action)
+	if(istype(action, /datum/action/item_action/toggle_jetpack))
+		cycle(user)
+	else if(istype(action, /datum/action/item_action/jetpack_stabilization))
+		if(on)
+			set_stabilizers(!stabilizers)
+			to_chat(user, span_notice("You turn the jetpack stabilization [stabilizers ? "on" : "off"]."))
+	
+	// scoundrel content - jump boots (shoes/bhop) code
+	else if(istype(action, /datum/action/item_action/jetboost))
+		if(!isliving(user))
+			return
+
+		if(recharging_time > world.time)
+			to_chat(user, span_warning("The jetpack's internal propulsion needs to recharge still!"))
+			return
+
+		var/atom/target = get_edge_target_turf(user, user.dir) //gets the user's direction
+
+		ADD_TRAIT(user, TRAIT_MOVE_FLOATING, LEAPING_TRAIT)  //Throwing itself doesn't protect mobs against lava (because gulag).
+		if (user.throw_at(target, jumpdistance, jumpspeed, spin = FALSE, diagonals_first = TRUE, callback = TRAIT_CALLBACK_REMOVE(user, TRAIT_MOVE_FLOATING, LEAPING_TRAIT)))
+			playsound(src, 'sound/effects/stealthoff.ogg', 50, TRUE, TRUE)
+			user.visible_message(span_warning("[usr] fires a jet of ion particles from their jetpack!"))
+			recharging_time = world.time + recharging_rate
+		else
+			to_chat(user, span_warning("Something prevents you from boosting!"))
+	// scoundrel content ^^^
+
+	else
+		toggle_internals(user)
