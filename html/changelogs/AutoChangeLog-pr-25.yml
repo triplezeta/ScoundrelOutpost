@@ -1,0 +1,7 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscadd: "advanced jetpack"
+  - rscadd: "several jetpack names and descriptions"
+  - rscadd: "any jetpack can now be attached to spacesuits"
+  - balance: "jetpacks no longer come with a speedboost by default"
