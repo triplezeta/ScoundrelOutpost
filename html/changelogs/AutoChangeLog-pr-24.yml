@@ -1,0 +1,5 @@
+author: "psytc"
+delete-after: True
+changes:
+  - balance: "mass slowdown rebalancing"
+  - config: "WALK_DELAY changed from 4 to 2"
