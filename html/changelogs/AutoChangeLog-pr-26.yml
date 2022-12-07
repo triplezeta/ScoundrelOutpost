@@ -1,0 +1,5 @@
+author: "psytc"
+delete-after: True
+changes:
+  - balance: "integrity, deflection and armor values on windows, airlocks and lockers"
+  - bugfix: "reinforced window construction was incorrectly not employing the decon_speed var"
