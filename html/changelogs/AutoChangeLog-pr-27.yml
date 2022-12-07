@@ -1,0 +1,6 @@
+author: "psytc"
+delete-after: True
+changes:
+  - balance: "syndicate bomb tc cost 11 > 5, limited stock of 1"
+  - balance: "minibomb tc cost 6 > 3, limited stock of 2"
+  - config: "bombcap 20 > 14"
