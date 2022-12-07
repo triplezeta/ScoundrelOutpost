@@ -1,0 +1,6 @@
+author: "psytc"
+delete-after: True
+changes:
+  - balance: "crates are now quicker to climb"
+  - balance: "crate and closets now share a slowdown of 0.5"
+  - code_imp: "some crate code commented out"
