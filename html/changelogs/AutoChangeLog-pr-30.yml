@@ -1,0 +1,5 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscadd: "stamina damage to bolas"
+  - balance: "bear traps have a shorter throw range\nbalance : rbolas have a shorter knockdown"
