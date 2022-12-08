@@ -1,0 +1,4 @@
+author: "psytc"
+delete-after: True
+changes:
+  - config: "admin config is now by default empty"
