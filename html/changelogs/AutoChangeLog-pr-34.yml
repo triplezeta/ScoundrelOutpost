@@ -1,0 +1,6 @@
+author: "psytc"
+delete-after: True
+changes:
+  - balance: "stamina now regenerates slowly"
+  - code_imp: "stamcrit code"
+  - code_imp: "damage slowdown code"
