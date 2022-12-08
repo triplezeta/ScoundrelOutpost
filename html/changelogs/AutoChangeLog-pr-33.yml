@@ -1,0 +1,9 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscadd: "stamina attacks to all backpack subtypes"
+  - rscadd: "error message for undefined weight classes"
+  - balance: "duffelbag speed 1 > 0.5"
+  - balance: "duffelbags can hold bulky items"
+  - balance: "bulky storage value 4 > 10"
+  - balance: "TTVs are now Huge items"
