@@ -1,0 +1,5 @@
+author: "psytc"
+delete-after: True
+changes:
+  - balance: "suppressor does not contribute to weight class"
+  - balance: "suppressor is free in the uplink"
