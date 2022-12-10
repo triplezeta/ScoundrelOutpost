@@ -1,0 +1,5 @@
+author: "psytc"
+delete-after: True
+changes:
+  - balance: "limb damage coeffs 0.75 > 1"
+  - balance: "leg removal slowdown 3 > 1"
