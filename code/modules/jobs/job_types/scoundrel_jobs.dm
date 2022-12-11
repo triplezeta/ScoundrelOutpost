@@ -42,11 +42,14 @@
 	)
 	id_trim = /datum/id_trim/job/deckhand
 	id = /obj/item/card/id/advanced
+	belt = /obj/item/storage/belt/utility/small
 	uniform = /obj/item/clothing/under/color/grey
 	suit = /obj/item/clothing/suit/jacket/spacer
 	gloves = /obj/item/clothing/gloves/fingerless
 	ears = /obj/item/radio/headset
 	shoes = /obj/item/clothing/shoes/sneakers/black
+
+//	r_pocket = 
 
 // End job
 // Start job
@@ -82,12 +85,15 @@
 	)
 	id_trim = /datum/id_trim/job/deckhand/greenhand
 	id = /obj/item/card/id/advanced
+	belt = /obj/item/storage/belt/utility/small
 	suit = /obj/item/clothing/suit/hazardvest
 	uniform = /obj/item/clothing/under/color/darkgreen
 	gloves = /obj/item/clothing/gloves/fingerless
 	ears = /obj/item/radio/headset
 	shoes = /obj/item/clothing/shoes/sneakers/black
 	l_hand = /obj/item/clipboard
+	
+//	r_pocket = 
 
 // End job
 // Start job
@@ -144,7 +150,7 @@
 	id = /obj/item/card/id/advanced
 	uniform = /obj/item/clothing/under/rank/rnd/research_director/turtleneck
 	suit = /obj/item/clothing/suit/jacket/research_director
-	belt = /obj/item/modular_computer/tablet/pda/heads/rd
+	belt = /obj/item/storage/belt/utility/small
 	neck = /obj/item/clothing/neck/stethoscope
 	ears = /obj/item/radio/headset
 	glasses = /obj/item/clothing/glasses/hud/health
@@ -153,6 +159,8 @@
 	accessory = /obj/item/clothing/accessory/armband/medblue
 	l_hand = /obj/item/storage/medkit/surgery
 	mask = /obj/item/clothing/mask/surgical
+//	l_pocket = 
+	r_pocket = /obj/item/storage/pouch/chemistry/preloaded/medical
 
 	chameleon_extras = /obj/item/stamp/cmo
 
@@ -221,6 +229,7 @@
 	accessory = /obj/item/clothing/accessory/armband/engine
 	box = /obj/item/storage/box/survival/engineer
 	l_pocket = /obj/item/modular_computer/tablet/pda/heads/ce
+//	r_pocket = 
 
 // End job
 // Start job
@@ -292,8 +301,9 @@
 	glasses = /obj/item/clothing/glasses/hud/diagnostic/sunglasses
 	gloves = /obj/item/clothing/gloves/combat
 	shoes = /obj/item/clothing/shoes/jackboots
+
 	l_pocket = /obj/item/modular_computer/tablet/pda/heads/captain
-	r_pocket = /obj/item/storage/pouch/cuffs/preloaded
+//	r_pocket = 
 
 	box = /obj/item/storage/box/survival/engineer
 
@@ -358,13 +368,14 @@
 	suit = /obj/item/clothing/suit/armor/vest
 	gloves = /obj/item/clothing/gloves/color/black
 	accessory = /obj/item/clothing/accessory/armband/hydro
-	belt = /obj/item/storage/belt/utility/full
+	belt = /obj/item/storage/belt/utility/small
 	ears = /obj/item/radio/headset
 	glasses = /obj/item/clothing/glasses/sunglasses/big
 	shoes = /obj/item/clothing/shoes/laceup
 	l_hand = /obj/item/clipboard
+
 	l_pocket = /obj/item/modular_computer/tablet/pda/heads/quartermaster
-	r_pocket = /obj/item/restraints/handcuffs/cable/zipties
+	r_pocket = /obj/item/storage/pouch/holding // move this to the locker when it becomes a steal obj
 
 	chameleon_extras = /obj/item/stamp/qm
 
@@ -428,20 +439,19 @@
 	suit = /obj/item/clothing/suit/jacket/det_suit/dark
 	backpack_contents = list(
 		/obj/item/melee/tonfa = 1,
-		/obj/item/detective_scanner = 1,
-		/obj/item/camera = 1,
 		/obj/item/gun/energy/disabler = 1,
 		/obj/item/pinpointer/crew = 1
 		)
-	belt = /obj/item/storage/belt/holster/detective/full
+	belt = /obj/item/storage/belt/utility/small
 	head = /obj/item/clothing/head/helmet/toggleable/riot
 	mask = /obj/item/clothing/mask/russian_balaclava
 	ears = /obj/item/radio/headset/heads/captain/alt
 	glasses = /obj/item/clothing/glasses/hud/health/sunglasses
 	gloves = /obj/item/clothing/gloves/color/black
 	shoes = /obj/item/clothing/shoes/jackboots
-	l_pocket = /obj/item/modular_computer/tablet/pda/detective
-	r_pocket = /obj/item/storage/pouch/cuffs/preloaded
+//	l_pocket = this should probably be a pda
+
+	r_pocket = /obj/item/storage/pouch/forensic/preloaded
 	
 	implants = list(/obj/item/implant/mindshield)
 
@@ -502,7 +512,7 @@
 	id = /obj/item/card/id/advanced
 	uniform = /obj/item/clothing/under/rank/cargo/miner/lavaland
 	suit = /obj/item/clothing/suit/jacket/spacer
-	belt = /obj/item/modular_computer/tablet/pda/shaftminer
+	belt = /obj/item/storage/belt/utility/small
 	ears = /obj/item/radio/headset
 	glasses = /obj/item/clothing/glasses/meson
 	gloves = /obj/item/clothing/gloves/color/black
