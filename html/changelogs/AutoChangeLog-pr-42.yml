@@ -1,0 +1,7 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscadd: "many new pouches"
+  - balance: "toolbelts can now hold many more items"
+  - bugfix: "a minor error in suppressors"
+  - imageadd: "many new pouch sprites"
