@@ -1,0 +1,9 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscadd: "station ordnance equipment & mass drive"
+  - rscadd: "umatter"
+  - rscadd: "overfloor safe"
+  - rscadd: "the brig and prisoner spacesuit"
+  - balance: "railings cannot be skipped in zero gravity"
+  - balance: "vendor price balance"
