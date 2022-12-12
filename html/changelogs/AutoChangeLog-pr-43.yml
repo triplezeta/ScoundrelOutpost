@@ -1,0 +1,8 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscadd: "pouch stuff"
+  - rscdel: "nothing important"
+  - balance: "some uplink ammo replaced"
+  - balance: "assemblies are now tiny"
+  - imageadd: "belt sprite"
