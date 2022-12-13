@@ -1,0 +1,7 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscadd: "cyberform species"
+  - rscadd: "printable cyberform chassis"
+  - balance: "robotic limbs now have no damage reduction and are swapped out on species switch"
+  - config: "added cyberforms to playable species"
