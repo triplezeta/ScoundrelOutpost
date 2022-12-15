@@ -1,0 +1,6 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscadd: "syndicate hardsuit"
+  - rscadd: "syndicate hardsuit + compact jetpack uplink entry, 6 tc"
+  - balance: "syndicate spacesuit is now 3 tc"
