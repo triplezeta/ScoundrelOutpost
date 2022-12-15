@@ -1,0 +1,5 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscadd: "medical pouch is no longer a subtype of chemistry pouch"
+  - balance: "medkits are now usually bulky and can deal damage"
