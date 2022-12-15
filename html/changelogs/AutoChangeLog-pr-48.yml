@@ -1,0 +1,8 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscadd: "plasmamen can have eye colors"
+  - rscadd: "plasmaman scream sound"
+  - balance: "plasmamen no longer take extra damage from physical sources"
+  - balance: "plasmamen are no longer resistant to cold or radiation"
+  - soundadd: "rattle sound"
