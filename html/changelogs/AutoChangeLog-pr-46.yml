@@ -1,0 +1,9 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscadd: "bodymod vendor"
+  - rscadd: "map changes"
+  - balance: "inflation is no longer factored into vending costs"
+  - balance: "vendors are less menacing"
+  - balance: "vendors are now slower to drag"
+  - balance: "vendors now operate without power"
