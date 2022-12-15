@@ -1,0 +1,7 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscadd: "mini-defender"
+  - balance: "defender is now normal sized"
+  - soundadd: "new disabler sound"
+  - imageadd: "new defender sprite"
