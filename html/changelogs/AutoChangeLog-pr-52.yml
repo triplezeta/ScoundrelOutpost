@@ -1,0 +1,8 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscadd: "mini toolboxes"
+  - rscadd: "mini toolbox spawners"
+  - balance: "uplink toolbox is now a mini"
+  - imageadd: "weaponscase and inhands"
+  - imageadd: "mini toolboxes"
