@@ -1,0 +1,11 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscadd: "several light fixture changes and more colored variants"
+  - rscadd: "waypost ruin and npc trader"
+  - balance: "iron walls now cost only 4 rods to build"
+  - bugfix: "indestructible iron wall opacity"
+  - bugfix: "iron walls now smooth with other walls"
+  - bugfix: "vendors can now give custom replies"
+  - imageadd: "trader npcs and fixture sprites"
+  - config: "blacklisted many space ruins from spawning"
