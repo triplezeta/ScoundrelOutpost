@@ -1,0 +1,5 @@
+author: "psytc"
+delete-after: True
+changes:
+  - balance: "rebalanced damage multiplier adjustments"
+  - code_imp: "embeds now use throwforce in the math for embed damage"
