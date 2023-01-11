@@ -1,0 +1,7 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscadd: "personal shields"
+  - rscadd: "generic_suit_allowed global list"
+  - soundadd: "a new shield folder for personal shield-related sound effects"
+  - code_imp: "shield component modifications"
