@@ -143,3 +143,23 @@
 	else
 		to_chat(M, span_warning("A selection has already been made. Self-Destructing..."))
 		return
+
+
+// scoundrel content
+/obj/item/choice_beacon/fashionable
+	name = "outfit beacon"
+	desc = "A beacon for bringing your own fashion sense with you."
+
+/obj/item/choice_beacon/fashionable/generate_display_names()
+	var/static/list/fashion_item_list
+	if(!fashion_item_list)
+		fashion_item_list = list()
+		var/list/templist = typesof(/obj/item/storage/box/fashion)
+		for(var/V in templist)
+			var/atom/A = V
+			fashion_item_list[initial(A.name)] = A
+	return fashion_item_list
+
+/obj/item/choice_beacon/fashionable/spawn_option(obj/choice,mob/living/fashionable_person)
+	new choice(get_turf(fashionable_person))
+	to_chat(fashionable_person, span_hear("You hear something crackle from the beacon for a moment before a voice speaks. \"Please stand by for a message from Sophronia Broadcasting. Message as follows: <b>Please enjoy your Sophronia Broadcasting's 'Fashion on the Frontier' Branded Apparel Set, exactly as seen in the hit show!</b> Message ends.\""))
