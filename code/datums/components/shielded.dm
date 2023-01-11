@@ -23,8 +23,26 @@
 	var/shield_inhand = FALSE
 	/// Should the shield lose charges equal to the damage dealt by a hit?
 	var/lose_multiple_charges = FALSE
+	/// Attack types that cannot be blocked.
+	var/static/list/cannot_block_types = list()
+	/// What type of damage our shield is weakagainst. If null, there are no weaknesses.
+	var/static/list/shield_weakness
+	/// The multiplier for how many charges are lost from incoming damage if that damage matches our shield weakness type
+	var/shield_weakness_multiplier = 1
+	/// What type of damage our shield is strong against. If null, there are no strengths.
+	var/static/list/shield_resistance
+	/// The multiplier for how many charges are lost from incoming damage if that damage matches our shield resistant type.
+	var/shield_resistance_multiplier = 1
+	/// Shield uses no overlay while active
+	var/no_overlay = FALSE
 	/// The item we use for recharging
 	var/recharge_path
+	/// Sound effect for while our shield is recharging passively.
+	var/recharge_sound_effect = 'sound/magic/charge.ogg'
+	var/recharge_sound_effect_volume = 100
+	/// Sound effect for when our shield is finished recharging.
+	var/recharge_finished_sound_effect = 'sound/machines/ding.ogg'
+	var/recharge_finished_sound_effect_volume = 100
 	/// The cooldown tracking when we were last hit
 	COOLDOWN_DECLARE(recently_hit_cd)
 	/// The cooldown tracking when we last replenished a charge
@@ -32,7 +50,7 @@
 	/// A callback for the sparks/message that play when a charge is used, see [/datum/component/shielded/proc/default_run_hit_callback]
 	var/datum/callback/on_hit_effects
 
-/datum/component/shielded/Initialize(max_charges = 3, recharge_start_delay = 20 SECONDS, charge_increment_delay = 1 SECONDS, charge_recovery = 1, lose_multiple_charges = FALSE, recharge_path = null, starting_charges = null, shield_icon_file = 'icons/effects/effects.dmi', shield_icon = "shield-old", shield_inhand = FALSE, run_hit_callback)
+/datum/component/shielded/Initialize(max_charges = 3, recharge_start_delay = 20 SECONDS, charge_increment_delay = 1 SECONDS, charge_recovery = 1, lose_multiple_charges = FALSE, cannot_block_types, shield_weakness, shield_weakness_multiplier = 1, shield_resistance, shield_resistance_multiplier = 1, no_overlay = FALSE, recharge_path = null, starting_charges = null, shield_icon_file = 'icons/effects/effects.dmi', shield_icon = "shield-old", shield_inhand = FALSE, run_hit_callback, recharge_sound_effect = 'sound/magic/charge.ogg', recharge_sound_effect_volume = 100, recharge_finished_sound_effect = 'sound/machines/ding.ogg', recharge_finished_sound_effect_volume = 100,)
 	if(!isitem(parent) || max_charges <= 0)
 		return COMPONENT_INCOMPATIBLE
 
@@ -41,11 +59,21 @@
 	src.charge_increment_delay = charge_increment_delay
 	src.charge_recovery = charge_recovery
 	src.lose_multiple_charges = lose_multiple_charges
+	src.cannot_block_types = cannot_block_types
+	src.shield_weakness = shield_weakness
+	src.shield_weakness_multiplier = shield_weakness_multiplier
+	src.shield_resistance = shield_resistance
+	src.shield_resistance_multiplier = shield_resistance_multiplier
+	src.no_overlay = no_overlay
 	src.recharge_path = recharge_path
 	src.shield_icon_file = shield_icon_file
 	src.shield_icon = shield_icon
 	src.shield_inhand = shield_inhand
 	src.on_hit_effects = run_hit_callback || CALLBACK(src, PROC_REF(default_run_hit_callback))
+	src.recharge_sound_effect = recharge_sound_effect
+	src.recharge_sound_effect_volume = recharge_sound_effect_volume
+	src.recharge_finished_sound_effect = recharge_finished_sound_effect
+	src.recharge_finished_sound_effect_volume = recharge_finished_sound_effect_volume
 	if(isnull(starting_charges))
 		current_charges = max_charges
 	else
@@ -94,9 +122,9 @@
 	var/obj/item/item_parent = parent
 	COOLDOWN_START(src, charge_add_cd, charge_increment_delay)
 	adjust_charge(charge_recovery) // set the number of charges to current + recovery per increment, clamped from zero to max_charges
-	playsound(item_parent, 'sound/magic/charge.ogg', 50, TRUE)
+	playsound(item_parent, recharge_sound_effect, recharge_sound_effect_volume, TRUE)
 	if(current_charges == max_charges)
-		playsound(item_parent, 'sound/machines/ding.ogg', 50, TRUE)
+		playsound(item_parent, recharge_finished_sound_effect, recharge_finished_sound_effect_volume, TRUE)
 
 /datum/component/shielded/proc/adjust_charge(change)
 	current_charges = clamp(current_charges + change, 0, max_charges)
@@ -116,10 +144,10 @@
 /datum/component/shielded/proc/lost_wearer(datum/source, mob/user)
 	SIGNAL_HANDLER
 
-	if(wearer)
-		UnregisterSignal(wearer, list(COMSIG_ATOM_UPDATE_OVERLAYS, COMSIG_PARENT_QDELETING))
+	if(user)
+		UnregisterSignal(user, list(COMSIG_ATOM_UPDATE_OVERLAYS, COMSIG_PARENT_QDELETING))
 		wearer.update_appearance(UPDATE_ICON)
-		wearer = null
+		user = null
 
 /datum/component/shielded/proc/set_wearer(mob/user)
 	wearer = user
@@ -132,7 +160,8 @@
 /datum/component/shielded/proc/on_update_overlays(atom/parent_atom, list/overlays)
 	SIGNAL_HANDLER
 
-	overlays += mutable_appearance(shield_icon_file, (current_charges > 0 ? shield_icon : "broken"), MOB_SHIELD_LAYER)
+	if(!no_overlay)
+		overlays += mutable_appearance(shield_icon_file, (current_charges > 0 ? shield_icon : "broken"), MOB_SHIELD_LAYER)
 
 /**
  * This proc fires when we're hit, and is responsible for checking if we're charged, then deducting one + returning that we're blocking if so.
@@ -145,12 +174,22 @@
 
 	if(current_charges <= 0)
 		return
+	if(attack_type in cannot_block_types)
+		return
 	. = COMPONENT_HIT_REACTION_BLOCK
 
 	var/charge_loss = 1 // how many charges do we lose
 
 	if(lose_multiple_charges) // if the shield has health like damage we'll lose charges equal to the damage of the hit
-		charge_loss = damage
+		var/incoming_damage = damage
+		if(shield_weakness)
+			if(attack_type in shield_weakness)
+				incoming_damage = clamp((damage*shield_weakness_multiplier), damage, INFINITY)
+		if(shield_resistance)
+			if(attack_type in shield_resistance)
+				incoming_damage = clamp((damage*shield_resistance_multiplier), 1, damage)
+		charge_loss = incoming_damage
+
 
 	adjust_charge(-charge_loss)
 
