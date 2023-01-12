@@ -4,10 +4,11 @@
 	icon_state = "energy"
 	w_class = WEIGHT_CLASS_BULKY
 	inhand_icon_state = null //so the human update icon uses the icon_state instead.
-	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/laser)
+	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/laser/secondary)
 	modifystate = TRUE
 	ammo_x_offset = 3
 	dual_wield_spread = 60
+	projectile_damage_multiplier = 30
 
 /obj/item/gun/energy/e_gun/add_seclight_point()
 	AddComponent(/datum/component/seclite_attachable, \
@@ -191,3 +192,4 @@
 	single_shot_type_overlay = FALSE
 	force = 8
 	throwforce = 8
+	projectile_damage_multiplier = 25

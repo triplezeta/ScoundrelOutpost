@@ -8,6 +8,7 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun)
 	ammo_x_offset = 1
 	shaded_charge = 1
+	projectile_damage_multiplier = 30
 
 /obj/item/gun/energy/laser/practice
 	name = "practice laser gun"
@@ -47,6 +48,7 @@
 	selfcharge = 1
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/hellfire/antique)
+	projectile_damage_multiplier = 25
 
 /obj/item/gun/energy/laser/captain/scattershot
 	name = "scatter shot laser rifle"

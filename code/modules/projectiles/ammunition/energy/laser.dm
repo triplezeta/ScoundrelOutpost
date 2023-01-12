@@ -10,7 +10,7 @@
 	select_name = "maim"
 
 /obj/item/ammo_casing/energy/laser/hellfire/antique
-	e_cost = 100
+	e_cost = 166
 
 /obj/item/ammo_casing/energy/lasergun
 	projectile_type = /obj/projectile/beam/laser
@@ -55,13 +55,13 @@
 
 /obj/item/ammo_casing/energy/laser/scatter
 	projectile_type = /obj/projectile/beam/scatter
-	pellets = 5
-	variance = 25
+	pellets = 7
+	variance = 15
 	select_name = "scatter"
 
 /obj/item/ammo_casing/energy/laser/scatter/disabler
 	projectile_type = /obj/projectile/beam/disabler
-	pellets = 3
+	pellets = 1
 	variance = 15
 	harmful = FALSE
 
@@ -120,3 +120,8 @@
 /obj/item/ammo_casing/energy/nanite/cryo
 	projectile_type = /obj/projectile/energy/cryo
 	select_name = "cryo"
+
+// scoundrel content
+//used as a secondary for energy guns
+/obj/item/ammo_casing/energy/laser/secondary
+	projectile_type = /obj/projectile/beam/secondary
