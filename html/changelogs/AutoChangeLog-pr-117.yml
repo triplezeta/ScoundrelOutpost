@@ -1,0 +1,8 @@
+author: "psytc"
+delete-after: True
+changes:
+  - balance: "armors rebalanced"
+  - balance: "guns & projectiles rebalanced"
+  - balance: "melee rebalanced"
+  - bugfix: "gun readouts now use damage multipliers"
+  - bugfix: "enabling a personalshield no longer changes the rules for all shields"
