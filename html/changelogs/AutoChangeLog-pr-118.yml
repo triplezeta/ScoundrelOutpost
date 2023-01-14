@@ -1,0 +1,10 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscadd: "mini foam grenade added to survival box"
+  - rscadd: "job heirlooms and generic mail list for jobs"
+  - rscadd: "leader PDAs now function as multitools with a screwdriver pen attached"
+  - rscadd: "detective and qm now have medals"
+  - rscadd: "added new outfits to the fashion beacon, and changed some others"
+  - rscdel: "mail is no longer shut down on real life sundays"
+  - balance: "smart metal foam grenade tweak"
