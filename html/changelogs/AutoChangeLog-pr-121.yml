@@ -1,0 +1,8 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscadd: "many new cargo pack articles"
+  - balance: "null rods now have more sensible and uniform stats attached to them"
+  - balance: "casings and magazine now have more sensible material values"
+  - balance: "adjusted WT stats to account for its availability in cargo"
+  - bugfix: "issue with leader PDAs"
