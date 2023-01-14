@@ -1,0 +1,4 @@
+author: "necromanceranne"
+delete-after: True
+changes:
+  - qol: "EMP Flashlights no longer waste charges EMP'ing turfs that are unaffected."
