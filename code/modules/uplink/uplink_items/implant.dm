@@ -10,6 +10,20 @@
 	surplus = 50
 
 // No progression cost
+/datum/uplink_item/implants/adrenal
+	name = "Adrenal Implant"
+	desc = "An implant injected into the body, and later activated at the user's will. It will increase user speed, \
+	reduce fatigue buildup, and mend a small amount of physical damage. Side effects include a brief period of \
+	pathological nonviolence, and overdose can be lethal. Has three charges."
+	item = /obj/item/storage/box/syndie_kit/imp_adrenal
+	cost = 10
+
+/datum/uplink_item/implants/adrenal/single
+	name = "Budget Adrenal Implant"
+	desc = "An adrenal implant with a single charge, an emergency get-out-of-jail card for agents of all expertise."
+	item = /obj/item/storage/box/syndie_kit/imp_adrenal/single
+	cost = 4
+
 /datum/uplink_item/implants/freedom
 	name = "Freedom Implant"
 	desc = "An implant injected into the body and later activated at the user's will. It will attempt to free the \

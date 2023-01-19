@@ -12,6 +12,59 @@
 				<b>Function:</b> Allows operation of implant-locked weaponry, preventing equipment from falling into enemy hands."}
 	return dat
 
+/obj/item/implant/adrenalin
+	name = "adrenal implant"
+	desc = "Removes all stuns."
+	icon_state = "adrenal"
+	uses = 3
+
+/obj/item/implant/adrenalin/single
+	uses = 1
+
+/obj/item/implant/adrenalin/get_data()
+	var/dat = {"<b>Implant Specifications:</b><BR>
+				<b>Name:</b> Cybersun Industries Adrenaline Implant<BR>
+				<b>Life:</b> Five days.<BR>
+				<b>Important Notes:</b> <font color='red'>Illegal</font><BR>
+				<HR>
+				<b>Implant Details:</b> Subjects injected with implant can activate an injection of medical cocktails.<BR>
+				<b>Function:</b> Removes stuns, increases speed, and has a mild healing effect.<BR>
+				<b>Integrity:</b> Implant can only be used three times before reserves are depleted."}
+	return dat
+
+/obj/item/implant/adrenalin/activate()
+	. = ..()
+	uses--
+	to_chat(imp_in, "<span class='notice'>You feel a sudden surge of energy!</span>")
+	playsound(loc, 'sound/scoundrel/shield/beepbeep.ogg', 15, FALSE)
+	imp_in.SetStun(0)
+	imp_in.SetKnockdown(0)
+	imp_in.SetUnconscious(0)
+	imp_in.SetParalyzed(0)
+	imp_in.SetImmobilized(0)
+
+	imp_in.adjustStaminaLoss(-100)
+	imp_in.adjustBruteLoss(-10)
+	imp_in.adjustFireLoss(-10)
+	imp_in.adjustToxLoss(-10)
+	imp_in.adjustOxyLoss(-10)
+
+	imp_in.set_resting(FALSE)
+
+	imp_in.reagents.add_reagent(/datum/reagent/medicine/ephedrine, 5)
+	imp_in.reagents.add_reagent(/datum/reagent/medicine/omnizine, 10)
+	imp_in.reagents.add_reagent(/datum/reagent/pax, 1)
+	if(!uses)
+		to_chat(imp_in, "<span class='notice'>You feel a faint electrical buzz as you use up the last adrenal!</span>")
+		qdel(src)
+
+/obj/item/implanter/adrenalin
+	name = "implanter (adrenalin)"
+	imp_type = /obj/item/implant/adrenalin
+
+/obj/item/implanter/adrenalin/single
+	imp_type = /obj/item/implant/adrenalin/single
+
 /obj/item/implant/emp
 	name = "emp implant"
 	desc = "Triggers an EMP."
