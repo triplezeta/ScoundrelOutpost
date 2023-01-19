@@ -1,0 +1,12 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscadd: "cloth can now be used to start surgery in place of drapes"
+  - rscadd: "added anonymous PDA to the uplink"
+  - balance: "tape no longer blocks surgey and is applied on attack instantly"
+  - balance: "starsuits are no longer flammable"
+  - balance: "PDAs can be stored in the belt"
+  - balance: "cablecuffs now take 10 cables to craft"
+  - bugfix: "tonfa can now be used for surgery"
+  - bugfix: "tonfa repathed"
+  - bugfix: "bola slapcrafting now uses the appropriate resources"
