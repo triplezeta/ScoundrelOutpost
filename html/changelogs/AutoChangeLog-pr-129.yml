@@ -1,0 +1,8 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscadd: "deckhands now start with switchblades"
+  - rscadd: "switchblades can now be bought from cargo"
+  - balance: "survival knife cargo cost tweaked"
+  - bugfix: "various switchblade fixes"
+  - imageadd: "new switchblade sprites"
