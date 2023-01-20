@@ -1,0 +1,6 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscadd: "added 357 derringer and executive pistol"
+  - soundadd: "energy derringer sound"
+  - imageadd: "fixed up engineering pouch sprite slightly"
