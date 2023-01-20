@@ -31,11 +31,15 @@
 	var/obj/fold_result = /obj/item/stack/sheet/cardboard
 	/// Whether it supports open and closed state icons.
 	var/has_open_closed_states = TRUE
+	///If it has a value above 0, use this to determine max storage, rather than var/spawn_count
+	var/max_storage
 
 /obj/item/storage/fancy/Initialize(mapload)
 	. = ..()
-
-	atom_storage.max_slots = spawn_count
+	if(max_storage)
+		atom_storage.max_slots = max_storage
+	else
+		atom_storage.max_slots = spawn_count
 
 /obj/item/storage/fancy/PopulateContents()
 	if(!spawn_type)
@@ -202,6 +206,12 @@
 	var/rigged_omen = FALSE
 	///Do we not have our own handling for cig overlays?
 	var/display_cigs = TRUE
+	///Whether we spawn a derringer or not. If true, we'll forcefully reduce our spawn_count amd add the old value as max_storage
+	var/derringer_spawner = FALSE
+	///What kind of derringer we are going to spawn
+	var/derringer_to_spawn = /obj/item/gun/ballistic/derringer
+	///Whether or not to use quickdraw when the storage atom is generated. Makes derringer packets less annoying to use.
+	var/is_quickdraw = TRUE
 
 /obj/item/storage/fancy/cigarettes/attack_self(mob/user)
 	if(contents.len != 0 || !spawn_coupon)
@@ -219,9 +229,17 @@
 	return
 
 /obj/item/storage/fancy/cigarettes/Initialize(mapload)
+	if(derringer_spawner)
+		max_storage = spawn_count
+		spawn_count --
 	. = ..()
-	atom_storage.quickdraw = TRUE
-	atom_storage.set_holdable(list(/obj/item/clothing/mask/cigarette, /obj/item/lighter))
+	atom_storage.quickdraw = is_quickdraw
+	atom_storage.set_holdable(list(/obj/item/clothing/mask/cigarette, /obj/item/lighter, /obj/item/gun/ballistic/derringer, /obj/item/ammo_casing))
+
+/obj/item/storage/fancy/cigarettes/PopulateContents()
+	. = ..()
+	if(derringer_spawner)
+		new derringer_to_spawn(src)
 
 /obj/item/storage/fancy/cigarettes/examine(mob/user)
 	. = ..()
@@ -366,6 +384,22 @@
 	. = ..()
 	if(!contents.len)
 		. += "[base_icon_state]_empty"
+
+// derringer
+/obj/item/storage/fancy/cigarettes/cigpack_robust/derringer
+	worn_icon_state = "empty"
+	derringer_spawner = TRUE
+	spawn_type = /obj/item/ammo_casing/a357
+	is_quickdraw = FALSE
+	item_flags = EXAMINE_SKIP
+
+/obj/item/storage/fancy/cigarettes/cigpack_carp/e_derringer
+	worn_icon_state = "empty"
+	derringer_spawner = TRUE
+	derringer_to_spawn = /obj/item/gun/ballistic/derringer/energy
+	spawn_type = /obj/item/ammo_casing/minislug
+	is_quickdraw = FALSE
+	item_flags = EXAMINE_SKIP
 
 /////////////
 //CIGAR BOX//
