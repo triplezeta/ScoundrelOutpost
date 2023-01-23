@@ -24,7 +24,7 @@
 	/// See [`code/__DEFINES/uplink.dm`]
 	var/uplink_flag = UPLINK_TRAITORS
 
-/obj/item/uplink/Initialize(mapload, owner, tc_amount = 20)
+/obj/item/uplink/Initialize(mapload, owner, tc_amount = TELECRYSTALS_DEFAULT)
 	. = ..()
 	AddComponent(/datum/component/uplink, owner, FALSE, TRUE, uplink_flag, tc_amount)
 
@@ -65,17 +65,29 @@
 	name = "dusty radio"
 	desc = "A dusty looking radio."
 
-/obj/item/uplink/old/Initialize(mapload, owner, tc_amount = 10)
+/obj/item/uplink/old/Initialize(mapload, owner, tc_amount = TELECRYSTALS_DEFAULT / 2)
 	. = ..()
 	var/datum/component/uplink/hidden_uplink = GetComponent(/datum/component/uplink)
 	hidden_uplink.name = "dusty radio"
 
 // Multitool uplink
-/obj/item/multitool/uplink/Initialize(mapload, owner, tc_amount = 20)
+/obj/item/multitool/uplink/Initialize(mapload, owner, tc_amount = TELECRYSTALS_DEFAULT)
 	. = ..()
 	AddComponent(/datum/component/uplink, owner, FALSE, TRUE, UPLINK_TRAITORS, tc_amount)
 
 // Pen uplink
-/obj/item/pen/uplink/Initialize(mapload, owner, tc_amount = 20)
+/obj/item/pen/uplink/Initialize(mapload, owner, tc_amount = TELECRYSTALS_DEFAULT)
 	. = ..()
 	AddComponent(/datum/component/uplink, owner, TRUE, FALSE, UPLINK_TRAITORS, tc_amount)
+
+
+// scoundrel content
+// intruder uplink
+/obj/item/uplink/intruder_basic/Initialize(mapload, owner, tc_amount = TELECRYSTALS_DEFAULT / 2)
+	. = ..()
+
+/obj/item/uplink/intruder_basic/locked/attack_self(mob/user, modifiers)
+	if(!faction_check(user.faction, list("Syndicate")))
+		to_chat(user, span_notice("The radio crackles with static. It seems broken."))
+		return
+	. = ..()

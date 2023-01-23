@@ -198,25 +198,25 @@
 
 //traitor
 /obj/item/storage/pouch/traitor
-	name = "pouch" //generic to make stealth easier
+	name = "suspicious pouch"
 	desc = "A compact, ergonomically designed pouch for holding more things than usual. it's decorated with shameless Syndicate symbols."
 	icon_state = "syndicate"
+	flags_inv = EXAMINE_SKIP
 
 /obj/item/storage/pouch/traitor/Initialize(mapload)
 	. = ..()
 	atom_storage.max_specific_storage = WEIGHT_CLASS_SMALL
 	atom_storage.max_slots = 6
 	atom_storage.max_total_storage = 6
+	atom_storage.silent = TRUE
 
 /obj/item/storage/pouch/traitor/nanotrasen
 	desc = "A compact, ergonomically designed pouch for holding more things than usual. it's decorated with shameless Nanotrasen symbols."
 	icon_state = "nanotrasen"
-	flags_inv = EXAMINE_SKIP
 
 /obj/item/storage/pouch/traitor/sinister
 	desc = "A compact, ergonomically designed pouch for holding more things than usual. It has a sinister look to it."
 	icon_state = "sinister red"
-	flags_inv = EXAMINE_SKIP
 
 //flares
 /obj/item/storage/pouch/flares
@@ -342,6 +342,136 @@
 /obj/item/storage/toolbox/syndicatehardsuit/PopulateContents()
 	new /obj/item/clothing/suit/hooded/hardsuit/syndicate(src)
 	new /obj/item/tank/jetpack/advanced/compact/syndicate(src)
+
+/obj/item/storage/toolbox/loadout
+	name = "arms case"
+	desc = "A hefty arms case."
+	icon = 'scoundrel/icons/obj/storage/weaponcase.dmi'
+	icon_state = "black"
+	inhand_icon_state = "weaponcase_syndicate"
+	lefthand_file = 'scoundrel/icons/mob/inhands/scoundrel_lefthand.dmi'
+	righthand_file = 'scoundrel/icons/mob/inhands/scoundrel_righthand.dmi'
+	force = 12
+	throwforce = 12
+	material_flags = NONE
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/storage/toolbox/loadout/Initialize(mapload)
+	. = ..()
+	atom_storage.max_specific_storage = WEIGHT_CLASS_SMALL
+
+// skirmisher kit
+/obj/item/storage/toolbox/loadout/skirmisher/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol(src)
+	new /obj/item/storage/pouch/tactical/ammo_9mm(src)
+	new /obj/item/storage/box/syndie_kit/imp_adrenal/single(src)
+	new /obj/item/clothing/shoes/chameleon/noslip(src)
+	new /obj/item/grenade/c4(src)
+	new /obj/item/gun/energy/recharge/ebow(src)
+	new /obj/item/personalshield/standard/advanced(src) // freebie
+	new /obj/item/storage/pouch/traitor(src) // freebie
+
+// saboteur kit
+/obj/item/storage/toolbox/loadout/saboteur/PopulateContents()
+	new /obj/item/pen/sleepy(src)
+	new /obj/item/pen/edagger(src)
+	new /obj/item/toy/plush/carpplushie/dehy_carp(src)
+	new /obj/item/toy/plush/carpplushie/dehy_carp(src)
+	new /obj/item/storage/box/syndie_kit/emp(src)
+	new /obj/item/storage/box/syndie_kit/imp_storage(src)
+	new /obj/item/grenade/c4(src)
+	new /obj/item/grenade/c4(src)
+	new /obj/item/storage/pouch/traitor(src) // freebie
+
+// sleepingcarp kit
+/obj/item/storage/toolbox/loadout/sleepingcarp/PopulateContents()
+	new /obj/item/book/granter/martial/carp(src)
+	new /obj/item/personalshield/standard/traitor(src)
+	new /obj/item/clothing/suit/hooded/carp_costume/spaceproof(src)
+	new /obj/item/clothing/mask/gas/carp(src)
+	new /obj/item/toy/plush/carpplushie/dehy_carp(src)
+
+// bomber kit
+/obj/item/storage/toolbox/loadout/bomber/PopulateContents()
+	new /obj/item/storage/backpack/duffelbag/syndie/x4(src)
+	new /obj/item/storage/pouch/traitor(src)
+	new /obj/item/grenade/syndieminibomb(src)
+	new /obj/item/grenade/syndieminibomb(src)
+	new /obj/item/grenade/c4(src)
+	new /obj/item/grenade/c4(src)
+	new /obj/item/grenade/c4(src)
+	new /obj/item/grenade/c4(src)
+	new /obj/item/sbeacondrop/bomb(src)
+
+// stealth kit
+/obj/item/storage/toolbox/loadout/stealth/PopulateContents()
+	new /obj/item/syndicate_teleporter(src)
+	new /obj/item/storage/box/syndie_kit/imp_stealth(src)
+	new /obj/item/mod/control/pre_equipped/infiltrator(src)
+	new /obj/item/storage/toolbox/mini/syndicate/loaded(src)
+	new /obj/item/soap/syndie(src)
+	new /obj/item/card/emag/doorjack(src)
+	new /obj/item/storage/pouch/tactical/xrayflash(src)
+
+// executive kit
+/obj/item/storage/toolbox/loadout/executive/PopulateContents()
+	new /obj/item/storage/box/syndie_kit/imp_storage(src)
+	new /obj/item/storage/fancy/cigarettes/cigpack_carp/e_derringer(src)
+	new /obj/item/storage/pouch/bullet/ammo_minislug(src)
+	new /obj/item/storage/pouch/bullet/ammo_minislug(src)
+	new /obj/item/storage/briefcase/launchpad(src)
+	new /obj/item/clothing/under/syndicate/sniper(src)
+	new /obj/item/clothing/shoes/laceup(src)
+	for(var/i in 1 to 15)
+		new /obj/item/stack/spacecash/c1000(src)
+
+// brutal kit
+/obj/item/storage/toolbox/loadout/brutal/PopulateContents()
+	new /obj/item/melee/tonfa/esword(src)
+	new /obj/item/gun/ballistic/revolver(src)
+	new /obj/item/ammo_box/a357(src)
+	new /obj/item/storage/pouch/bullet/ammo_357(src)
+	new /obj/item/flashlight/emp(src)
+	new /obj/item/storage/box/r_bolas(src)
+	new /obj/item/storage/fancy/cigarettes/cigpack_syndicate(src)
+
+// hitman kit
+/obj/item/storage/toolbox/loadout/hitman/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol(src)
+	new /obj/item/clothing/glasses/thermal/syndi(src)
+	new /obj/item/storage/box/syndie_kit/imp_adrenal(src)
+	new /obj/item/storage/pouch/tactical/ammo_9mm(src)
+	new /obj/item/storage/pouch/tactical/ammo_9mm_fire(src)
+
+// slippery kit
+/obj/item/storage/toolbox/loadout/slippery/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/c20r/toy/unrestricted/riot(src)
+	new /obj/item/pen/edagger(src)
+	new /obj/item/ammo_box/foambox/riot(src)
+	new /obj/item/ammo_box/foambox/riot(src)
+	new /obj/item/clothing/shoes/chameleon/noslip(src)
+	new /obj/item/grenade/clusterbuster/soap(src)
+	new /obj/item/grenade/clusterbuster/soap(src)
+	new /obj/item/grenade/clusterbuster/soap(src)
+	new /obj/item/storage/toolbox/emergency/turret(src)
+
+// operative kit
+/obj/item/storage/toolbox/loadout/operative/PopulateContents()
+	new /obj/item/storage/toolbox/syndicatehardsuit(src)
+	new /obj/item/clothing/mask/gas/syndicate(src)
+	new /obj/item/gun/ballistic/shotgun/bulldog/unrestricted(src)
+	new /obj/item/storage/belt/bandolier/lethal(src)
+	new /obj/item/card/emag/doorjack(src)
+	new /obj/item/grenade/c4(src)
+	new /obj/item/implanter/explosive(src)
+
+// shadow kit
+/obj/item/storage/toolbox/loadout/shadow/PopulateContents()
+	new /obj/item/book/granter/action/spell/shadow_walk(src)
+	new /obj/item/book/granter/action/spell/smoke/robeless/shadowkit(src)
+	new /obj/item/clothing/glasses/night(src)
+	new /obj/item/storage/box/r_bolas(src)
+//	new /obj/item/implanter/ventcrawling/deluxe(src) // add this back in when the exploits are fixed
 
 // mini toolboxes
 

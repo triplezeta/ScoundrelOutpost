@@ -141,3 +141,68 @@
 /obj/item/implanter/radio/syndicate
 	name = "implanter (internal syndicate radio)"
 	imp_type = /obj/item/implant/radio/syndicate
+
+
+// scoundrel content
+
+/*
+Can't leave the ventcrawling implants readily accessible ingame in good conscience, there are too many exploits I have yet to figure out how to deal with.
+As of writing this, exiting atmos pipes by any means other than leaving through a vent causes undesirable retention of TRAIT_MOVE_VENTCRAWLING
+and any other temporary traits. - Jan 2023
+*/
+
+// ventcrawling implant
+/obj/item/implant/ventcrawling
+	name = "contortion implant"
+	desc = "Exotic technology allows for unlikely contortion of the body."
+	actions_types = null
+	icon_state = "adrenal"
+
+/obj/item/implant/ventcrawling/implant(mob/living/target, mob/user, silent = FALSE, force = FALSE)
+	. = ..()
+	if(!.)
+		return FALSE
+	ADD_TRAIT(target, TRAIT_VENTCRAWLER_NUDE, IMPLANT_TRAIT)
+	ADD_TRAIT(target, TRAIT_VENTCRAWLER_PRESSURE_IMMUNE, IMPLANT_TRAIT)
+	return TRUE
+/obj/item/implant/ventcrawling/removed(mob/target, silent = FALSE, special = FALSE)
+	. = ..()
+	if(!.)
+		return FALSE
+	if(isliving(target))
+		var/mob/living/L = target
+		REMOVE_TRAIT(L, TRAIT_VENTCRAWLER_NUDE, IMPLANT_TRAIT)
+		REMOVE_TRAIT(L, TRAIT_VENTCRAWLER_PRESSURE_IMMUNE, IMPLANT_TRAIT)
+	return TRUE
+
+/obj/item/implanter/ventcrawling
+	name = "implanter (contortion)"
+	imp_type = /obj/item/implant/ventcrawling
+
+
+// advanced ventcrawling implant
+/obj/item/implant/ventcrawling/deluxe
+	name = "bluespace contortion implant"
+	desc = "Exotic technology allows for impossible contortion of the body."
+	actions_types = null
+
+/obj/item/implant/ventcrawling/deluxe/implant(mob/living/target, mob/user, silent = FALSE, force = FALSE)
+	. = ..()
+	if(!.)
+		return FALSE
+	ADD_TRAIT(target, TRAIT_VENTCRAWLER_ALWAYS, IMPLANT_TRAIT)
+	ADD_TRAIT(target, TRAIT_VENTCRAWLER_PRESSURE_IMMUNE, IMPLANT_TRAIT)
+	return TRUE
+/obj/item/implant/ventcrawling/deluxe/removed(mob/target, silent = FALSE, special = FALSE)
+	. = ..()
+	if(!.)
+		return FALSE
+	if(isliving(target))
+		var/mob/living/L = target
+		REMOVE_TRAIT(L, TRAIT_VENTCRAWLER_ALWAYS, IMPLANT_TRAIT)
+		REMOVE_TRAIT(L, TRAIT_VENTCRAWLER_PRESSURE_IMMUNE, IMPLANT_TRAIT)
+	return TRUE
+
+/obj/item/implanter/ventcrawling/deluxe
+	name = "implanter (bluespace contortion)"
+	imp_type = /obj/item/implant/ventcrawling/deluxe
