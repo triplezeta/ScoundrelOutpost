@@ -1,0 +1,5 @@
+author: "psytc"
+delete-after: True
+changes:
+  - bugfix: "patched parallax runtime"
+  - bugfix: "runtime on operative outfit spawn"
