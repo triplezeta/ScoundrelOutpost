@@ -1,0 +1,12 @@
+author: "psytc"
+delete-after: True
+changes:
+  - qol: "the uplink now scales up to 100 tc"
+  - balance: "uplink as a whole has seen a price balance pass"
+  - balance: "powerfist damage adjusted from 20 to 8"
+  - balance: "experimental teleporter adjusted to have 1 charge"
+  - balance: "sleeping carp damage numbers and mechanics adjusted"
+  - balance: "lone op kit adjusted"
+  - balance: "antagonist rolls rebalanced slightly"
+  - balance: "agent pistol now does 25 damage, down from 30"
+  - imageadd: "sleeping carp scroll sprite"
