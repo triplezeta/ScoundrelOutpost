@@ -1,0 +1,18 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscadd: "trackingstars and huntingstars"
+  - balance: "embedding removal tweaks"
+  - balance: "some uplink tweaks"
+  - balance: "some clothing weight adjustments"
+  - balance: "improved wound bonuses for knives and toolboxes"
+  - balance: "knife damage"
+  - balance: "engineering specialist gets apc access"
+  - balance: "traitor medkit buffed"
+  - balance: "executive traitor loadout given a unique starsuit"
+  - balance: "launchpad has more range"
+  - balance: "starsuits can now equip jetpacks if worn in the oversuit slot"
+  - balance: "tactical turtlenecks now have sensors, disabled by default"
+  - bugfix: "toy pistol overlay"
+  - imageadd: "new pouch"
+  - imageadd: "new sleepingcarp scroll"
