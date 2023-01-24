@@ -8,6 +8,8 @@
 	worn_icon_state = "starsuit"
 	lefthand_file = 'icons/mob/inhands/clothing/suits_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/clothing/suits_righthand.dmi'
+	// whether this suit uses emissives. important for drawing things properly, for some reason
+	var/will_emit = TRUE
 	alternate_worn_layer = OVER_HANDS_LAYER
 	slot_flags = ITEM_SLOT_ICLOTHING | ITEM_SLOT_OCLOTHING
 
@@ -40,7 +42,7 @@
 
 /obj/item/clothing/under/starsuit/worn_overlays(mutable_appearance/standing, isinhands, icon_file)
 	. = ..()
-	if(!isinhands)
+	if(!isinhands && will_emit)
 		. += emissive_appearance(icon_file, "[icon_state]_emissive", src, alpha = src.alpha)
 
 /obj/item/clothing/head/helmet/space/starsuit // this goes here because it's less trouble to look up
@@ -67,3 +69,19 @@
 	. = ..()
 	if(!isinhands)
 		. += emissive_appearance(icon_file, "[icon_state]_emissive", src, alpha = src.alpha)
+
+// Executive Starsuit
+/obj/item/clothing/under/starsuit/executive
+	name = "executive starsuit"
+	desc = "A mobile, form-fitting EVA suit, with decorations resembling an expensive, finely-woven silk suit. \
+	To the touch though, it feels more rugged, like denim. Unlike most starsuits, light protective padding makes it impossible to \
+	wear on a skintight layer. At least it's warm."
+	worn_icon_state = "starsuit_exec"
+	icon_state = "starsuit_exec"
+	slot_flags = ITEM_SLOT_OCLOTHING
+	will_emit = FALSE
+
+	armor = GENERIC_ARMOR_T1_SEALED
+	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
+
+	w_class = WEIGHT_CLASS_SMALL

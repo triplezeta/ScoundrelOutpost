@@ -21,6 +21,27 @@
 	surplus = 10
 	purchasable_from = ~UPLINK_NUKE_OPS
 
+/datum/uplink_item/stealthy_weapons/throwingstar_pouch
+	name = "Shuriken Pouch"
+	desc = "A stealthy pouch full of razor-sharp shurikens, guaranteed to embed in \
+	struck targets. Useful for target harassment. The pouch itself is unremarkable \
+	enough to pass over most visual examinations. Limited stock of one."
+	item = /obj/item/storage/pouch/throwingstar/loaded
+	cost = 10
+	surplus = 10
+	limited_stock = 1 // let's not go overboard
+
+/datum/uplink_item/stealthy_weapons/huntingstar_pouch
+	name = "Hunting Shuriken Pouch"
+	desc = "A stealthy pouch full of sticky, painful hunting shurikens that activate a GPS signal \
+	when embedded in a target. Not particularly lethal on their own, but a menace \
+	for victims trying to hide or evade. WARNING! When active, the contained tracking device will reveal \
+	your location to other GPS units! Limited stock of one."
+	item = /obj/item/storage/pouch/throwingstar/hunting
+	cost = 10
+	surplus = 10
+	limited_stock = 1
+
 /datum/uplink_item/stealthy_weapons/dehy_carp
 	name = "Dehydrated Space Carp"
 	desc = "Looks like a plush toy carp, but just add water and it becomes a real-life space carp! Activate in \
@@ -53,7 +74,7 @@
 			The pen holds one dose of the mixture, and can be refilled with any chemicals. Note that before the target \
 			falls asleep, they will be able to move and act."
 	item = /obj/item/pen/sleepy
-	cost = 20
+	cost = 25
 	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
 
 /datum/uplink_item/stealthy_weapons/origami_kit
