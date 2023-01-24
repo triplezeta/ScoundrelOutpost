@@ -1,0 +1,4 @@
+author: "necromanceranne"
+delete-after: True
+changes:
+  - rscadd: "Adds coffee to the stimulant injectors; adrenals and stimpack medipens."
