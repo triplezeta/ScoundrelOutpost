@@ -1,0 +1,5 @@
+author: "psytc"
+delete-after: True
+changes:
+  - balance: "roundstart traitor ruleset adjusted slightly"
+  - config: "roundstart traitor ruleset parameters changes"
