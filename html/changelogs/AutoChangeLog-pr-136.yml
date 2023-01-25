@@ -1,0 +1,10 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscadd: "commons area added to freebooter"
+  - rscadd: "freebooter robotics moved to the engineering section"
+  - rscadd: "freebooter atmos expanded"
+  - rscadd: "genetics to freebooter"
+  - rscadd: "freebooter aux dock"
+  - bugfix: "fixed a lot of active turfs on freebooter"
+  - bugfix: "ORM no longer requires an unobtainable access type"
