@@ -1,0 +1,7 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscadd: "added leader ID, provided to whoever is chosen to be leader"
+  - rscadd: "captain's spare reflavored to master ID"
+  - rscdel: "QM no longer gets the pouch of holding assigned in their outfit"
+  - balance: "acting captaincy replaced with entrusted leadership"
