@@ -143,13 +143,13 @@
 		missing -= body_part.body_zone
 		for(var/obj/item/I in body_part.embedded_objects)
 			if(I.isEmbedHarmless())
-				msg += "<B>[t_He] [t_has] [icon2html(I, user)] \a [I] stuck to [t_his] [body_part.name]!</B>\n"
+				msg += "<span class='cult'><B>[t_He] [t_has] [icon2html(I, user)] \a [I] stuck to [t_his] [body_part.name]!</B></span>\n"
 			else
-				msg += "<B>[t_He] [t_has] [icon2html(I, user)] \a [I] embedded in [t_his] [body_part.name]!</B>\n"
+				msg += "<span class='cult'><B>[t_He] [t_has] [icon2html(I, user)] \a [I] embedded in [t_his] [body_part.name]!</B></span>\n"
 
 		for(var/i in body_part.wounds)
 			var/datum/wound/iter_wound = i
-			msg += "[iter_wound.get_examine_description(user)]\n"
+			msg += "<span class='cult'>[iter_wound.get_examine_description(user)]</span>\n"
 
 	for(var/X in disabled)
 		var/obj/item/bodypart/body_part = X
@@ -194,27 +194,44 @@
 				msg += "[t_He] [t_has] minor [dna.species.brute_damage_desc].\n"
 			else if(temp < 50)
 				msg += "[t_He] [t_has] <b>moderate</b> [dna.species.brute_damage_desc]!\n"
-			else
+			else if(temp < 90)
 				msg += "<B>[t_He] [t_has] severe [dna.species.brute_damage_desc]!</B>\n"
+			else
+				msg += "<B>[t_He] [t_has] extreme [dna.species.brute_damage_desc]!</B>\n"
 
 		temp = getFireLoss()
 		if(temp)
 			if(temp < 25)
-				msg += "[t_He] [t_has] minor [dna.species.burn_damage_desc].\n"
+				msg += "<span class='engradio'>[t_He] [t_has] minor [dna.species.burn_damage_desc].</span>\n"
 			else if (temp < 50)
-				msg += "[t_He] [t_has] <b>moderate</b> [dna.species.burn_damage_desc]!\n"
+				msg += "<span class='engradio'>[t_He] [t_has] <b>moderate</b> [dna.species.burn_damage_desc]!</span>\n"
+			else if(temp < 90)
+				msg += "<span class='engradio'><B>[t_He] [t_has] severe [dna.species.burn_damage_desc]!</B></span>\n"
 			else
-				msg += "<B>[t_He] [t_has] severe [dna.species.burn_damage_desc]!</B>\n"
+				msg += "<span class='engradio'><B>[t_He] [t_has] extreme [dna.species.burn_damage_desc]!</B></span>\n"
 
 		temp = getCloneLoss()
 		if(temp)
 			if(temp < 25)
-				msg += "[t_He] [t_has] minor [dna.species.cellular_damage_desc].\n"
+				msg += "<span class='deadsay'>[t_He] [t_has] minor [dna.species.cellular_damage_desc].</span>\n"
 			else if(temp < 50)
-				msg += "[t_He] [t_has] <b>moderate</b> [dna.species.cellular_damage_desc]!\n"
+				msg += "<span class='deadsay'>[t_He] [t_has] <b>moderate</b> [dna.species.cellular_damage_desc]!</span>\n"
+			else if(temp < 90)
+				msg += "<span class='deadsay'><b>[t_He] [t_has] severe [dna.species.cellular_damage_desc]!</b></span>\n"
 			else
-				msg += "<b>[t_He] [t_has] severe [dna.species.cellular_damage_desc]!</b>\n"
+				msg += "<span class='deadsay'><b>[t_He] [t_has] extreme [dna.species.cellular_damage_desc]!</b></span>\n"
 
+		temp = getToxLoss()
+		if(temp)
+			if(temp >= 90 && !obscured)
+				msg += "<span class='green'><b>[t_He] look[p_s()] deathly ill!</b></span>\n"
+
+		temp = getOxyLoss()
+		if(temp)
+			if((temp >= 30 && temp <=120) && (!appears_dead && !obscured))
+				msg += "<span class='medradio'>[p_theyre(TRUE)] gasping for air!</span>\n"
+			else if(temp > 120 && (!appears_dead && !obscured))
+				msg += "<span class='medradio'><b>[p_theyre(TRUE)] not breathing!</b></span>\n"
 
 	if(has_status_effect(/datum/status_effect/fire_handler/fire_stacks))
 		msg += "[t_He] [t_is] covered in something flammable.\n"
@@ -279,7 +296,7 @@
 			if(reagents.has_reagent(/datum/reagent/toxin/heparin, needs_metabolizing = TRUE))
 				bleed_text += " incredibly quickly"
 
-			bleed_text += "!</B>\n"
+			bleed_text += "!</B></span>\n"
 
 		for(var/i in grasped_limbs)
 			var/obj/item/bodypart/grasped_part = i
