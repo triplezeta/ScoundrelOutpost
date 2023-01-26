@@ -1,0 +1,6 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscadd: "bluespace construction capsule to engineering specialist's locker"
+  - rscadd: "bluespace traitor capsule to the uplink"
+  - rscadd: "surgeon uplink loadout"
