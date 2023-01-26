@@ -1,0 +1,5 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscadd: "added examine indicators for oxyloss and toxloss"
+  - qol: "wound examine text given a different color"
