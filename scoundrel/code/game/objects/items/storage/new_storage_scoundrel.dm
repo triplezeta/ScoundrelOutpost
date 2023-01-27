@@ -198,6 +198,7 @@
 
 /obj/item/storage/pouch/holding/leadership/PopulateContents()
 	new /obj/item/card/id/advanced/silver/leader_spare(src)
+	new /obj/item/card/access_inscriber/choice(src)
 	new /obj/item/clothing/neck/stethoscope(src)
 	new /obj/item/door_remote/captain(src)
 	new /obj/item/paper/fluff/leadership_assignment(src)
@@ -510,6 +511,7 @@
 	new /obj/item/book/granter/action/spell/smoke/robeless/shadowkit(src)
 	new /obj/item/clothing/glasses/night(src)
 	new /obj/item/storage/box/r_bolas(src)
+	new /obj/item/card/access_inscriber/syndicate(src)
 //	new /obj/item/implanter/ventcrawling/deluxe(src) // add this back in when the exploits are fixed
 
 // surgeon kit
@@ -520,7 +522,7 @@
 	new /obj/item/storage/box/syndie_kit/chemical(src)
 	new /obj/item/disk/surgery/brainwashing(src)
 	new /obj/item/pen/sleepy(src)
-	new /obj/item/healthanalyzer/rad_laser(src)
+	new /obj/item/card/access_inscriber/syndicate(src)
 	new /obj/item/paper/fluff/poison_kit_guide(src)
 
 // mini toolboxes
