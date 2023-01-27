@@ -1,0 +1,6 @@
+author: "psytc"
+delete-after: True
+changes:
+  - balance: "uplink discounts now have limited stock"
+  - balance: "uplink discounts now have diminishing returns on cost-effectiveness"
+  - bugfix: "discounts are now actually reduced when crossing the cost threshold, rather than improved"
