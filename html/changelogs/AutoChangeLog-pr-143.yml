@@ -1,0 +1,6 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscadd: "added access inscribers"
+  - rscadd: "added syndicate access inscriber to the uplink"
+  - balance: "night surgeon & shadow kit have been provided syndicate access inscribers"
