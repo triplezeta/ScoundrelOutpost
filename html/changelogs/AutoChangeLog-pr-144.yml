@@ -1,0 +1,4 @@
+author: "psytc"
+delete-after: True
+changes:
+  - balance: "pouch max storage 3 > 5\nbalance : traitor pouch max storage 6 > 8"
