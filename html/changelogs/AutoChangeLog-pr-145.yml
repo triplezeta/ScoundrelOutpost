@@ -1,0 +1,4 @@
+author: "necromanceranne"
+delete-after: True
+changes:
+  - rscadd: "There are reports that homunculus beacons have been found inside of maintenance. Beware!"
