@@ -160,6 +160,33 @@
 			fashion_item_list[initial(A.name)] = A
 	return fashion_item_list
 
-/obj/item/choice_beacon/fashionable/spawn_option(obj/choice,mob/living/fashionable_person)
+/obj/item/choice_beacon/fashionable/spawn_option(obj/choice, mob/living/fashionable_person)
 	new choice(get_turf(fashionable_person))
 	to_chat(fashionable_person, span_hear("You hear something crackle from the beacon for a moment before a voice speaks. \"Please stand by for a message from Sophronia Broadcasting. Message as follows: <b>Please enjoy your Sophronia Broadcasting's 'Fashion on the Frontier' Branded Apparel Set, exactly as seen in the hit show!</b> Message ends.\""))
+
+/obj/item/choice_beacon/plushie
+	name = "lifeform facsimile beacon"
+	desc = "Summons a homunculus to mimic true life in a brazen effort to play god."
+
+/obj/item/choice_beacon/plushie/generate_display_names()
+	var/static/list/homunculus_list
+	if(!homunculus_list)
+		homunculus_list = list()
+		var/list/templist = subtypesof(/obj/item/toy/plush)
+		for(var/V in templist)
+			var/atom/A = V
+			homunculus_list[initial(A.name)] = A
+	return homunculus_list
+
+/obj/item/choice_beacon/plushie/spawn_option(obj/choice, mob/living/brazen_fool)
+	podspawn(list(
+		"target" = get_turf(src),
+		"style" = STYLE_CULT,
+		"spawn" = choice,
+	))
+	var/msg = span_danger("After making your selection, you notice a strange target on the ground. It might be best to step back!")
+	if(ishuman(brazen_fool))
+		var/mob/living/carbon/human/H = brazen_fool
+		if(istype(H.ears, /obj/item/radio/headset))
+			msg = "You hear something crackle from your headset for a moment before a dark voice speaks. [span_bold("The pact...is sealed.")]"
+	to_chat(brazen_fool, msg)
