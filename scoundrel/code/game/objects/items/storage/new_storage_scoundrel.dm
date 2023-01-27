@@ -16,8 +16,8 @@
 /obj/item/storage/pouch/Initialize(mapload)
 	. = ..()
 	atom_storage.max_specific_storage = WEIGHT_CLASS_SMALL
-	atom_storage.max_slots = 3
-	atom_storage.max_total_storage = 3
+	atom_storage.max_slots = 5
+	atom_storage.max_total_storage = 5
 	atom_storage.rustle_sound = FALSE
 
 //cuffs
@@ -213,8 +213,8 @@
 /obj/item/storage/pouch/traitor/Initialize(mapload)
 	. = ..()
 	atom_storage.max_specific_storage = WEIGHT_CLASS_SMALL
-	atom_storage.max_slots = 6
-	atom_storage.max_total_storage = 6
+	atom_storage.max_slots = 8
+	atom_storage.max_total_storage = 8
 	atom_storage.silent = TRUE
 
 /obj/item/storage/pouch/traitor/nanotrasen
