@@ -1,0 +1,5 @@
+author: "psytc"
+delete-after: True
+changes:
+  - balance: "crawling now lets you pass through railings"
+  - bugfix: "railings no longer block projectiles"
