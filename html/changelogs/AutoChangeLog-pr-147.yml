@@ -1,0 +1,5 @@
+author: "psytc"
+delete-after: True
+changes:
+  - balance: "carp now do less damage but have more health"
+  - balance: "dehydrated carp is now slightly stronger than normal carp"
