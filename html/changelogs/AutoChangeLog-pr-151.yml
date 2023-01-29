@@ -1,0 +1,6 @@
+author: "psytc"
+delete-after: True
+changes:
+  - balance: "desword damage reduced from 25 to 20"
+  - balance: "desword uplink price raised from 35 to 60"
+  - balance: "desword will no longer go on discount"
