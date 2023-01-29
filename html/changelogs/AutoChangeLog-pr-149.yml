@@ -1,0 +1,5 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscadd: "new traitor objectives and preference menu flavoring"
+  - rscadd: "added Troublemakers, scoundrel midrounds"
