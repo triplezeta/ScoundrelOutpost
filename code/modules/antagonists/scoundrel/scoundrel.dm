@@ -35,16 +35,25 @@
     equal parts."))
 
 /datum/antagonist/scoundrel/proc/create_objectives()
+	var/datum/objective/beatdown_objective
+	var/datum/objective/loyalty_objective
 	if(prob(75))
-		var/datum/objective/scoundrel_beatdown/beatdown_objective = new
+		beatdown_objective = new /datum/objective/scoundrel_beatdown
 		beatdown_objective.owner = owner
 		beatdown_objective.find_target()
 		beatdown_objective.completed = TRUE
 		objectives += beatdown_objective
 	if(prob(75))
-		var/datum/objective/scoundrel_loyalty/loyalty_objective = new
+		loyalty_objective = new /datum/objective/scoundrel_loyalty
 		loyalty_objective.owner = owner
 		loyalty_objective.find_target()
+		// if you get the same target for beatdown and loyalty, restarting the instance without a target
+		if(beatdown_objective) // because it will crash if beatdown is null
+			if(loyalty_objective.target == beatdown_objective.target && loyalty_objective.target != null)
+				qdel(loyalty_objective)
+				loyalty_objective = new /datum/objective/scoundrel_loyalty
+				loyalty_objective.owner = owner
+				loyalty_objective.update_explanation_text()
 		loyalty_objective.completed = TRUE
 		objectives += loyalty_objective
 
@@ -53,6 +62,7 @@
 		var/datum/objective/steal/steal_objective = new
 		steal_objective.owner = owner
 		steal_objective.find_target()
+		steal_objective.completed = TRUE
 		objectives += steal_objective
 
 	if(prob(75))
@@ -64,7 +74,7 @@
 
 	// if no objectives roll, just roll beatdown
 	if(!objectives)
-		var/datum/objective/scoundrel_beatdown/beatdown_objective = new
+		beatdown_objective = new /datum/objective/scoundrel_beatdown
 		beatdown_objective.owner = owner
 		beatdown_objective.find_target()
 		beatdown_objective.completed = TRUE
