@@ -1,0 +1,8 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscadd: "added derelict chapel to the map"
+  - rscadd: "added abandoned xenobiology to the map"
+  - rscadd: "modified the turbine room"
+  - rscadd: "added turbine setup instructions"
+  - rscdel: "removed a very easy plasmaflood vulnerability"
