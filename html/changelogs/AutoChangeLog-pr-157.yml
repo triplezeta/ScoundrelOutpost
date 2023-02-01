@@ -1,0 +1,18 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscadd: "captain gets a new armored coat"
+  - rscadd: "added vow of silence quirk"
+  - rscadd: "you can now buy construction capsules from cargo"
+  - rscdel: "removed worn sprites for tablets and pdas"
+  - balance: "trashbag is now wearable, but has fewer slots"
+  - balance: "toy pistol price raise from 5 to 15"
+  - balance: "glass table stunlock removed"
+  - balance: "energy katana damage down to 20, and no longer blocks attacks"
+  - balance: "uncalibrated teleports now deal cell damage rather than turn you into a flyman"
+  - balance: "ethereal hunger rate reduced to match humans"
+  - balance: "ethereals now develop localized magnitis when overcharged rather than a heart attack"
+  - bugfix: "you can now remove beakers from unpowered grinders"
+  - bugfix: "scoundrel role lockers should now contain the new headsets"
+  - soundadd: "wallslams now have a sound effect associated with them"
+  - spellcheck: "dart pistol renamed to syringe pistol"
