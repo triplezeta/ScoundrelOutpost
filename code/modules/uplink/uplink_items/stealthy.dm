@@ -6,7 +6,7 @@
 	category = /datum/uplink_category/stealthy
 
 /datum/uplink_item/stealthy_weapons/dart_pistol
-	name = "Dart Pistol"
+	name = "Syringe Pistol"
 	desc = "A miniaturized version of a normal syringe gun. It is very quiet when fired and can fit into any \
 			space a small item can."
 	item = /obj/item/gun/syringe/syndicate
@@ -17,7 +17,7 @@
 	desc = "An innocent-looking toy pistol designed to fire foam darts. Comes loaded with riot-grade \
 			darts effective at incapacitating a target."
 	item = /obj/item/gun/ballistic/automatic/pistol/toy/riot
-	cost = 5
+	cost = 15
 	surplus = 10
 	purchasable_from = ~UPLINK_NUKE_OPS
 
