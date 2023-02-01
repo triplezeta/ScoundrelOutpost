@@ -1,0 +1,5 @@
+author: "necromanceranne"
+delete-after: True
+changes:
+  - bugfix: "Fixes stamina damage bypassing armor checks if it was mixed damage projectiles."
+  - bugfix: "Stamina damage now correctly applies to limbs from mixed damage projectiles."
