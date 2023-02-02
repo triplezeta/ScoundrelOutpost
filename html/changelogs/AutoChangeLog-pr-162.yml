@@ -1,0 +1,7 @@
+author: "psytc"
+delete-after: True
+changes:
+  - balance: "EMPs no longer immediately stun, and do stamina & burn damage scaling with the number of limbs effected"
+  - balance: "almost every organ with an EMP effect has been rebalanced to take into account probably checks"
+  - balance: "all organs that had a chance to hardstun or kill you with a single proc have had that feature removed"
+  - spellcheck: "fixed a robotic limb healing readout"
