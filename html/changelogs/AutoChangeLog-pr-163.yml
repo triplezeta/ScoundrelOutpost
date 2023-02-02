@@ -1,0 +1,7 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscadd: "you can now craft a makeshift shield emitter out of junk & tools"
+  - qol: "examining a personal shield will now inform the player if it's missing a cell"
+  - bugfix: "EMPs should now have fully functional interactions with personal shields"
+  - bugfix: "personal shields now have an extra check to prevent some instances of starting up with no power"
