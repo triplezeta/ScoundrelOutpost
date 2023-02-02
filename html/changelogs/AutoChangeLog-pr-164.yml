@@ -1,0 +1,7 @@
+author: "psytc"
+delete-after: True
+changes:
+  - qol: "stamina hud will now provide more useful, responsive information"
+  - imageadd: "new stamina hud sprites"
+  - code_imp: "stamina huds are now determined by much cleaner code"
+  - bugfix: "stamina hud should now scale with maxHealth"
