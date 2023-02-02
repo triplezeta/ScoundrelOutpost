@@ -1,0 +1,5 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscadd: "admin equipment and admin outfits"
+  - rscadd: "a useful new admin smite"
