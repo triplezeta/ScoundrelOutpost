@@ -1,0 +1,5 @@
+author: "psytc"
+delete-after: True
+changes:
+  - balance: "fireaxes now deal a third of a window's max integrity, or their base damage, depending on whichever is higher"
+  - balance: "that means it takes 3 hits to break a window with a fireaxe now"
