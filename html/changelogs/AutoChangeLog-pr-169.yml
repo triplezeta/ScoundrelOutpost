@@ -1,0 +1,4 @@
+author: "psytc"
+delete-after: True
+changes:
+  - bugfix: "the master ID card found in the vault's safe should now have the access it's supposed to"
