@@ -1,0 +1,6 @@
+author: "psytc"
+delete-after: True
+changes:
+  - qol: "added documented defines pertaining to damage slowdown factors"
+  - balance: "the scaling damage slowdown factor has been adjusted so players should experience a more gradual slowdown, and not take as much punishment for crossing the 40 damage threshold"
+  - bugfix: "flying should now appropriately have a reduced damage slowdown"
