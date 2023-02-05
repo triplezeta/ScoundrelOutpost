@@ -1,0 +1,13 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscadd: "cash, coins and holochips can now be equipped in the ID slot"
+  - rscadd: "guns that are missing firing pins or cells now provide more helpful information on examine"
+  - rscadd: "glasses can now be stored in belts"
+  - rscdel: "space cash can no longer be bought for mining points"
+  - balance: "fireaxe can no longer be equipped to the suit slot"
+  - balance: "wheelchairs now move at a much more sensible (faster) speed"
+  - balance: "racks construct slightly faster"
+  - bugfix: "PDAs should no longer be looking for a missing sprite in the suit slot"
+  - bugfix: "chairsmashing should now respect pacifism"
+  - bugfix: "research notes now go by they/them, and can be stored in wallets and folders"
