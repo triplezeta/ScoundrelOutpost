@@ -1,0 +1,4 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscdel: "the steal objectives for goon code and the hos laser should no longer generate"
