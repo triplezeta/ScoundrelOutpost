@@ -1,0 +1,5 @@
+author: "psytc"
+delete-after: True
+changes:
+  - qol: "robotic limbs now provide better feedback for when they no longer need repair"
+  - balance: "robotic limbs are now generally faster to heal"
