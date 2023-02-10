@@ -92,6 +92,15 @@
 /obj/item/pickaxe,
 /turf/open/floor/iron/dark/textured_large,
 /area/station/cargo/storage)
+"at" = (
+/obj/machinery/button/door{
+	id = "cargo_blastwindow";
+	name = "emergency blast windows";
+	req_access = list("maint_tunnels");
+	pixel_y = -24
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/station/cargo/storage)
 "au" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/light/directional/north,
@@ -200,6 +209,9 @@
 "aM" = (
 /obj/structure/cable,
 /obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/preopen{
+	id = "south_hall_blastwindow"
+	},
 /turf/open/floor/plating,
 /area/station/hallway/primary/aft)
 "aN" = (
@@ -413,6 +425,12 @@
 	},
 /obj/effect/turf_decal/trimline/neutral/filled/line{
 	dir = 6
+	},
+/obj/machinery/button/door{
+	id = "north_hall_blastwindow";
+	name = "emergency blast windows";
+	req_access = list("maint_tunnels");
+	pixel_y = -24
 	},
 /turf/open/floor/iron/dark/textured,
 /area/station/hallway/primary)
@@ -665,6 +683,9 @@
 "cB" = (
 /obj/structure/cable,
 /obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/preopen{
+	id = "teleporter_blastwindow"
+	},
 /turf/open/floor/plating,
 /area/station/engineering/lobby)
 "cC" = (
@@ -715,6 +736,14 @@
 /obj/item/kirbyplants/potty,
 /turf/open/floor/wood/large,
 /area/station/service/bar)
+"cH" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/preopen{
+	id = "evac_blastwindow";
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/station/commons/fitness)
 "cI" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/dark/textured_large,
@@ -746,6 +775,12 @@
 	dir = 4
 	},
 /obj/machinery/light/directional/north,
+/obj/machinery/button/door{
+	id = "north_hall_blastwindow";
+	name = "emergency blast windows";
+	req_access = list("maint_tunnels");
+	pixel_y = 24
+	},
 /turf/open/floor/iron/dark/textured,
 /area/station/hallway/primary)
 "cO" = (
@@ -1145,6 +1180,12 @@
 "en" = (
 /obj/structure/reagent_dispensers/water_cooler,
 /obj/structure/sign/poster/contraband/random/directional/north,
+/obj/machinery/button/door{
+	id = "evac_blastwindow";
+	name = "emergency blast windows";
+	req_access = list("maint_tunnels");
+	pixel_x = 24
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/station/commons/fitness)
 "eo" = (
@@ -1367,6 +1408,10 @@
 /area/station/hallway/primary)
 "fg" = (
 /obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/preopen{
+	dir = 1;
+	id = "cargo_blastwindow"
+	},
 /turf/open/floor/plating,
 /area/station/cargo/storage)
 "fh" = (
@@ -2677,6 +2722,12 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/trimline/yellow/filled/line,
+/obj/machinery/button/door{
+	id = "south_hall_blastwindow";
+	name = "emergency blast windows";
+	req_access = list("maint_tunnels");
+	pixel_y = -24
+	},
 /turf/open/floor/iron/dark/textured,
 /area/station/hallway/primary/aft)
 "jJ" = (
@@ -3152,6 +3203,10 @@
 "lt" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/disposalpipe/segment,
+/obj/machinery/door/poddoor/preopen{
+	id = "ordnance_blastwindow";
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/station/maintenance/department/engine)
 "lv" = (
@@ -3662,6 +3717,12 @@
 /area/awaymission/secret/powered)
 "nl" = (
 /obj/machinery/teleport/station,
+/obj/machinery/button/door{
+	id = "teleporter_blastwindow";
+	name = "emergency blast windows";
+	req_access = list("maint_tunnels");
+	pixel_x = -24
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/station/engineering/lobby)
 "nm" = (
@@ -4126,6 +4187,16 @@
 	},
 /turf/open/floor/iron,
 /area/station/service/janitor)
+"pa" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/button/door{
+	id = "arrivals_blastdoor";
+	name = "emergency blast windows";
+	pixel_x = 24;
+	req_access = list("maint_tunnels")
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/station/hallway/primary/fore)
 "pb" = (
 /obj/structure/closet/secure_closet/bar{
 	req_access = list("maint_tunnels")
@@ -4589,6 +4660,10 @@
 /area/station/service/library/lounge)
 "qD" = (
 /obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/preopen{
+	dir = 1;
+	id = "arrivals_blastdoor"
+	},
 /turf/open/floor/plating,
 /area/station/hallway/primary/fore)
 "qE" = (
@@ -5152,6 +5227,12 @@
 /area/station/cargo/storage)
 "sF" = (
 /obj/item/kirbyplants/photosynthetic,
+/obj/machinery/button/door{
+	id = "dorms_blastwindow";
+	name = "emergency blast windows";
+	req_access = list("maint_tunnels");
+	pixel_x = -24
+	},
 /turf/open/floor/wood/large,
 /area/station/commons/dorms)
 "sG" = (
@@ -5871,6 +5952,12 @@
 /obj/structure/table,
 /obj/structure/sign/warning/vacuum/directional/north,
 /obj/machinery/light/directional/north,
+/obj/machinery/button/door{
+	id = "cargo_blastwindow";
+	name = "emergency blast windows";
+	req_access = list("maint_tunnels");
+	pixel_x = -24
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/station/cargo/storage)
 "vq" = (
@@ -6012,6 +6099,9 @@
 /area/station/service/library/lounge)
 "vV" = (
 /obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/preopen{
+	id = "dorms_blastwindow"
+	},
 /turf/open/floor/plating,
 /area/station/commons/dorms)
 "vX" = (
@@ -6046,6 +6136,13 @@
 	},
 /turf/open/floor/iron/dark/textured,
 /area/station/hallway/primary/aft)
+"wb" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/preopen{
+	id = "cargo_blastwindow"
+	},
+/turf/open/floor/plating,
+/area/station/cargo/storage)
 "wc" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/cable,
@@ -6860,6 +6957,9 @@
 /area/station/maintenance/department/engine)
 "zk" = (
 /obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/preopen{
+	id = "teleporter_blastwindow"
+	},
 /turf/open/floor/plating,
 /area/station/engineering/lobby)
 "zl" = (
@@ -7688,6 +7788,9 @@
 /area/station/commons/fitness)
 "Cm" = (
 /obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/preopen{
+	id = "south_hall_blastwindow"
+	},
 /turf/open/floor/plating,
 /area/station/hallway/primary/aft)
 "Cn" = (
@@ -8469,6 +8572,9 @@
 /area/station/service/bar)
 "Fa" = (
 /obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/preopen{
+	id = "laundry_blastwindow"
+	},
 /turf/open/floor/plating,
 /area/station/maintenance/department/crew_quarters/dorms)
 "Fb" = (
@@ -8486,6 +8592,9 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/door/airlock/public/glass,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 1
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/station/commons/fitness)
 "Fd" = (
@@ -8855,6 +8964,12 @@
 /area/station/security/brig)
 "Gy" = (
 /obj/machinery/washing_machine,
+/obj/machinery/button/door{
+	id = "laundry_blastwindow";
+	name = "emergency blast windows";
+	req_access = list("maint_tunnels");
+	pixel_x = 24
+	},
 /turf/open/floor/iron,
 /area/station/maintenance/department/crew_quarters/dorms)
 "Gz" = (
@@ -8887,6 +9002,9 @@
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/transit_tube{
 	dir = 4
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = "north_hall_blastwindow"
 	},
 /turf/open/floor/plating,
 /area/station/hallway/primary)
@@ -9770,6 +9888,12 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
+/obj/machinery/button/door{
+	id = "ordnance_blastwindow";
+	name = "emergency blast windows";
+	req_access = list("maint_tunnels");
+	pixel_y = 24
+	},
 /turf/open/floor/iron/dark,
 /area/station/maintenance/department/engine)
 "JN" = (
@@ -10204,6 +10328,10 @@
 /area/station/commons/dorms)
 "Lr" = (
 /obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/preopen{
+	id = "ordnance_blastwindow";
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/station/maintenance/department/engine)
 "Lt" = (
@@ -10683,6 +10811,12 @@
 "MX" = (
 /obj/structure/chair/wood{
 	dir = 4
+	},
+/obj/machinery/button/door{
+	id = "evac_blastwindow";
+	name = "emergency blast windows";
+	req_access = list("maint_tunnels");
+	pixel_y = -24
 	},
 /turf/open/floor/wood/large,
 /area/station/commons/fitness)
@@ -12045,6 +12179,21 @@
 	},
 /turf/open/space/basic,
 /area/space)
+"Sw" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/structure/cable,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/button/door{
+	id = "ordnance_blastwindow";
+	name = "emergency blast windows";
+	req_access = list("maint_tunnels");
+	pixel_y = 24
+	},
+/turf/open/floor/plating,
+/area/station/maintenance/department/engine)
 "Sx" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -12412,6 +12561,12 @@
 "TQ" = (
 /obj/structure/table/wood,
 /obj/structure/bedsheetbin,
+/obj/machinery/button/door{
+	id = "dorms_blastwindow";
+	name = "emergency blast windows";
+	req_access = list("maint_tunnels");
+	pixel_x = -24
+	},
 /turf/open/floor/wood/large,
 /area/station/commons/dorms)
 "TS" = (
@@ -12519,6 +12674,12 @@
 /area/station/engineering/atmos)
 "Uh" = (
 /obj/effect/spawner/random/vending/colavend,
+/obj/machinery/button/door{
+	pixel_y = 24;
+	id = "arrivals_blastdoor";
+	name = "emergency blast windows";
+	req_access = list("maint_tunnels")
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/station/hallway/primary/fore)
 "Ui" = (
@@ -12612,6 +12773,9 @@
 /area/station/maintenance/solars/port)
 "UE" = (
 /obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/preopen{
+	id = "evac_blastwindow"
+	},
 /turf/open/floor/plating,
 /area/station/commons/fitness)
 "UG" = (
@@ -12715,6 +12879,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/door/airlock/public/glass,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/iron/dark/textured_large,
 /area/station/commons/dorms)
 "UY" = (
@@ -12743,6 +12908,9 @@
 /obj/structure/transit_tube{
 	dir = 4
 	},
+/obj/machinery/door/poddoor/preopen{
+	id = "south_hall_blastwindow"
+	},
 /turf/open/floor/plating,
 /area/station/hallway/primary/aft)
 "Ve" = (
@@ -12753,6 +12921,12 @@
 /obj/machinery/light/directional/north,
 /obj/effect/turf_decal/trimline/dark_blue/filled/line{
 	dir = 1
+	},
+/obj/machinery/button/door{
+	id = "south_hall_blastwindow";
+	name = "emergency blast windows";
+	req_access = list("maint_tunnels");
+	pixel_y = 24
 	},
 /turf/open/floor/iron/dark/textured,
 /area/station/hallway/primary/aft)
@@ -12778,6 +12952,13 @@
 /obj/effect/landmark/start/scoundrel/captain_scoundrel,
 /turf/open/floor/carpet/black,
 /area/station/service/bar)
+"Vk" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/preopen{
+	id = "arrivals_blastdoor"
+	},
+/turf/open/floor/plating,
+/area/station/hallway/primary/fore)
 "Vm" = (
 /turf/open/floor/iron/dark/textured,
 /area/awaymission/secret/powered)
@@ -12886,6 +13067,12 @@
 /area/station/command/heads_quarters/rd)
 "VF" = (
 /obj/machinery/mineral/equipment_vendor,
+/obj/machinery/button/door{
+	id = "cargo_blastwindow";
+	name = "emergency blast windows";
+	req_access = list("maint_tunnels");
+	pixel_x = 24
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/station/cargo/storage)
 "VG" = (
@@ -12908,6 +13095,9 @@
 /area/station/commons/dorms)
 "VI" = (
 /obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/preopen{
+	id = "north_hall_blastwindow"
+	},
 /turf/open/floor/plating,
 /area/station/hallway/primary)
 "VJ" = (
@@ -13477,6 +13667,9 @@
 "XD" = (
 /obj/structure/cable,
 /obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/preopen{
+	id = "north_hall_blastwindow"
+	},
 /turf/open/floor/plating,
 /area/station/hallway/primary)
 "XE" = (
@@ -13968,6 +14161,10 @@
 /obj/structure/cable,
 /turf/open/floor/iron/dark/textured,
 /area/station/hallway/primary)
+"Zw" = (
+/obj/item/flashlight,
+/turf/open/floor/plating,
+/area/station/engineering)
 "Zx" = (
 /obj/structure/cable,
 /obj/item/hatchet,
@@ -31723,8 +31920,8 @@ dN
 dN
 dN
 Jm
-fg
-fg
+wb
+wb
 fg
 Wy
 MC
@@ -31732,8 +31929,8 @@ Jm
 MC
 vY
 fg
-fg
-fg
+wb
+wb
 Jm
 dN
 dN
@@ -32233,8 +32430,8 @@ dN
 dN
 dN
 Jm
-fg
-fg
+wb
+wb
 Jm
 vp
 Dj
@@ -33019,7 +33216,7 @@ CO
 sE
 EJ
 gp
-CI
+at
 Jm
 dN
 dN
@@ -33261,8 +33458,8 @@ dN
 dN
 dN
 Jm
-fg
-fg
+wb
+wb
 Jm
 yK
 Dj
@@ -39729,7 +39926,7 @@ UE
 UE
 Jx
 UE
-UE
+cH
 pp
 pp
 Mi
@@ -39986,8 +40183,8 @@ UL
 UL
 LY
 hO
-UE
-UE
+cH
+cH
 Mi
 Mi
 dN
@@ -40244,7 +40441,7 @@ mf
 KO
 ta
 eL
-UE
+cH
 pp
 Mi
 dN
@@ -40758,7 +40955,7 @@ Yi
 KO
 ta
 kP
-UE
+cH
 pp
 Mi
 dN
@@ -41015,7 +41212,7 @@ rT
 rT
 ws
 DF
-UE
+cH
 pp
 Mi
 dN
@@ -41207,21 +41404,21 @@ dN
 Mi
 Mi
 qD
-qD
-qD
-BN
-qD
-qD
-GG
-qD
-qD
+Vk
 qD
 BN
 qD
-qD
-qD
+Vk
 GG
+Vk
+Vk
 qD
+BN
+qD
+Vk
+Vk
+GG
+Vk
 GG
 nn
 bo
@@ -41734,7 +41931,7 @@ Ic
 Ag
 wm
 Qk
-KQ
+pa
 Es
 RQ
 Es
@@ -41786,7 +41983,7 @@ xU
 av
 lp
 ME
-UE
+cH
 pp
 Mi
 dN
@@ -42043,7 +42240,7 @@ Eq
 mL
 lp
 ME
-UE
+cH
 UE
 UE
 dN
@@ -42557,7 +42754,7 @@ Ys
 Ys
 lp
 ME
-UE
+cH
 UE
 UE
 dN
@@ -42814,7 +43011,7 @@ ME
 nR
 ME
 GR
-UE
+cH
 pp
 Mi
 dN
@@ -52283,7 +52480,7 @@ YA
 YA
 YA
 zo
-nH
+Sw
 Wj
 am
 bF
@@ -55887,7 +56084,7 @@ pp
 Dw
 Oj
 mA
-mA
+Zw
 mA
 lN
 lN
