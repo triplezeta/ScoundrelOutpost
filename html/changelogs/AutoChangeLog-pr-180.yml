@@ -1,0 +1,5 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscadd: "freebooter now has emergency blast doors underneath many of the station's most vulnerable windows"
+  - rscadd: "poddoors now have a horizontal directional sprite"
