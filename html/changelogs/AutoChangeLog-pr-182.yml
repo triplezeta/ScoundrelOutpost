@@ -1,0 +1,6 @@
+author: "psytc"
+delete-after: True
+changes:
+  - balance: "the bulldog now only has capacity for a single magazine"
+  - balance: "lone op no longer starts with an energy sword"
+  - balance: "lone op now gets an extra bulldog magazine rather than extra 9mm magazines"
