@@ -1,0 +1,4 @@
+author: "psytc"
+delete-after: True
+changes:
+  - balance: "lizardfolk no longer have distinct vulnerabilities or resistances to temperatures"
