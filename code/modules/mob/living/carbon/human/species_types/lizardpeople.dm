@@ -19,8 +19,6 @@
 		/obj/item/organ/external/tail/lizard = "Smooth",
 	)
 	mutanttongue = /obj/item/organ/internal/tongue/lizard
-	coldmod = 1.5
-	heatmod = 0.67
 	payday_modifier = 1.0
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
 	species_cookie = /obj/item/food/meat/slab
@@ -35,10 +33,6 @@
 	species_language_holder = /datum/language_holder/lizard
 	digitigrade_customization = DIGITIGRADE_OPTIONAL
 
-	// Lizards are coldblooded and can stand a greater temperature range than humans
-	bodytemp_heat_damage_limit = (BODYTEMP_HEAT_DAMAGE_LIMIT + 20) // This puts lizards 10 above lavaland max heat for ash lizards.
-	bodytemp_cold_damage_limit = (BODYTEMP_COLD_DAMAGE_LIMIT - 10)
-
 	ass_image = 'icons/ass/asslizard.png'
 
 	bodypart_overrides = list(
@@ -49,10 +43,6 @@
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/lizard,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/lizard,
 	)
-
-/// Lizards are cold blooded and do not stabilize body temperature naturally
-/datum/species/lizard/body_temperature_core(mob/living/carbon/human/humi, delta_time, times_fired)
-	return
 
 /datum/species/lizard/random_name(gender,unique,lastname)
 	if(unique)
@@ -106,6 +96,7 @@
 /datum/species/lizard/create_pref_temperature_perks()
 	var/list/to_add = list()
 
+/*
 	to_add += list(list(
 		SPECIES_PERK_TYPE = SPECIES_NEUTRAL_PERK,
 		SPECIES_PERK_ICON = "thermometer-empty",
@@ -114,7 +105,7 @@
 			tolerance for cold temperatures. Additionally, they cannot self-regulate their body temperature - \
 			they are as cold or as warm as the environment around them is. Stay warm!",
 	))
-
+*/
 	return to_add
 
 /*
