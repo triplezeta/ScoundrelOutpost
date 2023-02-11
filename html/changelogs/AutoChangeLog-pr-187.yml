@@ -1,0 +1,5 @@
+author: "psytc"
+delete-after: True
+changes:
+  - balance: "the syndicate bomb's timer has been raised from 90 to 120 seconds"
+  - config: "the bomb cap has been lowered from 14 to 10"
