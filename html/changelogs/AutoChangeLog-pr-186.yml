@@ -1,0 +1,5 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscadd: "the medsci specialist now gets a surgical arm implant at roundstart"
+  - balance: "surgical arm tools now have a maximum of 10 force per"
