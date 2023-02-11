@@ -1,0 +1,6 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscadd: "minor tweaks and fixes to freebooter in addition to use of the new blast door buttons"
+  - balance: "blast window controls can now only be accessed by IDs with command access"
+  - imageadd: "added a new skin for buttons primarily to distinguish blast door controls"
