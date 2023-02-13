@@ -1,0 +1,5 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscadd: "abductor organs can now be found as mail loot"
+  - balance: "abductor organs no longer decay over time"
