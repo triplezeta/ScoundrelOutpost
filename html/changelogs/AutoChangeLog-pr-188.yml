@@ -1,0 +1,8 @@
+author: "psytc"
+delete-after: True
+changes:
+  - rscadd: "a CQC manual can now be bought from the uplink for 30 TC"
+  - rscadd: "added a new 'infiltration specialist' loadout kit to the uplink, with 120 TC worth of contents including a CQC manual"
+  - rscadd: "CQC manuals can now be found rarely in smuggler satchels or as mail loot"
+  - balance: "CQC has had its general combat potency drastically reduced"
+  - bugfix: "some readouts on CQC have had inaccurate information trimmed"
