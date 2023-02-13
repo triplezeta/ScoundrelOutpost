@@ -63,6 +63,7 @@
 		/obj/item/clothing/suit/hooded/cultrobes/eldritch,
 		/obj/item/clothing/suit/hooded/hardsuit/syndicate,
 		/obj/item/clothing/gloves/toagloves,
+		/obj/item/book/granter/martial/cqc,
 	)
 	var/ultra = list(
 		// 1% chance to spawn 1

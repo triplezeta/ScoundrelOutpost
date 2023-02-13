@@ -166,3 +166,8 @@ GLOBAL_LIST_INIT(announcer_keys, list(
 #define SFX_CRUNCHY_BUSH_WHACK "crunchy_bush_whack"
 #define SFX_TREE_CHOP "tree_chop"
 #define SFX_ROCK_TAP "rock_tap"
+
+// scoundrel content
+#define SFX_PUNCH2 'sound/scoundrel/weapons/punch3.ogg'
+#define SFX_KICK 'sound/effects/hit_kick.ogg'
+#define SFX_SMACK 'sound/effects/hit_punch.ogg'
