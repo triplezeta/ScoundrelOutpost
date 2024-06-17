@@ -18,6 +18,10 @@ map freebooter
 	votable
 endmap
 
+map perseus
+	votable
+endmap
+
 map metastation
 endmap
 

@@ -11,6 +11,14 @@
 	},
 	"traits": [
 		{
+			"Up": 1,
+			"Baseturf": "/turf/open/space/basic",
+			"Linkage": "Cross",
+			"Bombcap Multiplier": 0.7
+		},
+		{
+			"Down": -1,
+			"Baseturf": "/turf/open/openspace",
 			"Linkage": "Cross",
 			"Bombcap Multiplier": 0.7
 		}

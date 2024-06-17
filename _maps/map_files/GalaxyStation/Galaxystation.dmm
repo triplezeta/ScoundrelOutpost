@@ -1015,7 +1015,6 @@
 "cN" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/turf/open/space/basic,
 /turf/open/floor/iron,
 /area/space)
 "cO" = (
@@ -1738,7 +1737,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/white/textured,
-/turf/open/floor/iron/white/textured,
 /area/station/science/genetics)
 "eJ" = (
 /obj/machinery/door/poddoor/preopen{
@@ -2026,7 +2024,6 @@
 	},
 /obj/machinery/computer/scan_consolenew,
 /obj/machinery/light/directional/north,
-/turf/open/space/basic,
 /turf/open/floor/iron/white/textured,
 /area/station/science/genetics)
 "fB" = (
@@ -3199,10 +3196,6 @@
 /obj/effect/spawner/structure/window,
 /turf/open/floor/plating,
 /area/station/commons/dorms)
-"iX" = (
-/turf/open/space/basic,
-/turf/open/floor/iron,
-/area/space)
 "iY" = (
 /obj/structure/lattice,
 /turf/open/space/basic,
@@ -3506,7 +3499,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/light/directional/east,
-/turf/open/space/basic,
 /turf/open/floor/iron/white/textured,
 /area/station/science/genetics)
 "jP" = (
@@ -3923,7 +3915,6 @@
 /obj/machinery/requests_console/auto_name/directional/south,
 /obj/item/radio/intercom/directional/west,
 /obj/structure/table/reinforced/rglass,
-/turf/open/space/basic,
 /turf/open/floor/iron/white/textured,
 /area/station/science/genetics)
 "kY" = (
@@ -3997,7 +3988,6 @@
 	},
 /obj/item/storage/box/monkeycubes,
 /obj/structure/table/reinforced/rglass,
-/turf/open/space/basic,
 /turf/open/floor/iron/white/textured,
 /area/station/science/genetics)
 "lg" = (
@@ -5381,10 +5371,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/textured,
 /area/station/cargo/storage)
-"pb" = (
-/turf/open/space/basic,
-/turf/closed/wall,
-/area/station/engineering/break_room)
 "pc" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -5758,7 +5744,6 @@
 	pixel_x = 23;
 	pixel_y = 23
 	},
-/turf/open/space/basic,
 /turf/open/floor/iron,
 /area/space)
 "qe" = (
@@ -7587,7 +7572,6 @@
 	dir = 4
 	},
 /obj/machinery/camera/autoname/directional/west,
-/turf/open/space/basic,
 /turf/open/floor/iron/white/textured,
 /area/station/science/genetics)
 "uU" = (
@@ -8003,7 +7987,6 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/turf/open/space/basic,
 /turf/open/floor/iron/white/textured,
 /area/station/science/genetics)
 "vU" = (
@@ -8464,11 +8447,6 @@
 "xm" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/wood,
-/area/space)
-"xn" = (
-/obj/structure/cable,
-/turf/open/space/basic,
-/turf/open/floor/iron,
 /area/space)
 "xo" = (
 /obj/machinery/newscaster/directional/west,
@@ -9131,10 +9109,6 @@
 	},
 /turf/open/floor/grass,
 /area/station/maintenance/starboard/aft)
-"yV" = (
-/turf/open/space/openspace,
-/turf/closed/wall/r_wall,
-/area/station/engineering/supermatter/room)
 "yW" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -9243,7 +9217,6 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/turf/open/space/basic,
 /turf/open/floor/iron/white/textured,
 /area/station/science/genetics)
 "zj" = (
@@ -9677,7 +9650,6 @@
 	},
 /obj/item/storage/box/disks,
 /obj/structure/table/reinforced/rglass,
-/turf/open/space/basic,
 /turf/open/floor/iron/white/textured,
 /area/station/science/genetics)
 "At" = (
@@ -9970,7 +9942,6 @@
 	dir = 1
 	},
 /obj/machinery/dna_scannernew,
-/turf/open/space/basic,
 /turf/open/floor/iron/white/textured,
 /area/station/science/genetics)
 "Bg" = (
@@ -9990,10 +9961,6 @@
 "Bh" = (
 /obj/effect/spawner/structure/window,
 /turf/open/floor/plating,
-/area/space)
-"Bi" = (
-/turf/open/space/basic,
-/turf/closed/wall/r_wall,
 /area/space)
 "Bj" = (
 /obj/effect/turf_decal/delivery,
@@ -10569,10 +10536,6 @@
 "CT" = (
 /turf/closed/wall,
 /area/station/medical/abandoned)
-"CU" = (
-/turf/closed/wall,
-/turf/closed/wall,
-/area/space)
 "CV" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 2
@@ -10989,7 +10952,6 @@
 "Ei" = (
 /obj/effect/spawner/random/vending/snackvend,
 /obj/effect/turf_decal/bot,
-/turf/open/space/basic,
 /turf/open/floor/iron,
 /area/space)
 "Ej" = (
@@ -11279,7 +11241,6 @@
 "EX" = (
 /obj/structure/closet/l3closet/scientist,
 /obj/effect/turf_decal/delivery/red,
-/turf/open/space/basic,
 /turf/open/floor/iron,
 /area/space)
 "EY" = (
@@ -11401,10 +11362,6 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/iron/dark,
 /area/station/hallway/secondary/service)
-"Fo" = (
-/obj/effect/spawner/random/structure/crate_loot,
-/turf/open/space/openspace,
-/area/space)
 "Fp" = (
 /obj/machinery/door/poddoor{
 	id = "QMLoaddoorExt";
@@ -11466,7 +11423,6 @@
 	},
 /obj/machinery/dna_scannernew,
 /obj/machinery/airalarm/directional/west,
-/turf/open/space/basic,
 /turf/open/floor/iron/white/textured,
 /area/station/science/genetics)
 "FA" = (
@@ -11864,10 +11820,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron,
 /area/station/engineering/main)
-"GO" = (
-/turf/open/space/basic,
-/turf/closed/wall,
-/area/space)
 "GP" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -12862,7 +12814,6 @@
 /area/station/maintenance/aft/upper)
 "JW" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/turf/open/space/basic,
 /turf/open/floor/iron,
 /area/space)
 "JX" = (
@@ -12978,7 +12929,6 @@
 	pixel_x = 24;
 	pixel_y = -24
 	},
-/turf/open/space/basic,
 /turf/open/floor/iron/white/textured,
 /area/station/science/genetics)
 "Km" = (
@@ -13179,7 +13129,6 @@
 	pixel_x = 23;
 	pixel_y = 23
 	},
-/turf/open/space/basic,
 /turf/open/floor/iron/white/textured,
 /area/station/science/genetics)
 "KN" = (
@@ -13478,7 +13427,6 @@
 	},
 /obj/machinery/holopad,
 /obj/effect/turf_decal/bot,
-/turf/open/space/basic,
 /turf/open/floor/iron/white/textured,
 /area/station/science/genetics)
 "LE" = (
@@ -13665,7 +13613,6 @@
 /obj/effect/spawner/structure/window/hollow/reinforced/directional{
 	dir = 6
 	},
-/obj/structure/cable,
 /turf/open/floor/plating,
 /area/space)
 "Md" = (
@@ -16732,10 +16679,6 @@
 /obj/structure/closet/crate/bin,
 /turf/open/floor/iron/dark,
 /area/station/hallway/secondary/service)
-"Ur" = (
-/obj/effect/spawner/random/structure/crate,
-/turf/open/space/openspace,
-/area/space)
 "Us" = (
 /obj/effect/turf_decal/siding/white/end,
 /obj/effect/landmark/event_spawn,
@@ -17689,7 +17632,6 @@
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable,
 /obj/structure/table/reinforced/rglass,
-/turf/open/space/basic,
 /turf/open/floor/iron/white/textured,
 /area/station/science/genetics)
 "Xg" = (
@@ -18189,7 +18131,6 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/turf/open/space/basic,
 /turf/open/floor/iron/white/textured,
 /area/station/science/genetics)
 "Yv" = (
@@ -45883,7 +45824,7 @@ vz
 kW
 Lo
 hg
-CU
+Jv
 Cr
 BG
 BG
@@ -46115,9 +46056,9 @@ km
 Py
 km
 km
-pb
-pb
-pb
+km
+km
+km
 ye
 ye
 Jm
@@ -46140,7 +46081,7 @@ bm
 Qq
 aF
 PT
-GO
+Jv
 LH
 Jd
 Jv
@@ -46364,8 +46305,8 @@ ri
 ri
 ri
 Jh
-ri
-ri
+Jh
+Jh
 ri
 km
 XA
@@ -46649,7 +46590,7 @@ ZR
 ZR
 sj
 cN
-iX
+ri
 cN
 EX
 EX
@@ -46908,9 +46849,9 @@ Jv
 qd
 JW
 cN
-xn
-xn
-xn
+Jh
+Jh
+Jh
 OM
 Jh
 Jh
@@ -49471,14 +49412,14 @@ LH
 ri
 ri
 Wi
-GO
-GO
+Jv
+Jv
 Jv
 Id
 Jv
 Jv
-GO
-GO
+Jv
+Jv
 LH
 YB
 Jv
@@ -49735,7 +49676,7 @@ ri
 Wi
 Wi
 Wi
-GO
+Jv
 YB
 YB
 Jv
@@ -49992,7 +49933,7 @@ ri
 Wi
 Wi
 Wi
-GO
+Jv
 YB
 YB
 Jv
@@ -50249,10 +50190,10 @@ ri
 Wi
 Wi
 Wi
-GO
+Jv
 YB
 YB
-GO
+Jv
 ZR
 ZR
 ZR
@@ -56396,7 +56337,7 @@ ri
 ri
 ri
 ri
-Bi
+JH
 fe
 fe
 fe
@@ -56653,7 +56594,7 @@ ri
 ri
 ri
 ri
-Bi
+JH
 ri
 Me
 ri
@@ -56910,7 +56851,7 @@ LH
 Jv
 ri
 ri
-Bi
+JH
 ri
 Me
 ri
@@ -57167,7 +57108,7 @@ do
 ri
 ri
 ri
-Bi
+JH
 ri
 Me
 ri
@@ -57424,7 +57365,7 @@ do
 LH
 ri
 ri
-Bi
+JH
 ri
 Me
 ri
@@ -57681,7 +57622,7 @@ do
 Id
 ri
 ri
-Bi
+JH
 ri
 Me
 ri
@@ -57938,7 +57879,7 @@ JH
 JH
 ri
 ri
-Bi
+JH
 ri
 Me
 ri
@@ -58195,7 +58136,7 @@ Jd
 JH
 ri
 ri
-Bi
+JH
 ri
 Me
 ri
@@ -58207,7 +58148,7 @@ uD
 Jv
 eH
 vZ
-Bi
+JH
 ri
 Me
 ri
@@ -58452,11 +58393,11 @@ Jd
 JH
 ri
 ri
-Bi
+JH
 ri
 Me
 ri
-Bi
+JH
 VR
 Gx
 Gx
@@ -58464,7 +58405,7 @@ iK
 Jv
 eH
 vZ
-Bi
+JH
 ri
 Me
 ri
@@ -58709,11 +58650,11 @@ Jd
 JH
 ri
 ri
-Bi
+JH
 ri
 Me
 ri
-Bi
+JH
 VR
 Gx
 Gx
@@ -58721,7 +58662,7 @@ iK
 Jv
 eH
 vZ
-Bi
+JH
 ri
 Me
 ri
@@ -58966,7 +58907,7 @@ Jd
 JH
 ri
 ri
-Bi
+JH
 ri
 Me
 ri
@@ -59223,7 +59164,7 @@ JH
 JH
 Id
 Id
-Bi
+JH
 ri
 Me
 ri
@@ -59480,11 +59421,11 @@ ri
 ri
 ri
 ri
-Bi
+JH
 ri
 Me
 ri
-Bi
+JH
 Jd
 MH
 Fq
@@ -59737,7 +59678,7 @@ ri
 ri
 ri
 ri
-Bi
+JH
 ri
 Me
 ri
@@ -59994,11 +59935,11 @@ ri
 ri
 ri
 ri
-Bi
+JH
 ri
 ri
 ri
-Bi
+JH
 Jd
 Jd
 Jd
@@ -60260,9 +60201,9 @@ JH
 JH
 JH
 Id
-Bi
-Bi
-Bi
+JH
+JH
+JH
 Jv
 iW
 Iv
@@ -60520,7 +60461,7 @@ Jd
 Jd
 ZI
 MH
-Bi
+JH
 Ba
 Ba
 Ba
@@ -60777,7 +60718,7 @@ ZP
 co
 MH
 MH
-Bi
+JH
 mj
 cf
 Ba
@@ -106777,7 +106718,7 @@ nS
 nS
 nS
 wX
-ZR
+wX
 wX
 KZ
 wX
@@ -107032,7 +106973,7 @@ nS
 nS
 nS
 FY
-yV
+nS
 eJ
 eJ
 eJ
@@ -107289,7 +107230,7 @@ Uh
 Uh
 Uh
 yD
-yV
+nS
 zS
 zS
 zS
@@ -107546,7 +107487,7 @@ nO
 nO
 bT
 mb
-yV
+nS
 Zo
 Ys
 LL
@@ -127096,7 +127037,7 @@ ja
 ja
 ja
 zq
-Ur
+wX
 wX
 wX
 wX
@@ -127348,7 +127289,7 @@ wX
 wX
 wX
 wX
-Fo
+wX
 wX
 wX
 wX
