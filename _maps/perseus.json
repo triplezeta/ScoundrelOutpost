@@ -1,0 +1,23 @@
+{
+	"version": 1,
+	"map_name": "Perseus-Orion's Iron Casket",
+	"map_path": "map_files/GalaxyStation",
+	"map_file": "Galaxystation.dmm",
+	"shuttles": {
+		"emergency": "emergency_scoundrel",
+		"ferry": "ferry_kilo",
+		"cargo": "cargo_kilo",
+		"whiteship": "whiteship_delta"
+	},
+	"traits": [
+		{
+			"Linkage": "Cross",
+			"Bombcap Multiplier": 0.7
+		}
+	],
+	"job_changes": {
+		"Cook": {
+			"additional_cqc_areas": ["/area/station/service/cafeteria"]
+		}
+	}
+}
