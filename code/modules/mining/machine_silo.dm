@@ -8,7 +8,7 @@ GLOBAL_LIST_EMPTY(silo_access_logs)
 	icon_state = "silo"
 	density = TRUE
 	circuit = /obj/item/circuitboard/machine/ore_silo
-	req_access = ACCESS_VAULT
+	req_access = list(ACCESS_VAULT)
 
 	/// The machine UI's page of logs showing ore history.
 	var/log_page = 1

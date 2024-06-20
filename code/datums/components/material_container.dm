@@ -270,7 +270,9 @@
 	var/amount = materials[mat]
 	if(amount < amt)
 		return 0
-	if(charge && linked_account && !linked_account.transfer_money(using_account, get_material_cost(mat, amt), "Printed Item with Ore Silo Materials")) // could make the transaction reason include what item is printed?
+	//TODO: move the account charging to a separate proc that can be called from the procs that would call this
+	// so i can make it so that its recorded as a single charge for all your transaction :)
+	if(charge && linked_account && !linked_account.transfer_money(using_account, get_material_cost(mat, amt), "Linked Storage Materials Usage")) // could make the transaction reason include what item is printed?
 		return 0
 	materials[mat] -= amt
 	total_amount -= amt
@@ -418,12 +420,12 @@
 /datum/component/material_container/proc/get_material_cost(datum/material/mat, amt = 1, round = TRUE)
 	if(SSsecurity_level.get_current_level_as_number() >= SEC_LEVEL_RED)
 		return FALSE //It's free when it's an emergency, don't want to prevent everyone from helping
-	if(!istype(mat))
-		mat = SSmaterials._GetMaterialRef(mat) //Get the ref if necesary
-
-	var/total_cost = amt * mat.value_per_unit * cost_modifier
 	if(!linked_account)
 		return FALSE //Don't need to charge for it, return default
+	if(!istype(mat))
+		mat = SSmaterials._GetMaterialRef(mat) //Get the ref if necesary
+	var/total_cost = amt * mat.value_per_unit * cost_modifier
+
 	if(!materials[mat]) //Do we have the resource?
 		//Can't afford it, send the default price times five so that it's very profitable to put in
 		return round ? CEILING(total_cost * 5, 1) : total_cost
@@ -505,6 +507,7 @@
 			"amount" = amount,
 			"sheets" = round(amount / MINERAL_MATERIAL_AMOUNT),
 			"removable" = amount >= MINERAL_MATERIAL_AMOUNT,
+			"value" = get_material_cost(material, MINERAL_MATERIAL_AMOUNT),
 			"color" = material.greyscale_colors
 		))
 
