@@ -161,11 +161,11 @@ RLD
 			return FALSE
 		var/list/materials = list()
 		materials[GET_MATERIAL_REF(/datum/material/iron)] = 500
-		var/obj/item/card/id/card = user.get_idcard()
-		if(!card.registered_account.has_money(silo_mats.mat_container.get_material_list_cost(list(/datum/material/iron = 500), amount)))
+		var/datum/bank_account/user_account = user.get_bank_account()
+		if(user_account.has_money(silo_mats.mat_container.get_material_list_cost(list(/datum/material/iron = 500), amount)))
 			to_chat(user, "<span class='alert'>Not enough credits to use material.</span>")
 			return FALSE
-		silo_mats.mat_container.use_materials(materials, amount, card.registered_account)
+		silo_mats.mat_container.use_materials(materials, amount, user_account)
 		silo_mats.silo_log(src, "consume", -amount, "build", materials)
 		return TRUE
 

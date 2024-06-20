@@ -416,10 +416,10 @@
   * * round - Whether or not to round the cost. **MORE IMPORTANT THAN IT SEEMS, IT COULD MEAN THE DIFFERENCE BETWEEN 2000cr AND 25cr!!**
   */
 /datum/component/material_container/proc/get_material_cost(datum/material/mat, amt = 1, round = TRUE)
-	if(GLOB.security_level >= SEC_LEVEL_RED)
+	if(SSsecurity_level.get_current_level_as_number() >= SEC_LEVEL_RED)
 		return FALSE //It's free when it's an emergency, don't want to prevent everyone from helping
 	if(!istype(mat))
-		mat = SSmaterials.GetMaterialRef(mat) //Get the ref if necesary
+		mat = SSmaterials._GetMaterialRef(mat) //Get the ref if necesary
 
 	var/total_cost = amt * mat.value_per_unit * cost_modifier
 	if(!linked_account)

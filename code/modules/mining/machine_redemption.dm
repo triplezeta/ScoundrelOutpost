@@ -265,7 +265,7 @@
 				to_chat(usr, span_warning("No points to claim."))
 			return TRUE
 		if("Release")
-			var/obj/item/card/id/I = usr.get_idcard(TRUE)
+			var/datum/bank_account/user_account = usr.get_bank_account(TRUE)
 			if(!mat_container)
 				return
 			if(materials.on_hold())
@@ -293,7 +293,7 @@
 						return
 				var/sheets_to_remove = round(min(desired,50,stored_amount))
 
-				var/count = mat_container.retrieve_sheets(sheets_to_remove, mat, get_step(src, output_dir), I?.registered_account)
+				var/count = mat_container.retrieve_sheets(sheets_to_remove, mat, get_step(src, output_dir), user_account)
 				var/list/mats = list()
 				mats[mat] = MINERAL_MATERIAL_AMOUNT
 				materials.silo_log(src, "released", -count, "sheets", mats)
