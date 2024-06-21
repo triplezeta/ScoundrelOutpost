@@ -391,6 +391,7 @@
 			"name" = design.name,
 			"desc" = design.get_description(),
 			"cost" = cost,
+			"crcost" = rmat.mat_container.get_material_list_cost(design.materials), // bad implementation, please replace when possible
 			"id" = design.id,
 			"categories" = design.category,
 			"icon" = "[icon_size == size32x32 ? "" : "[icon_size] "][design.id]",
@@ -405,6 +406,10 @@
 	var/list/data = list()
 
 	data["materials"] = rmat.mat_container?.ui_data()
+	data["userBalance"] = user_account.account_balance
+	data["hasLinkedAccount"] = rmat.mat_container?.linked_account != null
+	data["linkedBalance"] = rmat.mat_container?.linked_account.account_balance
+	//data["linkedCostModifier"] = materials.mat_container?.cost_modifier
 	data["queue"] = list()
 	data["processing"] = process_queue
 
