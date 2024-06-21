@@ -149,6 +149,7 @@
 
 	data["designs"] = designs
 	data["fabName"] = name
+	data["materials"] = materials.mat_container?.ui_data()
 
 	return data
 

@@ -399,6 +399,7 @@
 		)
 
 	data["designs"] = designs
+	data["materials"] = rmat.mat_container?.ui_data()
 
 	return data
 
@@ -406,6 +407,7 @@
 	var/list/data = list()
 
 	data["materials"] = rmat.mat_container?.ui_data()
+	var/datum/bank_account/user_account = user.get_bank_account()
 	data["userBalance"] = user_account.account_balance
 	data["hasLinkedAccount"] = rmat.mat_container?.linked_account != null
 	data["linkedBalance"] = rmat.mat_container?.linked_account.account_balance

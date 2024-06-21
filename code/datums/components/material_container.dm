@@ -9,7 +9,7 @@
 		MAX_STACK_SIZE - size of a stack of mineral sheets. Constant.
 */
 
-#define MINIMUM_REFUND_THRESHOLD 5000
+#define MINIMUM_REFUND_THRESHOLD 1000
 
 /datum/component/material_container
 	/// The total amount of materials this material container contains
@@ -37,7 +37,7 @@
 	/// Modifier for all materials drawn when there's a linked account.
 	var/cost_modifier = 1
 	/// The minimum required amount of credits in a bank account to consider giving refunds for inserting materials. Currently the same as cargo gets roundstart.
-	var/refund_minimum = 5000
+	var/refund_minimum = MINIMUM_REFUND_THRESHOLD
 	/// The material container flags. See __DEFINES/materials.dm.
 	var/mat_container_flags
 

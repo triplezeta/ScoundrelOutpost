@@ -2,6 +2,7 @@ import { Flex } from '../../components';
 import { Design, MaterialMap } from './Types';
 import { MaterialIcon } from './MaterialIcon';
 import { formatSiUnit } from '../../format';
+import { BooleanLike } from 'common/react';
 
 export type MaterialCostSequenceProps = {
   /**
@@ -14,6 +15,21 @@ export type MaterialCostSequenceProps = {
    * `design`; otherwise, an empty list.
    */
   costMap?: MaterialMap;
+
+  /**
+   * The prices of each material in a map.
+   */
+  materialPrices: MaterialMap;
+
+  /**
+   * Whether or not we're paying for the materials we're using.
+   */
+  hasLinkedAccount: BooleanLike;
+
+  /**
+   * Balance of the user.
+   */
+  userBalance?: number;
 
   /**
    * A design to generate the cost map from.
@@ -51,7 +67,16 @@ export const MaterialCostSequence = (
   props: MaterialCostSequenceProps,
   context
 ) => {
-  const { design, amount, available, align, justify } = props;
+  const {
+    design,
+    amount,
+    available,
+    hasLinkedAccount,
+    userBalance,
+    materialPrices,
+    align,
+    justify,
+  } = props;
   let { costMap } = props;
 
   if (!costMap && !design) {
@@ -59,17 +84,23 @@ export const MaterialCostSequence = (
   }
 
   costMap ??= {};
+  let creditPrice = 0;
 
-  // NOTE FOR FUTURE ZETA: you could potentially put the credit cost calculations in this block
-  // since it's already iterating over all of the material costs of the design
   if (design) {
     for (const [name, value] of Object.entries(design.cost)) {
       costMap[name] = (costMap[name] || 0) + value;
     }
+    // creditPrice = design.crcost;
+  }
+
+  for (const [material, quantity] of Object.entries(costMap)) {
+    if (materialPrices) {
+      creditPrice += Math.ceil((materialPrices[material] * quantity) / 2000); // replace that magic number somehow
+    }
   }
 
   return (
-    <div>
+    <div style={{ 'text-align': 'center' }}>
       <Flex wrap justify={justify ?? 'space-around'} align={align ?? 'center'}>
         {Object.entries(costMap).map(([material, quantity]) => (
           <Flex.Item key={material} style={{ 'padding': '0.25em' }}>
@@ -97,7 +128,24 @@ export const MaterialCostSequence = (
           </Flex.Item>
         ))}
       </Flex>
-      {design.crcost + ' kromer'}
+      <div
+        style={
+          available && {
+            color: userBalance
+              ? (amount || 1) * creditPrice * 2 <= userBalance
+                ? '#fff'
+                : (amount || 1) * creditPrice <= userBalance
+                  ? '#f08f11'
+                  : '#db2828'
+              : '#db2828',
+          }
+        }>
+        {hasLinkedAccount
+          ? creditPrice > 0
+            ? creditPrice * (amount || 1) + ' cr'
+            : null
+          : null}
+      </div>
     </div>
   );
 };
