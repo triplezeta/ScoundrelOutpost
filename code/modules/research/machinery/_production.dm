@@ -40,7 +40,9 @@
 		"lathe", \
 		mapload, \
 		mat_container_flags = BREAKDOWN_FLAGS_LATHE, \
+		single_storage = FALSE, \
 	)
+	/*
 	AddComponent(
 		/datum/component/payment, \
 		0, \
@@ -48,6 +50,7 @@
 		PAYMENT_CLINICAL, \
 		TRUE, \
 	)
+	*/
 
 	create_reagents(0, OPENCONTAINER)
 	if(stored_research)
@@ -190,6 +193,11 @@
 
 		if("build")
 			user_try_print_id(params["ref"], params["amount"])
+
+/obj/machinery/rnd/production/AltClick(mob/user)
+	to_chat(user, span_notice("You encabulate [src], rerouting its material intake to [materials.mat_container.ore_silo_storage ? "local" : "remote"] storage."))
+	materials.swap_storage()
+	return ..()
 
 /// Updates the fabricator's efficiency coefficient based on the installed parts.
 /obj/machinery/rnd/production/proc/calculate_efficiency()

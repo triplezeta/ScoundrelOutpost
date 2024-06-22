@@ -38,11 +38,13 @@
 	var/cost_modifier = 1
 	/// The minimum required amount of credits in a bank account to consider giving refunds for inserting materials. Currently the same as cargo gets roundstart.
 	var/refund_minimum = MINIMUM_REFUND_THRESHOLD
+	/// whether or not this component belongs to an ore silo !!!! SHITCODE WARNING!!!!
+	var/ore_silo_storage = FALSE
 	/// The material container flags. See __DEFINES/materials.dm.
 	var/mat_container_flags
 
 /// Sets up the proper signals and fills the list of materials with the appropriate references.
-/datum/component/material_container/Initialize(list/init_mats, max_amt = 0, _mat_container_flags=NONE, list/allowed_mats=init_mats, list/allowed_items, datum/callback/_insertion_check, datum/callback/_precondition, datum/callback/_after_insert)
+/datum/component/material_container/Initialize(list/init_mats, max_amt = 0, _mat_container_flags=NONE, list/allowed_mats=init_mats, list/allowed_items, datum/callback/_insertion_check, datum/callback/_precondition, datum/callback/_after_insert, ore_silo=FALSE)
 	if(!isatom(parent))
 		return COMPONENT_INCOMPATIBLE
 
@@ -69,6 +71,8 @@
 		if(isnull(mat_amt))
 			mat_amt = 0
 		materials[mat_ref] += mat_amt
+	if(ore_silo)
+		ore_silo_storage = TRUE
 
 /datum/component/material_container/Destroy(force, silent)
 	materials = null
