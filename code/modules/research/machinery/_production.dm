@@ -143,7 +143,6 @@
 			"name" = design.name,
 			"desc" = design.get_description(),
 			"cost" = cost,
-			"crcost" = materials.mat_container.get_material_list_cost(design.materials), // bad implementation, please replace when possible
 			"id" = design.id,
 			"categories" = design.category,
 			"icon" = "[icon_size == size32x32 ? "" : "[icon_size] "][design.id]",
@@ -158,14 +157,14 @@
 
 /obj/machinery/rnd/production/ui_data(mob/user)
 	var/list/data = list()
+	var/datum/component/material_container/mat_container = materials.mat_container
 
-	data["materials"] = materials.mat_container?.ui_data()
+	data["materials"] = mat_container?.ui_data()
 	data["onHold"] = materials.on_hold()
 	var/datum/bank_account/user_account = user.get_bank_account()
-	data["userBalance"] = user_account.account_balance
-	data["hasLinkedAccount"] = materials.mat_container?.linked_account != null
-	data["linkedBalance"] = materials.mat_container?.linked_account.account_balance
-	//data["linkedCostModifier"] = materials.mat_container?.cost_modifier
+	data["userBalance"] = (user_account) ? user_account.account_balance : 0
+	data["hasLinkedAccount"] = mat_container?.linked_account != null
+	data["linkedBalance"] = mat_container?.linked_account.account_balance
 	data["busy"] = busy
 	data["materialMaximum"] = materials.local_size
 	data["queue"] = list()
@@ -197,6 +196,7 @@
 /obj/machinery/rnd/production/AltClick(mob/user)
 	to_chat(user, span_notice("You encabulate [src], rerouting its material intake to [materials.mat_container.ore_silo_storage ? "local" : "remote"] storage."))
 	materials.swap_storage()
+	update_static_data_for_all_viewers()
 	return ..()
 
 /// Updates the fabricator's efficiency coefficient based on the installed parts.
@@ -275,7 +275,7 @@
 		say("No connection to material storage, please contact the quartermaster.")
 		return FALSE
 
-	if(materials.on_hold())
+	if(materials.mat_container.ore_silo_storage && materials.on_hold())
 		say("Mineral access is on hold, please contact the quartermaster.")
 		return FALSE
 
@@ -342,7 +342,7 @@
 		say("No access to material storage, please contact the quartermaster.")
 		return 0
 
-	if(materials.on_hold())
+	if(materials.mat_container.ore_silo_storage && materials.on_hold())
 		say("Mineral access is on hold, please contact the quartermaster.")
 		return 0
 	var/datum/bank_account/user_account = usr.get_bank_account(TRUE)

@@ -401,7 +401,7 @@
 			"name" = design.name,
 			"desc" = design.get_description(),
 			"cost" = cost,
-			"crcost" = rmat.mat_container.get_material_list_cost(design.materials), // bad implementation, please replace when possible
+			//"crcost" = rmat.mat_container.get_material_list_cost(design.materials), // bad implementation, please replace when possible
 			"id" = design.id,
 			"categories" = design.category,
 			"icon" = "[icon_size == size32x32 ? "" : "[icon_size] "][design.id]",

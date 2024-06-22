@@ -42,14 +42,14 @@ handles linking back and forth.
 		addtimer(CALLBACK(src, PROC_REF(LateInitialize)))
 	else if (allow_standalone)
 		_MakeLocal()
-	if (!single_storage)
-		inactive_container = gen_local_storage()
 
 /datum/component/remote_materials/proc/LateInitialize()
 	silo = GLOB.ore_silo_default
 	if (silo)
 		silo.ore_connected_machines += src
 		mat_container = silo.GetComponent(/datum/component/material_container)
+		if(!single_storage)
+			inactive_container = gen_local_storage()
 	else
 		_MakeLocal()
 
@@ -107,7 +107,7 @@ handles linking back and forth.
 	//	mat_container.max_amount = local_size
 	if (mat_container && !mat_container.ore_silo_storage)
 		mat_container.max_amount = local_size
-	else if (!single_storage)
+	else if (inactive_container)
 		inactive_container.max_amount = local_size
 
 // called if disconnected by ore silo UI or destruction
@@ -174,7 +174,8 @@ handles linking back and forth.
 	return silo?.holds["[get_area(parent)]/[category]"]
 
 /datum/component/remote_materials/proc/silo_log(obj/machinery/M, action, amount, noun, list/mats)
-	if (silo && mat_container.ore_silo_storage)
+	//if (silo && mat_container.ore_silo_storage)
+	if (silo)
 		silo.silo_log(M || parent, action, amount, noun, mats)
 
 /datum/component/remote_materials/proc/format_amount()
