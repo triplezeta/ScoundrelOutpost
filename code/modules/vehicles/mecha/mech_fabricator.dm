@@ -55,13 +55,7 @@
 /obj/machinery/mecha_part_fabricator/Initialize(mapload)
 	if(!CONFIG_GET(flag/no_default_techweb_link))
 		connect_techweb(SSresearch.science_tech)
-	rmat = AddComponent(
-		/datum/component/remote_materials, \
-		"mechfab", \
-		mapload, \
-		mat_container_flags = BREAKDOWN_FLAGS_LATHE, \
-		single_storage = FALSE, \
-	)
+	rmat = AddComponent(/datum/component/remote_materials, "mechfab", mapload && link_on_init, mat_container_flags=BREAKDOWN_FLAGS_LATHE)
 	cached_designs = list()
 	RefreshParts() //Recalculating local material sizes if the fab isn't linked
 	if(stored_research)
@@ -83,10 +77,6 @@
 	if(!QDELETED(tool.buffer) && istype(tool.buffer, /datum/techweb))
 		connect_techweb(tool.buffer)
 	return TRUE
-
-/obj/machinery/mecha_part_fabricator/AltClick(mob/user)
-	to_chat(user, span_notice("You encabulate [src], rerouting its material intake to [rmat.mat_container.ore_silo_storage ? "local" : "remote"] storage."))
-	rmat.swap_storage()
 
 /obj/machinery/mecha_part_fabricator/proc/on_techweb_update()
 	SIGNAL_HANDLER
