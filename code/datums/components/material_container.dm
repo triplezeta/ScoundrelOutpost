@@ -71,7 +71,8 @@
 		if(isnull(mat_amt))
 			mat_amt = 0
 		materials[mat_ref] += mat_amt
-	ore_silo_storage = ore_silo
+	if(ore_silo)
+		ore_silo_storage = TRUE
 
 /datum/component/material_container/Destroy(force, silent)
 	materials = null

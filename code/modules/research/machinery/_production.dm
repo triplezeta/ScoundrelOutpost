@@ -379,6 +379,6 @@
 
 /obj/machinery/rnd/production/examine(mob/user)
 	. = ..()
-	. += span_notice("Alt-click to toggle between local and remote storage.")
+
 	if(in_range(user, src) || isobserver(user))
 		. += span_notice("The status display reads: Storing up to <b>[materials.local_size]</b> material units.<br>Material consumption at <b>[efficiency_coeff * 100]%</b>.<br>Build time reduced by <b>[100 - efficiency_coeff * 100]%</b>.")
